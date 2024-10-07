@@ -1,6 +1,9 @@
 # Map-Repository
 by Shubh Madhavan
 
+![SM_Map_Demo](https://github.com/user-attachments/assets/f437f072-72a5-4f3c-ae02-e09949f443d4)
+
+
 ## Features (as of 2024-10-08):
 - Ramsar Sites
 

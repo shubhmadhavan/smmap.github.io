@@ -1,7 +1,7 @@
 # Map-Repository
 by Shubh Madhavan
 
-<img src="https://github.com/user-attachments/assets/f437f072-72a5-4f3c-ae02-e09949f443d4" height="500"/>
+<img src="https://github.com/user-attachments/assets/f437f072-72a5-4f3c-ae02-e09949f443d4" height="400"/>
 
 ## Features (as of 2024-10-08):
 - Ramsar Sites

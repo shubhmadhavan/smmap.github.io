@@ -1,0 +1,275 @@
+body {
+  background-color: #1e1e1e; /* Set your desired color */
+  margin-top:-46px;
+}
+
+
+
+div {
+	font-family: Arial;
+  color: white;
+}
+#map img {
+  width: 100%;
+  height: 100%;
+}
+#map {
+	position: relative;
+	width: 800px; /* Largeur de votre image */
+	height: 800px; /* Hauteur de votre image */
+}
+#map-image, #myCanvas {
+	position: absolute;
+	top: 105px;
+	left: 0;
+}
+
+
+
+#logoimg {
+	width:500px;
+	position: absolute;
+	top: 12px;
+	left: 1112px;;
+}
+#change {
+	text-align:right;
+	position: absolute;
+	top: 95px;
+	right:66px;
+	font-size: 10pt;
+}
+
+
+
+
+#settings {
+// initial popup on page
+  border:solid 1px;
+  margin:-40px;
+  margin-top: -250px;
+  padding:10px;
+  position: absolute;
+  top: 15px;
+  left: 435px;
+  font-size:24pt;
+  width: 260px;
+  background-color: #2a2a2a;
+  text-align: center;
+}
+
+
+#finish {
+  border:solid 1px;
+  margin:-10px;
+  padding:10px;
+  position: absolute;
+  top: 155px;
+  left: 35px;
+  font-size:20pt;
+  width: 740px;
+  background-color: #2a2a2a;
+  text-align: center;
+  display:none;
+}
+
+#credits {
+  position: absolute;
+  top: 985px;
+  left: 10px;
+  
+  font-size:10pt;
+}
+
+#score {
+  position: absolute;
+
+  top: 34px;
+  left: 1112px;
+
+}
+
+#click-coordinates {
+
+  position: absolute;
+  top: 1212px;
+  left: 12px;
+  width: 1200px;
+  color: grey;
+}
+
+
+#target-info {
+  //Find ...
+  //location hover popup (asks you to click on said location)
+  border:solid 1px;
+  padding:5px;
+  position: absolute;
+  top: 15px;
+  left: 8px;
+  font-size:20pt;
+  width: 1090px;
+  background-color: #2a2a2a;
+  text-align: left;
+  display:none; 
+}
+
+#target-info-2 {
+  //Find ...
+  //location hover popup (asks you to click on said location)
+  border:solid 1px;
+  padding:5px;
+  position: absolute;
+  top: 1162px;
+  left: 8px;
+  font-size:20pt;
+  width: 1090px;
+  background-color: #2a2a2a;
+  text-align: left;
+  display:none; 
+}
+
+.click-point {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: #808080;
+  border-radius: 50%;
+  transform: translate(-50%, -50%); /* Centrer le point */
+}
+.target-point {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: cyan;
+  border-radius: 150%;
+  transform: translate(-50%, -50%); /* Centrer le point */
+
+
+  border: 1px solid #fdf7d5;
+  box-shadow: 0 0 24px cyan;
+
+
+}
+.target-text {
+  position: absolute;
+  color:white;
+  background-color: #256868;
+  font-size: 12pt;
+
+  padding: 0px 0px;
+  //name of location
+}
+
+
+.info-text{
+  position: absolute;
+  color:white;
+  background-color: #256868;
+  font-size: 8pt;
+
+  padding: 0px 0px;
+  margin-top:22px;
+  //name of location
+
+}
+
+.info-text::before {
+  content: "(";
+}
+
+.info-text::after {
+  content: ")";
+}
+
+
+.target-text-copy {
+  position: absolute;
+  color:white;
+  background-color: #256868;
+
+  font-size: 25pt;
+
+  top: 260px !important; 
+  left:1107px !important;
+  word-wrap: wrap !important;
+  width:440px;
+}
+
+.info-text-copy {
+  position: absolute;
+  color:white;
+  background-color: #256868;
+
+  font-size: 21pt;
+
+  top: 295px !important; 
+  left:1107px !important;
+  word-wrap: wrap !important;
+  width:440px;
+}
+
+.info-text-copy::before {
+  content: "(";
+}
+
+.info-text-copy::after {
+  content: ")";
+}
+
+
+.info-text-2{
+  position: absolute;
+  color:white;
+  background-color: #256868;
+
+  font-size: 18pt;
+
+  top: 322px !important; 
+  left:1107px !important;
+  word-wrap: wrap !important;
+  width:440px;
+  
+//parameter 5 of csv i.e. the one that shows on right
+}
+
+.distance-text {
+  position: absolute;
+  color:white;
+  background-color: #256868;
+
+  font-size: 20pt;
+  top: 120px !important; 
+  left:10px !important;
+  //distance of user selected location from correct location
+}
+
+button {
+  background-color: #4d4d4d;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 819px) { /* Pour les écrans de moins de 820px de large */
+	#credits {
+	  top: 1450px;
+	  width: 800px;
+	}
+	#score {
+	  top: 1005px;
+	  left: 10px;
+	  width: 800px;
+	}
+	#click-coordinates {
+
+	  position: absolute;
+	  top: 75px;
+	  left: 15px;
+	  width: 800px;
+    color: grey;
+	}
+}

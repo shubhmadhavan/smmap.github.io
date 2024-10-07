@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=0.49">
+  <meta name="description" content="Shubh's Map Repository">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Olivier Genest">
+  <title>Shubh's Map Repository</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="manifest" href="/site.webmanifest">  
+  <script src="citydata.js" defer></script>
+  <script src="citydataIN.js" defer></script>
+  <script src="citydataRS.js" defer></script>
+  <script src="dailydata.js" defer></script>
+  <script src="dailydataUS.js" defer></script>
+  <script src="dailydataEU.js" defer></script>
+  <script src="i18n.js" defer></script>
+  <script src="maps.js" defer></script>
+  <script src="smmap.js" defer></script>
+  <script src="proj4.js"></script>
+</head>
+<body>
+
+<div id="map">
+	<img id="map-image" src="blank.png" alt="Map">
+	<canvas id="myCanvas" width="800" height="800"></canvas>
+</div>
+
+<div id="score">
+	<table width="400">
+		<tr><td id="txtDistScore" style="font-size:20pt;">Points: </td><td id="dist-score" style="font-size:20pt;"></td></tr>
+		<tr><td style="font-size:10pt; color:white; opacity:60%;">(Dist<200km)</td> </td></tr>
+
+		<tr><td id="txtNumberOfGames"></td><td id="nb-score"></td></tr>    <!--Locations Covered:-->
+		<br>
+
+		<tr><td id="txtLastScore">Last Distance:</td><td id="last-score"></td></tr>
+		<tr><td id="txtAverageScore">Average Distance: </td><td id="average-score"></td></tr>
+		<br>
+		
+		<tr style="display:none;"><td id="txtTotalScore">Total score: </td><td id="total-score"></td></tr>
+
+		<tr style="display:none;"><td colspan="1"><button id="resetScore">Stop current game</button></td></tr>
+	</table>
+	<br/><br/>
+	<font style="font-size:20pt;">
+
+	
+
+
+	</font>
+</div>
+
+<a href="index.html">
+	<div id="logoimg" style="font-size: 30pt; color:grey; opacity:90%;">⌂</div>
+  <div id="change" style="color:grey;">Home</div>
+</a>
+
+<div id="target-info"></div>  //goes above map
+<div id="target-info-2"></div> //goes below map
+<div id="click-coordinates"></div>
+<div id="settings">
+
+
+	
+	<span id="txtChallengeTitle" style="display:none !important;">  </span><br/>
+	<font style="font-size:12pt;" id="txtChallenge">The same cities for everyone: compare yourself with your friends!</font><br/>
+	<button id="defi">Daily challenge (20 cities)</button>
+	<br/>
+	<font style="font-size:12pt;"><em><span id="txtOr"></span></em></font>
+	<br/>
+	<span id="txtFreePracticeTitle"></span><br/>
+	<font style="font-size:12pt;"><span id="txtDifficulty">Difficulty: </span></font>
+	<select id="diffSelect" style="display:none;">
+		<option id="txtEasy" value="10000" selected>Easy: Only regional capitals (22 cities)</option>
+		<option id="txtMedium" value="96">Medium: Prefectures (96 cities)</option>
+		<option id="txtHard" value="320">Hard: Prefectures and sub-prefectures (320 cities)</option>
+	</select><br/>
+	<font style="font-size:12pt;">
+		<span id="txtNbCitiesTitle">Number of cities:</span> 
+		<input type="radio" id="nbCity10" name="nbCity" value="10" /><label for="nbCity10">10</label>
+		<input type="radio" id="nbCity20" name="nbCity" value="20" /><label for="nbCity20">20</label>
+		<input type="radio" id="nbCity50" name="nbCity" value="50" /><label for="nbCity50">50</label>
+		<input type="radio" id="nbCityAll" name="nbCity" value="999" checked/><label for="nbCityAll"><span id="txtCitiesAll">All</span></label>
+	</font>
+	<br/>
+	<button id="startGameButton">Start</button>
+</div>
+
+<div id="finish">Game over!</div>
+
+
+</body>
+</html>

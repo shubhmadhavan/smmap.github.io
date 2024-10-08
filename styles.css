@@ -87,7 +87,7 @@ div {
 #score {
   position: absolute;
 
-  top: 74px;
+  top: 34px;
   left: 1112px;
 
 }
@@ -260,7 +260,7 @@ button {
 @media only screen and (max-width: 1009px) { /* Mobile Hotfix */
 
 	#score {
-	  top: 1455px !important;
+	  top: 1755px !important;
 	  left: 10px;
 	  width: 800px;
 	}

@@ -260,7 +260,7 @@ button {
 @media only screen and (max-width: 1009px) { /* Mobile Hotfix */
 
 	#score {
-	  top: 1455px;
+	  top: 1455px !important;
 	  left: 10px;
 	  width: 800px;
 	}

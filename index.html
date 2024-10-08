@@ -140,6 +140,32 @@
 		  color: #fff;
 		}
 		
+
+		#option-order-1:checked:checked ~ .option-order-1,
+		#option-order-2:checked:checked ~ .option-order-2,
+		#option-order-3:checked:checked ~ .option-order-3{
+		  border-color: #373737;
+		  background: #373737;
+		}
+		#option-order-1:checked:checked ~ .option-order-1 .dot,
+		#option-order-2:checked:checked ~ .option-order-2 .dot,
+		#option-order-3:checked:checked ~ .option-order-3 .dot{
+		  background: #fff;
+		}
+		#option-order-1:checked:checked ~ .option-order-1 .dot::before,
+		#option-order-2:checked:checked ~ .option-order-2 .dot::before,
+		#option-order-3:checked:checked ~ .option-order-3 .dot::before{
+		  opacity: 1;
+		  transform: scale(1);
+		}
+
+		#option-order-1:checked:checked ~ .option-order-1 span,
+		#option-order-2:checked:checked ~ .option-order-2 span,
+		#option-order-3:checked:checked ~ .option-order-3 span{
+		  color: #fff;
+		}
+
+
 		div {
 			font-family: Arial;
 		}
@@ -156,7 +182,7 @@
 		<form action="game.html" method="get">
 			<div style="color:#808080; font-weight: bold; font-size: 20pt; margin-bottom: 12px; display:none;">Language</div>
 			<div class="wrapper" style ="display:none;>
-			 <input type="radio" name="lang" id="option-lang-1" value="en" checked>
+			 <input type="radio" name="lang" id="option-lang-1" value="fr" checked>
 			 <input type="radio" name="lang" id="option-lang-2" value="en" >
 			   <label for="option-lang-1" class="option option-lang-1">
 				 <div class="dot"></div>
@@ -171,12 +197,12 @@
 			<br/>
 			<div style="color:#808080; font-weight: bold; font-size: 20pt; margin-bottom: 12px;">Select Map</div>
 			<div class="wrapper" style="background-color:#808080 !important;">
-			 <input type="radio" name="map" id="option-map-1" value="fr" checked>
+			 <input type="radio" name="map" id="option-map-1" value="np" checked>
 			 <input type="radio" name="map" id="option-map-2" value="rs" >
 			 <input type="radio" name="map" id="option-map-3" value="in" >
 			   <label for="option-map-1" class="option option-map-1">
 				 <div class="dot"></div>
-				  <span>France</span>
+				  <span>National Parks</span>
 				  </label>
 			   <label for="option-map-2" class="option option-map-2">
 				 <div class="dot"></div>
@@ -187,6 +213,25 @@
 				  <span>India</span>
 			   </label>
 			</div>
+
+<!-- Shuffle or N2S-->
+
+			<div style="color:#808080; font-weight: bold; font-size: 15pt; margin-top: 20px; margin-bottom: 2px;">Select Order</div>
+			<div class="wrapper" style="background-color:#808080 !important;   height: 30px; width: 500px;">
+			 <input type="radio" name="orderRSNP" id="option-order-1" value="RS" checked>
+			 <input type="radio" name="orderRSNP" id="option-order-2" value="NS" >
+			   <label for="option-order-1" class="option option-order-1">
+				 <div class="dot"></div>
+				  <span style="font-size: 12pt !important;">Random/ Shuffle</span>
+				  </label>
+			   <label for="option-order-2" class="option option-order-2">
+				 <div class="dot"></div>
+				  <span style="font-size: 12pt !important;">North to South</span>
+				  </label>
+			</div>
+
+
+
 			<br/><br/>
 			<button type="submit" style="color:#bcbcbc;">Play</button>
 			</form>

@@ -1,4 +1,5 @@
 const map = document.getElementById('map');
+
 const clickCoordinates = document.getElementById('click-coordinates');
 
 
@@ -25,7 +26,7 @@ let distanceText = null;
 let randomCity = { longitude: null, latitude: null };
 let citiesList = null;
 let gameOngoing = false;
-let citiesIt = 0;
+let citiesIt = 0; //change it ahead as well
 let lastScore = 0; //Score du dernier clic
 let distscore = 0;
 let totalScore = 0; //Score total
@@ -47,6 +48,8 @@ let flop3 = [];
 
 let lang = "en";
 let currentMap = maps["in"];
+
+let orderRSNP = "RS";
 
 // Obtenez l'URL actuelle de la page
 const urlParams = new URLSearchParams(window.location.search);
@@ -71,7 +74,7 @@ if (urlParams.has('lang')) {
 if (urlParams.has('map')) {
     // Obtenez la valeur du paramètre "map"
     const urlMap = urlParams.get('map');
-    if(urlMap == "fr" || urlMap == "in" || urlMap == "rs") 
+    if(urlMap == "np" || urlMap == "in" || urlMap == "rs") 
 	{
 		currentMap=maps[urlMap];
 	}
@@ -82,6 +85,23 @@ if (urlParams.has('map')) {
 } else {
     console.log('No map specified in the url => fr');
 }
+
+if (urlParams.has('orderRSNP')) {
+    // Obtenez la valeur du paramètre "map"
+    const urlorderRSNP = urlParams.get('orderRSNP');
+    if(urlorderRSNP == "RS" || urlorderRSNP == "NS" ) 
+	{
+		orderRSNP=urlorderRSNP;
+	}
+	else
+	{
+		console.log('Unknown Order');
+	}
+} else {
+    console.log('No Order specified in the url');
+}
+
+
 
   // Coordonnées GPS des 4 coins de l'image (à remplacer par les coordonnées réelles)
 const topLeftGPS = currentMap.topLeftGPS;
@@ -244,13 +264,29 @@ if(gameOngoing)
 	//numberOfLinesToConsider = selectElement.value;
 
 	//numberOfLinesToConsider has been replaced by neverStopGame below
-	randomIndex = Math.floor(Math.random() * citiesList.length);
-	randomCity = citiesList[randomIndex];
+	console.log(citiesList);
+	sortedCitiesList = citiesList.sort((a, b) => b.latitude - a.latitude);
+	console.log(sortedCitiesList);
+
+
+	if(orderRSNP == 'NS'){
+		randomCity = sortedCitiesList[citiesIt];
+		
+		
+		citiesIt++;
+		
+		console.log(citiesIt);
+	}
+	else if(orderRSNP == 'RS')
+	{
+		randomIndex = Math.floor(Math.random() * citiesList.length);
+		randomCity = citiesList[randomIndex];
+	}
+
 	console.log(randomCity);
 	var cityName = randomCity?.cityName;
 	targetInfo.innerHTML = i18n("newTarget", lang, cityName);
 	targetInfo2.innerHTML = i18n("newTarget", lang, cityName);
-
 }
 });
 
@@ -276,9 +312,13 @@ function selectRandomCity(csvContent, numberOfLinesToConsider) {
   // Séparer les lignes du fichier CSV
   const lines = csvContent.split('\n');
   
+  console.log(lines);
+ 
   // Sélectionner les X premières lignes
   const selectedLines = lines.slice(0, numberOfLinesToConsider);
-  
+  console.log(numberOfLinesToConsider);
+  console.log(selectedLines);
+
   // Choisir une ligne au hasard parmi les X premières lignes
   const randomLine = selectedLines[Math.floor(Math.random() * selectedLines.length)];
   
@@ -364,6 +404,9 @@ function startGame(defi)
 		numberOfLinesToConsider = selectElement.value;
 		//Création de la liste mélangée
 		citiesList = selectRandomCities(currentMap.csv, numberOfLinesToConsider);
+
+		console.log(citiesList);
+
 		//Enregistrement de la difficulté
 			//22=préféectures de région, 96=préfectures, 320=sous-préfectures
 		if (numberOfLinesToConsider == currentMap.categories.easy.totalCount) diffText = i18n("txtEasy2", lang, currentMap.categories.easy.difficulty);
@@ -385,7 +428,18 @@ function startGame(defi)
 	}
 	
 	citiesIt = 0;
-	randomCity = citiesList[0];
+
+	sortedCitiesList2 = citiesList.sort((a, b) => b.latitude - a.latitude);
+	if(orderRSNP == 'NS'){
+		randomCity = sortedCitiesList2[0];
+	}
+	else if(orderRSNP == 'RS')
+	{
+		randomCity = citiesList[0];
+	}
+	
+	
+	
 	console.log(randomCity);
 	targetInfo.style.display = "block"; //On affiche le champ qui indique la cible
 	targetInfo2.style.display = "block"; //On affiche le champ qui indique la cible
@@ -410,10 +464,12 @@ function shuffleArray(array) {
 function selectRandomCities(csvContent, numberOfLinesToConsider) {
 	// Séparer les lignes du fichier CSV
 	const lines = csvContent.split('\n');
-	
+	console.log(lines);
+	console.log(numberOfLinesToConsider);
 	// Sélectionner les X premières lignes
-	const selectedLines = lines.slice(0, numberOfLinesToConsider);
-	
+	const selectedLines = lines.slice(0);
+	//const selectedLines = lines.slice(0, numberOfLinesToConsider);
+
 	// Créer une liste des villes
 	const cities = selectedLines.map(line => {
 		const values = line.split(';');

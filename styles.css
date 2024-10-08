@@ -46,18 +46,21 @@ div {
 #settings {
 // initial popup on page
   border:solid 1px;
-  margin:-40px;
-  margin-top: -250px;
+  margin:40px;
+  margin-top: 220px;
   padding:10px;
   position: absolute;
   top: 15px;
   left: 435px;
-  font-size:24pt;
+  font-size:32pt;
   width: 260px;
-  background-color: #2a2a2a;
+  
   text-align: center;
 }
 
+#settings2{
+  background-color: #2a2a2a;
+}
 
 #finish {
   border:solid 1px;
@@ -254,18 +257,14 @@ button {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 819px) { /* Pour les écrans de moins de 820px de large */
-	#credits {
-	  top: 1450px;
-	  width: 800px;
-	}
+@media only screen and (max-width: 819px) { /* Mobile Hotfix */
+
 	#score {
-	  top: 1005px;
+	  top: 1055px;
 	  left: 10px;
 	  width: 800px;
 	}
 	#click-coordinates {
-
 	  position: absolute;
 	  top: 75px;
 	  left: 15px;

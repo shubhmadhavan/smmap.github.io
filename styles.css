@@ -257,10 +257,10 @@ button {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 819px) { /* Mobile Hotfix */
+@media only screen and (max-width: 1009px) { /* Mobile Hotfix */
 
 	#score {
-	  top: 1155px;
+	  top: 1205px;
 	  left: 10px;
 	  width: 800px;
 	}

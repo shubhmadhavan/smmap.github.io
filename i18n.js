@@ -2,8 +2,8 @@
 const translations = {
     en: {
 		txtLastScore: "Last Distance:",
-		txtAverageScore: "Average Distance:",
-		txtNumberOfGames: "Locations Covered:",
+		txtAverageScore: "<span style=\"color:grey;\">Average Distance:</span>",
+		
 		txtEasy: "Easy",
 		txtMedium: "Medium",
 		txtHard: "Hard",

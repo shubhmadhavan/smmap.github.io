@@ -1,5 +1,6 @@
-# Map-Repository
-Created by Shubh Madhavan
+# SM-Map
+A Map Repository-cum-game that requires the user to locate said locations on the relevant Map. The distance from the actual location is    
+Created for you, by Shubh.  
 
 ## Maps Included:
 ● National Parks of India  

@@ -2,8 +2,8 @@
 Created by Shubh Madhavan
 
 ## Maps Included:
-● National Parks of India
-● Ramsar Sites of India
+● National Parks of India  
+● Ramsar Sites of India  
 
 ## Other Features:
 ● Random/ Shuffle Sort → Default sort mode that allows for Active Recall

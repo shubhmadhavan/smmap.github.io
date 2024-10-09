@@ -3,14 +3,14 @@ A Map Repository-cum-game that requires the user to locate said locations on the
 Created for you, by Shubh.  
 
 ## Maps Included:
-● National Parks of India
-● Ramsar Sites of India  
-● Dams & Reservoirs
-● Waterfalls
+● National Parks of India  
+● Ramsar Sites of India    
+● Dams & Reservoirs  
+● Waterfalls  
 
 ## <i>Upcoming</i> Maps
-● Tiger Reserves
-● Hills
+● Tiger Reserves  
+● Hills  
 
 ## Other Features:
 ● Random/ Shuffle Sort → Default sort mode that allows for Active Recall.  

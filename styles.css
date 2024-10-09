@@ -87,7 +87,7 @@ div {
 #score {
   position: absolute;
 
-  top: 34px;
+  top: 28px;
   left: 1112px;
 
 }
@@ -257,10 +257,10 @@ button {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 1009px) { /* Mobile Hotfix */
+@media only screen and (max-width: 819px) { /* Mobile Hotfix */
 
 	#score {
-	  top: 1755px !important;
+	  top: 1355px;
 	  left: 10px;
 	  width: 800px;
 	}

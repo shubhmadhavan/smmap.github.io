@@ -10,7 +10,7 @@ Created by Shubh Madhavan
 ● North to South → Learning Mode. Covers all Locations from the Northernmost to the Southernmost.
 
 ## Overview:
-<img src="https://github.com/user-attachments/assets/d19c0b80-c5b3-4180-bdca-cb645edcd1ad" />
+
 
 ## Extra
 I have nothing to plug here. Just keep making progress!  

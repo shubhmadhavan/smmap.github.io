@@ -1,11 +1,15 @@
 # Map-Repository
-by Shubh Madhavan
+Created by Shubh Madhavan
 
-## Features (as of 2024-10-08):
-- Ramsar Sites
+## Maps Included:
+● National Parks of India
+● Ramsar Sites of India
 
+## Other Features:
+● Random/ Shuffle Sort → Default sort mode that allows for Active Recall
+● North to South → Learning Mode. Covers all Locations from the Northernmost to the Southernmost.
 
-## ?
-I have nothing to plug here. Just keep working hard and making progress!  
+## Extra
+I have nothing to plug here. Just keep making progress!  
 
 <img src="https://github.com/user-attachments/assets/d19c0b80-c5b3-4180-bdca-cb645edcd1ad" height="80" />

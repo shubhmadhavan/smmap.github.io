@@ -74,7 +74,7 @@ if (urlParams.has('lang')) {
 if (urlParams.has('map')) {
     // Obtenez la valeur du paramètre "map"
     const urlMap = urlParams.get('map');
-    if(urlMap == "np" || urlMap == "in" || urlMap == "rs") 
+    if(urlMap == "np" || urlMap == "in" || urlMap == "rs" || urlMap == "dm" || urlMap == "wf") // np = National Parks, rs = Ramsar Sites, dm = Dams & Reservoirs, WF = Waterfalls
 	{
 		currentMap=maps[urlMap];
 	}

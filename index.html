@@ -31,23 +31,12 @@
             text-align: center;
         }
 		
-		button {
-		  background-color: #373737;
-		  border: none;
-		  color: white;
-		  padding: 12px 32px;
-		  text-decoration: none;
-		  margin: 8px 4px;
-		  cursor: pointer;
-		  font-size:18px;
-		  border-radius: 5px;
-		}
-		
+
 		.wrapper{
 		  display: inline-flex;
 		  background: #fff;
 		  height: 50px;
-		  width: 500px;
+		  width: 1000px;  /* for every map, add 200px to width */
 		  align-items: center;
 		  justify-content: space-evenly;
 		  border-radius: 5px;
@@ -95,7 +84,24 @@
 		  font-size: 16px;
 		  color: #808080;
 		}
+		.label {
+		  	width: auto;
+		}
+
+		button {
+		  background-color: #373737;
+		  border: none;
+		  color: white;
+		  
+		  padding: 12px 32px;
+		  text-decoration: none;
+		  margin: 8px 4px;
+		  cursor: pointer;
+		  font-size:18px;
+		  border-radius: 5px;
+		}
 		
+
 		#option-lang-1:checked:checked ~ .option-lang-1,
 		#option-lang-2:checked:checked ~ .option-lang-2{
 		  border-color: #373737;
@@ -118,25 +124,33 @@
 		
 		#option-map-1:checked:checked ~ .option-map-1,
 		#option-map-2:checked:checked ~ .option-map-2,
-		#option-map-3:checked:checked ~ .option-map-3{
+		#option-map-3:checked:checked ~ .option-map-3,
+		#option-map-4:checked:checked ~ .option-map-4,
+		#option-map-5:checked:checked ~ .option-map-5{
 		  border-color: #373737;
 		  background: #373737;
 		}
 		#option-map-1:checked:checked ~ .option-map-1 .dot,
 		#option-map-2:checked:checked ~ .option-map-2 .dot,
-		#option-map-3:checked:checked ~ .option-map-3 .dot{
+		#option-map-3:checked:checked ~ .option-map-3 .dot,
+		#option-map-4:checked:checked ~ .option-map-4 .dot,
+		#option-map-5:checked:checked ~ .option-map-5 .dot{
 		  background: #fff;
 		}
 		#option-map-1:checked:checked ~ .option-map-1 .dot::before,
 		#option-map-2:checked:checked ~ .option-map-2 .dot::before,
-		#option-map-3:checked:checked ~ .option-map-3 .dot::before{
+		#option-map-3:checked:checked ~ .option-map-3 .dot::before,
+		#option-map-4:checked:checked ~ .option-map-4 .dot::before,
+		#option-map-5:checked:checked ~ .option-map-5 .dot::before{
 		  opacity: 1;
 		  transform: scale(1);
 		}
 
 		#option-map-1:checked:checked ~ .option-map-1 span,
 		#option-map-2:checked:checked ~ .option-map-2 span,
-		#option-map-3:checked:checked ~ .option-map-3 span{
+		#option-map-3:checked:checked ~ .option-map-3 span,
+		#option-map-4:checked:checked ~ .option-map-4 span,
+		#option-map-5:checked:checked ~ .option-map-5 span{
 		  color: #fff;
 		}
 		
@@ -200,24 +214,36 @@
 			 <input type="radio" name="map" id="option-map-1" value="np" checked>
 			 <input type="radio" name="map" id="option-map-2" value="rs" >
 			 <input type="radio" name="map" id="option-map-3" value="in" >
+			 <input type="radio" name="map" id="option-map-4" value="dm" >
+			 <input type="radio" name="map" id="option-map-5" value="wf" >
+			 
 			   <label for="option-map-1" class="option option-map-1">
 				 <div class="dot"></div>
 				  <span>National Parks</span>
 				  </label>
+				<label for="option-map-3" class="option option-map-3">
+				<div class="dot"></div>
+					<span>Tiger Reserves</span>
+				</label>	  
+			
 			   <label for="option-map-2" class="option option-map-2">
 				 <div class="dot"></div>
 				  <span>Ramsar Sites</span>
 				  </label>
-			   <label for="option-map-3" class="option option-map-3">
-				 <div class="dot"></div>
-				  <span>India</span>
-			   </label>
+			   <label for="option-map-4" class="option option-map-4">
+				<div class="dot"></div>
+				 <span>Dams & Reservoirs</span>
+			  </label>
+			   <label for="option-map-5" class="option option-map-5">
+				<div class="dot"></div>
+				 <span>Waterfalls</span>
+			  </label>
 			</div>
 
 <!-- Shuffle or N2S-->
 
 			<div style="color:#808080; font-weight: bold; font-size: 15pt; margin-top: 20px; margin-bottom: 2px;">Select Order</div>
-			<div class="wrapper" style="background-color:#808080 !important;   height: 30px; width: 500px;">
+			<div class="wrapper" style="background-color:#808080 !important;   height: 30px; width: 400px;">
 			 <input type="radio" name="orderRSNP" id="option-order-1" value="RS" checked>
 			 <input type="radio" name="orderRSNP" id="option-order-2" value="NS" >
 			   <label for="option-order-1" class="option option-order-1">

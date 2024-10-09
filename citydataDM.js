@@ -57,13 +57,13 @@ Jolaput Reservoir; ; ;easy; 18.4418563;82.5572162; on Sileru River, tributary of
 Balimela Reservoir; ; ;easy; 18.2477451;82.2087787; on Sileru River, tributary of Sabari
 Ujani Dam; ; ;easy; 18.1364287;75.0961549; on Bhima River, tributary of Krishna
 Dhom Reservoir; ; ;easy; 17.4270624;74.7975191; on Krishna River
-Koyna Dam; ; ;easy; 17.0222578;74.6922384; on Koyna River, tributary of Krishna
-Almatti Dam; ; ;easy; 16.1830157;76.6001096; on Krishna River
+Koyna Dam; ; ;easy; 17.0222578;73.75135; on Koyna River, tributary of Krishna
+Almatti Dam; ; ;easy; 16.1830157;75.90556; on Krishna River
 Prakasham Barrage; ; ;easy; 16.6753876;80.6311523; on Krishna River
-Nagarjuna Sagar; ; ;easy; 16.497667;80.0721551; on Krishna River
+Nagarjuna Sagar; ; ;easy; 16.497667;79.0721551; on Krishna River
 Srisailam Dam; ; ;easy; 15.872536;78.285013; on Krishna River
 Kadam Dam; ; ;easy; 14.764963;77.820717; on Kadam River, tributary of Godavari
-Kandaleru Dam; ; ;easy; 13.654564;80.042735; on Pennar River
+Kandaleru Dam; ; ;easy; 14.3474;79.59405; on Pennar River
 Krishnagiri Dam; ; ;easy; 12.4973078; 78.1696715; on Ponnaiyar/ Thenpannai River
 Gorur Hemavati Reservoir; ; ;easy; 12.8206986; 76.0365749; on Hemavathi River
 Krishnaraja Sagara Reservoir; ; ;easy; 12.457095; 76.4967919; on Kaveri River, at meeting point of Kaveri, Hemavathi & Lakshmanteertha Rivers

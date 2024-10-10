@@ -9,8 +9,10 @@ Created for you, by Shubh.
 ● Waterfalls  
 
 ## <i>Upcoming</i> Maps
-● Tiger Reserves  
-● Hills  
+● Tiger Reserves of India  
+● Hills of India  
+● Important Passes of India  
+● Glaciers of India  
 
 ## Other Features:
 ● Random/ Shuffle Sort → Default sort mode that allows for Active Recall.  

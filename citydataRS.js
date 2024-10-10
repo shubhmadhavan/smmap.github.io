@@ -61,12 +61,7 @@ Magadikere;KA;KA;easy;15.2192636;75.5140181; Magadikare BS lies in Gadag dis, KN
 Ankasamudra;KA;KA;easy;15.1325034;76.2325897; Ankasamudra BS is a human-made wetland built for storing monsoon run-off water coming from  Tungabhadra River. It lies in Bellary dis, KN.
 Aghanashini;KA;KA;easy;14.5204502;74.3693773;Aghanashini Estuary lies at mouth of Aghnashini River. It lies in Uttara Kannada dis, KN
 Ranganatittu;KA;KA;easy;12.4255338;76.6542893;Ranganatittu BS lies on Kaveri RIver,downstream of Krishnaraja Sagara Res (KN)
-Vembanad Lagoon;KL;KL;easy;9.5967665;76.3984537;● Vambanad Lake (near Kottayam, KL) largest & logest lake of IND & the largest lagoon lake of IND as well
-● Vembanad has formed an intricate network of Coastal estuaries
-● k/f Nehru Trophy Boat Race
-● Vembanad Lake is fed by 10 rivers flowing into it incld 6 major rivers of central KL (Achenkovil, Manimala, Meenachil river, Muvattupuzha river, Pamba and Periyar)
-● NOT to be confused with TN's Vembanur Wetland Complex
-● RS sites in KL → Vemba(nad)-Sasta-Ashta
+Vembanad Lagoon;KL;KL;easy;9.5967665;76.3984537;● Vambanad Lake (near Kottayam, KL) largest & logest lake of IND & the largest lagoon lake of IND as well ● Vembanad has formed an intricate network of Coastal estuaries ● k/f Nehru Trophy Boat Race ● Vembanad Lake is fed by 10 rivers flowing into it incld 6 major rivers of central KL (Achenkovil, Manimala, Meenachil river, Muvattupuzha river, Pamba and Periyar) ● NOT to be confused with TN's Vembanur Wetland Complex ● RS sites in KL → Vemba(nad)-Sasta-Ashta
 Sasthamcotta;KL;KL;easy;9.0366731;76.633212; ● North of Kallada River ● RS sites in KL → Vemba(nad)-Sasta-Ashta
 Ashtamudi Lagoon;KL;KL;easy;8.9591853;76.5777203;  ● ON Kallada River ● It is a lagoon lake ● RS sites in KL → Vemba(nad)-Sasta-Ashta
 Pallikaranai;TN;TN;easy;12.9348912;80.2137124;

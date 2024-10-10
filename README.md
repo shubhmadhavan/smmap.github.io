@@ -8,14 +8,17 @@ Created for you, by Shubh.
 ● Dams & Reservoirs  
 ● Waterfalls  
 
-## <i>Upcoming</i> Maps
+### <i style="color:grey;">Upcoming Maps
 ● Tiger Reserves of India  
-● Hills of India  
-● Canyons, Gorges, Valleys
-● Important Passes of India  
+  
 ● Glaciers of India  
+● Important Lakes of India  
 
-## Other Features:
+● Major Hills of India  
+● Canyons, Gorges, Valleys  
+● Important Passes of India  </i>
+
+## Features:
 ● Random/ Shuffle Sort → Default sort mode that allows for Active Recall.  
 ● North to South → Learning Mode. Covers all Locations from the Northernmost to the Southernmost.
 

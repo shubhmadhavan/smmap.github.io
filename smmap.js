@@ -682,21 +682,21 @@ function drawMapClear() {
 }
 
 function drawMapClic(x,y,targetX,targetY,distance,cityName) {
-	// Créer et afficher le nouveau point cliqué
+	// Circle Pointing to Location clicked by User
 	clickPoint = document.createElement('div');
 	clickPoint.className = 'click-point';
 	clickPoint.style.left = `${x}px`;
 	clickPoint.style.top = `${y}px`;
 	map.appendChild(clickPoint);
 	
-	// Créer et afficher la cible
+	// Circle Pointing to Correct Location
 	targetPoint = document.createElement('div');
-	targetPoint.className = 'target-point';
+	targetPoint.className = 'target-point';  // Change this to different classname with different css OR add new Style in next lign for background color based on if condition
 	targetPoint.style.left = `${targetX}px`;
 	targetPoint.style.top = `${offsetY + targetY}px`;
 	map.appendChild(targetPoint);
 	
-	// Créer et afficher la légende de la cible
+	// Text Box that has Name of Location
 	targetText = document.createElement('div');
 	targetText.className = 'target-text';
 	targetText.innerHTML = randomCity.cityName;
@@ -704,7 +704,7 @@ function drawMapClic(x,y,targetX,targetY,distance,cityName) {
 	targetText.style.top = `${offsetY + targetY - 5}px`;
 	map.appendChild(targetText);
 	
-
+	// Text Box that has Subsidiary info about Location (usually State of the Location)
 	targetTextCopy = document.createElement('div');
 	targetTextCopy.className = 'target-text-copy';
 	targetTextCopy.innerHTML = randomCity.cityName;
@@ -713,7 +713,7 @@ function drawMapClic(x,y,targetX,targetY,distance,cityName) {
 	map.appendChild(targetTextCopy);
 
 
-	// Créer et afficher la légende de la cible
+	// Info Box with info about Location
 	infoText = document.createElement('div');
 	infoText.className = 'info-text';
 	infoText.innerHTML = randomCity.department;
@@ -728,7 +728,7 @@ function drawMapClic(x,y,targetX,targetY,distance,cityName) {
 	infoTextCopy.style.top = `${offsetY + targetY - 5}px`;
 	map.appendChild(infoTextCopy);
 
-	// Créer et afficher la légende de la cible
+	// Info Box 2 with detailed info about Location
 	infoText2 = document.createElement('div');
 
 	infoText2 = document.createElement('div');
@@ -741,7 +741,7 @@ function drawMapClic(x,y,targetX,targetY,distance,cityName) {
 	map.appendChild(infoText2);
 
 
-	// Créer et afficher la légende de la distance
+	// Display Distance between User clicked location and Actual Location
 	distanceText = document.createElement('div');
 	distanceText.className = 'distance-text';
 	distanceText.innerHTML = distance + `km`
@@ -749,7 +749,7 @@ function drawMapClic(x,y,targetX,targetY,distance,cityName) {
 	distanceText.style.top = `${(offsetY + targetY + y)/2 - 10}px`;
 	map.appendChild(distanceText);
 	
-	//Afficher une ligne entre les 2 points
+	
 	// Récupérer le contexte 2D du canvas
 	const canvas = document.getElementById('myCanvas');
 	const ctx = canvas.getContext('2d');

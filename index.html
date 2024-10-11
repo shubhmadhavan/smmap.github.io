@@ -11,11 +11,13 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">  
+  <script src="jquery-3.6.0.min.js"></script>
+
     <style>
         body, html {
             height: 100%;
             margin: 0;
-            display: flex;
+            display: block;
             justify-content: center;
             align-items: center;
 			font-size:24px;
@@ -24,7 +26,7 @@
 
         .container {
             width: 100%;
-            height: 100%;
+            max-height: 100%;
         }
 
         .centered {
@@ -194,8 +196,8 @@
 
 		<br/><br/>
 		<form action="game.html" method="get">
-			<div style="color:#808080; font-weight: bold; font-size: 20pt; margin-bottom: 12px; display:none;">Language</div>
-			<div class="wrapper" style ="display:none;>
+			<div style="color:#808080; font-weight: bold; font-size: 20pt; margin-bottom: 12px; display:none; ">Language</div>
+			<div class="wrapper" style ="display:none;">
 			 <input type="radio" name="lang" id="option-lang-1" value="fr" checked>
 			 <input type="radio" name="lang" id="option-lang-2" value="en" >
 			   <label for="option-lang-1" class="option option-lang-1">
@@ -209,59 +211,170 @@
 			</div>
 			<br/>
 			<br/>
-			<div style="color:#808080; font-weight: bold; font-size: 20pt; margin-bottom: 12px;">Select Map</div>
-			<div class="wrapper" style="background-color:#808080 !important;">
+
+
+			<div style="color:#808080; font-weight: bold; font-size: 22pt; margin-top: -70px; margin-bottom: 15px; opacity:40%;">Select Map</div>
+
+			
+			<div class="wrapper" style="background-color:#808080 !important; margin-top: -2px; max-width:560px !important;  height:40px; ">
 			 <input type="radio" name="map" id="option-map-1" value="np" checked>
 			 <input type="radio" name="map" id="option-map-2" value="rs" >
 			 <input type="radio" name="map" id="option-map-3" value="in" >
-			 <input type="radio" name="map" id="option-map-4" value="dm" >
-			 <input type="radio" name="map" id="option-map-5" value="wf" >
+
 			 
-			   <label for="option-map-1" class="option option-map-1">
+			   <label for="option-map-1" class="option option-map-1" style="width:150px !important;">
 				 <div class="dot"></div>
 				  <span>National Parks</span>
 				  </label>
-				<label for="option-map-3" class="option option-map-3">
+				<label for="option-map-3" class="option option-map-3" style="width:150px !important;">
 				<div class="dot"></div>
 					<span>Tiger Reserves</span>
 				</label>	  
 			
-			   <label for="option-map-2" class="option option-map-2">
+			   <label for="option-map-2" class="option option-map-2" style="width:150px !important;">
 				 <div class="dot"></div>
 				  <span>Ramsar Sites</span>
 				  </label>
-			   <label for="option-map-4" class="option option-map-4">
+
+
+</div>
+<br/>
+
+<div class="wrapper" style="background-color:#808080 !important; width:560px !important; max-width:580px !important;  height:40px; margin-top:-14px;">
+	<input type="radio" name="map" id="option-map-1" value="np" checked>
+	<input type="radio" name="map" id="option-map-2" value="rs" >
+	<input type="radio" name="map" id="option-map-3" value="in" >
+	<input type="radio" name="map" id="option-map-4" value="dm" >
+	<input type="radio" name="map" id="option-map-5" value="wf" >
+			
+			   <label for="option-map-4" class="option option-map-4" style="width:150px !important;">
 				<div class="dot"></div>
 				 <span>Dams & Reservoirs</span>
 			  </label>
-			   <label for="option-map-5" class="option option-map-5">
+			   <label for="option-map-5" class="option option-map-5" style="width:150px !important;">
 				<div class="dot"></div>
 				 <span>Waterfalls</span>
 			  </label>
 			</div>
 
-<!-- Shuffle or N2S-->
 
-			<div style="color:#808080; font-weight: bold; font-size: 15pt; margin-top: 20px; margin-bottom: 2px;">Select Order</div>
-			<div class="wrapper" style="background-color:#808080 !important;   height: 30px; width: 400px;">
+			
+
+
+
+
+
+
+
+			<!-- Shuffle or N2S-->
+<br/>
+			<div style="color:#808080; font-weight: bold; font-size: 18pt; margin-top: 20px; margin-bottom: -22px; opacity:40%; ">Select Order</div>
+			<br/>
+			<div class="wrapper" style="background-color:#808080 !important;   max-width:340px !important; height:30px;">
 			 <input type="radio" name="orderRSNP" id="option-order-1" value="RS" checked>
 			 <input type="radio" name="orderRSNP" id="option-order-2" value="NS" >
 			   <label for="option-order-1" class="option option-order-1">
 				 <div class="dot"></div>
-				  <span style="font-size: 12pt !important;">Random/ Shuffle</span>
+				  <span style="font-size: 10pt !important;">Random/ Shuffle</span>
 				  </label>
 			   <label for="option-order-2" class="option option-order-2">
 				 <div class="dot"></div>
-				  <span style="font-size: 12pt !important;">North to South</span>
+				  <span style="font-size: 10pt !important;">North to South</span>
 				  </label>
 			</div>
 
 
 
 			<br/><br/>
-			<button type="submit" style="color:#bcbcbc;">Play</button>
+			<button type="submit" style="font-size: 22pt !important; color:#bcbcbc; margin-top:-10px; box-shadow: 0 0 8px #fdf7d5;;">Play</button>
+			<br/>
 			</form>
         </div>
     </div>
+
+
+    
+  <!-- Image container for selected map -->
+  <div id="map-image-container" style="display:flex; justify-content: center; align-items: center; margin-top:14px; ">
+	<img id="map-image" src="" alt="Selected Map Image" style="display: none; max-width: 100%; height: auto; max-width: 40%; ">
+</div>
+
+
 </body>
+
+
+
 </html>
+
+
+<!--
+<style>
+ #map-image-container {
+        margin-top: 20px;
+        text-align: center;
+        position: relative;
+        width: 80%;
+    }
+
+    /* Ensure the image is centered and responsive */
+    #map-image {
+        display: block;
+        margin: 0;
+        max-width: 80%; /* Adjust the width as per your preference */
+        height: auto;
+    }
+</style>
+-->
+
+<script>
+	// Define the images to be displayed based on selected map option
+	const mapImages = {
+		np: 'India_base_dark.png',     // National Parks image
+		rs: 'India_base_dark - backup 2024-10-09 21h11m.png',     // Ramsar Sites image
+		in: 'India_base_dark.png',     // Tiger Reserves image
+		dm: 'India_base_dark.png',     // Dams & Reservoirs image
+		wf: 'AIO_Waterfalls-2x.png'      // Waterfalls image
+	};
+
+	// Function to update the image based on selected map
+	function updateMapImage() {
+		// Get the selected map value
+		const selectedMap = document.querySelector('input[name="map"]:checked').value;
+
+		// Get the image element
+		const mapImageElement = document.getElementById('map-image');
+
+		// Update the image source based on the selected map
+		mapImageElement.src = mapImages[selectedMap];
+
+		// Display the image
+		mapImageElement.style.display = 'block';
+	}
+
+	// Add event listeners to radio buttons to detect changes
+	document.querySelectorAll('input[name="map"]').forEach(radio => {
+		radio.addEventListener('change', updateMapImage);
+	});
+
+	// Initialize the image on page load
+	window.onload = updateMapImage;
+
+    $('#map-image').addClass('img-enlargable').click(function(){
+        var src = $(this).attr('src');
+        $('<div>').css({
+            background: 'RGBA(0,0,0,.5) url('+src+') no-repeat center',
+            backgroundSize: 'contain',
+            width:'100%', height:'100%',
+            position:'fixed',
+            zIndex:'10000',
+            top:'0', left:'0',
+            cursor: 'zoom-out'
+        }).click(function(){
+            $(this).remove();
+        }).appendTo('body');
+    });
+
+
+	</script>
+	
+	

@@ -1,4 +1,3 @@
- 
 const csvWF = `Kempty Falls;UK;UK;easy;30.4879258;78.0371964;Kempty Falls is in Tehri Garhwal dis, UK
 Sahasradhara;UK;UK;easy;30.3883919;78.1293615;Sahasradhara (Thousand Springs) Falls is in Dehradun, UK. It is on the banks of River Baldi (trib of Song, which is a trib of Sooswa, which is ultimately a trib of Ganga)
 Chuliya Falls;RS;RS;easy;24.9305361;75.5711968;Chuliya Falls is on Chambal River, just on Maharana Pratap Sagar. It lies downstream of  Jawahar Sagar
@@ -17,9 +16,9 @@ Kynrem Falls;MG;MG;easy;25.2272466;91.7166567;● near Cherapunji in East Khasi 
 Nohsngithiang or Mawsmai Falls;MG;MG;easy;25.2389306;91.732537;It is a seven-segmented Falls (so it is also k/a Seven Sisters Falls). It is in East Khasi Hills dis, MG 
 Tirathgarh Falls;CG;CG;easy;18.9139499;81.8651088;● in Kanger Valley NP of CG ● a block type Falls on the Kanger River ● It is said to have been created in the aftermath of a lunar crater 
 Duduma Falls;OD;OD;easy;18.519303;82.4531033;Duduma Falls is in border of Koraput dis, OD. Machhakund HE Project is located near Duduma Falls.
-Vajrai Falls;MH;MH;easy;17.7086116;73.8151002;Bhambavli Vajrai Falls in Satara dis, MH is the 2nd highest plunge waterfall in India, after the Nohkalikai Falls in MG
+Vajrai Falls;MH;MH;easy;17.7086116;73.8151002;Bhambavli Vajrai Falls in Satara dis, MH. It is on on Koyna River and Dam. It is the 2nd highest plunge waterfall in India, after the Nohkalikai Falls in MG. 
 Gokak Falls;KN;KN;easy;16.1878993;74.7775938;Gokak Falls lies on Ghataprabha River in Belagavi dis, KN
-Dudhsagar Falls;GA;GA;easy;15.3144375;74.3143073;Dudhsagar Falls is a 4-tiered WF on Mandovi River, Goa. It is one of India's tallest WFs. It is inside the Mollem National Park.
+Dudhsagar Falls;GA;GA;easy;15.3144375;74.3143073;Dudhsagar Falls is a 4-tiered WF on Mandovi River, Goa. It is one of India's tallest WFs. It is inside the Mollem National Park. NOT to be confused with Dhuandhar of MP
 Jog Falls;KN;KN;easy;14.2293266;74.8138496;Jog Falls, aka Gersoppa Falls, lies on Shravathi River. It is located downstream of Linganamakki Dam and is upstream of both Mahatma Gandhi HE Plant and the Gersoppa Reservoir
 Kunchikal Falls;KN;KN;easy;13.6937514;75.0191385;Kunchikal Falls lies on Varahi/ Haladi River of KN (Varahi lies South of the Shravathi River. Tungabhadra River flows a bit West to Varahi)
 Barkana Falls;KN;KN;easy;13.4881474;75.0935483;● Barkana Falls is on the Seetha River ● It lies in Someshwara WLS and Agumbe Reserve Forest ● near Agumbe in Shimoga district

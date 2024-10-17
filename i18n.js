@@ -1,8 +1,8 @@
-// Tableau de traductions
+
 const translations = {
     en: {
 		txtLastScore: "Last Distance:",
-		txtAverageScore: "<span style=\"color:grey;\">Average Distance:</span>",
+		txtAverageScore: "<span style=\"color:grey !important;\">Average Distance:</span>",
 		
 		txtEasy: "Easy",
 		txtMedium: "Medium",
@@ -40,7 +40,7 @@ const translations = {
     },
 	fr: {
 		txtLastScore: "Last Distance:",
-		txtAverageScore: "Average Distance:",
+		txtAverageScore: "<span style=\"color:grey !important;\">Average Distance:</span>",
 		txtNumberOfGames: "Locations Covered:",
 		txtEasy: "Easy",
 		txtMedium: "Medium",
@@ -52,7 +52,7 @@ const translations = {
 
 	
 
-		newTarget: "Find... <i>%1</i>",
+		newTarget: "<span style=\"color:grey;\">Locate:</span> <span class =\"target-text-copy\" style=\"all:unset; \"> %1 </span>",
 		txtEasy2: "Easy (%1)",
 		txtMedium2: "Medium (%1)",
 		txtHard2: "Hard (%1)",

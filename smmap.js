@@ -19,7 +19,8 @@ let clickPoint = null;
 let targetPoint = null;
 let infoText = null;
 let infoTextCopy = null;
-let infoText2 = null;
+let infoText2 = null; // information about site
+let infoText3 = null; // image if any
 let targetText = null;
 let targetTextCopy = null;
 let distanceText = null;
@@ -120,6 +121,10 @@ img.onload = function() {
 	//drawMapBackground();
 }
 
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Code JavaScript à exécuter une fois que la page est chargée
     applyI18nToHtml(lang, "txtChallengeTitle", "txtChallenge", "defi", "txtFreePracticeTitle", "txtEasy", "txtMedium", "txtHard", "txtNbCitiesTitle", "txtCitiesAll", "startGameButton", "finish",  "txtAverageScore", "resetScore", "txtOr", "change", "txtDifficulty");
@@ -193,10 +198,61 @@ startGameButton.onclick = function() {
 
 scoreReset.onclick = function() {
 	//Terminé
-
 };
 
+
+
+const themeButtons = document.querySelectorAll('.theme-button');
+const themeClasses = ['target-point', 'target-text', 'target-text-copy', 'info-text', 'info-text-2', 'info-text-copy', 'text-copy', 'info-box-2', 'distance-text']; // Classes to target
+
+// Function to apply the selected theme to specified classes
+function applyTheme(theme) {
+	themeClasses.forEach(cls => {
+		const elements = document.querySelectorAll(`.${cls}`);
+		elements.forEach(element => {
+			element.classList.remove('theme-default', 'theme1', 'theme2', 'theme3', 'theme4', 'theme5'); // Remove all theme classes
+			element.classList.add(theme); // Add the selected theme class
+		});
+	});
+}
+
+// Function to check and apply the stored theme
+function checkAndApplyStoredTheme() {
+	const storedTheme = localStorage.getItem('selectedTheme');
+	if (storedTheme) {
+		applyTheme(storedTheme); // Apply stored theme on page load
+	}
+}
+
+// Check for stored theme on document load
+checkAndApplyStoredTheme();
+
+// Add click event to theme buttons
+themeButtons.forEach(button => {
+	button.addEventListener('click', function() {
+		const selectedTheme = this.getAttribute('data-theme');
+		applyTheme(selectedTheme); // Apply the selected theme
+		localStorage.setItem('selectedTheme', selectedTheme); // Store selected theme in localStorage
+	});
+});
+
+
+
+
+
+
 map.addEventListener('click', function(event) {
+
+	if (event.target.classList.contains('targetTextCopy') || 
+	event.target.classList.contains('infoTextCopy') ||
+	event.target.classList.contains('infoText2') ||
+	event.target.classList.contains('infoText3')) {
+
+	return; 
+}
+
+
+
 if(gameOngoing)
 {
 	const mapRect = map.getBoundingClientRect();
@@ -287,6 +343,10 @@ if(gameOngoing)
 	var cityName = randomCity?.cityName;
 	targetInfo.innerHTML = i18n("newTarget", lang, cityName);
 	targetInfo2.innerHTML = i18n("newTarget", lang, cityName);
+	const storedTheme = localStorage.getItem('selectedTheme');
+	if (storedTheme) {
+		applyTheme(storedTheme); // Apply stored theme on page load
+	}
 }
 });
 
@@ -332,8 +392,8 @@ function selectRandomCity(csvContent, numberOfLinesToConsider) {
   const longitude = parseFloat(values[5]); // Convertir en nombre
   const latitude = parseFloat(values[4]); // Convertir en nombre
   
-  // Retourner les informations sélectionnées
-  return { cityName, department, type, longitude, latitude ,infojs};
+  // Retourner les informations sélectionnées           // infojs is for detailed info //infojs2 is for image
+  return { cityName, department, type, longitude, latitude ,infojs, infojs2};
 }
 
 function stopGame()
@@ -479,7 +539,8 @@ function selectRandomCities(csvContent, numberOfLinesToConsider) {
 		const longitude = parseFloat(values[5]);
 		const latitude = parseFloat(values[4]);
 		const infojs = values[6];
-		return { cityName, department, type, longitude, latitude , infojs};
+		const infojs2 = values[7];
+		return { cityName, department, type, longitude, latitude , infojs, infojs2};
 	});
 	
 	// Mélanger aléatoirement la liste des villes
@@ -667,7 +728,11 @@ function drawMapClear() {
 	if (infoText2) {
 		infoText2.remove();
 	}
-	
+
+	if (infoText3) {
+		infoText3.remove();
+	}
+
 	// Supprimer l'ancienne légende de la distance
 	if (distanceText) {
 	  distanceText.remove();
@@ -707,10 +772,12 @@ function drawMapClic(x,y,targetX,targetY,distance,cityName) {
 	// Text Box that has Subsidiary info about Location (usually State of the Location)
 	targetTextCopy = document.createElement('div');
 	targetTextCopy.className = 'target-text-copy';
+
+
 	targetTextCopy.innerHTML = randomCity.cityName;
 	targetTextCopy.style.left = `${targetX + 10}px`;
 	targetTextCopy.style.top = `${offsetY + targetY - 5}px`;
-	map.appendChild(targetTextCopy);
+	score.appendChild(targetTextCopy);
 
 
 	// Info Box with info about Location
@@ -723,22 +790,60 @@ function drawMapClic(x,y,targetX,targetY,distance,cityName) {
 
 	infoTextCopy = document.createElement('div');
 	infoTextCopy.className = 'info-text-copy';
+
+
 	infoTextCopy.innerHTML = randomCity.department;
 	infoTextCopy.style.left = `${targetX + 10}px`;
 	infoTextCopy.style.top = `${offsetY + targetY - 5}px`;
-	map.appendChild(infoTextCopy);
+	score.appendChild(infoTextCopy);
 
 	// Info Box 2 with detailed info about Location
 	infoText2 = document.createElement('div');
 
 	infoText2 = document.createElement('div');
 	infoText2.className = 'info-text-2';
-	
+
 	// Replace \n with <br> for proper HTML line breaks
 	infoText2.innerHTML = randomCity.infojs;
 	infoText2.style.left = `${targetX + 10}px`;
 	infoText2.style.top = `${offsetY + targetY - 5}px`;
-	map.appendChild(infoText2);
+	score.appendChild(infoText2);
+
+	// Info Box 3 with IMAGE if ANy
+
+	infoText3 = document.createElement('div');
+	
+	infoText3 = document.createElement('div');
+	infoText3.className = 'info-text-3';
+
+	// Replace \n with <br> for proper HTML line breaks
+	
+
+	
+	if (
+		randomCity.infojs2 &&
+		(randomCity.infojs2.includes(".png") ||
+		 randomCity.infojs2.includes(".jpeg") ||
+		 randomCity.infojs2.includes(".jpg"))
+	  ) {
+		// Split the image sources by comma and remove any extra whitespace
+		const imgSources = randomCity.infojs2.split(',').map(src => src.trim());
+	  
+		// Create img elements for each image source
+		const imgTags = imgSources.map(
+		  imgSrc => `<img src="${imgSrc}" alt="City Image" style="margin: 5px;">`
+		).join(''); // Join the img tags into a single string
+	  
+		// Insert the generated img elements into the target container
+		infoText3.innerHTML = imgTags;
+	  
+		// Set positioning styles for the container
+		infoText3.style.left = `${targetX + 10}px`;
+		infoText3.style.top = `${offsetY + targetY - 5}px`;
+	  
+		// Append the container to the score element
+		score.appendChild(infoText3);
+	  }
 
 
 	// Display Distance between User clicked location and Actual Location
@@ -750,6 +855,7 @@ function drawMapClic(x,y,targetX,targetY,distance,cityName) {
 	map.appendChild(distanceText);
 	
 	
+
 	// Récupérer le contexte 2D du canvas
 	const canvas = document.getElementById('myCanvas');
 	const ctx = canvas.getContext('2d');

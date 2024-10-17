@@ -1,4 +1,3 @@
- 
 const csvRS = `Tso Kar;LK;LK;easy;33.3103226;78.0252466;
 Tso Moriri;LK;LK;easy;32.9112291;78.3159411;
 Wular Lake;JK;JK;easy;34.3696106;74.5580454;Largest FW lake, formed via tectonic activity & willow plantations, k/a Mahapadmasar in ancient times, Tulbul project. KS Sultan Shah Rukh Shahi Khan aka Zain ul Abidin had constructed an artificial island of Zaina Lank in Wular

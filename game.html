@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="styles.css">
 
   <link rel="manifest" href="/site.webmanifest">  
-  <script src="citydata.js" defer></script>
+  <script src="citydataNP.js" defer></script>
   <script src="citydataIN.js" defer></script>
   <script src="citydataRS.js" defer></script> <!--Ramsar Sites-->
   <script src="citydataDM.js" defer></script> <!--Dams & Reservoirs-->
@@ -22,8 +22,48 @@
   <script src="maps.js" defer></script>
   <script src="smmap.js" defer></script>
   <script src="proj4.js"></script>
+
 </head>
 <body>
+
+
+	
+	<div class="theme-selector">
+		<button class="theme-button" data-theme="default">
+			<span class="color-box" style="background-color: #256868;"></span>
+		</button>
+		<button class="theme-button" data-theme="theme1">
+			<span class="color-box" style="background-color: #624266;"></span>
+		</button>
+		<button class="theme-button" data-theme="theme2">
+			<span class="color-box" style="background-color: #966b96;"></span>
+		</button>
+		<button class="theme-button" data-theme="theme3">
+			<span class="color-box" style="background-color: #a79564;"></span>
+		</button>
+		<button class="theme-button" data-theme="theme4">
+			<span class="color-box" style="background-color: #5f7687;"></span>
+		</button>
+		<button class="theme-button" data-theme="theme5">
+			<span class="color-box" style="background-color: #855d67;"></span>
+		</button>
+		<button class="theme-button" data-theme="theme6">
+			<span class="color-box" style="background-color: #541f1f;"></span>
+		</button>
+		<button class="theme-button" data-theme="theme7">
+			<span class="color-box" style="background-color: #1abc9c;"></span>
+		</button>
+		<button class="theme-button" data-theme="theme8">
+			<span class="color-box" style="background-color: #2aa2cf;"></span>
+		</button>
+		<button class="theme-button" data-theme="theme9">
+			<span class="color-box" style="background-color: #4481ad;"></span>
+		</button>
+		<button class="theme-button" data-theme="theme10">
+			<span class="color-box" style="background-color: #b06342;"></span>
+		</button>
+	</div>
+	
 
 <div id="map">
 	<img id="map-image" src="blank.png" alt="Map">
@@ -31,25 +71,23 @@
 </div>
 
 <div id="score">
-	<table width="400">
+	<table style="width:560px;">
 		<tr><td id="txtDistScore" style="font-size:22pt;"><span style="color:grey;">Points:</span></td><td id="dist-score" style="font-size:22pt; color:grey;"></td></tr>
 		<tr><td style="font-size:10pt; color:grey;">(Dist<200km)</td> </td></tr>
 
 		<tr><td id="txtNumberOfGames"><span style="color:grey; font-size:14pt;">Locations Covered:</span></td><td id="nb-score" style="font-size:14pt; color:grey;"></td></tr>    <!--Locations Covered:-->
-		<br>
+	
 
 		<tr><td id="txtLastScore"><span style="color:grey; font-size:14pt;">Last Distance:</span></td><td id="last-score" style="font-size:14pt; color:grey;"></td></tr>
-		<tr><td id="txtAverageScore"><span style="color:grey; font-size:14pt;">Average Distance:</span> </td><td id="average-score" style="font-size:14pt; color:grey;"></td></tr>
-		<br>
+		<tr><td id="txtAverageScore"><span style="color:grey; font-size:14pt;">          </span> </td><td id="average-score" style="font-size:14pt; color:grey;"></td></tr>
+	
 		
 		<tr style="display:none;"><td id="txtTotalScore">Total score: </td><td id="total-score"></td></tr>
 
 		<tr style="display:none;"><td colspan="1"><button id="resetScore">Stop current game</button></td></tr>
 	</table>
-	<br/><br/>
-	<font style="font-size:20pt;">
 
-	
+	<font style="font-size:20pt;">
 
 
 	</font>
@@ -100,5 +138,104 @@
 <div id="finish">Game over!</div>
 
 
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function () {
+    let overlay = null; // Track the overlay element
+    let currentImageIndex = -1; // Track the current image index
+    let images = []; // Array to store images for navigation
+
+    // Function to create a full-screen overlay with a single image
+    function createOverlay() {
+        // Remove any existing overlay
+        removeOverlay();
+
+        // Create the overlay
+        overlay = $('<div class="image-overlay">').css({
+            background: 'RGBA(0,0,0,.8) url(' + images[currentImageIndex] + ') no-repeat center',
+            backgroundSize: '1300px auto',
+			backgroundPosition: '60px center', // Move image 500px to the left
+            width: '100%', height: '100%',
+            position: 'fixed',
+            zIndex: '10000',
+            top: '0', left: '0',
+            cursor: 'zoom-out'
+        }).click(function () {
+            removeOverlay(); // Remove overlay on click
+        }).appendTo('body');
+
+        // Listen for keydown events for navigation
+        $(document).on('keydown.overlayControl', function (e) {
+            if (e.key === 'ArrowDown' || e.key === 'Escape') {
+                removeOverlay();
+            } else if (e.key === 'ArrowRight') {
+                navigateImages(1); // Next image
+            } else if (e.key === 'ArrowLeft') {
+                navigateImages(-1); // Previous image
+            }
+        });
+    }
+
+    // Function to navigate images
+    function navigateImages(direction) {
+        const newIndex = currentImageIndex + direction; // Calculate new index
+        if (newIndex >= 0 && newIndex < images.length) {
+            currentImageIndex = newIndex; // Update current index
+            overlay.css('background-image', 'url(' + images[currentImageIndex] + ')'); // Change the overlay image
+        }
+    }
+
+    // Function to remove the overlay and clean up events
+    function removeOverlay() {
+        if (overlay) {
+            overlay.remove();
+            overlay = null;
+            currentImageIndex = -1; // Reset index
+            images = []; // Clear images
+            $(document).off('keydown.overlayControl'); // Remove keydown listener
+        }
+    }
+
+    // Handle click on images inside `.info-text-3` elements to show overlay
+    $(document).on('click', '.info-text-3 img', function () {
+        const $parent = $(this).closest('.info-text-3'); // Get parent .info-text-3
+        images = $parent.find('img').map(function () {
+            return $(this).attr('src'); // Get the src of each image
+        }).get(); // Create an array of image sources
+
+        currentImageIndex = 0; // Start with the first image
+        createOverlay(); // Show overlay
+    });
+
+    // Handle keydown event to enlarge the first image with Arrow Up
+    $(document).keydown(function (e) {
+        if (e.key === 'ArrowUp') {
+            const firstImage = $('.info-text-3 img').first(); // Get the first image
+            if (firstImage.length > 0) {
+                firstImage.click(); // Trigger click event on the first image
+            }
+        }
+    });
+});
+</script> <!--  image enlarge script ends -->
+
+
+
+
+
+
+
+
+

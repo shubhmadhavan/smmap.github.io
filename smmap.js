@@ -256,8 +256,11 @@ map.addEventListener('click', function(event) {
 if(gameOngoing)
 {
 	const mapRect = map.getBoundingClientRect();
-	const x = event.clientX - mapRect.left;
-	const y = event.clientY - mapRect.top;
+	//zoom coordinates adjustment
+	const zoomFactor = 0.8; // Your zoom level (80%)
+	const x = (event.clientX - mapRect.left) / zoomFactor;
+	const y = (event.clientY - mapRect.top) / zoomFactor;
+	
 	console.log(`Clic - X `+x+` / Y `+y);
 
 	// Calcul des coordonnées GPS du point cliqué

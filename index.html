@@ -103,6 +103,10 @@
 		  border-radius: 5px;
 		}
 		
+		label:hover{		
+	box-shadow: 0 0 8px #fdf7d5;
+
+		}
 
 		#option-lang-1:checked:checked ~ .option-lang-1,
 		#option-lang-2:checked:checked ~ .option-lang-2{
@@ -209,14 +213,14 @@
 				  <span>English</span>
 			   </label>
 			</div>
-			<br/>
-			<br/>
 
+	
+	
 
-			<div style="color:#808080; font-weight: bold; font-size: 22pt; margin-top: -70px; margin-bottom: 15px; opacity:40%;">Select Map</div>
+		<!--	<div style="color:#808080; font-weight: bold; font-size: 22pt; margin-top: -70px; margin-bottom: 15px; opacity:40%;">Select Map</div> -->
 
 			
-			<div class="wrapper" style="background-color:#808080 !important; margin-top: -2px; max-width:560px !important;  height:40px; ">
+			<div class="wrapper" style="background-color:#2f2f2f !important; margin-top: -2px; max-width:560px !important;  height:40px; 	">
 			 <input type="radio" name="map" id="option-map-1" value="np" checked>
 			 <input type="radio" name="map" id="option-map-2" value="rs" >
 			 <input type="radio" name="map" id="option-map-3" value="in" >
@@ -240,7 +244,7 @@
 </div>
 <br/>
 
-<div class="wrapper" style="background-color:#808080 !important; width:560px !important; max-width:580px !important;  height:40px; margin-top:-14px;">
+<div class="wrapper" style="background-color:#2f2f2f !important; width:560px !important; max-width:560px !important;  height:40px; margin-top:-14px;">
 	<input type="radio" name="map" id="option-map-1" value="np" checked>
 	<input type="radio" name="map" id="option-map-2" value="rs" >
 	<input type="radio" name="map" id="option-map-3" value="in" >
@@ -259,7 +263,10 @@
 
 
 			
-
+  <!-- Image container for selected map -->
+  <div id="map-image-container" style="display:flex; justify-content: center; align-items: center; margin-top:8px;">
+    <img id="map-image" src="" alt="Selected Map Image" style="display: none; max-width: 100%; height: auto; max-width: 588px;">
+</div>
 
 
 
@@ -267,26 +274,28 @@
 
 
 			<!-- Shuffle or N2S-->
-<br/>
-			<div style="color:#808080; font-weight: bold; font-size: 18pt; margin-top: 20px; margin-bottom: -22px; opacity:40%; ">Select Order</div>
-			<br/>
-			<div class="wrapper" style="background-color:#808080 !important;   max-width:340px !important; height:30px;">
-			 <input type="radio" name="orderRSNP" id="option-order-1" value="RS" checked>
-			 <input type="radio" name="orderRSNP" id="option-order-2" value="NS" >
-			   <label for="option-order-1" class="option option-order-1">
-				 <div class="dot"></div>
-				  <span style="font-size: 10pt !important;">Random/ Shuffle</span>
-				  </label>
-			   <label for="option-order-2" class="option option-order-2">
-				 <div class="dot"></div>
+
+		<!--	<div style="color:#808080; font-weight: bold; font-size: 18pt; margin-top: 20px; margin-bottom: -22px; opacity:40%; ">Select Order</div>-->
+		
+			<div class="wrapper" style="background-color:#2f2f2f !important;  margin-top:8px; max-width:422px !important; height:20px;">
+			 <input type="radio" name="orderRSNP" id="option-order-1" value="RS">
+			 <input type="radio" name="orderRSNP" id="option-order-2" value="NS" checked>
+
+			  	<label for="option-order-2" class="option option-order-2">
+				<div class="dot"></div>
 				  <span style="font-size: 10pt !important;">North to South</span>
 				  </label>
-			</div>
+				<label for="option-order-1" class="option option-order-1">
+				<div class="dot"></div>
+					<span style="font-size: 10pt !important;">Random/ Shuffle</span>
+					</label>
+
+				</div>
 
 
 
-			<br/><br/>
-			<button type="submit" style="font-size: 22pt !important; color:#bcbcbc; margin-top:-10px; box-shadow: 0 0 8px #fdf7d5;;">Play</button>
+
+			<button type="submit" class="submit-button" style="font-size: 22pt !important; color:#bcbcbc; margin-top:-40px; ">Play</button>
 			<br/>
 			</form>
         </div>
@@ -294,10 +303,7 @@
 
 
     
-  <!-- Image container for selected map -->
-  <div id="map-image-container" style="display:flex; justify-content: center; align-items: center; margin-top:14px; ">
-	<img id="map-image" src="" alt="Selected Map Image" style="display: none; max-width: 100%; height: auto; max-width: 40%; ">
-</div>
+
 
 
 </body>
@@ -307,24 +313,18 @@
 </html>
 
 
-<!--
-<style>
- #map-image-container {
-        margin-top: 20px;
-        text-align: center;
-        position: relative;
-        width: 80%;
-    }
 
-    /* Ensure the image is centered and responsive */
-    #map-image {
-        display: block;
-        margin: 0;
-        max-width: 80%; /* Adjust the width as per your preference */
-        height: auto;
-    }
+<style>
+ .submit-button{
+	box-shadow: 0 0 2px #fdf7d5;
+ }
+
+ .submit-button:hover{
+	box-shadow: 0 0 12px #fdf7d5;
+ }
+
 </style>
--->
+
 
 <script>
 	// Define the images to be displayed based on selected map option

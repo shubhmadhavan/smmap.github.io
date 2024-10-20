@@ -71,9 +71,11 @@
 </div>
 
 <div id="score">
+
+    <div id="scoreTable">
 	<table style="width:560px;">
 		<tr><td id="txtDistScore" style="font-size:22pt;"><span style="color:grey;">Points:</span></td><td id="dist-score" style="font-size:22pt; color:grey;"></td></tr>
-		<tr><td style="font-size:10pt; color:grey;">(Dist<200km)</td> </td></tr>
+		<tr><td class="td1" style="font-size:10pt; color:grey;">(Dist<200km)</td> </td></tr>
 
 		<tr><td id="txtNumberOfGames"><span style="color:grey; font-size:14pt;">Locations Covered:</span></td><td id="nb-score" style="font-size:14pt; color:grey;"></td></tr>    <!--Locations Covered:-->
 	
@@ -86,7 +88,7 @@
 
 		<tr style="display:none;"><td colspan="1"><button id="resetScore">Stop current game</button></td></tr>
 	</table>
-
+</div>
 	<font style="font-size:20pt;">
 
 
@@ -94,12 +96,16 @@
 </div>
 
 <a href="index.html">
-	<div id="logoimg" style="font-size: 30pt; color:grey; opacity:90%;">⌂</div>
+	<div id="logoimg" style="font-size: 30pt; color:grey; ">⌂</div>    
   <div id="change" style="color:grey;">Home</div>
 </a>
 
-<div id="target-info"></div>  //goes above map   // Locate or Find ...
-<div id="target-info-2"></div> //goes below map
+<div class="clickable-icon" id="lightbulb-icon" style="font-size:23px;">💡</div>
+<div class="clickable-icon" id="read-icon" style="font-size:24px;">🕮</div>
+
+<div id="target-info"></div> 
+<div id="target-info-2"></div> 
+<div id="target-info-3"></div>
 <div id="click-coordinates"></div>
 <div id="settings">
 
@@ -151,6 +157,7 @@
 
 
 <script src="jquery-3.6.0.min.js"></script>
+
 <script>
 $(document).ready(function () {
     let overlay = null; // Track the overlay element
@@ -166,19 +173,19 @@ $(document).ready(function () {
         overlay = $('<div class="image-overlay">').css({
             background: 'RGBA(0,0,0,.8) url(' + images[currentImageIndex] + ') no-repeat center',
             backgroundSize: '1300px auto',
-			backgroundPosition: '60px center', // Move image 500px to the left
+            backgroundPosition: '60px center', // Move image 500px to the left
             width: '100%', height: '100%',
             position: 'fixed',
             zIndex: '10000',
             top: '0', left: '0',
-            cursor: 'zoom-out'
+   
         }).click(function () {
             removeOverlay(); // Remove overlay on click
         }).appendTo('body');
 
         // Listen for keydown events for navigation
         $(document).on('keydown.overlayControl', function (e) {
-            if (e.key === 'ArrowDown' || e.key === 'Escape') {
+            if (e.key === 'Escape') {
                 removeOverlay();
             } else if (e.key === 'ArrowRight') {
                 navigateImages(1); // Next image
@@ -219,13 +226,21 @@ $(document).ready(function () {
         createOverlay(); // Show overlay
     });
 
-    // Handle keydown event to enlarge the first image with Arrow Up
+    // Handle keydown event to enlarge the first image with 'E' key
     $(document).keydown(function (e) {
-        if (e.key === 'ArrowUp') {
-            const firstImage = $('.info-text-3 img').first(); // Get the first image
-            if (firstImage.length > 0) {
-                firstImage.click(); // Trigger click event on the first image
+        if (e.key === 'e' || e.key === 'E') {
+            if (overlay) {
+                removeOverlay(); // If overlay exists, remove it
+            } else {
+                const firstImage = $('.info-text-3 img').first(); // Get the first image
+                if (firstImage.length > 0) {
+                    firstImage.click(); // Trigger click event on the first image
+                }
             }
+        } else if (e.key === 'd' || e.key === 'D') {
+            navigateImages(1); // Next image
+        } else if (e.key === 'a' || e.key === 'A') {
+            navigateImages(-1); // Previous image
         }
     });
 });
@@ -233,9 +248,304 @@ $(document).ready(function () {
 
 
 
+<!-- InfoBox Top Overlay-->
+<script>
+    $(document).ready(function () {
+        let hoverbox = null; // Track the hoverbox element
+        let isHoverboxVisible = false; // Track if the hoverbox is currently visible
+    
+        // Function to create a hoverbox overlay for 'info-text-2'
+        function createHoverbox() {
+            // Remove any existing hoverbox
+            removeHoverbox();
+    
+            // Find the 'info-text-2' elements
+            let infoTextElements = $('.info-text-2, .target-text-copyRight');
+
+    
+            if (infoTextElements.length === 0) return; // If no elements found, do nothing
+    
+            // Create the hoverbox
+            hoverbox = $('<div class="hoverbox-overlay">').css({
+                background: 'RGBA(0,0,0,.5)',
+                width: '400px',
+                height: 'auto',
+                padding: '20px',
+                color: '#fff',
+                position: 'fixed',
+                zIndex: '1000',
+                top: '8%',
+                
+                left: '30%',
+              
+          
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                overflowY: 'auto',
+                textAlign: 'left',
+pointerEvents: 'none'
+            }).appendTo('body');
+
+            
+    
+            // Add content from 'info-text-2' elements to the hoverbox
+            infoTextElements.each(function () {
+                hoverbox.append('<div>' + $(this).html() + '</div>');
+            });
+    
+            // Make the hoverbox closeable by clicking
+            hoverbox.click(function () {
+                removeHoverbox();
+            });
+    
+            isHoverboxVisible = true; // Set hoverbox as visible
+        }
+    
+        // Function to remove the hoverbox and clean up
+        function removeHoverbox() {
+            if (hoverbox) {
+                hoverbox.remove();
+                hoverbox = null;
+                isHoverboxVisible = false; // Reset visibility flag
+            }
+        }
+    
+        // Handle 'F' key press to toggle the hoverbox
+        $(document).on('keydown', function (e) {
+            if (e.key === 'r' || e.key === 'R') {  // Ensure both lowercase and uppercase "F" work
+                if (isHoverboxVisible) {
+                    removeHoverbox(); // Hide hoverbox if it's already visible
+                } else {
+                    createHoverbox(); // Show hoverbox if it's not visible
+                    intervalId = setInterval(createHoverbox, 100);
+                    isHoverboxVisible = true; 
+                }
+            }
+        });
+
+
+        document.getElementById('read-icon').addEventListener('click', () => {
+    createHoverbox();  // Create hoverbox
+            intervalId = setInterval(createHoverbox, 100);  // Set up interval
+            isHoverboxVisible = true;  // Update visibility flag
+});
+
+
+
+
+    });
+    </script>
+    
 
 
 
 
 
 
+<!-- Bottom Hoverbox-->
+    <script>
+
+        $(document).ready(function () {
+            let hoverbox = null; // Track the hoverbox element
+            let isHoverboxVisible = false; // Track if the hoverbox is currently visible
+            
+            
+            
+            // Function to create a hoverbox overlay for the last 'target-text-copy'
+            function createHoverbox() {
+                // Remove any existing hoverbox
+                removeHoverbox();
+                
+                
+
+
+                let lastInfoTextElement = $('.target-text-copy').last(-1); // Target the last element
+                
+                if (lastInfoTextElement.length === 0) return; // If no elements found, do nothing
+        
+                // Create the hoverbox
+                hoverbox = $('<div class="hoverbox-overlay">').css({
+                    background: 'RGBA(0,0,0,.5)',
+                    width: '400px',
+                    height: '40px',
+                    padding: '8px',
+                    
+                    color: '#fff',
+                    position: 'fixed',
+                    zIndex: '1000',
+                    bottom: '2%',
+                
+                    left: '30%',
+                   
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    cursor: 'pointer',
+                    overflowY: 'auto',
+                    pointerEvents: 'none'
+                }).appendTo('body');
+        
+                // Add content from the last '.target-text-copy' element to the hoverbox
+                hoverbox.append('<div>' + lastInfoTextElement.html() + '</div>');
+        
+                // Make the hoverbox closeable by clicking
+                hoverbox.click(function () {
+                    removeHoverbox();
+                    removeHoverbox();
+                });
+        
+                isHoverboxVisible = true; // Set hoverbox as visible
+            }
+        
+            // Function to remove the hoverbox and clean up
+            function removeHoverbox() {
+                if (hoverbox) {
+                    hoverbox.remove();
+                    hoverbox.remove();
+                    hoverbox = null;
+                    isHoverboxVisible = false; // Reset visibility flag
+                }
+            }
+        
+            // Handle 'N' key press to toggle the hoverbox for the last element
+            $(document).on('keydown', function (e) {
+    if (e.key === 'f' || e.key === 'F') {
+        if (isHoverboxVisible) {
+            if (intervalId) {
+                clearInterval(intervalId);  // Clear the interval
+                intervalId = null;  // Reset interval ID
+            }
+            if (hoverbox) {
+                hoverbox.remove();  // Remove the hoverbox
+                hoverbox = null;  // Reset hoverbox reference
+            }
+            isHoverboxVisible = false;  // Update visibility flag
+        } else {
+            createHoverbox();  // Create hoverbox
+            intervalId = setInterval(createHoverbox, 100);  // Set up interval
+            isHoverboxVisible = true;  // Update visibility flag
+        }
+    }
+});
+
+
+//document.getElementById('read-icon').addEventListener('click', () => {
+    //createHoverbox();  // Create hoverbox
+    //        intervalId = setInterval(createHoverbox, 100);  // Set up interval
+  //          isHoverboxVisible = true;  // Update visibility flag
+//});
+
+
+
+        });
+        </script>
+        
+
+
+        <!-- Night Mode-->
+        <script>
+
+let intervalId; // To hold the interval ID
+
+function setOpacityToZero(classes, ids) {
+    // Set opacity to zero for elements with specified classes
+
+
+
+
+    const infoTextElements = document.querySelectorAll('.info-text-3');
+
+// Log to check if elements are selected
+console.log('Selected .info-text-3 elements:', infoTextElements);
+
+if (infoTextElements.length > 0) {
+  infoTextElements.forEach((element) => {
+    // Clear inline styles
+    element.style.cssText = ''; // This clears any inline styles
+
+    // Apply new styles
+
+    element.style.position = 'fixed';
+    element.style.color = 'white';
+    element.style.top = '250px';
+    element.style.left = '20px';
+    element.style.zIndex = 1100; // zIndex should be a number, not a string
+
+    console.log('Applied styles to:', element);
+  });
+} else {
+  console.warn('No .info-text-3 elements found!');
+}
+
+// Select all images inside elements with class "info-text-3"
+const imagesInsideInfoText = document.querySelectorAll('.info-text-3 img');
+
+// Apply styles to the images with !important
+imagesInsideInfoText.forEach((img) => {
+  img.style.setProperty('max-width', '10vw', 'important');
+  img.style.setProperty('height', 'auto', 'important');
+  img.style.setProperty('position', 'relative', 'important');  // or 'absolute' depending on your layout needs
+  img.style.setProperty('top', '108px', 'important');
+  img.style.setProperty('left', '8px', 'important');
+});
+
+
+
+    classes.forEach(className => {
+        const elements = document.querySelectorAll(`[class^="${className}"]`);
+        elements.forEach(element => {
+            element.style.opacity = '0'; // Set opacity to zero
+        });
+    });
+
+    // Set opacity to zero for elements with specified IDs
+    ids.forEach(idPrefix => {
+        const elements = document.querySelectorAll(`[id^="${idPrefix}"]`);
+        elements.forEach(element => {
+            element.style.opacity = '0'; // Set opacity to zero
+        });
+    });
+
+    
+
+
+
+
+
+}
+
+// Example usage:
+const classesToHide = [ 'target-text-copyRight', 'info-text-copy', 'info-text-2', 'td1', 'tr', 'distance-text']; // Add more class names as needed
+const idsToHide = ['clickable-icon',  'txtDistScore', 'dist-score', 'txtNumberOfGames', 'txtLastScore', 'last-score', 'txtTotalScore', 'txtAverageScore', 'average-score', 'nb-score']; // Add more ID prefixes as needed
+
+// Function to trigger opacity change on key press
+let isOpacityZero = false; // Keep track of the opacity state
+function handleKeyPress(event) {
+    if (event.key === 'n' || event.key === 'N') {
+        isOpacityZero = !isOpacityZero; // Toggle the state
+
+        if (isOpacityZero) {
+            // Start the interval to set opacity to zero
+            intervalId = setInterval(() => {
+                setOpacityToZero(classesToHide, idsToHide);
+            }, 1); // Call every 100 ms
+        } else {
+            // Clear the interval to stop setting opacity
+            clearInterval(intervalId);
+        }
+    }
+}
+
+// Add event listener for keydown events
+document.addEventListener('keydown', handleKeyPress);
+
+document.getElementById('lightbulb-icon').addEventListener('click', () => {
+    setOpacityToZero(classesToHide, idsToHide);
+});
+
+
+</script>

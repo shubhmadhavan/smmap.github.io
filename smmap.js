@@ -14,6 +14,8 @@ const scoreAverage = document.getElementById('average-score');
 const scoreReset = document.getElementById("resetScore");
 const targetInfo = document.getElementById('target-info');
 const targetInfo2 = document.getElementById('target-info-2');
+const targetInfo3 = document.getElementById('target-info-3');
+
 
 let clickPoint = null;
 let targetPoint = null;
@@ -203,14 +205,14 @@ scoreReset.onclick = function() {
 
 
 const themeButtons = document.querySelectorAll('.theme-button');
-const themeClasses = ['target-point', 'target-text', 'target-text-copy', 'info-text', 'info-text-2', 'info-text-copy', 'text-copy', 'info-box-2', 'distance-text']; // Classes to target
+const themeClasses = ['target-point', 'target-text', 'target-text-copy', 'target-text-copyRight', 'info-text', 'info-text-2', 'info-text-copy', 'text-copy', 'info-box-2', 'distance-text']; // Classes to target
 
 // Function to apply the selected theme to specified classes
 function applyTheme(theme) {
 	themeClasses.forEach(cls => {
 		const elements = document.querySelectorAll(`.${cls}`);
 		elements.forEach(element => {
-			element.classList.remove('theme-default', 'theme1', 'theme2', 'theme3', 'theme4', 'theme5'); // Remove all theme classes
+			element.classList.remove('theme-default', 'theme1', 'theme2', 'theme3', 'theme4', 'theme5', 'theme6', 'theme7','theme8','theme9','theme10'); // Remove all theme classes
 			element.classList.add(theme); // Add the selected theme class
 		});
 	});
@@ -257,7 +259,7 @@ if(gameOngoing)
 {
 	const mapRect = map.getBoundingClientRect();
 	//zoom coordinates adjustment
-	const zoomFactor = 0.8; // Your zoom level (80%)
+	const zoomFactor = 1; // Your zoom level (80%)
 	const x = (event.clientX - mapRect.left) / zoomFactor;
 	const y = (event.clientY - mapRect.top) / zoomFactor;
 	
@@ -314,6 +316,9 @@ if(gameOngoing)
 	//Effacer la carte avant d'afficher le prochain point
 	drawMapClear();
 	
+	
+console.log(y);
+
 	//Afficher le clic, la cible & co
 	drawMapClic(x,y,imageCoordinates.x,imageCoordinates.y,distance,randomCity.cityName);
 	//drawMapClicWithCanvas(x,y,imageCoordinates.x,imageCoordinates.y,distance,randomCity.cityName);
@@ -346,6 +351,7 @@ if(gameOngoing)
 	var cityName = randomCity?.cityName;
 	targetInfo.innerHTML = i18n("newTarget", lang, cityName);
 	targetInfo2.innerHTML = i18n("newTarget", lang, cityName);
+	targetInfo3.innerHTML = i18n("newTarget", lang, cityName);
 	const storedTheme = localStorage.getItem('selectedTheme');
 	if (storedTheme) {
 		applyTheme(storedTheme); // Apply stored theme on page load
@@ -417,6 +423,7 @@ function stopGame()
 
 	targetInfo.style.display = "none"; //On cache le champ qui indique la cible
 	targetInfo2.style.display = "none"; //On cache le champ qui indique la cible
+	targetInfo3.style.display = "none"; //On cache le champ qui indique la cible
 	//On stocke le recap dans la chaine pour la copie éventuelle
 	textToCopy = i18n("txtScoreCopy",lang,totalScore, averageScore, currentMap.name, textTop3, textFlop3);
 	document.getElementById("finish").innerHTML = i18n("scoreSummary", lang, totalScore, averageScore, getEvaluation(averageScore)) + `<br/>`+(textTop3 != "" ? `<div style="font-size: 10pt;padding:10px;">`+ textTop3 + `<br/>` + textFlop3 + `<br/></div>` : ``)+`<button onclick="generateAndOpenImage()">`+i18n("txtButtonShowRecap", lang)+`</button> <button id="copyButton" onclick="copyScoreToClipboard()">`+i18n("txtButtonCopyMyScore",lang)+`</button>`;
@@ -506,10 +513,12 @@ function startGame(defi)
 	console.log(randomCity);
 	targetInfo.style.display = "block"; //On affiche le champ qui indique la cible
 	targetInfo2.style.display = "block"; //On affiche le champ qui indique la cible
+	targetInfo3.style.display = "block";
 	var cityName = randomCity.cityName;
 	
 	targetInfo.innerHTML = i18n("newTarget", lang, cityName);
 	targetInfo2.innerHTML = i18n("newTarget", lang, cityName);
+	targetInfo3.innerHTML = i18n("newTarget", lang, cityName);
 	document.getElementById("settings").style.display = "none"; //On cache le paramétrage
 	
 	gameOngoing = true;
@@ -774,7 +783,7 @@ function drawMapClic(x,y,targetX,targetY,distance,cityName) {
 	
 	// Text Box that has Subsidiary info about Location (usually State of the Location)
 	targetTextCopy = document.createElement('div');
-	targetTextCopy.className = 'target-text-copy';
+	targetTextCopy.className = 'target-text-copyRight';
 
 
 	targetTextCopy.innerHTML = randomCity.cityName;

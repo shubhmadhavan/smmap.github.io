@@ -14,7 +14,7 @@ const translations = {
 
 	
 
-		newTarget: "<span style=\"color:grey;\">Locate:</span> <span style=\"color:#5dc5c5; opacity:100% !important;\"> %1 </span>",
+		newTarget: "<span style=\"color:grey;\">Locate:</span> %1 ",
 		txtEasy2: "Easy (%1)",
 		txtMedium2: "Medium (%1)",
 		txtHard2: "Hard (%1)",

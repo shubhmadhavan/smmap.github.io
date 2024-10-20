@@ -1,7 +1,7 @@
 body {
   background-color: #1e1e1e; /* Set your desired color */
   margin-top:-46px;
-  zoom: 0.8;
+
 }
 
 
@@ -37,6 +37,14 @@ button {
     color: white;
 }
 
+
+
+.theme1 {
+  background-color: #624266 !important; /* Theme 1 */
+  color: white !important ;
+
+}
+ 
 .theme1 {
     background-color: #624266 !important; /* Theme 1 */
     color: black;
@@ -92,12 +100,48 @@ button {
 /* Style for theme selector */
 
 
+#click-coordinates {
+
+  position: relative;
+  top: 1252px;
+  left: 792px;
+  width: auto;
+  color: grey;
+  opacity: 0 !important;
+}
+
 
 #logoimg {
+
 	width:auto;
 	position: absolute;
-	top: 1156px;
-	left: 1112px;
+	top: 1196px;
+	left: 792px;
+  opacity: 20%;
+}
+
+#lightbulb-icon
+{
+	width:auto;
+	position: absolute;
+	top: 1185px;
+	left: 701px;
+opacity: 10%;
+}
+
+#read-icon
+{
+	width:auto;
+	position: absolute;
+	top: 1185px;
+	left: 734px;
+opacity: 9%;
+}
+
+.clickable-icon {
+  cursor: pointer;
+  font-size: 2em; /* Increase the size of the icon */
+  margin: 20px; /* Add some space around it */
 }
 
 
@@ -105,8 +149,8 @@ button {
   display: flex;
   gap: 4px; /* Space between buttons */
     position: absolute;
-    top: 1172px;
-    left: 1142px;
+    top: 1212px;
+    left: 822px;
 }
 
 
@@ -214,29 +258,31 @@ div {
 
 }
 
-#click-coordinates {
+#scoreTable
+{
 
   position: absolute;
-  top: 1212px;
-  left: 12px;
-  width: 1200px;
-  color: grey;
-}
+  top: 960px;
 
+
+}
 
 #target-info {
   /*Find ...
   location hover popup (asks you to click on said location)*/
 
   padding:5px;
-  position: absolute;
-  top: 15px;
+  position: fixed;
+  top: 20px;
   left: 8px;
   font-size:20pt;
   width: 1090px;
+
+  z-index: 1000;
   background-color: #2a2a2a;
   text-align: left;
   display:none; 
+  opacity: 90%; 
 }
 
 #target-info-2 {
@@ -252,7 +298,22 @@ div {
   background-color: #2a2a2a;
   text-align: left;
   display:none; 
+  opacity:0%;
 }
+
+.distance-text {
+  position: absolute;
+  color:white;
+  background-color: #256868;
+z-index: 1000;
+  font-size: 20pt;
+  top: 1214px !important; 
+  left:994px !important;
+  /*distance of user selected location from correct location*/
+}
+
+
+
 
 .click-point {
   position: absolute;
@@ -287,6 +348,7 @@ div {
 }
 
 
+
 .info-text{
   position: absolute;
   color:white;
@@ -299,6 +361,7 @@ div {
 
 }
 
+
 .info-text::before {
   content: "(";
 }
@@ -307,7 +370,9 @@ div {
   content: ")";
 }
 
-/* target-text-copy → Name of Site, appears on Right */
+
+
+/* target-text-copy → Name of Site, appears on Top*/
 .target-text-copy {       
   position: absolute;
   color:white;
@@ -322,6 +387,21 @@ div {
 }
 
 
+/* target-text-copyRight → Name of Site, appears on Right*/
+
+.target-text-copyRight {       
+  position: absolute;
+  color:white;
+  background-color: #256868;
+
+  font-size: 25pt;
+
+  top: 500px !important; 
+  left:0px !important;
+  word-wrap: wrap !important;
+  width:500px;
+}
+
 
 /* info-text-copy → State in which the site is located in, appears on Right below target-text-copy */
 .info-text-copy {
@@ -331,7 +411,7 @@ div {
 
   font-size: 21pt;
 
-  top: 185px !important; 
+  top: 535px !important; 
   left:0px !important;
   word-wrap: wrap !important;
   width:500px;
@@ -347,6 +427,9 @@ div {
 
 
 
+
+
+
 /* info-text-2 → detailed info about site, appears on right*/
 .info-text-2{
   position: absolute;
@@ -355,7 +438,7 @@ div {
 
   font-size: 18pt;
 
-  top: 216px !important; 
+  top: 562px !important; 
   left:0px !important;
   word-wrap: wrap !important;
   width:500px;
@@ -368,14 +451,14 @@ div {
 /* info-text-3 → Image */
 .info-text-3{
 
-
+  margin-top: -50px;
 
   position: absolute;
   color:white;
   
 
   font-size: 18pt;
-  top: 622px !important;
+  top: 0px !important;
   left:0px !important;
   word-wrap: wrap !important;
 
@@ -394,17 +477,6 @@ div {
   height: auto; /* Maintain aspect ratio */
 }
 
-
-.distance-text {
-  position: absolute;
-  color:white;
-  background-color: #256868;
-
-  font-size: 20pt;
-  top: 120px !important; 
-  left:10px !important;
-  /*distance of user selected location from correct location*/
-}
 
 
 @media only screen and (max-width: 819px) { /* Mobile Hotfix */

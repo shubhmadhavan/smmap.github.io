@@ -17,12 +17,17 @@
         body, html {
             height: 100%;
             margin: 0;
+			margin-top: -20px;
             display: block;
             justify-content: center;
             align-items: center;
 			font-size:24px;
 			background-color: #2a2a2a;
         }
+
+		body::-webkit-scrollbar {
+  			display: none; /* For Chrome, Safari, and Edge */
+		}
 
         .container {
             width: 100%;

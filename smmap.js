@@ -23,6 +23,7 @@ let infoText = null;
 let infoTextCopy = null;
 let infoText2 = null; // information about site
 let infoText3 = null; // image if any
+let infoText4 = null; // image if any
 let targetText = null;
 let targetTextCopy = null;
 let distanceText = null;
@@ -248,7 +249,9 @@ map.addEventListener('click', function(event) {
 	if (event.target.classList.contains('targetTextCopy') || 
 	event.target.classList.contains('infoTextCopy') ||
 	event.target.classList.contains('infoText2') ||
-	event.target.classList.contains('infoText3')) {
+	event.target.classList.contains('infoText3') ||
+	event.target.classList.contains('infoText4')
+) {
 
 	return; 
 }
@@ -745,6 +748,10 @@ function drawMapClear() {
 		infoText3.remove();
 	}
 
+	if (infoText4) {
+		infoText4.remove();
+	}
+
 	// Supprimer l'ancienne légende de la distance
 	if (distanceText) {
 	  distanceText.remove();
@@ -828,6 +835,12 @@ function drawMapClic(x,y,targetX,targetY,distance,cityName) {
 	infoText3 = document.createElement('div');
 	infoText3.className = 'info-text-3';
 
+
+	infoText4 = document.createElement('div');
+	
+	infoText4 = document.createElement('div');
+	infoText4.className = 'info-text-4';
+
 	// Replace \n with <br> for proper HTML line breaks
 	
 
@@ -855,6 +868,16 @@ function drawMapClic(x,y,targetX,targetY,distance,cityName) {
 	  
 		// Append the container to the score element
 		score.appendChild(infoText3);
+
+
+		infoText4.innerHTML = imgTags;
+	  
+		// Set positioning styles for the container
+		infoText4.style.left = `${targetX + 10}px`;
+		infoText4.style.top = `${offsetY + targetY - 5}px`;
+	  
+		// Append the container to the score element
+		score.appendChild(infoText4);
 	  }
 
 

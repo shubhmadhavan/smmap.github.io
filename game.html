@@ -172,9 +172,9 @@ $(document).ready(function () {
         // Create the overlay
         overlay = $('<div class="image-overlay">').css({
             background: 'RGBA(0,0,0,.8) url(' + images[currentImageIndex] + ') no-repeat center',
-            backgroundSize: '1300px auto',
-            backgroundPosition: '60px center', // Move image 500px to the left
-            width: '100%', height: '100%',
+            backgroundSize: '1200px auto',
+            backgroundPosition: '30px center', // Move image 500px to the left
+            width: '100%', height: '90%',
             position: 'fixed',
             zIndex: '10000',
             top: '0', left: '0',
@@ -247,11 +247,100 @@ $(document).ready(function () {
 </script> <!--  image enlarge script ends -->
 
 
+<script>
+    $(document).ready(function () {
+        let overlay = null; // Track the overlay element
+        let currentImageIndex = -1; // Track the current image index
+        let images = []; // Array to store images for navigation
+    
+        // Function to create a full-screen overlay with a single image
+        function createOverlay() {
+            // Remove any existing overlay
+            removeOverlay();
+    
+            // Create the overlay
+            overlay = $('<div class="image-overlay">').css({
+                background: 'RGBA(0,0,0,.8) url(' + images[currentImageIndex] + ') no-repeat center',
+                backgroundSize: '1200px auto',
+                backgroundPosition: '30px center', // Move image 500px to the left
+                width: '100%', height: '90%',
+                position: 'fixed',
+                zIndex: '10000',
+                top: '0', left: '0',
+       
+            }).click(function () {
+                removeOverlay(); // Remove overlay on click
+            }).appendTo('body');
+    
+            // Listen for keydown events for navigation
+            $(document).on('keydown.overlayControl', function (e) {
+                if (e.key === 'Escape') {
+                    removeOverlay();
+                } else if (e.key === 'ArrowRight') {
+                    navigateImages(1); // Next image
+                } else if (e.key === 'ArrowLeft') {
+                    navigateImages(-1); // Previous image
+                }
+            });
+        }
+    
+        // Function to navigate images
+        function navigateImages(direction) {
+            const newIndex = currentImageIndex + direction; // Calculate new index
+            if (newIndex >= 0 && newIndex < images.length) {
+                currentImageIndex = newIndex; // Update current index
+                overlay.css('background-image', 'url(' + images[currentImageIndex] + ')'); // Change the overlay image
+            }
+        }
+    
+        // Function to remove the overlay and clean up events
+        function removeOverlay() {
+            if (overlay) {
+                overlay.remove();
+                overlay = null;
+                currentImageIndex = -1; // Reset index
+                images = []; // Clear images
+                $(document).off('keydown.overlayControl'); // Remove keydown listener
+            }
+        }
+    
+        // Handle click on images inside `.info-text-4` elements to show overlay
+        $(document).on('click', '.info-text-4 img', function () {
+            const $parent = $(this).closest('.info-text-4'); // Get parent .info-text-4
+            images = $parent.find('img').map(function () {
+                return $(this).attr('src'); // Get the src of each image
+            }).get(); // Create an array of image sources
+    
+            currentImageIndex = 0; // Start with the first image
+            createOverlay(); // Show overlay
+        });
+    
+        // Handle keydown event to enlarge the first image with 'E' key
+        $(document).keydown(function (e) {
+            if (e.key === 'e' || e.key === 'E') {
+                if (overlay) {
+                    removeOverlay(); // If overlay exists, remove it
+                } else {
+                    const firstImage = $('.info-text-4 img').first(); // Get the first image
+                    if (firstImage.length > 0) {
+                        firstImage.click(); // Trigger click event on the first image
+                    }
+                }
+            } else if (e.key === 'd' || e.key === 'D') {
+                navigateImages(1); // Next image
+            } else if (e.key === 'a' || e.key === 'A') {
+                navigateImages(-1); // Previous image
+            }
+        });
+    });
+    </script> <!--  image enlarge 2nd script ends -->
+
+
 
 <!-- InfoBox Top Overlay-->
 <script>
     $(document).ready(function () {
-        let hoverbox = null; // Track the hoverbox element
+        let hoverbox = null; // Tr  ack the hoverbox element
         let isHoverboxVisible = false; // Track if the hoverbox is currently visible
     
         // Function to create a hoverbox overlay for 'info-text-2'
@@ -268,15 +357,15 @@ $(document).ready(function () {
             // Create the hoverbox
             hoverbox = $('<div class="hoverbox-overlay">').css({
                 background: 'RGBA(0,0,0,.5)',
-                width: '400px',
+                width: '426px',
                 height: 'auto',
                 padding: '20px',
                 color: '#fff',
                 position: 'fixed',
                 zIndex: '1000',
-                top: '8%',
-                
-                left: '30%',
+
+                top: '61.9px',
+                left: '510px',
               
           
                 display: 'flex',
@@ -313,11 +402,13 @@ pointerEvents: 'none'
             }
         }
     
-        // Handle 'F' key press to toggle the hoverbox
+        // Handle 'R' key press to toggle the hoverbox
         $(document).on('keydown', function (e) {
             if (e.key === 'r' || e.key === 'R') {  // Ensure both lowercase and uppercase "F" work
                 if (isHoverboxVisible) {
                     removeHoverbox(); // Hide hoverbox if it's already visible
+                    clearInterval(intervalId);
+                    isHoverboxVisible = false; 
                 } else {
                     createHoverbox(); // Show hoverbox if it's not visible
                     intervalId = setInterval(createHoverbox, 100);
@@ -328,12 +419,19 @@ pointerEvents: 'none'
 
 
         document.getElementById('read-icon').addEventListener('click', () => {
-    createHoverbox();  // Create hoverbox
-            intervalId = setInterval(createHoverbox, 100);  // Set up interval
-            isHoverboxVisible = true;  // Update visibility flag
-});
+            if (isHoverboxVisible) {
+        removeHoverbox(); // Hide hoverbox if it's already visible
+        clearInterval(intervalId); // Clear interval to stop hoverbox from reappearing
+        isHoverboxVisible = false; // Update visibility flag
+    } else {
+        createHoverbox(); // Show hoverbox if it's not visible
+        intervalId = setInterval(createHoverbox, 100); // Set up interval
+        isHoverboxVisible = true; // Update visibility flag
+    }
+                                                                            });
 
-
+createHoverbox();
+        intervalId = setInterval(createHoverbox, 100);
 
 
     });
@@ -378,7 +476,7 @@ pointerEvents: 'none'
                     zIndex: '1000',
                     bottom: '2%',
                 
-                    left: '30%',
+                    left: '300px',
                    
                     display: 'flex',
                     flexDirection: 'column',
@@ -446,106 +544,37 @@ pointerEvents: 'none'
         
 
 
-        <!-- Night Mode-->
+         <!-- Night Mode Html-->
+        <div id="black-overlay"></div>
+
+
+        <!-- Night Mode Script-->
         <script>
+// Get the elements
+const lightbulbIcon = document.getElementById('lightbulb-icon');
+const blackOverlay = document.getElementById('black-overlay');
+let overlayActive = false;
 
-let intervalId; // To hold the interval ID
-
-function setOpacityToZero(classes, ids) {
-    // Set opacity to zero for elements with specified classes
-
-
-
-
-    const infoTextElements = document.querySelectorAll('.info-text-3');
-
-// Log to check if elements are selected
-console.log('Selected .info-text-3 elements:', infoTextElements);
-
-if (infoTextElements.length > 0) {
-  infoTextElements.forEach((element) => {
-    // Clear inline styles
-    element.style.cssText = ''; // This clears any inline styles
-
-    // Apply new styles
-
-    element.style.position = 'fixed';
-    element.style.color = 'white';
-    element.style.top = '250px';
-    element.style.left = '20px';
-    element.style.zIndex = 1100; // zIndex should be a number, not a string
-
-    console.log('Applied styles to:', element);
-  });
-} else {
-  console.warn('No .info-text-3 elements found!');
+// Function to toggle the overlay
+function toggleOverlay() {
+    overlayActive = !overlayActive;
+    blackOverlay.style.display = overlayActive ? 'none' : 'block';
 }
 
-// Select all images inside elements with class "info-text-3"
-const imagesInsideInfoText = document.querySelectorAll('.info-text-3 img');
+// Add a click event listener to the lightbulb icon
+lightbulbIcon.addEventListener('click', toggleOverlay);
 
-// Apply styles to the images with !important
-imagesInsideInfoText.forEach((img) => {
-  img.style.setProperty('max-width', '10vw', 'important');
-  img.style.setProperty('height', 'auto', 'important');
-  img.style.setProperty('position', 'relative', 'important');  // or 'absolute' depending on your layout needs
-  img.style.setProperty('top', '108px', 'important');
-  img.style.setProperty('left', '8px', 'important');
-});
-
-
-
-    classes.forEach(className => {
-        const elements = document.querySelectorAll(`[class^="${className}"]`);
-        elements.forEach(element => {
-            element.style.opacity = '0'; // Set opacity to zero
-        });
-    });
-
-    // Set opacity to zero for elements with specified IDs
-    ids.forEach(idPrefix => {
-        const elements = document.querySelectorAll(`[id^="${idPrefix}"]`);
-        elements.forEach(element => {
-            element.style.opacity = '0'; // Set opacity to zero
-        });
-    });
-
-    
-
-
-
-
-
-}
-
-// Example usage:
-const classesToHide = [ 'target-text-copyRight', 'info-text-copy', 'info-text-2', 'td1', 'tr', 'distance-text']; // Add more class names as needed
-const idsToHide = ['clickable-icon',  'txtDistScore', 'dist-score', 'txtNumberOfGames', 'txtLastScore', 'last-score', 'txtTotalScore', 'txtAverageScore', 'average-score', 'nb-score']; // Add more ID prefixes as needed
-
-// Function to trigger opacity change on key press
-let isOpacityZero = false; // Keep track of the opacity state
-function handleKeyPress(event) {
-    if (event.key === 'n' || event.key === 'N') {
-        isOpacityZero = !isOpacityZero; // Toggle the state
-
-        if (isOpacityZero) {
-            // Start the interval to set opacity to zero
-            intervalId = setInterval(() => {
-                setOpacityToZero(classesToHide, idsToHide);
-            }, 1); // Call every 100 ms
-        } else {
-            // Clear the interval to stop setting opacity
-            clearInterval(intervalId);
-        }
+// Add a keydown event listener for the 'n' key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'n' || event.key === 'N') { // Check for 'n' key press
+        toggleOverlay();
     }
-}
-
-// Add event listener for keydown events
-document.addEventListener('keydown', handleKeyPress);
-
-document.getElementById('lightbulb-icon').addEventListener('click', () => {
-    setOpacityToZero(classesToHide, idsToHide);
 });
 
-
-</script>
+// Optional: Hide the overlay when clicked
+// blackOverlay.addEventListener('click', function() {
+//     blackOverlay.style.display = 'none';
+// });
+                    //});
+        
+        </script>

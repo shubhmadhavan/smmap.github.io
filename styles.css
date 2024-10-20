@@ -1,7 +1,44 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  /* Prevent scrolling and overflow */
+  height: 100vh; /* Set the height of body and html to 100% of the viewport */
+  width: 100vw;  /* Set the width to 100% of the viewport */
+
+}
+
+body::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
+
+
+body {
+  overflow-x:hidden;
+}
+
 body {
   background-color: #1e1e1e; /* Set your desired color */
   margin-top:-46px;
+  height: 1180px !important;
+  width: 1210px !important;
+}
 
+
+
+
+#map img {
+  width: 100%;
+  height: 100%;
+}
+#map {
+	position: relative;
+	width: 800px; /* Largeur de votre image */
+	height: 800px; /* Hauteur de votre image */
+}
+#map-image, #myCanvas {
+	position: absolute;
+	top: 105px;
+	left: 0;
 }
 
 
@@ -31,6 +68,42 @@ button {
 
 
 /* styles.css */
+
+.theme-selector {
+  display: flex;
+  gap: 4px; /* Space between buttons */
+    position: absolute;
+    top: 1168px;
+    left: 822px;
+    opacity: 40%;
+    z-index: 2000;
+}
+
+.theme-selector:hover {
+
+    opacity: 100%;
+}
+
+
+
+.theme-button {
+    padding: 0px;
+    margin: 5px;
+    border: none; /* Remove default border */
+
+    cursor: pointer; /* Change cursor on hover */
+    display: flex; /* Align items */
+    align-items: center; /* Center align content */
+
+    border: none;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.theme-button:hover {
+  box-shadow: 0 0 4px #ffffff; 
+}
 
 .theme-default {
     background-color: #256868 !important; /* Default theme */
@@ -115,28 +188,38 @@ button {
 
 	width:auto;
 	position: absolute;
-	top: 1196px;
+	top: 1152px;;
 	left: 792px;
   opacity: 20%;
+  z-index:2000;
 }
+
+#logoimg:hover{  opacity: 100%;}
+
+
+
 
 #lightbulb-icon
 {
 	width:auto;
 	position: absolute;
-	top: 1185px;
+	top: 1141px;
 	left: 701px;
 opacity: 10%;
+z-index:2000;
 }
+#lightbulb-icon:hover{  opacity: 80%;}
 
 #read-icon
 {
 	width:auto;
 	position: absolute;
-	top: 1185px;
+	top: 1141px;
 	left: 734px;
 opacity: 9%;
+z-index:2000;
 }
+#read-icon:hover{  opacity: 100%;}
 
 .clickable-icon {
   cursor: pointer;
@@ -145,33 +228,7 @@ opacity: 9%;
 }
 
 
-.theme-selector {
-  display: flex;
-  gap: 4px; /* Space between buttons */
-    position: absolute;
-    top: 1212px;
-    left: 822px;
-}
 
-
-.theme-button {
-    padding: 0px;
-    margin: 5px;
-    border: none; /* Remove default border */
-
-    cursor: pointer; /* Change cursor on hover */
-    display: flex; /* Align items */
-    align-items: center; /* Center align content */
-
-    border: none;
-    cursor: pointer;
-    color: white;
-    transition: background-color 0.3s ease;
-}
-
-.theme-button:hover {
-  box-shadow: 0 0 4px #ffffff; 
-}
 
 
 
@@ -179,20 +236,6 @@ opacity: 9%;
 div {
 	font-family: Arial;
   color: white;
-}
-#map img {
-  width: 100%;
-  height: 100%;
-}
-#map {
-	position: relative;
-	width: 800px; /* Largeur de votre image */
-	height: 800px; /* Hauteur de votre image */
-}
-#map-image, #myCanvas {
-	position: absolute;
-	top: 105px;
-	left: 0;
 }
 
 
@@ -276,7 +319,7 @@ div {
   top: 20px;
   left: 8px;
   font-size:20pt;
-  width: 1090px;
+  width: 1082px;
 
   z-index: 1000;
   background-color: #2a2a2a;
@@ -308,7 +351,7 @@ div {
 z-index: 1000;
   font-size: 20pt;
   top: 1214px !important; 
-  left:994px !important;
+  left:1498px !important;
   /*distance of user selected location from correct location*/
 }
 
@@ -478,6 +521,49 @@ z-index: 1000;
 }
 
 
+.info-text-4 img
+{
+max-width: 120px !important ;
+height: auto !important;
+position: fixed !important; 
+
+top: 58px !important;
+left: 974px !important;
+
+z-index:10000 !important;
+}
+
+
+
+
+
+
+#black-overlay {
+  position: absolute; /* Position it relative to the body */
+  top: 0;
+  left: 1106px;
+  width: 45%; /* Covers 45% of the screen */
+  height: 200%; /* Cover full height of the viewport */
+  background-color: rgba(30, 30, 30, 1); /* Black with 50% opacity */
+  display: block; /* change to none to make it Hidden initially */
+  z-index: 1000; /* Ensure it's on top of other elements */
+pointer-events: 'none';
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Other Devices */
+
 @media only screen and (max-width: 819px) { /* Mobile Hotfix */
 
 	#score {
@@ -533,7 +619,6 @@ z-index: 1000;
 
 
 @supports (-webkit-touch-callout: none) {
-
 
 
 	

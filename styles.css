@@ -478,7 +478,6 @@ z-index: 1000;
 }
 
 
-
 @media only screen and (max-width: 819px) { /* Mobile Hotfix */
 
 	#score {
@@ -493,4 +492,40 @@ z-index: 1000;
 	  width: 800px;
     color: grey;
 	}
+  
+  .info-text-3 img
+  {
+  max-width: 10vw !important ;
+  height: auto !important;
+  position: fixed !important; 
+  top: 108px !important;
+  left: 8px !important;
+  }
+  
+}
+
+@media only screen and (max-width: 1219px) { /* Mobile Hotfix */
+
+	#score {
+	  top: 1355px;
+	  left: 10px;
+	  width: 800px;
+	}
+	#click-coordinates {
+	  position: absolute;
+	  top: 75px;
+	  left: 15px;
+	  width: 800px;
+    color: grey;
+	}
+  
+  .info-text-3 img
+  {
+  max-width: 10vw !important ;
+  height: auto !important;
+  position: fixed !important; 
+  top: 108px !important;
+  left: 8px !important;
+  }
+  
 }

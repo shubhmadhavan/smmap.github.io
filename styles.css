@@ -529,3 +529,37 @@ z-index: 1000;
   }
   
 }
+
+
+
+@supports (-webkit-touch-callout: none) {
+
+
+
+	
+	#score {
+	  top: 1355px;
+	  left: 10px;
+	  width: 800px;
+	}
+		
+	#click-coordinates {
+	  position: absolute;
+	  top: 75px;
+	  left: 15px;
+	  width: 800px;
+	  color: grey;
+	}
+  
+	  .info-text-3 img
+ 	 {
+  	max-width: 10vw !important ;
+  	height: auto !important;
+ 	 position: fixed !important; 
+  	top: 108px !important;
+  	left: 8px !important;
+  	}
+
+
+	
+}

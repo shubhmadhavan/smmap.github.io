@@ -33,14 +33,21 @@ Created for you, by Shubh.
 ● Enabling Read Mode creates a hoverbox over the map  
 ● Both Night Mode and Read Mode are enabled by default on Windows devices and ipads.
 
+
 ### Themes
-● Over 10 themes to choose from, including another Default theme
-<img src="https://github.com/user-attachments/assets/fd8bfa31-0ff5-4ef1-b940-e100ba9fec11" height="120" />
 
 
-https://github.com/user-attachments/assets/811bc164-8079-4103-85de-932f390b534c 
 
 
+https://github.com/user-attachments/assets/47db4c18-f931-420e-b7fc-bb083269f78e
+
+
+
+  
+<div style="overflow: hidden;">
+  <img src="https://github.com/user-attachments/assets/fd8bfa31-0ff5-4ef1-b940-e100ba9fec11" height="120" style="float:left; margin-right: 10px; height:120px;" />
+  <p>● Over 10 themes to choose from, including another Default theme</p>
+</div>
 
 ## Overview:
 <img src="https://github.com/user-attachments/assets/500d43e1-2004-4ee8-b2d6-43a6a6a12465" height="120" />

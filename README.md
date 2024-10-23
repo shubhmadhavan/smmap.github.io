@@ -1,4 +1,4 @@
-# SM-Map
+# <img src="https://github.com/user-attachments/assets/ee9684da-bd0e-4a96-a202-ebcfff8cfeab" style="float:left; vertical-align: middle; margin-right: 10px;  margin-top: -10px;  height:36px; display: inline-block;" />  SM-Map  
 A Map Repository-cum-game that requires the user to locate said locations on the relevant Map. The distance from the actual location is    
 Created for you, by Shubh.  
 
@@ -8,7 +8,8 @@ Created for you, by Shubh.
 ● Dams & Reservoirs  
 ● Waterfalls  
 
-<img src="https://github.com/user-attachments/assets/963d9de1-de4e-49d1-9e97-3bf23ce0bfda" style="float:left; margin-right: 10px; height:400px; width: 360px;" />
+
+<img src="https://github.com/user-attachments/assets/a57c67f7-9c93-4238-879b-1306f85fd01b" style="float:left; margin-right: 10px; height:400px; width: 360px;" />
 <img src="https://github.com/user-attachments/assets/28dca149-086e-4564-b98a-0b5be8de21c3" style="float:left; margin-right: 10px; height:400px; width: 360px;" />
 
 ### <i style="color:grey;">Upcoming Maps
@@ -32,7 +33,7 @@ Created for you, by Shubh.
 ● Site Info → More info about each site  
 ● Above appears both as a transparent hoverbox and in a Side Column  
 
-### Night Mode and Read Mode ㅤ<img src="https://github.com/user-attachments/assets/433d0209-10b7-4a05-8be1-460107290417" style="float:left; margin-right: 10px;  margin-top: 8px; height:24px;" />
+### Night Mode & Read Mode ㅤ<img src="https://github.com/user-attachments/assets/433d0209-10b7-4a05-8be1-460107290417" style="float:left; margin-right: 10px;  margin-top: 8px; height:24px;" />
 ● Enabling Night Mode hides the the information column on the right of Map  
 ● Enabling Read Mode creates a hoverbox over the map  
 ● Both Night Mode and Read Mode are enabled by default on Windows devices and ipads  

@@ -39,9 +39,6 @@ Created for you, by Shubh.
 
 
 
-https://github.com/user-attachments/assets/47db4c18-f931-420e-b7fc-bb083269f78e
-
-
 
   
 <div style="overflow: hidden;">

@@ -37,7 +37,7 @@ Created for you, by Shubh.
 ● Over 10 themes to choose from, including another Default theme
 
 
-<img src="https://github.com/user-attachments/assets/811bc164-8079-4103-85de-932f390b534c" height="20" />
+https://github.com/user-attachments/assets/811bc164-8079-4103-85de-932f390b534c
 
 
 

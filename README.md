@@ -19,8 +19,27 @@ Created for you, by Shubh.
 ● Important Passes of India  </i>
 
 ## Features:
-● Random/ Shuffle Sort → Default sort mode that allows for Active Recall.  
-● North to South → Learning Mode. Covers all Locations from the Northernmost to the Southernmost.
+### Sorting
+● Random/Shuffle Sort → Default sort mode that allows for Active Recall  
+● North to South Sort → Covers all Locations from the Northernmost to the Southernmost latitudes  
+
+### Site Information
+● Image Info →  Image of Map with relevant location and other related sites marked
+● Site Info → More info about each site
+● Above appears both as a transparent hoverbox and in a Side Column
+
+### Night Mode and Read Mode
+● Enabling Night Mode hides the the information column on the right of Map  
+● Enabling Read Mode creates a hoverbox over the map  
+● Both Night Mode and Read Mode are enabled by default on Windows devices and ipads.
+
+### Themes
+● Over 10 themes to choose from, including another Default theme
+
+
+<img src="https://github.com/user-attachments/assets/811bc164-8079-4103-85de-932f390b534c" height="20" />
+
+
 
 ## Overview:
 <img src="https://github.com/user-attachments/assets/500d43e1-2004-4ee8-b2d6-43a6a6a12465" height="120" />

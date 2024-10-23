@@ -8,6 +8,9 @@ Created for you, by Shubh.
 ● Dams & Reservoirs  
 ● Waterfalls  
 
+<img src="https://github.com/user-attachments/assets/963d9de1-de4e-49d1-9e97-3bf23ce0bfda" style="float:left; margin-right: 10px; height:400px; width: 360px;" />
+<img src="https://github.com/user-attachments/assets/28dca149-086e-4564-b98a-0b5be8de21c3" style="float:left; margin-right: 10px; height:400px; width: 360px;" />
+
 ### <i style="color:grey;">Upcoming Maps
 ● Tiger Reserves of India  
   
@@ -19,31 +22,25 @@ Created for you, by Shubh.
 ● Important Passes of India  </i>
 
 ## Features:
-### Sorting
+### Sorting <img src="https://github.com/user-attachments/assets/a71faa51-0256-449a-9366-5c89e567363d" style="float:left; margin-right: 10px;  margin-top: 22px; height:26px;" />
 ● Random/Shuffle Sort → Default sort mode that allows for Active Recall  
 ● North to South Sort → Covers all Locations from the Northernmost to the Southernmost latitudes  
 
-### Site Information
-● Image Info →  Image of Map with relevant location and other related sites marked
-● Site Info → More info about each site
-● Above appears both as a transparent hoverbox and in a Side Column
 
-### Night Mode and Read Mode
+### Site Information
+● Image Info →  Image of Map with relevant location and other related sites marked  
+● Site Info → More info about each site  
+● Above appears both as a transparent hoverbox and in a Side Column  
+
+### Night Mode and Read Mode ㅤ<img src="https://github.com/user-attachments/assets/433d0209-10b7-4a05-8be1-460107290417" style="float:left; margin-right: 10px;  margin-top: 8px; height:24px;" />
 ● Enabling Night Mode hides the the information column on the right of Map  
 ● Enabling Read Mode creates a hoverbox over the map  
-● Both Night Mode and Read Mode are enabled by default on Windows devices and ipads.
-
+● Both Night Mode and Read Mode are enabled by default on Windows devices and ipads  
 
 ### Themes
-
-
-
-
-
-  
 <div style="overflow: hidden;">
-  <img src="https://github.com/user-attachments/assets/fd8bfa31-0ff5-4ef1-b940-e100ba9fec11" height="120" style="float:left; margin-right: 10px; height:120px;" />
-  <p>● Over 10 themes to choose from, including another Default theme</p>
+  <p>● Over 10 themes to choose from, including another Default theme</p>  
+    <img src="https://github.com/user-attachments/assets/1317870f-ad93-4a76-af34-15a68e635df3" style="float:left; margin-right: 10px; height:200px;" />
 </div>
 
 ## Overview:

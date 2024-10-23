@@ -35,7 +35,7 @@ Created for you, by Shubh.
 
 ### Themes
 ● Over 10 themes to choose from, including another Default theme
-![2024-10-23 SM-Map-Theme](https://github.com/user-attachments/assets/fd8bfa31-0ff5-4ef1-b940-e100ba9fec11)
+<img src="https://github.com/user-attachments/assets/fd8bfa31-0ff5-4ef1-b940-e100ba9fec11" height="120" />
 
 
 https://github.com/user-attachments/assets/811bc164-8079-4103-85de-932f390b534c 

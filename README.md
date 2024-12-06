@@ -42,7 +42,7 @@ Created for you, by Shubh.
 
 ### Themes
 <div style="overflow: hidden;">
-  <p>● Over 10 themes to choose from, including another Default theme</p>  
+  <p>● Over 10 themes to choose from</p>  
     <img src="https://github.com/user-attachments/assets/1317870f-ad93-4a76-af34-15a68e635df3" style="float:left; margin-right: 10px; height:200px;" />
 </div>
 

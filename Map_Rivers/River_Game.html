@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial=">
+    <title>Map with River Paths</title>
+    <link rel="stylesheet" href="leaflet.css" />
+    <style>
+        #map {
+            height: 92vh; /* Adjusted height for map */
+			background:white;
+        }
+        #header {
+            font-size: 24px;
+            margin: 20px;
+            text-align: center;
+        }
+		#result {
+			position: absolute;
+			top: 80px;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: 9999;
+			background-color: rgba(0, 0, 0, 0.7);
+			color: white;
+			padding: 10px;
+			border-radius: 5px;
+			display: none;
+			text-align: center;
+		}
+		#result2 {
+            position: absolute;
+			top: 120px;
+            z-index: 9999;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+            text-align: center;
+        }
+		
+        #map:hover {
+			cursor: default;        
+		}
+		.leaflet-interactive:hover{
+			cursor: crosshair;        
+		}
+		
+
+    </style>
+</head>
+<body>
+
+<div id="header">Locate: </div>
+<div id="map"></div>
+<div id="result"></div>
+<div id="result2"></div>
+
+<script src="leaflet.js"></script>
+<script src="river_data.js"></script>
+
+<script>
+// Initialize the map
+var map = L.map('map').setView([20.5937, 78.9629], 5);
+
+// Define the bounds of the image (set these to match the geographical area of the image)
+var imageBounds = [[-2.0, 36.78], 
+				  [41.33, 121.216]];  // Latitude/Longitude for the image corners
+
+// Add the local image as an overlay to the map
+L.imageOverlay('India_OS.png', imageBounds).addTo(map);
+
+// Function to convert LINESTRING to an array of LatLngs
+function parseLineString(lineString) {
+    const coordinates = lineString.replace("LINESTRING", "").trim().slice(1, -1).split(", ");
+    return coordinates.map(coord => {
+        const [lon, lat] = coord.split(" ");
+        return [parseFloat(lat), parseFloat(lon)];
+    });
+}
+
+// Get a random river name
+function getRandomRiver() {
+    const rivers = Object.keys(riversData);
+    const randomIndex = Math.floor(Math.random() * rivers.length);
+    return rivers[randomIndex];
+}
+
+var currentRiver = getRandomRiver(); // Initially pick a random river
+document.getElementById('header').textContent = "Locate: " + currentRiver;
+
+var selectedPath = null; // Track the selected path
+var correctPath = null; // Track the correct path
+var paths = {}; // Store paths by river name
+
+// Loop through river data and add them to the map
+for (const river in riversData) {
+    const pathData = parseLineString(riversData[river]);
+
+    // Create a polyline for each river
+    const path = L.polyline(pathData, {
+        color: '#404040',
+        weight: 2,
+        opacity: 1
+    }).addTo(map);
+
+    paths[river] = path; // Save the path with the river name
+
+    // Add hover effect
+    path.on('mouseover', function () {
+        path.setStyle({ color: 'blue' });
+    });
+
+    path.on('mouseout', function () {
+        if (path !== selectedPath) {
+            path.setStyle({ color: '#404040' });
+        }
+    });
+
+    // Add click event to each path
+    path.on('click', function (e) {
+        const resultBox = document.getElementById('result');
+		const resultBox2 = document.getElementById('result2');
+		
+		resultBox2.textContent = river;
+
+		
+        // Set the position of the result box near the cursor
+        const offsetX = 24; // Adjust the X position slightly to avoid overlapping the cursor
+        const offsetY = -14; // Adjust the Y position slightly to avoid overlapping the cursor
+        resultBox2.style.left = `${e.originalEvent.clientX + offsetX}px`;
+        resultBox2.style.top = `${e.originalEvent.clientY + offsetY}px`;
+
+        // Show the result box
+        resultBox2.style.display = 'block';
+		        setTimeout(() => {
+            resultBox2.style.display = 'none'; // Hide result box after 5 seconds
+        }, 800);
+
+
+        if (river === currentRiver) {
+    // Correct river selected
+    path.setStyle({ color: '#00FFF0' });
+    resultBox.textContent = "✔ Correct";
+    resultBox.style.backgroundColor = "#00FFF0";
+
+    // Set a timeout to change the color to #404040 after 2000ms
+    setTimeout(() => {
+        path.setStyle({ color: '#404040' });
+    }, 2000);
+	} else {
+    // Incorrect river selected
+    path.setStyle({ color: 'red' });
+    resultBox.textContent = "✘ Incorrect";
+    resultBox.style.backgroundColor = "red";
+
+    // Highlight the correct river as #00FFF0
+    const correctRiverPath = paths[currentRiver];
+    if (correctRiverPath) {
+        correctRiverPath.setStyle({ color: '#00FFF0' });
+        correctPath = correctRiverPath;
+							}
+
+
+		
+    // Set a timeout to change the color to #404040 after 2000ms
+    setTimeout(() => {
+        path.setStyle({ color: '#404040' });
+        if (correctRiverPath) {
+            correctRiverPath.setStyle({ color: '#404040' });
+        }
+    }, 1400);
+		}
+
+
+        resultBox.style.display = 'block';
+        selectedPath = path;
+
+        // Move to the next round after a delay
+        setTimeout(function () {
+            nextRound();
+        }, 1400);
+    });
+}
+
+// Function to reset and move to the next round
+function nextRound() {
+    const resultBox = document.getElementById('result');
+    resultBox.style.display = 'none';
+
+
+    currentRiver = getRandomRiver(); // Get a new random river
+    document.getElementById('header').textContent = "Locate: " + currentRiver;
+
+    selectedPath = null; // Reset selected path
+    correctPath = null; // Reset correct path
+}
+</script>
+
+</body>
+</html>

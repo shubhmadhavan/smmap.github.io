@@ -1,0 +1,707 @@
+.scaling-wrapper {
+  transform: scale(0.85); /* Scale to 80% */
+  transform-origin: top left; /* Ensure scaling starts from the top-left */
+  width: 225%; /* Adjust to maintain proper layout width */
+  height: 225%; /* Adjust to maintain proper layout height */
+  overflow: hidden; /* Prevent scrollbars caused by scaling */
+}
+
+#map-wrapper {
+  margin-left: 680px; /* Adjust the value as needed */
+}
+
+
+/*
+.hoverbox-overlay {
+  background: RGBA(0,0,0,.5);
+  width: 426px;
+  height: auto;
+  padding: 20px;
+  color: #fff;
+  position: fixed;
+  zIndex: 1000;
+
+  top: 61.9px;
+  left: 640px;
+
+
+  display: flex;
+  flexDirection: column;
+  alignItems: center;
+  justifyContent: center;
+  cursor: pointer;
+  overflowY: auto;
+  textAlign: left;
+  pointerEvents: none;
+
+}
+*/
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  /* Prevent scrolling and overflow */
+  height: 100vh; /* Set the height of body and html to 100% of the viewport */
+  width: 100vw;  /* Set the width to 100% of the viewport */
+
+}
+
+body::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
+
+
+body {
+  overflow-x:hidden;
+}
+
+body {
+  background-color: #1e1e1e; /* Set your desired color */
+  margin-top:-46px;
+  height: 1180px !important;
+  width: 1210px !important;
+}
+
+
+
+
+#map img {
+  width: 100%;
+  height: 100%;
+}
+#map {
+	position: relative;
+	width: 800px; /* Largeur de votre image */
+	height: 800px; /* Hauteur de votre image */
+}
+#map-image, #myCanvas {
+	position: absolute;
+	top: 105px;
+	left: 0;
+}
+
+
+button {
+  background-color: #4d4d4d;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+ 
+
+
+
+.color-box {
+    display: inline-block; /* Make the span a block for size */
+  
+    width: 12px; /* Set width of color box */
+    height: 12px; /* Set height of color box */
+    border: 0px solid #ccc; /* Optional border for better visibility */
+    opacity:40%;
+}
+
+
+
+
+/* styles.css */
+
+.theme-selector {
+  display: flex;
+  gap: 4px; /* Space between buttons */
+    position: absolute;
+    top: 1168px;
+    left: 822px;
+    opacity: 40%;
+    z-index: 2000;
+}
+
+.theme-selector:hover {
+
+    opacity: 100%;
+}
+
+
+
+.theme-button {
+    padding: 0px;
+    margin: 5px;
+    border: none; /* Remove default border */
+
+    cursor: pointer; /* Change cursor on hover */
+    display: flex; /* Align items */
+    align-items: center; /* Center align content */
+
+    border: none;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.theme-button:hover {
+  box-shadow: 0 0 4px #ffffff; 
+}
+
+.theme-default {
+    background-color: #256868 !important; /* Default theme */
+    color: white;
+}
+
+
+
+.theme1 {
+  background-color: #624266 !important; /* Theme 1 */
+  color: white !important ;
+
+}
+ 
+.theme1 {
+    background-color: #624266 !important; /* Theme 1 */
+    color: black;
+}
+
+.theme2 {
+    background-color: #966b96 !important; /* Theme 2 */
+    color: black;
+}
+
+.theme3 {
+  background-color: #a79564 !important; /* Theme 2 */
+  color: black;
+}
+
+.theme4 {
+  background-color: #5f7687 !important; /* Theme 2 */
+  color: black;
+}
+
+.theme5 {
+  background-color: #855d67 !important; /* Theme 2 */
+  color: black;
+}
+
+
+.theme6 {
+  background-color: #541f1f !important; /* Theme 6 */
+  color: white;
+}
+
+.theme7 {
+  background-color: #1abc9c !important; /* Theme 7 */
+  color: white;
+}
+
+.theme8 {
+  background-color: #2aa2cf !important; /* Theme 8 */
+  color: white;
+}
+
+.theme9 {
+  background-color: #4481ad !important; /* Theme 9 */
+  color: white;
+}
+
+.theme10 {
+  background-color: #b06342 !important; /* Theme 10 */
+  color: black;
+}
+
+
+/* Style for theme selector */
+
+
+#click-coordinates {
+
+  position: relative;
+  top: 1252px;
+  left: 792px;
+  width: auto;
+  color: grey;
+  opacity: 0 !important;
+}
+
+
+#logoimg {
+
+	width:auto;
+	position: absolute;
+	top: 1152px;;
+	left: 792px;
+  opacity: 20%;
+  z-index:2000;
+}
+
+#logoimg:hover{  opacity: 100%;}
+
+
+
+
+#lightbulb-icon
+{
+	width:auto;
+	position: absolute;
+	top: 1141px;
+	left: 701px;
+opacity: 10%;
+z-index:2000;
+}
+#lightbulb-icon:hover{  opacity: 80%;}
+
+#read-icon
+{
+	width:auto;
+	position: absolute;
+	top: 1141px;
+	left: 734px;
+opacity: 9%;
+z-index:2000;
+}
+#read-icon:hover{  opacity: 100%;}
+
+.clickable-icon {
+  cursor: pointer;
+  font-size: 2em; /* Increase the size of the icon */
+  margin: 20px; /* Add some space around it */
+}
+
+
+
+
+
+
+
+div {
+	font-family: Arial;
+  color: white;
+}
+
+
+
+
+#change {
+	text-align:right;
+	position: absolute;
+	top: 95px;
+	right:66px;
+	font-size: 10pt;
+}
+
+
+
+
+#settings {
+// initial popup on page
+  border:solid 1px;
+  margin:40px;
+  margin-top: 220px;
+  padding:10px;
+  position: absolute;
+  top: 15px;
+  left: 435px;
+  font-size:32pt;
+  width: 260px;
+  
+  text-align: center;
+}
+
+#settings2{
+  background-color: #2a2a2a;
+}
+
+#finish {
+  border:solid 1px;
+  margin:-10px;
+  padding:10px;
+  position: absolute;
+  top: 155px;
+  left: 35px;
+  font-size:20pt;
+  width: 740px;
+  background-color: #2a2a2a;
+  text-align: center;
+  display:none;
+}
+
+#credits {
+  position: absolute;
+  top: 985px;
+  left: 10px;
+  
+  font-size:10pt;
+}
+
+#score {
+  position: absolute;
+
+  top: 60px;
+  left: 1112px;
+
+}
+
+#scoreTable
+{
+
+  position: absolute;
+  top: 960px;
+
+
+}
+
+#target-info {
+  /*Find ...
+  location hover popup (asks you to click on said location)*/
+
+  padding:5px;
+  position: fixed;
+  top: 60px;
+
+  font-size:20pt;
+  width: 1090px;
+
+  z-index: 1000;
+  background-color: #2a2a2a;
+  text-align: left;
+  display:none; 
+  opacity: 90%; 
+}
+
+#target-info-2 {
+  /* Find ...
+  location hover popup (asks you to click on said location)*/
+
+  padding:5px;
+  position: absolute;
+  top: 1162px;
+  left: 8px;
+  font-size:20pt;
+  width: 1090px;
+  background-color: #2a2a2a;
+  text-align: left;
+  display:none; 
+  opacity:0%;
+}
+
+#defi {
+  opacity:0;
+}
+
+#target-info-3 {
+opacity:0;
+}
+
+
+.distance-text {
+  position: absolute;
+  color:white;
+  background-color: #256868;
+  z-index: 200;
+  font-size: 20pt;
+  top: 1214px !important; 
+  left:1498px !important;
+  /*distance of user selected location from correct location*/
+}
+
+
+
+
+.click-point {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: #808080;
+  border-radius: 50%;
+  transform: translate(-50%, -50%); /* center */
+}
+.target-point {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: cyan;
+  border-radius: 150%;
+  transform: translate(-50%, -50%); /* center */
+
+
+  border: 1px solid #fdf7d5;
+  box-shadow: 0 0 24px cyan;
+
+
+}
+.target-text {
+  position: absolute;
+  color:white;
+  background-color: #256868;
+  font-size: 12pt;
+
+  padding: 0px 0px;
+  //name of location
+}
+
+
+
+.info-text{
+  position: absolute;
+  color:white;
+  background-color: #256868;
+  font-size: 8pt;
+
+  padding: 0px 0px;
+  margin-top:22px;
+  //name of location
+
+}
+
+
+.info-text::before {
+  content: "(";
+}
+
+.info-text::after {
+  content: ")";
+}
+
+
+
+/* target-text-copy → Name of Site, appears on Top*/
+.target-text-copy {       
+  position: absolute;
+  color:white;
+  background-color: #256868;
+
+  font-size: 25pt;
+
+  top: 150px !important; 
+  left:0px !important;
+  word-wrap: wrap !important;
+  width:500px;
+}
+
+
+/* target-text-copyRight → Name of Site, appears on Right*/
+
+.target-text-copyRight {       
+  position: absolute;
+  color:white;
+  background-color: #256868;
+
+  font-size: 25pt;
+
+  top: 500px !important; 
+  left:0px !important;
+  word-wrap: wrap !important;
+  width:500px;
+}
+
+
+/* info-text-copy → State in which the site is located in, appears on Right below target-text-copy */
+.info-text-copy {
+  position: absolute;
+  color:white;
+  background-color: #256868;
+
+  font-size: 21pt;
+
+  top: 535px !important; 
+  left:0px !important;
+  word-wrap: wrap !important;
+  width:500px;
+}
+
+.info-text-copy::before {
+  content: "(";
+}
+
+.info-text-copy::after {
+  content: ")";
+}
+
+
+
+
+
+
+/* info-text-2 → detailed info about site, appears on right*/
+.info-text-2{
+  position: absolute;
+  color:white;
+  background-color: #256868;
+
+  font-size: 18pt;
+
+  top: 562px !important; 
+  left:0px !important;
+  word-wrap: wrap !important;
+  width:500px;
+  
+//parameter 5 of csv i.e. detailed info that shows on right
+}
+
+
+
+/* info-text-3 → Image */
+.info-text-3{
+
+  margin-top: -50px;
+
+  position: absolute;
+  color:white;
+  
+
+  font-size: 18pt;
+  top: 0px !important;
+  left:0px !important;
+  word-wrap: wrap !important;
+
+
+
+  //background-color: #256868;
+  
+  
+//parameter 6 of csv i.e. image that shows on right
+}
+
+.info-text-3 img {
+
+  max-width: 500px !important;
+  max-height: 500px !important;
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+.info-text-4 img
+{
+  opacity:0;
+max-width: 120px !important ;
+height: auto !important;
+position: fixed !important; 
+
+top: 58px !important;
+
+
+z-index:10000 !important;
+}
+
+
+
+
+
+
+#black-overlay {
+  position: absolute; /* Position it relative to the body */
+  top: 0;
+  left: 1106px;
+  width: 125%; /* Covers 45% of the screen */
+  height: 220%; /* Cover full height of the viewport */
+  background-color: rgba(30, 30, 30, 1); /* Black with 50% opacity */
+  display: block; /* change to none to make it Hidden initially */
+  z-index: 1000; /* Ensure it's on top of other elements */
+pointer-events: 'none';
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Other Devices */
+
+@media only screen and (max-width: 819px) { /* Mobile Hotfix */
+	#map-wrapper{
+    margin-left: unset !important;
+  }
+
+	#score {
+	  top: 1355px;
+	  left: 10px;
+	  width: 800px;
+	}
+	#click-coordinates {
+	  position: absolute;
+	  top: 75px;
+	  left: 15px;
+	  width: 800px;
+    color: grey;
+	}
+  
+  .info-text-3 img
+  {
+  max-width: 10vw !important ;
+  height: auto !important;
+  position: fixed !important; 
+  top: 108px !important;
+  left: 8px !important;
+  }
+  
+}
+
+@media only screen and (max-width: 1219px) { /* Mobile Hotfix */
+	#map-wrapper{
+    margin-left: unset !important;
+  }
+
+	#score {
+	  top: 1355px;
+	  left: 10px;
+	  width: 800px;
+	}
+	#click-coordinates {
+	  position: absolute;
+	  top: 75px;
+	  left: 15px;
+	  width: 800px;
+    color: grey;
+	}
+  
+  .info-text-3 img
+  {
+  max-width: 10vw !important ;
+  height: auto !important;
+  position: fixed !important; 
+  top: 108px !important;
+  left: 8px !important;
+  }
+  
+}
+
+
+
+@supports (-webkit-touch-callout: none) {
+
+
+	#map-wrapper{
+    margin-left: unset !important;
+  }
+
+	#score {
+	  top: 1355px;
+	  left: 10px;
+	  width: 800px;
+	}
+		
+	#click-coordinates {
+	  position: absolute;
+	  top: 75px;
+	  left: 15px;
+	  width: 800px;
+	  color: grey;
+	}
+  
+	  .info-text-3 img
+ 	 {
+  	max-width: 10vw !important ;
+  	height: auto !important;
+ 	 position: fixed !important; 
+  	top: 108px !important;
+  	left: 8px !important;
+  	}
+
+

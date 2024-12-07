@@ -23,8 +23,8 @@
             position: 'fixed',
             zIndex: '1000',
 
-            top: '61.9px',
-            left: '510px',
+            top: '105px',
+     
           
       
             display: 'flex',
@@ -34,8 +34,8 @@
             cursor: 'pointer',
             overflowY: 'auto',
             textAlign: 'left',
-pointerEvents: 'none'
-        }).appendTo('body');
+            pointerEvents: 'none'
+        }).appendTo('#map');
 
         
 

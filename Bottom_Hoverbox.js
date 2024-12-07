@@ -16,6 +16,7 @@ $(document).ready(function () {
         
         if (lastInfoTextElement.length === 0) return; // If no elements found, do nothing
 
+        /*
         // Create the hoverbox
         hoverbox = $('<div class="hoverbox-overlay">').css({
             background: 'RGBA(0,0,0,.5)',
@@ -38,6 +39,7 @@ $(document).ready(function () {
             overflowY: 'auto',
             pointerEvents: 'none'
         }).appendTo('body');
+*/
 
         // Add content from the last '.target-text-copy' element to the hoverbox
         hoverbox.append('<div>' + lastInfoTextElement.html() + '</div>');

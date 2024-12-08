@@ -70,6 +70,7 @@
 		  border: 2px solid lightgrey;
 		  transition: all 0.3s ease;
 		}
+
 		.wrapper .option .dot{
 		  height: 20px;
 		  width: 20px;
@@ -90,6 +91,7 @@
 		  transform: scale(1.5);
 		  transition: all 0.3s ease;
 		}
+
 		input[type="radio"]{
 		  display: none;
 		}
@@ -115,62 +117,108 @@
 		}
 		
 		label:hover{		
-	box-shadow: 0 0 8px #fdf7d5;
+		box-shadow: 0 0 8px #fdf7d5;
 
 		}
 
-		#option-lang-1:checked:checked ~ .option-lang-1,
-		#option-lang-2:checked:checked ~ .option-lang-2{
-		  border-color: #373737;
-		  background: #373737;
-		}
-		#option-lang-1:checked:checked ~ .option-lang-1 .dot,
-		#option-lang-2:checked:checked ~ .option-lang-2 .dot{
-		  background: #fff;
-		}
-		#option-lang-1:checked:checked ~ .option-lang-1 .dot::before,
-		#option-lang-2:checked:checked ~ .option-lang-2 .dot::before{
-		  opacity: 1;
-		  transform: scale(1);
-		}
 
-		#option-lang-1:checked:checked ~ .option-lang-1 span,
-		#option-lang-2:checked:checked ~ .option-lang-2 span{
-		  color: #fff;
-		}
-		
+		#option-map-0:checked:checked ~ .option-map-0,
 		#option-map-1:checked:checked ~ .option-map-1,
 		#option-map-2:checked:checked ~ .option-map-2,
 		#option-map-3:checked:checked ~ .option-map-3,
 		#option-map-4:checked:checked ~ .option-map-4,
-		#option-map-5:checked:checked ~ .option-map-5{
-		  border-color: #373737;
-		  background: #373737;
+		#option-map-5:checked:checked ~ .option-map-5,
+		#option-map-00:checked:checked ~ .option-map-00,
+		#option-map-00:checked:checked {
+		border-color: #373737;
+		background: #373737;
 		}
+
+		#option-map-0:checked:checked ~ .option-map-0 .dot,
 		#option-map-1:checked:checked ~ .option-map-1 .dot,
 		#option-map-2:checked:checked ~ .option-map-2 .dot,
 		#option-map-3:checked:checked ~ .option-map-3 .dot,
 		#option-map-4:checked:checked ~ .option-map-4 .dot,
-		#option-map-5:checked:checked ~ .option-map-5 .dot{
-		  background: #fff;
-		}
-		#option-map-1:checked:checked ~ .option-map-1 .dot::before,
-		#option-map-2:checked:checked ~ .option-map-2 .dot::before,
-		#option-map-3:checked:checked ~ .option-map-3 .dot::before,
-		#option-map-4:checked:checked ~ .option-map-4 .dot::before,
-		#option-map-5:checked:checked ~ .option-map-5 .dot::before{
-		  opacity: 1;
-		  transform: scale(1);
+		#option-map-5:checked:checked ~ .option-map-5 .dot,
+		#option-map-00:checked:checked ~ .option-map-00 .dot {
+		background: #fff;
 		}
 
-		#option-map-1:checked:checked ~ .option-map-1 span,
-		#option-map-2:checked:checked ~ .option-map-2 span,
-		#option-map-3:checked:checked ~ .option-map-3 span,
-		#option-map-4:checked:checked ~ .option-map-4 span,
-		#option-map-5:checked:checked ~ .option-map-5 span{
-		  color: #fff;
-		}
-		
+	#option-map-0:checked:checked ~ .option-map-0 .dot::before,
+	#option-map-1:checked:checked ~ .option-map-1 .dot::before,
+	#option-map-2:checked:checked ~ .option-map-2 .dot::before,
+	#option-map-3:checked:checked ~ .option-map-3 .dot::before,
+	#option-map-4:checked:checked ~ .option-map-4 .dot::before,
+	#option-map-5:checked:checked ~ .option-map-5 .dot::before,
+	#option-map-00:checked:checked ~ .option-map-00 .dot::before {
+		opacity: 1;
+		transform: scale(1);
+	}		
+
+	#option-map-0:checked:checked ~ .option-map-0 span,
+	#option-map-1:checked:checked ~ .option-map-1 span,
+	#option-map-2:checked:checked ~ .option-map-2 span,
+	#option-map-3:checked:checked ~ .option-map-3 span,
+	#option-map-4:checked:checked ~ .option-map-4 span,
+	#option-map-5:checked:checked ~ .option-map-5 span,
+	#option-map-00:checked:checked ~ .option-map-00 span {
+		color: #fff;
+	}
+
+	#option-map-0:checked ~ .option-map-0 span,
+	#option-map-1:checked ~ .option-map-1 span,
+	#option-map-2:checked ~ .option-map-2 span,
+	#option-map-3:checked ~ .option-map-3 span,
+	#option-map-4:checked ~ .option-map-4 span,
+	#option-map-5:checked ~ .option-map-5 span,
+	#option-map-00:checked ~ .option-map-00 span {
+  color: #fff;
+}
+
+
+#option-map-0:checked ~ .option-map-0,
+#option-map-1:checked ~ .option-map-1,
+#option-map-2:checked ~ .option-map-2,
+#option-map-3:checked ~ .option-map-3,
+#option-map-4:checked ~ .option-map-4,
+#option-map-5:checked ~ .option-map-5,
+#option-map-00:checked ~ .option-map-00 {
+  border-color: #373737;
+  background: #373737;
+	}
+
+	
+#option-map-0:checked ~ .option-map-0 .dot,
+#option-map-1:checked ~ .option-map-1 .dot,
+#option-map-2:checked ~ .option-map-2 .dot,
+#option-map-3:checked ~ .option-map-3 .dot,
+#option-map-4:checked ~ .option-map-4 .dot,
+#option-map-5:checked ~ .option-map-5 .dot,
+#option-map-00:checked ~ .option-map-00 .dot {
+  background: #fff;
+}
+
+#option-map-0:checked ~ .option-map-0 .dot::before,
+#option-map-1:checked ~ .option-map-1 .dot::before,
+#option-map-2:checked ~ .option-map-2 .dot::before,
+#option-map-3:checked ~ .option-map-3 .dot::before,
+#option-map-4:checked ~ .option-map-4 .dot::before,
+#option-map-5:checked ~ .option-map-5 .dot::before,
+#option-map-00:checked ~ .option-map-00 .dot::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#option-map-0:checked ~ .option-map-0 span,
+#option-map-1:checked ~ .option-map-1 span,
+#option-map-2:checked ~ .option-map-2 span,
+#option-map-3:checked ~ .option-map-3 span,
+#option-map-4:checked ~ .option-map-4 span,
+#option-map-5:checked ~ .option-map-5 span,
+#option-map-00:checked ~ .option-map-00 span {
+  color: #fff;
+}
+
 
 		#option-order-1:checked:checked ~ .option-order-1,
 		#option-order-2:checked:checked ~ .option-order-2,
@@ -189,6 +237,7 @@
 		  opacity: 1;
 		  transform: scale(1);
 		}
+
 
 		#option-order-1:checked:checked ~ .option-order-1 span,
 		#option-order-2:checked:checked ~ .option-order-2 span,
@@ -216,43 +265,130 @@
             color: #ffffff;
         }
 
+		button {
+    background-color: #ffffff;
+    border: none;
+    color: white;
+    padding: 12px 32px;
+    text-decoration: none;
+    margin: 8px 4px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+	}
+
+	input[type="radio"]:checked + label {
+		background-color: #ffffff;
+	
+	}
+
+	input[type="radio"]:checked + label:hover {
+		background-color: #373737;
+	}
+
+	
+	input[type="radio"]:checked + label span {
+
+	}
+
+	input[type="radio"] {
+  width: 22px !important;
+  height: 22px !important;
+}	
+
+		input[type="radio"]:checked {
+            border-color: #373737 !important;
+            background-color: #373737 !important;
+        }
+
+		input[type="radio"]:hover {
+            border-color: #888888;
+        }
+
+		.river-option-wrapper:hover{
+ box-shadow: 0 0 6px #fdf7d5;
+}
+
+
+.river-option-wrapper {
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+/* Change background-color of parent when the input is checked */
+.river-option-wrapper input[type="radio"]:checked {
+  background-color: #404040;
+}
+
+/* Use a sibling selector to affect the parent wrapper */
+.river-option-wrapper input[type="radio"]:checked ~ label {
+  background-color: #404040;
+  color: #ffffff; /* Adjust text color */
+}
+
+/* Default styles for the river-option-wrapper */
+#riverwrapper1,
+#riverwrapper2 {
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+/* Change the background color of riverwrapper1 when #rivers input is checked */
+#rivers:checked ~ label {
+  background-color: #373737;
+  color: #ffffff; /* Adjust text color for better visibility */
+}
+
+/* Change the dot color of #rivers input to #414141 */
+#rivers:checked {
+  accent-color: #606060;
+}
+
+/* Change the background color of riverwrapper2 when #rivers-learn input is checked */
+#rivers-learn:checked ~ label {
+  background-color: #373737;
+  color: #ffffff; /* Adjust text color for better visibility */
+}
+
+/* Change the dot color of #rivers-learn input to #414141 */
+#rivers-learn:checked {
+  accent-color: #606060;
+}
+
     </style>
+	
 </head>
 <body>
 
 	<a href="game_js_creator.html" class="top-right-link">ⓘ</a>
 
 
+
     <div class="container">
         <div class="centered">
 
 		<br/><br/>
+
+
 		<form action="game.html" method="get">
 			<div style="color:#808080; font-weight: bold; font-size: 20pt; margin-bottom: 12px; display:none; ">Language</div>
 			<div class="wrapper" style ="display:none;">
-			 <input type="radio" name="lang" id="option-lang-1" value="fr" checked>
-			 <input type="radio" name="lang" id="option-lang-2" value="en" >
-			   <label for="option-lang-1" class="option option-lang-1">
-				 <div class="dot"></div>
-				  <span>Français</span>
-				  </label>
-			   <label for="option-lang-2" class="option option-lang-2">
-				 <div class="dot"></div>
-				  <span>English</span>
-			   </label>
+
+
+
 			</div>
 
-	
-	
 
-		<!--	<div style="color:#808080; font-weight: bold; font-size: 22pt; margin-top: -70px; margin-bottom: 15px; opacity:40%;">Select Map</div> -->
+
 
 			
-			<div class="wrapper" style="background-color:#2f2f2f !important; margin-top: -2px; max-width:560px !important;  height:40px; 	">
+	<div class="wrapper" style="background-color:#2f2f2f !important; margin-top: -2px; max-width:560px !important;  height:40px; 	">
 			 <input type="radio" name="map" id="option-map-1" value="np" checked>
 			 <input type="radio" name="map" id="option-map-2" value="rs" >
 			 <input type="radio" name="map" id="option-map-3" value="in" >
-
+			 <input type="radio" name="map" id="option-map-0" value="rivers" >
+			 <input type="radio" name="map" id="option-map-00" value="rivers_2" >
 			 
 			   <label for="option-map-1" class="option option-map-1" style="width:150px !important;">
 				 <div class="dot"></div>
@@ -272,12 +408,17 @@
 </div>
 <br/>
 
+
+
 <div class="wrapper" style="background-color:#2f2f2f !important; width:560px !important; max-width:560px !important;  height:40px; margin-top:-14px;">
+
 	<input type="radio" name="map" id="option-map-1" value="np" checked>
 	<input type="radio" name="map" id="option-map-2" value="rs" >
 	<input type="radio" name="map" id="option-map-3" value="in" >
 	<input type="radio" name="map" id="option-map-4" value="dm" >
 	<input type="radio" name="map" id="option-map-5" value="wf" >
+	<input type="radio" name="map" id="option-map-0" value="rivers" >
+	<input type="radio" name="map" id="option-map-00" value="rivers_2" >
 			
 			   <label for="option-map-4" class="option option-map-4" style="width:150px !important;">
 				<div class="dot"></div>
@@ -287,9 +428,28 @@
 				<div class="dot"></div>
 				 <span>Waterfalls</span>
 			  </label>
+		
+			  
+		
+		
+	</div>
+	<br>
+
+		<div class="wrapper" style="background-color:#2f2f2f !important; width:560px !important; max-width:560px !important;  height:40px; margin-top:-6px;">
+
+
+			
+			<div  class="river-option-wrapper" id="riverwrapper1" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:160px; height:44px;">
+			  <input type="radio" class="option option-map-0" id="rivers" name="map" value="rivers"  style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-0" id="rivers-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:2px; box-shadow:unset;"><span>Rivers</span></label>
 			</div>
 
+			<div  class="river-option-wrapper" id="riverwrapper2" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:160px; height:44px;">
+			  <input type="radio" class="option option-map-00" id="rivers-learn" name="map" value="rivers_2" style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-00" id="rivers-learn-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:14px; box-shadow:unset;"><span>Rivers (Learn)</span></label>
 
+			</div>
+		</div>
 			
   <!-- Image container for selected map -->
   <div id="map-image-container" style="display:flex; justify-content: center; align-items: center; margin-top:8px;">
@@ -323,7 +483,7 @@
 
 
 
-			<button type="submit" class="submit-button" style="font-size: 22pt !important; color:#bcbcbc; margin-top:-40px; ">Play</button>
+			<button type="submit" class="submit-button" style="font-size: 22pt !important; color:#bcbcbc; margin-top:-40px;">Play</button>
 			<br/>
 			</form>
         </div>
@@ -354,14 +514,75 @@
 </style>
 
 
+<script>      // script to ensure option selection formatting for river options is consistent
+	document.querySelectorAll('.river-option-wrapper').forEach(wrapper => {
+	  const input = wrapper.querySelector('input[type="radio"]');
+	  const label = wrapper.querySelector('label');
+	  
+	  input.addEventListener('change', () => {
+		// Reset styles for all wrappers and labels
+		document.querySelectorAll('.river-option-wrapper').forEach(wrap => {
+		  wrap.style.setProperty('background-color', '#ffffff', 'important');
+		  wrap.style.setProperty('border-color', '#808080', 'important');
+		  const wrapLabel = wrap.querySelector('label');
+		  wrapLabel.style.setProperty('color', '#808080', 'important');
+		  wrapLabel.style.setProperty('background-color', '#ffffff', 'important');
+		});
+  
+		// Set styles for the checked input's parent wrapper and label
+		if (input.checked) {
+		  wrapper.style.setProperty('background-color', '#373737', 'important');
+		  wrapper.style.setProperty('border-color', '#373737', 'important');
+		  label.style.setProperty('color', '#ffffff', 'important');
+		  label.style.setProperty('background-color', '#373737', 'important');
+		}
+	
+
+	  });
+	});
+  </script>
+  
+
+  <script>
+	document.querySelectorAll('input[type="radio"]').forEach(input => {
+	  input.addEventListener('change', () => {
+		const selectedValue = input.value;
+		const changeColorOptions = ['np', 'rs', 'in', 'dm', 'wf']; // values for National Parks, Tiger Reserves, Ramsar Sites, Dams & Reservoirs, Waterfalls
+		const riverOptions = ['rivers', 'rivers_2']
+		// If any of the selected options is chosen, change the color of #riverwrapper1 and #riverwrapper2 to red
+		if (changeColorOptions.includes(selectedValue)) {
+			document.querySelectorAll('.river-option-wrapper').forEach(wrap => {
+				wrap.style.setProperty('background-color', '#ffffff', 'important');
+				wrap.style.setProperty('border-color', '#808080', 'important');
+				const wrapLabel = wrap.querySelector('label');
+				wrapLabel.style.setProperty('color', '#808080', 'important');
+				wrapLabel.style.setProperty('background-color', '#ffffff', 'important');
+					});
+		} 
+		if (riverOptions.includes(selectedValue)) {
+		 
+			wrapper.style.setProperty('background-color', '#373737', 'important');
+		  wrapper.style.setProperty('border-color', '#373737', 'important');
+		  label.style.setProperty('color', '#ffffff', 'important');
+		  label.style.setProperty('background-color', '#373737', 'important');
+		
+		}
+	  });
+	});
+  </script>
+
+
+
 <script>
 	// Define the images to be displayed based on selected map option
 	const mapImages = {
 		np: 'India_base_dark.png',     // National Parks image
-		rs: 'India_base_dark - backup 2024-10-09 21h11m.png',     // Ramsar Sites image
+		rs: 'India_base_dark.png',     // Ramsar Sites image
 		in: 'India_base_dark.png',     // Tiger Reserves image
 		dm: 'India_base_dark.png',     // Dams & Reservoirs image
-		wf: 'AIO_Waterfalls-2x.png'      // Waterfalls image
+		wf: 'AIO_Waterfalls-2x.png',      // Waterfalls image
+		rivers: 'India_base_dark.png',     // Dams & Reservoirs image
+		rivers_2: 'India_base_dark.png'     // Dams & Reservoirs image
 	};
 
 	// Function to update the image based on selected map
@@ -403,6 +624,6 @@
     });
 
 
-	</script>
+</script>
 	
-	
+

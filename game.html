@@ -7,7 +7,7 @@
   <meta name="robots" content="index,follow">
   <meta name="author" content="Olivier Genest">
   <title>Shubh's Map Repository</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="game_styles.css">
 
   <link rel="manifest" href="/site.webmanifest">  
   <script src="citydataNP.js" defer></script>
@@ -35,21 +35,32 @@
 <style>
 		.top-right-link {
             position: absolute;
-            top: 8px;
-            right: 35px;
+            top: -2.5px;
+            left: 1476px;
             color: #8a8a8a;
             font-size: 42px;
             text-decoration: none;
+			z-index:1999;
         }
 
-        .top-right-link:hover {
+        .top-right-link:hover {	
             color: #ffffff;
         }
 
 </style>
+
+
+
+<a href="index.html" class="top-right-link">⌂</a>
+<div class="scaling-wrapper">
+
+<div id="map-wrapper" style="position: relative;">
+	<!-- Night Mode Html-->
+<div id="black-overlay"></div>
+	<div id="target-info"></div> 
 <body>
 
-	<a href="index.html" class="top-right-link">⌂</a>
+
 	
 	<div class="theme-selector">
 		<button class="theme-button" data-theme="default">
@@ -88,10 +99,13 @@
 	</div>
 	
 
-<div id="map">
-	<img id="map-image" src="blank.png" alt="Map">
-	<canvas id="myCanvas" width="800" height="800"></canvas>
-</div>
+	
+
+		<div id="map">
+		  <img id="map-image" src="blank.png" alt="Map">
+		  <canvas id="myCanvas" width="800" height="800"></canvas>
+		</div>
+
 
 <div id="score">
 
@@ -126,9 +140,10 @@
 <div class="clickable-icon" id="lightbulb-icon" style="font-size:23px;">💡</div>
 <div class="clickable-icon" id="read-icon" style="font-size:24px;">🕮</div>
 
-<div id="target-info"></div> 
+<div class="hoverbox-overlay"></div>
 <div id="target-info-2"></div> 
 <div id="target-info-3"></div>
+
 <div id="click-coordinates"></div>
 <div id="settings">
 
@@ -168,6 +183,8 @@
 
 
 </body>
+</div>
+</div>
 </html>
 
 
@@ -176,11 +193,10 @@
 <script src="jquery-3.6.0.min.js"></script>
 <script src="img_enlarge_1.js"></script> <!--  image enlarge script ends -->
 <script src="img_enlarge_2.js"></script> <!--  image enlarge 2nd script ends -->
-<script src="infobox_overlay.js"></script> <!-- InfoBox Top Overlay-->
+<script src="infobox_overlay.js"></script> <!-- InfoBox Top Overlay → top wala hoverbox -->  
 <script src="Bottom_Hoverbox.js"></script>    
    
-<!-- Night Mode Html-->
-<div id="black-overlay"></div>
+
 <!-- Night Mode Script-->
 <script>
 // Get the elements
@@ -209,3 +225,5 @@ if (event.key === 'n' || event.key === 'N') { // Check for 'n' key press
 // });
                //});
 </script> 
+
+

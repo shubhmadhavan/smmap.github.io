@@ -1,5 +1,7 @@
 const map = document.getElementById('map');
 
+
+
 const clickCoordinates = document.getElementById('click-coordinates');
 
 
@@ -78,6 +80,21 @@ if (urlParams.has('lang')) {
 if (urlParams.has('map')) {
     // Obtenez la valeur du paramètre "map"
     const urlMap = urlParams.get('map');
+
+	if (urlMap === 'rivers') {
+		window.location.href = 'Map_Rivers/River_Game_dark.html';
+	} else if (urlMap === 'rivers_2') {
+		window.location.href = 'Map_Rivers/River_Game_2_dark.html';
+	}
+	
+	
+	if (urlMap.value === 'rivers') {
+		window.location.href = 'Map_Rivers/River_Game_2_dark.html';
+	} else if (urlMap.value === 'rivers_2') {
+		window.location.href = 'Map_Rivers/River_Game_2_dark.html';
+	}
+
+
     if(urlMap == "np" || urlMap == "in" || urlMap == "rs" || urlMap == "dm" || urlMap == "wf") // np = National Parks, rs = Ramsar Sites, dm = Dams & Reservoirs, WF = Waterfalls
 	{
 		currentMap=maps[urlMap];

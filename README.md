@@ -9,6 +9,7 @@ Created for you, by Shubh.
 ● Ramsar Sites of India    
 ● Dams & Reservoirs  
 ● Waterfalls  
+● Rivers
 
 
 <img src="https://github.com/user-attachments/assets/a57c67f7-9c93-4238-879b-1306f85fd01b" style="float:left; margin-right: 10px; height:400px; width: 360px;" />

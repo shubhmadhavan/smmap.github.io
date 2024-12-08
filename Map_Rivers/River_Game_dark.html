@@ -52,6 +52,7 @@
 		}
 		.leaflet-interactive:hover{
 			cursor: crosshair;        
+			stroke-width: 4;
 		}
 		
 
@@ -69,7 +70,9 @@
 
 <script>
 // Initialize the map
-var map = L.map('map').setView([20.5937, 78.9629], 5);
+var map = L.map('map', {
+    doubleClickZoom: false // Disable double click to zoom
+}).setView([20.5937, 80.9629], 5); // Set to India center
 
 // Define the bounds of the image (set these to match the geographical area of the image)
 var imageBounds = [[-2.0, 36.78], 
@@ -108,7 +111,7 @@ for (const river in riversData) {
     // Create a polyline for each river
     const path = L.polyline(pathData, {
         color: '#60A6C2', // default color of river
-        weight: 2,
+        weight: 3,
         opacity: 1
     }).addTo(map);
 
@@ -126,7 +129,7 @@ for (const river in riversData) {
     });
 
     // Add click event to each path
-    path.on('click', function (e) {
+    path.on('click touchstart', function (e) {
         const resultBox = document.getElementById('result');
 		const resultBox2 = document.getElementById('result2');
 		

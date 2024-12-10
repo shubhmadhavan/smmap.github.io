@@ -1,11 +1,29 @@
 <!DOCTYPE html>
+<script>
+  // Immediately run this script before the DOM is loaded
+  (function() {
+    const urlParams = new URLSearchParams(window.location.search);
+
+    if (urlParams.has('map')) {
+      const urlMap = urlParams.get('map');
+
+      // Check the value of the 'map' parameter and redirect accordingly
+      if (urlMap === 'rivers') {
+        window.location.href = 'Map_Rivers/River_Game_dark.html';
+      } else if (urlMap === 'rivers_2') {
+        window.location.href = 'Map_Rivers/River_Game_2_dark.html';
+      }
+    }
+  })();
+</script>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="initial-scale=0.49">
   <meta name="description" content="Shubh's Map Repository">
   <meta name="robots" content="index,follow">
-  <meta name="author" content="Olivier Genest">
+  <meta name="author" content="Shubh Madhavan">
   <title>Shubh's Map Repository</title>
   <link rel="stylesheet" href="game_styles.css">
 
@@ -152,7 +170,7 @@
 
 	
 	<span id="txtChallengeTitle" style="display:none !important;">  </span><br/>
-	<font style="font-size:12pt;" id="txtChallenge">The same cities for everyone: compare yourself with your friends!</font><br/>
+	<font style="font-size:12pt;" id="txtChallenge">ㅤ</font><br/>
 	<button id="defi">Daily challenge (20 cities)</button>
 	<br/>
 	<font style="font-size:12pt;"><em><span id="txtOr"></span></em></font>
@@ -161,14 +179,14 @@
 
 	<div id="settings2">
 
-	<font style="font-size:12pt;"><span id="txtDifficulty">Difficulty: </span></font>
-	<select id="diffSelect" style="display:none;">
+	<font style="font-size:12pt; opacity:0 !important;"><span id="txtDifficulty">ㅤ </span></font>
+	<select id="diffSelect" style="display:none; opacity:0 !important;">
 		<option id="txtEasy" value="10000" selected>Easy: Only regional capitals (22 cities)</option>
 		<option id="txtMedium" value="96">Medium: Prefectures (96 cities)</option>
 		<option id="txtHard" value="320">Hard: Prefectures and sub-prefectures (320 cities)</option>
 	</select><br/>
-	<font style="font-size:12pt;">
-		<span id="txtNbCitiesTitle">Number of cities:</span> 
+	<font style="font-size:12pt; opacity:0;">
+		<span id="txtNbCitiesTitle">ㅤ</span> 
 		<input type="radio" id="nbCity10" name="nbCity" value="10" /><label for="nbCity10">10</label>
 		<input type="radio" id="nbCity20" name="nbCity" value="20" /><label for="nbCity20">20</label>
 		<input type="radio" id="nbCity50" name="nbCity" value="50" /><label for="nbCity50">50</label>

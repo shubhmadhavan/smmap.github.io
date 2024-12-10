@@ -7,27 +7,9 @@
     <title>Map with River Paths</title>
     <link rel="stylesheet" href="leaflet.css" />
     <style>
-	
-	header{
-		  padding:5px;
-		  position: fixed;
-		  top: 0px;
-
-		  font-size:20pt;
-		  width: 1090px;
-
-		  z-index: 1000;
-		  background-color: #2a2a2a;
-		  text-align: left;
-		  display:none; 
-		  }
-	  
-		body {
-			background: #0b0b0b;
-			}
         #map {
             height: 94.5vh; /* Adjusted height for map */
-			background: #0b0b0b;
+			background: white;
         }
         #header {
             font-size: 24px;
@@ -37,9 +19,8 @@
         #result {
             position: absolute;
             z-index: 9999;
-            background-color: rgba(0, 0, 0, 0.76);
-            color: #ffffff;
-			font-size: 17px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
             padding: 10px;
             border-radius: 5px;
             display: none;
@@ -53,15 +34,13 @@
 
         .leaflet-interactive {
             cursor: crosshair;   
-            stroke: #69B3D0;         			
+            stroke: #505050;            
         }
 		
         .leaflet-interactive:hover {
             cursor: crosshair;   
-            stroke: cyan;         
-			stroke-width: 4;			
+            stroke: blue;            
         }
-		
     </style>
 </head>
 <body>
@@ -77,112 +56,57 @@
 
 <script>
 // Initialize the map
-var map = L.map('map', {
-    doubleClickZoom: false // Disable double click to zoom
-}).setView([20.5937, 80.9629], 5); // Set to India center
+var map = L.map('map').setView([20.5937, 80.9629], 5); // Set to India center
 
 // Define the bounds of the image (set these to match the geographical area of the image)
 var imageBounds = [[-2.0, 36.78], 
-                  [41.33, 121.216]];  // Latitude/Longitude for the image corners
+				  [41.33, 121.216]];  // Latitude/Longitude for the image corners
 
 // Add the local image as an overlay to the map
-L.imageOverlay('../Map_Images/India_OS_dark.jpg', imageBounds).addTo(map);
+L.imageOverlay('India_OS.png', imageBounds).addTo(map);
 
-// Function to parse different geometry types
-function parseGeometry(geometry) {
-    const type = geometry.split(' ')[0];
-    
-    if (type === "POLYGON") {
-        geometry = geometry.replace(/\(/, '').replace(/\)/, '');
-        console.log('geo ' + geometry);
-    }
-
-    const coords = geometry.replace(type, '').trim().slice(1, -1).split(', ');
-
-    console.log(coords);
-
-    if (type === "POINT") {
-        const [lon, lat] = coords[0].split(' ');
-        return { type: 'Point', coordinates: [parseFloat(lat), parseFloat(lon)] };
-    } else if (type === "POLYGON") {
-        const points = coords.map(coord => {
-            coords.slice(1, -1);
-            const [lon, lat] = coord.split(' ');
-            return [parseFloat(lat), parseFloat(lon)];
-        });
-        console.log('Polygon' + points);
-        return { type: 'LineString', coordinates: points };
-    } else if (type === "LINESTRING") {
-        const points = coords.map(coord => {
-            const [lon, lat] = coord.split(' ');
-            return [parseFloat(lat), parseFloat(lon)];
-        });
-        return { type: 'LineString', coordinates: points };
-    }
-
-    return null;
+// Function to convert LINESTRING to an array of LatLngs
+function parseLineString(lineString) {
+    const coordinates = lineString.replace("LINESTRING", "").trim().slice(1, -1).split(", ");
+    return coordinates.map(coord => {
+        const [lon, lat] = coord.split(" ");
+        return [parseFloat(lat), parseFloat(lon)];
+    });
 }
 
 // Loop through river data and add them to the map
 for (const river in riversData) {
-    const geometry = parseGeometry(riversData[river]);
+    const pathData = parseLineString(riversData[river]);
+    
+    // Create a polyline for each river
+    const path = L.polyline(pathData, {
 
-    if (geometry.type === 'Point') {
-        // Add a circle marker for Point
-        const marker = L.circleMarker(geometry.coordinates, {
-            radius: 5,
-            color: '#60A6C2',
-            stroke: '#60A6C2',
-            weight: 2,
-            fillColor: '#60A6C2',
-            fillOpacity: 1
-        }).addTo(map);
+        weight: 2,      // Thickness of the path
+        opacity: 1     // Transparency
+    }).addTo(map);
 
-        marker.on('mouseover', function () {
-            marker.setStyle({ fillColor: '#D2D2D2' });
-        });
+    // Add click event to each path
+    path.on('click', function (e) {
+        const resultBox = document.getElementById('result');
 
-        marker.on('mouseout', function () {
-            marker.setStyle({ fillColor: '#60A6C2' });
-        });
+		
+        resultBox.textContent = river;  // Display the value of the 'river' variable
+        
+        // Set the position of the result box near the cursor
+        const offsetX = 7; // Adjust the X position slightly to avoid overlapping the cursor
+        const offsetY = 7; // Adjust the Y position slightly to avoid overlapping the cursor
+        resultBox.style.left = `${e.originalEvent.clientX + offsetX}px`;
+        resultBox.style.top = `${e.originalEvent.clientY + offsetY}px`;
 
-        // Display a tooltip with the river name when clicked, and close the previous tooltip
-        marker.on('click touchstart', function (e) {
-            marker.bindTooltip(river, { permanent: true, className: 'selected-tooltip' }).openTooltip();
+        // Show the result box
+        resultBox.style.display = 'block';
 
-            // Close any previously opened tooltip
-            setTimeout(() => {
-                marker.closeTooltip();
-            }, 1100); // Adjust timeout for how long the tooltip stays visible
-        });
-    } else if (geometry.type === 'LineString') {
-        // Add a polyline for LineString
-        const polyline = L.polyline(geometry.coordinates, {
-            color: '#60A6C2',
-            weight: 3,
-            opacity: 1
-        }).addTo(map);
-
-        polyline.on('mouseover', function () {
-            polyline.setStyle({ color: '#D2D2D2' });
-        });
-
-        polyline.on('mouseout', function () {
-            polyline.setStyle({ color: '#60A6C2' });
-        });
-
-        // Display a tooltip with the river name when clicked, and close the previous tooltip
-        polyline.on('click touchstart', function (e) {
-            polyline.bindTooltip(river, { permanent: true, className: 'selected-tooltip' }).openTooltip();
-
-            // Close any previously opened tooltip
-            setTimeout(() => {
-                polyline.closeTooltip();
-            }, 1100); // Adjust timeout for how long the tooltip stays visible
-        });
-    }
+        // Optionally, hide the result box after a few seconds (e.g., 5 seconds)
+        setTimeout(() => {
+            resultBox.style.display = 'none'; // Hide result box after 5 seconds
+        }, 600);
+    });
 }
-
 </script>
 
 </body>

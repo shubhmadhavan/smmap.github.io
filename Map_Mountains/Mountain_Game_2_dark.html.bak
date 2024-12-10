@@ -7,8 +7,7 @@
     <title>Map with River Paths</title>
     <link rel="stylesheet" href="leaflet.css" />
     <style>
-	
-	header{
+		header{
 		  padding:5px;
 		  position: fixed;
 		  top: 0px;
@@ -21,7 +20,7 @@
 		  text-align: left;
 		  display:none; 
 		  }
-	  
+		  
 		body {
 			background: #0b0b0b;
 			}
@@ -61,7 +60,6 @@
             stroke: cyan;         
 			stroke-width: 4;			
         }
-		
     </style>
 </head>
 <body>
@@ -73,7 +71,7 @@
 
 
 <script src="leaflet.js"></script>
-<script src="river_data.js"></script>
+<script src="map_data.js"></script>
 
 <script>
 // Initialize the map
@@ -147,7 +145,7 @@ for (const river in riversData) {
         });
 
         // Display a tooltip with the river name when clicked, and close the previous tooltip
-        marker.on('click touchstart', function (e) {
+        marker.on('click', function (e) {
             marker.bindTooltip(river, { permanent: true, className: 'selected-tooltip' }).openTooltip();
 
             // Close any previously opened tooltip
@@ -172,7 +170,7 @@ for (const river in riversData) {
         });
 
         // Display a tooltip with the river name when clicked, and close the previous tooltip
-        polyline.on('click touchstart', function (e) {
+        polyline.on('click', function (e) {
             polyline.bindTooltip(river, { permanent: true, className: 'selected-tooltip' }).openTooltip();
 
             // Close any previously opened tooltip

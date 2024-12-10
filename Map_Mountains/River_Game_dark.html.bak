@@ -9,6 +9,30 @@
     <title>Map with River Paths</title>
     <link rel="stylesheet" href="leaflet.css" />
     <style>
+		header{
+		  padding:5px;
+		  position: fixed;
+		  top: 0px;
+
+		  font-size:20pt;
+		  width: 1090px;
+
+		  z-index: 1000;
+		  background-color: #2a2a2a;
+		  text-align: left;
+		  display:none; 
+		  }
+		  
+		.correct-path{
+			color:#00FFF0 !important;
+		}
+		.default-path{
+			color:#60A6C2 !important;
+		}
+		.incorrect-path{
+			color:#894545 !important;
+		}
+	
 		body {
 			background: #0b0b0b;
 			color: white;
@@ -47,13 +71,37 @@
             text-align: center;
         }
 		
+		#resultSelect {          
+			position: absolute;
+            z-index: 9999;
+            background-color: rgba(0, 0, 0, 1);
+            color: #ffffff;
+			font-size: 17px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+            text-align: center;
+		 }
+
+		#resultCorrect {          
+			position: absolute;
+            z-index: 9999;
+            background-color: rgba(0, 0, 0, 1);
+            color: #ffffff;
+			font-size: 17px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+            text-align: center;
+		 }
+			 
         #map:hover {
 			cursor: default;        
 		}
 		.leaflet-interactive:hover{
-			stroke: #00FFF0 !important;  	
 			cursor: crosshair;        
 			stroke-width: 4;
+			stroke: #00FFF0 !important;  	
 		}
 		
     </style>
@@ -64,6 +112,9 @@
 <div id="map"></div>
 <div id="result"></div>
 <div id="result2"></div>
+
+<div id="resultSelect"></div>
+<div id="resultCorrect"></div>
 
 <script src="leaflet.js"></script>
 <script src="river_data.js"></script>

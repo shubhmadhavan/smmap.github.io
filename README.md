@@ -5,20 +5,22 @@ Created for you, by Shubh.
 [Link](https://shubhmadhavan.github.io/smmap.github.io/index.html)
 
 ## Maps Included:
-● National Parks of India  
-● Ramsar Sites of India    
-● Dams & Reservoirs  
-● Waterfalls  
-● Rivers
+#### [National Parks of India](https://shubhmadhavan.github.io/smmap.github.io/game.html?map=np&orderRSNP=NS)
 
+#### [Tiger Reserves](https://shubhmadhavan.github.io/smmap.github.io/game.html?map=in&orderRSNP=NS)
 
+#### [Ramsar Sites of India](https://shubhmadhavan.github.io/smmap.github.io/game.html?map=rs&orderRSNP=NS)    
+
+#### [Dams & Reservoirs](https://shubhmadhavan.github.io/smmap.github.io/game.html?map=dm&orderRSNP=NS)
+
+#### [Waterfalls](https://shubhmadhavan.github.io/smmap.github.io/game.html?map=wf&orderRSNP=NS) 
 <img src="https://github.com/user-attachments/assets/a57c67f7-9c93-4238-879b-1306f85fd01b" style="float:left; margin-right: 10px; height:400px; width: 360px;" />
+
+#### [Rivers](https://shubhmadhavan.github.io/smmap.github.io/game.html?map=wf&orderRSNP=NS)
 <img src="https://github.com/user-attachments/assets/ee25fe55-8803-4b38-8593-3eb20393e9eb" style="float:left; margin-right: 10px; height:400px; width: 360px;" />
 
 
 ### <i style="color:grey;">Upcoming Maps
-● Tiger Reserves of India  
-  
 ● Glaciers of India  
 ● Important Lakes of India  
 

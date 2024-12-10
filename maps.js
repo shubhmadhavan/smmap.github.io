@@ -1,7 +1,7 @@
 const maps = {
 	np: {
 		name: "National Parks",
-		img: 'India_base_dark.png',
+		img: 'Map_Images/India_base_dark.jpg',
 		projection: 'mercator',
 		topLeftGPS: {latitude: 38.1, longitude: 67.31},
 		bottomLeftGPS: {latitude: 6.00, longitude: 67.27},
@@ -32,7 +32,7 @@ const maps = {
 	},
 	in: {
 		name: "USA",
-		img: 'India_base_dark.png',
+		img: 'Map_Images/India_base_dark.jpg',
 		projection: 'mercator',
 		topLeftGPS: {latitude: 38.1, longitude: 67.31},
 		bottomLeftGPS: {latitude: 6.00, longitude: 67.27},
@@ -63,7 +63,7 @@ const maps = {
 	},
 	rs: {
 		name: "Europe",
-		img: 'India_base_dark.png',
+		img: 'Map_Images/India_base_dark.jpg',
 		projection: 'mercator',
 		topLeftGPS: {latitude: 38.1, longitude: 67.31},
 		bottomLeftGPS: {latitude: 6.00, longitude: 67.27},
@@ -95,7 +95,7 @@ const maps = {
 	},
 	dm: {
 		name: "Dams_&_Reservoirs",
-		img: 'India_base_dark.png',
+		img: 'Map_Images/India_base_dark.jpg',
 		projection: 'mercator',
 		topLeftGPS: {latitude: 38.1, longitude: 67.31},
 		bottomLeftGPS: {latitude: 6.00, longitude: 67.27},
@@ -127,7 +127,7 @@ const maps = {
 	},
 	wf: {
 		name: "Waterfalls",
-		img: 'India_base_dark.png',
+		img: 'Map_Images/India_base_dark.jpg',
 		projection: 'mercator',
 		topLeftGPS: {latitude: 38.1, longitude: 67.31},
 		bottomLeftGPS: {latitude: 6.00, longitude: 67.27},
@@ -156,5 +156,5 @@ const maps = {
 			dataset: `<a href="https://public.opendatasoft.com/explore/dataset/geonames-all-cities-with-a-population-1000/table/?disjunctive.cou_name_en&sort=population&refine.timezone=Europe" target="_blank">GeoNames</a>`
 		},
 		giveDetails: false
-	},
+	}
 }

@@ -61,12 +61,12 @@
 		<br>
 		<div class="wrapper" style="background-color:#2f2f2f !important; width:560px !important; max-width:560px !important;  height:40px; margin-top:-6px;">
 
-			<div  class="river-option-wrapper" id="riverwrapper1" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px;">
+			<div  class="river-option-wrapper" id="riverwrapper1" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:175px; height:44px;">
 			  <input type="radio" class="option option-map-0" id="rivers" name="map" value="mountains"  style="width:40px; margin-top:10px;"/>
 			  <label for="option-map-0" id="rivers-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:2px; box-shadow:unset;"><span>Mountains</span></label>
 			</div>
 
-			<div  class="river-option-wrapper" id="riverwrapper2" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px;">
+			<div  class="river-option-wrapper" id="riverwrapper2" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:175px; height:44px;">
 			  <input type="radio" class="option option-map-00" id="rivers-learn" name="map" value="mountains_2" style="width:40px; margin-top:10px;"/>
 			  <label for="option-map-00" id="rivers-learn-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:14px; box-shadow:unset;"><span>Mountains (Learn)</span></label>
 

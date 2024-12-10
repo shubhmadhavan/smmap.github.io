@@ -1,0 +1,344 @@
+    body, html {
+            height: 100%;
+            margin: 0;
+			margin-top: -20px;
+            display: block;
+            justify-content: center;
+            align-items: center;
+			font-size:24px;
+			background-color: #2a2a2a;
+        }
+
+		body::-webkit-scrollbar {
+  			display: none; /* For Chrome, Safari, and Edge */
+		}
+		
+		.submit-button:hover{
+			box-shadow: 0 0 8px #ffffff !important;
+		}
+		
+        .container {
+            width: 100%;
+            max-height: 100%;
+        }
+
+        .centered {
+            text-align: center;
+        }
+		
+	#rivers-label, #rivers-learn-label{
+		position: relative; /* Enable positioning adjustments */
+		top: -27px !important; /* Move up by 20px */
+	}
+	
+		.wrapper{
+		  display: inline-flex;
+		  background: #fff;
+		  height: 50px;
+		  width: 1000px;  /* for every map, add 200px to width */
+		  align-items: center;
+		  justify-content: space-evenly;
+		  border-radius: 5px;
+		  padding: 20px 15px;
+		  box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+		}
+		.wrapper .option{
+		  background: #fff;
+		  height: 100%;
+		  width: 100%;
+		  display: flex;
+		  align-items: center;
+		  justify-content: space-evenly;
+		  margin: 0 10px;
+		  border-radius: 5px;
+		  cursor: pointer;
+		  padding: 0 10px;
+		  border: 2px solid lightgrey;
+		  transition: all 0.3s ease;
+		}
+
+		.wrapper .option .dot{
+		  height: 20px;
+		  width: 20px;
+		  background: #d9d9d9;
+		  border-radius: 50%;
+		  position: relative;
+		}
+		.wrapper .option .dot::before{
+		  position: absolute;
+		  content: "";
+		  top: 4px;
+		  left: 4px;
+		  width: 12px;
+		  height: 12px;
+		  background: #373737;
+		  border-radius: 50%;
+		  opacity: 0;
+		  transform: scale(1.5);
+		  transition: all 0.3s ease;
+		}
+
+		input[type="radio"]{
+		  display: none;
+		}
+		.wrapper .option span{
+		  font-size: 16px;
+		  color: #808080;
+		}
+		.label {
+		  	width: auto;
+		}
+
+		button {
+		  background-color: #373737;
+		  border: none;
+		  color: white;
+		  
+		  padding: 12px 32px;
+		  text-decoration: none;
+		  margin: 8px 4px;
+		  cursor: pointer;
+		  font-size:18px;
+		  border-radius: 5px;
+		}
+		
+		label:hover{		
+		box-shadow: 0 0 8px #fdf7d5;
+		}
+
+		#option-map-0:checked:checked ~ .option-map-0,
+		#option-map-1:checked:checked ~ .option-map-1,
+		#option-map-2:checked:checked ~ .option-map-2,
+		#option-map-3:checked:checked ~ .option-map-3,
+		#option-map-4:checked:checked ~ .option-map-4,
+		#option-map-5:checked:checked ~ .option-map-5,
+		#option-map-00:checked:checked ~ .option-map-00,
+		#option-map-00:checked:checked {
+		border-color: #373737;
+		background: #373737;
+		}
+
+		#option-map-0:checked:checked ~ .option-map-0 .dot,
+		#option-map-1:checked:checked ~ .option-map-1 .dot,
+		#option-map-2:checked:checked ~ .option-map-2 .dot,
+		#option-map-3:checked:checked ~ .option-map-3 .dot,
+		#option-map-4:checked:checked ~ .option-map-4 .dot,
+		#option-map-5:checked:checked ~ .option-map-5 .dot,
+		#option-map-00:checked:checked ~ .option-map-00 .dot {
+		background: #fff;
+		}
+
+		#option-map-0:checked:checked ~ .option-map-0 .dot::before,
+		#option-map-1:checked:checked ~ .option-map-1 .dot::before,
+		#option-map-2:checked:checked ~ .option-map-2 .dot::before,
+		#option-map-3:checked:checked ~ .option-map-3 .dot::before,
+		#option-map-4:checked:checked ~ .option-map-4 .dot::before,
+		#option-map-5:checked:checked ~ .option-map-5 .dot::before,
+		#option-map-00:checked:checked ~ .option-map-00 .dot::before {
+			opacity: 1;
+			transform: scale(1);
+		}		
+
+		#option-map-0:checked:checked ~ .option-map-0 span,
+		#option-map-1:checked:checked ~ .option-map-1 span,
+		#option-map-2:checked:checked ~ .option-map-2 span,
+		#option-map-3:checked:checked ~ .option-map-3 span,
+		#option-map-4:checked:checked ~ .option-map-4 span,
+		#option-map-5:checked:checked ~ .option-map-5 span,
+		#option-map-00:checked:checked ~ .option-map-00 span {
+			color: #fff;
+		}
+
+		#option-map-0:checked ~ .option-map-0 span,
+		#option-map-1:checked ~ .option-map-1 span,
+		#option-map-2:checked ~ .option-map-2 span,
+		#option-map-3:checked ~ .option-map-3 span,
+		#option-map-4:checked ~ .option-map-4 span,
+		#option-map-5:checked ~ .option-map-5 span,
+		#option-map-00:checked ~ .option-map-00 span {
+		color: #fff;
+	}
+
+
+		#option-map-0:checked ~ .option-map-0,
+		#option-map-1:checked ~ .option-map-1,
+		#option-map-2:checked ~ .option-map-2,
+		#option-map-3:checked ~ .option-map-3,
+		#option-map-4:checked ~ .option-map-4,
+		#option-map-5:checked ~ .option-map-5,
+		#option-map-00:checked ~ .option-map-00 {
+		  border-color: #373737;
+		  background: #373737;
+			}
+
+			
+		#option-map-0:checked ~ .option-map-0 .dot,
+		#option-map-1:checked ~ .option-map-1 .dot,
+		#option-map-2:checked ~ .option-map-2 .dot,
+		#option-map-3:checked ~ .option-map-3 .dot,
+		#option-map-4:checked ~ .option-map-4 .dot,
+		#option-map-5:checked ~ .option-map-5 .dot,
+		#option-map-00:checked ~ .option-map-00 .dot {
+		  background: #fff;
+		}
+
+		#option-map-0:checked ~ .option-map-0 .dot::before,
+		#option-map-1:checked ~ .option-map-1 .dot::before,
+		#option-map-2:checked ~ .option-map-2 .dot::before,
+		#option-map-3:checked ~ .option-map-3 .dot::before,
+		#option-map-4:checked ~ .option-map-4 .dot::before,
+		#option-map-5:checked ~ .option-map-5 .dot::before,
+		#option-map-00:checked ~ .option-map-00 .dot::before {
+		  opacity: 1;
+		  transform: scale(1);
+		}
+
+		#option-map-0:checked ~ .option-map-0 span,
+		#option-map-1:checked ~ .option-map-1 span,
+		#option-map-2:checked ~ .option-map-2 span,
+		#option-map-3:checked ~ .option-map-3 span,
+		#option-map-4:checked ~ .option-map-4 span,
+		#option-map-5:checked ~ .option-map-5 span,
+		#option-map-00:checked ~ .option-map-00 span {
+		  color: #fff;
+		}
+
+
+		#option-order-1:checked:checked ~ .option-order-1,
+		#option-order-2:checked:checked ~ .option-order-2,
+		#option-order-3:checked:checked ~ .option-order-3{
+		  border-color: #373737;
+		  background: #373737;
+		}
+		#option-order-1:checked:checked ~ .option-order-1 .dot,
+		#option-order-2:checked:checked ~ .option-order-2 .dot,
+		#option-order-3:checked:checked ~ .option-order-3 .dot{
+		  background: #fff;
+		}
+		#option-order-1:checked:checked ~ .option-order-1 .dot::before,
+		#option-order-2:checked:checked ~ .option-order-2 .dot::before,
+		#option-order-3:checked:checked ~ .option-order-3 .dot::before{
+		  opacity: 1;
+		  transform: scale(1);
+		}
+
+
+		#option-order-1:checked:checked ~ .option-order-1 span,
+		#option-order-2:checked:checked ~ .option-order-2 span,
+		#option-order-3:checked:checked ~ .option-order-3 span{
+		  color: #fff;
+		}
+
+
+		div {
+			font-family: Arial;
+		}
+		#logoimg {
+			width:100px;
+		}
+		.top-right-link {
+            position: absolute;
+            top: 13px;
+            right: 23px;
+            color: #8a8a8a;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .top-right-link:hover {
+            color: #ffffff;
+        }
+
+		button {
+    background-color: #ffffff;
+    border: none;
+    color: white;
+    padding: 12px 32px;
+    text-decoration: none;
+    margin: 8px 4px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+	}
+
+	input[type="radio"]:checked + label {
+		background-color: #ffffff;
+	
+	}
+
+	input[type="radio"]:checked + label:hover {
+		background-color: #373737;
+	}
+
+	
+	input[type="radio"]:checked + label span {
+
+	}
+
+		input[type="radio"] {
+	  width: 22px !important;
+	  height: 22px !important;
+	}	
+
+		input[type="radio"]:checked {
+            border-color: #373737 !important;
+            background-color: #373737 !important;
+        }
+
+		input[type="radio"]:hover {
+            border-color: #888888;
+        }
+
+		.river-option-wrapper:hover{
+			
+		box-shadow: 0 0 6px #fdf7d5;
+	}
+
+
+	.river-option-wrapper {
+	  background-color: #ffffff;
+	  transition: background-color 0.3s ease;
+	  width: 182px !important;
+	}
+
+	/* Change background-color of parent when the input is checked */
+	.river-option-wrapper input[type="radio"]:checked {
+	  background-color: #404040;
+	}
+
+	/* Use a sibling selector to affect the parent wrapper */
+	.river-option-wrapper input[type="radio"]:checked ~ label {
+	  background-color: #404040;
+	  color: #ffffff; /* Adjust text color */
+	}
+
+	/* Default styles for the river-option-wrapper */
+	#riverwrapper1,
+	#riverwrapper2 {
+	  background-color: #ffffff;
+	  transition: background-color 0.3s ease;
+	}
+
+	/* Change the background color of riverwrapper1 when #rivers input is checked */
+	#rivers:checked ~ label {
+	  background-color: #373737;
+	  color: #ffffff; /* Adjust text color for better visibility */
+	}
+
+	/* Change the dot color of #rivers input to #414141 */
+	#rivers:checked {
+	  accent-color: #606060;
+	}
+
+	/* Change the background color of riverwrapper2 when #rivers-learn input is checked */
+	#rivers-learn:checked ~ label {
+	  background-color: #373737;
+	  color: #ffffff; /* Adjust text color for better visibility */
+	}
+
+	/* Change the dot color of #rivers-learn input to #414141 */
+	#rivers-learn:checked {
+	  accent-color: #606060;
+	}
+	

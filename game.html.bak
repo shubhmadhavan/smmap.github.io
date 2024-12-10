@@ -13,9 +13,9 @@
       } else if (urlMap === 'rivers_2') {
         window.location.href = 'Map_Rivers/River_Game_2_dark.html';
       } else if (urlMap === 'mountains') {
-        window.location.href = 'Map_Mountains/Mountain_Game_dark.html';
+        window.location.href = 'Mountains_Rivers/Mountain_Game_dark.html';
       }	else if (urlMap === 'mountains_2') {
-        window.location.href = 'Map_Mountains/Mountain_Game_2_dark.html';
+        window.location.href = 'Mountains_Rivers/Mountain_Game_2_dark.html';
       }
 
     }

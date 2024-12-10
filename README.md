@@ -16,9 +16,10 @@ Created for you, by Shubh.
 #### [Waterfalls](https://shubhmadhavan.github.io/smmap.github.io/game.html?map=wf&orderRSNP=NS) 
 <img src="https://github.com/user-attachments/assets/a57c67f7-9c93-4238-879b-1306f85fd01b" style="float:left; margin-right: 10px; height:400px; width: 360px;" />
 
-#### [Rivers](https://shubhmadhavan.github.io/smmap.github.io/game.html?map=wf&orderRSNP=NS)
+#### [Rivers](https://shubhmadhavan.github.io/smmap.github.io/game.html?map=rivers&orderRSNP=NS)
 <img src="https://github.com/user-attachments/assets/ee25fe55-8803-4b38-8593-3eb20393e9eb" style="float:left; margin-right: 10px; height:400px; width: 360px;" />
 
+#### [Mountains](https://shubhmadhavan.github.io/smmap.github.io/game.html?map=mountains&orderRSNP=NS)
 
 ### <i style="color:grey;">Upcoming Maps
 ● Glaciers of India  

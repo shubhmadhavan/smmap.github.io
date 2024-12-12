@@ -74,7 +74,7 @@ for (const river in mapData) {
             color: '#EDC1A0',
 			stroke: '#EDC1A0',
             weight: 2,
-            fillColor: '#EDC1A0',
+            fillColor: '#FF9B50',
             fillOpacity: 1
         }).addTo(map);
         paths[river] = marker;
@@ -84,7 +84,7 @@ for (const river in mapData) {
         });
 
         marker.on('mouseout', function () {
-            marker.setStyle({ fillColor: '#60A6C2' });
+            marker.setStyle({ fillColor: '#FF9B50' });
         });
 
         marker.on('click', function (e) {

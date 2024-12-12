@@ -9,6 +9,20 @@
     <title>Map with River Paths</title>
     <link rel="stylesheet" href="leaflet.css" />
     <style>
+		header{
+		  padding:5px;
+		  position: fixed;
+		  top: 0px;
+
+		  font-size:20pt;
+		  width: 1090px;
+
+		  z-index: 1000;
+		  background-color: #2a2a2a;
+		  text-align: left;
+		  display:none; 
+		  }
+		  
 		body {
 			background: #0b0b0b;
 			color: white;
@@ -55,7 +69,6 @@
 			cursor: crosshair;        
 			stroke-width: 4;
 		}
-		
     </style>
 </head>
 <body>

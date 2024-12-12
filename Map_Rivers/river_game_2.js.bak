@@ -51,7 +51,7 @@ function parseGeometry(geometry) {
 
 // Get a random river name
 function getRandomRiver() {
-    const rivers = Object.keys(mapData);
+    const rivers = Object.keys(riversData);
     const randomIndex = Math.floor(Math.random() * rivers.length);
     return rivers[randomIndex];
 }
@@ -64,17 +64,17 @@ var correctPath = null; // Track the correct path
 var paths = {}; // Store paths by river name
 
 // Loop through river data and add them to the map
-for (const river in mapData) {
-    const geometry = parseGeometry(mapData[river]);
+for (const river in riversData) {
+    const geometry = parseGeometry(riversData[river]);
 
     if (geometry.type === 'Point') {
         // Add a circle marker for Point
         const marker = L.circleMarker(geometry.coordinates, {
             radius: 5,
-            color: '#EDC1A0',
-			stroke: '#EDC1A0',
+            color: '#60A6C2',
+			stroke: '#60A6C2',
             weight: 2,
-            fillColor: '#EDC1A0',
+            fillColor: '#60A6C2',
             fillOpacity: 1
         }).addTo(map);
         paths[river] = marker;
@@ -96,7 +96,7 @@ for (const river in mapData) {
     } else if (geometry.type === 'LineString') {
         // Add a polyline for LineString
         const polyline = L.polyline(geometry.coordinates, {
-            color: '#EDC1A0',
+            color: '#60A6C2',
             weight: 3,
             opacity: 1
         }).addTo(map);
@@ -107,7 +107,7 @@ for (const river in mapData) {
         });
 
         polyline.on('mouseout', function () {
-            polyline.setStyle({ color: '#EDC1A0' });
+            polyline.setStyle({ color: '#60A6C2' });
         });
 
         polyline.on('click', function (e) {
@@ -146,9 +146,9 @@ function handleSelection(river, path, event) {
     // Move to the next round after a delay
     setTimeout(function () {
 		path.closeTooltip();
-		if (correctPath) {
-			correctPath.closeTooltip();
-		}
+
+		correctPath.closeTooltip();
+
         nextRound();
     }, 1400);
 }

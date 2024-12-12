@@ -7,8 +7,7 @@
     <title>Map with River Paths</title>
     <link rel="stylesheet" href="leaflet.css" />
     <style>
-	
-	header{
+		header{
 		  padding:5px;
 		  position: fixed;
 		  top: 0px;
@@ -21,7 +20,7 @@
 		  text-align: left;
 		  display:none; 
 		  }
-	  
+		  
 		body {
 			background: #0b0b0b;
 			}
@@ -53,38 +52,19 @@
 
         .leaflet-interactive {
             cursor: crosshair;   
-            stroke: #69B3D0;         			
+         
+			stroke: #EDC1A0 !important; 
+			color: #EDC1A0 !important; 	
+			fillColor:#EDC1A0 !important; 			
         }
 		
         .leaflet-interactive:hover {
             cursor: crosshair;   
-            stroke: cyan;         
+            stroke: #FFE0C8 !important;         
 			stroke-width: 4;			
         }
-		
     </style>
 </head>
-
-<a href="index.html" class="top-right-link">⌂</a>
-<style>
-	.top-right-link {
-		opacity:1;
-		position: absolute;
-		top: 6px;
-		right: 26px;
-		color: #8a8a8a;
-		font-size: 28px;
-		text-decoration: none;
-		z-index:1999;
-	}
-
-	.top-right-link:hover {	
-		
-		color: #ffffff;
-	}
-
-</style>
-
 <body>
 
 <div id="header"> ㅤ</div>
@@ -94,9 +74,8 @@
 
 
 <script src="leaflet.js"></script>
-<script src="river_data.js"></script>
-
-<script src="river_game_2.js"></script>
+<script src="map_data.js"></script>
+<script src="map_game_2.js"></script>
 
 
 </body>

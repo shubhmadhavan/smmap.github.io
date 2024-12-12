@@ -1,3 +1,20 @@
+.top-right-link {
+	opacity:0;
+	position: absolute;
+	top: -2.5px;
+	left: 1476px;
+	color: #8a8a8a;
+	font-size: 42px;
+	text-decoration: none;
+	z-index:1999;
+}
+
+.top-right-link:hover {	
+	
+	color: #ffffff;
+}
+
+
 /*
  .scaling-wrapper {
   transform: scale(0.85); // Scale to 80% 
@@ -106,7 +123,9 @@ button {
     opacity:40%;
 }
 
-
+.light-read-theme-wrapper{
+	
+}
 
 
 /* styles.css */
@@ -115,9 +134,9 @@ button {
   display: flex;
   gap: 4px; /* Space between buttons */
     position: absolute;
-    top: 1168px;
+    top: 1208px;
     left: 822px;
-    opacity: 40%;
+    opacity: 60%;
     z-index: 2000;
 }
 
@@ -230,7 +249,7 @@ button {
 
 	width:auto;
 	position: absolute;
-	top: 1152px;;
+	top: 1192px;;
 	left: 792px;
   opacity: 20%;
   z-index:2000;
@@ -245,7 +264,7 @@ button {
 {
 	width:auto;
 	position: absolute;
-	top: 1141px;
+	top: 1181px;
 	left: 701px;
 opacity: 10%;
 z-index:2000;
@@ -256,7 +275,7 @@ z-index:2000;
 {
 	width:auto;
 	position: absolute;
-	top: 1141px;
+	top: 1181px;
 	left: 734px;
 opacity: 9%;
 z-index:2000;
@@ -310,7 +329,22 @@ div {
 }
 
 #settings2{
-  background-color: #2a2a2a;
+	margin-top:-20px;
+	margin-left:-110px;
+	font-size: 25px;
+	  
+}
+
+#startGameButton{
+	font-size: 28px !important;
+	background-color: #486877;
+	border: 16px solid #486877;
+	border-left: 48px solid #486877;
+	border-right: 48px solid #486877;
+}
+
+#startGameButton:hover{
+	box-shadow: 0 0 12px #ffffff;
 }
 
 #finish {
@@ -358,7 +392,7 @@ div {
 
   padding:5px;
   position: fixed;
-  top: 60px;
+  top: 0px;
 
   font-size:20pt;
   width: 1090px;
@@ -367,7 +401,7 @@ div {
   background-color: #2a2a2a;
   text-align: left;
   display:none; 
-  opacity: 90%; 
+  opacity: 100%; 
 }
 
 #target-info-2 {
@@ -707,3 +741,4 @@ pointer-events: 'none';
   	}
 
 
+}

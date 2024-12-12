@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial=">
-    <title>Map with River Paths</title>
+    <title>Rivers (Learn) | SMMAP</title>
     <link rel="stylesheet" href="leaflet.css" />
     <style>
 	
@@ -65,7 +65,7 @@
     </style>
 </head>
 
-<a href="../index.html" class="top-right-link">⌂</a>
+
 <style>
 	.top-right-link {
 		opacity:1;
@@ -83,7 +83,56 @@
 		color: #ffffff;
 	}
 
+	.toggle-map{
+		opacity:0.4;
+		position: absolute;
+		top: 14px;
+		right: 46px;
+		color: #8a8a8a;
+	}
+	.toggle-map:hover{
+		opacity:0.8;
+	}
+	.toggle-map > img {
+		height:19px;
+	}
 </style>
+
+<script>
+// Wait for the DOM to load
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleMapElement = document.querySelector('.toggle-map');
+    let isToggled = false; // To track the toggle state
+
+    if (toggleMapElement) {
+        toggleMapElement.addEventListener('click', () => {
+            // Select elements by class
+            const mapLayers = document.querySelectorAll('.leaflet-image-layer.leaflet-zoom-animated');
+
+            // Toggle opacity values based on the state
+            if (isToggled) {
+                mapLayers.forEach(layer => {
+                    layer.style.opacity = '1';
+                });
+                toggleMapElement.style.opacity = '0.4';
+            } else {
+                mapLayers.forEach(layer => {
+                    layer.style.opacity = '0';
+                });
+                toggleMapElement.style.opacity = '0.2';
+            }
+
+            // Update toggle state
+            isToggled = !isToggled;
+        });
+    } else {
+        console.error("Element with class 'toggle-map' not found.");
+    }
+});
+</script>
+
+<a href="../index.html" class="top-right-link">⌂</a>
+<div class="toggle-map"> <img src="..\Map_Images\india_icon.png"></div>
 
 <body>
 

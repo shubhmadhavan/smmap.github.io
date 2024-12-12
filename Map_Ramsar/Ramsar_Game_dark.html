@@ -6,108 +6,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial=">
-    <title>Map with River Paths</title>
+    <title>Ramsar | SMMAP</title>
     <link rel="stylesheet" href="leaflet.css" />
-    <style>
-		header{
-		  padding:5px;
-		  position: fixed;
-		  top: 0px;
-
-		  font-size:20pt;
-		  width: 1090px;
-
-		  z-index: 1000;
-		  background-color: #2a2a2a;
-		  text-align: left;
-		  display:none; 
-		  }
-		  
-		.correct-path{
-			color:#00FFF0 !important;
-		}
-		.default-path{
-			color:#60A6C2 !important;
-		}
-		.incorrect-path{
-			color:#894545 !important;
-		}
-	
-		body {
-			background: #0b0b0b;
-			color: white;
-			}
-        #map {
-            height: 92vh; /* Adjusted height for map */
-			background: #0b0b0b;
-        }
-        #header {
-            font-size: 24px;
-            margin: 10px;
-            text-align: center;
-        }
-		#result {
-			position: absolute;
-			top: 60px;
-			left: 50%;
-			transform: translateX(-50%);
-			z-index: 9999;
-			background-color: rgba(0, 0, 0, 0.7);
-			color: white;
-			padding: 10px;
-			border-radius: 5px;
-			display: none;
-			text-align: center;
-		}
-		#result2 {
-            position: absolute;
-			top: 120px;
-            z-index: 9999;
-            background-color: rgba(0, 0, 0, 1);
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            display: none;
-            text-align: center;
-        }
-		
-		#resultSelect {          
-			position: absolute;
-            z-index: 9999;
-            background-color: rgba(0, 0, 0, 1);
-            color: #ffffff;
-			font-size: 17px;
-            padding: 10px;
-            border-radius: 5px;
-            display: none;
-            text-align: center;
-		 }
-
-		#resultCorrect {          
-			position: absolute;
-            z-index: 9999;
-            background-color: rgba(0, 0, 0, 1);
-            color: #ffffff;
-			font-size: 17px;
-            padding: 10px;
-            border-radius: 5px;
-            display: none;
-            text-align: center;
-		 }
-			 
-        #map:hover {
-			cursor: default;        
-		}
-		.leaflet-interactive:hover{
-			cursor: crosshair;        
-			stroke-width: 4;
-			stroke: #FFE0C8 !important;  	
-		}
-		
-    </style>
+	<link rel="stylesheet" href="game_1.css" />
+  
 </head>
 
+<script>
+// Wait for the DOM to load
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleMapElement = document.querySelector('.toggle-map');
+    let isToggled = false; // To track the toggle state
+
+    if (toggleMapElement) {
+        toggleMapElement.addEventListener('click', () => {
+            // Select elements by class
+            const mapLayers = document.querySelectorAll('.leaflet-image-layer.leaflet-zoom-animated');
+
+            // Toggle opacity values based on the state
+            if (isToggled) {
+                mapLayers.forEach(layer => {
+                    layer.style.opacity = '1';
+                });
+                toggleMapElement.style.opacity = '0.4';
+            } else {
+                mapLayers.forEach(layer => {
+                    layer.style.opacity = '0';
+                });
+                toggleMapElement.style.opacity = '0.2';
+            }
+
+            // Update toggle state
+            isToggled = !isToggled;
+        });
+    } else {
+        console.error("Element with class 'toggle-map' not found.");
+    }
+});
+</script>
+
 <a href="../index.html" class="top-right-link">⌂</a>
+<div class="toggle-map"> <img src="..\Map_Images\india_icon.png"></div>
+
 <style>
 	.top-right-link {
 		opacity:1;

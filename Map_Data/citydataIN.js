@@ -1,8 +1,56 @@
-const csvUS = `NohKaLikai Falls;IN;IN;easy;25.27542;91.68595
-Kunchikal Falls;IN;IN;easy;13.69375;75.01913
-Barehipani Waterfall;IN;IN;easy;21.93288;86.38018
-Gj;IN;IN;easy;23.72134;68.18249
-Devprayag;IN;IN;easy;30.14528;78.59766
-TN;IN;IN;easy;8.07788;77.55578
-Afg;IN;IN;easy;37.05212;74.56856
-NER;IN;IN;easy;27.88023;97.37346`;
+const csvUS = `Bandipur NP-TR;IN;IN;easy;11.790289;76.461998;;
+Jim Corbett NP-TR (UK);IN;IN;easy;29.5300138;78.7746603;;
+Kanha NP-TR (MP);IN;IN;easy;22.1457849;80.6608852;;
+Manas NP-TR-WLS-ER (AS);IN;IN;easy;26.6594075;91.0011499;;
+Melghat TR (MH);IN;IN;easy;21.4060416;77.1485163;;
+Palamu TR;IN;IN;easy;23.6849645;84.2352722;;
+Ranthambore NP-TR;IN;IN;easy;26.0173274;76.5025742;;
+Similipal NP-TR;IN;IN;easy;21.6100333;86.3141099;;
+Sundarbans NP-TR;IN;IN;easy;21.8095594;88.8839543;;
+Periyar NP-TR;IN;IN;easy;9.5027828;77.2247404;;
+Sariska NP-TR;IN;IN;easy;27.3104429;76.4389167;;
+Buxa NP-TR (WB);IN;IN;easy;26.6473355;89.5483371;;
+Indravati NP-TR (CG);IN;IN;easy;19.2058944;81.0312989;;
+Namdapha NP-TR;IN;IN;easy;27.4384506;96.5179431;;
+Nagarjuna Sagar-Srisailam TR (AP);IN;IN;easy;15.6551708;78.7720506;;
+Dudhwa NP-TR (UP);IN;IN;easy;28.4911815;80.6464716;;
+Kalakkad Mundanthurai TR (TN);IN;IN;easy;8.68834;77.3094674;;
+Valmiki NP-TR (BR);IN;IN;easy;27.3824285;84.1215416;;
+Indira Priyadarshini Pench NP-TR (MP-MH);IN;IN;easy;21.7473031;79.2938428;;
+Tadoba Andheri NP-TR;IN;IN;easy;20.3332099;79.3349097;;
+Bandhavgarh NP-TR (MP);IN;IN;easy;23.7251695;81.0230149;;
+Panna NP-TR (MP);IN;IN;easy;24.5904659;79.9416518;;
+Dampa TR-WLS;IN;IN;easy;23.5034329;92.4179725;;
+Bhadra TR (KN);IN;IN;easy;13.6687344;75.6234448;;
+Pakke NP-TR;IN;IN;easy;27.137566;92.8130437;;
+Nameri NP-TR (AS);IN;IN;easy;26.9727381;92.8474436;;
+Satpura NP-TR (MP);IN;IN;easy;22.5777284;78.3650283;;
+Anaimalai/ Indira Gandhi NP-TR (TN);IN;IN;easy;10.4260237;77.1244534;;
+Udanti-Sitanadi Tiger Reserve;IN;IN;easy;20.1203252;82.3702767;;
+Satkosia TR (OD);IN;IN;easy;20.4903776;84.7189111;;
+Kaziranga NP-TR (AS);IN;IN;easy;26.6779639;93.3565552;;
+Achanakmar TR (CG);IN;IN;easy;22.46939;81.78125;;
+Kali NP-TR (Anshi NP);IN;IN;easy;15.0264295;74.417262;;
+Sanjay Dubhri NP-TR (MP);IN;IN;easy;23.8678276;82.0625052;;
+Mudumalai NP-TR;IN;IN;easy;11.5871757;76.5199016;;
+Nagarhole NP-TR;IN;IN;easy;12.0734366;76.1510815;;
+Parambikulam TR;IN;IN;easy;10.44384;76.8135893;;
+Sahyadri TR;IN;IN;easy;17.4862194;73.8093113;;
+Biligiri Ranganatha Temple (BRT) WLS-TR;IN;IN;easy;11.9510929;77.0539865;;
+Kawal TR (TG);IN;IN;easy;19.118895;78.998973;;
+Sathyamangalam TR (TN);IN;IN;easy;11.641345;77.2321621;;
+Mukundra NP-TR;IN;IN;easy;24.9659242;75.6744012;;
+Navegaon-Nagzira NP-TR;IN;IN;easy;20.9824197;80.1673423;;
+Amrabad TR (TG);IN;IN;easy;16.2677414;78.7216189;;
+Pilibhit TR;IN;IN;easy;28.722237;80.0459001;;
+Bori WLS-TR;IN;IN;easy;22.403;78.08;;
+Rajaji NP-TR (UK);IN;IN;easy;29.9759805;78.1945701;;
+Orang NP-TR;IN;IN;easy;26.5747701;92.3004053;;
+Kamlang NP-TR;IN;IN;easy;27.9128159;96.1771703;;
+Srivilliputhur-Megamalai TR;IN;IN;easy;9.5904449;77.4321073;;
+Ramgarh Visdhari TR;IN;IN;easy;25.4936146;75.6656732;;
+Ranipur TR (UP);IN;IN;easy;24.9694334;81.1265515;;
+Veerangana Durgavati Tiger Reserve;IN;IN;easy;23.6398907;79.0654949;;
+Karauli-Dholpur TR;IN;IN;easy;26.50714;77.28648;;
+Guru Ghasidas–Tamor Pingla TR;IN;IN;easy;23.5196013;82.5079032;;
+Ratapani TR;IN;IN;easy;22.91776;77.72229;;`;

@@ -23,14 +23,14 @@
 
 	
 </head>
-<body>
+
 
 	<a href="game_js_creator.html" class="top-right-link">ⓘ</a>
 
 
-    <div class="container">
-        <div class="centered">
-
+    <div class="container"  >
+        <div class="centered" style="gap:14px !important;">
+<div class="buttons-class"> <!-- change zoom of buttons-class in index_styles -->
 		<br/><br/>
 
 
@@ -38,73 +38,181 @@
 			<div style="color:#808080; font-weight: bold; font-size: 20pt; margin-bottom: 12px; display:none; ">Language</div>
 			<div class="wrapper" style ="display:none;">
 
-
-
 			</div>
 
 
-		<div class="wrapper" style="background-color:#2f2f2f !important; width:560px !important; max-width:560px !important;  height:40px; margin-top:-6px;">
+		<div class="wrapper" style="background-color:#2f2f2f !important;  width:184px !important;  height:100px; margin-top:-6px;">
 
 
 			
-			<div  class="river-option-wrapper" id="riverwrapper1" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:150px; height:44px;">
+			<div  class="river-option-wrapper" id="riverwrapper1" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px;">
 			  <input type="radio" class="option option-map-0" id="rivers" name="map" value="rivers"  style="width:40px; margin-top:10px;"/>
-			  <label for="option-map-0" id="rivers-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:2px; box-shadow:unset;"><span>Rivers</span></label>
+			  
+			  <label for="option-map-0" id="rivers-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:2px; box-shadow:unset;">
+			  <span style="margin-left:-48px;">Rivers</span></label>
 			</div>
-
-			<div  class="river-option-wrapper" id="riverwrapper2" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:150px; height:44px;">
+			
+			
+			
+			<div  class="river-option-wrapper" id="riverwrapper2" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px; margin-top:10px;">
 			  <input type="radio" class="option option-map-00" id="rivers-learn" name="map" value="rivers_2" style="width:40px; margin-top:10px;"/>
-			  <label for="option-map-00" id="rivers-learn-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:14px; box-shadow:unset;"><span>Rivers (Learn)</span></label>
+			  <label for="option-map-00" id="rivers-learn-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:14px; box-shadow:unset;">
+			  <span style="margin-left:-48px;">Rivers 
+			  <span style="color:#808080; font-size:10px;">Learn</span></span></label>
 
 			</div>
 		</div>	
-		<br>
-		<div class="wrapper" style="background-color:#2f2f2f !important; width:560px !important; max-width:560px !important;  height:40px; margin-top:-6px;">
+		
+<div style="height:15px !important;"></div>
 
-			<div  class="river-option-wrapper" id="riverwrapper1" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:175px; height:44px;">
+		<div class="wrapper" style="background-color:#2f2f2f !important;  width:184px !important;  height:100px; margin-top:-6px;">
+
+			<div  class="river-option-wrapper" id="riverwrapper1" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px;">
 			  <input type="radio" class="option option-map-0" id="rivers" name="map" value="mountains"  style="width:40px; margin-top:10px;"/>
-			  <label for="option-map-0" id="rivers-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:2px; box-shadow:unset;"><span>Mountains</span></label>
-			</div>
-
-			<div  class="river-option-wrapper" id="riverwrapper2" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:175px; height:44px;">
+			  <label for="option-map-0" id="rivers-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:2px; box-shadow:unset;">
+			  <span style="margin-left:-18px;">Mountains</span></label>
+			</div> 
+		
+			<div  class="river-option-wrapper" id="riverwrapper2" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px; margin-top:10px;">
 			  <input type="radio" class="option option-map-00" id="rivers-learn" name="map" value="mountains_2" style="width:40px; margin-top:10px;"/>
-			  <label for="option-map-00" id="rivers-learn-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:14px; box-shadow:unset;"><span>Mountains (Learn)</span></label>
+			  <label for="option-map-00" id="rivers-learn-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:14px; box-shadow:unset; ">
+			  <span style="margin-left:-18px;">Mountains <span style="color:#808080; font-size:10px;">Learn</span></span></label>
 
 			</div>
 			
 		</div>
-		<br>
+<div style="height:15px !important;"></div>
 
 
 			
-	<div class="wrapper" style="background-color:#2f2f2f !important; margin-top: -2px; max-width:560px !important;  height:40px; 	">
+	<div class="wrapper" style="background-color:#2f2f2f !important;  width:184px !important;  height:158px; margin-top:-6px;">
+			 <input type="radio" name="map" id="option-map-1" value="np" checked>
+
+			 <input type="radio" name="map" id="option-map-0" value="rivers" >
+			 <input type="radio" name="map" id="option-map-00" value="rivers_2" >
+			 
+			<div  class="river-option-wrapper" id="riverwrapper1" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px;">
+			  <input type="radio" class="option option-map-0" id="rivers" name="map" value="np_1"  style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-0" id="rivers-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:2px; box-shadow:unset; margin-left:-21px;">
+			  <span style="margin-left:-2px;">Nat Parks<span style="color:#808080; font-size:10px;">ㅤㅤㅤㅤ </span></span></label>
+			</div> 
+		
+		
+			<div  class="river-option-wrapper" id="riverwrapper1" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px; margin-top:10px;">
+			  <input type="radio" class="option option-map-1" id="rivers" name="map" value="np_1"  style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-0" id="rivers-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:2px; box-shadow:unset; margin-left:5px;">
+			  <span style="margin-left:2px;">Nat Parks <span style="color:#808080; font-size:10px;">Learn</span></span></label>
+			</div> 
+			
+			   <label for="option-map-1" class="option option-map-1" style="margin-left:0px; width:160px; height:44px; margin-top:10px;">
+				 <div class="dot" style="margin-left:-26px;"></div>
+					<span style="font-size:17px; margin-left:-20px;">Nat Parks <span style="color:#808080; font-size:10px;">Hard</span></span>
+				  </label>
+				  
+</div>
+<div style="height:15px !important;"></div>
+<div class="wrapper" style="background-color:#2f2f2f !important;  width:184px !important;  height:158px; margin-top:-6px;">
+			 <input type="radio" name="map" id="option-map-1" value="np" checked>
+
+			 <input type="radio" name="map" id="option-map-3" value="in" >
+			 <input type="radio" name="map" id="option-map-0" value="rivers" >
+			 <input type="radio" name="map" id="option-map-00" value="rivers_2" >
+			 
+			<div  class="river-option-wrapper" id="riverwrapper1" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px;">
+			  <input type="radio" class="option option-map-0" id="rivers" name="map" value="in_1"  style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-0" id="rivers-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:2px; box-shadow:unset; margin-left:-21px;">
+			  <span style="margin-left:-2px;">Tiger Res<span style="color:#808080; font-size:10px;">ㅤㅤㅤㅤ </span></span></label>
+			</div> 
+		
+		
+			<div  class="river-option-wrapper" id="riverwrapper1" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px; margin-top:10px;">
+			  <input type="radio" class="option option-map-1" id="rivers" name="map" value="in_2"  style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-0" id="rivers-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:2px; box-shadow:unset; margin-left:5px;">
+			  <span style="margin-left:2px;">Tiger Res <span style="color:#808080; font-size:10px;">Learn</span></span></label>
+			</div> 
+			
+				<label for="option-map-3" class="option option-map-3" style="margin-left:0px; width:160px; height:44px; margin-top:10px ">
+				<div class="dot" style="margin-left:-26px;"></div>
+					<span style="font-size:17px;margin-left:-20px;">Tiger Res <span style="color:#808080; font-size:10px;">Hard</span></span>
+				</label>	  
+
+</div>
+<div style="height:15px !important;"></div>
+
+
+
+	<div class="wrapper" style="background-color:#2f2f2f !important;  width:184px !important;  height:158px; margin-top:-6px;">
+
 			 <input type="radio" name="map" id="option-map-1" value="np" checked>
 			 <input type="radio" name="map" id="option-map-2" value="rs" >
 			 <input type="radio" name="map" id="option-map-3" value="in" >
 			 <input type="radio" name="map" id="option-map-0" value="rivers" >
 			 <input type="radio" name="map" id="option-map-00" value="rivers_2" >
-			 
-			   <label for="option-map-1" class="option option-map-1" style="width:150px !important;">
-				 <div class="dot"></div>
-				  <span>National Parks</span>
-				  </label>
-				<label for="option-map-3" class="option option-map-3" style="width:150px !important;">
-				<div class="dot"></div>
-					<span>Tiger Reserves</span>
-				</label>	  
 			
-			   <label for="option-map-2" class="option option-map-2" style="width:150px !important;">
-				 <div class="dot"></div>
-				  <span>Ramsar Sites</span>
+			
+			<div  class="river-option-wrapper" id="riverwrapper1" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px;">
+			  <input type="radio" class="option option-map-0" id="rivers" name="map" value="rs_1"  style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-0" id="rivers-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:2px; box-shadow:unset; margin-left:32px;">
+			    <span style="margin-left:-25px;">Ramsar Sites<span style="color:#808080; font-size:10px;">ㅤㅤㅤㅤ </span></span></label>
+			</div> 
+		
+		
+			<div  class="river-option-wrapper" id="riverwrapper1" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px; margin-top:10px;">
+			  <input type="radio" class="option option-map-1" id="rivers" name="map" value="rs_2"  style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-0" id="rivers-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:2px; box-shadow:unset; margin-left:20px;">
+			   <span style="margin-left:4px; margin-left:-30px;">Ramsar <span style="color:#808080; font-size:10px;">Learn</span></span></label>
+			</div> 
+			
+			
+			
+			   <label for="option-map-2" class="option option-map-2" style="margin-left:0px; width:160px; height:44px; margin-top:10px ">
+				 <div class="dot" style="margin-left:-38px;"></div>
+				  <span style="font-size:17px; margin-left:-30px;">Ramsar <span style="color:#808080; font-size:10px;">Hard</span></span>
 				  </label>
+		
+	</div>
+	
+<div style="height:15px !important;"></div>
+	
+	<div class="wrapper" style="background-color:#2f2f2f !important;  width:184px !important;  height:158px; margin-top:-6px;">
+
+	<input type="radio" name="map" id="option-map-1" value="np" checked>
+	<input type="radio" name="map" id="option-map-2" value="rs" >
+	<input type="radio" name="map" id="option-map-3" value="in" >
+	<input type="radio" name="map" id="option-map-4" value="dm" >
+	
+	<input type="radio" name="map" id="option-map-0" value="rivers" >
+	<input type="radio" name="map" id="option-map-00" value="rivers_2" >
+	<input type="radio" name="map" id="option-map-00" value="mountains" >
+	<input type="radio" name="map" id="option-map-00" value="mountains_2" >
+			
+			
+			<div  class="river-option-wrapper" id="riverwrapper1" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px;">
+			  <input type="radio" class="option option-map-0" id="rivers" name="map" value="dm_1"  style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-0" id="rivers-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:2px; box-shadow:unset; margin-left:-21px;">
+			  <span style="margin-left:-2px;">Reservoirs<span style="color:#808080; font-size:10px;">ㅤㅤㅤㅤ </span></span></label>
+			</div> 
+		
+		
+			<div  class="river-option-wrapper" id="riverwrapper1" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px; margin-top:10px;">
+			  <input type="radio" class="option option-map-1" id="rivers" name="map" value="dm_2"  style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-0" id="rivers-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:2px; box-shadow:unset; margin-left:5px;">
+			  <span style="margin-left:2px;">Reservoirs <span style="color:#808080; font-size:10px;">Learn</span></span></label>
+			</div> 
+			
+			
+			
+			   <label for="option-map-4" class="option option-map-4" style="margin-left:0px; width:160px; height:44px; margin-top:10px;">
+				<div class="dot" style="margin-left:-26px;" ></div>
+				 <span style="margin-left:-20px; font-size:17px;">Reservoirs <span style="color:#808080; font-size:10px;">Hard</span></span>
+			  </label>
+		
+	</div>
+	
+<div style="height:15px !important;"></div>
 
 
-</div>
-<br/>
-
-
-
-<div class="wrapper" style="background-color:#2f2f2f !important; width:560px !important; max-width:560px !important;  height:40px; margin-top:-14px;">
+	<div class="wrapper" style="background-color:#2f2f2f !important;  width:184px !important;  height:158px; margin-top:-6px;">
 
 	<input type="radio" name="map" id="option-map-1" value="np" checked>
 	<input type="radio" name="map" id="option-map-2" value="rs" >
@@ -115,31 +223,28 @@
 	<input type="radio" name="map" id="option-map-00" value="rivers_2" >
 	<input type="radio" name="map" id="option-map-00" value="mountains" >
 	<input type="radio" name="map" id="option-map-00" value="mountains_2" >
-			
-			   <label for="option-map-4" class="option option-map-4" style="width:150px !important;">
-				<div class="dot"></div>
-				 <span>Dams & Reservoirs</span>
-			  </label>
-			   <label for="option-map-5" class="option option-map-5" style="width:150px !important;">
-				<div class="dot"></div>
-				 <span>Waterfalls</span>
+	
+			<div  class="river-option-wrapper" id="riverwrapper1" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px;">
+			  <input type="radio" class="option option-map-0" id="rivers" name="map" value="wf_1"  style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-0" id="rivers-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:2px; box-shadow:unset;"><span style="margin-left:-31px;">Waterfalls<span style="color:#808080; font-size:10px;">ㅤㅤㅤㅤ </span></span></label>
+			</div> 
+		
+		
+			<div  class="river-option-wrapper" id="riverwrapper1" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px; margin-top:10px;">
+			  <input type="radio" class="option option-map-1" id="rivers" name="map" value="wf_2"  style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-0" id="rivers-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:2px; box-shadow:unset;"><span >Waterfalls <span style="color:#808080; font-size:10px;">Learn</span></span></label>
+			</div> 
+			  
+			   <label for="option-map-5" class="option option-map-5" style="margin-left:0px; width:160px; height:44px; margin-top:10px; text-align:left !important; align-items:left !important;">
+				<div class="dot" style="margin-left:-32px;"></div>
+				 <span style="margin-left:-22px; font-size:17px;" >Waterfalls <span style="color:#808080; font-size:10px;">Hard</span></span>
 			  </label>
 		
 			  
 		
 		
 	</div>
-	<br>
-
-
-			
-  <!-- Image container for selected map -->
-  <div id="map-image-container" style="display:flex; justify-content: center; align-items: center; margin-top:8px;">
-    <img id="map-image" src="" alt="Selected Map Image" style="display: none; max-width: 100%; height: auto; max-width: 588px;">
-</div>
-
-
-
+	<div style="height:15px !important;"></div>
 
 
 
@@ -147,38 +252,46 @@
 
 		<!--	<div style="color:#808080; font-weight: bold; font-size: 18pt; margin-top: 20px; margin-bottom: -22px; opacity:40%; ">Select Order</div>-->
 		
-			<div class="wrapper" style="background-color:#2f2f2f !important;  margin-top:8px; max-width:422px !important; height:20px;">
-			 <input type="radio" name="orderRSNP" id="option-order-1" value="RS">
+	<div class="wrapper" style="background-color:#2f2f2f !important;  width:184px !important;  height:52px; margin-top:-6px;">
+			<div style="margin-top:14px;"></div>
+			<button type="submit" class="submit-button" style="font-size: 21pt !important; color:#ffffff; margin-top:-60px !important; background-color: #486877; width:180px; margin-left:0px;">Start</button>
+
+<!--			<input type="radio" name="orderRSNP" id="option-order-1" value="RS">
 			 <input type="radio" name="orderRSNP" id="option-order-2" value="NS" checked>
 
-			  	<label for="option-order-2" class="option option-order-2">
+			  	<label for="option-order-2" class="option option-order-2" style="margin-left:1px; width:156px;">
 				<div class="dot"></div>
 				  <span style="font-size: 10pt !important;">North to South</span>
 				  </label>
-				<label for="option-order-1" class="option option-order-1">
+				<label for="option-order-1" class="option option-order-1" style="margin-left:1px; width:156px;">
 				<div class="dot"></div>
 					<span style="font-size: 10pt !important;">Random/ Shuffle</span>
 					</label>
-
+-->
 				</div>
 
 
 
 
-			<button type="submit" class="submit-button" style="font-size: 21pt !important; color:#ffffff; margin-top:-40px; background-color: #486877;">Start</button>
 			<br/>
 			</form>
         </div>
+		
+					
+  <!-- Image container for selected map -->
+  <div id="map-image-container" style="display:flex; justify-content: center; align-items: center; ">
+    <img id="map-image" src="" alt="Selected Map Image" style="display: none;"> 
+		<!-- change width of #map-image in index-styles -->
+</div>
+
+		
     </div>
 
-
+</div>
     
 
 
-
 </body>
-
-
 
 </html>
 
@@ -225,7 +338,7 @@
   </script>
   
 
-  <script>
+  <script> 
 	document.querySelectorAll('input[type="radio"]').forEach(input => {
 	  input.addEventListener('change', () => {
 		const selectedValue = input.value;
@@ -255,18 +368,28 @@
 
 
 
-<script>
+<script> // Map Image Script
 	// Define the images to be displayed based on selected map option
 	const mapImages = {
-		np: 'Map_Images/India_base_dark.jpg',     // National Parks image
-		rs: 'Map_Images/India_base_dark.jpg',     // Ramsar Sites image
-		in: 'Map_Images/India_base_dark.jpg',     // Tiger Reserves image
-		dm: 'Map_Images/India_base_dark.jpg',     // Dams & Reservoirs image
-		wf: 'Map_Images/AIO_Waterfalls-2x.jpg',      // Waterfalls image
 		rivers: 'Map_Images/India_base_dark.jpg',     // Rivers image
 		rivers_2: 'Map_Images/India_base_dark.jpg',     // Rivers (Learn) image
 		mountains: 'Map_Images/India_base_dark.jpg',     // Mountains image
-		mountains_2: 'Map_Images/India_base_dark.jpg'     // Mountains (Learn) image
+		mountains_2: 'Map_Images/India_base_dark.jpg',     // Mountains (Learn) image
+		np_1: 'Map_Images/India_base_dark.jpg',     // National Parks image
+		np_2: 'Map_Images/India_base_dark.jpg',     // National Parks image
+		np: 'Map_Images/India_base_dark.jpg',     // National Parks image
+		in_1: 'Map_Images/India_base_dark.jpg',     // Tiger Reserves image
+		in_2: 'Map_Images/India_base_dark.jpg',     // Tiger Reserves image
+		in: 'Map_Images/India_base_dark.jpg',     // Tiger Reserves image
+		rs_1: 'Map_Images/India_base_dark.jpg',     // Ramsar Sites image
+		rs_2: 'Map_Images/India_base_dark.jpg',     // Ramsar Sites image
+		rs: 'Map_Images/India_base_dark.jpg',     // Ramsar Sites image
+		dm_1: 'Map_Images/India_base_dark.jpg',     // Dams & Reservoirs image
+		dm_2: 'Map_Images/India_base_dark.jpg',     // Dams & Reservoirs image
+		dm: 'Map_Images/India_base_dark.jpg',     // Dams & Reservoirs image
+		wf_1: 'Map_Images/AIO_Waterfalls-2x.jpg',      // Waterfalls image
+		wf_2: 'Map_Images/AIO_Waterfalls-2x.jpg',      // Waterfalls image
+		wf: 'Map_Images/AIO_Waterfalls-2x.jpg'     // Waterfalls image
 	}; //DONT FORGET TO REMOVE COMMA FROM LAST MENTIONED IMAGE ABOVE
 
 	// Function to update the image based on selected map
@@ -309,5 +432,3 @@
 
 
 </script>
-	
-

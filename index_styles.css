@@ -1,14 +1,10 @@
-    body, html {
-            height: 100%;
-            margin: 0;
-			margin-top: -20px;
-            display: block;
-            justify-content: center;
-            align-items: center;
-			font-size:24px;
-			background-color: #2a2a2a;
-        }
 
+		
+	html {
+		background: linear-gradient(#2a2a2a,#2a2a2a, #486877);
+		height:100%;
+		}
+		
 		body::-webkit-scrollbar {
   			display: none; /* For Chrome, Safari, and Edge */
 		}
@@ -32,11 +28,11 @@
 	}
 	
 		.wrapper{
-		  display: inline-flex;
+		 // display: inline-flex;
 		  background: #fff;
 		  height: 50px;
-		  width: 1000px;  /* for every map, add 200px to width */
-		  align-items: center;
+		   /* for every map, add 200px to width */
+		  align-items: center !important;
 		  justify-content: space-evenly;
 		  border-radius: 5px;
 		  padding: 20px 15px;
@@ -60,7 +56,8 @@
 		.wrapper .option .dot{
 		  height: 20px;
 		  width: 20px;
-		  background: #d9d9d9;
+		  background: #ffffff;
+		  border: solid 2px #A0A0A0;
 		  border-radius: 50%;
 		  position: relative;
 		}
@@ -342,3 +339,49 @@
 	  accent-color: #606060;
 	}
 	
+	
+
+	
+.centered {
+    display: flex;
+    justify-content: center; // Centers items horizontally 
+    align-items: flex-start; // Aligns items vertically at the top 
+    gap: 10px; // Adds spacing between items
+}
+
+.buttons-class {
+	margin-top: 10px;
+	zoom:0.68;
+}
+
+#map-image-container {
+    // Add any additional styling for the map container 
+	margin-top: 80px;
+	 margin-top: 22px;
+}
+
+#map-image {
+ width: 980px; height: auto; 
+}
+
+
+
+
+@media only screen and (max-width: 819px) { /* Mobile Hotfix */
+	#map-image-container {
+    /* Add any additional styling for the map container */
+	margin-top: unset;
+}
+
+
+}
+
+@media only screen and (max-width: 1219px) {
+	
+#map-image-container {
+    /* Add any additional styling for the map container */
+	margin-top: unset;
+}
+
+
+}

@@ -2,8 +2,8 @@
 A Map Repository-cum-game that requires the user to locate said locations on the relevant Map. The distance from the actual location is    
 Created for you, by Shubh.  
 
-[Link](https://shubhmadhavan.github.io/smmap.github.io/index.html)
-<img src="https://github.com/user-attachments/assets/8ecd953c-d550-453c-9483-5c557aa470ef" style="float:left; margin-right: 10px; height:400px; width: 360px;" />
+[Link](https://shubhmadhavan.github.io/smmap.github.io/index.html)  
+<img src="https://github.com/user-attachments/assets/8ecd953c-d550-453c-9483-5c557aa470ef" style="float:left; margin-right: 10px; height:600px; " />
 
 
 ## Maps Included:

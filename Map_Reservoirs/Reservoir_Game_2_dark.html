@@ -45,6 +45,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <a href="../index.html" class="top-right-link">⌂</a>
 <div class="toggle-map"> <img src="..\Map_Images\india_icon.png"></div>
+<div class="toggle-map-2"><img src="..\Map_Images\india_icon_2.png"></div>
+<div class="toggle-map-3"><img src="..\Map_Images\india_icon_3.png"></div>
+
+ <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleMap2Element = document.querySelector('.toggle-map-2');
+            const toggleMap3Element = document.querySelector('.toggle-map-3');
+            let isToggled2 = false; // Toggle state for .toggle-map-2
+            let isToggled3 = false; // Toggle state for .toggle-map-3
+
+            const mapImage = document.querySelector('.leaflet-image-layer.leaflet-zoom-animated');
+
+            if (toggleMap2Element) {
+                toggleMap2Element.addEventListener('click', () => {
+                    if (isToggled2) {
+                        mapImage.src = "../Map_Images/India_OS_purple.png";
+                    } else {
+                        mapImage.src = "../Map_Images/India_OS_dark.jpg";
+                    }
+                    isToggled2 = !isToggled2;
+                    isToggled3 = false; // Reset toggle for .toggle-map-3
+                });
+            } else {
+                console.error("Element with class 'toggle-map-2' not found.");
+            }
+
+            if (toggleMap3Element) {
+                toggleMap3Element.addEventListener('click', () => {
+                    if (isToggled3) {
+                        mapImage.src = "../Map_Images/India_OS_grey.png";
+                    } else {
+                        mapImage.src = "../Map_Images/India_OS_dark.jpg";
+                    }
+                    isToggled3 = !isToggled3;
+                    isToggled2 = false; // Reset toggle for .toggle-map-2
+                });
+            } else {
+                console.error("Element with class 'toggle-map-3' not found.");
+            }
+        });
+    </script>
 
 
 

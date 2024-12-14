@@ -112,12 +112,40 @@
 		opacity:0.4;
 		position: absolute;
 		top: 14px;
-		right: 46px;
+		right: 44px;
 		color: #8a8a8a;
 	}
 	.toggle-map:hover{
 		opacity:0.8;
 	}
 	.toggle-map > img {
+		height:19px;
+	}
+	
+	.toggle-map-2{
+		opacity:0.5;
+		position: absolute;
+		top: 14px;
+		right: 64px;
+		color: #8a8a8a;
+	}
+	.toggle-map-2:hover{
+		opacity:1;
+	}
+	.toggle-map-2 > img {
+		height:19px;
+	}
+
+	.toggle-map-3{
+		opacity:0.5;
+		position: absolute;
+		top: 14px;
+		right: 84px;
+		color: #8a8a8a;
+	}
+	.toggle-map-3:hover{
+		opacity:1;
+	}
+	.toggle-map-3 > img {
 		height:19px;
 	}

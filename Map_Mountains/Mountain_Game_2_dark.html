@@ -52,20 +52,20 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="toggle-map-3"><img src="..\Map_Images\india_icon_3.png"></div>
 
  <script>
-        document.addEventListener('DOMContentLoaded', () => {
+ document.addEventListener('DOMContentLoaded', () => {
             const toggleMap2Element = document.querySelector('.toggle-map-2');
             const toggleMap3Element = document.querySelector('.toggle-map-3');
             let isToggled2 = false; // Toggle state for .toggle-map-2
             let isToggled3 = false; // Toggle state for .toggle-map-3
 
-            const mapImage = document.querySelector('.leaflet-image-layer.leaflet-zoom-animated');
 
             if (toggleMap2Element) {
                 toggleMap2Element.addEventListener('click', () => {
                     if (isToggled2) {
-                        mapImage.src = "../Map_Images/India_OS_purple.png";
+                        L.imageOverlay('../Map_Images/India_OS_Purple.jpg', imageBounds).addTo(map);
                     } else {
-                        mapImage.src = "../Map_Images/India_OS_dark.jpg";
+					
+                        L.imageOverlay('../Map_Images/India_OS_dark.jpg', imageBounds).addTo(map);
                     }
                     isToggled2 = !isToggled2;
                     isToggled3 = false; // Reset toggle for .toggle-map-3
@@ -77,9 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (toggleMap3Element) {
                 toggleMap3Element.addEventListener('click', () => {
                     if (isToggled3) {
-                        mapImage.src = "../Map_Images/India_OS_grey.png";
+                        L.imageOverlay('../Map_Images/India_OS_Grey.jpg', imageBounds).addTo(map);
                     } else {
-                        mapImage.src = "../Map_Images/India_OS_dark.jpg";
+                        L.imageOverlay('../Map_Images/India_OS_dark.jpg', imageBounds).addTo(map);
                     }
                     isToggled3 = !isToggled3;
                     isToggled2 = false; // Reset toggle for .toggle-map-2

@@ -442,20 +442,22 @@ margin-top:10px;
 	// Initialize the image on page load
 	window.onload = updateMapImage;
 
-    $('#map-image').addClass('img-enlargable').click(function(){
-        var src = $(this).attr('src');
-        $('<div>').css({
-            background: 'RGBA(0,0,0,.5) url('+src+') no-repeat center',
-            backgroundSize: 'contain',
-            width:'100%', height:'100%',
-            position:'fixed',
-            zIndex:'10000',
-            top:'0', left:'0',
-            cursor: 'zoom-out'
-        }).click(function(){
-            $(this).remove();
-        }).appendTo('body');
-    });
 
+
+</script>
+
+<script>
+
+document.querySelector('#map-image').addEventListener('click', function () {
+    // Find the submit button with class 'submit-button'
+    const submitButton = document.querySelector('button.submit-button[type="submit"]');
+    
+    if (submitButton) {
+        // Trigger a click event on the submit button
+        submitButton.click();
+    } else {
+        console.error('Submit button with class "submit-button" not found.');
+    }
+});
 
 </script>

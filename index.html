@@ -49,7 +49,57 @@ margin-top:10px;
 
 </style>
 	
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .tabs {
+      display: flex;
+	  color: #D1D1D1;
+      background-color: #373737;
+      border-bottom: 1px solid #808080;
+    }
+
+    .tab {
+		zoom:0.75;
+      flex: 1;
+      padding: 8px;
+      text-align: center;
+      cursor: pointer;
+      background-color: #373737;
+      border: 1px solid #808080;
+      border-bottom: none;
+    }
+
+    .tab.active {
+      background-color: #505050;
+    }
+
+    .content {
+	zoom:0.95;
+      display: none;
+      padding: 0px;
+	  margin-top:-10px;
+    }
+
+    .content.active {
+      display: block;
+    }
+  </style>
 </head>
+<body>
+  <div class="tabs">
+    <div class="tab" data-tab="1">Geography</div>
+    <div class="tab" data-tab="2">History</div>
+    <div class="tab" data-tab="3">Economy</div>
+  </div>
+
+  <div class="content" id="content-1">
+    <!-- Content for Geography Index Site -->
+    
 <body style="margin-top:2px;">
 
 	<a href="game_js_creator.html" class="top-right-link">ⓘ</a>
@@ -282,7 +332,168 @@ margin-top:10px;
 
 		<!--	<div style="color:#808080; font-weight: bold; font-size: 18pt; margin-top: 20px; margin-bottom: -22px; opacity:40%; ">Select Order</div>-->
 		
-	<div class="wrapper" style="background-color:#2f2f2f !important;  width:184px !important;  height:52px; margin-top:-6px;">
+	<div class="wrapper" style="background-color:#2f2f2f !important;  width:184px !important;  height:40px; margin-top:-6px;">
+			<div style="margin-top:14px;"></div>
+			<button type="submit" class="submit-button" style="font-size: 21pt !important; color:#ffffff; margin-top:-60px !important; background-color: #486877; width:180px; margin-left:0px;">Start</button>
+
+<!--			<input type="radio" name="orderRSNP" id="option-order-1" value="RS">
+			 <input type="radio" name="orderRSNP" id="option-order-2" value="NS" checked>
+
+			  	<label for="option-order-2" class="option option-order-2" style="margin-left:1px; width:156px;">
+				<div class="dot"></div>
+				  <span style="font-size: 10pt !important;">North to South</span>
+				  </label>
+				<label for="option-order-1" class="option option-order-1" style="margin-left:1px; width:156px;">
+				<div class="dot"></div>
+					<span style="font-size: 10pt !important;">Random/ Shuffle</span>
+					</label>
+-->
+				</div>
+
+
+
+
+			<br/>
+			</form>
+        </div>
+		
+		
+	
+					
+  <!-- Image container for selected map -->
+  <div id="map-image-container" style="display:flex; justify-content: center; align-items: center; ">
+    <img id="map-image" src="" alt="Selected Map Image" style="display: none;"> 
+		<!-- change width of #map-image in index-styles -->
+</div>
+
+		
+    </div>
+
+</div>
+    
+
+
+
+
+
+<style>
+ .submit-button{
+	box-shadow: 0 0 2px #fdf7d5;
+ }
+
+ .submit-button:hover{
+	box-shadow: 0 0 12px #fdf7d5;
+ }
+
+</style>
+
+
+	
+	
+	
+	
+	
+	
+	
+  </div>
+  <div class="content" id="content-2">
+    <!-- Content for History Index Site -->
+    <body style="margin-top:2px;">
+
+	<a href="game_js_creator.html" class="top-right-link">ⓘ</a>
+
+
+    <div class="container"  >
+
+
+        <div class="centered" style="gap:14px !important;">
+<div class="buttons-class"> <!-- change zoom of buttons-class in index_styles -->
+		<br/><br/>
+
+
+
+		<form action="game.html" method="get">
+			<div style="color:#808080; font-weight: bold; font-size: 20pt; margin-bottom: 12px; display:none; ">Language</div>
+			<div class="wrapper" style ="display:none;">
+
+			</div>
+
+
+		<div class="wrapper" style="background-color:#2f2f2f !important;  width:184px !important;  height:440px; margin-top:-6px;">
+
+
+	<input type="radio" name="map-2" id="option-map-00" value="Por_1" checked>
+
+
+			<div  class="river-option-wrapper" id="riverwrapper1" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px;">
+			  <input type="radio" class="option option-map-0" id="Portuguese_1" name="map-2" value="Por_1"  style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-0" id="rivers-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative;   box-shadow:unset;">
+			  <span style="margin-left:-18px;">Portuguese</span></label>
+			</div> 
+		
+			<div  class="river-option-wrapper" id="riverwrapper2" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px; margin-top:10px;">
+			  <input type="radio" class="option option-map-00" id="Portuguese_2" name="map-2" value="Por_2" style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-00" id="rivers-learn-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:14px; box-shadow:unset; ">
+			  <span style="margin-left:-18px;">Portuguese <span style="color:#808080; font-size:10px;">Learn</span></span></label>
+			</div>
+			
+			
+			<div  class="river-option-wrapper" id="riverwrapper2" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px; margin-top:10px;">
+			  <input type="radio" class="option option-map-00" id="rivers-learn" name="map-2" value="Dutch_1" style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-00" id="rivers-learn-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:14px; box-shadow:unset; ">
+			  <span style="margin-left:-18px;">Dutch </span></label>
+			</div>
+	
+			<div  class="river-option-wrapper" id="riverwrapper2" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px; margin-top:10px;">
+			  <input type="radio" class="option option-map-00" id="rivers-learn" name="map-2" value="Dutch_2" style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-00" id="rivers-learn-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:14px; box-shadow:unset; ">
+			  <span style="margin-left:-18px;">Dutch <span style="color:#808080; font-size:10px;">Learn</span></span></label>
+			</div>
+			
+			<div  class="river-option-wrapper" id="riverwrapper2" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px; margin-top:10px;">
+			  <input type="radio" class="option option-map-00" id="rivers-learn" name="map-2" value="English_1" style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-00" id="rivers-learn-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:14px; box-shadow:unset; ">
+			  <span style="margin-left:-18px;">English </span></label>
+			</div>
+	
+			<div  class="river-option-wrapper" id="riverwrapper2" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px; margin-top:10px;">
+			  <input type="radio" class="option option-map-00" id="rivers-learn" name="map-2" value="English_2" style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-00" id="rivers-learn-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:14px; box-shadow:unset; ">
+			  <span style="margin-left:-18px;">English <span style="color:#808080; font-size:10px;">Learn</span></span></label>
+			</div>
+			
+			
+			<div  class="river-option-wrapper" id="riverwrapper2" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px; margin-top:10px;">
+			  <input type="radio" class="option option-map-00" id="rivers-learn" name="map-2" value="French_1" style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-00" id="rivers-learn-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:14px; box-shadow:unset; ">
+			  <span style="margin-left:-18px;">French </span></label>
+			</div>
+	
+			<div  class="river-option-wrapper" id="riverwrapper2" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px; margin-top:10px;">
+			  <input type="radio" class="option option-map-00" id="rivers-learn" name="map-2" value="French_2" style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-00" id="rivers-learn-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:14px; box-shadow:unset; ">
+			  <span style="margin-left:-18px;">French <span style="color:#808080; font-size:10px;">Learn</span></span></label>
+			</div>
+			
+			
+			
+		</div>
+<div style="height:15px !important;"></div>
+
+
+			
+
+	
+
+			
+
+
+
+			<!-- Shuffle or N2S-->
+
+		<!--	<div style="color:#808080; font-weight: bold; font-size: 18pt; margin-top: 20px; margin-bottom: -22px; opacity:40%; ">Select Order</div>-->
+		
+	<div class="wrapper" style="background-color:#2f2f2f !important;  width:184px !important;  height:40px; margin-top:-6px;">
 			<div style="margin-top:14px;"></div>
 			<button type="submit" class="submit-button" style="font-size: 21pt !important; color:#ffffff; margin-top:-60px !important; background-color: #486877; width:180px; margin-left:0px;">Start</button>
 
@@ -309,11 +520,116 @@ margin-top:10px;
 		
 					
   <!-- Image container for selected map -->
-  <div id="map-image-container" style="display:flex; justify-content: center; align-items: center; ">
-    <img id="map-image" src="" alt="Selected Map Image" style="display: none;"> 
+  <div id="map-image-container-2" style="display:flex; justify-content: center; align-items: center; ">
+    <img id="map-image-2" src="" alt="Selected Map Image" style="display: none;"> 
 		<!-- change width of #map-image in index-styles -->
 </div>
+		
+    </div>
 
+
+</div></div>
+  
+
+  
+  
+  
+	
+	
+	
+  
+  <div class="content" id="content-3">
+    <!-- Content for Economy Index Site -->
+    <body style="margin-top:2px;">
+
+	<a href="game_js_creator.html" class="top-right-link">ⓘ</a>
+
+
+    <div class="container"  >
+
+
+        <div class="centered" style="gap:14px !important;">
+<div class="buttons-class"> <!-- change zoom of buttons-class in index_styles -->
+		<br/><br/>
+
+
+
+		<form action="game.html" method="get">
+			<div style="color:#808080; font-weight: bold; font-size: 20pt; margin-bottom: 12px; display:none; ">Language</div>
+			<div class="wrapper" style ="display:none;">
+
+			</div>
+
+
+		<div class="wrapper" style="background-color:#2f2f2f !important;  width:184px !important;  height:440px; margin-top:-6px;">
+
+
+	<input type="radio" name="map-3" id="option-map-00" value="Ports_1" checked>
+
+
+			<div  class="river-option-wrapper" id="riverwrapper1" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px;">
+			  <input type="radio" class="option option-map-0" id="Portuguese_1" name="map-3" value="Ports_1"  style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-0" id="rivers-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative;   box-shadow:unset;">
+			  <span style="margin-left:-18px;">Ports</span></label>
+			</div> 
+		
+			<div  class="river-option-wrapper" id="riverwrapper2" style="border-radius: 6px; border: solid 2px #d3d3d3; background-color: #ffffff; width:180px; height:44px; margin-top:10px;">
+			  <input type="radio" class="option option-map-00" id="Portuguese_2" name="map-3" value="Ports_2" style="width:40px; margin-top:10px;"/>
+			  <label for="option-map-00" id="rivers-learn-label" style="background-color: #ffffff; color:#808080; font-size:17px; position: relative; top: -25px; left:14px; box-shadow:unset; ">
+			  <span style="margin-left:-18px;">Ports <span style="color:#808080; font-size:10px;">Learn</span></span></label>
+			</div>
+			
+			
+		
+			
+			
+		</div>
+<div style="height:15px !important;"></div>
+
+
+			
+
+	
+
+			
+
+
+
+			<!-- Shuffle or N2S-->
+
+		<!--	<div style="color:#808080; font-weight: bold; font-size: 18pt; margin-top: 20px; margin-bottom: -22px; opacity:40%; ">Select Order</div>-->
+		
+	<div class="wrapper" style="background-color:#2f2f2f !important;  width:184px !important;  height:40px; margin-top:-6px;">
+			<div style="margin-top:14px;"></div>
+			<button type="submit" class="submit-button" style="font-size: 21pt !important; color:#ffffff; margin-top:-60px !important; background-color: #486877; width:180px; margin-left:0px;">Start</button>
+
+<!--			<input type="radio" name="orderRSNP" id="option-order-1" value="RS">
+			 <input type="radio" name="orderRSNP" id="option-order-2" value="NS" checked>
+
+			  	<label for="option-order-2" class="option option-order-2" style="margin-left:1px; width:156px;">
+				<div class="dot"></div>
+				  <span style="font-size: 10pt !important;">North to South</span>
+				  </label>
+				<label for="option-order-1" class="option option-order-1" style="margin-left:1px; width:156px;">
+				<div class="dot"></div>
+					<span style="font-size: 10pt !important;">Random/ Shuffle</span>
+					</label>
+-->
+				</div>
+
+
+
+
+			<br/>
+			</form>
+        </div>
+		
+					
+  <!-- Image container for selected map -->
+  <div id="map-image-container-3" style="display:flex; justify-content: center; align-items: center; ">
+    <img id="map-image-3" src="" alt="Selected Map Image" style="display: none;"> 
+		<!-- change width of #map-image in index-styles -->
+</div>
 		
     </div>
 
@@ -322,23 +638,67 @@ margin-top:10px;
 
 
 </body>
+	
+	
+	
+	
+	
+	
+	
+  </div>
+  	
+	
+	
+	
+	
+	
+	
+	
+  </div>
 
-</html>
 
 
 
-<style>
- .submit-button{
-	box-shadow: 0 0 2px #fdf7d5;
- }
-
- .submit-button:hover{
-	box-shadow: 0 0 12px #fdf7d5;
- }
-
-</style>
 
 
+
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabs = document.querySelectorAll('.tab');
+      const contents = document.querySelectorAll('.content');
+
+      function activateTab(tabIndex) {
+        tabs.forEach((tab, index) => {
+          if (index + 1 === tabIndex) {
+            tab.classList.add('active');
+          } else {
+            tab.classList.remove('active');
+          }
+        });
+
+        contents.forEach((content, index) => {
+          if (index + 1 === tabIndex) {
+            content.classList.add('active');
+          } else {
+            content.classList.remove('active');
+          }
+        });
+      }
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+          activateTab(index + 1);
+        });
+      });
+
+      // Activate the first tab by default
+      activateTab(1);
+    });
+  </script>
+  
+  
 <script>      // script to ensure option selection formatting for river options is consistent
 	document.querySelectorAll('.river-option-wrapper').forEach(wrapper => {
 	  const input = wrapper.querySelector('input[type="radio"]');
@@ -419,7 +779,9 @@ margin-top:10px;
 		dm: 'Map_Images/India_base_dark.jpg',     // Dams & Reservoirs image
 		wf_1: 'Map_Images/AIO_Waterfalls-2x.jpg',      // Waterfalls image
 		wf_2: 'Map_Images/AIO_Waterfalls-2x.jpg',      // Waterfalls image
-		wf: 'Map_Images/AIO_Waterfalls-2x.jpg'     // Waterfalls image
+		wf: 'Map_Images/AIO_Waterfalls-2x.jpg',     // Waterfalls image
+		Por_1: 'Map_Images/AIO_Waterfalls-2x.jpg',     //  
+		Por_2: 'Map_Images/AIO_Waterfalls-2x.jpg'
 	}; //DONT FORGET TO REMOVE COMMA FROM LAST MENTIONED IMAGE ABOVE
 
 	// Function to update the image based on selected map
@@ -429,12 +791,20 @@ margin-top:10px;
 
 		// Get the image element
 		const mapImageElement = document.getElementById('map-image');
-
+		
+	
+		
+		
+		
 		// Update the image source based on the selected map
 		mapImageElement.src = mapImages[selectedMap];
 
+
+		console.log(mapImageElement.src +' and '+mapImageElement.src );
+
 		// Display the image
 		mapImageElement.style.display = 'block';
+	
 	}
 
 	// Add event listeners to radio buttons to detect changes
@@ -448,6 +818,74 @@ margin-top:10px;
 
 
 </script>
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Get all radio buttons with the name "map"
+  const radioButtons = document.querySelectorAll('input[name="map-2"]');
+  
+  // Get the image element
+  const mapImage = document.getElementById("map-image-2");
+
+  // Function to update the image source based on the selected radio button
+  function updateImage() {
+    const selectedValue = document.querySelector('input[name="map-2"]:checked').value;
+    if (selectedValue === "Por_1") {
+      mapImage.src = "Map_Images/AIO_Waterfalls-2x.jpg";
+    } else if (selectedValue === "Por_2") {
+      mapImage.src = "Map_Images/India_base_dark.jpg";
+    } 
+    // Display the image
+    mapImage.style.display = "block";
+  }
+
+  // Add event listeners to the radio buttons
+  radioButtons.forEach(radio => {
+    radio.addEventListener("change", updateImage);
+  });
+
+  // Initialize the image on page load
+  updateImage();
+});
+
+</script>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Get all radio buttons with the name "map"
+  const radioButtons = document.querySelectorAll('input[name="map-3"]');
+  
+  // Get the image element
+  const mapImage = document.getElementById("map-image-3");
+
+  // Function to update the image source based on the selected radio button
+  function updateImage() {
+    const selectedValue = document.querySelector('input[name="map-3"]:checked').value;
+    if (selectedValue === "Ports_1") {
+      mapImage.src = "Map_Images/AIO_Waterfalls-2x.jpg";
+    } else if (selectedValue === "Ports_2") {
+      mapImage.src = "Map_Images/India_base_dark.jpg";
+    } 
+    // Display the image
+    mapImage.style.display = "block";
+  }
+
+  // Add event listeners to the radio buttons
+  radioButtons.forEach(radio => {
+    radio.addEventListener("change", updateImage);
+  });
+
+  // Initialize the image on page load
+  updateImage();
+});
+
+</script>
+
 
 <script>
 
@@ -463,4 +901,12 @@ document.querySelector('#map-image').addEventListener('click', function () {
     }
 });
 
+
 </script>
+	
+	
+
+
+	
+</body>
+</html>

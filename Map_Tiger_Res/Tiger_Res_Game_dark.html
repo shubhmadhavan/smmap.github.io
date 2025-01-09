@@ -146,8 +146,36 @@ document.addEventListener('DOMContentLoaded', () => {
 <body>
 
 <span style="color:#ffffff; font-size:18px; position:absolute; z-index:2;">Tiger Reserves | Practice</span>
+<div class="switcher" data-selection="tr_2" style="position:absolute; margin-top:-5px; margin-left:190px; z-index:9999; color:#faf5d9c0 !important; font-size:22px;"><span class="switcher-text">⇌</span></div>
+
+<script>
+document.querySelector('.switcher').addEventListener('click', function() {
+    // Get the value stored in the "data-selection" attribute
+    const selectionValue = this.getAttribute('data-selection');
+    
+    // Construct the URL for game.html with the selection parameter
+    const url = `../game.html?selection=${selectionValue}`;
+    
+    // Open the game.html page with the parameter
+    window.location.href = url;
+});
+
+</script>
+<style> 
+body{
+	zoom:99%;
+}
+
+.switcher-text{
+    opacity: 0.8;
+}
+.switcher-text:hover{ 
+	color: #fdf0a5ea !important;
+    opacity:1;
+ }
+ </style>
 <div id="header" style="font-size:20px !important; position: relative; left: -100px;">Locate: </div>
-<div id="map"></div>
+<div id="map" style="margin-top:-4px;"></div>
 <div id="result"></div>
 <div id="result2"></div>
 

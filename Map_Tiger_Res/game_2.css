@@ -146,3 +146,8 @@
 		display:none;
 		opacity:0;
 	}
+	
+		#map{
+		
+		max-width:97.9vw;
+	}

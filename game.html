@@ -4,17 +4,17 @@
   (function() {
     const urlParams = new URLSearchParams(window.location.search);
 
-    if (urlParams.has('map')) {
-      const urlMap = urlParams.get('map');
+    if (urlParams.has('selection')) {
+      const urlMap = urlParams.get('selection');
 
       // Check the value of the 'map' parameter and redirect accordingly
-      if (urlMap === 'rivers') {
+      if (urlMap === 'riv_1') {
         window.location.href = 'Map_Rivers/River_Game_dark.html';
-      } else if (urlMap === 'rivers_2') {
+      } else if (urlMap === 'riv_2') {
         window.location.href = 'Map_Rivers/River_Game_2_dark.html';
-      } else if (urlMap === 'mountains') {
+      } else if (urlMap === 'mt_1') {
         window.location.href = 'Map_Mountains/Mountain_Game_dark.html';
-      }	else if (urlMap === 'mountains_2') {
+      }	else if (urlMap === 'mt_2') {
         window.location.href = 'Map_Mountains/Mountain_Game_2_dark.html';
       } else if (urlMap === 'wf_1') {
         window.location.href = 'Map_Waterfalls/Waterfall_Game_dark.html';
@@ -32,9 +32,9 @@
         window.location.href = 'Map_National_Park/Nat_Park_Game_dark.html';
       } else if (urlMap === 'np_2') {
         window.location.href = 'Map_National_Park/Nat_Park_Game_2_dark.html';
-      } else if (urlMap === 'in_1') {
+      } else if (urlMap === 'tr_1') {
         window.location.href = 'Map_Tiger_Res/Tiger_Res_Game_dark.html';
-      } else if (urlMap === 'in_2') {
+      } else if (urlMap === 'tr_2') {
         window.location.href = 'Map_Tiger_Res/Tiger_Res_Game_2_dark.html';
       }  
     }	
@@ -47,8 +47,8 @@
   
   	const urlParams_2 = new URLSearchParams(window.location.search);
 	
-	if (urlParams_2.has('map-2')) {
-      const urlMap2 = urlParams_2.get('map-2');
+	if (urlParams_2.has('selection-2')) {
+      const urlMap2 = urlParams_2.get('selection-2');
      // Check the value of the 'map-2' parameter and redirect accordingly
 
 	if (urlMap2 === 'Por_1') {
@@ -59,13 +59,17 @@
         window.location.href = 'Map_History/Map_3.2_Dutch/Map_Game_dark.html';
       } else if (urlMap2 === 'Dutch_2') {
         window.location.href = 'Map_History/Map_3.2_Dutch/Map_Game_2_dark.html';
-      } else if (urlMap2 === 'English_1') {
+      } else if (urlMap2 === 'Eng_1') {
         window.location.href = 'Map_History/Map_3.3_English/Map_Game_dark.html';
-      } else if (urlMap2 === 'English_2') {
+      } else if (urlMap2 === 'Eng_2') {
         window.location.href = 'Map_History/Map_3.3_English/Map_Game_2_dark.html';
-      } else if (urlMap2 === 'French_1') {
+      } else if (urlMap2 === 'Dan_1') {
+        window.location.href = 'Map_History/Map_3.3_Danish/Map_Game_dark.html';
+      } else if (urlMap2 === 'Dan_2') {
+        window.location.href = 'Map_History/Map_3.3_Danish/Map_Game_dark.html';
+      } else if (urlMap2 === 'Fra_1') {
         window.location.href = 'Map_History/Map_3.4_French/Map_Game_dark.html';
-      } else if (urlMap2 === 'French_2') {
+      } else if (urlMap2 === 'Fra_2') {
         window.location.href = 'Map_History/Map_3.4_French/Map_Game_2_dark.html';
       }
     }  
@@ -79,8 +83,8 @@
   
   	const urlParams_2 = new URLSearchParams(window.location.search);
 	
-	if (urlParams_2.has('map-3')) {
-      const urlMap2 = urlParams_2.get('map-3');
+	if (urlParams_2.has('selection-3')) {
+      const urlMap2 = urlParams_2.get('selection-3');
      // Check the value of the 'map-2' parameter and redirect accordingly
 
 	if (urlMap2 === 'Ports_1') {
@@ -294,10 +298,7 @@ if (event.key === 'n' || event.key === 'N') { // Check for 'n' key press
 }
 });
 // Optional: Hide the overlay when clicked
-// blackOverlay.addEventListener('click', function() {
-//     blackOverlay.style.display = 'none';
-// });
-               //});
+
 </script> 
 
 

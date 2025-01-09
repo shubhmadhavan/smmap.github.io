@@ -246,7 +246,7 @@
             color: #ffffff;
         }
 
-		button {
+	button {
     background-color: #ffffff;
     border: none;
     color: white;
@@ -260,14 +260,20 @@
 	}
 
 	input[type="radio"]:checked + label {
-		background-color: #ffffff;
+		background-color: #464646;
 	
 	}
 
 	input[type="radio"]:checked + label:hover {
-		background-color: #373737;
+		background-color: #464646;
+	
 	}
 
+	input[type="radio"] + label:hover {
+		background-color: #ffffff;
+	}
+
+	
 	
 	input[type="radio"]:checked + label span {
 

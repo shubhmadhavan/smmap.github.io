@@ -9,9 +9,7 @@
   			display: none; /* For Chrome, Safari, and Edge */
 		}
 		
-		.submit-button:hover{
-			box-shadow: 0 0 8px #ffffff !important;
-		}
+
 		
         .container {
             width: 100%;
@@ -22,11 +20,7 @@
             text-align: center;
         }
 		
-	#rivers-label, #rivers-learn-label{
-		position: relative; /* Enable positioning adjustments */
-		top: -17px !important; /* Move up by 20px */
-	}
-	
+
 		.wrapper{
 		 // display: inline-flex;
 		  background: #fff;
@@ -82,9 +76,6 @@
 		  font-size: 16px;
 		  color: #808080;
 		}
-		.label {
-		  	width: auto;
-		}
 
 		button {
 		  background-color: #373737;
@@ -99,134 +90,15 @@
 		  border-radius: 5px;
 		}
 		
+		.label {
+		  	width: auto;
+		}
+
 		label:hover{		
-		box-shadow: 0 0 8px #fdf7d5;
+		box-shadow: 0 0 8px #707070;
 		}
 
-		#option-map-0:checked:checked ~ .option-map-0,
-		#option-map-1:checked:checked ~ .option-map-1,
-		#option-map-2:checked:checked ~ .option-map-2,
-		#option-map-3:checked:checked ~ .option-map-3,
-		#option-map-4:checked:checked ~ .option-map-4,
-		#option-map-5:checked:checked ~ .option-map-5,
-		#option-map-00:checked:checked ~ .option-map-00,
-		#option-map-00:checked:checked {
-		border-color: #373737;
-		background: #373737;
-		}
-
-		#option-map-0:checked:checked ~ .option-map-0 .dot,
-		#option-map-1:checked:checked ~ .option-map-1 .dot,
-		#option-map-2:checked:checked ~ .option-map-2 .dot,
-		#option-map-3:checked:checked ~ .option-map-3 .dot,
-		#option-map-4:checked:checked ~ .option-map-4 .dot,
-		#option-map-5:checked:checked ~ .option-map-5 .dot,
-		#option-map-00:checked:checked ~ .option-map-00 .dot {
-		background: #fff;
-		}
-
-		#option-map-0:checked:checked ~ .option-map-0 .dot::before,
-		#option-map-1:checked:checked ~ .option-map-1 .dot::before,
-		#option-map-2:checked:checked ~ .option-map-2 .dot::before,
-		#option-map-3:checked:checked ~ .option-map-3 .dot::before,
-		#option-map-4:checked:checked ~ .option-map-4 .dot::before,
-		#option-map-5:checked:checked ~ .option-map-5 .dot::before,
-		#option-map-00:checked:checked ~ .option-map-00 .dot::before {
-			opacity: 1;
-			transform: scale(1);
-		}		
-
-		#option-map-0:checked:checked ~ .option-map-0 span,
-		#option-map-1:checked:checked ~ .option-map-1 span,
-		#option-map-2:checked:checked ~ .option-map-2 span,
-		#option-map-3:checked:checked ~ .option-map-3 span,
-		#option-map-4:checked:checked ~ .option-map-4 span,
-		#option-map-5:checked:checked ~ .option-map-5 span,
-		#option-map-00:checked:checked ~ .option-map-00 span {
-			color: #fff;
-		}
-
-		#option-map-0:checked ~ .option-map-0 span,
-		#option-map-1:checked ~ .option-map-1 span,
-		#option-map-2:checked ~ .option-map-2 span,
-		#option-map-3:checked ~ .option-map-3 span,
-		#option-map-4:checked ~ .option-map-4 span,
-		#option-map-5:checked ~ .option-map-5 span,
-		#option-map-00:checked ~ .option-map-00 span {
-		color: #fff;
-	}
-
-
-		#option-map-0:checked ~ .option-map-0,
-		#option-map-1:checked ~ .option-map-1,
-		#option-map-2:checked ~ .option-map-2,
-		#option-map-3:checked ~ .option-map-3,
-		#option-map-4:checked ~ .option-map-4,
-		#option-map-5:checked ~ .option-map-5,
-		#option-map-00:checked ~ .option-map-00 {
-		  border-color: #373737;
-		  background: #373737;
-			}
-
-			
-		#option-map-0:checked ~ .option-map-0 .dot,
-		#option-map-1:checked ~ .option-map-1 .dot,
-		#option-map-2:checked ~ .option-map-2 .dot,
-		#option-map-3:checked ~ .option-map-3 .dot,
-		#option-map-4:checked ~ .option-map-4 .dot,
-		#option-map-5:checked ~ .option-map-5 .dot,
-		#option-map-00:checked ~ .option-map-00 .dot {
-		  background: #fff;
-		}
-
-		#option-map-0:checked ~ .option-map-0 .dot::before,
-		#option-map-1:checked ~ .option-map-1 .dot::before,
-		#option-map-2:checked ~ .option-map-2 .dot::before,
-		#option-map-3:checked ~ .option-map-3 .dot::before,
-		#option-map-4:checked ~ .option-map-4 .dot::before,
-		#option-map-5:checked ~ .option-map-5 .dot::before,
-		#option-map-00:checked ~ .option-map-00 .dot::before {
-		  opacity: 1;
-		  transform: scale(1);
-		}
-
-		#option-map-0:checked ~ .option-map-0 span,
-		#option-map-1:checked ~ .option-map-1 span,
-		#option-map-2:checked ~ .option-map-2 span,
-		#option-map-3:checked ~ .option-map-3 span,
-		#option-map-4:checked ~ .option-map-4 span,
-		#option-map-5:checked ~ .option-map-5 span,
-		#option-map-00:checked ~ .option-map-00 span {
-		  color: #fff;
-		}
-
-
-		#option-order-1:checked:checked ~ .option-order-1,
-		#option-order-2:checked:checked ~ .option-order-2,
-		#option-order-3:checked:checked ~ .option-order-3{
-		  border-color: #373737;
-		  background: #373737;
-		}
-		#option-order-1:checked:checked ~ .option-order-1 .dot,
-		#option-order-2:checked:checked ~ .option-order-2 .dot,
-		#option-order-3:checked:checked ~ .option-order-3 .dot{
-		  background: #fff;
-		}
-		#option-order-1:checked:checked ~ .option-order-1 .dot::before,
-		#option-order-2:checked:checked ~ .option-order-2 .dot::before,
-		#option-order-3:checked:checked ~ .option-order-3 .dot::before{
-		  opacity: 1;
-		  transform: scale(1);
-		}
-
-
-		#option-order-1:checked:checked ~ .option-order-1 span,
-		#option-order-2:checked:checked ~ .option-order-2 span,
-		#option-order-3:checked:checked ~ .option-order-3 span{
-		  color: #fff;
-		}
-
-
+		
 		div {
 			font-family: Arial;
 		}
@@ -259,25 +131,6 @@
     transition: background-color 0.3s ease;
 	}
 
-	input[type="radio"]:checked + label {
-		background-color: #464646;
-	
-	}
-
-	input[type="radio"]:checked + label:hover {
-		background-color: #464646;
-	
-	}
-
-	input[type="radio"] + label:hover {
-		background-color: #ffffff;
-	}
-
-	
-	
-	input[type="radio"]:checked + label span {
-
-	}
 
 		input[type="radio"] {
 	  width: 22px !important;
@@ -323,28 +176,7 @@
 	  transition: background-color 0.3s ease;
 	}
 
-	/* Change the background color of riverwrapper1 when #rivers input is checked */
-	#rivers:checked ~ label {
-	  background-color: #373737;
-	  color: #ffffff; /* Adjust text color for better visibility */
-	}
 
-	/* Change the dot color of #rivers input to #414141 */
-	#rivers:checked {
-	  accent-color: #606060;
-	}
-
-	/* Change the background color of riverwrapper2 when #rivers-learn input is checked */
-	#rivers-learn:checked ~ label {
-	  background-color: #373737;
-	  color: #ffffff; /* Adjust text color for better visibility */
-	}
-
-	/* Change the dot color of #rivers-learn input to #414141 */
-	#rivers-learn:checked {
-	  accent-color: #606060;
-	}
-	
 	
 
 	
@@ -366,9 +198,56 @@
 	 margin-top: 22px;
 }
 
+.container{
+		margin-left:6.5%;
+}
+
+.centered{
+	margin-left:-15.5%;
+}
+
+.buttons-class
+{
+margin-left:16.5%;
+zoom:0.5;
+}
+
 #map-image {
  width: 980px; height: auto; 
- max-width:100%;
+ max-width:60%;
+ margin-top:3%;
+ margin-left:-42%;
+}
+
+#map-image:hover{
+		box-shadow: 0 0 6px #404040;
+}
+
+#map-image-2 {
+ width: 980px !important; 
+ height: auto !important; 
+ max-width:60% !important;
+  margin-top:3%;
+ top:10%;
+ margin-left:-42.5%;
+}
+
+#map-image-2:hover{
+	opacity:1;
+}
+
+ 
+#map-image-3 {
+ width: 980px !important; 
+ height: auto !important; 
+ max-width:60% !important;
+  margin-top:3%;
+  top:10%;
+ margin-left:-42%;
+}
+
+#map-image-3:hover{
+	opacity:1;
 }
 
 #map-image-container-2 {
@@ -377,25 +256,15 @@
 	 margin-top: 22px !important;
 }
 
-#map-image-2 {
- width: 980px !important; 
- height: auto !important; 
- max-width:100% !important;
-}
-
-
 #map-image-container-3 {
     // Add any additional styling for the map container 
 	margin-top: 80px !important;
 	 margin-top: 22px !important;
 }
 
-#map-image-3 {
- width: 980px !important; 
- height: auto !important; 
- max-width:100% !important;
-}
-
+#start1{opacity:0;}
+#start2{opacity:0;}
+#start3{opacity:0;}
 
 @media only screen and (max-width: 819px) { /* Mobile Hotfix */
 	#map-image-container, #map-image-container-2 , #map-image-container-3 {

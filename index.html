@@ -36,6 +36,7 @@ margin-top:10px;
     body {
       margin: 0;
       padding: 0;
+	  zoom:1.1;
     }
 
     .tabs {
@@ -43,10 +44,12 @@ margin-top:10px;
 	  color: #D1D1D1;
       background-color: #373737;
       border-bottom: 1px solid #808080;
+	  font-size:14px;
+	  opacity:0.7;
     }
 
     .tab {
-		zoom:0.75;
+	  zoom:0.8;
       flex: 1;
       padding: 8px;
       text-align: center;
@@ -110,7 +113,7 @@ margin-top:10px;
 		text-align: center;
 		cursor: pointer;
 		background-color: #ffffff;
-		color: #808080;
+		color: #353535;
 		font-size: 17px;
 	}
 
@@ -147,10 +150,19 @@ input[type="radio"] {
 	
 }
 
-input[type="radio"]:checked {
-    background-color: #373737;
-    border-color: #373737;
-}
+
+	input[type="radio"]:checked + label {
+		background-color: #454545;
+		color: #d0d0d0;
+	}
+
+	input[type="radio"]:checked + label:hover {
+		background-color: #454545;
+	}
+
+	input[type="radio"] + label:hover {
+		background-color: #ffffff;
+	}
 
 
 input[type="radio"]:hover {
@@ -238,7 +250,7 @@ input[type="radio"]:hover {
 					
 
 
-					<button type="start" style="width:170px; background-color:#808080;">Submit</button>
+					<button type="start" id="start1" style="width:170px; background-color:#808080;">Submit</button>
 
 
 
@@ -315,7 +327,7 @@ input[type="radio"]:hover {
 				</label>
 
 
-			<button type="start" style="width:200px; background-color:#808080;">Submit</button>
+			<button type="start" id="start2" style="width:200px; background-color:#808080;">Submit</button>
 
 
 				</div>
@@ -364,15 +376,17 @@ input[type="radio"]:hover {
 
 
 			<div class="button-container">
-				<input type="radio" class="form_3" id="option31" name="selection-3" value="Energy_1" checked>
+				<input type="radio" class="form_3" id="option31" name="selection-3" value="NPP_1" checked>
 				<label for="option31">
-					<span class="left-text">Energy 🔧</span>
+					<span class="left-text">Nuclear Power Plants</span>
 
 				</label>
+				<!-- Thermal Power Plants, Nuclear Power Plants, Hydropower Projects -->
+				<!-- Solar Energy, Wind Energy, Natural Gas -->
 			
 				<input type="radio" class="form_3" id="option32" name="selection-3" value="Ports_1">
 				<label for="option32">
-					<span class="left-text">Ports 🔧</span>
+					<span class="left-text">Ports</span>
 
 				</label>
 			
@@ -395,14 +409,14 @@ input[type="radio"]:hover {
 				https://en.wikipedia.org/wiki/Golden_Quadrilateral#/media/File:Golden_Quadrilateral.svg
 				-->
 
-				<input type="radio" class="form_3" id="option35" name="selection-3" value="Airports_1">
+				<input type="radio" class="form_3" id="option35" name="selection-3" value="air_1">
 				<label for="option35">
 					<span class="left-text">Airports (UDAN)</span>
-
+<span class="right-text" style="opacity:0.6; font-size:10px; margin-top:35px; margin-left:52px;">greenfield, operationalised</span>
 				</label>
 
 
-			<button type="start" style="width:200px; background-color:#808080;">Submit</button>
+			<button type="start" id="start3" style="width:200px; background-color:#808080;">Submit</button>
 
 
 				</div>
@@ -507,27 +521,13 @@ input[type="radio"]:hover {
 <script> // Map Image Script
 	// Define the images to be displayed based on selected map option
 	const mapImages = {
-		riv_1: 'Map_Images/India_base_dark.jpg',     // Rivers image
-		riv_2: 'Map_Images/India_base_dark.jpg',     // Rivers (Learn) image
-		mt_1: 'Map_Images/India_base_dark.jpg',     // Mountains image
-		mt_2: 'Map_Images/India_base_dark.jpg',     // Mountains (Learn) image
-		np_1: 'Map_Images/India_base_dark.jpg',     // National Parks image
-		np_2: 'Map_Images/India_base_dark.jpg',     // National Parks image
-		np: 'Map_Images/India_base_dark.jpg',     // National Parks image
-		tr_1: 'Map_Images/India_base_dark.jpg',     // Tiger Reserves image
-		tr_2: 'Map_Images/India_base_dark.jpg',     // Tiger Reserves image
-		in: 'Map_Images/India_base_dark.jpg',     // Tiger Reserves image
-		rs_1: 'Map_Images/India_base_dark.jpg',     // Ramsar Sites image
-		rs_2: 'Map_Images/India_base_dark.jpg',     // Ramsar Sites image
-		rs: 'Map_Images/India_base_dark.jpg',     // Ramsar Sites image
-		dm_1: 'Map_Images/India_base_dark.jpg',     // Dams & Reservoirs image
-		dm_2: 'Map_Images/India_base_dark.jpg',     // Dams & Reservoirs image
-		dm: 'Map_Images/India_base_dark.jpg',     // Dams & Reservoirs image
-		wf_1: 'Map_Images/AIO_Waterfalls-2x.jpg',      // Waterfalls image
-		wf_2: 'Map_Images/AIO_Waterfalls-2x.jpg',      // Waterfalls image
-		wf: 'Map_Images/AIO_Waterfalls-2x.jpg',     // Waterfalls image
-		Por_1: 'Map_Images/AIO_Waterfalls-2x.jpg',     //  
-		Por_2: 'Map_Images/AIO_Waterfalls-2x.jpg'
+		riv_1: 'Map_Images/index/riv_1.png',     // Rivers image
+		mt_1: 'Map_Images/index/mt_1.png',     // Mountains image
+		np_1: 'Map_Images/index/np_1.png',     // National Parks image
+		tr_1: 'Map_Images/index/tr_1.png',     // Tiger Reserves image
+		dm_1: 'Map_Images/index/dm_1.png',     // Dams & Reservoirs image
+		rs_1: 'Map_Images/index/rs_1.png',      // Waterfalls image
+		wf_1: 'Map_Images/index/wf_1.png'      // Waterfalls image
 	}; //DONT FORGET TO REMOVE COMMA FROM LAST MENTIONED IMAGE ABOVE
 
 	// Function to update the image based on selected map
@@ -575,25 +575,15 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateImage() {
     const selectedValue = document.querySelector('input[class="form_2"]:checked').value;
     if (selectedValue === "Por_1") {
-      mapImage.src = "Map_Images/AIO_Waterfalls-2x.jpg";
-    } else if (selectedValue === "Por_2") {
-      mapImage.src = "Map_Images/India_base_dark.jpg";
+      mapImage.src = "Map_Images/index/por_1.png";
     } else if (selectedValue === "Dutch_1") {
-      mapImage.src = "Map_Images/India_base_dark.jpg";
-    } else if (selectedValue === "Dutch_2") {
-      mapImage.src = "Map_Images/India_base_dark.jpg";
+      mapImage.src = "Map_Images/index/dutch_1.png";
     } else if (selectedValue === "Eng_1") {
-      mapImage.src = "Map_Images/India_base_dark.jpg";
-    } else if (selectedValue === "Eng_2") {
-      mapImage.src = "Map_Images/India_base_dark.jpg";
+      mapImage.src = "Map_Images/index/eng_1.png";
     } else if (selectedValue === "Dan_1") {
-      mapImage.src = "Map_Images/India_base_dark.jpg";
-    } else if (selectedValue === "Dan_2") {
-      mapImage.src = "Map_Images/India_base_dark.jpg";
+      mapImage.src = "Map_Images/index/dan_1.png";
     } else if (selectedValue === "Fra_1") {
-      mapImage.src = "Map_Images/India_base_dark.jpg";
-    } else if (selectedValue === "Fra_2") {
-      mapImage.src = "Map_Images/India_base_dark.jpg";
+      mapImage.src = "Map_Images/index/fra_1.png";
     } 
     // Display the image
     mapImage.style.display = "block";
@@ -623,10 +613,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to update the image source based on the selected radio button
   function updateImage() {
     const selectedValue = document.querySelector('input[class="form_3"]:checked').value;
-    if (selectedValue === "Ports_1") {
-      mapImage.src = "Map_Images/AIO_Waterfalls-2x.jpg";
-    } else if (selectedValue === "Ports_2") {
-      mapImage.src = "Map_Images/India_base_dark.jpg";
+    if (selectedValue === "NPP_1") {
+      mapImage.src = "Map_Images/index/npp_1.png";
+    } else if (selectedValue === "Ports_1") {
+      mapImage.src = "Map_Images/index/ports_1.png";
+    } else if (selectedValue === "air_1") {
+      mapImage.src = "Map_Images/index/air_1.png";
     } 
     // Display the image
     mapImage.style.display = "block";
@@ -645,20 +637,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 <script>
+    // Map image IDs to corresponding button IDs
+    const mappings = {
+        'map-image': 'start1',
+        'map-image-2': 'start2',
+        'map-image-3': 'start3'
+    };
 
-document.querySelector('#map-image').addEventListener('click', function () {
-    // Find the submit button with class 'submit-button'
-    const submitButton = document.querySelector('button.submit-button[type="submit"]');
-    
-    if (submitButton) {
-        // Trigger a click event on the submit button
-        submitButton.click();
-    } else {
-        console.error('Submit button with class "submit-button" not found.');
+    // Add click event listeners for each image
+    for (const [imgId, btnId] of Object.entries(mappings)) {
+        const imgElement = document.getElementById(imgId);
+        const buttonElement = document.getElementById(btnId);
+
+        if (imgElement && buttonElement) {
+            imgElement.addEventListener('click', function () {
+                buttonElement.click(); // Trigger a click on the corresponding button
+            });
+        }
     }
-});
-
-
 </script>
 	
 	

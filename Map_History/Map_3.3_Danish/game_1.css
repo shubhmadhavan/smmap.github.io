@@ -197,9 +197,9 @@ header{
 .leaflet-interactive {
   cursor: crosshair;   
 
-  stroke: #ffffff !important; 
-  color: #ffffff !important; 	
-  fillColor:#ffffff !important; 		
-  fill: #ffffff !important;
+  stroke: #EDC8CE !important; 
+  color: #EDC8CE !important; 	
+  fillColor:#EDC8CE !important; 		
+  fill: #EDC8CE !important;
 }
   

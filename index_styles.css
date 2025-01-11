@@ -286,11 +286,30 @@ zoom:0.5;
 
 label{
 	zoom:100%;
+	font-size: 8px;
 }
+
+
+@media only screen and (max-width: 392px){
+	.left-text{
+	
+	}
+
+	}
 
 @media only screen and (max-width: 419px){
 label{
 	zoom:70%;
+
+}
+
+input[type="radio"]{
+	opacity:0;
+		}
+
+
+.left-text{
+	font-size: 16px;
 }
 }
 
@@ -298,7 +317,7 @@ label{
 @media only screen and (max-width: 549px){
 	label{
 		zoom:80%;
-		font-size: 8px;
+	
 	}
 	
 	input[type="radio"]{

@@ -286,8 +286,30 @@ zoom:0.5;
 
 label{
 	zoom:100%;
-	font-size: 8px;
+	
+    display: block; /* Makes the label behave like a block element */
+    overflow: visible; /* Ensures the content isn't clipped */
+    word-wrap: break-word; /* Breaks long text into new lines */
+    white-space: normal; /* Allows text wrapping */
+
 }
+
+.left-text {
+    display: inline; /* Ensures the span remains inline within the label */
+    white-space: normal; /* Allows text wrapping inside the span */
+
+}
+
+
+.left-text{
+	position:absolute;
+	left:20%;
+	font-size: 21px;
+	text-align: left;
+}
+
+
+
 
 
 @media only screen and (max-width: 392px){

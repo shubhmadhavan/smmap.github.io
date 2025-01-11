@@ -312,10 +312,18 @@ label{
 
 #map-image-container{
 
-	margin-left:-40px;
+	margin-left:-20px;
 }
 
+#map-image-container-2{
 
+	margin-left:-23px;
+}
+
+#map-image-container-3{
+
+	margin-left:-16px;
+}
 
 #map-image-2{
 	zoom:110%;

@@ -306,7 +306,6 @@ label{
 .button-container{
 	zoom:140%;
 
-
 	transform: scale(1.2, 1.2);
 	transform: translate(-90px, 0px);	
 }	
@@ -333,10 +332,11 @@ input[type="radio"]{
 
 label{
 	zoom:70%;
+	width:300px !important;
 }
 
 .left-text{
-	font-size: 12px;
+	font-size: 10px;
 }
 
 

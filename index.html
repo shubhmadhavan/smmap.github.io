@@ -109,7 +109,7 @@ margin-top:10px;
 		padding: 10px;
 		border: 2px solid #d3d3d3;
 		border-radius: 6px;
-		width: 160px;
+		width: 220px; 
 		text-align: center;
 		cursor: pointer;
 		background-color: #ffffff;
@@ -124,31 +124,17 @@ margin-top:10px;
     justify-content: space-between;  /* This ensures left and right texts are spaced out */
     align-items: center;
     position: relative;
-    width: 180px; /* Adjust this to your button width */
+    width: 220px; /* Adjust this to your button width */
     height: 60px; /* Adjust this for button height */
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
     padding: 0 10px;
 	font-size:20px;
+	margin-left:-50px;
 }
 
 
-input[type="radio"] {
-    display: inline-block;
-    position: absolute;
-	margin-top:19px;
-	margin-left:-85px;
-	z-index:9999;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    border: 1px solid #808080;
-    background-color: #808080;
-    appearance: none; /* Remove default radio button styling */
-    cursor: pointer;
-	
-}
 
 
 	input[type="radio"]:checked + label {
@@ -171,8 +157,33 @@ input[type="radio"]:hover {
 
 	.left-text{
 		position:absolute;
-		left:25%;
+		left:20%;
 	}
+
+	input[type="radio"] {
+    display: inline-block;
+    position: absolute;
+	margin-top:19px;
+	margin-left:-132px;
+	z-index:9999;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid #808080;
+    background-color: #808080;
+    appearance: none; /* Remove default radio button styling */
+    cursor: pointer;
+	
+}
+
+#button-container-2 > input[type="radio"]{
+	margin-left:-138px;
+}
+
+#button-container-3 > input[type="radio"]{
+	margin-left:-138px;
+}
+
   </style>
 </head>
 
@@ -203,7 +214,7 @@ input[type="radio"]:hover {
 					
 
 
-					<div class="button-container">
+					<div class="button-container"  id="button-container-1">
 						<input type="radio" id="option1" name="selection" value="riv_1" checked>
 						<label for="option1">
 							<span class="left-text">Rivers</span>
@@ -295,7 +306,7 @@ input[type="radio"]:hover {
 					
 
 
-			<div class="button-container">
+			<div class="button-container" id="button-container-2">
 				<input type="radio" class="form_2" id="option21" name="selection-2" value="Por_1" checked>
 				<label for="option21">
 					<span class="left-text">Portugal</span>
@@ -375,7 +386,7 @@ input[type="radio"]:hover {
 					
 
 
-			<div class="button-container">
+			<div class="button-container"  id="button-container-3">
 				<input type="radio" class="form_3" id="option31" name="selection-3" value="NPP_1" checked>
 				<label for="option31">
 					<span class="left-text">Nuclear Power Plants</span>

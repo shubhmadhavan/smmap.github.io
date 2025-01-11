@@ -299,39 +299,39 @@ label{
 
 @media only screen and (max-width: 419px){
 
+	html {
+		max-width:380px;
+		zoom:1.6;
+	}
+	
+	.top-right-link{
+		display:none;
+	}
+
 .tabs{
-	z-index: 9999;
+	z-index: 9999;z-index: 99999;
 }
 
 .button-container{
-	zoom:140%;
 
-	transform: scale(1.2, 1.2);
-	transform: translate(-90px, 0px);	
+	transform: scale(1, 1.5);
+	transform: translate(-44px, -50px);	
 }	
 
-#map-image-container{
-
-	margin-left:-20px;
-}
-
-#map-image-container-2{
-
-	margin-left:-23px;
-}
-
-#map-image-container-3{
-
-	margin-left:-16px;
+#map-image{
+	transform: translate(10px, -40px);
 }
 
 #map-image-2{
-	zoom:110%;
+	transform: translate(-24px, -23px);
 }
 
 #map-image-3{
-	zoom:110%;
+	transform: translate(10px, -23px);
 }
+
+
+
 
 input[type="radio"]{
 	opacity:0;

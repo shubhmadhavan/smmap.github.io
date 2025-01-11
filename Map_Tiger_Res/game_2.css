@@ -154,6 +154,17 @@
 
 
 	
+	.leaflet-interactive {
+		cursor: crosshair;   
+	 
+		stroke: #A06335 !important; 
+		color: #A06335 !important; 	
+		fillColor:#A06335 !important; 		
+		fill: #A06335 !important;
+	}
+		
+
+
 	
 	@media only screen and (max-width: 549px){
 

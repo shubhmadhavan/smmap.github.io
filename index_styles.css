@@ -291,7 +291,8 @@ label{
     overflow: visible; /* Ensures the content isn't clipped */
     word-wrap: break-word; /* Breaks long text into new lines */
     white-space: normal; /* Allows text wrapping */
-
+	margin-top:19px;
+	margin-bottom:19px;
 }
 
 .left-text {
@@ -306,6 +307,8 @@ label{
 	left:20%;
 	font-size: 21px;
 	text-align: left;
+	padding-top:2px;
+	padding-bottom:2px;
 }
 
 

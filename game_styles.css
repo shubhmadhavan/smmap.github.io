@@ -652,10 +652,28 @@ z-index:10000 !important;
 
 /* Other Devices */
 
+
+
+
+@media only screen and (max-width: 549px){
+
+  span{
+		zoom:10%;
+    opacity:0;
+	}
+
+
+}
+	
+
+
+
+
 @media only screen and (max-width: 819px) { /* Mobile Hotfix */
 	#map-wrapper{
     margin-left: unset !important;
   }
+  
 
 	#score {
 	  top: 1355px;
@@ -744,3 +762,7 @@ z-index:10000 !important;
 
 
 }
+
+
+
+

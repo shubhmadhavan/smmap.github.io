@@ -203,3 +203,43 @@
 		fill: #A0B6ED !important;
 	}
 		
+
+	@media only screen and (max-width: 549px){
+
+		#header{
+			position:absolute;
+			z-index:9999;
+			zoom:70%;
+			top:40px;
+			margin-left:180px;
+			margin-bottom: 26px;
+		}
+
+		#result{
+			margin-top:30px;
+			zoom:70%;
+		}
+
+		span{
+			opacity:0;
+			zoom:0.1%;
+		}
+
+		.switcher-text {
+			position:absolute;
+			opacity:1;
+			left:-400px;
+			zoom:80%;
+		}
+
+		.toggle-map, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5{
+			zoom:80%;
+		}
+
+		.top-right-link{
+			zoom:80%;
+		}
+
+		
+	  }
+		  

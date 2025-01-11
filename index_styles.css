@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 selectionForm {
 	appearance: none; /* Ensures consistent appearance */
     -moz-appearance: none; /* Firefox-specific reset */
@@ -197,9 +191,7 @@ selectionForm {
 	}
 
 
-	
 
-	
 .centered {
     display: flex;
     justify-content: center; // Centers items horizontally 
@@ -292,6 +284,41 @@ zoom:0.5;
 #start2{opacity:0;}
 #start3{opacity:0;}
 
+label{
+	zoom:100%;
+}
+
+@media only screen and (max-width: 419px){
+label{
+	zoom:70%;
+}
+}
+
+
+@media only screen and (max-width: 549px){
+	label{
+		zoom:80%;
+	}
+	
+	input[type="radio"]{
+		opacity:0;
+			}
+	
+			#map-image{
+				margin-top: 31px;
+				margin-left:-128px;
+			}
+
+			#map-image-3{
+
+				margin-left:-126px;
+			}
+}
+
+	
+
+
+
 @media only screen and (max-width: 819px) { /* Mobile Hotfix */
 	#map-image-container{
 		margin-top: unset;
@@ -300,21 +327,24 @@ zoom:0.5;
 	#map-image-container-2{
 		margin-top: unset;
 	} 
-	
+
+
 	
 	#map-image-container-3 {
     /* Add any additional styling for the map container */
 	margin-top: unset;
-}
+	}
 
 	.button-container{
 		zoom:80%;
 	}
 
 
+	
 }
 
 @media only screen and (max-width: 1219px) {
+
 	
 	#map-image-container{
 		margin-top: unset;
@@ -328,23 +358,31 @@ zoom:0.5;
 	#map-image-container-3 {
     /* Add any additional styling for the map container */
 	margin-top: unset;
+
+	}
+
+	.tabs{
+
+		zoom:60%;
+	}
+
+	.top-right-link{
+		opacity:0;
+	}
+
+	.button-container{
+		zoom:70%;
+	}
+
+	#selectionForm {
+		zoom:80%;
+	}
+
+
+
+
 }
 
-.tabs{
 
-	zoom:60%;
-}
 
-.top-right-link{
-	opacity:0;
-}
 
-.button-container{
-	zoom:70%;
-}
-
-#selectionForm {
-	zoom:80%;
-}
-
-}

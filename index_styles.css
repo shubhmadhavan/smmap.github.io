@@ -298,6 +298,7 @@ label{
 @media only screen and (max-width: 549px){
 	label{
 		zoom:80%;
+		font-size: 8px;
 	}
 	
 	input[type="radio"]{
@@ -313,6 +314,11 @@ label{
 
 				margin-left:-126px;
 			}
+
+
+
+
+
 }
 
 	

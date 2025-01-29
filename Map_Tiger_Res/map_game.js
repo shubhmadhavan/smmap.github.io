@@ -153,8 +153,24 @@ function handleSelection(river, path, event) {
     }, 1400);
 }
 
+
+function updateScore() {
+    const itemsShown = document.querySelector('.items-shown');
+    const correctAns = document.querySelector('.correct-ans');
+    const resultBox = document.getElementById('result');
+    
+    // Increment the number of rounds played
+    itemsShown.textContent = parseInt(itemsShown.textContent) + 1;
+    
+    // Check if the result box contains "✔ Correct" and increment correct answers if true
+    if (resultBox.textContent.trim() === "✔ Correct") {
+        correctAns.textContent = parseInt(correctAns.textContent) + 1;
+    }
+}
+
 // Function to reset and move to the next round
 function nextRound() {
+    updateScore();
     const resultBox = document.getElementById('result');
     resultBox.style.display = 'none';
 

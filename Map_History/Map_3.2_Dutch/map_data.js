@@ -5,11 +5,11 @@ const mapData = {
 "Bheemunipatnam (Vizag) (1641)":"POINT (83.45248 17.88886)",
 "Karaikal (1645)" : "POINT (79.8380056 10.9254398)",
 "Ceylon (various terr.s) (1656)" : "POINT (80.766667 7.616667)",
-"Nagapattinam (1658)" : "POINT (79.8448512 10.7672313)",
+"Nagapattinam, Fort Vijf Sinnen (1658, 1680)" : "POINT (79.8448512 10.7672313)",
 "Kodungallur/ Cranganore (1663)" : "POINT (76.1971221 10.2276998)",
 "Chinsurah (1653)" : "POINT (88.3898552 22.9011588)",
 "Balasore (1658)":"POINT (86.91347 21.49335)",
-"Fort Vijf Sinnen (1680)" : "POINT (79.8448512 10.7672313)"
+
 };
 
 

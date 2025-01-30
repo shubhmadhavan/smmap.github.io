@@ -10,6 +10,17 @@ var imageBounds = [[-2.0, 36.78],
 // Add the local image as an overlay to the map
 L.imageOverlay('../Map_Images/India_OS_dark.jpg', imageBounds).addTo(map);
 
+
+
+// timeout code part 1
+let timeoutDuration = 1400; // Default value
+
+document.getElementById("timeoutSlider").addEventListener("input", function() {
+    timeoutDuration = this.value;
+    document.getElementById("timeoutValue").textContent = timeoutDuration;
+});
+//timeout code part 1 ends
+
 // Function to parse different geometry types
 function parseGeometry(geometry) {
     const type = geometry.split(' ')[0];
@@ -56,8 +67,8 @@ function getRandomRiver() {
     return rivers[randomIndex];
 }
 
-var currentRiver = getRandomRiver(); // Initially pick a random river
-document.getElementById('header').textContent = "Locate: " + currentRiver;
+var currentRiver = getRandomRiver(); // Initially pick a random location
+document.getElementById('header').textContent = "Locate: " + currentRiver.split("(")[0].trim(); //first random location
 
 var selectedPath = null; // Track the selected path
 var correctPath = null; // Track the correct path
@@ -144,13 +155,14 @@ function handleSelection(river, path, event) {
     resultBox.style.display = 'block';
 
     // Move to the next round after a delay
+    // timeout code part 2
     setTimeout(function () {
 		path.closeTooltip();
 		if (correctPath) {
 			correctPath.closeTooltip();
 		}
         nextRound();
-    }, 1400);
+    }, timeoutDuration); // timeout code part 2 ends
 }
 
 function updateScore() {
@@ -174,5 +186,7 @@ function nextRound() {
     resultBox.style.display = 'none';
 
     currentRiver = getRandomRiver(); // Get a new random river
-    document.getElementById('header').textContent = "Locate: " + currentRiver;
+
+    document.getElementById('header').textContent = "Locate: " + currentRiver.split("(")[0].trim();
+
 }

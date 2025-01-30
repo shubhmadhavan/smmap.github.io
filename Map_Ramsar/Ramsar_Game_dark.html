@@ -183,6 +183,19 @@ body{
 
 <div class="score-bottom" style="font-size: 16pt; opacity:0.5">Score: <span class="correct-ans">0</span>/<span class="items-shown">0</span></div>
 
+
+<div class="slider-container" style="position: absolute; right:30px; bottom:35px; opacity:0.4;" >
+    <label style="position: absolute; margin-top:1px !important; margin-left:-130px;"> Timeout: <span id="timeoutValue">1400</span> ms</label  >
+    <input type="range" id="timeoutSlider" min="500" max="4000" step="100" value="1400">
+
+</div>
+
+<style> 
+.slider-container:hover{
+    opacity:0.7 !important;
+}
+</style>
+
 <div id="resultSelect"></div>
 <div id="resultCorrect"></div>
 

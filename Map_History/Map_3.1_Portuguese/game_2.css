@@ -147,6 +147,17 @@
 		opacity:0;
 	}
 
+
+	
+	.leaflet-interactive {
+		cursor: crosshair;   
+	 
+		stroke: #865a20 !important; 
+		color: #FF9B50 !important; 	
+		fillColor:#FF9B50 !important; 		
+		fill: #FF9B50 !important;
+	}
+		
 	
 	@media only screen and (max-width: 549px){
 

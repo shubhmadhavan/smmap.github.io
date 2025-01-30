@@ -198,7 +198,7 @@
 	.leaflet-interactive:hover{
 		stroke: #c59f7f !important; 
 		color: #c59f7f !important; 	
-	
+		fillColor:#c59f7f !important; 		
 
 	}
 

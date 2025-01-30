@@ -1,12 +1,16 @@
 # <img src="https://github.com/user-attachments/assets/ee9684da-bd0e-4a96-a202-ebcfff8cfeab" style="float:left; vertical-align: middle; margin-right: 10px;  margin-top: -10px;  height:36px; display: inline-block;" />  SM-Map  
-A Map Repository-cum-game that requires the user to locate said locations on the relevant Map. The distance from the actual location is    
-Created for you, by Shubh.  
+
+## Raison D'etre
+Facing a dearth of comprehensive sources that present the mapping of various elements of Indian Geography in an interactive and engaging way, I was motivated to create a solution that addressed this gap.  
+
+It was created with the intention of personal use but I firmly believe that knowledge should be free and accessible to everyone, without bias or limitation. As such, I have made this repository public under a non-commercial open-source license.  
+ 
+Plus, it can be run locally ;)  
 
 [Link](https://shubhmadhavan.github.io/smmap.github.io/index.html)  
 <img src="https://github.com/user-attachments/assets/8ecd953c-d550-453c-9483-5c557aa470ef" style="float:left; margin-right: 10px; height:600px; " />
 
-
-## Maps Included:
+## Included Maps:
 #### [Rivers](https://shubhmadhavan.github.io/smmap.github.io/game.html?map=rivers&orderRSNP=NS)
 <img src="https://github.com/user-attachments/assets/ee25fe55-8803-4b38-8593-3eb20393e9eb" style="float:left; margin-right: 10px; height:400px; width: 360px;" />
 

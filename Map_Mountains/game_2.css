@@ -44,15 +44,15 @@
         .leaflet-interactive {
             cursor: crosshair;   
          
-			stroke: #EDC1A0 !important; 
-			color: #EDC1A0 !important; 	
-			fillColor:#EDC1A0 !important; 			
+			stroke: #8a715c !important; 
+			color: #8a715c !important; 	
+			fillColor:#8a715c !important; 			
         }
 		
         .leaflet-interactive:hover {
-            cursor: crosshair;   
-            stroke: #FFE0C8 !important;         
-			stroke-width: 4;			
+			stroke: #c59f7f !important; 
+			color: #c59f7f !important; 	
+			fillColor:#c59f7f !important; 				
         }
 
 	.top-right-link {

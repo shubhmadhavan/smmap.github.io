@@ -83,7 +83,9 @@
             display: none;
             text-align: center;
 		 }
-			 
+			
+		 
+
         #map:hover {
 			cursor: default;        
 		}
@@ -92,6 +94,7 @@
 			stroke-width: 4;
 			stroke: #FFE0C8 !important;  	
 		}
+
 		
 	.top-right-link {
 		opacity:1;
@@ -184,6 +187,20 @@
 		opacity:0;
 	}
 
+	.leaflet-interactive {
+		cursor: crosshair;   
+	 
+		stroke: #8a715c !important; 
+		color: #8a715c !important; 	
+		fillColor:#8a715c !important; 			
+	}
+
+	.leaflet-interactive:hover{
+		stroke: #c59f7f !important; 
+		color: #c59f7f !important; 	
+	
+
+	}
 
 	@media only screen and (max-width: 549px){
 

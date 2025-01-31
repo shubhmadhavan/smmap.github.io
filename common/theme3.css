@@ -21,5 +21,17 @@ body {
 	color: #000000 !important;
 }
 	
+
+#result2 {
+	background-color: #ACACAC;
+}
+
+
+#result2 > button {
+	background-color: #808080;
+
+} 
+
+
 /* light theme  ends */
 	

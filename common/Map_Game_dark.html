@@ -68,10 +68,15 @@
 
 <div class="score-bottom" style="font-size: 16pt; opacity:0.5">Score: <span class="correct-ans">0</span>/<span class="items-shown">0</span></div>
 
-<div class="slider-container" >
-    <label id="slider-label"> Next Round: <span id="timeoutValue">1400</span> ms</label  >
-    <input type="range" id="timeoutSlider" min="500" max="4000" step="100" value="1400">
 
+
+
+<div class="slider-container" >
+    <label>
+        <span id="do_not_repeat_label"> Don't Repeat</span>     <input type="checkbox" id="noRepeat" checked> <span id="do_not_repeat_label">  ㅤ|ㅤ </span>
+    </label>
+    <label id="slider-label"> Next Round: <span id="timeoutValue">1400</span> ms</label>
+    <input type="range" id="timeoutSlider" min="500" max="4000" step="100" value="1400" >
 </div>
 
 <div id="resultSelect"></div>
@@ -95,6 +100,7 @@ let cssPath = '';
 const resourcesMap = {
     'riv_1': { script: '../Map_Geography/Map_Rivers/map_data.js', css: '../Map_Geography/Map_Rivers/location_color.css' },
     'mt_1': { script: '../Map_Geography/Map_Mountains/map_data.js', css: '../Map_Geography/Map_Mountains/location_color.css' },
+    'gl_1':{ script: '../Map_Geography/Map_Glaciers/map_data.js', css: '../Map_Geography/Map_Glaciers/location_color.css' },
     'wf_1': { script: '../Map_Geography/Map_Waterfalls/map_data.js', css: '../Map_Geography/Map_Waterfalls/location_color.css' },
     'dm_1': { script: '../Map_Geography/Map_Reservoirs/map_data.js', css: '../Map_Geography/Map_Reservoirs/location_color.css' },
     'rs_1': { script: '../Map_Geography/Map_Ramsar/map_data.js', css: '../Map_Geography/Map_Ramsar/location_color.css' },

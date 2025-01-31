@@ -1,3 +1,8 @@
+
+	
+	
+	
+	
 	header{
 		  padding:5px;
 		  position: fixed;
@@ -46,18 +51,28 @@
 			display: none;
 			text-align: center;
 		}
+		
 		#result2 {
-            position: absolute;
-			top: 120px;
-            z-index: 9999;
-            background-color: rgba(0, 0, 0, 1);
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            display: none;
-            text-align: center;
+			position: absolute;
+			top: 60px;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: 9999;
+            background-color: #CBB482;
+			color: #000000;
+			padding: 10px;
+			border-radius: 5px;
+			display: none;
+			text-align: center;
         }
 		
+
+		#result2 > button {
+			background-color: #D0B06B;
+
+		} 
+
+
 		#resultSelect {          
 			position: absolute;
             z-index: 9999;
@@ -205,11 +220,20 @@
  }
 
 .slider-container{
-	position: absolute; right:30px; bottom:35px; opacity:0.5;
+	margin-top:-22px;
+	text-align: right;
+	margin-right: 100px;
+	opacity:0.5; z-index:9999;
 }
 
 #slider-label{
-	position: absolute; margin-top:1px !important; margin-left:-150px; color:#000000; 
+	color:#000000; 
+	transform: translate(-20px, -20px) !important;
+	
+}
+
+#do_not_repeat_label {
+	color:#000000;
 }
  
 	@media only screen and (max-width: 549px){

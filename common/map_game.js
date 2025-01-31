@@ -61,10 +61,53 @@ function parseGeometry(geometry) {
 }
 
 // Get a random river name
+// Keep track of shown rivers
+let shownRivers = new Set();
+
 function getRandomRiver() {
-    const rivers = Object.keys(mapData);
-    const randomIndex = Math.floor(Math.random() * rivers.length);
-    return rivers[randomIndex];
+    const noRepeatChecked = document.getElementById('noRepeat').checked;
+    let availableRivers = Object.keys(mapData).filter(river => !shownRivers.has(river));
+
+    if (noRepeatChecked && availableRivers.length === 0) {
+        // All rivers have been shown, display a prompt
+        const resultBox = document.getElementById('result2');
+        resultBox.textContent = "Iteration Completed.";
+        resultBox.style.display = 'block';
+
+        // Create a restart button dynamically
+        const restartButton = document.createElement("button");
+        restartButton.textContent = "Restart";
+        restartButton.style.marginTop = "10px";
+        restartButton.style.padding = "5px 10px";
+        restartButton.style.cursor = "pointer";
+
+        restartButton.onclick = function () {
+            // Reset when button is clicked
+            shownRivers.clear();
+            availableRivers = Object.keys(mapData);
+
+            // Hide message and restart the round
+            resultBox.style.display = 'none';
+            nextRound();
+        };
+
+        // Append the button to result box
+        resultBox.innerHTML = ""; // Clear previous content
+        resultBox.appendChild(document.createTextNode("Iteration Completed."));
+        resultBox.appendChild(document.createElement("br"));
+        resultBox.appendChild(restartButton);
+
+        return null; // Prevent selecting a new river until reset
+    }
+
+    const randomIndex = Math.floor(Math.random() * availableRivers.length);
+    const selectedRiver = availableRivers[randomIndex];
+
+    if (noRepeatChecked) {
+        shownRivers.add(selectedRiver);
+    }
+
+    return selectedRiver;
 }
 
 var currentRiver = getRandomRiver(); // Initially pick a random location

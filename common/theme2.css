@@ -26,5 +26,25 @@ color: white !important;
 	color: #ffffff !important;
 }
 	
+#do_not_repeat_label {
+	color:#ffffff !important;
+}
+
+
+
+#result2 {
+	background-color: #505050;
+	color: #ffffff;
+
+}
+
+
+#result2 > button {
+	background-color: #808080;
+
+} 
+
+
+ 
 /* dark theme  ends */
 	

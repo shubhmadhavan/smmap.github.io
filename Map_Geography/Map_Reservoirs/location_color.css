@@ -1,0 +1,15 @@
+.leaflet-interactive {
+	cursor: crosshair;   
+ 
+	stroke: #3d5157 !important; 
+	color: #64b0ce !important; 	
+	fill: #64b0ce !important;
+}
+	
+
+.leaflet-interactive:hover{
+	stroke: #3d5157 !important; 
+	color: #64b0ce !important; 	
+	fill:#64b0ce !important; 		
+	stroke-width: 2px !important;
+}

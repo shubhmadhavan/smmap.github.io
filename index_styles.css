@@ -14,11 +14,28 @@ selectionForm {
 
 
 
-	html {
-		background: linear-gradient(#2a2a2a,#2a2a2a, #486877);
-		height:100%;
-		}
-		
+html {
+    background: linear-gradient(#E2CA97, #E2CA97, #a89874);
+    height: 100%;
+    position: relative; /* Necessary for positioning the pseudo-element */
+}
+
+html::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('gold_grunge_texture.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 9%; /* Adjust the opacity here (0.0 to 1.0) */
+    z-index: -1; /* Ensure the image is behind the content */
+}
+
+
+	
 		body::-webkit-scrollbar {
   			display: none; /* For Chrome, Safari, and Edge */
 		}
@@ -151,14 +168,6 @@ selectionForm {
 	  height: 22px !important;
 	}	
 
-		input[type="radio"]:checked {
-            border-color: #373737 !important;
-            background-color: #373737 !important;
-        }
-
-		input[type="radio"]:hover {
-            border-color: #888888;
-        }
 
 		.river-option-wrapper:hover{
 			
@@ -237,8 +246,8 @@ zoom:0.5;
  margin-left:-42%;
 }
 
-#map-image:hover{
-		box-shadow: 0 0 6px #404040;
+#map-image:hover, #map-image-2:hover, #map-image-3:hover{
+		box-shadow: 0 0 5px #887856;
 }
 
 #map-image-2 {
@@ -247,7 +256,7 @@ zoom:0.5;
  max-width:60% !important;
   margin-top:3%;
  top:10%;
- margin-left:-42.5%;
+ margin-left:-42.6%;
 }
 
 #map-image-2:hover{
@@ -312,7 +321,215 @@ label{
 }
 
 
+body {
+	margin: 0;
+	padding: 0;
+	zoom:1.1;
+  }
 
+  .tabs {
+	display: flex;
+	color: #000000;
+	background-color: #9b8c68;
+	border-bottom: 1px solid #808080;
+	font-size:15px;
+	opacity:0.7;
+  }
+
+  .tab {
+	zoom:0.8;
+	flex: 1;
+	padding: 8px;
+	text-align: center;
+	cursor: pointer;
+	background-color: #a79772;
+	border: 1px solid #6e644c;
+	border-bottom: none;
+  }
+
+  .tab.active {
+	background-color: #6e644c;
+  }
+
+  .content {
+  zoom:0.95;
+	display: none;
+	padding: 0px;
+	margin-top:-10px;
+  }
+
+  .content.active {
+	display: block;
+  }
+  
+  #map-image-container-2 {
+  // Add any additional styling for the map container 
+   margin-top: 80px;
+   margin-top: 22px;
+  }
+
+  #map-image-2 {
+   width: 980px; height: auto; 
+   max-width:100%;
+  }
+
+
+  #map-image-container-3 {
+	  // Add any additional styling for the map container 
+	  margin-top: 80px;
+	   margin-top: 22px;
+  }
+
+  #map-image-3 {
+   width: 980px; height: auto; 
+   max-width:100%;
+  }
+
+
+  .button-container {
+		  margin: 20px;
+	
+  }
+
+
+  #selectionForm{
+	margin-left:-22px !important;
+
+}
+
+
+
+.button-container label {
+  display: flex;
+  justify-content: space-between;  /* This ensures left and right texts are spaced out */
+  align-items: center;
+  position: relative;
+  width: 220px; /* Adjust this to your button width */
+  height: 60px; /* Adjust this for button height */
+  border: 1px solid #9b8c68;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0 10px;
+  font-size:20px;
+  margin-left:-50px;
+}
+
+
+
+#option1, #option21, #option31{
+	margin-top: 22px;
+}
+
+label {
+	display: block;
+	
+	margin-bottom: 10px;
+	padding: 10px;
+	border: 2px solid #9b8c68;
+	border-radius: 6px;
+	width: 220px; 
+	text-align: center;
+	cursor: pointer;
+	background-color: #DAC390;
+	color: #353535;
+	font-size: 20px;
+}
+
+input[type="radio"]:checked {
+	border-color: #9b8c68 !important;
+	background-color: #554c39 !important;
+}
+
+
+
+  input[type="radio"]:checked{
+	  background-color: #9b8c68;
+	  color: #d0d0d0;
+  }
+
+
+
+
+  input[type="radio"]:checked:hover {
+	  background-color: #9b8c68;
+  }
+
+
+  input[type="radio"]:label{
+	background-color: #9b8c68;
+	color: #d0d0d0;
+}
+
+  input[type="radio"] + label:hover {
+	  background-color: #AE9664;
+  }
+
+
+
+input[type="radio"]:hover {
+	border-color: #888888;
+  opacity: 0.8; /* Optional: Add hover effect */
+}
+
+
+input[type="radio"] {
+  display: inline-block;
+  position: absolute;
+  margin-top:30px;
+  margin-left:-132px;
+  z-index:9999;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #B9A87D;
+  background-color: #B9A87D;
+  appearance: none; /* Remove default radio button styling */
+  cursor: pointer;
+
+}
+
+#button-container-2 > input[type="radio"]{
+  margin-left:-138px;
+}
+
+#button-container-3 > input[type="radio"]{
+  margin-left:-138px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media below */
 
 
 @media only screen and (max-width: 392px){
@@ -337,10 +554,13 @@ label{
 	z-index: 9999;z-index: 99999;
 }
 
+
+
 .button-container{
 
 	transform: scale(1, 1.5);
 	transform: translate(-44px, -50px);	
+
 }	
 
 #map-image{
@@ -371,6 +591,7 @@ label{
 .left-text{
 	font-size: 10px;
 }
+
 
 
 

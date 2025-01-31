@@ -9,7 +9,6 @@
   <title>Shubh's Map Repository</title>
     <link rel="stylesheet" href="index_styles.css">
  
-
   <link rel="manifest" href="/site.webmanifest">  
   <script src="jquery-3.6.0.min.js"></script>
   
@@ -32,155 +31,7 @@ margin-top:10px;
 </style>
 	
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-	  zoom:1.1;
-    }
 
-    .tabs {
-      display: flex;
-	  color: #D1D1D1;
-      background-color: #373737;
-      border-bottom: 1px solid #808080;
-	  font-size:14px;
-	  opacity:0.7;
-    }
-
-    .tab {
-	  zoom:0.8;
-      flex: 1;
-      padding: 8px;
-      text-align: center;
-      cursor: pointer;
-      background-color: #373737;
-      border: 1px solid #808080;
-      border-bottom: none;
-    }
-
-    .tab.active {
-      background-color: #505050;
-    }
-
-    .content {
-	zoom:0.95;
-      display: none;
-      padding: 0px;
-	  margin-top:-10px;
-    }
-
-    .content.active {
-      display: block;
-    }
-	
-	#map-image-container-2 {
-    // Add any additional styling for the map container 
-	 margin-top: 80px;
-	 margin-top: 22px;
-	}
-
-	#map-image-2 {
-	 width: 980px; height: auto; 
-	 max-width:100%;
-	}
-
-
-	#map-image-container-3 {
-		// Add any additional styling for the map container 
-		margin-top: 80px;
-		 margin-top: 22px;
-	}
-
-	#map-image-3 {
-	 width: 980px; height: auto; 
-	 max-width:100%;
-	}
-
-
-	.button-container {
-            margin: 20px;
-	}
-
-	label {
-		display: block;
-		
-		margin-bottom: 10px;
-		padding: 10px;
-		border: 2px solid #d3d3d3;
-		border-radius: 6px;
-		width: 220px; 
-		text-align: center;
-		cursor: pointer;
-		background-color: #ffffff;
-		color: #353535;
-		font-size: 20px;
-	}
-
-
-
-.button-container label {
-    display: flex;
-    justify-content: space-between;  /* This ensures left and right texts are spaced out */
-    align-items: center;
-    position: relative;
-    width: 220px; /* Adjust this to your button width */
-    height: 60px; /* Adjust this for button height */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 0 10px;
-	font-size:20px;
-	margin-left:-50px;
-}
-
-
-
-
-	input[type="radio"]:checked + label {
-		background-color: #454545;
-		color: #d0d0d0;
-	}
-
-	input[type="radio"]:checked + label:hover {
-		background-color: #454545;
-	}
-
-	input[type="radio"] + label:hover {
-		background-color: #ffffff;
-	}
-
-
-input[type="radio"]:hover {
-    opacity: 0.8; /* Optional: Add hover effect */
-}
-
-
-input[type="radio"] {
-    display: inline-block;
-    position: absolute;
-	margin-top:30px;
-	margin-left:-132px;
-	z-index:9999;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    border: 1px solid #808080;
-    background-color: #808080;
-    appearance: none; /* Remove default radio button styling */
-    cursor: pointer;
-	
-}
-
-#button-container-2 > input[type="radio"]{
-	margin-left:-138px;
-}
-
-#button-container-3 > input[type="radio"]{
-	margin-left:-138px;
-}
-
-  </style>
 </head>
 
 <body>
@@ -195,7 +46,7 @@ input[type="radio"] {
     
 		<body style="margin-top:2px;">
 
-			<a href="game_js_creator.html" class="top-right-link">ⓘ</a>
+	
 
 
 			<div class="container"  >
@@ -206,13 +57,13 @@ input[type="radio"] {
 				<br/><br/>
 
 
-				<form id="selectionForm" action="game.html" method="get">
+				<form id="selectionForm" action="common\Map_Game_dark.html" method="get">
 					
 
 
 					<div class="button-container"  id="button-container-1">
-						<input type="radio" id="option1" name="selection" value="riv_1" checked>
-						<label for="option1">
+						<input type="radio" id="option1" name="selection" value="riv_1" checked 	>
+						<label for="option1" >
 							<span class="left-text">Rivers</span>
 
 						</label>
@@ -298,36 +149,36 @@ input[type="radio"] {
 
 
 
-		<form id="selectionForm" action="game.html" method="get">
+		<form id="selectionForm" action="common\Map_Game_dark.html" method="get">
 					
 
 
 			<div class="button-container" id="button-container-2">
-				<input type="radio" class="form_2" id="option21" name="selection-2" value="Por_1" checked>
+				<input type="radio" class="form_2" id="option21" name="selection" value="Por_1" checked>
 				<label for="option21">
 					<span class="left-text">Portugal</span>
 
 				</label>
 			
-				<input type="radio" class="form_2" id="option22" name="selection-2" value="Dutch_1">
+				<input type="radio" class="form_2" id="option22" name="selection" value="Dutch_1">
 				<label for="option22">
 					<span class="left-text">Dutch</span>
 
 				</label>
 			
-				<input type="radio" class="form_2" id="option23" name="selection-2" value="Eng_1">
+				<input type="radio" class="form_2" id="option23" name="selection" value="Eng_1">
 				<label for="option23">
 					<span class="left-text">English</span>
 
 				</label>
 			
-				<input type="radio" class="form_2" id="option24" name="selection-2" value="Dan_1">
+				<input type="radio" class="form_2" id="option24" name="selection" value="Dan_1">
 				<label for="option24">
 					<span class="left-text">Danes</span>
 
 				</label>
 
-				<input type="radio" class="form_2" id="option25" name="selection-2" value="Fra_1">
+				<input type="radio" class="form_2" id="option25" name="selection" value="Fra_1">
 				<label for="option25">
 					<span class="left-text">French</span>
 
@@ -378,12 +229,12 @@ input[type="radio"] {
 
 
 
-		<form id="selectionForm" action="game.html" method="get">
+		<form id="selectionForm" action="common\Map_Game_dark.html" method="get">
 					
 
 
 			<div class="button-container"  id="button-container-3">
-				<input type="radio" class="form_3" id="option31" name="selection-3" value="NPP_1" checked>
+				<input type="radio" class="form_3" id="option31" name="selection" value="NPP_1" checked>
 				<label for="option31">
 					<span class="left-text">Nuclear Power Plants</span>
 
@@ -391,13 +242,13 @@ input[type="radio"] {
 				<!-- Thermal Power Plants, Nuclear Power Plants, Hydropower Projects -->
 				<!-- Solar Energy, Wind Energy, Natural Gas -->
 			
-				<input type="radio" class="form_3" id="option32" name="selection-3" value="Ports_1">
+				<input type="radio" class="form_3" id="option32" name="selection" value="Ports_1">
 				<label for="option32">
 					<span class="left-text">Ports</span>
 
 				</label>
 			
-				<input type="radio" class="form_3" id="option33" name="selection-3" value="French_2">
+				<input type="radio" class="form_3" id="option33" name="selection" value="French_2">
 				<label for="option33">
 					<span class="left-text">Freight Corridors 🔧</span> 
 					
@@ -407,7 +258,7 @@ input[type="radio"] {
 
 				</label>
 			
-				<input type="radio" class="form_3" id="option34" name="selection-3" value="GQ_1">
+				<input type="radio" class="form_3" id="option34" name="selection" value="GQ_1">
 				<label for="option34">
 					<span class="left-text">Golden Quad 🔧</span>
 
@@ -416,7 +267,7 @@ input[type="radio"] {
 				https://en.wikipedia.org/wiki/Golden_Quadrilateral#/media/File:Golden_Quadrilateral.svg
 				-->
 
-				<input type="radio" class="form_3" id="option35" name="selection-3" value="air_1">
+				<input type="radio" class="form_3" id="option35" name="selection" value="air_1">
 				<label for="option35">
 					<span class="left-text">Airports (UDAN)</span>
 <span class="right-text" style="opacity:0.6; font-size:10px; margin-top:35px; margin-left:52px;">greenfield, operationalised</span>

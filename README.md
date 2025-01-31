@@ -8,24 +8,48 @@ It was created with the intention of personal use but I firmly believe that know
 Plus, it can be run locally ;)  
 
 [Link](https://shubhmadhavan.github.io/smmap.github.io/index.html)  
-<img src="https://github.com/user-attachments/assets/8ecd953c-d550-453c-9483-5c557aa470ef" style="float:left; margin-right: 10px; height:600px; " />
+<img src="https://github.com/user-attachments/assets/1eb7e8a8-163a-4c4b-b02d-0c86413ae4dc"  style="float:left; margin-right: 10px; height:600px; " />
 
-## Included Maps:
-#### [Rivers](https://shubhmadhavan.github.io/smmap.github.io/game.html?map=rivers&orderRSNP=NS)
+## Maps:
+### Geography
+#### [Rivers](https://shubhmadhavan.github.io/smmap.github.io/common/Map_Game_dark.html?selection=riv_1)
 <img src="https://github.com/user-attachments/assets/ee25fe55-8803-4b38-8593-3eb20393e9eb" style="float:left; margin-right: 10px; height:400px; width: 360px;" />
 
-#### [Mountains](https://shubhmadhavan.github.io/smmap.github.io/game.html?map=mountains&orderRSNP=NS)
+#### [Mountains](https://shubhmadhavan.github.io/smmap.github.io/common/Map_Game_dark.html?selection=mt_1)
 
-#### [National Parks of India](https://shubhmadhavan.github.io/smmap.github.io/game.html?map=np&orderRSNP=NS)
+#### [National Parks of India](https://shubhmadhavan.github.io/smmap.github.io/common/Map_Game_dark.html?selection=np_1)
 
-#### [Tiger Reserves](https://shubhmadhavan.github.io/smmap.github.io/game.html?map=in&orderRSNP=NS)
+#### [Tiger Reserves](https://shubhmadhavan.github.io/smmap.github.io/common/Map_Game_dark.html?selection=tr_1)
 
-#### [Ramsar Sites of India](https://shubhmadhavan.github.io/smmap.github.io/game.html?map=rs&orderRSNP=NS)    
+#### [Ramsar Sites of India](https://shubhmadhavan.github.io/smmap.github.io/common/Map_Game_dark.html?selection=rs_1)  
 
-#### [Dams & Reservoirs](https://shubhmadhavan.github.io/smmap.github.io/game.html?map=dm&orderRSNP=NS)
+#### [Dams & Reservoirs](https://shubhmadhavan.github.io/smmap.github.io/common/Map_Game_dark.html?selection=dm_1)
 
-#### [Waterfalls](https://shubhmadhavan.github.io/smmap.github.io/game.html?map=wf&orderRSNP=NS) 
-<img src="https://github.com/user-attachments/assets/a57c67f7-9c93-4238-879b-1306f85fd01b" style="float:left; margin-right: 10px; height:400px; width: 360px;" />
+#### [Waterfalls](https://shubhmadhavan.github.io/smmap.github.io/common/Map_Game_dark.html?selection=wf_1)
+
+
+
+
+
+### History
+#### [Portuguese Settlements](https://shubhmadhavan.github.io/smmap.github.io/common/Map_Game_dark.html?selection=Por_1)
+
+#### [Dutch Settlements](https://shubhmadhavan.github.io/smmap.github.io/common/Map_Game_dark.html?selection=Dutch_1)
+
+#### [English Settlements](https://shubhmadhavan.github.io/smmap.github.io/common/Map_Game_dark.html?selection=Eng_1)
+
+#### [Danish Settlements](https://shubhmadhavan.github.io/smmap.github.io/common/Map_Game_dark.html?selection=Dan_1)
+
+#### [French Settlements](https://shubhmadhavan.github.io/smmap.github.io/common/Map_Game_dark.html?selection=Fra_1)
+
+
+### Economy
+#### [Nuclear Power Plants](https://shubhmadhavan.github.io/smmap.github.io/common/Map_Game_dark.html?selection=NPP_1)
+
+#### [Major & Minor Ports](https://shubhmadhavan.github.io/smmap.github.io/common/Map_Game_dark.html?selection=Ports_1)
+
+#### [Greenfield Airports under UDAN](https://shubhmadhavan.github.io/smmap.github.io/common/Map_Game_dark.html?selection=air_1)
+
 
 
 ### <i style="color:grey;">Upcoming Maps
@@ -36,21 +60,8 @@ Plus, it can be run locally ;)
 ● Canyons, Gorges, Valleys  
 ● Important Passes of India  </i>
 
-## Features:
-### Sorting <img src="https://github.com/user-attachments/assets/a71faa51-0256-449a-9366-5c89e567363d" style="float:left; margin-right: 10px;  margin-top: 22px; height:26px;" />
-● Random/Shuffle Sort → Default sort mode that allows for Active Recall  
-● North to South Sort → Covers all Locations from the Northernmost to the Southernmost latitudes  
 
 
-### Site Information
-● Image Info →  Image of Map with relevant location and other related sites marked  
-● Site Info → More info about each site  
-● Above appears both as a transparent hoverbox and in a Side Column  
-
-### Night Mode & Read Mode ㅤ<img src="https://github.com/user-attachments/assets/433d0209-10b7-4a05-8be1-460107290417" style="float:left; margin-right: 10px;  margin-top: 8px; height:24px;" />
-● Enabling Night Mode hides the the information column on the right of Map  
-● Enabling Read Mode creates a hoverbox over the map  
-● Both Night Mode and Read Mode are enabled by default on Windows devices and ipads  
 
 ### Themes
 <div style="overflow: hidden;">

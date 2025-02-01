@@ -2,12 +2,14 @@
 	pointer-events: all; 
 	touch-action: manipulation; 
 	will-change: transform, stroke-width; 
+	z-index: 99999 !important;
 	}
 
 .leaflet-interactive:hover{
 	cursor: crosshair;        
 	stroke-width: 4;
 	stroke: #FFE0C8 !important;  	
+	
 }
 	
 
@@ -315,16 +317,18 @@ height:19px;
 			
 		.slider-container{
 			position: absolute;
-			bottom:7%;
+			bottom:2%;
 			right:-14%;
-			zoom:70%;
+			zoom:62%;
 			z-index:9999;
+			/*display:none;  disabled in mobile devices*/
 		}
-		
 		#timeoutValue {
 			opacity:1;
+			/*display:none;  disabled in mobile devices*/
 		}
 
+	
 		.leaflet-control-zoom.leaflet-bar.leaflet-control{
 			display:none;
 		}

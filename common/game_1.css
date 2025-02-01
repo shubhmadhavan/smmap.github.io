@@ -276,8 +276,9 @@ height:19px;
 		}
 
 		#result{
-			margin-top:30px;
+			margin-top:60px;
 			zoom:70%;
+			opacity:0.8;
 		}
 
 		span{

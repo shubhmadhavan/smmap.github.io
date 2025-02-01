@@ -229,5 +229,5 @@ function nextRound() {
     resultBox.style.display = 'none';
 
     currentRiver = getRandomRiver(); // Get a new random river
-    document.getElementById('header').textContent = "Locate: " + currentRiver;
+    document.getElementById('header').textContent = "Locate: " + currentRiver.split("(")[0].trim();
 }

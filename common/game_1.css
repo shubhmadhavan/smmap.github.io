@@ -326,9 +326,7 @@ height:19px;
 		}
 
 		.leaflet-control-zoom.leaflet-bar.leaflet-control{
-			position: absolute;
-			top:800px !important;
-			zoom:70%;
+			display:none;
 		}
 
 

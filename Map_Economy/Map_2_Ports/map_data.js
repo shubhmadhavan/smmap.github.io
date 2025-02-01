@@ -18,7 +18,7 @@ const mapData = {
 "Nagapattinam Intl Port" : "POINT (79.84914 10.76297)",
 "Chennai Major Port" : "POINT (80.29205 13.08153)",
 "Kamarajar/ Ennore" : "POINT (80.3374 13.25925)",
-"(Adani) Kattupalli Port" : "POINT (80.34045 13.31233)",
+"Adani Kattupalli Port" : "POINT (80.34045 13.31233)",
 "Krishnapatnam Port" : "POINT (80.14081 14.25266)",
 "Machilipatnam Port" : "POINT (81.22081 16.22704)",
 "Kakinada / Coringa Port" : "POINT (82.26104 16.94561)",

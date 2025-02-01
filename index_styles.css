@@ -208,16 +208,6 @@ html::before {
     gap: 10px; // Adds spacing between items
 }
 
-.buttons-class {
-	margin-top: 10px;
-	zoom:0.68;
-}
-
-#map-image-container {
-    // Add any additional styling for the map container 
-	margin-top: 80px;
-	 margin-top: 22px;
-}
 
 .container{
 		margin-left:6.5%;
@@ -231,62 +221,6 @@ html::before {
 .top-right-link{
 	margin-top:-5px;
 	opacity:0.4;
-}
-
-.buttons-class
-{
-margin-left:16.5%;
-zoom:0.5;
-}
-
-#map-image {
- width: 980px; height: auto; 
- max-width:60%;
- margin-top:3%;
- margin-left:-42%;
-}
-
-#map-image:hover, #map-image-2:hover, #map-image-3:hover{
-		box-shadow: 0 0 5px #887856;
-}
-
-#map-image-2 {
- width: 980px !important; 
- height: auto !important; 
- max-width:60% !important;
-  margin-top:3%;
- top:10%;
- margin-left:-42.6%;
-}
-
-#map-image-2:hover{
-	opacity:1;
-}
-
- 
-#map-image-3 {
- width: 980px !important; 
- height: auto !important; 
- max-width:60% !important;
-  margin-top:3%;
-  top:10%;
- margin-left:-42%;
-}
-
-#map-image-3:hover{
-	opacity:1;
-}
-
-#map-image-container-2 {
-    // Add any additional styling for the map container 
-	margin-top: 80px !important;
-	 margin-top: 22px !important;
-}
-
-#map-image-container-3 {
-    // Add any additional styling for the map container 
-	margin-top: 80px !important;
-	 margin-top: 22px !important;
 }
 
 #start1{opacity:0;}
@@ -374,47 +308,7 @@ body {
   }
 
 
-  #map-image-container-3 {
-	  // Add any additional styling for the map container 
-	  margin-top: 80px;
-	   margin-top: 22px;
-  }
-
-  #map-image-3 {
-   width: 980px; height: auto; 
-   max-width:100%;
-  }
-
-
-  .button-container {
-		  margin: 20px;
-	
-  }
-
-
-  #selectionForm{
-	margin-left:-22px !important;
-
-}
-
-
-
-.button-container label {
-  display: flex;
-  justify-content: space-between;  /* This ensures left and right texts are spaced out */
-  align-items: center;
-  position: relative;
-  width: 220px; /* Adjust this to your button width */
-  height: 60px; /* Adjust this for button height */
-  border: 1px solid #9b8c68;
-  border-radius: 5px;
-  cursor: pointer;
-  padding: 0 10px;
-  font-size:20px;
-  margin-left:-50px;
-}
-
-
+  
 
 #option1, #option21, #option31{
 	margin-top: 22px;
@@ -488,6 +382,39 @@ input[type="radio"] {
 
 }
 
+
+
+
+
+
+.buttons-class
+{
+margin-left:16.5%;
+zoom:0.5;
+}
+
+.buttons-class {
+	margin-top: 10px;
+	zoom:0.68;
+}
+
+.button-container label {
+  display: flex;
+  justify-content: space-between;  /* This ensures left and right texts are spaced out */
+  align-items: center;
+  position: relative;
+  width: 220px; /* Adjust this to your button width */
+  height: 60px; /* Adjust this for button height */
+  border: 1px solid #9b8c68;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0 10px;
+  font-size:20px;
+  margin-left:-50px;
+}
+
+
+
 #button-container-2 > input[type="radio"]{
   margin-left:-138px;
 }
@@ -499,9 +426,52 @@ input[type="radio"] {
 
 
 
+.button-container {
+	margin: 20px;
+
+}
+
+
+#selectionForm{
+	margin-left:-100px !important;
+	}
+	
+.selection-form-1 {
+	padding-right:16px !important;
+}
+
+
+#map-image-container , #map-image-container-2, #map-image-container-3 {
+    // Add any additional styling for the map container 
+	margin-top: 80px !important;
+	 margin-top: 22px !important;
+}
 
 
 
+#map-image, #map-image-2, #map-image-3  {
+ width: 980px; height: auto; 
+ max-width:60% !important;
+ margin-top:3%;
+ margin-left:-42%;
+}
+
+
+
+
+#map-image:hover, #map-image-2:hover, #map-image-3:hover{
+		box-shadow: 0 0 5px #887856;
+}
+
+#map-image-2:hover{
+	opacity:1;
+}
+
+
+
+#map-image-3:hover{
+	opacity:1;
+}
 
 
 

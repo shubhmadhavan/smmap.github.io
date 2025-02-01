@@ -80,7 +80,6 @@ function getRandomRiver() {
         restartButton.style.marginTop = "10px";
         restartButton.style.padding = "5px 10px";
         restartButton.style.cursor = "pointer";
-
         restartButton.onclick = function () {
             // Reset when button is clicked
             shownRivers.clear();
@@ -91,11 +90,23 @@ function getRandomRiver() {
             nextRound();
         };
 
-        // Append the button to result box
+        // Create a home button dynamically that looks the same as the restart button
+        const homeButton = document.createElement("button");
+        homeButton.textContent = "Home";
+        homeButton.style.marginTop = "10px";
+        homeButton.style.padding = "5px 10px";
+        homeButton.style.cursor = "pointer";
+        homeButton.onclick = function () {
+            window.location.href = "../index.html";
+        };
+
+        // Append the buttons to the result box
         resultBox.innerHTML = ""; // Clear previous content
         resultBox.appendChild(document.createTextNode("Iteration Completed."));
         resultBox.appendChild(document.createElement("br"));
         resultBox.appendChild(restartButton);
+        resultBox.appendChild(document.createElement("br")); // Add a break between buttons
+        resultBox.appendChild(homeButton);
 
         return null; // Prevent selecting a new river until reset
     }

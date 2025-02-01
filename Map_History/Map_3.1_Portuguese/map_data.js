@@ -20,7 +20,7 @@ const mapData = {
 "Pulicat (1518-1610)" : "POINT (80.3185252 13.4177382)",
 "Mylapore (Sao Tome) (1523-1749)" : "POINT (80.2676303 13.0367914)",
 "Nagapattinam (1507-1657)" : "POINT (79.8448512 10.7672313)",
-"Thoothukudi (1548-1658)" : "POINT (78.1348361 8.7641661)",
+"Thoothukudi/Tuticorin (1548-1658)" : "POINT (78.1348361 8.7641661)",
 "Hooghly (1579-1632)" : "POINT (88.38985 22.90115)",
 "Chittagong (1528-1666)" : "POINT (91.83486 22.3752)"
 };

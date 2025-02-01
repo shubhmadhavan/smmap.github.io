@@ -1,6 +1,115 @@
 
+.icons-container{
+
+zoom:125%;
+
+}
 	
-	
+.top-right-link {
+	z-index:999999;
+	opacity:1;
+	position: absolute;
+	top: 0px;
+	right: 52px;
+	color: #8a8a8a;
+	font-size: 28px;
+	text-decoration: none;
+	z-index:1999;
+}
+
+.top-right-link:hover {	
+	z-index:999999;
+	color: #ffffff;
+}
+
+
+.toggle-map{
+	z-index:999999;
+	position: absolute;
+	top: 6px;
+	right: 72px;
+	color: #8a8a8a;
+	opacity:1;
+}
+
+.toggle-map:hover{
+	z-index:999999;
+	opacity:0.8;
+}
+
+
+
+.toggle-map-2{
+	z-index:999999;
+opacity:0.5;
+position: absolute;
+top: 8px;
+right: 90px;
+color: #8a8a8a;
+}
+.toggle-map-2:hover{
+	z-index:999999;
+opacity:1;
+}
+.toggle-map-2 > img {
+	z-index:999999;
+height:19px;
+}
+
+.toggle-map-3{
+	z-index:999999;
+opacity:0.5;
+position: absolute;
+top: 8px;
+right: 110px;
+color: #8a8a8a;
+}
+.toggle-map-3:hover{
+	z-index:999999;
+opacity:1;
+}
+.toggle-map-3 > img {
+	z-index:999999;
+height:19px;
+}
+.toggle-map-4{
+	z-index:999999;
+opacity:0.5;
+position: absolute;
+top: 8px;
+right: 130px;
+color: #8a8a8a;
+}
+.toggle-map-4:hover{
+	z-index:999999;
+opacity:1;
+}
+.toggle-map-4 > img {
+	z-index:999999;
+height:19px;
+}
+
+
+.toggle-map-5{
+	z-index:999999;
+opacity:0.5;
+position: absolute;
+top: 8px;
+right: 150px;
+color: #8a8a8a;
+}
+.toggle-map-5:hover{
+	z-index:999999;
+opacity:1;
+}
+.toggle-map-5 > img {
+	z-index:999999;
+height:19px;
+}
+ 
+
+
+
 	
 	
 	header{
@@ -58,7 +167,7 @@
 			left: 50%;
 			transform: translateX(-50%);
 			z-index: 9999;
-            background-color: #CBB482;
+            background-color:#E2CA97; border: 1px solid #8D8D8D; margin-left:-100px; margin-top:240px;
 			color: #000000;
 			padding: 10px;
 			border-radius: 5px;
@@ -107,77 +216,6 @@
 		}
 		
 
-		.toggle-map{
-		
-			position: absolute;
-			top: 12px;
-			right: 46px;
-			color: #8a8a8a;
-			opacity:1;
-		}
-	
-		.toggle-map:hover{
-			opacity:0.8;
-		}
-	
-
-	
-	.toggle-map-2{
-		opacity:0.5;
-		position: absolute;
-		top: 14px;
-		right: 64px;
-		color: #8a8a8a;
-	}
-	.toggle-map-2:hover{
-		opacity:1;
-	}
-	.toggle-map-2 > img {
-		height:19px;
-	}
-
-	.toggle-map-3{
-		opacity:0.5;
-		position: absolute;
-		top: 14px;
-		right: 84px;
-		color: #8a8a8a;
-	}
-	.toggle-map-3:hover{
-		opacity:1;
-	}
-	.toggle-map-3 > img {
-		height:19px;
-	}
-		.toggle-map-4{
-		opacity:0.5;
-		position: absolute;
-		top: 14px;
-		right: 104px;
-		color: #8a8a8a;
-	}
-	.toggle-map-4:hover{
-		opacity:1;
-	}
-	.toggle-map-4 > img {
-		height:19px;
-	}
-	
-	
-	.toggle-map-5{
-		opacity:0.5;
-		position: absolute;
-		top: 14px;
-		right: 124px;
-		color: #8a8a8a;
-	}
-	.toggle-map-5:hover{
-		opacity:1;
-	}
-	.toggle-map-5 > img {
-		height:19px;
-	}
-	
 	.leaflet-control-attribution.leaflet-control{
 		display:none;
 		opacity:0;
@@ -189,22 +227,6 @@
 		zoom:99%;
 	}
 
-	 
-	.top-right-link {
-		opacity:1;
-		position: absolute;
-		top: 6px;
-		right: 26px;
-		color: #8a8a8a;
-		font-size: 28px;
-		text-decoration: none;
-		z-index:1999;
-	}
-
-	.top-right-link:hover {	
-		
-		color: #ffffff;
-	}
 
 
 .switcher{
@@ -238,13 +260,19 @@
  
 	@media only screen and (max-width: 549px){
 
+
+
+		.reveal-all{opacity:0;}
+		
 		#header{
 			position:absolute;
 			z-index:9999;
-			zoom:70%;
+			zoom:94%;
+
 			top:40px;
 			margin-left:180px;
-			margin-bottom: 26px;
+
+			background-color: rgba(80,80,80,0.1);
 		}
 
 		#result{
@@ -257,12 +285,44 @@
 			zoom:0.1%;
 		}
 
-		.switcher-text {
-			position:absolute;
-			opacity:1;
-			left:-400px;
-			zoom:80%;
+.switcher-text{
+	position: absolute;
+			top:-4px;
+}
+
+
+		.score-bottom{
+			position: absolute;
+			top:6px;
+			left:30%;
+			zoom:90%;
+			
 		}
+
+
+
+		#do_not_repeat_label, #noRepeat{
+			display:none; /* option to disallow repetition removed for mobile devices*/
+			}
+			
+		.slider-container{
+			position: absolute;
+			bottom:7%;
+			right:-14%;
+			zoom:70%;
+			z-index:9999;
+		}
+		
+		#timeoutValue {
+			opacity:1;
+		}
+
+		.leaflet-control-zoom.leaflet-bar.leaflet-control{
+			position: absolute;
+			top:800px !important;
+			zoom:70%;
+		}
+
 
 		.toggle-map, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5{
 			zoom:80%;

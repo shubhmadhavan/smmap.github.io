@@ -1,3 +1,21 @@
+.leaflet-interactive, .leaflet-interactive:hover {
+	pointer-events: all; 
+	touch-action: manipulation; 
+	will-change: transform, stroke-width; 
+	}
+
+.leaflet-interactive:hover{
+	cursor: crosshair;        
+	stroke-width: 4;
+	stroke: #FFE0C8 !important;  	
+}
+	
+
+.leaflet-control-attribution.leaflet-control{
+	display:none;
+	opacity:0;
+}
+
 
 .icons-container{
 
@@ -209,17 +227,6 @@ height:19px;
         #map:hover {
 			cursor: default;        
 		}
-		.leaflet-interactive:hover{
-			cursor: crosshair;        
-			stroke-width: 4;
-			stroke: #FFE0C8 !important;  	
-		}
-		
-
-	.leaflet-control-attribution.leaflet-control{
-		display:none;
-		opacity:0;
-	}
 
 
 
@@ -258,7 +265,7 @@ height:19px;
 	color:#000000;
 }
  
-	@media only screen and (max-width: 549px){
+@media only screen and (max-width: 549px){
 
 
 

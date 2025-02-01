@@ -482,7 +482,7 @@ zoom:0.5;
 
 
 
-@media only screen and (max-width: 519px){
+@media only screen and (max-width: 529px){
 
 	html {
 		max-width:380px;
@@ -502,7 +502,7 @@ zoom:0.5;
 
 }
 #map-image{
-	margin-top:-105px;
+	margin-top:-135px !important;
 	margin-left:-72px;
 
 	transform: scale(1.05, 1.05) !important;	
@@ -515,7 +515,7 @@ zoom:0.5;
 .button-container{
 
 	zoom:40%;
-	margin-left:350px;
+	margin-left:420px !important;
 
 
 

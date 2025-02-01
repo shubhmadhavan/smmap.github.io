@@ -122,7 +122,7 @@ function getRandomRiver() {
 }
 
 var currentRiver = getRandomRiver(); // Initially pick a random location
-document.getElementById('header').textContent = "Locate: " + currentRiver;
+document.getElementById('header').textContent = "Locate: " + currentRiver.split("(")[0].trim();
 
 var selectedPath = null; // Track the selected path
 var correctPath = null; // Track the correct path

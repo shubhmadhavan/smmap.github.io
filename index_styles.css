@@ -506,17 +506,20 @@ zoom:0.5;
 
 }
 #map-image{
-	margin-top:-75px;
+	margin-top:-105px;
 	margin-left:-72px;
 
 	transform: scale(1.05, 1.05) !important;	
 }
 
+#map-image-container{
+	max-width: 60%;
+}
 
 .button-container{
 
 	zoom:40%;
-	margin-left:250px;
+	margin-left:350px;
 
 
 

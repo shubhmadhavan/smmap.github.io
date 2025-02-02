@@ -360,22 +360,41 @@ html, body{
 
 		zoom:105%;
 		
+		user-select: none; 
+		-webkit-user-select: none; 
+		-ms-user-select: none; 
+		-moz-user-select: none; 
 		}
 	.top-right-link{
 		zoom:110%;
 	top: -8px;
 		margin-right:-38px;
+
+		user-select: none; 
+		-webkit-user-select: none; 
+		-ms-user-select: none; 
+		-moz-user-select: none; 
 	}
 	.toggle-map{
 		zoom:86%;
 		top: -1px !important;
 		margin-right:-28px;
+
+		user-select: none; 
+		-webkit-user-select: none; 
+		-ms-user-select: none; 
+		-moz-user-select: none; 
 	}
 
 	 .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5{
 		zoom:110%;
 		top: 1px !important;
 		margin-right:-38px;
+
+		user-select: none; 
+		-webkit-user-select: none; 
+		-ms-user-select: none; 
+		-moz-user-select: none; 
 	}
 
 
@@ -431,10 +450,7 @@ html, body{
 
 		.score-bottom{
 			display:none; /* option to disallow repetition removed for mobile devices*/
-			position: absolute;
-			top:6px;
-			left:30%;
-			zoom:90%;
+
 			
 		}
 

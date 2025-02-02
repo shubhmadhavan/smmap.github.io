@@ -433,11 +433,11 @@ zoom:0.5;
 
 
 #selectionForm{
-	margin-left:-100px !important;
+	margin-left:-100px;
 	}
 	
 .selection-form-1 {
-	padding-right:16px !important;
+	padding-right:16px;
 }
 
 
@@ -484,6 +484,8 @@ zoom:0.5;
 
 @media only screen and (max-width: 529px){
 
+
+
 	html {
 		max-width:380px;
 		zoom:1.6;
@@ -510,17 +512,24 @@ zoom:0.5;
 
 #map-image-container{
 	max-width: 60%;
+	padding-right: 1%;
 }
 
 .button-container{
 
 	zoom:40%;
-	margin-left:420px !important;
-
+	margin-left:520px !important;
 
 
 }	
 
+#selectionForm{
+	margin-left:-100px;
+	}
+	
+.selection-form-1 {
+	padding-right:16px;
+}
 
 }
 

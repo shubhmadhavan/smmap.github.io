@@ -2,6 +2,7 @@
 body {
 	background: #222222 !important;
 	}
+
 .leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom{
 	background: #222222 !important;
 	}
@@ -46,5 +47,14 @@ color: white !important;
 
 
  
-/* dark theme  ends */
+
+/* dark theme pc ends */
 	
+/*    MOBILE CSS */
+@media only screen and (max-width: 649px){
+#header{
+	color:white !important;
+	
+}
+
+}

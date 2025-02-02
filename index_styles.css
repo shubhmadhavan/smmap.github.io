@@ -482,27 +482,29 @@ zoom:0.5;
 
 
 
-@media only screen and (max-width: 529px){
+@media only screen and (max-width: 829px){
+	.button-container {
 
 
+	zoom:140%;
 
-	html {
-		max-width:380px;
-		zoom:1.6;
+		padding-left:70px;
 	}
 	
+
 	.top-right-link{
 		display:none;
 	}
 
 
+	.tabs{
+		z-index: 9999;z-index: 99999;
+		zoom:210%;
+	
+	}
+	
 
 
-.tabs{
-	z-index: 9999;z-index: 99999;
-	zoom:60%;
-
-}
 #map-image{
 	margin-top:-135px !important;
 	margin-left:-72px;
@@ -515,13 +517,13 @@ zoom:0.5;
 	padding-right: 1%;
 }
 
-.button-container{
+#map-image{
+	margin-left:-220px;
+	margin-top:-184px !important;
+	zoom:88% !important;
+	max-height:336px;
+}
 
-	zoom:40%;
-	margin-left:520px !important;
-
-
-}	
 
 #selectionForm{
 	margin-left:-100px;

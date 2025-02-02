@@ -122,7 +122,7 @@ function getRandomRiver() {
 }
 
 var currentRiver = getRandomRiver(); // Initially pick a random location
-document.getElementById('header').textContent = "Locate: " + currentRiver.split("(")[0].trim();
+document.getElementById('header').textContent = "" + currentRiver.split("(")[0].trim();
 
 var selectedPath = null; // Track the selected path
 var correctPath = null; // Track the correct path
@@ -240,5 +240,5 @@ function nextRound() {
     resultBox.style.display = 'none';
 
     currentRiver = getRandomRiver(); // Get a new random river
-    document.getElementById('header').textContent = "Locate: " + currentRiver.split("(")[0].trim();
+    document.getElementById('header').textContent = "" + currentRiver.split("(")[0].trim();
 }

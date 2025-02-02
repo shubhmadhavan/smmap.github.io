@@ -19,8 +19,8 @@
 
 .leaflet-interactive {
 
-	stroke-width: 3px !important;
-
+	stroke-width: 4px !important;
+	stroke-opacity: 0.8 !important; 
 	
 }
 	

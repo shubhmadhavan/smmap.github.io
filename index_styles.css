@@ -1,4 +1,7 @@
 
+
+
+
 selectionForm {
 	appearance: none; /* Ensures consistent appearance */
     -moz-appearance: none; /* Firefox-specific reset */
@@ -308,6 +311,7 @@ body {
   }
 
 
+
   
 
 #option1, #option21, #option31{
@@ -461,7 +465,21 @@ zoom:0.5;
 
 #map-image:hover, #map-image-2:hover, #map-image-3:hover{
 		box-shadow: 0 0 5px #887856;
+
+	
+		
 }
+
+
+
+
+
+
+
+
+
+
+
 
 #map-image-2:hover{
 	opacity:1;

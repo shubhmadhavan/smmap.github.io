@@ -1,9 +1,9 @@
 
-
 // Initialize the map
 var map = L.map('map', {
     doubleClickZoom: false // Disable double click to zoom
 }).setView([20.5937, 80.9629], 5); // Set to India center
+
 
 // Define the bounds of the image (set these to match the geographical area of the image)
 var imageBounds = [[-2.0, 36.78], 
@@ -22,43 +22,96 @@ document.getElementById("timeoutSlider").addEventListener("input", function() {
 //timeout code part 1 ends
 
 
+
+// Function to get URL parameters
+function getUrlParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+// Check if 'selection' parameter is 'wld_1'
+if (getUrlParameter('selection') === 'wld_1') {
+    map.setView([0, 0], 2); // Center at (0,0) with zoom level 3
+
+    document.querySelectorAll('.leaflet-image-layer.leaflet-zoom-animated').forEach(layer => {
+        layer.remove();
+    });
+    
+    document.querySelectorAll('.leaflet-image-layer.leaflet-zoom-animated').forEach(layer => {
+        layer.remove();
+    });
+    
+    // Add the tile layer
+    tileLayer = L.tileLayer('../Map_Images/map_tiles/{z}_{x}_{y}.png', {
+        attribution: '&copy; CARTO',
+        maxZoom: 6,
+    }).addTo(map);
+
+    themeStylesheet.setAttribute("href", "theme4.css");
+
+}
+
+
+
+
 // Function to parse different geometry types
 function parseGeometry(geometry) {
     const type = geometry.split(' ')[0];
-	
-	if (type === "POLYGON"){
-		geometry = geometry.replace(/\(/, '').replace(/\)/, '');
-		console.log('geo '+geometry);
-	}
-	
-	const coords = geometry.replace(type, '').trim().slice(1, -1).split(', ');
+ 
+    if (type === "GEOMETRYCOLLECTION") {
+        // Extract individual geometries inside the collection using regex
+        const geometries = geometry.match(/(POLYGON) \(\([^)]+\)\)/g);
+        if (!geometries) return [];
+
+        let lines = [];
+
+        for (const geom of geometries) {
+            const parsed = parseGeometry(geom.trim());
+            if (parsed) {
+                if (Array.isArray(parsed)) {
+                    lines.push(...parsed); // Flatten multiple LineStrings
+                } else {
+                    lines.push(parsed);
+                }
+            }
+        }
+
+        return lines; // Return array of LineStrings
+    }
+
+    const coords = geometry.replace(type, '').trim().slice(1, -1).split(', ');
 
 
-	console.log(coords);
-
+    
 
     if (type === "POINT") {
         const [lon, lat] = coords[0].split(' ');
         return { type: 'Point', coordinates: [parseFloat(lat), parseFloat(lon)] };
     } else if (type === "POLYGON") {
-        const points = coords.map(coord => {
-			coords.slice(1, -1);
-            const [lon, lat] = coord.split(' ');
-            return [parseFloat(lat), parseFloat(lon)];
+        // Extract rings (outer & inner if any)
+        const rings = geometry.match(/\(\(.+?\)\)/g);
+        if (!rings) return null;
+
+        let lines = rings.map(ring => {
+            const points = ring.replace(/[()]/g, "").split(', ').map(coord => {
+                const [lon, lat] = coord.split(' ').map(parseFloat);
+                return [lat, lon]; // Flip order
+            });
+            return { type: 'LineString', coordinates: points };
         });
-		console.log('Polygon'+points);
-        return { type: 'LineString', coordinates: points };
+
+        return lines; // Return an array of LineStrings for each ring
     } else if (type === "LINESTRING") {
         const points = coords.map(coord => {
-            const [lon, lat] = coord.split(' ');
-            return [parseFloat(lat), parseFloat(lon)];
+            const [lon, lat] = coord.split(' ').map(parseFloat);
+            return [lat, lon]; // Flip order
         });
-		
         return { type: 'LineString', coordinates: points };
     }
 
     return null;
 }
+
 
 // Get a random river name
 // Keep track of shown rivers
@@ -129,57 +182,57 @@ var correctPath = null; // Track the correct path
 var paths = {}; // Store paths by location name
 
 // Loop through locations data and add them to the map
+
 for (const river in mapData) {
-    const geometry = parseGeometry(mapData[river]);
+    const parsedGeometry = parseGeometry(mapData[river]);
+
+    if (!parsedGeometry) continue;
+
+    if (Array.isArray(parsedGeometry)) {
+        // GeometryCollection contains multiple geometries
+        parsedGeometry.forEach(geo => addGeometryToMap(geo, river));
+    } else {
+        addGeometryToMap(parsedGeometry, river);
+    }
+}
+
+function addGeometryToMap(geometry, river) {
+    let layer;
 
     if (geometry.type === 'Point') {
-        // Add a circle marker for Point
-        const marker = L.circleMarker(geometry.coordinates, {
+        layer = L.circleMarker(geometry.coordinates, {
             radius: 5,
             color: '#EDC1A0',
-			stroke: '',
             weight: 2,
             fillColor: '#FF9B50',
             fillOpacity: 1
         }).addTo(map);
-        paths[river] = marker;
-
-        marker.on('mouseover', function () {
-            marker.setStyle({ fillColor: '#D2D2D2' });
-        });
-
-        marker.on('mouseout', function () {
-            marker.setStyle({ fillColor: '#FF9B50' });
-        });
-
-        marker.on('click', function (e) {
-            handleSelection(river, marker, e);
-        });
-
-
-
     } else if (geometry.type === 'LineString') {
-        // Add a polyline for LineString
-        const polyline = L.polyline(geometry.coordinates, {
+        layer = L.polyline(geometry.coordinates, {
             color: '#EDC1A0',
             weight: 3,
             opacity: 1
         }).addTo(map);
-        paths[river] = polyline;
+    } else if (geometry.type === 'Polygon') {
+        layer = L.polygon(geometry.coordinates, {
+            color: '#EDC1A0',
+            weight: 3,
+            opacity: 1
+        }).addTo(map);
+    }
 
-        polyline.on('mouseover', function () {
-            polyline.setStyle({ color: '#D2D2D2' });
-        });
+    if (layer) {
+        paths[river] = layer;
 
-        polyline.on('mouseout', function () {
-            polyline.setStyle({ color: '#EDC1A0' });
-        });
-
-        polyline.on('click', function (e) {
-            handleSelection(river, polyline, e);
-        });
+        layer.on('mouseover', () => layer.setStyle({ color: '#D2D2D2' }));
+        layer.on('mouseout', () => layer.setStyle({ color: '#EDC1A0' }));
+        layer.on('click', (e) => handleSelection(river, layer, e));
     }
 }
+
+
+
+
 
 // Function to handle location selection
 function handleSelection(river, path, event) {

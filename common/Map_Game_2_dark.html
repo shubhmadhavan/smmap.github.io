@@ -61,57 +61,98 @@
 
 
 <script>
-// Track the state of the reveal-all tooltips
-let allTooltipsVisible = false;
+    // Track the state of the reveal-all tooltips
+    let allTooltipsVisible = false;
 
-// Keep track of all added tooltip layers
-let revealedLayers = [];
+    // Keep track of all added tooltip layers
+    let revealedLayers = [];
 
-// Add a click event listener to the "reveal-all" button
-document.querySelector('.reveal-all').addEventListener('click', function () {
-    // Toggle the visibility of all tooltips
-    allTooltipsVisible = !allTooltipsVisible;
-
-    if (allTooltipsVisible) {
-        // Loop through all geographical data and add tooltips
-        for (const river in mapData) {
-            const geometry = parseGeometry(mapData[river]);
-
+    // Function to calculate the centroid of multiple geometries
+    function getCollectionCentroid(geometries) {
+        let latSum = 0, lonSum = 0, count = 0;
+        geometries.forEach(geometry => {
             if (geometry.type === 'Point') {
-                // Create a circle marker and add it to the map
-                const marker = L.circleMarker(geometry.coordinates, {
-                    radius: 5,
-                    color: '#60A6C2',
-                    stroke: '#60A6C2',
-                    weight: 2,
-                    fillColor: '#60A6C2',
-                    fillOpacity: 1
-                }).bindTooltip(river, { permanent: true, className: 'reveal-all-tooltip' }).addTo(map);
+                latSum += geometry.coordinates[0];
+                lonSum += geometry.coordinates[1];
+                count++;
+            } else if (geometry.type === 'LineString' || geometry.type === 'Polygon') {
+                geometry.coordinates.forEach(coord => {
+                    latSum += coord[0];
+                    lonSum += coord[1];
+                    count++;
+                });
+            }
+        });
 
-                // Add the marker to the tracking array
-                revealedLayers.push(marker);
-            } else if (geometry.type === 'LineString') {
-                // Create a polyline and add it to the map
-                const polyline = L.polyline(geometry.coordinates, {
-                    color: '#60A6C2',
-                    weight: 3,
-                    opacity: 1
-                }).bindTooltip(river, { permanent: true, className: 'reveal-all-tooltip' }).addTo(map);
+        return count ? [latSum / count, lonSum / count] : null;
+    }
 
-                // Add the polyline to the tracking array
-                revealedLayers.push(polyline);
+    // Function to add a tooltip at the best location
+    function addTooltipForGeometry(geometry, river) {
+        let layer = null;
+
+        if (geometry.type === 'Point') {
+            layer = L.circleMarker(geometry.coordinates, {
+                radius: 5,
+                color: '#60A6C2',
+                stroke: '#60A6C2',
+                weight: 2,
+                fillColor: '#60A6C2',
+                fillOpacity: 1
+            });
+        } else if (geometry.type === 'LineString') {
+            layer = L.polyline(geometry.coordinates, {
+                color: '#60A6C2',
+                weight: 3,
+                opacity: 1
+            });
+        } else if (geometry.type === 'Polygon') {
+            const centroid = getCollectionCentroid([{ type: 'Polygon', coordinates: geometry.coordinates[0] }]); // Outer ring centroid
+            if (centroid) {
+                layer = L.marker(centroid, {
+                    icon: L.divIcon({ className: 'reveal-all-tooltip-icon', html: '●', iconSize: [10, 10] })
+                });
             }
         }
-    } else {
-        // Remove all previously added layers
-        revealedLayers.forEach(layer => map.removeLayer(layer));
 
-        // Clear the tracking array
-        revealedLayers = [];
+        if (layer) {
+            layer.bindTooltip(river, { permanent: true, className: 'reveal-all-tooltip' }).addTo(map);
+            revealedLayers.push(layer);
+        }
     }
-});
 
+    // Click event listener for "reveal-all" button
+    document.querySelector('.reveal-all').addEventListener('click', function () {
+        // Toggle tooltip visibility
+        allTooltipsVisible = !allTooltipsVisible;
+
+        if (allTooltipsVisible) {
+            for (const river in mapData) {
+                const geometry = parseGeometry(mapData[river]);
+
+                if (Array.isArray(geometry)) {
+                    // Handle GeometryCollection by placing a SINGLE tooltip
+                    const centroid = getCollectionCentroid(geometry);
+                    if (centroid) {
+                        const marker = L.marker(centroid, {
+                            icon: L.divIcon({ className: 'reveal-all-tooltip-icon', html: '●', iconSize: [10, 10] })
+                        }).bindTooltip(river, { permanent: true, className: 'reveal-all-tooltip' }).addTo(map);
+
+                        revealedLayers.push(marker);
+                    }
+                } else {
+                    addTooltipForGeometry(geometry, river);
+                }
+            }
+        } else {
+            // Remove all tooltips
+            revealedLayers.forEach(layer => map.removeLayer(layer));
+            revealedLayers = [];
+        }
+    });
 </script>
+
+
 
 <div id="header"></div>
 
@@ -136,6 +177,7 @@ const resourcesMap = {
     'mt_1': { script: '../Map_Geography/Map_Mountains/map_data.js', css: '../Map_Geography/Map_Mountains/location_color.css' },
     'gl_1':{ script: '../Map_Geography/Map_Glaciers/map_data.js', css: '../Map_Geography/Map_Glaciers/location_color.css' },
     'wf_1': { script: '../Map_Geography/Map_Waterfalls/map_data.js', css: '../Map_Geography/Map_Waterfalls/location_color.css' },
+    'wld_1': { script: '../Map_Geography/Map_World/map_data.js', css: '../Map_Geography/Map_World/location_color.css' },
     'dm_1': { script: '../Map_Geography/Map_Reservoirs/map_data.js', css: '../Map_Geography/Map_Reservoirs/location_color.css' },
     'rs_1': { script: '../Map_Geography/Map_Ramsar/map_data.js', css: '../Map_Geography/Map_Ramsar/location_color.css' },
     'np_1': { script: '../Map_Geography/Map_National_Park/map_data.js', css: '../Map_Geography/Map_National_Park/location_color.css' },

@@ -7,19 +7,20 @@
         if (toggleMapElement) {
             toggleMapElement.addEventListener('click', () => {
                 // Select elements by class
-                const mapLayers = document.querySelectorAll('.leaflet-image-layer.leaflet-zoom-animated');
+                const mapLayers = document.querySelectorAll('.leaflet-image-layer, .leaflet-tile-container, .leaflet-pane.leaflet-tile-pane');
+
     
                 // Toggle opacity values based on the state
                 if (isToggled) {
                     mapLayers.forEach(layer => {
-                        layer.style.opacity = '1';
+                        layer.style.setProperty("opacity", "1", "important");
                     });
-                    toggleMapElement.style.opacity = '1';
+                    toggleMapElement.style.setProperty("opacity", "1", "important");
                 } else {
                     mapLayers.forEach(layer => {
-                        layer.style.opacity = '0';
+                        layer.style.setProperty("opacity", "0", "important");
                     });
-                    toggleMapElement.style.opacity = '0.4';
+                    toggleMapElement.style.setProperty("opacity", "0.4", "important");
                 }
     
                 // Update toggle state

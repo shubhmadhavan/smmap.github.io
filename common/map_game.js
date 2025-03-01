@@ -31,16 +31,13 @@ function getUrlParameter(name) {
 
 // Check if 'selection' parameter is 'wld_1'
 if (getUrlParameter('selection') === 'wld_1') {
-    map.setView([0, 0], 2); // Center at (0,0) with zoom level 3
+    map.setView([0, 0], 2); // Center at (0,0) with zoom level 2
 
-    document.querySelectorAll('.leaflet-image-layer.leaflet-zoom-animated').forEach(layer => {
+    // Remove existing image layers
+    document.querySelectorAll('.leaflet-image-layer.leaflet-zoom-animated, .leaflet-tile-container.leaflet-zoom-animated').forEach(layer => {
         layer.remove();
     });
-    
-    document.querySelectorAll('.leaflet-image-layer.leaflet-zoom-animated').forEach(layer => {
-        layer.remove();
-    });
-    
+
     // Add the tile layer
     tileLayer = L.tileLayer('../Map_Images/map_tiles/{z}_{x}_{y}.png', {
         attribution: '&copy; CARTO',
@@ -49,7 +46,12 @@ if (getUrlParameter('selection') === 'wld_1') {
 
     themeStylesheet.setAttribute("href", "theme4.css");
 
+    // Set opacity to 0 with !important
+    const style = document.createElement("style");
+    style.innerHTML = ".leaflet-image-layer.leaflet-zoom-animated { opacity: 0 !important; }";
+    document.head.appendChild(style);
 }
+
 
 
 

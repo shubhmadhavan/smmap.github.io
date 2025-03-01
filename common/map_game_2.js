@@ -14,7 +14,7 @@ L.imageOverlay('../Map_Images/India_OS_dark.jpg', imageBounds).addTo(map);
 
 
 // Check if 'selection' parameter is 'wld_1'
-if (getUrlParameter('selection') === 'wld_1') {
+if (getUrlParameter('selection').includes('wld')) {
     map.setView([0, 0], 2); // Center at (0,0) with zoom level 2
 
     // Remove existing image layers

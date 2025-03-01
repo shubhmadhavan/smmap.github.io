@@ -58,7 +58,7 @@ document.addEventListener("keyup", (event) => {
         document.querySelectorAll('.selected-tooltip').forEach(tooltip => {
             tooltip.remove();
         });
-    }, 1600);
+    }, 2600);
 
     }
 });

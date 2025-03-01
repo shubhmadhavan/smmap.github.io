@@ -21,7 +21,7 @@
 
 
 .leaflet-interactive.persistent-hover {
-    fill: rgba(81, 122, 150, 0.8) !important; /* Adjust fill if necessary */
+    fill: rgba(150, 81, 81, 0.8) !important; /* Adjust fill if necessary */
     transition: none !important; /* Prevent animations */
 }
 

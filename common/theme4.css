@@ -6,6 +6,13 @@ body {
 	background: #ffffff !important;
 	}
 
+
+	.leaflet-tooltip.selected-tooltip{
+		background: #ffffff !important;
+		}
+
+		
+	
 .reveal-all{ /*button*/
 	font-size:16px; color:#ffffff; background-color:rgb(112, 112, 112) !important; margin-left: 43%;
 }

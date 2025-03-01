@@ -15,6 +15,62 @@ L.imageOverlay('../Map_Images/India_OS_dark.jpg', imageBounds).addTo(map);
 
 
 
+let isShiftHeld = false;
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Shift") {
+        isShiftHeld = true;
+    }
+});
+
+document.addEventListener("keyup", (event) => {
+    if (event.key === "Shift") {
+        isShiftHeld = false;
+
+        // Close all tooltips when Shift is released
+        
+        
+
+        setTimeout(() => {
+            document.querySelectorAll('.selected-tooltip').forEach(tooltip => {
+                tooltip.remove();
+            });
+        }, 1600);
+    }
+});
+
+
+
+let isAltHeld = false;
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Alt") {
+        isAltHeld = true;
+    }
+});
+
+document.addEventListener("keyup", (event) => {
+    if (event.key === "Alt") {
+        isAltHeld = false;
+    
+
+    setTimeout(() => {
+        document.querySelectorAll('.selected-tooltip').forEach(tooltip => {
+            tooltip.remove();
+        });
+    }, 1600);
+
+    }
+});
+
+// Function to handle Alt + Click for persistent hover effect
+document.addEventListener("click", (event) => {
+    if (isAltHeld && event.target.classList.contains("leaflet-interactive")) {
+        event.target.classList.toggle("persistent-hover"); // Toggle persistent hover class
+    }
+});
+
+
 
 
 // Function to get URL parameters
@@ -193,6 +249,9 @@ for (const river in mapData) {
 function addGeometryToMap(geometry, river) {
     let layer;
 
+ 
+
+
     if (geometry.type === 'Point') {
         layer = L.circleMarker(geometry.coordinates, {
             radius: 5,
@@ -209,9 +268,11 @@ function addGeometryToMap(geometry, river) {
             layer.bindTooltip(river, { permanent: true, className: 'selected-tooltip' }).openTooltip();
 
             // Close any previously opened tooltip
-            setTimeout(() => {
-                layer.closeTooltip();
-            }, 1100); // Adjust timeout for how long the tooltip stays visible
+            if (!isShiftHeld && !isAltHeld) {
+        setTimeout(() => {
+            layer.closeTooltip();
+        }, 1600);
+    } // Adjust timeout for how long the tooltip stays visible
         });
 
 
@@ -228,9 +289,11 @@ function addGeometryToMap(geometry, river) {
             layer.bindTooltip(river, { permanent: true, className: 'selected-tooltip' }).openTooltip();
 
             // Close any previously opened tooltip
-            setTimeout(() => {
-                layer.closeTooltip();
-            }, 1100); // Adjust timeout for how long the tooltip stays visible
+            if (!isShiftHeld && !isAltHeld) {
+                setTimeout(() => {
+                    layer.closeTooltip();
+                }, 1600);
+            } // Adjust timeout for how long the tooltip stays visible
         });
 
 
@@ -246,9 +309,11 @@ function addGeometryToMap(geometry, river) {
             layer.bindTooltip(river, { permanent: true, className: 'selected-tooltip' }).openTooltip();
 
             // Close any previously opened tooltip
-            setTimeout(() => {
-                layer.closeTooltip();
-            }, 1100); // Adjust timeout for how long the tooltip stays visible
+            if (!isShiftHeld && !isAltHeld) {
+                setTimeout(() => {
+                    layer.closeTooltip();
+                }, 1600);
+            } // Adjust timeout for how long the tooltip stays visible
         });
 
     }
@@ -261,5 +326,3 @@ function addGeometryToMap(geometry, river) {
         layer.on('click', (e) => handleSelection(river, layer, e));
     }
 }
-
-

@@ -5,6 +5,15 @@
 	z-index: 99999 !important;
 	}
 
+
+	.leaflet-interactive {
+		transition: stroke 0.5s;
+	}
+	
+
+
+
+
 .leaflet-interactive:hover{
 	cursor: crosshair;        
 	stroke-width: 4;

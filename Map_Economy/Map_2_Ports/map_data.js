@@ -1,5 +1,6 @@
 const mapData = {
-"Mundra port" : "POINT (69.70435 22.73678)",
+"Mundra Port (largest pvt port  )" : "POINT (69.70435 22.73678)",
+"Kandla Port (1st after indep)" : "POINT (70.21245 23.01724)",
 "Porbandar Port" : "POINT (69.58867 21.62143)",
 "Veraval Port" : "POINT (70.36905 20.90239)",
 "Pipavav Port" : "POINT (71.48981 20.9263)",
@@ -7,7 +8,7 @@ const mapData = {
 "Bahruch/ Dahej Port" : "POINT (72.55953 21.6615)",
 "Adani Hazira/ Surat Port" : "POINT (72.64467 21.11693)",
 "Vandhavan (Major) Port" : "POINT (72.67276 19.92923)",
-"J Nehru/ Nhava Sheva (Major) Port" : "POINT (72.95048 18.94975)",
+"J Nehru/ Nhava Sheva (Major) Port (largest overall)" : "POINT (72.95048 18.94975)",
 "Ratnagiri Jaigarh" : "POINT (73.312 16.99014)",
 "Panaji (Major) Port (Goa)" : "POINT (73.82781 15.50141)",
 "Mormugao Port" : "POINT (73.80551 15.40408)",

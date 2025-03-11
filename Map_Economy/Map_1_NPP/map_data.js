@@ -1,5 +1,6 @@
 const mapData = {
-"Narora Atomic Power Station" : "POINT (78.40971 28.15734)",
+"Narora Atomic Power Station" 
+: "POINT (78.40971 28.15734)",
 "Rawatbhata Atomic Power Station" : "POINT (75.58841 24.93609)",
 "Kakrapar Atomic Power Station" : "POINT (82.97972 26.4036)",
 "Tarapur Atomic Power Station" : "POINT (72.6617 19.83209)",

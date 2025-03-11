@@ -1,3 +1,7 @@
+
+
+
+
 .leaflet-interactive, .leaflet-interactive:hover {
 	pointer-events: all; 
 	touch-action: manipulation; 
@@ -46,6 +50,7 @@
 	/* this includes both selected and correct tooltip css*/
 
 	opacity:0.9; 
+	line-height: 0.8;
 }
 
 

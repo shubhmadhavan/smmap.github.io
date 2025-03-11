@@ -13,3 +13,9 @@
 	fill:#57C268 !important; 		
 	stroke-width: 2px !important;
 }
+
+
+
+.point_leaflet {
+	stroke-width: 1px !important;    
+}

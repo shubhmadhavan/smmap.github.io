@@ -262,7 +262,8 @@ function addGeometryToMap(geometry, river) {
             color: '#EDC1A0',
             weight: 2,
             fillColor: '#FF9B50',
-            fillOpacity: 1
+            fillOpacity: 1,
+            className: 'point_leaflet'
         }).addTo(map);
 
  
@@ -285,7 +286,8 @@ function addGeometryToMap(geometry, river) {
         layer = L.polyline(geometry.coordinates, {
             color: '#EDC1A0',
             weight: 3,
-            opacity: 1
+            opacity: 1,
+            className: 'line_leaflet'
         }).addTo(map);
 
         // Display a tooltip with the river name when clicked, and close the previous tooltip
@@ -305,7 +307,8 @@ function addGeometryToMap(geometry, river) {
         layer = L.polygon(geometry.coordinates, {
             color: '#EDC1A0',
             weight: 3,
-            opacity: 1
+            opacity: 1,
+            className: 'polygon_leaflet'
         }).addTo(map);
 
         // Display a tooltip with the river name when clicked, and close the previous tooltip

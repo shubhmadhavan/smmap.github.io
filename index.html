@@ -173,6 +173,63 @@ margin-top:10px;
 
 
 			<div class="button-container" id="button-container-2">
+				
+
+								
+<!--     Pre-History          -->
+<input type="radio" class="form_2" id="option201" name="selection" value="PreHist_1" checked>
+<label for="option201">
+	<span class="left-text">Palaeolithic Sites 🔧</span>
+</label>
+
+<input type="radio" class="form_2" id="option202" name="selection" value="PreHist_2" checked>
+<label for="option202">
+	<span class="left-text">Mesolithic Sites 🔧</span>
+</label>
+
+<input type="radio" class="form_2" id="option203" name="selection" value="PreHist_3" checked>
+<label for="option203">
+	<span class="left-text">Neolithic Sites 🔧</span>
+</label>
+
+<input type="radio" class="form_2" id="option204" name="selection" value="PreHist_4" checked>
+<label for="option204">
+	<span class="left-text">Chalcolithic Sites</span>
+</label>
+
+<!--     Ancient          -->
+
+<input type="radio" class="form_2" id="option211" name="selection" value="AncHist_1" checked>
+<label for="option211">
+	<span class="left-text">Harappan Sites</span>
+</label>
+
+<input type="radio" class="form_2" id="option212" name="selection" value="AncHist_2" checked>
+<label for="option212">
+	<span class="left-text">Mahajanapadas</span>
+</label>
+
+<input type="radio" class="form_2" id="option213" name="selection" value="AncHist_3" checked>
+<label for="option213">
+	<span class="left-text">Ashokan Edicts</span>
+</label>
+
+
+<input type="radio" class="form_2" id="option214" name="selection" value="AncHist_4" checked>
+<label for="option214">
+	<span class="left-text">Ancient Ports 🔧</span>
+</label>
+
+<!--     Contemporary        -->
+
+<input type="radio" class="form_2" id="option401" name="selection" value="Contemp_1">
+<label for="option401">
+<span class="left-text">UNESCO World Heritage Sites 🔧</span>
+
+</label>
+
+
+
 				<input type="radio" class="form_2" id="option21" name="selection" value="Por_1" checked>
 				<label for="option21">
 					<span class="left-text">Portugal</span>
@@ -413,7 +470,7 @@ margin-top:10px;
 		rs_1: 'Map_Images/index/rs_1.png',      // Ramsar Sites image
 		wf_1: 'Map_Images/index/wf_1.png',      // Waterfalls image
 		wld_1:'Map_Images/index/0_0_0.png', 		// World Map Image
-		wld_2:'Map_Images/index/0_0_0.png' 		// World Map Image
+		wld_2:'Map_Images/index/0_0_1.png' 		// World Map Image
 	}; //DONT FORGET TO REMOVE COMMA FROM LAST MENTIONED IMAGE ABOVE
 
 	// Function to update the image based on selected map
@@ -460,7 +517,25 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to update the image source based on the selected radio button
   function updateImage() {
     const selectedValue = document.querySelector('input[class="form_2"]:checked').value;
-    if (selectedValue === "Por_1") {
+    if (selectedValue === "PreHist_1") {
+		mapImage.src = "";
+    } else if (selectedValue === "PreHist_2") {
+      mapImage.src = "";
+    } else if (selectedValue === "PreHist_3") {
+      mapImage.src = "";
+    } else if (selectedValue === "PreHist_4") {
+      mapImage.src = "Map_Images/index/PreHist4_Cu.png";
+	} else if (selectedValue === "AncHist_1") {
+		mapImage.src = "Map_Images/index/AncHist_1_Hp.png";
+	} else if (selectedValue === "AncHist_2") {
+		mapImage.src = "Map_Images/index/AncHist_2_Mj.png";
+	} else if (selectedValue === "AncHist_3") {
+		mapImage.src = "Map_Images/index/AncHist_3_Ak.png";
+	} else if (selectedValue === "AncHist_4") {
+		mapImage.src = "";
+	} else if (selectedValue === "Contemp_1") {
+		mapImage.src = "";
+	} else if (selectedValue === "Por_1") {
       mapImage.src = "Map_Images/index/por_1.png";
     } else if (selectedValue === "Dutch_1") {
       mapImage.src = "Map_Images/index/dutch_1.png";

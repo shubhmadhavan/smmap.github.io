@@ -1,0 +1,23 @@
+.leaflet-interactive {
+	cursor: crosshair;   
+	stroke: #ffffff !important;
+
+	stroke-width: 1px !important;
+}
+	
+
+.leaflet-interactive:hover{
+	stroke: #ffffff !important;
+
+	stroke-width: 2px !important;
+}
+
+
+path.leaflet-interactive[stroke-width="3"] {
+	fill: rgba(181, 14, 14, 1) !important;	
+} /* targets paths but not points*/
+
+
+path.leaflet-interactive[stroke-width="2"] {
+	fill: rgb(227, 149, 149) !important;	 
+} /* targets points but not paths*/

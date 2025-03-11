@@ -10,10 +10,9 @@ selectionForm {
 }
 
 .button-container {
-	margin-top: 60px !important;
+	margin-top: 30px !important;
 	
 }
-
 
 
 
@@ -102,10 +101,12 @@ html::before {
 		  transform: scale(1.5);
 		  transition: all 0.3s ease;
 		}
+		
 
 		input[type="radio"]{
 		  display: none;
 		}
+
 		.wrapper .option span{
 		  font-size: 16px;
 		  color: #808080;
@@ -166,10 +167,11 @@ html::before {
 	}
 
 
-		input[type="radio"] {
-	  width: 22px !important;
-	  height: 22px !important;
-	}	
+input[type="radio"] {
+	margin-top:16px !important;
+	  width: 15px !important;
+	  height: 15px !important;
+}	
 
 
 		.river-option-wrapper:hover{
@@ -237,8 +239,8 @@ label{
     overflow: visible; /* Ensures the content isn't clipped */
     word-wrap: break-word; /* Breaks long text into new lines */
     white-space: normal; /* Allows text wrapping */
-	margin-top:19px;
-	margin-bottom:19px;
+	margin-top:8px;
+	margin-bottom:8px;
 }
 
 .left-text {
@@ -251,7 +253,7 @@ label{
 .left-text{
 	position:absolute;
 	left:20%;
-	font-size: 21px;
+	font-size: 18px;     /* label text */
 	text-align: left;
 	padding-top:2px;
 	padding-bottom:2px;
@@ -292,7 +294,7 @@ body {
   zoom:0.95;
 	display: none;
 	padding: 0px;
-	margin-top:-10px;
+	margin-top:-20px;
   }
 
   .content.active {
@@ -325,7 +327,7 @@ label {
 	padding: 10px;
 	border: 2px solid #9b8c68;
 	border-radius: 6px;
-	width: 220px; 
+
 	text-align: center;
 	cursor: pointer;
 	background-color: #DAC390;
@@ -408,7 +410,7 @@ zoom:0.5;
   align-items: center;
   position: relative;
   width: 220px; /* Adjust this to your button width */
-  height: 60px; /* Adjust this for button height */
+  height: 42px; /* Adjust this for button height */
   border: 1px solid #9b8c68;
   border-radius: 5px;
   cursor: pointer;
@@ -432,7 +434,6 @@ zoom:0.5;
 
 .button-container {
 	margin: 20px;
-
 }
 
 
@@ -455,19 +456,20 @@ zoom:0.5;
 
 #map-image, #map-image-2, #map-image-3  {
  width: 980px; height: auto; 
- max-width:60% !important;
+ max-width:62% !important;
  margin-top:3%;
  margin-left:-42%;
 }
 
-
-
+/*
+#map-image-2{
+	margin-top:-167px;
+}
+*/
 
 #map-image:hover, #map-image-2:hover, #map-image-3:hover{
 		box-shadow: 0 0 5px #887856;
 
-	
-		
 }
 
 

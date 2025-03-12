@@ -94,23 +94,24 @@
         if (geometry.type === 'Point') {
             layer = L.circleMarker(geometry.coordinates, {
                 radius: 5,
-                color: '#60A6C2',
-                stroke: '#60A6C2',
                 weight: 2,
-                fillColor: '#60A6C2',
-                fillOpacity: 1
+                fillOpacity: 1,
+                className: 'point_leaflet'
             });
         } else if (geometry.type === 'LineString') {
             layer = L.polyline(geometry.coordinates, {
                 color: '#60A6C2',
                 weight: 3,
-                opacity: 1
+                opacity: 1,
+                className: 'line_leaflet'
             });
         } else if (geometry.type === 'Polygon') {
             const centroid = getCollectionCentroid([{ type: 'Polygon', coordinates: geometry.coordinates[0] }]); // Outer ring centroid
             if (centroid) {
                 layer = L.marker(centroid, {
-                    icon: L.divIcon({ className: 'reveal-all-tooltip-icon', html: '●', iconSize: [10, 10] })
+                    icon: L.divIcon({ className: 'reveal-all-tooltip-icon',
+                    className: 'polygon_leaflet',
+                    html: '●', iconSize: [10, 10] })
                 });
             }
         }

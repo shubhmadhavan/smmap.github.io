@@ -1,0 +1,33 @@
+.leaflet-interactive {
+	cursor: crosshair;   
+ 
+	stroke: #5a5a5a !important; 
+	color: #2c2c2c !important; 	
+	fill: #262626 !important;
+	stroke-width: 2px !important;
+}
+	
+
+.leaflet-interactive:hover{
+	stroke: #2d2d2d !important; 
+	color: #393939 !important; 	
+	Color:#393939 !important; 		
+	fill: #393939 !important;
+	stroke-width: 1px !important;
+}
+
+
+
+
+.line_leaflet.leaflet-interactive{
+	stroke: #77665a !important;
+	stroke-width: 2px !important;
+	fill: rgba(139, 97, 47, 0.3) !important;
+}
+
+
+.polygon_leaflet.leaflet-interactive{
+	stroke: #000000 !important;
+	stroke-width: 1px !important;
+	fill: rgba(119, 102, 90,0.4) !important;
+}

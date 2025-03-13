@@ -146,17 +146,18 @@ function parseGeometry(geometry) {
         // Extract rings (outer & inner if any)
         const rings = geometry.match(/\(\(.+?\)\)/g);
         if (!rings) return null;
-
+    
         let lines = rings.map(ring => {
             const points = ring.replace(/[()]/g, "").split(', ').map(coord => {
                 const [lon, lat] = coord.split(' ').map(parseFloat);
                 return [lat, lon]; // Flip order
             });
-            return { type: 'LineString', coordinates: points };
+            return { type: 'LineString', coordinates: points, isPolygonBoundary: true }; // Add flag
         });
-
+    
         return lines; // Return an array of LineStrings for each ring
-    } else if (type === "LINESTRING") {
+    }
+    else if (type === "LINESTRING") {
         const points = coords.map(coord => {
             const [lon, lat] = coord.split(' ').map(parseFloat);
             return [lat, lon]; // Flip order
@@ -283,12 +284,15 @@ function addGeometryToMap(geometry, river) {
 
 
     } else if (geometry.type === 'LineString') {
+        let className = geometry.isPolygonBoundary ? 'polygon_leaflet' : 'line_leaflet'; // Check flag
+    
         layer = L.polyline(geometry.coordinates, {
             color: '#EDC1A0',
             weight: 3,
             opacity: 1,
-            className: 'line_leaflet'
+            className: className  // Apply correct class
         }).addTo(map);
+    
 
         // Display a tooltip with the river name when clicked, and close the previous tooltip
         layer.on('click', function (e) {

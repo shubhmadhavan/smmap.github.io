@@ -17,7 +17,6 @@ selectionForm {
 
 .button-container {
 	margin-top: 30px !important;
-	
 }
 
 
@@ -507,8 +506,14 @@ zoom:0.5;
 /* media below */
 
 
-
 @media only screen and (max-width: 829px){
+
+
+	.left-text{
+		font-size: 12px;     /* label text */
+	}
+	
+
 	.button-container {
 
 

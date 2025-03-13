@@ -317,24 +317,62 @@ margin-top:10px;
 
 
 			<div class="button-container"  id="button-container-3">
+				
+
+				<div class="label_heading">Minerals:</div>
+
+				<input type="radio" class="form_3" id="option311" name="selection" value="min_1">
+				<label for="option311">
+					<span class="left-text">Iron Ore</span>
+				</label>
+
+				<input type="radio" class="form_3" id="option312" name="selection" value="min_2">
+				<label for="option312">
+					<span class="left-text">Manganese</span>
+				</label>
+
+				<input type="radio" class="form_3" id="option313" name="selection" value="min_3">
+				<label for="option313">
+					<span class="left-text">Bauxite</span>
+				</label>
+
+				<input type="radio" class="form_3" id="option314" name="selection" value="min_4">
+				<label for="option314">
+					<span class="left-text">Mica</span>
+				</label>
+
+
+
+
+
+
+
+				<div class="label_heading">Energy:</div>
+				<input type="radio" class="form_3" id="option321" name="selection" value="erg_1">
+				<label for="option321">
+					<span class="left-text">Coal</span>
+				</label>
+
+
+
 				<div class="label_heading">Infra:</div>
 
-				<input type="radio" class="form_3" id="option31" name="selection" value="NPP_1" checked>
-				<label for="option31">
+				<input type="radio" class="form_3" id="option331" name="selection" value="NPP_1" checked>
+				<label for="option331">
 					<span class="left-text">Nuclear Power Plants</span>
 
 				</label>
 				<!-- Thermal Power Plants, Nuclear Power Plants, Hydropower Projects -->
 				<!-- Solar Energy, Wind Energy, Natural Gas -->
 			
-				<input type="radio" class="form_3" id="option32" name="selection" value="Ports_1">
-				<label for="option32">
+				<input type="radio" class="form_3" id="option332" name="selection" value="Ports_1">
+				<label for="option332">
 					<span class="left-text">Ports</span>
 
 				</label>
 			
-				<input type="radio" class="form_3" id="option33" name="selection" value="French_2">
-				<label for="option33">
+				<input type="radio" class="form_3" id="option333" name="selection" value="French_2">
+				<label for="option333">
 					<span class="left-text">Freight Corridors 🔧</span> 
 					
 					<!--
@@ -343,8 +381,8 @@ margin-top:10px;
 
 				</label>
 			
-				<input type="radio" class="form_3" id="option34" name="selection" value="GQ_1">
-				<label for="option34">
+				<input type="radio" class="form_3" id="option334" name="selection" value="GQ_1">
+				<label for="option334">
 					<span class="left-text">Golden Quad 🔧</span>
 
 				</label>
@@ -352,33 +390,10 @@ margin-top:10px;
 				https://en.wikipedia.org/wiki/Golden_Quadrilateral#/media/File:Golden_Quadrilateral.svg
 				-->
 
-				<input type="radio" class="form_3" id="option35" name="selection" value="air_1">
-				<label for="option35">
+				<input type="radio" class="form_3" id="option335" name="selection" value="air_1">
+				<label for="option335">
 					<span class="left-text">Airports (UDAN)</span>
 				</label>
-
-				<div class="label_heading">Minerals:</div>
-
-				<input type="radio" class="form_3" id="option361" name="selection" value="min_1">
-				<label for="option361">
-					<span class="left-text">Iron Ore</span>
-				</label>
-
-				<input type="radio" class="form_3" id="option362" name="selection" value="min_2">
-				<label for="option362">
-					<span class="left-text">Manganese</span>
-				</label>
-
-				<input type="radio" class="form_3" id="option363" name="selection" value="min_3">
-				<label for="option363">
-					<span class="left-text">Bauxite</span>
-				</label>
-
-				<input type="radio" class="form_3" id="option364" name="selection" value="min_4">
-				<label for="option364">
-					<span class="left-text">Mica</span>
-				</label>
-
 
 
 
@@ -621,6 +636,8 @@ document.addEventListener("DOMContentLoaded", function () {
       mapImage.src = "Map_Images/index/min_3.png";
     } else if (selectedValue === "min_4") {
       mapImage.src = "Map_Images/index/min_4.png";
+    } else if (selectedValue === "erg_1") {
+      mapImage.src = "Map_Images/index/erg_1.png";
     } 
 	
     // Display the image

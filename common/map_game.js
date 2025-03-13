@@ -2,6 +2,7 @@
 // Initialize the map
 var map = L.map('map', {
     doubleClickZoom: false // Disable double click to zoom
+ , maxZoom: 8
 }).setView([20.5937, 80.9629], 5); // Set to India center
 
 
@@ -41,8 +42,12 @@ if (getUrlParameter('selection').includes('wld')) {
     // Add the tile layer
     tileLayer = L.tileLayer('../Map_Images/map_tiles/{z}_{x}_{y}.png', {
         attribution: '&copy; CARTO',
-        maxZoom: 6,
+        minZoom: 1,
+        maxZoom: 8,       // Allow users to zoom up to level 7
+        maxNativeZoom: 6, // Tells Leaflet the highest real tile zoom is 6
+        tileSize: 256
     }).addTo(map);
+    
 
     themeStylesheet.setAttribute("href", "theme4.css");
 

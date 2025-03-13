@@ -2,9 +2,9 @@ const mapData = {
 "Mehrgarh":"POINT (67.6095967 29.3873272)",
 "Jodhpura":"POINT (76.1232976 27.5882171)",
 "Ganeshwar (Khetri Cu Belt | RS)":"POINT (75.8199843 27.6648195)",
-"Gilund":"POINT (74.2531465 25.0139178)",
-"Balathal":"POINT (73.9756567 24.7052339)",
-"Ahar ":"POINT (73.7211247 24.5864133)",
+"Gilund (Banas River | RS)":"POINT (74.2531465 25.0139178)",
+"Balathal (Berach River | RS)":"POINT (73.9756567 24.7052339)",
+"Ahar (Berach River | RS)":"POINT (73.7211247 24.5864133)",
 "Eran (Bina River | Sagar dis | MP)":"POINT (78.1649938 24.0889864)",
 "Kaytha":"POINT (76.0188816 23.2363029)",
 "Navdatoli (MP)":"POINT (75.5837058 22.1635163)",
@@ -25,6 +25,6 @@ const mapData = {
 "Koldihwa (Belan River | UP)":"POINT (82.3088617 24.9067758)",
 "Narhan (GKP | UP)":"POINT (83.2395893 26.6761362)",
 "Chirand (Saran | BR)":"POINT (84.8248578 25.7405408)",
-"Pandu Rajar Dhibi (WB)":"POINT (87.6423887 23.5814672)",
+"Pandu Rajar Dhibi (Ajay River | WB)":"POINT (87.6423887 23.5814672)",
 "Golabai Sasam (OD)":"POINT (85.5830772 20.0629466)"
 }

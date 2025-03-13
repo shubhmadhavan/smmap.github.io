@@ -25,8 +25,12 @@ if (toggleMap2Element) {
             // Add the tile layer
             tileLayer = L.tileLayer('../Map_Images/map_tiles/{z}_{x}_{y}.png', {
                 attribution: '&copy; CARTO',
-                maxZoom: 6,
+                minZoom: 1,
+                maxZoom: 8,       // Allow users to zoom up to level 7
+                maxNativeZoom: 6, // Tells Leaflet the highest real tile zoom is 6
+                tileSize: 256
             }).addTo(map);
+            
 
             themeStylesheet.setAttribute("href", "theme4.css");
             

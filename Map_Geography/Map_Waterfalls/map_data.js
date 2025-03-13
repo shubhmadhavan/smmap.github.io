@@ -19,7 +19,7 @@ const mapData = {
 "Vajrai Waterfall":"POINT (73.8082338 17.7073034)",
 "Gokak Falls":"POINT (74.7775938 16.1878993)",
 "Dudhsagar Falls":"POINT (74.3143073 15.3144375)",
-"Jog Falls":"POINT (74.8138496 14.2293266)",
+"Jog/ Gersoppa Falls":"POINT (74.8138496 14.2293266)",
 "Kunchikal Falls":"POINT (75.0191385 13.6937514)",
 "Barkana falls":"POINT (75.0935483 13.4881474)",
 "Shivanasamudra Falls":"POINT (77.1680322 12.2944508)",

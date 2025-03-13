@@ -1,0 +1,19 @@
+.leaflet-tooltip.reveal-all-tooltip,
+.leaflet-tooltip.selected-tooltip.leaflet-zoom-animated{
+	/* this includes both selected and correct tooltip css*/
+	
+	font-size: 9px !important;
+	line-height: 1 !important;  /* Reduce line height to fit text */
+    padding: 2px 5px !important; /* Adjust padding as needed */
+    min-height: auto !important; /* Prevent unnecessary height */
+
+}	
+
+
+.leaflet-tooltip.selected-tooltip.leaflet-zoom-animated{
+	/* this includes both selected and correct tooltip css*/
+	
+
+	opacity:0 !important;
+
+}	

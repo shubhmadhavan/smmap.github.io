@@ -1,5 +1,11 @@
+.label_heading{
+	text-align: left !important;
+	transform: translateX(-44px);
+}
 
-
+.label_heading + input[type="radio"] {
+	transform: translateY(7px) !important; /* first radio button after label heading goes down by 7px*/
+  }
 
 
 selectionForm {

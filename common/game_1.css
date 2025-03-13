@@ -1,5 +1,16 @@
 
 
+.leaflet-tooltip.selected-tooltip.leaflet-zoom-animated, 
+.leaflet-tooltip.correct-tooltip.leaflet-zoom-animated{
+	/* this includes both selected and correct tooltip css*/
+	font-size: 10pt;
+	opacity:0.9;
+
+	line-height: 1 !important;  /* Reduce line height to fit text */
+    padding: 2px 5px !important; /* Adjust padding as needed */
+}
+
+
 
 
 .leaflet-interactive, .leaflet-interactive:hover {
@@ -44,14 +55,6 @@
 	will-change: transform !important;
 	
 }	
-
-.leaflet-tooltip.selected-tooltip.leaflet-zoom-animated.leaflet-tooltip-right, 
-.leaflet-tooltip.correct-tooltip.leaflet-zoom-animated.leaflet-tooltip-right{   
-	/* this includes both selected and correct tooltip css*/
-
-	opacity:0.9; 
-	line-height: 0.8;
-}
 
 
 .icons-container{
@@ -363,12 +366,7 @@ html, body{
 }
 
 
-.leaflet-tooltip.selected-tooltip.leaflet-zoom-animated.leaflet-tooltip-right, 
-.leaflet-tooltip.correct-tooltip.leaflet-zoom-animated.leaflet-tooltip-right{
-	/* this includes both selected and correct tooltip css*/
-	font-size: 10pt;
-	opacity:0.9;
-}	
+
 
 	.icons-container{
 

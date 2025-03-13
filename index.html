@@ -62,6 +62,8 @@ margin-top:10px;
 
 
 					<div class="button-container"  id="button-container-1">
+
+				<div class="label_heading">India:</div>
 						<input type="radio" id="option1" name="selection" value="riv_1" checked 	>
 						<label for="option1" >
 							<span class="left-text">Rivers</span>
@@ -110,7 +112,7 @@ margin-top:10px;
 
 						</label>
 
-
+			<div class="label_heading">World:</div>
 						<input type="radio" id="option8" name="selection" value="wld_1">
 						<label for="option8">
 							<span class="left-text">World Map</span>
@@ -177,6 +179,7 @@ margin-top:10px;
 
 								
 <!--     Pre-History          -->
+<div class="label_heading">Pre-Historic Sites:</div>
 <input type="radio" class="form_2" id="option201" name="selection" value="PreHist_1" checked>
 <label for="option201">
 	<span class="left-text">Palaeolithic Sites 🔧</span>
@@ -198,7 +201,7 @@ margin-top:10px;
 </label>
 
 <!--     Ancient          -->
-
+<div class="label_heading">Ancient:</div>
 <input type="radio" class="form_2" id="option211" name="selection" value="AncHist_1" checked>
 <label for="option211">
 	<span class="left-text">Harappan Sites</span>
@@ -229,7 +232,7 @@ margin-top:10px;
 </label>
 
 
-
+<div class="label_heading">European Settlements:</div>
 				<input type="radio" class="form_2" id="option21" name="selection" value="Por_1" checked>
 				<label for="option21">
 					<span class="left-text">Portugal</span>
@@ -314,6 +317,8 @@ margin-top:10px;
 
 
 			<div class="button-container"  id="button-container-3">
+				<div class="label_heading">Infra:</div>
+
 				<input type="radio" class="form_3" id="option31" name="selection" value="NPP_1" checked>
 				<label for="option31">
 					<span class="left-text">Nuclear Power Plants</span>
@@ -350,8 +355,31 @@ margin-top:10px;
 				<input type="radio" class="form_3" id="option35" name="selection" value="air_1">
 				<label for="option35">
 					<span class="left-text">Airports (UDAN)</span>
-<span class="right-text" style="opacity:0.6; font-size:10px; margin-top:35px; margin-left:52px;">greenfield, operationalised</span>
 				</label>
+
+				<div class="label_heading">Minerals:</div>
+
+				<input type="radio" class="form_3" id="option361" name="selection" value="min_1">
+				<label for="option361">
+					<span class="left-text">Iron Ore</span>
+				</label>
+
+				<input type="radio" class="form_3" id="option362" name="selection" value="min_2">
+				<label for="option362">
+					<span class="left-text">Manganese</span>
+				</label>
+
+				<input type="radio" class="form_3" id="option363" name="selection" value="min_3">
+				<label for="option363">
+					<span class="left-text">Bauxite</span>
+				</label>
+
+				<input type="radio" class="form_3" id="option364" name="selection" value="min_4">
+				<label for="option364">
+					<span class="left-text">Mica</span>
+				</label>
+
+
 
 
 			<button type="start" id="start3" style="width:200px; background-color:#808080;">Submit</button>
@@ -393,39 +421,44 @@ margin-top:10px;
 
 
 
-  <script>  //tab code
-    document.addEventListener('DOMContentLoaded', () => {
-      const tabs = document.querySelectorAll('.tab');
-      const contents = document.querySelectorAll('.content');
-
-      function activateTab(tabIndex) {
-        tabs.forEach((tab, index) => {
-          if (index + 1 === tabIndex) {
-            tab.classList.add('active');
-          } else {
-            tab.classList.remove('active');
-          }
-        });
-
-        contents.forEach((content, index) => {
-          if (index + 1 === tabIndex) {
-            content.classList.add('active');
-          } else {
-            content.classList.remove('active');
-          }
-        });
-      }
-
-      tabs.forEach((tab, index) => {
-        tab.addEventListener('click', () => {
-          activateTab(index + 1);
-        });
-      });
-
-      // Activate the first tab by default
-      activateTab(1);
-    });
+  <script>
+	document.addEventListener('DOMContentLoaded', () => {
+	  const tabs = document.querySelectorAll('.tab');
+	  const contents = document.querySelectorAll('.content');
+  
+	  function activateTab(tabIndex) {
+		tabs.forEach((tab, index) => {
+		  if (index + 1 === tabIndex) {
+			tab.classList.add('active');
+		  } else {
+			tab.classList.remove('active');
+		  }
+		});
+  
+		contents.forEach((content, index) => {
+		  if (index + 1 === tabIndex) {
+			content.classList.add('active');
+		  } else {
+			content.classList.remove('active');
+		  }
+		});
+  
+		// Save selected tab index to localStorage
+		localStorage.setItem('activeTab', tabIndex);
+	  }
+  
+	  tabs.forEach((tab, index) => {
+		tab.addEventListener('click', () => {
+		  activateTab(index + 1);
+		});
+	  });
+  
+	  // Retrieve last active tab from localStorage or default to first tab
+	  const savedTab = localStorage.getItem('activeTab');
+	  activateTab(savedTab ? parseInt(savedTab, 10) : 1);
+	});
   </script>
+  
   
   
 <script>      // script to ensure option selection formatting for river options is consistent
@@ -580,7 +613,16 @@ document.addEventListener("DOMContentLoaded", function () {
       mapImage.src = "Map_Images/index/ports_1.png";
     } else if (selectedValue === "air_1") {
       mapImage.src = "Map_Images/index/air_1.png";
+    } else if (selectedValue === "min_1") {
+      mapImage.src = "Map_Images/index/min_1.png";
+    } else if (selectedValue === "min_2") {
+      mapImage.src = "Map_Images/index/min_2.png";
+    } else if (selectedValue === "min_3") {
+      mapImage.src = "Map_Images/index/min_3.png";
+    } else if (selectedValue === "min_4") {
+      mapImage.src = "Map_Images/index/min_4.png";
     } 
+	
     // Display the image
     mapImage.style.display = "block";
   }

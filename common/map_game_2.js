@@ -1,6 +1,7 @@
 // Initialize the map
 var map = L.map('map', {
     doubleClickZoom: false // Disable double click to zoom
+ 
 }).setView([20.5937, 80.9629], 5); // Set to India center
 
 
@@ -24,8 +25,7 @@ if (getUrlParameter('selection').includes('wld')) {
 
     // Add the tile layer
     tileLayer = L.tileLayer('../Map_Images/map_tiles/{z}_{x}_{y}.png', {
-        attribution: '&copy; CARTO',
-        maxZoom: 6,
+        attribution: '&copy; CARTO'
     }).addTo(map);
 
     themeStylesheet.setAttribute("href", "theme4.css");
@@ -258,7 +258,7 @@ function addGeometryToMap(geometry, river) {
 
     if (geometry.type === 'Point') {
         layer = L.circleMarker(geometry.coordinates, {
-            radius: 5,
+            radius: 4,
             color: '#EDC1A0',
             weight: 2,
             fillColor: '#FF9B50',

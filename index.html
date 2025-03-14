@@ -63,12 +63,27 @@ margin-top:10px;
 
 					<div class="button-container"  id="button-container-1">
 
-				<div class="label_heading">India:</div>
+				<div class="label_heading">Core Geography:</div>
 						<input type="radio" id="option1" name="selection" value="riv_1" checked 	>
 						<label for="option1" >
 							<span class="left-text">Rivers</span>
 
 						</label>
+
+						<input type="radio" id="option6" name="selection" value="dm_1">
+						<label for="option6">
+							<span class="left-text">Dams & Reservoirs</span>
+
+						</label>
+						
+						<input type="radio" id="option7" name="selection" value="wf_1">
+						<label for="option7">
+							<span class="left-text">Waterfalls</span>
+
+						</label>
+
+
+
 					
 						<input type="radio" id="option2" name="selection" value="mt_1">
 						<label for="option2">
@@ -82,6 +97,13 @@ margin-top:10px;
 
 						</label>
 
+						
+						
+
+
+
+
+			<div class="label_heading">Environment:</div>
 						<input type="radio" id="option3" name="selection" value="np_1">
 						<label for="option3">
 							<span class="left-text">National Parks</span>
@@ -100,17 +122,9 @@ margin-top:10px;
 
 						</label>
 
-						<input type="radio" id="option6" name="selection" value="dm_1">
-						<label for="option6">
-							<span class="left-text">Reservoirs</span>
+						
 
-						</label>
-
-						<input type="radio" id="option7" name="selection" value="wf_1">
-						<label for="option7">
-							<span class="left-text">Waterfalls</span>
-
-						</label>
+						
 
 			<div class="label_heading">World:</div>
 						<input type="radio" id="option8" name="selection" value="wld_1">
@@ -353,6 +367,15 @@ margin-top:10px;
 					<span class="left-text">Coal</span>
 				</label>
 
+				<input type="radio" class="form_3" id="option322" name="selection" value="erg_2">
+				<label for="option322">
+					<span class="left-text">Oil Fields (Crude)</span>
+				</label>
+
+				<input type="radio" class="form_3" id="option323" name="selection" value="erg_3">
+				<label for="option323">
+					<span class="left-text">Natural Gas</span>
+				</label>
 
 
 				<div class="label_heading">Infra:</div>
@@ -638,6 +661,10 @@ document.addEventListener("DOMContentLoaded", function () {
       mapImage.src = "Map_Images/index/min_4.png";
     } else if (selectedValue === "erg_1") {
       mapImage.src = "Map_Images/index/erg_1.png";
+    } else if (selectedValue === "erg_2") {
+      mapImage.src = "Map_Images/index/erg_2.png";
+    } else if (selectedValue === "erg_3") {
+      mapImage.src = "Map_Images/index/erg_3.png";
     } 
 	
     // Display the image

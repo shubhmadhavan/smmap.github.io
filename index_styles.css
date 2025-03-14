@@ -1,6 +1,7 @@
 .label_heading{
 	text-align: left !important;
 	transform: translateX(-44px);
+	font-size: 19px;
 }
 
 .label_heading + input[type="radio"] {

@@ -10,7 +10,7 @@ const mapData = {
 "Kudremukh (KN)":"POINT (75.2508229 13.2226055)",
 "Chikkamagaluru (KN)":"POINT (75.7720439 13.3161441)",
 "Mayurbhanj (OD)":"POINT (86.4187308 22.0086978)",
-"Gua Iron Ore Mines (JH)":"POINT (85.3562565 22.2185736)",
+"Gua Iron Ore Mines (Singhbum | JH)":"POINT (85.3562565 22.2185736)",
 "Keonjhar (OD)":"POINT (85.605525 21.6393113)",
 "Maikal Hills (CG)":"POINT (81.5 22.5)",
 "Bailadila (CG)":"POINT (81.2333333 18.7166667)",

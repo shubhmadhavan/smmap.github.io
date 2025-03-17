@@ -340,6 +340,11 @@ margin-top:10px;
 					<span class="left-text">Iron Ore</span>
 				</label>
 
+				<input type="radio" class="form_3" id="option311_1" name="selection" value="min_1_1">
+				<label for="option311_1">
+					<span class="left-text">Iron & Steel Industries</span>
+				</label>
+
 				<input type="radio" class="form_3" id="option312" name="selection" value="min_2">
 				<label for="option312">
 					<span class="left-text">Manganese</span>
@@ -362,6 +367,7 @@ margin-top:10px;
 
 
 				<div class="label_heading">Energy:</div>
+				
 				<input type="radio" class="form_3" id="option321" name="selection" value="erg_1">
 				<label for="option321">
 					<span class="left-text">Coal</span>
@@ -378,16 +384,18 @@ margin-top:10px;
 				</label>
 
 
-				<div class="label_heading">Infra:</div>
-
-				<input type="radio" class="form_3" id="option331" name="selection" value="NPP_1" checked>
+				<input type="radio" class="form_3" id="option331" name="selection" value="erg_4" checked>
 				<label for="option331">
 					<span class="left-text">Nuclear Power Plants</span>
 
 				</label>
 				<!-- Thermal Power Plants, Nuclear Power Plants, Hydropower Projects -->
 				<!-- Solar Energy, Wind Energy, Natural Gas -->
-			
+		
+
+
+				<div class="label_heading">Infra:</div>
+
 				<input type="radio" class="form_3" id="option332" name="selection" value="Ports_1">
 				<label for="option332">
 					<span class="left-text">Ports</span>
@@ -645,14 +653,16 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to update the image source based on the selected radio button
   function updateImage() {
     const selectedValue = document.querySelector('input[class="form_3"]:checked').value;
-    if (selectedValue === "NPP_1") {
-      mapImage.src = "Map_Images/index/npp_1.png";
+    if (selectedValue === "erg_4") {
+      mapImage.src = "Map_Images/index/erg_4.png";
     } else if (selectedValue === "Ports_1") {
       mapImage.src = "Map_Images/index/ports_1.png";
     } else if (selectedValue === "air_1") {
       mapImage.src = "Map_Images/index/air_1.png";
     } else if (selectedValue === "min_1") {
       mapImage.src = "Map_Images/index/min_1.png";
+	} else if (selectedValue === "min_1_1") {
+		mapImage.src = "Map_Images/index/min_1_1.png";
     } else if (selectedValue === "min_2") {
       mapImage.src = "Map_Images/index/min_2.png";
     } else if (selectedValue === "min_3") {

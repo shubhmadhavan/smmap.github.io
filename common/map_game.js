@@ -244,42 +244,55 @@ function addGeometryToMap(geometry, river) {
 
 
 // Function to handle location selection
+// Function to handle location selection
 function handleSelection(river, path, event) {
     const resultBox = document.getElementById('result');
-	const correctPath = paths[currentRiver];
-	path.bindTooltip(river, { permanent: true, className: 'selected-tooltip' }).openTooltip();
+    
+    /* 
+    const infoBox = document.querySelector('.info-text'); // Selecting the info box
+        */    
+
+    const correctPath = paths[currentRiver];
+    
+    path.bindTooltip(river, { permanent: true, className: 'selected-tooltip' }).openTooltip();
+
+    
+    /*
+    // Extract content between [ and ] in currentRiver
+    const match = currentRiver.match(/\[(.*?)\]/);
+    if (match) {
+        infoBox.textContent = match[1]; // Update info-text content
+        infoBox.style.opacity = "1";   // Make info-text visible
+    }
+    */
 
     if (river === currentRiver) {
         // Correct location selected
-        //path.setStyle({ color: '#00FFF0' });
         resultBox.textContent = "✔ Correct";
         resultBox.style.backgroundColor = "#029193";
     } else {
         // Incorrect location selected
-        //path.setStyle({ color: '#894545' });
         resultBox.textContent = "✘ Incorrect";
         resultBox.style.backgroundColor = "#894545";
 
         // Highlight the correct location
-        
         if (correctPath) {
-            //correctPath.setStyle({ color: '#00FFF0' });
-			correctPath.bindTooltip(currentRiver, { permanent: true, className: 'correct-tooltip' }).openTooltip();
+            correctPath.bindTooltip(currentRiver, { permanent: true, className: 'correct-tooltip' }).openTooltip();
         }
     }
 
     resultBox.style.display = 'block';
 
     // Move to the next round after a delay
-    // timeout code part 2
     setTimeout(function () {
-		path.closeTooltip();
-		if (correctPath) {
-			correctPath.closeTooltip();
-		}
+        path.closeTooltip();
+        if (correctPath) {
+            correctPath.closeTooltip();
+        }
         nextRound();
-    }, timeoutDuration); // timeout code part 2 ends
+    }, timeoutDuration);
 }
+
 
 function updateScore() {
     const itemsShown = document.querySelector('.items-shown');
@@ -298,6 +311,12 @@ function updateScore() {
 // Function to reset and move to the next round
 function nextRound() {
     updateScore();
+
+    /* 
+    const infoBox = document.querySelector('.info-text'); // Selecting the info box
+    infoBox.style.opacity = "0";
+    */
+
     const resultBox = document.getElementById('result');
     resultBox.style.display = 'none';
 

@@ -515,7 +515,11 @@ height:19px;
 	#map{
 		top: 52px !important;
 	}
-	
+
+	#Advance {
+		width:290px !important;
+		height: 72px !important;
+	}
 
 	#header{
 		margin-top:12px !important;

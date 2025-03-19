@@ -1,3 +1,12 @@
+if (/iPhone|iPad/.test(navigator.userAgent)) {
+    document.addEventListener("touchstart", function(event) {
+        if (event.touches.length > 1) {
+            event.preventDefault(); // Prevent double-tap zoom
+        }
+    }, { passive: false });
+}
+
+
 // Global skip functionality on the Advance button
 // Global skip functionality on the Advance button
 document.getElementById('Advance').addEventListener("click", function() {
@@ -13,6 +22,8 @@ document.getElementById('Advance').addEventListener("click", function() {
         // Optionally update the result box to show that the correct answer is being revealed.
 
         // After the timeout, close the tooltip and move to the next round
+        
+        
         setTimeout(() => {
             if (correctLayer) correctLayer.closeTooltip();
             nextRound();

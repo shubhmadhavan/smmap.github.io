@@ -1,0 +1,19 @@
+.leaflet-interactive {
+	cursor: crosshair;   
+	stroke: #8a715c !important; 
+	color: #8a715c !important; 	
+			
+}
+
+.leaflet-interactive:hover{
+	stroke: #c59f7f !important; 
+	color: #c59f7f !important; 	
+}
+
+
+.polygon_leaflet{
+	stroke: #c59f7f !important; 
+	fill: rgba(235, 200, 171, 0.5) !important; 	
+}
+
+

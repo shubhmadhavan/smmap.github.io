@@ -1,0 +1,10 @@
+
+.polygon_leaflet{
+	stroke: #485d6f !important; 
+	fill: rgba(171, 208, 235, 0.5) !important; 	
+}
+
+.polygon_leaflet:hover{
+	stroke: #3a4b5a !important; 
+	fill: rgba(198, 224, 243, 0.5) !important; 	
+}

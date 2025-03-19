@@ -17,3 +17,18 @@
 	opacity:0 !important;
 
 }	
+
+
+
+@media only screen and (max-width: 1379px){  /* ipad media below */
+	.switcher-text{
+		
+		position: absolute !important;
+		transform: translate(6px , 0px) !important;
+			
+		}
+		#map{
+			top: -20px !important;
+		}
+
+	}

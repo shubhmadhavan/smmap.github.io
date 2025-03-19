@@ -1,3 +1,25 @@
+// Global skip functionality on the Advance button
+// Global skip functionality on the Advance button
+document.getElementById('Advance').addEventListener("click", function() {
+    const resultBox = document.getElementById('result');
+    // If no selection has been made, resultBox will not be visible.
+    if (resultBox.style.display !== 'block') {
+        // Get the correct layer based on currentRiver
+        const correctLayer = paths[currentRiver];
+        if (correctLayer) {
+            // Show the correct layer tooltip as in handleSelection
+            correctLayer.bindTooltip(currentRiver, { permanent: true, className: 'correct-tooltip' }).openTooltip();
+        }
+        // Optionally update the result box to show that the correct answer is being revealed.
+
+        // After the timeout, close the tooltip and move to the next round
+        setTimeout(() => {
+            if (correctLayer) correctLayer.closeTooltip();
+            nextRound();
+        }, timeoutDuration);
+    }
+});
+
 
 // Initialize the map
 var map = L.map('map', {
@@ -248,6 +270,10 @@ function addGeometryToMap(geometry, river) {
 function handleSelection(river, path, event) {
     const resultBox = document.getElementById('result');
     
+    const advanceButton = document.getElementById('Advance');
+    const autoNextCheckbox = document.getElementById('auto_next');
+
+    
     /* 
     const infoBox = document.querySelector('.info-text'); // Selecting the info box
         */    
@@ -284,13 +310,43 @@ function handleSelection(river, path, event) {
     resultBox.style.display = 'block';
 
     // Move to the next round after a delay
-    setTimeout(function () {
-        path.closeTooltip();
-        if (correctPath) {
-            correctPath.closeTooltip();
+     // Check if auto next is enabled
+    if (autoNextCheckbox.checked) {
+        // Auto-advance after a delay
+        setTimeout(() => {
+            path.closeTooltip();
+            if (correctPath) correctPath.closeTooltip();
+            nextRound();
+        }, timeoutDuration);
+    } else {
+        // Show the Advance button and wait for user input
+   
+        advanceButton.style.pointerEvents = "auto"; // Enable button interaction
+
+        function proceedToNextRound() {
+            path.closeTooltip();
+            if (correctPath) correctPath.closeTooltip();
+            nextRound();
+
+            // Hide the button again
+         
+            advanceButton.style.pointerEvents = "none";
+
+            // Remove event listeners to prevent duplicates
+            advanceButton.removeEventListener("click", proceedToNextRound);
+            document.removeEventListener("keydown", spacebarListener);
         }
-        nextRound();
-    }, timeoutDuration);
+
+        function spacebarListener(event) {
+            if (event.code === "Space") {
+                proceedToNextRound();
+            }
+        }
+
+        // Add event listeners
+        advanceButton.addEventListener("click", proceedToNextRound);
+        document.addEventListener("keydown", spacebarListener);
+    }
 }
 
 

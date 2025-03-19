@@ -26,7 +26,8 @@ color: white !important;
 .title-span, #header, .switcher-text, .score-bottom, #slider-label{
 	color: #ffffff !important;
 }
-	
+
+#auto_next_label,
 #do_not_repeat_label {
 	color:#ffffff !important;
 }

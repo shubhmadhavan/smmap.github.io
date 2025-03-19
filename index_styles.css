@@ -308,7 +308,6 @@ body {
   }
   
   #map-image-container-2 {
-  // Add any additional styling for the map container 
    margin-top: 80px;
    margin-top: 22px;
   }
@@ -453,7 +452,7 @@ zoom:0.5;
 
 
 #map-image-container , #map-image-container-2, #map-image-container-3 {
-    // Add any additional styling for the map container 
+
 	margin-top: 80px !important;
 	 margin-top: 22px !important;
 }
@@ -506,12 +505,53 @@ zoom:0.5;
 
 /* media below */
 
+@media only screen and (max-width: 1379px){   /* ipad media below */
 
-@media only screen and (max-width: 829px){
+	.left-text{
+		font-size: 13px !important;     /* label text */
+		padding-left: 4px;
+	}
+	
+	.button-container {
+
+
+		zoom:120%;
+			padding-left:70px;
+		}
+
+		#map-image-container-2{
+		
+			 margin-top: -150px !important;
+			 margin-left: -20px !important;
+			}
+
+		#map-image-container-3 {
+	
+			margin-top: -52px !important;
+			margin-left: -4px !important;
+		}
+
+}
+
+
+
+
+@media only screen and (max-width: 829px){   /* iphone media below */
+
+
+
+.tabs {
+	z-index: 9999;z-index: 99999;
+	zoom:210%; 
+}
+
+.tab, .tab.active{
+	font-size: 10px !important; 
+}
 
 
 	.left-text{
-		font-size: 12px;     /* label text */
+		font-size: 16px !important;     /* label text */
 	}
 	
 
@@ -529,11 +569,6 @@ zoom:0.5;
 	}
 
 
-	.tabs{
-		z-index: 9999;z-index: 99999;
-		zoom:210%;
-	
-	}
 	
 
 

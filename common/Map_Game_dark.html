@@ -70,11 +70,23 @@
 <div class="score-bottom" style="font-size: 16pt; opacity:0.5">Score: <span class="correct-ans">0</span>/<span class="items-shown">0</span></div>
 
 
+<label>
+    <button id="Advance" class="advance_button"></button>
+    </label>
 
 
 <div class="slider-container" >
+
+  
     <label>
-        <span id="do_not_repeat_label"> Don't Repeat</span>     <input type="checkbox" id="noRepeat" checked> <span id="do_not_repeat_label">  ㅤ|ㅤ </span>
+        <span id="auto_next_label" class="auto_next_label"> Auto Advance</span>     <input type="checkbox" id="auto_next"> 
+        <span class="auto_next_label">  ㅤ|ㅤ </span>
+    </label>
+
+
+    <label>
+        <span id="do_not_repeat_label" class="do_not_repeat_label"> Don't Repeat</span>     <input type="checkbox" id="noRepeat" checked> 
+        <span class="do_not_repeat_label">  ㅤ|ㅤ </span>
     </label>
     <label id="slider-label"> Next Round: <span id="timeoutValue">1400</span> ms</label>
     <input type="range" id="timeoutSlider" min="500" max="4000" step="100" value="1400" >

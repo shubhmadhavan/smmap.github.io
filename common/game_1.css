@@ -1,3 +1,17 @@
+.top-right-link{right: 130px;} /* home */
+
+
+.toggle-map-3{right: 150px;} /* rivers */
+.toggle-map-1{right: 170px} /* baige */
+.toggle-map-2{right: 210px;} /* night & districts */
+.toggle-map-4{right: 190px;} /* white & states */
+
+.toggle-map {right: 230px;} /* disable */
+
+
+
+
+
 .leaflet-tooltip.selected-tooltip.leaflet-zoom-animated, 
 .leaflet-tooltip.correct-tooltip.leaflet-zoom-animated{
 	/* this includes both selected and correct tooltip css*/
@@ -180,7 +194,7 @@ zoom:125%;
 	opacity:1;
 	position: absolute;
 	top: 0px;
-	right: 52px;
+
 	color: #8a8a8a;
 	font-size: 28px;
 	text-decoration: none;
@@ -192,90 +206,39 @@ zoom:125%;
 	color: #ffffff;
 }
 
-.toggle-map{
+
+
+
+
+
+
+
+
+
+
+
+
+.toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5{
 	z-index:999999;
-	position: absolute;
-	top: 6px;
-	right: 72px;
-	color: #8a8a8a;
+opacity:0.5;
+position: absolute;
+top: 8px;
+color: #8a8a8a;
+}
+
+
+.toggle-map > img, .toggle-map-1 > img, .toggle-map-2 > img, .toggle-map-3 > img, .toggle-map-4 > img, .toggle-map-5 > img  {
+	z-index:999999;
+height:19px;
+}
+
+.toggle-map:hover, .toggle-map-1:hover, .toggle-map-2:hover, .toggle-map-3:hover, .toggle-map-4:hover, .toggle-map-5:hover{
+	z-index:999999;
 	opacity:1;
 }
 
-.toggle-map:hover{
-	z-index:999999;
-	opacity:0.8;
-}
 
 
-
-.toggle-map-2{
-	z-index:999999;
-opacity:0.5;
-position: absolute;
-top: 8px;
-right: 90px;
-color: #8a8a8a;
-}
-.toggle-map-2:hover{
-	z-index:999999;
-opacity:1;
-}
-.toggle-map-2 > img {
-	z-index:999999;
-height:19px;
-}
-
-.toggle-map-3{
-	z-index:999999;
-opacity:0.5;
-position: absolute;
-top: 8px;
-right: 110px;
-color: #8a8a8a;
-}
-.toggle-map-3:hover{
-	z-index:999999;
-opacity:1;
-}
-.toggle-map-3 > img {
-	z-index:999999;
-height:19px;
-}
-.toggle-map-4{
-	z-index:999999;
-opacity:0.5;
-position: absolute;
-top: 8px;
-right: 130px;
-color: #8a8a8a;
-}
-.toggle-map-4:hover{
-	z-index:999999;
-opacity:1;
-}
-.toggle-map-4 > img {
-	z-index:999999;
-height:19px;
-}
-
-
-.toggle-map-5{
-	z-index:999999;
-opacity:0.5;
-position: absolute;
-top: 8px;
-right: 150px;
-color: #8a8a8a;
-}
-.toggle-map-5:hover{
-	z-index:999999;
-opacity:1;
-}
-.toggle-map-5 > img {
-	z-index:999999;
-height:19px;
-}
- 
 
 
 
@@ -397,7 +360,10 @@ height:19px;
 
 
 .switcher{
-	position:absolute; margin-top:-5px; margin-left:8px; z-index:9999; font-size:22px;
+	position:absolute; 
+	margin-top:-6px; 
+	margin-left:8px; z-index:9999999; 
+	font-size:28px;
 }
 
 	
@@ -407,7 +373,6 @@ height:19px;
 .switcher-text:hover{ 
 	opacity:1;
  }
-
 
 
 

@@ -1,0 +1,68 @@
+/* default theme */
+body {
+	background: #e2ca97 !important;
+	color: white;
+	}
+	
+
+
+.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom{
+	background: #e2ca97 !important;
+	color: white;
+	
+	}
+
+.reveal-all{ /*button*/
+	font-size:16px; color:#393939; background-color:#AB8F52 !important; margin-left: 43%;
+}
+
+
+
+
+
+.leaflet-tooltip.leaflet-zoom-animated{
+	/* background-color: #94ab69 !important; */
+
+	border-color: rgba(75, 75, 75,0.6) !important;
+	
+}
+
+.leaflet-tooltip-right:before {
+
+    content: "";
+    position: absolute;
+    top: 50%;
+
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-right-color: rgba(120, 120, 120,0.8); /* ← tooltip triangle */
+}
+
+.leaflet-tooltip-left:before {
+
+    content: "";
+    position: absolute;
+    top: 50%;
+
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-left-color: rgba(120, 120, 120,0.8); /* ← tooltip triangle color */
+}
+
+
+
+
+.title-span, #header, .switcher-text, .score-bottom{
+	color: #000000 !important;
+}
+
+
+
+
+/* default theme  ends */
+	
+
+
+

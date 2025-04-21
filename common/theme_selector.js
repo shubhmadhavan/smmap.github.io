@@ -1,10 +1,12 @@
  // theme selector
  document.addEventListener('DOMContentLoaded', () => {
     const leafletContainer = document.querySelector(".leaflet-container");
+    const toggleMap1Element = document.querySelector('.toggle-map-1');
     const toggleMap2Element = document.querySelector('.toggle-map-2');
     const toggleMap3Element = document.querySelector('.toggle-map-3');
     const toggleMap4Element = document.querySelector('.toggle-map-4');
     const toggleMap5Element = document.querySelector('.toggle-map-5');
+    let isToggled1 = false;
     let isToggled2 = false; // Toggle state for .toggle-map-2
     let isToggled3 = false; // Toggle state for .toggle-map-3
     let isToggled4 = false; // Toggle state for .toggle-map-4
@@ -126,4 +128,29 @@ if (toggleMap2Element) {
     } else {
         console.error("Element with class 'toggle-map-5' not found.");
     }
+
+    if (toggleMap1Element) {
+        toggleMap1Element.addEventListener('click', () => {
+            if (isToggled1) {
+                if (tileLayer) {
+                    map.removeLayer(tileLayer);
+                    tileLayer = null;
+                }
+                L.imageOverlay('../Map_Images/India_OS_baige.jpg', imageBounds).addTo(map);
+                themeStylesheet.setAttribute("href", "themebaige.css");
+            } else {
+                if (tileLayer) {
+                    map.removeLayer(tileLayer);
+                    tileLayer = null;
+                }
+                L.imageOverlay('../Map_Images/India_OS_dark.jpg', imageBounds).addTo(map);
+                themeStylesheet.setAttribute("href", "theme1.css");
+            }
+            isToggled1 = !isToggled1;
+            isToggled2 = false; // Reset toggle for .toggle-map-2
+        });
+    } else {
+        console.error("Element with class 'toggle-map-1' not found.");
+    }
+    
 });

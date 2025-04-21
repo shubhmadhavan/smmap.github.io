@@ -9,7 +9,6 @@ const mapData = {
 "Kodungallur/ Cranganore (1663)" : "POINT (76.1971221 10.2276998)",
 "Chinsurah (1653)" : "POINT (88.3898552 22.9011588)",
 "Balasore (1658)":"POINT (86.91347 21.49335)"
-
 };
 
 

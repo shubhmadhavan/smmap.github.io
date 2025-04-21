@@ -1,13 +1,23 @@
 .leaflet-tooltip.reveal-all-tooltip,
 .leaflet-tooltip.selected-tooltip.leaflet-zoom-animated{
 	/* this includes both selected and correct tooltip css*/
-	
-	font-size: 9px !important;
-	line-height: 1 !important;  /* Reduce line height to fit text */
+
+	font-size: 12px !important;
+	line-height: 0.8rem !important;  /* Reduce line height to fit text */
     padding: 2px 5px !important; /* Adjust padding as needed */
     min-height: auto !important; /* Prevent unnecessary height */
-
+	
 }	
+
+.leaflet-tooltip-left{
+	left: -4.2px !important;
+}
+	
+.leaflet-tooltip-right{
+left: 4.2px !important;
+}
+
+
 
 
 .leaflet-tooltip.selected-tooltip.leaflet-zoom-animated{
@@ -19,16 +29,13 @@
 }	
 
 
+	
 
 @media only screen and (max-width: 1379px){  /* ipad media below */
-	.switcher-text{
-		
-		position: absolute !important;
-		transform: translate(6px , 0px) !important;
-			
-		}
-		#map{
-			top: -20px !important;
-		}
+
+	#map{
+		top: 2px !important;
+	}
+
 
 	}

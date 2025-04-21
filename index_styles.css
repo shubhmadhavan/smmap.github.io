@@ -23,7 +23,7 @@ selectionForm {
 
 
 html {
-    background: linear-gradient(#E2CA97, #E2CA97, #a89874);
+    background-color: #f4f5f7;
     height: 100%;
     position: relative; /* Necessary for positioning the pseudo-element */
 }
@@ -35,7 +35,7 @@ html::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('gold_grunge_texture.jpg');
+
     background-size: cover;
     background-position: center;
     opacity: 9%; /* Adjust the opacity here (0.0 to 1.0) */
@@ -275,7 +275,7 @@ body {
   .tabs {
 	display: flex;
 	color: #000000;
-	background-color: #9b8c68;
+	background-color: #f4f5f7;
 	border-bottom: 1px solid #808080;
 	font-size:15px;
 	opacity:0.7;
@@ -287,13 +287,13 @@ body {
 	padding: 8px;
 	text-align: center;
 	cursor: pointer;
-	background-color: #a79772;
-	border: 1px solid #6e644c;
+	background-color: #f4f5f7;
+	border: 1px solid #f4f5f7;
 	border-bottom: none;
   }
 
   .tab.active {
-	background-color: #6e644c;
+	background-color: #e5e4e4;
   }
 
   .content {
@@ -335,46 +335,30 @@ label {
 
 	text-align: center;
 	cursor: pointer;
-	background-color: #DAC390;
+	background-color: #e5e4e4;
 	color: #353535;
 	font-size: 20px;
 }
 
-input[type="radio"]:checked {
-	border-color: #9b8c68 !important;
-	background-color: #554c39 !important;
-}
-
-
-
-  input[type="radio"]:checked{
-	  background-color: #9b8c68;
-	  color: #d0d0d0;
-  }
 
 
 
 
   input[type="radio"]:checked:hover {
-	  background-color: #9b8c68;
+	  background-color: #e5e4e4;
   }
 
 
   input[type="radio"]:label{
-	background-color: #9b8c68;
+	background-color: #e5e4e4;
 	color: #d0d0d0;
 }
 
   input[type="radio"] + label:hover {
-	  background-color: #AE9664;
+	  background-color: #ededed;
   }
 
 
-
-input[type="radio"]:hover {
-	border-color: #888888;
-  opacity: 0.8; /* Optional: Add hover effect */
-}
 
 
 input[type="radio"] {
@@ -386,13 +370,19 @@ input[type="radio"] {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  border: 1px solid #B9A87D;
-  background-color: #B9A87D;
+  border: 1px solid #d1d1d1;
+  background-color: #d1d1d1;
   appearance: none; /* Remove default radio button styling */
   cursor: pointer;
 
 }
 
+
+
+input[type="radio"]:checked {
+	border-color: #9b8c68 !important;
+	background-color: #878787 !important;
+}
 
 
 
@@ -538,6 +528,14 @@ zoom:0.5;
 
 @media only screen and (max-width: 829px){   /* iphone media below */
 
+#map-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  box-shadow: 0 0 5px #887856;
+  transition: opacity 0.3s ease;
+}
 
 
 .tabs {

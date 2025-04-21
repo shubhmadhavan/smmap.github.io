@@ -1,9 +1,9 @@
 /* light theme */
 body {
-	background: #DFDCD4 !important;
+	background: #f4f5f7 !important;
 	}
 .leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom{
-	background: #DFDCD4 !important;
+	background: #f4f5f7 !important;
 	}
 
 .reveal-all{ /*button*/

@@ -1,6 +1,28 @@
+.leaflet-tooltip.selected-tooltip.leaflet-zoom-animated, 
+.leaflet-tooltip.correct-tooltip.leaflet-zoom-animated{
+	/* this includes both selected and correct tooltip css*/
+	font-size: 10pt;
+	opacity:0.9;
+
+	line-height: 1 !important;  /* Reduce line height to fit text */
+    padding: 2px 5px !important; /* Adjust padding as needed */
+	user-select: text !important;
+	
+}
+
+.leaflet-tooltip-left{
+	left: -4.2px !important;
+}
+	
+.leaflet-tooltip-right{
+left: 4.2px !important;
+}
+
+
 body{
-	zoom:99%;
+	zoom:90%;
 	overflow: hidden;
+	
 }
 
 #nl{
@@ -40,19 +62,30 @@ body{
 	filter: drop-shadow(0px 12px 12px rgba(0, 0, 0, 0.2));
 }
 
+
+
 #auto_next_label, .auto_next_label, #auto_next{
 	color:#000000;
 	position: relative !important;
-	bottom: 12px !important;
+	bottom: 0.2rem !important;
 }
 
 #do_not_repeat_label, .do_not_repeat_label, #noRepeat, #slider-label {
 	
 	color:#000000;
 	position: relative !important;
-	bottom: 12px !important;
+	bottom: 0.2rem !important;
 }
  
+input[type="checkbox"]#auto_next, input[type="checkbox"]#noRepeat{
+	bottom: 0.4rem !important;
+}
+
+input[type="range"]#timeoutSlider {
+	bottom: 0rem !important;
+}
+
+
 #timeoutSlider{
 	position: relative !important;
 	bottom: 4px !important;
@@ -79,16 +112,11 @@ body{
 
   
 
-.leaflet-tooltip.selected-tooltip.leaflet-zoom-animated, 
-.leaflet-tooltip.correct-tooltip.leaflet-zoom-animated{
-	/* this includes both selected and correct tooltip css*/
-	font-size: 10pt;
-	opacity:0.9;
 
-	line-height: 1 !important;  /* Reduce line height to fit text */
-    padding: 2px 5px !important; /* Adjust padding as needed */
-	user-select: text !important;
-}
+
+
+
+
 
 
 
@@ -133,8 +161,8 @@ body{
     -moz-user-select: none; 
 
 	touch-action: pinch-zoom;
-	height: 95vh !important;
-	max-height:94.2vh !important;
+	height: 57.6rem !important;
+	max-height:92vh !important;
 	will-change: transform !important;
 	
 	
@@ -512,43 +540,55 @@ height:19px;
 
 @media only screen and (max-width: 829px){   /* iphone media below */
 
-	#map{
-		top: 52px !important;
-	}
+	
+
+		#map{
+			top: 32px !important;
+			
+			left: 10px !important;
+		}
+
+
 
 	#Advance {
 		width:290px !important;
 		height: 72px !important;
 	}
 
-	#header{
-		margin-top:12px !important;
-		user-select: none; 
-		-webkit-user-select: none; 
-		-ms-user-select: none; 
-		-moz-user-select: none; 
+	#header {
+		user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		-moz-user-select: none;
 		pointer-events: none;
 		touch-action: none;
-		pointer-events: none; 
-		touch-action: none; 
-		
-		position: absolute;
-		top:26px !important;
 	
-		z-index:9999;
-		zoom:100%;
-		
-		background-color: rgba(80,80,80,0.1);
-		
+		position: fixed !important;
+		top: 20px !important;
+		left: 0 !important;
+		right: 0 !important;
+		padding: 0 20px; /* distance from both sides */
+		box-sizing: border-box;
+	
+		z-index: 1999 !important;
+		background-color: rgba(80, 80, 80, 0.1);
 	}
 	
 	
-	.reveal-all{
+	.switcher-text{
 		position: absolute !important;
-		left:-45px !important;
-		top: 2px !important;
+		top: -10px !important;
+		width:fit-content !important;
 		}
-		
+
+	.reveal-all{
+		z-index: 1999 !important;
+		top: 2px !important;
+		position: absolute !important;
+		left:-20px !important;
+		right:0  !important;
+		width:fit-content !important;
+	}
 		  
 	.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom
 	{

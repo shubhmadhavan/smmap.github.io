@@ -41,25 +41,53 @@
 
 
 
+<script>
+    window.addEventListener('load', function () {
+      document.body.addEventListener('click', function (event) {
+        const path = event.target.closest('path[aria-describedby]');
+        if (!path) return;
+  
+        const tooltipId = path.getAttribute('aria-describedby');
+        if (!tooltipId) return;
+  
+        const tooltip = document.getElementById(tooltipId);
+        if (!tooltip) return;
+  
+        // Toggle the display property
+        tooltip.style.display = (tooltip.style.display === 'none' || tooltip.style.display === '') ? 'block' : 'none';
+  
+        // Optional: prevent further handlers (be cautious with this!)
+        // event.stopImmediatePropagation();
+      }, false); // capturing = false, so it runs *after* most other scripts
+    });
+  </script>
+  
 
+<script>
+    window.addEventListener('load', function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const selection = urlParams.get("selection");
+  
+      document.querySelectorAll(".switcher").forEach(link => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+  
+          if (selection) {
+            // Preserve full path
+            const href = link.getAttribute("href");
+            const baseHref = href.split('?')[0]; // Remove any existing query
+            const newUrl = `${baseHref}?selection=${encodeURIComponent(selection)}`;
+            window.location.href = newUrl;
+          } else {
+            window.location.href = link.getAttribute("href");
+          }
+        });
+      });
+    });
+  </script>
+  
+  
 
-
-
-
-    <script>
-        window.onload = function() {
-            // Get the 'selection' URL parameter
-            const urlParams = new URLSearchParams(window.location.search);
-            const selection = urlParams.get('selection');
-            
-            // If the 'selection' parameter exists, append it to the link's href
-            if (selection) {
-                const link = document.querySelector('.switcher');
-                link.href = `Map_Game_dark.html?selection=${selection}`; // Set the correct URL
-            }
-        };
-
-    </script>
     
     <a class="switcher" href="Map_Game_dark.html">
         <span class="switcher-text">⇌</span>
@@ -79,8 +107,7 @@
     let allTooltipsVisible = true;  // Set the default state of the tooltips
     const tooltips = [];  // Renamed to avoid any conflicts
     let revealedLayers = [];  // Keep track of all added tooltip layers
-
-    window.onload = function () {
+window.onload = function () {
     if (tooltips.length === 0) {
         for (const river in mapData) {
             const geometry = parseGeometry(mapData[river]);
@@ -114,6 +141,27 @@
     });
 };
  
+    function getCollectionCentroid(geometries) {
+        let latSum = 0, lonSum = 0, count = 0;
+        geometries.forEach(geometry => {
+            if (geometry.type === 'Point') {
+                latSum += geometry.coordinates[0];
+                lonSum += geometry.coordinates[1];
+                count++;
+            } else if (geometry.type === 'LineString' || geometry.type === 'Polygon') {
+                geometry.coordinates.forEach(coord => {
+                    latSum += coord[0];
+                    lonSum += coord[1];
+                    count++;
+                });
+            }
+        });
+
+        return count ? [latSum / count, lonSum / count] : null;
+    }
+
+
+    
     // Function to add a tooltip at the best location
     function addTooltipForGeometry(geometry, river) {
         let layer = null;
@@ -347,7 +395,6 @@ if (resources) {
 
 
 </body>
-
 
 
 </html>

@@ -19,7 +19,7 @@
 
 </head>
 
-
+<body>
   
 
 <div class="icons-container">
@@ -39,11 +39,11 @@
 <script src="theme_map_toggler.js" defer> </script>
 
 
-<script src="map_data_selector.js"></script>
 
 
 
-<body>
+
+
 
 
     <script>
@@ -74,42 +74,50 @@
 </div>
 
 
-
-
-
 <script> //WORKING
 
-    // Track the state of the reveal-all tooltips
-    let allTooltipsVisible = false;
+    let allTooltipsVisible = true;  // Set the default state of the tooltips
+    const tooltips = [];  // Renamed to avoid any conflicts
+    let revealedLayers = [];  // Keep track of all added tooltip layers
 
-    // Keep track of all added tooltip layers
-    let revealedLayers = [];
+    window.onload = function () {
+    if (tooltips.length === 0) {
+        for (const river in mapData) {
+            const geometry = parseGeometry(mapData[river]);
 
-    // Function to calculate the centroid of multiple geometries
-    function getCollectionCentroid(geometries) {
-        let latSum = 0, lonSum = 0, count = 0;
-        geometries.forEach(geometry => {
-            if (geometry.type === 'Point') {
-                latSum += geometry.coordinates[0];
-                lonSum += geometry.coordinates[1];
-                count++;
-            } else if (geometry.type === 'LineString' || geometry.type === 'Polygon') {
-                geometry.coordinates.forEach(coord => {
-                    latSum += coord[0];
-                    lonSum += coord[1];
-                    count++;
-                });
+            if (Array.isArray(geometry)) {
+                const centroid = getCollectionCentroid(geometry);
+                if (centroid) {
+                    const marker = L.marker(centroid, {
+                        icon: L.divIcon({ className: 'reveal-all-tooltip-icon', html: '●', iconSize: [10, 10] })
+                    }).bindTooltip(river, { permanent: true, className: 'reveal-all-tooltip' }).addTo(map);
+
+                    tooltips.push(marker);
+                    revealedLayers.push(marker);  // ✅ Fix: Add to revealedLayers
+                }
+            } else {
+                const layer = addTooltipForGeometry(geometry, river);
+                if (layer) {
+                    tooltips.push(layer);
+                    // Already pushed to revealedLayers inside addTooltipForGeometry
+                }
             }
-        });
-
-        return count ? [latSum / count, lonSum / count] : null;
+        }
     }
 
-    
+    // ✅ Always hide all tooltips initially
+    revealedLayers.forEach(layer => {
+        const tooltipElement = layer.getTooltip()?.getElement();
+        if (tooltipElement) {
+            tooltipElement.style.display = 'none';
+        }
+    });
+};
+ 
     // Function to add a tooltip at the best location
     function addTooltipForGeometry(geometry, river) {
         let layer = null;
-
+    
         if (geometry.type === 'Point') {
             layer = L.circleMarker(geometry.coordinates, {
                 radius: 4,
@@ -128,61 +136,43 @@
             const centroid = getCollectionCentroid([{ type: 'Polygon', coordinates: geometry.coordinates[0] }]); // Outer ring centroid
             if (centroid) {
                 layer = L.marker(centroid, {
-                    icon: L.divIcon({ className: 'reveal-all-tooltip-icon',
-                    className: 'polygon_leaflet',
-                    html: '●', iconSize: [10, 10] })
+                    icon: L.divIcon({
+                        className: 'reveal-all-tooltip-icon polygon_leaflet',  // Combined class names
+                        html: '●',
+                        iconSize: [10, 10]
+                    })
                 });
             }
         }
-
+    
         if (layer) {
             layer.bindTooltip(river, { permanent: true, className: 'reveal-all-tooltip' }).addTo(map);
             revealedLayers.push(layer);
         }
     }
-
-  
     
     // Click event listener for "reveal-all" button
     document.querySelector('.reveal-all').addEventListener('click', function () {
-    allTooltipsVisible = !allTooltipsVisible;
-
-    if (revealedLayers.length === 0) {
-        // First-time creation
-        for (const river in mapData) {
-            const geometry = parseGeometry(mapData[river]);
-
-            if (Array.isArray(geometry)) {
-                const centroid = getCollectionCentroid(geometry);
-                if (centroid) {
-                    const marker = L.marker(centroid, {
-                        icon: L.divIcon({ className: 'reveal-all-tooltip-icon', html: '●', iconSize: [10, 10] })
-                    }).bindTooltip(river, { permanent: true, className: 'reveal-all-tooltip' }).addTo(map);
-
-                    revealedLayers.push(marker);
-                }
-            } else {
-                const layer = addTooltipForGeometry(geometry, river);
-                if (layer) revealedLayers.push(layer);
+        allTooltipsVisible = !allTooltipsVisible;
+    
+        revealedLayers.forEach(layer => {
+            const tooltipElement = layer.getTooltip().getElement();
+            if (tooltipElement) {
+                tooltipElement.style.display = allTooltipsVisible ? 'none' : 'block';
             }
-        }
-    }
-
-    // Now toggle visibility
-    revealedLayers.forEach(layer => {
-        const tooltipElement = layer.getTooltip().getElement();
-        if (tooltipElement) {
-            tooltipElement.style.display = allTooltipsVisible ? 'block' : 'none';
-        }
-
-        const layerElement = layer.getElement?.();
-        if (layerElement) {
-            layerElement.style.display = allTooltipsVisible ? 'block' : 'none';
-        }
+    
+            // Fix: Use getTooltip instead of getElement
+            const layerElement = layer.getTooltip()?.getElement();
+            if (layerElement) {
+                layerElement.style.display = allTooltipsVisible ? 'none' : 'block';
+            }
+        });
     });
-});
+    
 
-</script>
+    
+    </script>
+    
 
 
 <div id="header"></div>
@@ -266,6 +256,8 @@ if (resources) {
 } else {
     console.log('Invalid or missing selection parameter');
 }
+
+
 
 </script>
 
@@ -355,4 +347,8 @@ if (resources) {
 
 
 </body>
+
+
+
 </html>
+

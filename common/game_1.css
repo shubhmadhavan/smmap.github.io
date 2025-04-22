@@ -24,11 +24,11 @@
 	opacity:0.9;
 
 	line-height: 1 !important;  /* Reduce line height to fit text */
-    padding: 2px 5px !important; /* Adjust padding as needed */
+   
 	user-select: text !important;
 	
 }
-
+	
 .leaflet-tooltip-left{
 	left: -4.2px !important;
 }
@@ -199,7 +199,6 @@ zoom:125%;
 	opacity:1;
 	position: absolute;
 	top: 0px;
-
 	color: #8a8a8a;
 	font-size: 28px;
 	text-decoration: none;
@@ -383,6 +382,7 @@ height:19px;
 
 @media only screen and (max-width: 1379px){  /* ipad media below */
 
+	.top-right-link{right: 80px !important;} /* home */
 
 	.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom
 	{
@@ -469,25 +469,6 @@ height:19px;
 
 
 
-
-
-
-		#result{
-			margin-top:70vh;
-			zoom:120%;
-			opacity:0.8;
-			display:none !important;
-		}
-
-		/*
-		span{
-			opacity:0;
-			zoom:0.1%;
-		}
-
-
-*/
-
 		.score-bottom{
 			display:none; 
 			
@@ -547,16 +528,13 @@ height:19px;
 		}
 
 
-
-
-
-		  
+	  
 	.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom
 	{
-
 		max-height:80vh !important;
-
 	}	
+	
+
 	
 				
 }

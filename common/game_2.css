@@ -1,7 +1,11 @@
+* {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
 path{
-	
-	pointer-events: auto !important;
 	cursor: pointer;
+    pointer-events: all;
 }
 
 .highlighted {
@@ -43,15 +47,6 @@ path{
 .sidebar ul li:hover {
     background-color: #eee;
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -136,9 +131,10 @@ left: 4.2px !important;
 
 @media only screen and (max-width: 1379px){  /* ipad media below */
 
-	#map{
-		top: 2px !important;
-	}
+	#map{top: 2px !important;}
+	.reveal-list{font-size: 11px !important;}
+	
+	.sidebar { height: 90vh !important;}
+	
 
-
-	}
+}

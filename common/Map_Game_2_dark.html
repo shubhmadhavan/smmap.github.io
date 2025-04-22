@@ -7,7 +7,8 @@
 
     <!-- common files start -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial=">
+
+
     <link rel="stylesheet" href="leaflet.css" />
    
 	<link rel="stylesheet" href="game_1.css" />
@@ -41,7 +42,7 @@
 
 
 
-<script>
+<script> // CLICKING PATH / POINT / LINESTRING TO REVEAL CORRESPONDING TOOLTIP 
     window.addEventListener('load', function () {
       document.body.addEventListener('click', function (event) {
         const path = event.target.closest('path[aria-describedby]');
@@ -63,7 +64,7 @@
   </script>
   
 
-<script>
+<script> // FOR SWITCHING BETWEEN LEARN & TEST MODE
     window.addEventListener('load', function () {
       const urlParams = new URLSearchParams(window.location.search);
       const selection = urlParams.get("selection");
@@ -102,9 +103,11 @@
 </div>
 
 
-<script> //WORKING
-
+<script> //REVEAL ALL BUTTON (and loading tooltips at startup) 
+//WORKING 
     let allTooltipsVisible = true;  // Set the default state of the tooltips
+    let allTooltipsRevealed = false;
+
     const tooltips = [];  // Renamed to avoid any conflicts
     let revealedLayers = [];  // Keep track of all added tooltip layers
 window.onload = function () {
@@ -202,7 +205,8 @@ window.onload = function () {
     // Click event listener for "reveal-all" button
     document.querySelector('.reveal-all').addEventListener('click', function () {
         allTooltipsVisible = !allTooltipsVisible;
-    
+        allTooltipsRevealed = !allTooltipsRevealed
+
         revealedLayers.forEach(layer => {
             const tooltipElement = layer.getTooltip().getElement();
             if (tooltipElement) {
@@ -214,11 +218,92 @@ window.onload = function () {
             if (layerElement) {
                 layerElement.style.display = allTooltipsVisible ? 'none' : 'block';
             }
+            
         });
     });
     
 
     
+    const revealButton = document.querySelector('.reveal-list');
+    const sidebar = document.querySelector('.sidebar');
+    const mapDataList = sidebar.querySelector('.map-data-list');
+
+    const tooltipsMap = new Map();
+    populateTooltips(); // Initial population of tooltips
+
+    let sidebarPopulated = false;
+
+    revealButton.addEventListener('click', function () {
+        if (sidebar.style.display === 'none' || sidebar.style.display === '') {
+            sidebar.style.display = 'flex';
+
+            if (!sidebarPopulated) {
+                populateSidebar();
+                sidebarPopulated = true;
+            }
+
+        } else {
+            sidebar.style.display = 'none';
+        }
+    });
+
+    function getFirstTextNode(element) {
+        for (const node of element.childNodes) {
+            if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+                return node.textContent.trim();
+            }
+        }
+        return '';
+    }
+
+    function populateSidebar() {
+        mapDataList.innerHTML = '';
+
+        Object.keys(mapData).forEach(function (key) {
+            const displayName = key.split('<')[0].trim();
+            const li = document.createElement('li');
+            li.textContent = displayName;
+            mapDataList.appendChild(li);
+
+            li.addEventListener('click', function () {
+                const tooltip = tooltipsMap.get(displayName);
+                if (tooltip) {
+                    const parentDiv = tooltip.closest('div');
+                    const wasHighlighted = li.classList.contains('highlighted');
+
+                    li.classList.toggle('highlighted');
+                    parentDiv.classList.toggle('highlighted');
+
+                    if (!wasHighlighted) {
+                        // Just added highlight
+                        parentDiv.style.display = 'block';
+                    } else {
+                        // Just removed highlight
+                        if (!allTooltipsRevealed) {
+                            parentDiv.style.display = 'none';
+                        }
+                    }
+                }
+            });
+        });
+    }
+
+    function populateTooltips() {
+        tooltipsMap.clear();
+        document.querySelectorAll('.leaflet-tooltip').forEach(tooltip => {
+            const firstLine = getFirstTextNode(tooltip); // Extract only the first line/text node
+            tooltipsMap.set(firstLine, tooltip);
+        });
+    }
+
+    const observer = new MutationObserver(() => {
+        populateTooltips(); // Re-populate the map when new tooltips are added
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+    });
     </script>
     
 
@@ -305,91 +390,12 @@ if (resources) {
     console.log('Invalid or missing selection parameter');
 }
 
-
-
 </script>
 
 
-<script>
-    // Get the button and sidebar elements
-    const revealButton = document.querySelector('.reveal-list');
-    const sidebar = document.querySelector('.sidebar');
-    const mapDataList = sidebar.querySelector('.map-data-list');
-    
-    // Cache the tooltips on page load
-    const tooltipsMap = new Map();
-    populateTooltips(); // Initial population of tooltips
-   
+<script> //SIDEBAR SCRIPT
+</script>
 
-    let sidebarPopulated = false; // New flag
-
-    revealButton.addEventListener('click', function() {
-        // Toggle the sidebar visibility
-        if (sidebar.style.display === 'none' || sidebar.style.display === '') {
-            sidebar.style.display = 'flex'; // Show the sidebar
-
-            if (!sidebarPopulated) {
-                populateSidebar();         // Populate only once
-                sidebarPopulated = true;   // Set the flag
-            }
-
-        } else {
-            sidebar.style.display = 'none'; // Hide the sidebar
-        }
-    });
-
-    
-    // Function to populate the sidebar with map data keys (names)
-    function populateSidebar() {
-        mapDataList.innerHTML = ''; // Clear any existing items in the list
-    
-        // Loop through the mapData object and create list items
-        Object.keys(mapData).forEach(function(key) {
-            const li = document.createElement('li');
-            li.textContent = key;
-            mapDataList.appendChild(li); // Append the new list item to the sidebar
-    
-            // Add event listener for clicking on each list item
-            li.addEventListener('click', function() {
-                    
-            // Check if the key exists in the map
-            const tooltip = tooltipsMap.get(key);
-
-            if (tooltip) {
-
-                // Toggle the background color of the <li> element
-                    li.classList.toggle('highlighted');
-            
-                // Find the parent div of the tooltip
-                const parentDiv = tooltip.closest('div'); // Find the parent div
-                
-                parentDiv.classList.toggle('highlighted');
-            }
-        });
-
-        });
-    }
-    
-    // Function to populate the tooltipsMap with the current tooltips
-    function populateTooltips() {
-        document.querySelectorAll('.leaflet-tooltip').forEach(tooltip => {
-            // Ensure the tooltip text is cleaned up and add to map
-            const tooltipText = tooltip.textContent.trim();
-            tooltipsMap.set(tooltipText, tooltip);
-        });
-    }
-    
-    // Listen for new tooltips being added and update the tooltipsMap dynamically
-    const observer = new MutationObserver(() => {
-        populateTooltips(); // Re-populate the map when new tooltips are added
-    });
-    
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true,
-    });
-    </script>
-    
 
 
 

@@ -7,13 +7,11 @@ body {
 	}
 
 .reveal-all{ /*button*/
-	font-size:16px; color:#ffffff; background-color:rgb(112, 112, 112) !important; margin-left: 43%;
+	color:#ffffff; background-color:rgb(112, 112, 112) !important;
 }
 
 .reveal-all-tooltip {
     background-color: rgba(256,256,256,0.9);
-	font-size: 10px;
-	
 }
 
 

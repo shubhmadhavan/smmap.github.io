@@ -1,3 +1,48 @@
+
+img[id^="map-image-"] {
+	cursor: pointer;
+	user-select: none;}
+		
+		
+
+
+#practice-tick { /* tick box location */
+	margin-top:-2px !important;
+}
+
+.practice-tick-label, .practice-tick-label:hover { /* label location */
+all: unset;
+
+}
+
+.practice-div > label, .practice-div > label:hover {
+	position: absolute;
+	margin-top:2.1px !important;
+}
+
+
+
+.practice-div {
+	
+	cursor: pointer;
+    user-select: none; 
+  position: absolute;
+	top:680px;
+	right: -520px;
+	left: 0px;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	width: fit-content;
+}
+
+
+
+
+
+
+
 .label_heading{
 	text-align: left !important;
 	transform: translateX(-44px);
@@ -9,12 +54,7 @@
   }
 
 
-selectionForm {
-	appearance: none; /* Ensures consistent appearance */
-    -moz-appearance: none; /* Firefox-specific reset */
-    -webkit-appearance: none; /* Webkit-based browsers reset */
 
-}
 
 .button-container {
 	margin-top: 30px !important;
@@ -307,18 +347,6 @@ body {
 	display: block;
   }
   
-  #map-image-container-2 {
-   margin-top: 80px;
-   margin-top: 22px;
-  }
-
-  #map-image-2 {
-   width: 980px; height: auto; 
-   max-width:100%;
-  }
-
-
-
   
 
 #option1, #option21, #option31{
@@ -441,56 +469,61 @@ zoom:0.5;
 }
 
 
-#map-image-container , #map-image-container-2, #map-image-container-3 {
-
-	margin-top: 80px !important;
-	 margin-top: 22px !important;
-}
 
 
 
-#map-image, #map-image-2, #map-image-3  {
- width: 980px; height: auto; 
- max-width:62% !important;
- margin-top:3%;
- margin-left:-42%;
-}
-
-/*
-#map-image-2{
-	margin-top:-167px;
-}
-*/
-
-#map-image:hover, #map-image-2:hover, #map-image-3:hover{
-		box-shadow: 0 0 5px #887856;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-#map-image-2:hover{
-	opacity:1;
-}
-
-
-
-#map-image-3:hover{
-	opacity:1;
-}
-
-
-
-
+#map-image-container-2 {
+	margin-top: 80px;
+	margin-top: 22px;
+   }
+ 
+   #map-image-2 {
+	width: 980px; height: auto; 
+	max-width:100%;
+   }
+ 
+ 
+   #map-image-container-2, #map-image-container-3 {
+ 
+	 margin-top: 80px !important;
+	  margin-top: 22px !important;
+ }
+ 
+ 
+ 
+ #map-image, #map-image-2, #map-image-3  {
+  width: 980px; height: auto; 
+  max-width:62% !important;
+  margin-top:3%;
+  margin-left:-42%;
+ }
+ 
+ /*
+ #map-image-2{
+	 margin-top:-167px;
+ }
+ */
+ 
+ #map-image:hover, #map-image-2:hover, #map-image-3:hover{
+		 box-shadow: 0 0 5px #887856;
+ 
+ }
+ 
+ 
+ 
+ 
+ 
+ #map-image-2:hover{
+	 opacity:1;
+ }
+ 
+ 
+ 
+ #map-image-3:hover{
+	 opacity:1;
+ }
+ 
+ 
 
 
 /* media below */

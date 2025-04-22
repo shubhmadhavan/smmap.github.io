@@ -35,6 +35,9 @@ margin-top:10px;
 </head>
 
 <body>
+
+
+
   <div class="tabs">
     <div class="tab" data-tab="1">Geography</div>
     <div class="tab" data-tab="2">History</div>
@@ -57,7 +60,7 @@ margin-top:10px;
 				<br/><br/>
 
 
-				<form id="selectionForm" class="selection-form-1" action="common\Map_Game_dark.html" method="get">
+				<form class="selection-form-1" action="common\Map_Game_dark.html" method="get">
 					
 
 
@@ -215,7 +218,7 @@ margin-top:10px;
 
 
 
-		<form id="selectionForm" class="selection-form-2" action="common\Map_Game_dark.html" method="get">
+		<form class="selection-form-2" action="common\Map_Game_dark.html" method="get">
 					
 
 
@@ -357,7 +360,7 @@ margin-top:10px;
 
 
 
-		<form id="selectionForm" class="selection-form-3" action="common\Map_Game_dark.html" method="get">
+		<form class="selection-form-3" action="common\Map_Game_dark.html" method="get">
 					
 
 
@@ -479,13 +482,18 @@ margin-top:10px;
 </div>
 
 
-</div>
+
 
 </div>
 
 </div>
 
-  
+</div>
+
+ <div class="practice-div">
+<input type="checkbox" id="practice-tick" >
+<label for="practice-tick" class="practice-tick-label">Practice</label>
+</div> 
 
 </body>
 	
@@ -493,8 +501,6 @@ margin-top:10px;
  
 	
   </div>
-
-
 
 
 
@@ -537,34 +543,6 @@ margin-top:10px;
   </script>
   
   
-  
-<script>      // script to ensure option selection formatting for river options is consistent
-	document.querySelectorAll('.river-option-wrapper').forEach(wrapper => {
-	  const input = wrapper.querySelector('input[type="radio"]');
-	  const label = wrapper.querySelector('label');
-	  
-	  input.addEventListener('change', () => {
-		// Reset styles for all wrappers and labels
-		document.querySelectorAll('.river-option-wrapper').forEach(wrap => {
-		  wrap.style.setProperty('background-color', '#ffffff', 'important');
-		  wrap.style.setProperty('border-color', '#808080', 'important');
-		  const wrapLabel = wrap.querySelector('label');
-		  wrapLabel.style.setProperty('color', '#808080', 'important');
-		  wrapLabel.style.setProperty('background-color', '#ffffff', 'important');
-		});
-  
-		// Set styles for the checked input's parent wrapper and label
-		if (input.checked) {
-		  wrapper.style.setProperty('background-color', '#373737', 'important');
-		  wrapper.style.setProperty('border-color', '#373737', 'important');
-		  label.style.setProperty('color', '#ffffff', 'important');
-		  label.style.setProperty('background-color', '#373737', 'important');
-		}
-	
-
-	  });
-	});
-  </script>
   
 
 
@@ -679,57 +657,57 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Get all radio buttons with the name "map"
-  const radioButtons = document.querySelectorAll('input[class="form_3"]');
-  
-  // Get the image element
-  const mapImage = document.getElementById("map-image-3");
-
-  // Function to update the image source based on the selected radio button
-  function updateImage() {
-    const selectedValue = document.querySelector('input[class="form_3"]:checked').value;
-    if (selectedValue === "erg_4") {
-      mapImage.src = "Map_Images/index/erg_4.png";
-    } else if (selectedValue === "Ports_1") {
-      mapImage.src = "Map_Images/index/ports_1.png";
-    } else if (selectedValue === "air_1") {
-      mapImage.src = "Map_Images/index/air_1.png";
-    } else if (selectedValue === "min_1") {
-      mapImage.src = "Map_Images/index/min_1.png";
-	} else if (selectedValue === "min_1_1") {
-		mapImage.src = "Map_Images/index/min_1_1.png";
-    } else if (selectedValue === "min_2") {
-      mapImage.src = "Map_Images/index/min_2.png";
-    } else if (selectedValue === "min_3") {
-      mapImage.src = "Map_Images/index/min_3.png";
-    } else if (selectedValue === "min_4") {
-      mapImage.src = "Map_Images/index/min_4.png";
-    } else if (selectedValue === "erg_1") {
-      mapImage.src = "Map_Images/index/erg_1.png";
-    } else if (selectedValue === "erg_2") {
-      mapImage.src = "Map_Images/index/erg_2.png";
-    } else if (selectedValue === "erg_3") {
-      mapImage.src = "Map_Images/index/erg_3.png";
-    } 
+	document.addEventListener("DOMContentLoaded", function () {
+	  // Get all radio buttons with the name "map"
+	  const radioButtons = document.querySelectorAll('input[class="form_3"]');
+	  
+	  // Get the image element
+	  const mapImage = document.getElementById("map-image-3");
 	
-    // Display the image
-    mapImage.style.display = "block";
-  }
+	  // Function to update the image source based on the selected radio button
+	  function updateImage() {
+		const selectedValue = document.querySelector('input[class="form_3"]:checked').value;
+		if (selectedValue === "erg_4") {
+		  mapImage.src = "Map_Images/index/erg_4.png";
+		} else if (selectedValue === "Ports_1") {
+		  mapImage.src = "Map_Images/index/ports_1.png";
+		} else if (selectedValue === "air_1") {
+		  mapImage.src = "Map_Images/index/air_1.png";
+		} else if (selectedValue === "min_1") {
+		  mapImage.src = "Map_Images/index/min_1.png";
+		} else if (selectedValue === "min_1_1") {
+			mapImage.src = "Map_Images/index/min_1_1.png";
+		} else if (selectedValue === "min_2") {
+		  mapImage.src = "Map_Images/index/min_2.png";
+		} else if (selectedValue === "min_3") {
+		  mapImage.src = "Map_Images/index/min_3.png";
+		} else if (selectedValue === "min_4") {
+		  mapImage.src = "Map_Images/index/min_4.png";
+		} else if (selectedValue === "erg_1") {
+		  mapImage.src = "Map_Images/index/erg_1.png";
+		} else if (selectedValue === "erg_2") {
+		  mapImage.src = "Map_Images/index/erg_2.png";
+		} else if (selectedValue === "erg_3") {
+		  mapImage.src = "Map_Images/index/erg_3.png";
+		} 
+		
+		// Display the image
+		mapImage.style.display = "block";
+	  }
+	
+	  // Add event listeners to the radio buttons
+	  radioButtons.forEach(radio => {
+		radio.addEventListener("change", updateImage);
+	  });
+	
+	  // Initialize the image on page load
+	  updateImage();
+	});
+	
+	</script>
 
-  // Add event listeners to the radio buttons
-  radioButtons.forEach(radio => {
-    radio.addEventListener("change", updateImage);
-  });
 
-  // Initialize the image on page load
-  updateImage();
-});
-
-</script>
-
-
-<script>
+<script> // Change Map Image based on user selection
     // Map image IDs to corresponding button IDs
     const mappings = {
         'map-image': 'start1',
@@ -750,7 +728,30 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 </script>
 	
+<script>
+	// Get the checkbox
+	const practiceTick = document.getElementById('practice-tick');
 	
+	// Get all the forms
+	const forms = document.querySelectorAll('form');
+  
+	// Add an event listener to checkbox
+	practiceTick.addEventListener('change', function() {
+	  // Loop through each form and change the action based on the checkbox state
+	  forms.forEach(form => {
+		if (practiceTick.checked) {
+		  // If checked, set to the "Map_Game_2_dark.html"
+		  form.action = 'common/Map_Game_2_dark.html';
+		} else {
+		  // If unchecked, revert to the original action
+		  form.action = 'common/Map_Game_dark.html';
+		}
+	  });
+	});
+  </script>
+  
+  
+
 
 </body>
 </html>

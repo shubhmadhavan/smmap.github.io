@@ -10,6 +10,11 @@
 
 
 
+#map {
+	height: 92vh; /* Adjusted height for map */
+	background: #0b0b0b;
+}
+
 
 
 .leaflet-tooltip.selected-tooltip.leaflet-zoom-animated, 
@@ -276,11 +281,6 @@ height:19px;
 	
 
 
-        #map {
-            height: 92vh; /* Adjusted height for map */
-			background: #0b0b0b;
-        }
-
 		
         #header {
             font-size: 25px;
@@ -546,14 +546,10 @@ height:19px;
 		width:fit-content !important;
 		}
 
-	.reveal-all{
-		z-index: 1999 !important;
-		top: 2px !important;
-		position: absolute !important;
-		left:-20px !important;
-		right:0  !important;
-		width:fit-content !important;
-	}
+
+
+
+
 		  
 	.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom
 	{

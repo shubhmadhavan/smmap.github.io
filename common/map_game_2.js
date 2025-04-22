@@ -238,18 +238,21 @@ var paths = {}; // Store paths by location name
 
 // Loop through locations data and add them to the map
 
+let index = 1;
 for (const river in mapData) {
     const parsedGeometry = parseGeometry(mapData[river]);
 
     if (!parsedGeometry) continue;
 
     if (Array.isArray(parsedGeometry)) {
-        // GeometryCollection contains multiple geometries
-        parsedGeometry.forEach(geo => addGeometryToMap(geo, river));
+        parsedGeometry.forEach(geo => addGeometryToMap(geo, river, index));
     } else {
-        addGeometryToMap(parsedGeometry, river);
+        addGeometryToMap(parsedGeometry, river, index);
     }
+
+    index++;
 }
+
 
 function addGeometryToMap(geometry, river) {
     let layer;

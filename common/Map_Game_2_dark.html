@@ -41,6 +41,8 @@
 
 <script src="map_data_selector.js"></script>
 
+
+
 <body>
 
 
@@ -56,6 +58,7 @@
                 link.href = `Map_Game_dark.html?selection=${selection}`; // Set the correct URL
             }
         };
+
     </script>
     
     <a class="switcher" href="Map_Game_dark.html">
@@ -63,11 +66,19 @@
     </a>
 
 <button class="reveal-all">Reveal All</button> 
+<button class="reveal-list">📋</button>
+
+<div class="sidebar" style="display: none;">
+    <br>
+    <ul class="map-data-list"></ul>
+</div>
 
 
 
 
-<script>
+
+<script> //WORKING
+
     // Track the state of the reveal-all tooltips
     let allTooltipsVisible = false;
 
@@ -94,6 +105,7 @@
         return count ? [latSum / count, lonSum / count] : null;
     }
 
+    
     // Function to add a tooltip at the best location
     function addTooltipForGeometry(geometry, river) {
         let layer = null;
@@ -129,6 +141,8 @@
         }
     }
 
+  
+    
     // Click event listener for "reveal-all" button
     document.querySelector('.reveal-all').addEventListener('click', function () {
         // Toggle tooltip visibility
@@ -156,10 +170,13 @@
             // Remove all tooltips
             revealedLayers.forEach(layer => map.removeLayer(layer));
             revealedLayers = [];
+            const listItems = document.querySelectorAll('.map-data-list li');
+             listItems.forEach(item => {
+             item.style.backgroundColor = ''; // Or item.style.removeProperty('background-color');
+    });
         }
     });
 </script>
-
 
 
 <div id="header"></div>
@@ -245,6 +262,96 @@ if (resources) {
 }
 
 </script>
+
+
+<script>
+    // Get the button and sidebar elements
+    const revealButton = document.querySelector('.reveal-list');
+    const sidebar = document.querySelector('.sidebar');
+    const mapDataList = sidebar.querySelector('.map-data-list');
+    
+    // Cache the tooltips on page load
+    const tooltipsMap = new Map();
+    populateTooltips(); // Initial population of tooltips
+    
+    // Event listener for the 'reveal-list' button
+    revealButton.addEventListener('click', function() {
+        // Toggle the sidebar visibility
+        if (sidebar.style.display === 'none' || sidebar.style.display === '') {
+            sidebar.style.display = 'flex'; // Show the sidebar
+            populateSidebar(); // Populate the sidebar with the list of names
+        } else {
+            sidebar.style.display = 'none'; // Hide the sidebar
+        }
+    });
+    
+    // Function to populate the sidebar with map data keys (names)
+    function populateSidebar() {
+        mapDataList.innerHTML = ''; // Clear any existing items in the list
+    
+        // Loop through the mapData object and create list items
+        Object.keys(mapData).forEach(function(key) {
+            const li = document.createElement('li');
+            li.textContent = key;
+            mapDataList.appendChild(li); // Append the new list item to the sidebar
+    
+            // Add event listener for clicking on each list item
+            li.addEventListener('click', function() {
+                    
+
+
+                    // Check if the key exists in the map
+                    const tooltip = tooltipsMap.get(key);
+
+                    if (tooltip) {
+
+                        // Toggle the background color of the <li> element
+                    if (li.style.backgroundColor === 'lightcyan') {
+                    li.style.backgroundColor = ''; // Reset <li> background color
+                    } else {
+                        li.style.backgroundColor = 'lightcyan'; // Set <li> background color to light cyan
+                    }
+                    
+                        // Find the parent div of the tooltip
+                        const parentDiv = tooltip.closest('div'); // Find the parent div
+                        
+                        if (parentDiv.style.backgroundColor === 'lightcyan') {
+                            // Reset to the original background color and z-index
+                            parentDiv.style.backgroundColor = ''; // Reset background color
+                            parentDiv.style.zIndex = '';          // Reset z-index
+                        } else {
+                            // Change the background color and z-index if it's not selected
+                            parentDiv.style.backgroundColor = 'lightcyan'; // Set background color to cyan
+                            parentDiv.style.zIndex = '9999';          // Bring to front
+                        }
+                    }
+                });
+
+        });
+    }
+    
+    // Function to populate the tooltipsMap with the current tooltips
+    function populateTooltips() {
+        document.querySelectorAll('.leaflet-tooltip').forEach(tooltip => {
+            // Ensure the tooltip text is cleaned up and add to map
+            const tooltipText = tooltip.textContent.trim();
+            tooltipsMap.set(tooltipText, tooltip);
+        });
+    }
+    
+    // Listen for new tooltips being added and update the tooltipsMap dynamically
+    const observer = new MutationObserver(() => {
+        populateTooltips(); // Re-populate the map when new tooltips are added
+    });
+    
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+    });
+    </script>
+    
+
+
 
 
 </body>

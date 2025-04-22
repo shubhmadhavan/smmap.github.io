@@ -12,15 +12,15 @@ color: white !important;
 } 
 
 
-.reveal-all{ /*button*/
-	font-size:16px; color:#ffffff; background-color:#505050 !important; margin-left: 43%;
+.reveal-all{
+	color:#ffffff; background-color:#505050 !important; 
 }
 
 .reveal-all-tooltip {
     background-color: rgba(256,256,256,0.9);
-	font-size: 10px;
-	
 }
+
+
 
 
 .title-span, #header, .switcher-text, .score-bottom, #slider-label{

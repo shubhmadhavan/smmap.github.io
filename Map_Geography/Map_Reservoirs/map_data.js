@@ -6,7 +6,7 @@ const mapData = {
 "Ratle Dam":"POINT (75.785494 33.1756706)",
 "Ranjit Sagar Dam":"POINT (75.7659211 32.4596104)",
 "Shahpur Kandi Dam":"POINT (75.6885592 32.3923972)",
-"Maharana Pratap Beas Sagar (HP)  ":"POINT (76.0166561 31.9916099)",
+"Maharana Pratap Sagar (HP)":"POINT (76.0166561 31.9916099)",
 "Shanan HE Project":"POINT (76.8612144 32.0024304)",
 "Gobind Sagar (HP)":"POINT (76.4858919 31.4133005)",
 "Bhakra Dam":"POINT (76.451946 31.4164701)",

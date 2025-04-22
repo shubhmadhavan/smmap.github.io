@@ -60,7 +60,7 @@ margin-top:10px;
 				<br/><br/>
 
 
-				<form class="selection-form-1" action="common\Map_Game_dark.html" method="get">
+				<form class="selection-form-1" action="common\Map_Game_2_dark.html" method="get">
 					
 
 
@@ -218,7 +218,7 @@ margin-top:10px;
 
 
 
-		<form class="selection-form-2" action="common\Map_Game_dark.html" method="get">
+		<form class="selection-form-2" action="common\Map_Game_2_dark.html" method="get">
 					
 
 
@@ -360,7 +360,7 @@ margin-top:10px;
 
 
 
-		<form class="selection-form-3" action="common\Map_Game_dark.html" method="get">
+		<form class="selection-form-3" action="common\Map_Game_2_dark.html" method="get">
 					
 
 
@@ -492,7 +492,7 @@ margin-top:10px;
 
  <div class="practice-div">
 <input type="checkbox" id="practice-tick" >
-<label for="practice-tick" class="practice-tick-label">Practice</label>
+<label for="practice-tick" class="practice-tick-label">Test</label>
 </div> 
 
 </body>
@@ -741,10 +741,10 @@ document.addEventListener("DOMContentLoaded", function () {
 	  forms.forEach(form => {
 		if (practiceTick.checked) {
 		  // If checked, set to the "Map_Game_2_dark.html"
-		  form.action = 'common/Map_Game_2_dark.html';
+		  form.action = 'common/Map_Game_dark.html';
 		} else {
 		  // If unchecked, revert to the original action
-		  form.action = 'common/Map_Game_dark.html';
+		  form.action = 'common/Map_Game_2_dark.html';
 		}
 	  });
 	});

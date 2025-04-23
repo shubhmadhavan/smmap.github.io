@@ -3,6 +3,14 @@
     touch-action: manipulation;
 }
 
+.reveal-all-tooltip-icon{
+	opacity: 0.2;
+}
+
+.selected-path {
+	/* REFER TO GAME_2 html*/
+  }
+
 path{
 	cursor: pointer;
     pointer-events: all;
@@ -129,10 +137,12 @@ left: 4.2px !important;
 
 	
 
-@media only screen and (max-width: 1379px){  /* ipad media below */
+@media only screen and (max-width: 849px){  /* ipad media below */
 
 	#map{top: 2px !important;}
-	.reveal-list{font-size: 11px !important;}
+	.reveal-all{top: 0px !important; left: -26px !important; font-size: 20px !important; width: fit-content;}
+
+	.reveal-list{position: absolute !important; top: unset !important; bottom: 5px !important; left: 0px !important; font-size: 19px !important; margin-left:10px;}
 	
 	.sidebar { height: 90vh !important;}
 	

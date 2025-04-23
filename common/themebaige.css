@@ -1,4 +1,4 @@
-/* default theme */
+/* baige theme */
 body {
 	background: #e2ca97 !important;
 	color: white;
@@ -12,12 +12,12 @@ body {
 	
 	}
 
-.reveal-all{ /*button*/
-	font-size:16px; color:#393939; background-color:#AB8F52 !important;
-}
 
 
 
+    .reveal-all, .reveal-list{ /*button*/
+        font-size:16px; color:#656565; background-color:#d3b97f !important;
+    }
 
 
 .leaflet-tooltip.leaflet-zoom-animated{

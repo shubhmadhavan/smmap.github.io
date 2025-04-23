@@ -8,16 +8,18 @@ img[id^="map-image-"] {
 
 #practice-tick { /* tick box location */
 	margin-top:-2px !important;
+
 }
 
 .practice-tick-label, .practice-tick-label:hover { /* label location */
 all: unset;
+font-size: 13px !important;
 
 }
 
 .practice-div > label, .practice-div > label:hover {
 	position: absolute;
-	margin-top:2.1px !important;
+	margin-top:5px !important;
 }
 
 
@@ -27,14 +29,15 @@ all: unset;
 	cursor: pointer;
     user-select: none; 
   position: absolute;
-	top:680px;
-	right: -520px;
-	left: 0px;
+	
 
+	right:546px;
+
+	margin-top: -25px !important;
 	margin-left: auto;
 	margin-right: auto;
 
-	width: fit-content;
+	width: 90px !important;
 }
 
 

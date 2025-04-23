@@ -1,4 +1,13 @@
   
+if (/iPhone|iPad/.test(navigator.userAgent)) {
+    document.addEventListener("touchstart", function(event) {
+        if (event.touches.length > 1) {
+            event.preventDefault(); // Prevent double-tap zoom
+        }
+    }, { passive: false });
+}
+
+
 // Initialize the map
 var map = L.map('map', {
     doubleClickZoom: false // Disable double click to zoom
@@ -311,27 +320,7 @@ function addGeometryToMap(geometry, river) {
         });
 
 
-    } else if (geometry.type === 'Polygon') {
-        layer = L.polygon(geometry.coordinates, {
-            color: '#EDC1A0',
-            weight: 3,
-            opacity: 1,
-            className: 'polygon_leaflet'
-        }).addTo(map);
-
-        // Display a tooltip with the river name when clicked, and close the previous tooltip
-        layer.on('click', function (e) {
-            layer.bindTooltip(river, { permanent: true, className: 'selected-tooltip' }).openTooltip();
-
-            // Close any previously opened tooltip
-            if (!isShiftHeld && !isAltHeld) {
-                setTimeout(() => {
-                    layer.closeTooltip();
-                }, 1600);
-            } // Adjust timeout for how long the tooltip stays visible
-        });
-
-    }
+    } 
 
     if (layer) {
         paths[river] = layer;

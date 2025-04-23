@@ -132,13 +132,13 @@ margin-top:10px;
 			<div class="label_heading">World:</div>
 						<input type="radio" id="option8" name="selection" value="wld_1">
 						<label for="option8">
-							<span class="left-text">World Map</span>
+							<span class="left-text">Countries</span>
 
 						</label>
 
 						<input type="radio" id="option9" name="selection" value="wld_2">
 						<label for="option9">
-							<span class="left-text">Major Latitudes</span>
+							<span class="left-text">Major Coordinates</span>
 
 						</label>
 
@@ -154,9 +154,9 @@ margin-top:10px;
 
 						<input type="radio" id="option12" name="selection" value="wld_5">
 						<label for="option12">
-							<span class="left-text">Deserts 🔧</span>
+							<span class="left-text">Rivers 🔧</span>
 						</label>
-
+						
 						<input type="radio" id="option13" name="selection" value="wld_6">
 						<label for="option13">
 							<span class="left-text">Seas</span>
@@ -164,14 +164,14 @@ margin-top:10px;
 
 						<input type="radio" id="option14" name="selection" value="wld_7">
 						<label for="option14">
-							<span class="left-text">Rivers</span>
+							<span class="left-text">Ocean Currents 🔧</span>
 						</label>
 
-
-
-
-
-
+						<input type="radio" id="option15" name="selection" value="wld_8">
+						<label for="option15">
+							<span class="left-text">Conflicts 🔧</span>
+						</label>
+						
 
 					</div>
 					
@@ -268,7 +268,7 @@ margin-top:10px;
 
 <input type="radio" class="form_2" id="option214" name="selection" value="AncHist_4" checked>
 <label for="option214">
-	<span class="left-text">Ancient Ports 🔧</span>
+	<span class="left-text">Ancient Ports</span>
 </label>
 
 <!--     Contemporary        -->
@@ -492,7 +492,7 @@ margin-top:10px;
 
  <div class="practice-div">
 <input type="checkbox" id="practice-tick" >
-<label for="practice-tick" class="practice-tick-label">Test</label>
+<label for="practice-tick" class="practice-tick-label">Game Mode</label>
 </div> 
 
 </body>
@@ -557,13 +557,14 @@ margin-top:10px;
 		dm_1: 'Map_Images/index/dm_1.png',     // Dams & Reservoirs image
 		rs_1: 'Map_Images/index/rs_1.png',      // Ramsar Sites image
 		wf_1: 'Map_Images/index/wf_1.png',      // Waterfalls image
-		wld_1:'Map_Images/index/wld_1.png', 		// World Map Image
-		wld_2:'Map_Images/index/wld_2.png', 		// World Map Image
-		wld_3:'Map_Images/index/wld_3.png', 		// World Map Image
-		wld_4:'Map_Images/index/wld_4.png', 		// World Map Image
+		wld_1:'Map_Images/index/wld_1_cntr.png', 		// World Map Image
+		wld_2:'Map_Images/index/wld_2_lat.png', 		// World Map Image
+		wld_3:'Map_Images/index/wld_3_fold.png', 		// World Map Image
+		wld_4:'Map_Images/index/wld_4_block.png', 		// World Map Image
 		wld_5:'Map_Images/index/wld_5.png', 		// World Map Image
-		wld_6:'Map_Images/index/wld_6.png', 		// World Map Image
-		wld_7:'Map_Images/index/wld_7.png' 		// World Map Image
+		wld_6:'Map_Images/index/wld_6_sea.png', 		// World Map Image
+		wld_7:'Map_Images/index/wld_7.png' ,		// World Map Image
+		wld_8:'Map_Images/index/wld_8.png' 		// World Map Image
 	}; //DONT FORGET TO REMOVE COMMA FROM LAST MENTIONED IMAGE ABOVE
 
 	// Function to update the image based on selected map
@@ -625,7 +626,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	} else if (selectedValue === "AncHist_3") {
 		mapImage.src = "Map_Images/index/AncHist_3_Ak.png";
 	} else if (selectedValue === "AncHist_4") {
-		mapImage.src = "";
+		mapImage.src = "Map_Images/index/AncHist_4_AP.png";
 	} else if (selectedValue === "AncHist_5") {
 		mapImage.src = "Map_Images/index/AncHist_5_Whs.png";
 	} else if (selectedValue === "Por_1") {

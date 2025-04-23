@@ -63,7 +63,7 @@ function getUrlParameter(name) {
     return urlParams.get(name);
 }
 
-// Check if 'selection' parameter is 'wld_1'
+// Check if 'selection' parameter is 'wld'
 if (getUrlParameter('selection').includes('wld')) {
     map.setView([0, 0], 2); // Center at (0,0) with zoom level 2
 
@@ -262,6 +262,9 @@ function addGeometryToMap(geometry, river) {
             className: className  // Apply correct class
         }).addTo(map);
     }
+
+
+    
 
     if (layer) {
         paths[river] = layer;

@@ -14,9 +14,7 @@
 	stroke: rgba(27, 101, 151, 1) !important; 
 	fill: rgba(27, 101, 151, 0.3) !important;
 	stroke-width: 2px !important;
-	
 }
-
 
 
 
@@ -24,6 +22,7 @@
     fill: rgba(150, 81, 81, 0.8) !important; /* Adjust fill if necessary */
     transition: none !important; /* Prevent animations */
 }
+
 
 
 

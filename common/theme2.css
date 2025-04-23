@@ -1,4 +1,4 @@
-/* dark theme */
+/* DARK THEME */
 body {
 	background: #222222 !important;
 	}
@@ -12,14 +12,13 @@ color: white !important;
 } 
 
 
-.reveal-all{
-	color:#ffffff; background-color:#505050 !important; 
+.reveal-all, .reveal-list {
+	color:#ffffff; background-color:#3d3d3d !important; border: #303030;
 }
 
 .reveal-all-tooltip {
     background-color: rgba(256,256,256,0.9);
 }
-
 
 
 
@@ -47,15 +46,3 @@ color: white !important;
 } 
 
 
- 
-
-/* dark theme pc ends */
-	
-/*    MOBILE CSS */
-@media only screen and (max-width: 649px){
-#header{
-	color:white !important;
-	
-}
-
-}

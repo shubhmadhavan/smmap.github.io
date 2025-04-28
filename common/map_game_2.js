@@ -27,6 +27,7 @@ L.imageOverlay('../Map_Images/India_OS_dark.jpg', imageBounds).addTo(map);
 // Check if 'selection' parameter is 'wld_1'
 if (getUrlParameter('selection').includes('wld')) {
     map.setView([0, 0], 2); // Center at (0,0) with zoom level 2
+    map.setMaxZoom(6.3);
 
     // Remove existing image layers
     document.querySelectorAll('.leaflet-image-layer.leaflet-zoom-animated, .leaflet-tile-container.leaflet-zoom-animated').forEach(layer => {

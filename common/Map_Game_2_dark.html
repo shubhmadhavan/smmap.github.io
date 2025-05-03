@@ -177,12 +177,32 @@
 
 <button class="reveal-all">Reveal</button> 
 <button class="reveal-list">📋</button>
+<button class="info-br">ⓘ</button>
 
 <div class="sidebar" style="display: none;">
     <br>
     <ul class="map-data-list"></ul>
 </div>
 
+
+<Style>
+    .nl {
+        font-size:0.6rem !important;
+        display:none;
+    }
+</Style>
+
+<script> /* TOGGLE INFO */
+
+document.querySelector('.info-br').addEventListener('click', function () {
+  const elements = document.querySelectorAll('.kl, .nl');
+  elements.forEach(el => {
+    el.style.display = (el.style.display === 'none' || getComputedStyle(el).display === 'none') ? 'block' : 'none';
+  });
+});
+
+
+</script>
 
 <script> //REVEAL ALL BUTTON (and loading tooltips at startup) 
 //WORKING 

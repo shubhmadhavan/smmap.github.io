@@ -98,6 +98,24 @@ path{
 }
 
 
+.info-br{
+	font-size:18px;
+	z-index: 1999 !important;
+  color:#7e7e7e;
+	position: absolute !important;
+	top: 8px !important;
+  
+	left: 20px;
+	right: 00px;
+	margin-left: auto;
+	margin-right: auto;
+  
+	width: fit-content;
+
+}
+
+
+
 
 #map {
 	top: 31px;
@@ -144,6 +162,8 @@ left: 4.2px !important;
 
 	.reveal-list{position: absolute !important; top: unset !important; bottom: 5px !important; left: 0px !important; font-size: 19px !important; margin-left:10px;}
 	
+	.info-br{position: absolute !important; top: unset !important; bottom: 5px !important; left: 0px !important; font-size: 19px !important; margin-left:20px;
+
 	.sidebar { height: 90vh !important;}
 	
 

@@ -11,9 +11,9 @@
 
 
 .leaflet-interactive:hover{
-	stroke: rgba(27, 101, 151, 1) !important; 
-	fill: rgba(27, 101, 151, 0.3) !important;
-	stroke-width: 2px !important;
+	stroke: rgb(88, 136, 178) !important; 	
+	fill: rgba(157, 189, 212, 0.5) !important; 	
+	stroke-width: 1px !important;
 }
 
 
@@ -22,6 +22,40 @@
     fill: rgba(150, 81, 81, 0.8) !important; /* Adjust fill if necessary */
     transition: none !important; /* Prevent animations */
 }
+
+
+/*  */
+
+
+.leaflet-marker-icon{opacity:0;}
+
+.line_leaflet{
+	stroke: #a3c2de !important; 
+	stroke-width: 1px;	
+	fill: rgba(204, 229, 247, 0.2) !important; 	
+}
+
+.line_leaflet:hover{
+	fill: rgba(157, 189, 212, 0.5) !important; 	
+	stroke: rgb(88, 136, 178) !important; 	
+	stroke-width: 1px;	
+}
+
+
+.selected-path{
+	stroke-width: 1px;	
+	fill: rgba(87, 164, 220, 0.2) !important; 
+}
+
+
+.selected-path:hover{
+	stroke-width: 2px !important;	
+}
+
+/*  */
+
+
+
 
 
 

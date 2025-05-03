@@ -61,6 +61,7 @@ const mapData = {
 
 
 /* 
+"Nallamala TR (AP)":"",
 "":"",
 "":"",
 "":"",
@@ -70,10 +71,4 @@ const mapData = {
 "":"",
 "":"",
 "":"",
-"":"",
-"":"",
-"":"",
-"":"",
-"":"",
-"":"",
-remove comma for ending river*/
+*/

@@ -1,12 +1,26 @@
 
-.polygon_leaflet{
+.line_leaflet{
 	stroke: #a3c2de !important; 
 	stroke-width: 1px;	
-	fill: rgba(181, 215, 239, 0.3) !important; 	
+	fill: rgba(204, 229, 247, 0.2) !important; 	
+	transition: all 0.5s;
 }
 
-.polygon_leaflet:hover{
-	stroke: #475969 !important; 
-	fill: rgba(181, 215, 239, 0.3) !important; 	
+.line_leaflet:hover{
+	fill: rgba(157, 189, 212, 0.5) !important; 	
+	stroke: rgb(88, 136, 178) !important; 	
 	stroke-width: 1px;	
+}
+
+
+.selected-path{
+	stroke-width: 1px;	
+	fill: rgba(87, 164, 220, 0.2) !important; 
+	transition: all 0.5s;
+
+}
+
+
+.selected-path:hover{
+	stroke-width: 2px !important;	
 }

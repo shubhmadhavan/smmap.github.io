@@ -21,3 +21,7 @@ const mapData = {
 "Rangpur (Bhadar River | GJ)":"POINT (72.7555249 23.4591987)",
 "Daimabad (Pravara River | MH)":"POINT (74.7012035 19.5107011)"
 }
+
+
+/* Desalpur */
+/* Mitathal */

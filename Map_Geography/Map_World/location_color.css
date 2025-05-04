@@ -9,20 +9,17 @@
 
 
 
-
 .leaflet-interactive:hover{
-	stroke: rgb(88, 136, 178) !important; 	
-	fill: rgba(157, 189, 212, 0.5) !important; 	
-	stroke-width: 1px !important;
+	stroke: rgb(70, 109, 143) !important; 	
+	fill: rgba(92, 140, 173, 0.3) !important; 	
+	stroke-width: 2px !important;
 }
-
 
 
 .leaflet-interactive.persistent-hover {
     fill: rgba(150, 81, 81, 0.8) !important; /* Adjust fill if necessary */
     transition: none !important; /* Prevent animations */
 }
-
 
 /*  */
 
@@ -37,7 +34,7 @@
 
 .line_leaflet:hover{
 	fill: rgba(157, 189, 212, 0.5) !important; 	
-	stroke: rgb(88, 136, 178) !important; 	
+	stroke: rgb(78, 129, 174) !important; 	
 	stroke-width: 1px;	
 }
 

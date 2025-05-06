@@ -1,770 +1,602 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.49">
-  <meta name="description" content="Shubh's Map Repository">
-  <meta name="robots" content="index,follow">
-  <meta name="author" content="Shubh Madhavan">
-  <title>Shubh's Map Repository</title>
-    <link rel="stylesheet" href="index_styles.css">
- 
-  <link rel="manifest" href="/site.webmanifest">  
-  <script src="jquery-3.6.0.min.js"></script>
-  
-<link href="data:image/x-icon;base64,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" rel="icon" type="image/x-icon" />
-<link rel="manifest" href="/favicon/site.webmanifest" />
-
-<style>
-#rivers-label > span{
-margin-top:10px;
-}
-
-@supports (-moz-appearance: none) {
-#rivers-label, #rivers-learn-label{
-		position: relative; /* Enable positioning adjustments */
-		top: -27px !important; /* Move up by 20px */
-	}
-
-
-}
-</style>
-	
-
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.49">
+      <meta name="description" content="Shubh's Map Repository">
+      <meta name="robots" content="index,follow">
+      <meta name="author" content="Shubh Madhavan">
+      <title>Shubh's Map Repository</title>
+        <link rel="stylesheet" href="index_styles.css">
+     
+      <link rel="manifest" href="/site.webmanifest">  
+      <script src="jquery-3.6.0.min.js"></script>
+      
+    <link href="data:image/x-icon;base64,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" rel="icon" type="image/x-icon" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    
 </head>
-
 <body>
 
+<div id="zipper-wrapper">
+
+<div class="title-header">Shubh's Map Repository</div>
+
+    <div class="zipper-row-header">Indian Geography</div>
+  <!-- Example Zipper 1 -->
+                <div class="zipper-block">
+                    <div class="zipper" data-image="Map_Images/index/riv_1.png" data-href="common/Map_Game_2_dark.html?selection=riv_1">
+                    <img class="background-image" alt="Revealed Content">
+                    <div class="zipper-left zipper-side"></div>
+                    <div class="zipper-right zipper-side"></div>
+                    <div class="zipper-handle"></div>
+                    </div>
+                    <div class="zipper-label">Rivers </div>
+                </div>
 
 
-  <div class="tabs">
-    <div class="tab" data-tab="1">Geography</div>
-    <div class="tab" data-tab="2">History</div>
-    <div class="tab" data-tab="3">Economy</div>
-  </div>
+                <div class="zipper-block">
+                <div class="zipper" data-image="Map_Images/index/dm_1.png" data-href="common/Map_Game_2_dark.html?selection=dm_1">
+                    <img class="background-image" alt="Revealed Content">
+                    <div class="zipper-left zipper-side"></div>
+                    <div class="zipper-right zipper-side"></div>
+                    <div class="zipper-handle"></div>
+                </div>
+                <div class="zipper-label">Dams & Reservoirs</div>
+                </div>
 
-  <div class="content" id="content-1">
-    <!-- Content for Geography Index Site -->
+            <div class="zipper-block">
+                <div class="zipper" data-image="Map_Images/index/mt_1.png" data-href="common/Map_Game_2_dark.html?selection=mt_1">
+                <img class="background-image" alt="Revealed Content">
+                <div class="zipper-left zipper-side"></div>
+                <div class="zipper-right zipper-side"></div>
+                <div class="zipper-handle"></div>
+                </div>
+                <div class="zipper-label">Mountains</div>
+            </div>
     
-		<body style="margin-top:2px;">
 
-	
-
-
-			<div class="container"  >
-
-
-				<div class="centered" style="gap:14px !important;">
-		<div class="buttons-class"> <!-- change zoom of buttons-class in index_styles -->
-				<br/><br/>
-
-
-				<form class="selection-form-1" action="common\Map_Game_2_dark.html" method="get">
-					
-
-
-					<div class="button-container"  id="button-container-1">
-
-				<div class="label_heading">Core Geography:</div>
-						<input type="radio" id="option1" name="selection" value="riv_1" checked 	>
-						<label for="option1" >
-							<span class="left-text">Rivers</span>
-
-						</label>
-
-						<input type="radio" id="option6" name="selection" value="dm_1">
-						<label for="option6">
-							<span class="left-text">Dams & Reservoirs</span>
-
-						</label>
-						
-						<input type="radio" id="option7" name="selection" value="wf_1">
-						<label for="option7">
-							<span class="left-text">Waterfalls</span>
-
-						</label>
-
-
-
-					
-						<input type="radio" id="option2" name="selection" value="mt_1">
-						<label for="option2">
-							<span class="left-text">Mountains</span>
-
-						</label>
-					
-						<input type="radio" id="option2a" name="selection" value="gl_1">
-						<label for="option2a">
-							<span class="left-text">Glaciers</span>
-
-						</label>
-
-						
-						
-
-
-
-
-			<div class="label_heading">Environment:</div>
-						<input type="radio" id="option3" name="selection" value="np_1">
-						<label for="option3">
-							<span class="left-text">National Parks</span>
-
-						</label>
-					
-						<input type="radio" id="option4" name="selection" value="tr_1">
-						<label for="option4">
-							<span class="left-text">Tiger Reserves</span>
-
-						</label>
-
-						<input type="radio" id="option5" name="selection" value="rs_1">
-						<label for="option5">
-							<span class="left-text">Ramsar Sites</span>
-
-						</label>
-
-						
-
-						
-
-			<div class="label_heading">World:</div>
-						<input type="radio" id="option8" name="selection" value="wld_1">
-						<label for="option8">
-							<span class="left-text">Countries</span>
-
-						</label>
-
-						<input type="radio" id="option9" name="selection" value="wld_2">
-						<label for="option9">
-							<span class="left-text">Major Coordinates</span>
-
-						</label>
-
-						<input type="radio" id="option10" name="selection" value="wld_3">
-						<label for="option10">
-							<span class="left-text">Fold Mountains</span>
-						</label>
-
-						<input type="radio" id="option11" name="selection" value="wld_4">
-						<label for="option11">
-							<span class="left-text">Block Mountains</span>
-						</label>
-
-						<input type="radio" id="option12" name="selection" value="wld_5">
-						<label for="option12">
-							<span class="left-text">Rivers</span>
-						</label>
-						
-						<input type="radio" id="option13" name="selection" value="wld_6">
-						<label for="option13">
-							<span class="left-text">Seas</span>
-						</label>
-
-						<input type="radio" id="option14" name="selection" value="wld_7">
-						<label for="option14">
-							<span class="left-text">Ocean Currents 🔧</span>
-						</label>
-
-						<input type="radio" id="option15" name="selection" value="wld_8">
-						<label for="option15">
-							<span class="left-text">Conflicts 🔧</span>
-						</label>
-						
-
-					</div>
-					
-
-
-					<button type="start" id="start1" style="width:170px; background-color:#808080;">Submit</button>
-
-
-
-					<br/>
-					</form>
-				</div>
-				
-				
-			
-							
-		<!-- Image container for selected map -->
-		<div id="map-image-container" style="display:flex; justify-content: center; align-items: center; ">
-			<img id="map-image" src="" alt="Selected Map Image" style="display: none;"> 
-				<!-- change width of #map-image in index-styles -->
-		</div>
-
-				
-			</div>
-
-		</div>
-   
-  </div>
-
-  
-  <div class="content" id="content-2">
-    <!-- Content for History Index Site -->
-    <body style="margin-top:2px;">
-
-<!--
-	<a href="game_js_creator.html" class="top-right-link">ⓘ</a>
--->
-
-
-    <div class="container"  >
-
-
-        <div class="centered" style="gap:14px !important;">
-<div class="buttons-class"> <!-- change zoom of buttons-class in index_styles -->
-		<br/><br/>
-
-
-
-		<form class="selection-form-2" action="common\Map_Game_2_dark.html" method="get">
-					
-
-
-			<div class="button-container" id="button-container-2">
-				
-
-								
-<!--     Pre-History          -->
-<div class="label_heading">Pre-Historic Sites:</div>
-<input type="radio" class="form_2" id="option201" name="selection" value="PreHist_1" checked>
-<label for="option201">
-	<span class="left-text">Palaeolithic Sites 🔧</span>
-</label>
-
-<input type="radio" class="form_2" id="option202" name="selection" value="PreHist_2" checked>
-<label for="option202">
-	<span class="left-text">Mesolithic Sites 🔧</span>
-</label>
-
-<input type="radio" class="form_2" id="option203" name="selection" value="PreHist_3" checked>
-<label for="option203">
-	<span class="left-text">Neolithic Sites 🔧</span>
-</label>
-
-<input type="radio" class="form_2" id="option204" name="selection" value="PreHist_4" checked>
-<label for="option204">
-	<span class="left-text">Chalcolithic Sites</span>
-</label>
-
-<!--     Ancient          -->
-<div class="label_heading">Ancient:</div>
-<input type="radio" class="form_2" id="option211" name="selection" value="AncHist_1" checked>
-<label for="option211">
-	<span class="left-text">Harappan Sites</span>
-</label>
-
-<input type="radio" class="form_2" id="option212" name="selection" value="AncHist_2" checked>
-<label for="option212">
-	<span class="left-text">Mahajanapadas</span>
-</label>
-
-<input type="radio" class="form_2" id="option213" name="selection" value="AncHist_3" checked>
-<label for="option213">
-	<span class="left-text">Ashokan Edicts</span>
-</label>
-
-
-<input type="radio" class="form_2" id="option214" name="selection" value="AncHist_4" checked>
-<label for="option214">
-	<span class="left-text">Ancient Ports</span>
-</label>
-
-<!--     Contemporary        -->
-
-<input type="radio" class="form_2" id="option400" name="selection" value="AncHist_5">
-<label for="option400">
-<span class="left-text">Bhakti Saints </span>
-</label>
-
-<input type="radio" class="form_2" id="option401" name="selection" value="AncHist_6">
-<label for="option401">
-<span class="left-text">UNESCO WHS </span>
-</label>
-
-
-<div class="label_heading">European Settlements:</div>
-				<input type="radio" class="form_2" id="option21" name="selection" value="Por_1" checked>
-				<label for="option21">
-					<span class="left-text">Portugal</span>
-
-				</label>
-			
-				<input type="radio" class="form_2" id="option22" name="selection" value="Dutch_1">
-				<label for="option22">
-					<span class="left-text">Dutch</span>
-
-				</label>
-			
-				<input type="radio" class="form_2" id="option23" name="selection" value="Eng_1">
-				<label for="option23">
-					<span class="left-text">English</span>
-
-				</label>
-			
-				<input type="radio" class="form_2" id="option24" name="selection" value="Dan_1">
-				<label for="option24">
-					<span class="left-text">Danes</span>
-
-				</label>
-
-				<input type="radio" class="form_2" id="option25" name="selection" value="Fra_1">
-				<label for="option25">
-					<span class="left-text">French</span>
-
-				</label>
-
-
-			<button type="start" id="start2" style="width:200px; background-color:#808080;">Submit</button>
-
-
-				</div>
-
-
-
-
-			<br/>
-			</form>
+            <div class="zipper-block">
+                <div class="zipper" data-image="Map_Images/index/wf_1.png" data-href="common/Map_Game_2_dark.html?selection=wf_1">
+                <img class="background-image" alt="Revealed Content">
+                <div class="zipper-left zipper-side"></div>
+                <div class="zipper-right zipper-side"></div>
+                <div class="zipper-handle"></div>
+                </div>
+                <div class="zipper-label">Waterfalls</div>
+            </div>
+            
+
+            
+            <div class="zipper-block">
+                <div class="zipper" data-image="Map_Images/index/gl_1.png" data-href="common/Map_Game_2_dark.html?selection=gl_1">
+                <img class="background-image" alt="Revealed Content">
+                <div class="zipper-left zipper-side"></div>
+                <div class="zipper-right zipper-side"></div>
+                <div class="zipper-handle"></div>
+                </div>
+                <div class="zipper-label">Glaciers</div>
+            </div>
+    
+
+    
+
+            <div class="zipper-block">
+                <div class="zipper" data-image="Map_Images/index/np_1.png" data-href="common/Map_Game_2_dark.html?selection=np_1">
+                <img class="background-image" alt="Revealed Content">
+                <div class="zipper-left zipper-side"></div>
+                <div class="zipper-right zipper-side"></div>
+                <div class="zipper-handle"></div>
+                </div>
+                <div class="zipper-label">National Parks</div>
+            </div>
+
+            <div class="zipper-block">
+                <div class="zipper" data-image="Map_Images/index/tr_1.png" data-href="common/Map_Game_2_dark.html?selection=tr_1">
+                <img class="background-image" alt="Revealed Content">
+                <div class="zipper-left zipper-side"></div>
+                <div class="zipper-right zipper-side"></div>
+                <div class="zipper-handle"></div>
+                </div>
+                <div class="zipper-label">Tiger Reserves</div>
+            </div>
+
+
+            <div class="zipper-block">
+                <div class="zipper" data-image="Map_Images/index/rs_1.png" data-href="common/Map_Game_2_dark.html?selection=rs_1">
+                <img class="background-image" alt="Revealed Content">
+                <div class="zipper-left zipper-side"></div>
+                <div class="zipper-right zipper-side"></div>
+                <div class="zipper-handle"></div>
+                </div>
+                <div class="zipper-label">Ramsar Sites</div>
+            </div>
+
+
+
+
+
+            
+
+
+<div class="zipper-row-header">World Geography</div>
+
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/wld_1_cntr.png" data-href="common/Map_Game_2_dark.html?selection=wld_1">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Countries</div>
         </div>
-		
-					
-  <!-- Image container for selected map -->
-  <div id="map-image-container-2" style="display:flex; justify-content: center; align-items: center; margin-top: 80px;
-	 margin-top: 22px;">
-    <img id="map-image-2" src="" alt="Selected Map Image" style="display: none;  width: 980px; height: auto; 
- max-width:100%;"> 
-  <div class="shine-overlay"></div>
-		<!-- change width of #map-image in index-styles -->
-</div>
 
 
-</div>
-
-</div>
-
-</div>
-
-  
-
-  
-<div class="content" id="content-3">
-    <!-- Content for History Index Site -->
-    <body style="margin-top:2px;">
-
-<!--
-	<a href="game_js_creator.html" class="top-right-link">ⓘ</a>
- -->
-
-    <div class="container"  >
-
-
-        <div class="centered" style="gap:14px !important;">
-<div class="buttons-class"> <!-- change zoom of buttons-class in index_styles -->
-		<br/><br/>
-
-
-
-		<form class="selection-form-3" action="common\Map_Game_2_dark.html" method="get">
-					
-
-
-			<div class="button-container"  id="button-container-3">
-				
-
-				<div class="label_heading">Minerals:</div>
-
-				<input type="radio" class="form_3" id="option311" name="selection" value="min_1">
-				<label for="option311">
-					<span class="left-text">Iron Ore</span>
-				</label>
-
-				<input type="radio" class="form_3" id="option311_1" name="selection" value="min_1_1">
-				<label for="option311_1">
-					<span class="left-text">Iron & Steel Industries</span>
-				</label>
-
-				<input type="radio" class="form_3" id="option312" name="selection" value="min_2">
-				<label for="option312">
-					<span class="left-text">Manganese</span>
-				</label>
-
-				<input type="radio" class="form_3" id="option313" name="selection" value="min_3">
-				<label for="option313">
-					<span class="left-text">Bauxite</span>
-				</label>
-
-				<input type="radio" class="form_3" id="option314" name="selection" value="min_4">
-				<label for="option314">
-					<span class="left-text">Mica</span>
-				</label>
-
-
-
-
-
-
-
-				<div class="label_heading">Energy:</div>
-				
-				<input type="radio" class="form_3" id="option321" name="selection" value="erg_1">
-				<label for="option321">
-					<span class="left-text">Coal</span>
-				</label>
-
-				<input type="radio" class="form_3" id="option322" name="selection" value="erg_2">
-				<label for="option322">
-					<span class="left-text">Oil Fields (Crude)</span>
-				</label>
-
-				<input type="radio" class="form_3" id="option323" name="selection" value="erg_3">
-				<label for="option323">
-					<span class="left-text">Natural Gas</span>
-				</label>
-
-
-				<input type="radio" class="form_3" id="option331" name="selection" value="erg_4" checked>
-				<label for="option331">
-					<span class="left-text">Nuclear Power Plants</span>
-
-				</label>
-				<!-- Thermal Power Plants, Nuclear Power Plants, Hydropower Projects -->
-				<!-- Solar Energy, Wind Energy, Natural Gas -->
-		
-
-
-				<div class="label_heading">Infra:</div>
-
-				<input type="radio" class="form_3" id="option332" name="selection" value="Ports_1">
-				<label for="option332">
-					<span class="left-text">Ports</span>
-
-				</label>
-			
-				<input type="radio" class="form_3" id="option333" name="selection" value="French_2">
-				<label for="option333">
-					<span class="left-text">Freight Corridors 🔧</span> 
-					
-					<!--
-					https://en.wikipedia.org/wiki/Dedicated_freight_corridors_in_India#/media/File:Map_of_dedicated_freight_corridors_of_India.jpg
-					-->
-
-				</label>
-			
-				<input type="radio" class="form_3" id="option334" name="selection" value="GQ_1">
-				<label for="option334">
-					<span class="left-text">Golden Quad 🔧</span>
-
-				</label>
-				<!--
-				https://en.wikipedia.org/wiki/Golden_Quadrilateral#/media/File:Golden_Quadrilateral.svg
-				-->
-
-				<input type="radio" class="form_3" id="option335" name="selection" value="air_1">
-				<label for="option335">
-					<span class="left-text">Airports (UDAN)</span>
-				</label>
-
-
-
-			<button type="start" id="start3" style="width:200px; background-color:#808080;">Submit</button>
-
-
-				</div>
-
-
-
-
-			<br/>
-			</form>
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/wld_2_lat.png" data-href="common/Map_Game_2_dark.html?selection=wld_2">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Major Coordinates</div>
         </div>
-		
-					
-  <!-- Image container for selected map -->
-  <div id="map-image-container-3" style="display:flex; justify-content: center; align-items: center;">
-    <img id="map-image-3" src="" alt="Selected Map Image" style=""> 
-		<!-- change width of #map-image in index-styles -->
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/wld_3_fold.png" data-href="common/Map_Game_2_dark.html?selection=wld_3">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Fold Mountains</div>
+        </div>
+
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/wld_4_block.png" data-href="common/Map_Game_2_dark.html?selection=wld_4">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Block Mountains</div>
+        </div>
+
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/wld_5_rivers.png" data-href="common/Map_Game_2_dark.html?selection=wld_5">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Rivers of the World</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/wld_6_sea.png" data-href="common/Map_Game_2_dark.html?selection=wld_6">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Seas</div>
+        </div>
+        
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/wld_7.png" data-href="common/Map_Game_2_dark.html?selection=wld_7">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Ocean Currents 🔧</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/wld_8.png" data-href="common/Map_Game_2_dark.html?selection=wld_8">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Conflicts 🔧</div>
+        </div>
+
+       
+
+<div class="zipper-row-header">Economy</div>
+
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/min_1.png" data-href="common/Map_Game_2_dark.html?selection=min_1">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Iron Ore</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/min_1_1.png" data-href="common/Map_Game_2_dark.html?selection=min_1_1">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Iron & Steel Industries</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/min_2.png" data-href="common/Map_Game_2_dark.html?selection=min_2">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Manganese</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/min_3.png" data-href="common/Map_Game_2_dark.html?selection=min_3">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Bauxite</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/min_4.png" data-href="common/Map_Game_2_dark.html?selection=min_4">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Mica</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/erg_1.png" data-href="common/Map_Game_2_dark.html?selection=erg_1">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Coal</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/erg_2.png" data-href="common/Map_Game_2_dark.html?selection=erg_2">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Oil Fields (Crude)</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/erg_3.png" data-href="common/Map_Game_2_dark.html?selection=erg_3">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Natural Gas</div>
+        </div>
+
+
+
+        <div class="zipper-block">
+        <div class="zipper" data-image="Map_Images/index/erg_4.png" data-href="common/Map_Game_2_dark.html?selection=erg_4">
+        <img class="background-image" alt="Revealed Content">
+        <div class="zipper-left zipper-side"></div>
+        <div class="zipper-right zipper-side"></div>
+        <div class="zipper-handle"></div>
+        </div>
+        <div class="zipper-label">Nuclear Power Plants</div>
+        </div>
+
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/ports_1.png" data-href="common/Map_Game_2_dark.html?selection=Ports_1">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Ports</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/air_1.png" data-href="common/Map_Game_2_dark.html?selection=air_1">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Airports (UDAN)</div>
+        </div>
+
+
+
+        <div class="zipper-row-header">History</div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/air_1.png" data-href="common/Map_Game_2_dark.html?selection=PreHist_1">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Palaeolithic 🔧</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/air_1.png" data-href="common/Map_Game_2_dark.html?selection=PreHist_2">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Mesolithic 🔧</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/air_1.png" data-href="common/Map_Game_2_dark.html?selection=PreHist_3">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Neolithic 🔧</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/PreHist4_Cu.png" data-href="common/Map_Game_2_dark.html?selection=PreHist_4">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Chalcolithic</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/AncHist_1_Hp.png" data-href="common/Map_Game_2_dark.html?selection=AncHist_1">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Harappan</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/AncHist_2_Mj.png" data-href="common/Map_Game_2_dark.html?selection=AncHist_2">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Mahajanapadas</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/AncHist_3_Ak.png" data-href="common/Map_Game_2_dark.html?selection=AncHist_3">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Ashokan Edicts</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/AncHist_4_AP.png" data-href="common/Map_Game_2_dark.html?selection=AncHist_4">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Ancient Ports</div>
+        </div>
+
+        
+
+
+    <div class="zipper-block">
+        <div class="zipper" data-image="Map_Images/index/AncHist_5_Bhakti.png" data-href="common/Map_Game_2_dark.html?selection=AncHist_5">
+        <img class="background-image" alt="Revealed Content">
+        <div class="zipper-left zipper-side"></div>
+        <div class="zipper-right zipper-side"></div>
+        <div class="zipper-handle"></div>
+        </div>
+        <div class="zipper-label">Bhakti Saints</div>
+    </div>
+
+
+    <div class="zipper-block">
+        <div class="zipper" data-image="Map_Images/index/AncHist_6_Whs.png" data-href="common/Map_Game_2_dark.html?selection=AncHist_6">
+        <img class="background-image" alt="Revealed Content">
+        <div class="zipper-left zipper-side"></div>
+        <div class="zipper-right zipper-side"></div>
+        <div class="zipper-handle"></div>
+        </div>
+        <div class="zipper-label">UNESCO WHS</div>
+    </div>
+
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/por_1.png" data-href="common/Map_Game_2_dark.html?selection=Por_1">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Portuguese</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/dutch_1.png" data-href="common/Map_Game_2_dark.html?selection=Dutch_1">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Dutch</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/eng_1.png" data-href="common/Map_Game_2_dark.html?selection=Eng_1">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">English</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/dan_1.png" data-href="common/Map_Game_2_dark.html?selection=Dan_1">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Danes</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/fra_1.png" data-href="common/Map_Game_2_dark.html?selection=Fra_1">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">French</div>
+        </div>
+
+
+
+
+
+
+
+
+
 </div>
 
 
-
-
-</div>
-
-</div>
-
-</div>
-
- <div class="practice-div">
-<input type="checkbox" id="practice-tick" >
-<label for="practice-tick" class="practice-tick-label">Game Mode</label>
-</div> 
-
-</body>
-	
-  </div>
- 
-	
-  </div>
-
-
-
-  <script>
-	document.addEventListener('DOMContentLoaded', () => {
-	  const tabs = document.querySelectorAll('.tab');
-	  const contents = document.querySelectorAll('.content');
-  
-	  function activateTab(tabIndex) {
-		tabs.forEach((tab, index) => {
-		  if (index + 1 === tabIndex) {
-			tab.classList.add('active');
-		  } else {
-			tab.classList.remove('active');
-		  }
-		});
-  
-		contents.forEach((content, index) => {
-		  if (index + 1 === tabIndex) {
-			content.classList.add('active');
-		  } else {
-			content.classList.remove('active');
-		  }
-		});
-  
-		// Save selected tab index to localStorage
-		localStorage.setItem('activeTab', tabIndex);
-	  }
-  
-	  tabs.forEach((tab, index) => {
-		tab.addEventListener('click', () => {
-		  activateTab(index + 1);
-		});
-	  });
-  
-	  // Retrieve last active tab from localStorage or default to first tab
-	  const savedTab = localStorage.getItem('activeTab');
-	  activateTab(savedTab ? parseInt(savedTab, 10) : 1);
-	});
-  </script>
-  
-  
-  
-
-
-<script> // Map Image Script
-	// Define the images to be displayed based on selected map option
-	const mapImages = {
-		riv_1: 'Map_Images/index/riv_1.png',     // Rivers image
-		mt_1: 'Map_Images/index/mt_1.png',     // Mountains image
-		gl_1: 'Map_Images/index/gl_1.png',
-		np_1: 'Map_Images/index/np_1.png',     // National Parks image
-		tr_1: 'Map_Images/index/tr_1.png',     // Tiger Reserves image
-		dm_1: 'Map_Images/index/dm_1.png',     // Dams & Reservoirs image
-		rs_1: 'Map_Images/index/rs_1.png',      // Ramsar Sites image
-		wf_1: 'Map_Images/index/wf_1.png',      // Waterfalls image
-		wld_1:'Map_Images/index/wld_1_cntr.png', 		// World Map Image
-		wld_2:'Map_Images/index/wld_2_lat.png', 		// World Map Image
-		wld_3:'Map_Images/index/wld_3_fold.png', 		// World Map Image
-		wld_4:'Map_Images/index/wld_4_block.png', 		// World Map Image
-		wld_5:'Map_Images/index/wld_5_rivers.png', 		// World Map Image
-		wld_6:'Map_Images/index/wld_6_sea.png', 		// World Map Image
-		wld_7:'Map_Images/index/wld_7.png' ,		// World Map Image
-		wld_8:'Map_Images/index/wld_8.png' 		// World Map Image
-	}; //DONT FORGET TO REMOVE COMMA FROM LAST MENTIONED IMAGE ABOVE
-
-	// Function to update the image based on selected map
-	function updateMapImage() {
-		// Get the selected map value
-		const selectedMap = document.querySelector('input[name="selection"]:checked').value;
-
-		// Get the image element
-		const mapImageElement = document.getElementById('map-image');
-		
-		
-		// Update the image source based on the selected map
-		mapImageElement.src = mapImages[selectedMap];
-
-
-		console.log(mapImageElement.src +' and '+mapImageElement.src );
-
-		// Display the image
-		mapImageElement.style.display = 'block';
-	
-	}
-
-	// Add event listeners to radio buttons to detect changes
-	document.querySelectorAll('input[name="selection"]').forEach(radio => {
-		radio.addEventListener('change', updateMapImage);
-	});
-
-	// Initialize the image on page load
-	window.onload = updateMapImage;
-
-
-</script>
 
 
 <script>
+  document.querySelectorAll('.zipper').forEach((container) => {
+    const image = container.querySelector('.background-image');
+    const handle = container.querySelector('.zipper-handle');
+    const leftTrack = container.querySelector('.zipper-left');
+    const rightTrack = container.querySelector('.zipper-right');
+    const href = container.dataset.href;
+    const imageSrc = container.dataset.image;
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Get all radio buttons with the name "map"
-  const radioButtons = document.querySelectorAll('input[class="form_2"]');
-  
-  // Get the image element
-  const mapImage = document.getElementById("map-image-2");
+    image.src = imageSrc;
 
-  // Function to update the image source based on the selected radio button
-  function updateImage() {
-    const selectedValue = document.querySelector('input[class="form_2"]:checked').value;
-    if (selectedValue === "PreHist_1") {
-		mapImage.src = "";
-    } else if (selectedValue === "PreHist_2") {
-      mapImage.src = "";
-    } else if (selectedValue === "PreHist_3") {
-      mapImage.src = "";
-    } else if (selectedValue === "PreHist_4") {
-      mapImage.src = "Map_Images/index/PreHist4_Cu.png";
-	} else if (selectedValue === "AncHist_1") {
-		mapImage.src = "Map_Images/index/AncHist_1_Hp.png";
-	} else if (selectedValue === "AncHist_2") {
-		mapImage.src = "Map_Images/index/AncHist_2_Mj.png";
-	} else if (selectedValue === "AncHist_3") {
-		mapImage.src = "Map_Images/index/AncHist_3_Ak.png";
-	} else if (selectedValue === "AncHist_4") {
-		mapImage.src = "Map_Images/index/AncHist_4_AP.png";
-	} else if (selectedValue === "AncHist_5") {
-		mapImage.src = "Map_Images/index/AncHist_5_Bhakti.png";
-	} else if (selectedValue === "AncHist_6") {
-		mapImage.src = "Map_Images/index/AncHist_6_Whs.png";
-	} else if (selectedValue === "Por_1") {
-      mapImage.src = "Map_Images/index/por_1.png";
-    } else if (selectedValue === "Dutch_1") {
-      mapImage.src = "Map_Images/index/dutch_1.png";
-    } else if (selectedValue === "Eng_1") {
-      mapImage.src = "Map_Images/index/eng_1.png";
-    } else if (selectedValue === "Dan_1") {
-      mapImage.src = "Map_Images/index/dan_1.png";
-    } else if (selectedValue === "Fra_1") {
-      mapImage.src = "Map_Images/index/fra_1.png";
-    } 
-    // Display the image
-    mapImage.style.display = "block";
+    const containerHeight = container.clientHeight;
+    const maxDrag = containerHeight - handle.clientHeight;
+
+    let isDragging = false;
+    let startY = 0;
+    let hasUnzipped = false;
+
+    function setPosition(y) {
+      const clampedY = Math.min(maxDrag, Math.max(0, y));
+      const percent = clampedY / maxDrag;
+
+      handle.style.top = clampedY + "px";
+      image.style.opacity = (0.6 + 0.2 * percent).toFixed(2);
+
+ /*     container.style.transform = `scale(${1.5 + percent * 0.1})`; */
+
+      const offset = percent * 50;
+      leftTrack.style.transform = `translateX(${-3 - offset}px)`;
+      rightTrack.style.transform = `translateX(${2 + offset}px)`;
+
+      const trackOpacity = (1 - percent).toFixed(2);
+      leftTrack.style.opacity = trackOpacity;
+      rightTrack.style.opacity = trackOpacity;
+      handle.style.opacity = trackOpacity;
+    }
+
+    function triggerUnzip() {
+        if (hasUnzipped) {
+       
+  window.location.href = href;
+  return;
+}
+  hasUnzipped = true;
+
+  let progress = parseFloat(handle.style.top) || 0;
+  const step = 3; // pixels per frame
+  const speed = 10; // ms delay per frame
+
+  function animate() {
+    progress += step;
+    setPosition(progress);
+
+    if (progress < maxDrag) {
+      setTimeout(animate, speed);
+    } else {
+      container.classList.add('unzipped');
+      window.location.href = href;
+    }
   }
 
-  // Add event listeners to the radio buttons
-  radioButtons.forEach(radio => {
-    radio.addEventListener("change", updateImage);
-  });
+  animate();
+  
+}
 
-  // Initialize the image on page load
-  updateImage();
+
+    handle.addEventListener('mousedown', (e) => {
+      if (hasUnzipped) return;
+      isDragging = true;
+      startY = e.clientY - handle.offsetTop;
+      handle.style.cursor = 'grabbing';
+      e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging || hasUnzipped) return;
+      const newY = e.clientY - startY;
+      setPosition(newY);
+      if (newY >= maxDrag) {
+        isDragging = false;
+        triggerUnzip();
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      if (!hasUnzipped) {
+        isDragging = false;
+        handle.style.cursor = 'grab';
+      }
+    });
+
+    handle.addEventListener('dblclick', (e) => {
+      e.preventDefault();
+      triggerUnzip();
+    });
+
+    container.parentElement.addEventListener('dblclick', (e) => {
+  e.preventDefault();
+  triggerUnzip();
 });
-
+  });
 </script>
-
-
-<script>
-
-	document.addEventListener("DOMContentLoaded", function () {
-	  // Get all radio buttons with the name "map"
-	  const radioButtons = document.querySelectorAll('input[class="form_3"]');
-	  
-	  // Get the image element
-	  const mapImage = document.getElementById("map-image-3");
-	
-	  // Function to update the image source based on the selected radio button
-	  function updateImage() {
-		const selectedValue = document.querySelector('input[class="form_3"]:checked').value;
-		if (selectedValue === "erg_4") {
-		  mapImage.src = "Map_Images/index/erg_4.png";
-		} else if (selectedValue === "Ports_1") {
-		  mapImage.src = "Map_Images/index/ports_1.png";
-		} else if (selectedValue === "air_1") {
-		  mapImage.src = "Map_Images/index/air_1.png";
-		} else if (selectedValue === "min_1") {
-		  mapImage.src = "Map_Images/index/min_1.png";
-		} else if (selectedValue === "min_1_1") {
-			mapImage.src = "Map_Images/index/min_1_1.png";
-		} else if (selectedValue === "min_2") {
-		  mapImage.src = "Map_Images/index/min_2.png";
-		} else if (selectedValue === "min_3") {
-		  mapImage.src = "Map_Images/index/min_3.png";
-		} else if (selectedValue === "min_4") {
-		  mapImage.src = "Map_Images/index/min_4.png";
-		} else if (selectedValue === "erg_1") {
-		  mapImage.src = "Map_Images/index/erg_1.png";
-		} else if (selectedValue === "erg_2") {
-		  mapImage.src = "Map_Images/index/erg_2.png";
-		} else if (selectedValue === "erg_3") {
-		  mapImage.src = "Map_Images/index/erg_3.png";
-		} 
-		
-		// Display the image
-		mapImage.style.display = "block";
-	  }
-	
-	  // Add event listeners to the radio buttons
-	  radioButtons.forEach(radio => {
-		radio.addEventListener("change", updateImage);
-	  });
-	
-	  // Initialize the image on page load
-	  updateImage();
-	});
-	
-	</script>
-
-
-<script> // Change Map Image based on user selection
-    // Map image IDs to corresponding button IDs
-    const mappings = {
-        'map-image': 'start1',
-        'map-image-2': 'start2',
-        'map-image-3': 'start3'
-    };
-
-    // Add click event listeners for each image
-    for (const [imgId, btnId] of Object.entries(mappings)) {
-        const imgElement = document.getElementById(imgId);
-        const buttonElement = document.getElementById(btnId);
-
-        if (imgElement && buttonElement) {
-            imgElement.addEventListener('click', function () {
-                buttonElement.click(); // Trigger a click on the corresponding button
-            });
-        }
-    }
-</script>
-	
-<script>
-	// Get the checkbox
-	const practiceTick = document.getElementById('practice-tick');
-	
-	// Get all the forms
-	const forms = document.querySelectorAll('form');
-  
-	// Add an event listener to checkbox
-	practiceTick.addEventListener('change', function() {
-	  // Loop through each form and change the action based on the checkbox state
-	  forms.forEach(form => {
-		if (practiceTick.checked) {
-		  // If checked, set to the "Map_Game_2_dark.html"
-		  form.action = 'common/Map_Game_dark.html';
-		} else {
-		  // If unchecked, revert to the original action
-		  form.action = 'common/Map_Game_2_dark.html';
-		}
-	  });
-	});
-  </script>
-  
-  
-
 
 </body>
 </html>
-
-
-

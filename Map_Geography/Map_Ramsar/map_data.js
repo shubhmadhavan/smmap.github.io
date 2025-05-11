@@ -1,8 +1,8 @@
 const mapData = {
 "Wular Lake (JK)":"POINT (74.55804 34.36961)",
-"Hygam Wetland (JK)":"POINT (74.52786 34.23327)",
+"Hygam Wetland (JK)<span class='nl'>not to be conf. w. Hokersar (JK), Harike (PJ) or Hirakud (OD) </span>":"POINT (74.52786 34.23327)",
 "Shallabugh Wetland (JK)":"POINT (74.73626 34.16682)",
-"Hokersar Wetland (JK)":"POINT (74.71179 34.10292)",
+"Hokersar Wetland (JK)<span class='nl'>not to be conf. w. Hygam (JK), Harike (PJ) or Hirakud (OD) </span>":"POINT (74.71179 34.10292)",
 "Surinsar-Mansar WLS (JK)":"POINT (75.0414 32.77031)",
 "Tso Kar (LK)":"POINT (78.02524 33.31032)",
 "Tso Moriri (LK)":"POINT (78.31594 32.91122)",
@@ -14,7 +14,7 @@ const mapData = {
 "Kanjli Wetland (PJ)":"POINT (75.3773 31.41422)",
 "Nangal WLS (PJ)":"POINT (76.38146 31.39588)",
 "Ropar (PJ)":"POINT (76.5 31.02)",
-"Harike Wetland (PJ)":"POINT (75.01322 31.1418)",
+"Harike Wetland (PJ)<span class='nl'>not to be conf. w. Hygam (PJ), Hokersar (JK) or Hirakud (OD) </span>":"POINT (75.01322 31.1418)",
 "Asan Barrage (UK)":"POINT (77.66555 30.43583)",
 "Sultanpur (HR)":"POINT (76.89638 28.44751)",
 "Bhindawas WLS & BS (HR)":"POINT (76.55171 28.53242)",
@@ -29,7 +29,7 @@ const mapData = {
 "Shaheed Ch.Sh.Azad BS <br><span id='nl'>(Nawabganj, Unnao dis, UP)":"POINT (80.65312 26.61918)",
 "Samaspur BS (Rae Bareli, UP)":"POINT (81.39457 25.99409)",
 "Parvati Arga (Gonda, UP)":"POINT (82.17501 26.95253)",
-"Bakhira BS (Sant Kabir Nagar, UP)":"POINT (83.13895 26.90637)",
+"Bakhira BS (Sant Kabir Nagar, UP) <span class='nl'>not to be confused w. Bakhra dam (HP)</span>":"POINT (83.13895 26.90637)",
 "Kanvar Lake BS (BR)":"POINT (86.1456 25.63013)",
 "Nagi BS (BR)":"POINT (86.37567 24.77445)",
 "Nakti BS (BR)":"POINT (86.43735 24.84143)",
@@ -41,7 +41,7 @@ const mapData = {
 "East Kolkata Wetlands (WB)":"POINT (88.45007 22.55284)",
 "Sundarbans":"POINT (88.98564 21.81066)",
 "Bhitarkanika Mangroves (OD)":"POINT (87.00079 20.74893)",
-"Hirakud Dam (OD)":"POINT (83.81281 21.597)",
+"Hirakud Dam (OD) <span class='nl'>not to be conf. w. Hygam (PJ), Hokersar (JK) or Harike (PJ)</span>":"POINT (83.81281 21.597)",
 "Satkosia Gorge (Tikarpada WLS, OD)":"POINT (84.83202 20.54454)",
 "Anshupa Lake (OD)":"POINT (85.60914 20.45617)",
 "Chilika Lake (OD)":"POINT (85.38679 19.77261)",
@@ -87,7 +87,7 @@ const mapData = {
 "Vembanur (TN)":"POINT (77.37629 8.18251)",
 "Suchindram Tharoor  (TN)":"POINT (77.46515 8.15474)",
 "Sakkarakottai (TN)":"POINT (78.8497 9.36145)"
-	};
+};
 
 
 

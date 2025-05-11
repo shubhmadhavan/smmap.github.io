@@ -1,3 +1,14 @@
+.leaflet-tooltip {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  pointer-events: auto !important;
+  z-index: 10000 !important;
+}
+
+
+/* reset css starts */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -42,6 +53,7 @@ table {
 	border-spacing: 0;
 }
 
+/* end of reset css */
 
 
 .top-right-link{right: 125px !important; opacity: 0.5 !important;} /* home */

@@ -14,7 +14,18 @@ var map = L.map('map', {
  
 }).setView([20.5937, 80.9629], 5); // Set to India center
 
+map.on('tooltipopen', function (e) {
+  const tooltipEl = e.tooltip.getElement();
+  tooltipEl.addEventListener('mouseenter', () => {
+    map.dragging.disable();
+  
+  });
 
+  tooltipEl.addEventListener('mouseleave', () => {
+    map.dragging.enable();
+  
+  });
+});
 
 // Define the bounds of the image (set these to match the geographical area of the image)
 var imageBounds = [[-2.0, 36.78], 

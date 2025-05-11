@@ -5,7 +5,8 @@
 body {
 	background: #ffffff !important;
 	}
-.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom{
+.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom, 
+.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-touch-zoom {
 	background: #ffffff !important;
 	}
 

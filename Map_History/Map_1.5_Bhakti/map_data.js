@@ -1,5 +1,5 @@
 const mapData = {
-"Nammalvar (900 CE)<br><span class='nl' >one of the 12th Alvar;incld in Naalayira Divya Prabandam, iled by Nathamuni":"POINT (77.9894221 8.8711605)",
+"Nammalvar (900 CE)<br><span class='nl' >one of the 12th Alvar;incld in Naalayira Divya Prabandam, compiled by Nathamuni":"POINT (77.9894221 8.8711605)",
 "Manikkavacakar (900 CE)<br><span class='nl'>wrote Thiruvasagam & Thirukkovaiyar (Shaivism)":"POINT (78.3145181 9.956938)",
 "Ramanujacharya (1100 CE)<br><span class='nl'>founded Sri sect of Vaishnavism;exponent of Vishishtadvaita school;unlike his teacher Yadava Prakasa, who espoused the Advaita Vedant school":"POINT (78.633449 9.6849532)",
 "Basavanna (1150 CE)<br><span class='nl'>founder of Lingayat school u. Shaivism; d. reign of Kalyani Chalukya (957–1184) ruler Bijjala II":"POINT (75.710031 16.8301708)",
@@ -9,7 +9,7 @@ const mapData = {
 "Ramananda (1400 CE)<br><span class='nl' >exponent of Sri sect of Vaishnavism (f. by Ramanujacharya)":"POINT (81.8537097 25.4824547)",
 "Kabir (1400 CE)<br><span class='nl' >disciple of Ramananda (founder of Sri sect of Vaishnavism);verses incld in Guru Granth Sahib":"POINT (82.960176 25.3286876)",
 "Ravidas (1400 CE)<br><span class='nl' >verses incld in Guru Granth Sahib & Dadu Panthis":"POINT (83.0437551 25.2944746)",
-"Vidyapati (1400 CE)<br><span class='nl' >Maithil Kavi Koki;Madhubani dis, BR":"POINT (86.1347688 26.3091681)",
+"Vidyapati (1400 CE)<br><span class='nl'>Maithil Kavi Koki;Madhubani dis, BR":"POINT (86.1347688 26.3091681)",
 "Narsinh Mehta (1450 CE)<br><span class='nl' >Gujarati Adi Kavi;wrote 'Vaishnava Jana To'":"POINT (72.0519503 21.3746596)",
 "Surdas (1500 CE)<br><span class='nl'>Faridabad ":"POINT (77.3177894 28.4089123)",
 "Vallabhacharya (1500 CE)<br><span class='nl' >founded Puṣṭimārga sect of Vaishnavism (Krishna-focus)":"POINT (77.6921709 27.5166283)",

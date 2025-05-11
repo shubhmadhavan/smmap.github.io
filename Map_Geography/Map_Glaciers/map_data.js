@@ -22,7 +22,8 @@ const mapData = {
 "Jongsong Glacier":"POINT (88.1352391 27.8815937)",
 "Zemu Glacier":"POINT (88.2155445 27.6727392)",
 "Rathong Glacier":"POINT (88.10916666666667 27.569444444444443)",
-"Teesta Khangtse Glacier":"POINT (88.8269148 27.9758808)"
+"Teesta Khangtse Glacier":"POINT (88.8269148 27.9758808)",
+"Chemayungdung":"POINT (83.6912045 29.8281659)"
 	};
 
 

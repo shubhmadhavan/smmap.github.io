@@ -6,7 +6,8 @@ body {
 	
 
 
-.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom{
+.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom, 
+.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-touch-zoom {
 	background: #f4f5f7 !important;
 	color: white;
 	

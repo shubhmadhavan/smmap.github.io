@@ -33,10 +33,25 @@ document.getElementById('Advance').addEventListener("click", function() {
 
 
 // Initialize the map
+
+var isPhone = window.innerWidth <= 768;
+
+// Set coordinates and zoom based on device
+var initialCoords = isPhone ? [20.0760, 80.9629] : [20.5937, 80.9629]; // Mumbai for phone, India center for desktop
+var zoomLevel = isPhone ? 4 : 5;
+
+
 var map = L.map('map', {
-    doubleClickZoom: false // Disable double click to zoom
- , maxZoom: 8
-}).setView([20.5937, 80.9629], 5); // Set to India center
+    doubleClickZoom: false
+}).setView(initialCoords, zoomLevel);
+
+
+// map initialised 
+
+
+
+
+
 
 map.on('tooltipopen', function (e) {
   const tooltipEl = e.tooltip.getElement();

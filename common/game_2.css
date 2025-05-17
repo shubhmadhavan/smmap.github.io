@@ -35,7 +35,7 @@ path{
     display: flex;
     flex-direction: column;
     padding: 20px;
-    z-index: 1000;
+
     transition: transform 0.3s ease-in-out;
 
 	cursor: pointer;
@@ -84,13 +84,13 @@ path{
 
 .reveal-list{ /* sidebar ☰  */
 	font-size:1.5rem;
-	z-index: 1999 !important;
+	z-index:999999 !important; 
 
 	position: absolute !important;
 
 margin-top: -2px;  
 
-	right: 155px;
+	right: 120px !important;
 	margin-left: auto;
 	margin-right: auto;
   
@@ -161,14 +161,18 @@ left: 4.2px !important;
 
 @media only screen and (max-width: 849px){  /* ipad media below */
 
-	#map{top: 2px !important;}
+
+	#map{top: 22px !important; margin-top: 40px !important;}
+
+.top-right-link{position: absolute !important; top: 2px !important; left: 14px !important; font-size: 23px !important;}
+
 	.reveal-all{top: 0px !important; left: -26px !important; font-size: 20px !important; width: fit-content;}
 
-	.reveal-list{position: absolute !important; top: unset !important; bottom: 5px !important; left: 0px !important; font-size: 19px !important; margin-left:10px;}
+	.reveal-list{	position: fixed !important; top: 4px !important; right: 63px !important; font-size: 19px !important; 	z-index: 2147483647 !important; }
 	
-	.info-br{position: absolute !important; top: unset !important; bottom: 5px !important; left: 0px !important; font-size: 19px !important; margin-left:20px;
+	.info-br{position: absolute !important; top: unset !important; bottom: 5px !important; left: 0px !important; font-size: 19px !important; margin-left:20px;}
 
-	.sidebar { height: 90vh !important;}
+	.sidebar {position: absolute; top:32px !important; height: 90vh !important; padding: 1px !important; font-size: 12px !important; opacity: 0.84 !important; z-index: 2 !important;}
 	
 
 }

@@ -1,8 +1,5 @@
 
 
-.map-data-list{
-	margin-top: 25px !important;
-}
 
 .leaflet-tooltip {
   user-select: text !important;
@@ -468,10 +465,8 @@ height:19px;
 
 .leaflet-control-zoom.leaflet-bar.leaflet-control{
 	
-	position: fixed;
-	
-	right: 10px;
-	opacity: 0.8;
+
+	opacity: 0.4;
 	
 	/*zoom ± button */
 	
@@ -494,7 +489,7 @@ height:19px;
 .icons-container{
 	zoom:120%;
 	transform: translate(62px , -30px) !important;
-	}
+}
 
 
 

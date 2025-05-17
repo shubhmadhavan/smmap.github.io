@@ -25,17 +25,21 @@
 
 <body>
   
-
-
+<div class="icons-container-left">
+    <a href="../index.html" class="top-right-link">⌂</a> 
+    <a class="switcher" href="Map_Game_dark.html"> <span class="switcher-text">⇌</span> </a>
+    <button class="reveal-all">Reveal</button> 
+    <button class="info-br">ⓘ</button>
+</div>
 
 <div class="icons-container">
-    <a href="../index.html" class="top-right-link">⌂</a>
     <div class="toggle-map"><img src="..\Map_Images\india_icon_0.png"></div>
     <div class="toggle-map-1"><img src="..\Map_Images\india_icon_1.png"></div>
     <div class="toggle-map-2"><img src="..\Map_Images\india_icon_2.png"></div>
     <div class="toggle-map-3"><img src="..\Map_Images\india_icon_3.png"></div>
     <div class="toggle-map-4"><img src="..\Map_Images\india_icon_4.png"></div>
     <div class="toggle-map-5"><img src="..\Map_Images\india_icon_5.png"></div>
+   <div class="reveal-list-div"> <button class="reveal-list">☰</button> <!-- sidebar .png --></div>
 </div>
 
 
@@ -173,13 +177,7 @@
   
 
     
-    <a class="switcher" href="Map_Game_dark.html">
-        <span class="switcher-text">⇌</span>
-    </a>
 
-<button class="reveal-all">Reveal</button> 
-<button class="reveal-list">☰</button> <!-- sidebar .png -->
-<button class="info-br">ⓘ</button>
 
 <div class="sidebar" style="display: none;">
     <br>
@@ -196,15 +194,20 @@
 
 <script> /* TOGGLE INFO */
 
+
 document.querySelector('.info-br').addEventListener('click', function () {
   const elements = document.querySelectorAll('.kl, .nl');
+  const isHidden = getComputedStyle(elements[0]).display === 'none';
+
   elements.forEach(el => {
-    el.style.display = (el.style.display === 'none' || getComputedStyle(el).display === 'none') ? 'block' : 'none';
+    el.style.display = isHidden ? 'block' : 'none';
   });
+
+  this.classList.toggle('active');
 });
 
-
 </script>
+
 
 <script> //REVEAL ALL BUTTON (and loading tooltips at startup) 
 //WORKING 

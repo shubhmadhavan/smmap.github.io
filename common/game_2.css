@@ -68,11 +68,10 @@ path{
 
 	z-index: 1999 !important;
 
-
 	position: absolute !important;
 	top: 8px !important;
   
-	left: -220px;
+	left: -180px;
 	right: 0px;
 	margin-left: auto;
 	margin-right: auto;
@@ -83,31 +82,34 @@ path{
 
 
 
-.reveal-list{
-	font-size:18px;
+.reveal-list{ /* sidebar ☰  */
+	font-size:1.5rem;
 	z-index: 1999 !important;
-  
+
 	position: absolute !important;
-	top: 8px !important;
-  
-	left: -80px;
-	right: 00px;
+
+margin-top: -2px;  
+
+	right: 155px;
 	margin-left: auto;
 	margin-right: auto;
   
 	width: fit-content;
 
+ background-color:unset; 
+ border: 0px !important;
+
 }
 
 
-.info-br{
+.info-br{  /*  ⓘ */
 	font-size:18px;
 	z-index: 1999 !important;
-  color:#7e7e7e;
+  	color:#7e7e7e;
 	position: absolute !important;
 	top: 8px !important;
   
-	left: 20px;
+	left: -20px;
 	right: 00px;
 	margin-left: auto;
 	margin-right: auto;

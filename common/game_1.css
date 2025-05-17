@@ -1,3 +1,9 @@
+
+
+.map-data-list{
+	margin-top: 25px !important;
+}
+
 .leaflet-tooltip {
   user-select: text !important;
   -webkit-user-select: text !important;
@@ -8,13 +14,38 @@
 }
 
 
-.top-right-link{right: 125px !important; opacity: 0.5 !important;} /* home */
+
+.switcher{
+	all:unset;
+	position:absolute; 
+	left: 10px;
+	margin-top:-1px; 
+	margin-left:28px; z-index:9999999; 
+	font-size:1.3rem;
+
+}
+
+	
+.switcher-text{ opacity: 0.4 !important;}
+.switcher-text:hover{ opacity:1 !important;}
+
+
+.top-right-link{
+	position:absolute; 
+	font-size:1.4rem !important; 
+	opacity: 0.5 !important;
+
+} /* home */
+	
 .top-right-link:hover {	opacity: 1 !important}
 
+
+
 .toggle-map-3{right: 160px;} /* rivers */
-.toggle-map-1{right: 195px} /* baige */
+.toggle-map-1{right: 190px} /* baige */
 
 .toggle-map-4{right: 225px;} /* night & districts */
+.toggle-map-5{display: none;}
 
 .toggle-map-2 {display:none;} /* white & states */
 .toggle-map {display:none;} /* disable */
@@ -361,22 +392,6 @@ height:19px;
 
 
 
-
-
-.switcher{
-	position:absolute; 
-	margin-top:-6px; 
-	margin-left:8px; z-index:9999999; 
-	font-size:28px;
-}
-
-	
-.switcher-text{
-	opacity: 0.6;
-}
-.switcher-text:hover{ 
-	opacity:1;
- }
 
 
 

@@ -12,6 +12,9 @@
 
 
 
+
+
+
 .switcher{
 	all:unset;
 	position:absolute; 
@@ -94,9 +97,6 @@ body{
 	overflow: hidden;
 }
 
-#nl{
-	font-size:10px; /* for new lines below label*/
-}
 
 .slider-container{
 	margin-top:-20px;

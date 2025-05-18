@@ -1,15 +1,15 @@
 const mapData = {
-"Victorian and Art Deco Ensemble of Mumbai":"POINT (72.82884570000002 18.9289749)",
-"Jantar Mantar":"POINT (75.82456 26.924762)",
-"Architectural Work of Le Corbusier (CH)":"POINT (76.8023693 30.7566254)",
-"Agra Fort":"POINT (78.021112 27.1795328)",
-"Ajanta Caves":"POINT (75.7069356 20.5513286)",
-"Nalanda Mahavihar":"POINT (85.4458458 25.1355943)",
-"Buddhist Monuments at Sanchi":"POINT (77.7398976 23.4809623)",
-"Champaner-Pavagadh Archaeological Park (GJ)":"POINT (73.5372445 22.4858293)",
+"Agra Fort<br><span class='nl'>Babur built a baoli here after winning Panipat; Humayun was crowned here, went to Suris briefly; Akbar made it his capital & rebuilt it w. red sandstone</span>":"POINT (78.021112 27.1795328)",
+"Ajanta Caves<br><span class='nl'>gorge of Waghur River</span>":"POINT (75.7069356 20.5513286)",
+"Victorian & Art Deco Ensemble of Mumbai<br><span class='nl'>bordering the Oval Maidan (formerly 'Esplanade') open space; Victorian Neo-Gothic style and then, in the early 20th century, in the Art Deco idiom; Bombay HC is here</span>":"POINT (72.82884570000002 18.9289749)",
+"Jantar Mantar<br>early 18th century":"POINT (75.82456 26.924762)",
+"Architectural Work of Le Corbusier (CH)<br><span class='nl'>17 sites across 7 countries; (Tokyo JP, La Plata ARG, Marseille FRA most imp); Modern Movement architecture":"POINT (76.8023693 30.7566254)",
+"Nalanda Mahavihar<br><span class='nl'>built by Kumaragupta I around 427 CE; revived by Dharmapala (770-810 CE); Pithipatis of Bodh Gaya also patronised it;attacked by Huns under Mihirakula in 5th CE & Gauda King of BN in 8th CEnt; Mohd Bakhtiyar Khalji raised it in 1200 CE; Nagarjuna (Madhyamaka), Silabhadra (Yogachara), Hiueng Zang (traveller); today, an Inst. of Nat. Imp.":"POINT (85.4458458 25.1355943)",
+"Buddhist Monuments at Sanchi<br><span class='nl'>loc. just west of Betwa; orig. coms. by Ashoka in 3rd BC; Torans added in 1st Cent</span>":"POINT (77.7398976 23.4809623)",
+"Champaner-Pavagadh Archaeological Park (GJ)<br><span class='nl>in Panchamahal, GJ; near historical city of Champaner – founded by Vanraj Chavda in 8th CE (Chavda dys 690-942)":"POINT (73.5372445 22.4858293)",
 "Chhatrapati Shivaji Maharaj Terminus (MH)":"POINT (72.8354475 18.9398446)",
 "Churches and Convents of Goa (GA)":"POINT (73.9117653 15.5023377)",
-"Dholavira (IVC":"POINT (70.2140444 23.8808877)",
+"Dholavira (IVC)":"POINT (70.2140444 23.8808877)",
 "Elephanta Caves (MH)":"POINT (72.9314864 18.9633474)",
 "Ellora Caves (MH)":"POINT (75.1770869 20.0267844)",
 "Fatehpur Sikri":"POINT (77.6679292 27.0945291)",
@@ -29,7 +29,7 @@ const mapData = {
 "Qutab Minar":"POINT (77.1852057 28.524426)",
 "Rani Ki Vav":"POINT (72.101933 23.858924)",
 "Red Fort":"POINT (77.2410203 28.6561592)",
-"Bhimbetka Rock Shelters":"POINT (77.6124331 22.9395461)",
+"Bhimbetka Rock Shelters<br><span class='nl'>foothills of Vindhyas":"POINT (77.6124331 22.9395461)",
 "Sacred Ensembles of Hoysalas":"POINT (75.994155 13.212786)",
 "Santiniketan":"POINT (87.6852323 23.6776471)",
 "Konark Sun Temple":"POINT (86.0945364 19.8875953)",
@@ -46,6 +46,9 @@ const mapData = {
 
 
 /* 
+<br><span class='nl'></span>
+
+<br><span class='nl'>originally commissioned by the Mauryan emperor</span>
 "":"",
 "":"",
 "":"",

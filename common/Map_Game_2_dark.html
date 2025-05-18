@@ -29,8 +29,31 @@
     <a href="../index.html" class="top-right-link">⌂</a> 
     <a class="switcher" href="Map_Game_dark.html"> <span class="switcher-text">⇌</span> </a>
     <button class="reveal-all">Reveal</button> 
+
     <button class="info-br">ⓘ</button>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const button = document.querySelector('.info-br');
+  if (!button) return;
+
+  button.addEventListener('click', function () {
+    const elements = document.querySelectorAll('.kl, .nl');
+    if (elements.length === 0) return;
+
+    const isHidden = getComputedStyle(elements[0]).display === 'none';
+
+    elements.forEach(el => {
+      el.style.display = isHidden ? 'block' : 'none';
+    });
+
+    this.classList.toggle('active');
+  });
+});
+</script>
+
+
 
 <div class="icons-container">
     <div class="toggle-map"><img src="..\Map_Images\india_icon_0.png"></div>
@@ -192,21 +215,7 @@
     }
 </Style>
 
-<script> /* TOGGLE INFO */
 
-
-document.querySelector('.info-br').addEventListener('click', function () {
-  const elements = document.querySelectorAll('.kl, .nl');
-  const isHidden = getComputedStyle(elements[0]).display === 'none';
-
-  elements.forEach(el => {
-    el.style.display = isHidden ? 'block' : 'none';
-  });
-
-  this.classList.toggle('active');
-});
-
-</script>
 
 
 <script> //REVEAL ALL BUTTON (and loading tooltips at startup) 
@@ -339,19 +348,23 @@ window.onload = function () {
 
     let sidebarPopulated = false;
 
+
+
     revealButton.addEventListener('click', function () {
-        if (sidebar.style.display === 'none' || sidebar.style.display === '') {
-            sidebar.style.display = 'flex';
+  if (sidebar.style.display === 'none' || sidebar.style.display === '') {
+    sidebar.style.display = 'flex';
+    localStorage.setItem('sidebarVisible', 'true');
 
-            if (!sidebarPopulated) {
-                populateSidebar();
-                sidebarPopulated = true;
-            }
+    if (!sidebarPopulated) {
+      populateSidebar();
+      sidebarPopulated = true;
+    }
+  } else {
+    sidebar.style.display = 'none';
+    localStorage.setItem('sidebarVisible', 'false');
+  }
+});
 
-        } else {
-            sidebar.style.display = 'none';
-        }
-    });
 
     function getFirstTextNode(element) {
         for (const node of element.childNodes) {
@@ -363,36 +376,97 @@ window.onload = function () {
     }
 
     function populateSidebar() {
-        mapDataList.innerHTML = '';
+    mapDataList.innerHTML = '';
 
-        Object.keys(mapData).forEach(function (key) {
-            const displayName = key.split('<br>')[0].trim();
-            const li = document.createElement('li');
-            li.textContent = displayName;
-            mapDataList.appendChild(li);
+    Object.keys(mapData).forEach(function (key) {
+        const [beforeBR, afterBR = ''] = key.split('<br>'); // Store both parts
+        const displayName = beforeBR.trim();
+        const extraInfo = afterBR.trim();
 
-            li.addEventListener('click', function () {
-                const tooltip = tooltipsMap.get(displayName);
-                if (tooltip) {
-                    const parentDiv = tooltip.closest('div');
-                    const wasHighlighted = li.classList.contains('highlighted');
+        const li = document.createElement('li');
+        li.textContent = displayName;
+        li.dataset.info = extraInfo; // Store the extra info
+        mapDataList.appendChild(li);
 
-                    li.classList.toggle('highlighted');
-                    parentDiv.classList.toggle('highlighted');
+        // Existing click event just for highlight toggle and parentDiv display
+        li.addEventListener('click', function () {
+            const tooltip = tooltipsMap.get(displayName);
+            if (tooltip) {
+                const parentDiv = tooltip.closest('div');
+                const wasHighlighted = li.classList.contains('highlighted');
 
-                    if (!wasHighlighted) {
-                        // Just added highlight
-                        parentDiv.style.display = 'block';
-                    } else {
-                        // Just removed highlight
-                        if (!allTooltipsRevealed) {
-                            parentDiv.style.display = 'none';
-                        }
+                li.classList.toggle('highlighted');
+                parentDiv.classList.toggle('highlighted');
+
+                if (!wasHighlighted) {
+                    parentDiv.style.display = 'block';
+                } else {
+                    if (!allTooltipsRevealed) {
+                        parentDiv.style.display = 'none';
                     }
                 }
-            });
+            }
+            // Removed popup logic from here
         });
+
+        // Add hover event listeners for popup
+        li.addEventListener('mouseenter', function () {
+            showSidebarPopup(li, li.dataset.info);
+        });
+
+        li.addEventListener('mouseleave', function () {
+            if (li._popup) {
+                li._popup.remove();
+                li._popup = null;
+            }
+        });
+
+
+
+
+    });
     }
+
+let currentPopup = null;
+let currentPopupLi = null;
+
+function showSidebarPopup(liElement, content) {
+    if (!content) return;
+
+    // If popup exists on this element, toggle off
+    if (liElement._popup) {
+        liElement._popup.remove();
+        liElement._popup = null;
+        return;
+    }
+
+    // Remove any other popups on other elements
+    if (currentPopup) {
+        currentPopup.remove();
+        if (currentPopupLi) currentPopupLi._popup = null;
+    }
+
+    const popup = document.createElement('div');
+    popup.className = 'sidebar-popup';
+    popup.innerHTML = `<div class="safe-nl">${content.replace(/;/g, '.<br>')}</div>`;
+
+
+    const rect = liElement.getBoundingClientRect();
+
+    popup.style.left = `${rect.left - 182}px`;
+    popup.style.top = `${rect.top}px`;
+
+    document.body.appendChild(popup);
+
+    // Track current popup and its element
+    currentPopup = popup;
+    currentPopupLi = liElement;
+    liElement._popup = popup;
+
+ 
+}
+
+
 
     function populateTooltips() {
         tooltipsMap.clear();
@@ -410,6 +484,19 @@ window.onload = function () {
         childList: true,
         subtree: true,
     });
+
+    window.addEventListener('load', () => {
+  const savedState = localStorage.getItem('sidebarVisible');
+  if (savedState === 'true') {
+    sidebar.style.display = 'flex';
+    if (!sidebarPopulated) {
+      populateSidebar();
+      sidebarPopulated = true;
+    }
+  } else {
+    sidebar.style.display = 'none';
+  }
+});
     
 </script>
     

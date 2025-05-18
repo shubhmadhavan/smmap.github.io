@@ -7,6 +7,7 @@
   }
 }
 
+
 .highlighted {
   background-color: rgba(224, 247, 250, 0.7);
   background-image: linear-gradient(270deg,
@@ -36,10 +37,10 @@ li.highlighted {
 
 .sidebar-popup {
     position: fixed;
-	width: 140px;
-    max-width: 140px;
+	width: 180px;
+    max-width: 180px;
      color: black;
-
+background-color:  rgba(226, 226, 226, 0.5);
     padding: 5px 8px;
     z-index: 9999;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -119,27 +120,39 @@ path{
 
 
 
+.reveal-all {
+  font-size: 16px;
+  color: #393939;
 
-.reveal-all{
+  z-index: 1999 !important;
+  position: absolute !important;
+  top: 8px !important;
+  left: -200px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
 
-	font-size:16px; color:#393939; background-color:#e6e6e6 !important; 
+  width: fit-content;
+  padding: 2px 20px;
+  background-color: #e6e6e6 !important;
 
-	z-index: 1999 !important;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 
-	position: absolute !important;
-	top: 8px !important;
-  
-	left: -200px;
-	right: 0px;
-	margin-left: auto;
-	margin-right: auto;
-  
-	width: fit-content;
-  }
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reveal-all:hover {
+  background-color: #d4d4d4 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
 
 
 
 .info-br{  /*  ⓘ */
+  display:none;
 	font-size:16px; color:#393939; background-color:#e6e6e6 !important; 
 
 	z-index: 1999 !important;
@@ -161,14 +174,14 @@ opacity: 1 !important;
 
 
 .reveal-list{ /* sidebar ☰  */
-	font-size:1.5rem;
+	font-size:20px;
 	z-index:999999 !important; 
 
 	position: absolute !important;
 
 margin-top: -2px;  
 
-	right: 120px !important;
+	right: 122px !important;
 	margin-left: auto;
 	margin-right: auto;
   
@@ -216,23 +229,3 @@ left: 4.2px !important;
 
 }	
 
-
-	
-
-@media only screen and (max-width: 1249px){  /* ipad media below */
-
-
-	#map{top: 22px !important; margin-top: 40px !important;}
-
-.top-right-link{position: absolute !important; top: 4px !important; left: 14px !important; font-size: 23px !important;}
-.switcher{position: absolute !important; top: 28px !important; left: 4px !important; font-size: 16px !important;}
-
-	.reveal-all{top: 0px !important; left: -26px !important; font-size: 20px !important; width: fit-content;}
-
-	.reveal-list{	position: fixed !important; top: 4px !important; right: 63px !important; font-size: 19px !important; 	z-index: 2147483647 !important; }
-
-
-	.sidebar {position: absolute; top:32px !important; height: 90vh !important; padding: 1px !important; font-size: 12px !important; opacity: 0.84 !important; z-index: 9999 !important;}
-	
-
-}

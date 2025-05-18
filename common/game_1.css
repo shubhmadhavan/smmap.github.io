@@ -479,9 +479,6 @@ height:19px;
 
 
 
-
-
-
 	
 		
 .icons-container{
@@ -511,8 +508,10 @@ height:19px;
 .top-right-link{z-index:2 !important; position: absolute !important; top: 4px !important; left: 14px !important; font-size: 23px !important; width: 20px !important;}
 .switcher{position: absolute !important; top: 9px !important; left: 8px !important; font-size: 16px !important;}
 .reveal-all{top: 0px !important; left: -26px !important; font-size: 20px !important; width: fit-content;}
-.reveal-list{	position: fixed !important; top: 4px !important; right: 63px !important; font-size: 19px !important; 	z-index: 2147483647 !important; }
-.sidebar {position: absolute; top:32px !important; height: 90vh !important; padding: 1px !important; font-size: 12px !important; opacity: 0.84 !important; z-index: 9999 !important;}
+.reveal-list{	position: absolute !important; top: 4px !important; 
+	 margin-right: -50px !important; font-size: 19px !important; 	z-index: 2147483647 !important; }
+.sidebar {position: absolute; top:32px !important; height: 90vh !important; padding: 1px !important;
+	 font-size: 16px !important; opacity: 0.84 !important; z-index: 9999 !important;}
 	
 }
 	  

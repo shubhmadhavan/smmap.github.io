@@ -7,9 +7,10 @@ body {
 	font-family: sans-serif;
   }
 
-  ::selection {
-background: rgba(255, 246, 218, 0.5);
+::selection {
+  background: rgba(255, 246, 218, 0.5);
 }
+
 
 
 

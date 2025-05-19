@@ -84,7 +84,7 @@ path{
 .sidebar {
     position: fixed;
     right: 0;
-    top: 0px;
+    top: 2px;
 	z-index: 999 !important;
     width: 280px;
     height: 95vh;
@@ -120,84 +120,10 @@ path{
 
 
 
-.reveal-all {
-  font-size: 16px;
-  color: #393939;
-
-  z-index: 1999 !important;
-  position: absolute !important;
-  top: 8px !important;
-  left: -200px;
-  right: 0px;
-  margin-left: auto;
-  margin-right: auto;
-
-  width: fit-content;
-  padding: 2px 20px;
-  background-color: #e6e6e6 !important;
-
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.reveal-all:hover {
-  background-color: #d4d4d4 !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
 
 
 
-.info-br{  /*  ⓘ */
-  display:none;
-	font-size:16px; color:#393939; background-color:#e6e6e6 !important; 
 
-	z-index: 1999 !important;
-
-	position: absolute !important;
-	top: 8px !important;
-	left: -100px;
-	right: 0px;
-	margin-left: auto;
-	margin-right: auto;
-  
-	width: fit-content;
-}
-
-
-.info-br-active{
-opacity: 1 !important;	
-}
-
-
-.reveal-list{ /* sidebar ☰  */
-	font-size:20px;
-	z-index:999999 !important; 
-
-	position: absolute !important;
-
-margin-top: -2px;  
-
-	right: 122px !important;
-	margin-left: auto;
-	margin-right: auto;
-  
-	width: fit-content;
-
- background-color:unset; 
- border: 0px !important;
-
-}
-
-
-
-#map {
-	top: 31px;
-	background: #0b0b0b;
-}
 
 .leaflet-tooltip.reveal-all-tooltip,
 .leaflet-tooltip.selected-tooltip.leaflet-zoom-animated{

@@ -1,6 +1,6 @@
 /* baige theme */
 body {
-	background: #e2ca97 !important;
+	background: #ebdcbb !important;
 	color: white;
 	}
 	
@@ -8,17 +8,37 @@ body {
 
 .leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom, 
 .leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-touch-zoom {
-	background: #e2ca97 !important;
+	background: #ebdcbb !important;
 	color: white;
 	
 	}
 
 
 
-
     .reveal-all, .reveal-list{ /*button*/
-        font-size:16px; color:#656565; background-color:#d3b97f !important;
+        font-size:16px; color:#656565; background-color:#e0ca9c !important;
     }
+
+    .top-right-link-button, .switcher-button, .info-br {
+	background-color: #e0ca9c !important;
+}
+
+
+    .reveal-all:hover {
+  background-color: rgb(203, 183, 140) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.top-right-link-button:hover, .switcher-button:hover, .info-br:hover {
+	 background-color: rgb(203, 183, 140) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.sidebar {
+    background-color:#efddb5 !important;
+}
 
 
 .leaflet-tooltip.leaflet-zoom-animated{
@@ -64,6 +84,5 @@ body {
 
 /* default theme  ends */
 	
-
 
 

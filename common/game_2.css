@@ -11,10 +11,10 @@
 .highlighted {
   background-color: rgba(224, 247, 250, 0.7);
   background-image: linear-gradient(270deg,
-    rgba(240, 255, 255, 0.7),
-    rgba(250, 224, 246, 0.7),
-    rgba(244, 240, 255, 0.7),
-    rgba(240, 255, 255, 0.7) /* repeated first color to ensure smooth loop */
+    rgba(240, 255, 255, 0.81),
+    rgba(250, 224, 246, 0.81),
+    rgba(244, 240, 255, 0.81),
+    rgba(240, 255, 255, 0.81) /* CHANGE THESE FOR ALTERING ANIMATION COLORS ON MAP */
   );
   background-size: 300% 300%;
   animation: drift 4s linear infinite;
@@ -25,9 +25,9 @@
 li.highlighted {
   background-color: rgba(224, 247, 250, 0.7); /* light cyan base with lower opacity */
   background-image: linear-gradient(270deg,
-    rgba(240, 255, 255, 0.7),
-    rgba(250, 224, 246, 0.7),
-    rgba(244, 240, 255, 0.7)
+    rgba(240, 255, 255, 0.91),
+    rgba(250, 224, 246, 0.91),
+    rgba(244, 240, 255, 0.91) /* CHANGE THESE FOR ALTERING ANIMATION COLORS ON SIDEBAR*/
   );
   background-size: 400% 400%;
   animation: iridescent 3s ease-in-out infinite;

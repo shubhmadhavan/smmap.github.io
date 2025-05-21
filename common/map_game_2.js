@@ -9,7 +9,6 @@ if (/iPhone|iPad/.test(navigator.userAgent)) {
 
 
 
-
 // Initialize the map
 var isPhone = window.innerWidth <= 768;
 

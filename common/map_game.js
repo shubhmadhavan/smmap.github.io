@@ -6,7 +6,6 @@ if (/iPhone|iPad/.test(navigator.userAgent)) {
     }, { passive: false });
 }
 
-
 // Global skip functionality on the Advance button
 // Global skip functionality on the Advance button
 document.getElementById('Advance').addEventListener("click", function() {
@@ -33,7 +32,6 @@ document.getElementById('Advance').addEventListener("click", function() {
 
 
 // Initialize the map
-
 var isPhone = window.innerWidth <= 768;
 
 
@@ -48,8 +46,6 @@ var map = L.map('map', {
 
 
 // map initialised 
-
-
 
 
 

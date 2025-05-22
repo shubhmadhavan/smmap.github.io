@@ -3,7 +3,7 @@ const mapData = {
 "Sahastradhara<br> <span class='nl'>NOT on Ganges;Ganges → Sooswa → Song → Baldi River (Sahasradhara Falls)<span>":"POINT (78.1293615 30.3883919)",
 "Chuliya Waterfall":"POINT (75.5711968 24.9305361)",
 "Keoti Falls":"POINT (81.4529612 24.8164113)",
-"Chachai Waterfall":"POINT (81.30249 24.7918077)",
+"Chachai Waterfall<br><span class='nl'> on Bihad, a trib of Tamsa; east of the Chahai, the discovery of a prehistoric chert arrowhead at Nyagurhee village was made by Le Mesurier (RW engineer) in 1856":"POINT (81.30249 24.7918077)",
 "Dhuandhar Waterfall":"POINT (79.8075411 23.1262738)",
 "Kapildhara Waterfall":"POINT (81.7055688 22.7008773)",
 "Rajrappa Waterfall":"POINT (85.7080133 23.6415377)",

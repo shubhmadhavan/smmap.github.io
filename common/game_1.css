@@ -2,7 +2,161 @@
 body{
 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+
+    width: 99vw !important;
 }
+
+
+
+.toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5{
+	z-index:999;
+opacity:0.6;
+position: absolute;
+top: 8px;
+color: #8a8a8a;
+  transition: all 0.2s ease-in-out;
+}
+
+
+.toggle-map > img, .toggle-map-1 > img, .toggle-map-2 > img, .toggle-map-3 > img, .toggle-map-4 > img, .toggle-map-5 > img  {
+	z-index:9999;
+height:19px;
+}
+
+.toggle-map:hover, .toggle-map-1:hover, .toggle-map-2:hover, .toggle-map-3:hover, .toggle-map-4:hover, .toggle-map-5:hover{
+	z-index:9999;
+	opacity:1;
+	
+}
+
+
+
+.reveal-list{ /* ☰ button that reveals the sidebar   */
+
+
+  color: #333;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  color: #9f9e9e !important;
+  border-radius: 6px;
+  padding: 4px 4px;
+  
+  font-size: 12px !important;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-family: system-ui, sans-serif;
+
+  width: fit-content;
+  display: inline-flex;          /* inline-flex for better centering */
+  align-items: center;           /* vertically center content */
+  justify-content: center;
+  position: absolute !important;
+  left: 88vw !important;
+  top:0px !important;
+
+  z-index: 211111 !important;
+
+}
+
+.reveal-list:hover { 
+background-color: #e0e0e0;
+  color: #000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+}
+
+
+
+
+
+
+
+
+ .toggle-map-4{left: 76vw !important;} /* night & districts */
+
+.toggle-map-1{left: 80vw !important; z-index: 211111 !important;} /* baige */
+
+.toggle-map-3{left: 84vw !important;} /* rivers */
+
+
+.toggle-map-5{display: none;}
+
+.toggle-map-2 {display:none;} /* white & states */
+.toggle-map {display:none;} /* disable */
+
+
+
+.sidebar {
+    position: fixed;
+    right: 0;
+    top: 2px;
+	z-index: 999 !important;
+    width: 280px;
+    height: 95vh;
+	color: #3b3b3b;
+    background-color: #f1f1f1;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    transition: transform 0.3s ease-in-out;
+
+	cursor: pointer;
+    user-select: none; 
+        font-size: 14px !important;
+
+}
+
+.sidebar {
+
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s linear 0.4s;
+  z-index: 9999;
+}
+
+
+
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.sidebar ul li:hover {
+    background-color: #eee;
+}
+
+
+
+.toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5 {
+    position: fixed;  /* instead of absolute */
+    top: 8px;
+    right: 10px;      /* pinned to right edge */
+    z-index: 999;
+    opacity: 0.6;
+    color: #8a8a8a;
+}
+
+
+.reveal-list {
+    position: fixed !important;  /* instead of absolute */
+    top: 0 !important;
+    right: 12px !important;
+    /* keep other properties as-is */
+}
+
+
+
+
 
 .top-wrapper {
   position: absolute !important;
@@ -69,6 +223,7 @@ body{
   display: inline-flex;          /* inline-flex for better centering */
   align-items: center;           /* vertically center content */
   justify-content: center;
+    z-index: 2147483647 !important;
 }
 
 .top-right-link-button:hover, .switcher-button:hover {
@@ -89,6 +244,7 @@ body{
   font-size: 1.3rem; /* adjust as needed */
   opacity: 0.5;
   cursor: pointer;
+    z-index: 2147483647 !important;
 }
 
 
@@ -145,81 +301,6 @@ opacity: 1 !important;
 
 
 
-.reveal-list{ /* ☰ button that reveals the sidebar   */
-	/* 
-
-	margin-left: auto;
-	margin-right: auto;
-  
-	width: fit-content;
-
- border: 0px !important;
-	font-size:16px;
-	z-index:2399999 !important; 
- background-color: #e6e6e6 !important;
-
-
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
- padding: 2px 2px;
-  width: fit-content;
-  
-	position: absolute !important;
-
-	top:-3px !important; */
-
-  color: #333;
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  color: #9f9e9e !important;
-  border-radius: 6px;
-  padding: 4px 4px;
-  
-  font-size: 12px !important;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  font-family: system-ui, sans-serif;
-
-  width: fit-content;
-  display: inline-flex;          /* inline-flex for better centering */
-  align-items: center;           /* vertically center content */
-  justify-content: center;
-  position: absolute !important;
-  left: 1500px !important;
-  top:0px !important;
-
-
-}
-
-.reveal-list:hover { 
-background-color: #e0e0e0;
-  color: #000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-
-
-
-
-
-
- 
-.toggle-map-3{left: 1460px !important;} /* rivers */
-.toggle-map-1{left: 1430px !important;} /* baige */
-
-.toggle-map-4{left: 1400px !important;}} /* night & districts */
-.toggle-map-5{display: none;}
-
-.toggle-map-2 {display:none;} /* white & states */
-.toggle-map {display:none;} /* disable */
-
-
-
-
-
 
 
 .leaflet-tooltip.selected-tooltip.leaflet-zoom-animated, 
@@ -258,7 +339,7 @@ body{
 }
 
 #Advance {
-	position: fixed;
+	position: sticky;
     bottom: -30px;
     left: 50%;
     transform: translateX(-50%);
@@ -314,7 +395,7 @@ input[type="range"]#timeoutSlider {
 
 .info-text {
 	opacity:0;
-	position: fixed;
+	position: sticky;
 	bottom: 30px;
 	right: 20px;
 	width: 300px;
@@ -405,29 +486,6 @@ zoom:125%;
 
 
 
-.toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5{
-	z-index:999999;
-opacity:0.6;
-position: absolute;
-top: 8px;
-color: #8a8a8a;
-}
-
-
-.toggle-map > img, .toggle-map-1 > img, .toggle-map-2 > img, .toggle-map-3 > img, .toggle-map-4 > img, .toggle-map-5 > img  {
-	z-index:999999;
-height:19px;
-}
-
-.toggle-map:hover, .toggle-map-1:hover, .toggle-map-2:hover, .toggle-map-3:hover, .toggle-map-4:hover, .toggle-map-5:hover{
-	z-index:999999;
-	opacity:1;
-	
-}
-
-
-
-
 
 
 	
@@ -495,7 +553,7 @@ height:19px;
 
 header{  /* for the Locate feature go to # header */
 padding:5px;
-position: fixed;
+position: sticky;
 top: 0px;
 
 
@@ -516,7 +574,7 @@ display:none;
   z-index: 1999 !important;
   position: absolute !important;
   top: 8px !important;
-  left: 890px;
+  left: 45vw !important;
   right: 0px;
   margin-left: auto;
   margin-right: auto;
@@ -617,171 +675,88 @@ display:none;
 
 
 
-@media only screen and (max-width: 1249px){  /* ipad REST CASES below */
-body{margin-top:22px !important;}
-#map{top: 22px !important; margin-top: 40px !important; }
-#header,
-.reveal-all{top: 0px !important; left: 150px !important; font-size: 17px !important; width: fit-content;}
-	 margin-right: -50px !important; font-size: 19px !important; 	z-index: 2147483647 !important; }
-
-	 .sidebar {position: absolute; top:32px !important; height: 90vh !important; padding: 1px !important;
-	 font-size: 16px !important; opacity: 0.84 !important; z-index: 9999 !important;}
-	
 
 
-	  
 
 
-@media only screen and (max-width: 1549px){  /* ipad EDGE CASE below */
- 
-.info-br {  /* ⓘ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+  
+  /* iPad portrait styles here */
+   #map{
+  height: 100vh !important;
+ }
+
+body{
+  overflow-x: hidden !important;
+}
+  
+
+
+body{
   font-size: 14px !important;
-}  
 }
-
-
-@media only screen and (max-width: 999px){  /* ipad portrait, iphone most cases media below */
-
-
-
-
-
-
-.top-right-link-button, .switcher-button {
-	 top: -12px !important;
-	transform: translateY(-13px) !important;
-	}
-
 
 
 }
 
 
-@media only screen and (max-width: 899px){  /* iphone EDGE CASE below */
-.info-br {  /* ⓘ */
 
-  font-size: 12px !important;
-	}  
 
-}
+
+
+
+
+
+
+
+
 
 /* General Mobile Fixes */
 @media (max-width: 768px) {
-  html, body {
-    overflow: hidden !important;
-    position: fixed !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    touch-action: none; /* Prevents double-tap zoom etc. */
-  }
 
-  body {
-    margin: 0 !important;
-    padding: 0 !important;
-    zoom: 1 !important;
-  }
-
-  #map {
-    top: 0 !important;
-    height: 100vh !important;
-    max-height: 100vh !important;
-    position: fixed !important;
-    left: 0;
-    right: 0;
-    width: 100vw !important;
-  }
-
-  .leaflet-container {
-    touch-action: none !important;
-    user-select: none !important;
-  }
+.reveal-all { transform: translateX(-26px); }
+.toggle-map-1 { transform: translateX(-12px); } /* baige */
+.toggle-map-3 { transform: translateX(-59px); } /* river */
 
 
-  .top-right-link-button,
-  .switcher-button {
-    transform: none !important;
-    top: 0 !important;
-  }
+
+ .toggle-map-4{display: none !important;}
 
 
   .sidebar {
-    top: 32px !important;
-    height: 85vh !important;
-    overflow-y: auto !important;
-    position: fixed !important;
+    width: 165px;
+    padding: 4px;
+ 
+  opacity: 0.8 !important;
   }
 
-  #Advance {
-    position: fixed !important;
-    bottom: 10px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: 90vw !important;
-    height: auto !important;
-    padding: 1rem !important;
-  }
-
-  .info-text {
-    position: fixed !important;
-    bottom: 20px !important;
-    right: 10px !important;
-    width: 90vw !important;
-    max-height: 60vh !important;
-    overflow-y: auto !important;
-  }
-
-  #result,
-  #result2,
-  #resultSelect,
-  #resultCorrect {
-    max-width: 90vw !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    font-size: 14px !important;
-    padding: 8px !important;
-  }
-
-
-  .info-br {  /* ⓘ */
-  top: -0.145px !important;
-    left: 49px !important;
- }  
-
-.reveal-list { 
-    left: 290px !important;
-}
-
- .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5, .toggle-map-6 
- {transform: translateX(-1200px) translateY(-8px) !important;
-}
- .toggle-map-4 {
-  display: none !important;
- }
-
-
-.point_leaflet.leaflet-interactive {
-  pointer-events: stroke !important;    /* allow interaction on stroke only */
-  pointer-events: visibleFill !important; 
-  cursor: pointer !important;
-  touch-action: manipulation; /* improves responsiveness on mobile */
-  cursor: pointer;
-}
- path {
-  pointer-events: auto;
-  cursor: pointer;
-}
-
-#header { left: 0px !important;}
-
-.score-bottom {
-
-  display: none !important;
 }
 
 
-.slider-container {
 
-  display: none !important;
-}
 
-}
+/* //////////// REVIEW BELOW CSS /////////////////// */
+
+

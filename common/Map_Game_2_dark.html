@@ -24,16 +24,28 @@
 </head>
 
 <body>
-  
 
+
+
+
+  
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const button = document.querySelector('.info-br');
   if (!button) return;
 
-  button.addEventListener('click', function () {
+  let replaced = false;
+
+  function toggleElements() {
     const elements = document.querySelectorAll('.kl, .nl');
     if (elements.length === 0) return;
+
+    if (!replaced) {
+      elements.forEach(el => {
+        el.innerHTML = el.innerHTML.replace(/;/g, '.<br>');
+      });
+      replaced = true;
+    }
 
     const isHidden = getComputedStyle(elements[0]).display === 'none';
 
@@ -41,10 +53,20 @@ document.addEventListener('DOMContentLoaded', function () {
       el.style.display = isHidden ? 'block' : 'none';
     });
 
-    this.classList.toggle('active');
+    button.classList.toggle('active');
+  }
+
+  button.addEventListener('click', toggleElements);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key.toLowerCase() === 't') {
+      toggleElements();
+    }
   });
 });
 </script>
+
+
 
 <div class="top-wrapper">
   <div class="icons-container-left">
@@ -113,7 +135,7 @@ document.body.addEventListener('pointerdown', function (event) {
 <script>
 window.addEventListener('load', function () {
   document.body.addEventListener('pointerdown', function (event) {
-    const RADIUS = 18; // Distance in pixels – 14 works good
+    const RADIUS = 20; // Distance in pixels – 19 works good
 
     const pointerX = event.clientX;
     const pointerY = event.clientY;
@@ -159,57 +181,7 @@ window.addEventListener('load', function () {
 });
 </script>
 
-<script>
-(function () {
-  const movementMap = new WeakMap();
-  let activeTooltip = null;
 
-  // Hook into pointerdown to detect last-activated tooltip
-  document.body.addEventListener('pointerdown', function (event) {
-    const path = event.target.closest('path');
-    if (!path) return;
-
-    let tooltipId = null;
-    if (path.classList.contains('polygon_leaflet')) {
-      tooltipId = path.getAttribute('data-river-name');
-    } else if (path.hasAttribute('aria-describedby')) {
-      tooltipId = path.getAttribute('aria-describedby');
-    }
-
-    if (!tooltipId) return;
-
-    const tooltip = document.getElementById(tooltipId);
-    if (!tooltip || getComputedStyle(tooltip).display !== 'block') return;
-
-    activeTooltip = tooltip;
-  });
-
-  function moveTooltip(tooltip, dx, dy) {
-    if (!movementMap.has(tooltip)) {
-      movementMap.set(tooltip, { x: 0, y: 0 });
-    }
-
-    const current = movementMap.get(tooltip);
-    current.x += dx;
-    current.y += dy;
-
-    const existingTransform = tooltip.style.transform || '';
-    const cleanedTransform = existingTransform.replace(/translate\(-?\d+px, ?-?\d+px\)/, '').trim();
-    tooltip.style.transform = `${cleanedTransform} translate(${current.x}px, ${current.y}px)`.trim();
-  }
-
-  window.addEventListener('keydown', function (e) {
-    if (!activeTooltip || getComputedStyle(activeTooltip).display !== 'block') return;
-
-    switch (e.key) {
-      case 'w': return moveTooltip(activeTooltip, 0, -10); // up
-      case 's': return moveTooltip(activeTooltip, 0, 10);  // down
-      case 'a': return moveTooltip(activeTooltip, -10, 0); // left
-      case 'd': return moveTooltip(activeTooltip, 10, 0);  // right
-    }
-  });
-})();
-</script>
 
 
 
@@ -223,6 +195,9 @@ window.addEventListener('load', function () {
   stroke:  rgb(146, 235, 235) !important;  /* Change path stroke color to red when selected */
   stroke-width: 3px;  /* Increase the stroke width when selected */
 }
+
+
+
 </style>
 
 
@@ -420,23 +395,43 @@ window.onload = function () {
     
     // Click event listener for "reveal-all" button
     document.querySelector('.reveal-all').addEventListener('click', function () {
+    allTooltipsVisible = !allTooltipsVisible;
+    allTooltipsRevealed = !allTooltipsRevealed;
+
+    revealedLayers.forEach(layer => {
+        const tooltipElement = layer.getTooltip().getElement();
+        if (tooltipElement) {
+            tooltipElement.style.display = allTooltipsVisible ? 'none' : 'block';
+        }
+
+        // Fix: Use getTooltip instead of getElement
+        const layerElement = layer.getTooltip()?.getElement();
+        if (layerElement) {
+            layerElement.style.display = allTooltipsVisible ? 'none' : 'block';
+        }
+    });
+});
+
+document.addEventListener('keydown', function (e) {
+    if (e.key.toLowerCase() === 'r') {
         allTooltipsVisible = !allTooltipsVisible;
-        allTooltipsRevealed = !allTooltipsRevealed
+        allTooltipsRevealed = !allTooltipsRevealed;
 
         revealedLayers.forEach(layer => {
             const tooltipElement = layer.getTooltip().getElement();
             if (tooltipElement) {
                 tooltipElement.style.display = allTooltipsVisible ? 'none' : 'block';
             }
-    
+
             // Fix: Use getTooltip instead of getElement
             const layerElement = layer.getTooltip()?.getElement();
             if (layerElement) {
                 layerElement.style.display = allTooltipsVisible ? 'none' : 'block';
             }
-            
         });
-    });
+    }
+});
+
     
 
     
@@ -528,6 +523,9 @@ window.onload = function () {
     });
     }
 
+
+
+    
 let currentPopup = null;
 let currentPopupLi = null;
 
@@ -601,6 +599,88 @@ function showSidebarPopup(liElement, content) {
     
 </script>
     
+
+<script>(function () {
+    const sidebar = document.querySelector('.sidebar');
+    const list = sidebar?.querySelector('.map-data-list');
+    if (!sidebar || !list) return;
+
+    let items = Array.from(list.querySelectorAll('li'));
+    const highlightedItems = items.filter(li => li.classList.contains('highlighted'));
+    let currentIndex = highlightedItems.length
+        ? items.indexOf(highlightedItems[highlightedItems.length - 1])
+        : -1;
+
+    sidebar.setAttribute('tabindex', '0');
+
+    const style = document.createElement('style');
+    style.textContent = `
+        .map-data-list li.focused {
+            background-color: #e0e0e0;
+            outline: 2px solid #888;
+        }
+    `;
+    document.head.appendChild(style);
+
+    function updateFocus() {
+        items.forEach((li, i) => {
+            li.classList.toggle('focused', i === currentIndex);
+        });
+        if (currentIndex >= 0) {
+            items[currentIndex].scrollIntoView({ block: 'nearest' });
+        }
+    }
+
+    sidebar.addEventListener('keydown', (e) => {
+        if (!items.length) return;
+
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            currentIndex = (currentIndex + 1) % items.length;
+            updateFocus();
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            updateFocus();
+        } else if (e.key === 'Enter' && currentIndex >= 0) {
+            e.preventDefault();
+            items[currentIndex].click();
+        }
+    });
+
+    // Global key listener for 'Q' to toggle focus on sidebar
+    document.addEventListener('keydown', (e) => {
+        if (e.key.toLowerCase() === 'q') {
+            e.preventDefault();
+            if (document.activeElement === sidebar) {
+                sidebar.blur();
+            } else {
+                sidebar.focus();
+            }
+        }
+    });
+
+    const observer = new MutationObserver(() => {
+        items = Array.from(list.querySelectorAll('li'));
+        const highlightedItems = items.filter(li => li.classList.contains('highlighted'));
+        if (highlightedItems.length) {
+            currentIndex = items.indexOf(highlightedItems[highlightedItems.length - 1]);
+        } else {
+            currentIndex = -1;
+        }
+        updateFocus();
+    });
+
+    observer.observe(list, { childList: true, subtree: false });
+
+    if (getComputedStyle(sidebar).display !== 'none') {
+        sidebar.focus();
+        if (currentIndex >= 0) updateFocus();
+    }
+})();
+
+</script>
+
 <div id="header" style="display:none !important;"></div>
 
 <div id="map" style="margin-top:-5px;"></div>
@@ -632,6 +712,7 @@ const resourcesMap = {
     'wld_5': { script: '../Map_Geography/Map_World_Rivers/map_data.js', css: '../Map_Geography/Map_World_Rivers/location_color.css' },
     'wld_6': { script: '../Map_Geography/Map_World_Seas/map_data.js', css: '../Map_Geography/Map_World_Seas/location_color.css' },
     'wld_7': { script: '../Map_Geography/Map_World_Rivers/map_data.js', css: '../Map_Geography/Map_World_Rivers/location_color.css' },
+    'wld_8': { script: '../Map_Geography/Map_World_Conflicts/map_data.js', css: '../Map_Geography/Map_World_Conflicts/location_color.css' },
     'dm_1': { script: '../Map_Geography/Map_Reservoirs/map_data.js', css: '../Map_Geography/Map_Reservoirs/location_color.css' },
     'rs_1': { script: '../Map_Geography/Map_Ramsar/map_data.js', css: '../Map_Geography/Map_Ramsar/location_color.css' },
     'np_1': { script: '../Map_Geography/Map_National_Park/map_data.js', css: '../Map_Geography/Map_National_Park/location_color.css' },
@@ -689,6 +770,57 @@ if (resources) {
 
 
 
+<script>
+(function () {
+  const movementMap = new WeakMap();
+  let activeTooltip = null;
+
+  // Hook into pointerdown to detect last-activated tooltip
+  document.body.addEventListener('pointerdown', function (event) {
+    const path = event.target.closest('path');
+    if (!path) return;
+
+    let tooltipId = null;
+    if (path.classList.contains('polygon_leaflet')) {
+      tooltipId = path.getAttribute('data-river-name');
+    } else if (path.hasAttribute('aria-describedby')) {
+      tooltipId = path.getAttribute('aria-describedby');
+    }
+
+    if (!tooltipId) return;
+
+    const tooltip = document.getElementById(tooltipId);
+    if (!tooltip || getComputedStyle(tooltip).display !== 'block') return;
+
+    activeTooltip = tooltip;
+  });
+
+  function moveTooltip(tooltip, dx, dy) {
+    if (!movementMap.has(tooltip)) {
+      movementMap.set(tooltip, { x: 0, y: 0 });
+    }
+
+    const current = movementMap.get(tooltip);
+    current.x += dx;
+    current.y += dy;
+
+    const existingTransform = tooltip.style.transform || '';
+    const cleanedTransform = existingTransform.replace(/translate\(-?\d+px, ?-?\d+px\)/, '').trim();
+    tooltip.style.transform = `${cleanedTransform} translate(${current.x}px, ${current.y}px)`.trim();
+  }
+
+  window.addEventListener('keydown', function (e) {
+    if (!activeTooltip || getComputedStyle(activeTooltip).display !== 'block') return;
+
+    switch (e.key) {
+      case 'i': return moveTooltip(activeTooltip, 0, -10); // up
+      case 'k': return moveTooltip(activeTooltip, 0, 10);  // down
+      case 'j': return moveTooltip(activeTooltip, -10, 0); // left
+      case 'l': return moveTooltip(activeTooltip, 10, 0);  // right
+    }
+  });
+})();
+</script>
 
 
 
@@ -711,3 +843,10 @@ background-image:-moz-linear-gradient(top, #f6f8fa, #ebf0f4 90%);background-imag
 <span></span>
 
     --> 
+
+
+
+
+
+
+   

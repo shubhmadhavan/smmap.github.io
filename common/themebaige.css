@@ -5,7 +5,33 @@ body {
     background: #ebdcbb !important;
 	}
 	
+.highlighted {
+  background-color: rgba(224, 247, 250, 0.7);
+  background-image: linear-gradient(-90deg,
+  rgba(222, 201, 106, 0.9),
+  rgb(245, 233, 188),
+   rgb(237, 226, 181),
+   rgba(222, 201, 106, 0.9)
+   );
+   
+  background-size: 300% 300%;
+  animation: drift 6s ease infinite;
+  z-index: 2147483647 !important;
+}
 
+li.focused {
+
+  background-image: unset !important;
+ background-color: #e4d3b0 !important;
+
+}
+
+
+li.highlighted {
+    background-image: unset !important;
+ background-color: rgba(233, 210, 162,1) !important;
+ 
+  }
 
 .leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom, 
 .leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-touch-zoom {
@@ -41,6 +67,8 @@ body {
 .sidebar {
     background-color:#efddb5 !important;
 }
+.sidebar ul li:hover {
+    background-color: #e5d1a4 !important;
 
 
 .leaflet-tooltip.leaflet-zoom-animated{

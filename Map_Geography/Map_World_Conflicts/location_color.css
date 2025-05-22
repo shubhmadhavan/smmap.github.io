@@ -1,0 +1,21 @@
+.leaflet-interactive {
+	cursor: crosshair;   
+ 
+	stroke: rgba(175, 106, 106, 0.45) !important; 
+	stroke-width: 2px !important;
+	color: #ff7979 !important; 	
+	fill:rgba(255, 179, 179, 0.3) !important; 	
+}
+	
+.point_leaflet{
+
+  width: 1px important;;
+  height: 1px !important;
+}
+
+.leaflet-interactive:hover{
+	stroke: #d17373 !important; 
+	color: #e04040 !important; 	
+	fill:rgba(255, 179, 179, 0.4) !important; 		
+	stroke-width: 2px !important;
+}

@@ -1,6 +1,6 @@
 const mapData = {
 "Kempty Waterfall":"POINT (78.0371964 30.4879258)",
-"Sahastradhara":"POINT (78.1293615 30.3883919)",
+"Sahastradhara<br> <span class='nl'>NOT on Ganges;Ganges → Sooswa → Song → Baldi River (Sahasradhara Falls)<span>":"POINT (78.1293615 30.3883919)",
 "Chuliya Waterfall":"POINT (75.5711968 24.9305361)",
 "Keoti Falls":"POINT (81.4529612 24.8164113)",
 "Chachai Waterfall":"POINT (81.30249 24.7918077)",
@@ -11,9 +11,7 @@ const mapData = {
 "Jonha Falls":"POINT (85.6102055 23.3423069)",
 "Barehipani Waterfall":"POINT (86.3801873 21.9328896)",
 "Elephant Falls":"POINT (91.8225513 25.5375374)",
-"Nohkalikai Falls":"POINT (91.6859562 25.2754203)",
-"Kynrem falls":"POINT (91.7166567 25.2272466)",
-"Nohsngithiang / Mawsmai Falls":"POINT (91.732537 25.2389306)",
+"Nohsngithiang WF, Nohkalikai WF & Kynrem WF<br><span class='nl'>diff seasonal WFs, loc. in vicinity of each o.; Nohsngithiang WF is aka Mawsmai WF ":"POINT (91.732537 25.2389306)",
 "Tirathgarh Waterfall":"POINT (81.8651088 18.9139499)",
 "Duduma Waterfalls":"POINT (82.4531033 18.519303)",
 "Vajrai Waterfall":"POINT (73.8082338 17.7073034)",
@@ -25,8 +23,8 @@ const mapData = {
 "Shivanasamudra Falls":"POINT (77.1680322 12.2944508)",
 "Hogenakkal Water Falls":"POINT (77.7787566 12.1178537)",
 "Soochipara Waterfalls":"POINT (76.1637859 11.5115356)",
-"Vazhachal Waterfalls":"POINT (76.5925893 10.3014146)",
-"Athirappilly Water Falls":"POINT (76.5697643 10.2851072)",
+"Vazhachal Waterfalls <br><span class='nl'>lies on Chalakudy River":"POINT (76.5925893 10.3014146)",
+"Athirappilly Falls <br><span class='nl'>lies on Chalakudy River;largest waterfall of KL; 'Niagara of S Ind'":"POINT (76.5697643 10.2851072)",
 "Thalaiyar Falls ":"POINT (77.6287186 10.2141832)",
 "Kallar Meenmutty Waterfalls":"POINT (77.1452266 8.7122176)"
 	};
@@ -35,6 +33,8 @@ const mapData = {
 
 
 /* 
+"Nohkalikai Falls":"POINT (91.6859562 25.2754203)",
+"Kynrem falls":"POINT (91.7166567 25.2272466)",
 "":"",
 "":"",
 "":"",

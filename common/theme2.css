@@ -13,7 +13,7 @@ color: white !important;
 } 
 
 
-.reveal-all, .reveal-list {
+.reveal-all, .reveal-list,  #header {
 	color:#ffffff; background-color:#3d3d3d !important; border: #303030;
 }
 
@@ -22,6 +22,26 @@ color: white !important;
 }
 
 
+.reveal-all:hover {
+  background-color: rgb(103, 103, 103) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.top-right-link-button, .switcher-button, .info-br {
+	background-color: #454545 !important;
+	border: 1px #6a6a6a  !important;
+}
+
+
+.top-right-link-button:hover, .switcher-button:hover, .info-br:hover {
+background-color: rgb(103, 103, 103) !important; !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.sidebar {
+    background-color:#6f6f6f !important;
+}
 
 .title-span, #header, .switcher-text, .score-bottom, #slider-label{
 	color: #ffffff !important;

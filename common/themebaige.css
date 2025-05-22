@@ -2,6 +2,7 @@
 body {
 	background: #ebdcbb !important;
 	color: white;
+    background: #ebdcbb !important;
 	}
 	
 
@@ -15,7 +16,8 @@ body {
 
 
 
-    .reveal-all, .reveal-list{ /*button*/
+
+    .reveal-all, .reveal-list,  #header { /*button*/
         font-size:16px; color:#656565; background-color:#e0ca9c !important;
     }
 

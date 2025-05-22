@@ -354,3 +354,9 @@ function addGeometryToMap(geometry, river) {
         layer.on('click', (e) => handleSelection(river, layer, e));
     }
 }
+
+
+
+
+
+

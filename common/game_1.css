@@ -8,26 +8,7 @@ body{
 
 
 
-.toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5{
-	z-index:999;
-opacity:0.6;
-position: absolute;
-top: 8px;
-color: #8a8a8a;
-  transition: all 0.2s ease-in-out;
-}
 
-
-.toggle-map > img, .toggle-map-1 > img, .toggle-map-2 > img, .toggle-map-3 > img, .toggle-map-4 > img, .toggle-map-5 > img  {
-	z-index:9999;
-height:19px;
-}
-
-.toggle-map:hover, .toggle-map-1:hover, .toggle-map-2:hover, .toggle-map-3:hover, .toggle-map-4:hover, .toggle-map-5:hover{
-	z-index:9999;
-	opacity:1;
-	
-}
 
 
 
@@ -94,7 +75,7 @@ background-color: #e0e0e0;
     top: 2px;
 	z-index: 999 !important;
     width: 280px;
-    height: 95vh;
+    height: 93vh;
 	color: #3b3b3b;
     background-color: #f1f1f1;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
@@ -136,15 +117,6 @@ background-color: #e0e0e0;
 }
 
 
-
-.toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5 {
-    position: fixed;  /* instead of absolute */
-    top: 8px;
-    right: 10px;      /* pinned to right edge */
-    z-index: 999;
-    opacity: 0.6;
-    color: #8a8a8a;
-}
 
 
 .reveal-list {
@@ -286,6 +258,46 @@ left: 50px !important;
   width: fit-content;
 
 }
+
+.toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5 {
+    position: fixed;  /* instead of absolute */
+    top: 0px;
+    right: 10px;      /* pinned to right edge */
+    z-index: 999;
+   
+ 
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  
+  border-radius: 6px;
+  padding: 5px 4px;
+  transition: all 0.2s ease-in-out;
+  width: 20px !important;
+  z-index: 1147483647 !important;
+ height:25px;
+}
+
+.toggle-map > img, .toggle-map-1 > img, .toggle-map-2 > img, .toggle-map-3 > img, .toggle-map-4 > img, .toggle-map-5 > img  {
+	z-index:9999;
+height:18px;
+ z-index: 2147483647 !important;
+ opacity: 0.5;
+ transform: translateX(-2px) translateY(-2px);
+}
+
+.toggle-map:hover, .toggle-map-1:hover, .toggle-map-2:hover, .toggle-map-3:hover, .toggle-map-4:hover, .toggle-map-5:hover{
+	z-index:9999;
+	opacity:1;
+  
+  color: #000;
+}
+
+.toggle-map > img:hover, .toggle-map-1 > img:hover, .toggle-map-2 > img:hover, .toggle-map-3 > img:hover, .toggle-map-4 > img:hover, .toggle-map-5 > img:hover  {
+  	opacity:1;
+  transition: all 0.2s ease-in-out;
+
+}
+
 
 .info-br:hover {
   background-color: #e0e0e0;
@@ -667,7 +679,7 @@ display:none;
 
 
 
-/*    media */
+
 
 
 	
@@ -689,38 +701,34 @@ display:none;
 
 
 
-
-
-
-
-
-
-
-
+/* Portrait */
 @media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
+and (min-device-width: 700px) 
+  and (max-device-width: 1000px) 
   and (orientation: portrait) 
   and (-webkit-min-device-pixel-ratio: 2) {
-  
-  /* iPad portrait styles here */
-   #map{
-  height: 100vh !important;
- }
 
-body{
-  overflow-x: hidden !important;
-}
-  
-
-
-body{
-  font-size: 14px !important;
+  /* Styles for portrait */
+  .reveal-all { transform: translateX(52px) !important; }
 }
 
+/* Landscape */
+@media only screen 
+and (min-device-width: 800px) 
+  and (max-device-width: 1220px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
 
+
+  /* Styles for landscape */
+
+
+
+.reveal-all { transform: translateX(76px) !important; }
+
+
+ 
 }
-
 
 
 
@@ -746,9 +754,10 @@ body{
 
 
   .sidebar {
-    width: 165px;
-    padding: 4px;
- 
+    width: 140px;
+    padding: 1px;
+    font-size:10px !important ;
+     height: 89vh !important;
   opacity: 0.8 !important;
   }
 

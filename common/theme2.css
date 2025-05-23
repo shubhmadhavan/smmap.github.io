@@ -17,9 +17,18 @@ color: white !important;
 	color:#ffffff; background-color:#3d3d3d !important; border: #303030;
 }
 
+.toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5 {
+     background-color: #3d3d3d !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	  border: 1px solid #222222 !important;
+}
+
 .reveal-all-tooltip {
     background-color: rgba(256,256,256,0.9);
+
+
 }
+
 
 
 .reveal-all:hover {
@@ -40,8 +49,13 @@ background-color: rgb(103, 103, 103) !important; !important;
 
 
 .sidebar {
-    background-color:#6f6f6f !important;
+    background-color:rgba(75, 75, 75,0.5) !important;
+	color:  #ffffff !important;
 }
+.sidebar ul li:hover {
+    background-color: rgb(101, 101, 101) !important;
+}
+
 
 .title-span, #header, .switcher-text, .score-bottom, #slider-label{
 	color: #ffffff !important;

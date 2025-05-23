@@ -19,6 +19,7 @@ body {
   z-index: 2147483647 !important;
 }
 
+
 li.focused {
 
   background-image: unset !important;
@@ -63,13 +64,18 @@ li.highlighted {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+.toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5 {
+  background-color: #e0ca9c !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+}
 
 .sidebar {
     background-color:#efddb5 !important;
 }
 .sidebar ul li:hover {
     background-color: #e5d1a4 !important;
-
+}
 
 .leaflet-tooltip.leaflet-zoom-animated{
 	/* background-color: #94ab69 !important; */

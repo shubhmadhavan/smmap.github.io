@@ -18,37 +18,6 @@ body {
 
 
 
-.leaflet-tooltip.leaflet-zoom-animated{
-	/* background-color: #94ab69 !important; */
-
-	border-color: rgba(75, 75, 75,0.6) !important;
-	
-}
-
-.leaflet-tooltip-right:before {
-
-    content: "";
-    position: absolute;
-    top: 50%;
-
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-right-color: rgba(120, 120, 120,0.8); /* ← tooltip triangle */
-}
-
-.leaflet-tooltip-left:before {
-
-    content: "";
-    position: absolute;
-    top: 50%;
-
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-left-color: rgba(120, 120, 120,0.8); /* ← tooltip triangle color */
-}
-
 
 
 

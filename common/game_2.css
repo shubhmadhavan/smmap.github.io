@@ -88,9 +88,7 @@ background-color:  rgba(226, 226, 226, 0.5);
 	opacity: 0.2;
 }
 
-.selected-path {
-	/* REFER TO GAME_2 html*/
-  }
+
 
 path{
 	cursor: pointer;
@@ -102,34 +100,4 @@ path{
 
 
 
-
-.leaflet-tooltip.reveal-all-tooltip,
-.leaflet-tooltip.selected-tooltip.leaflet-zoom-animated{
-	/* this includes both selected and correct tooltip css*/
-
-	font-size: 12px !important;
-	line-height: 0.8rem !important;  /* Reduce line height to fit text */
-    padding: 2px 5px !important; /* Adjust padding as needed */
-    min-height: auto !important; /* Prevent unnecessary height */
-	
-}	
-
-.leaflet-tooltip-left{
-	left: -4.2px !important;
-}
-	
-.leaflet-tooltip-right{
-left: 4.2px !important;
-}
-
-
-
-
-.leaflet-tooltip.selected-tooltip.leaflet-zoom-animated{
-	/* this includes both selected and correct tooltip css*/
-	
-
-	opacity:0 !important;
-
-}	
 

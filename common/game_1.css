@@ -12,6 +12,61 @@ body{
 }
 
 
+path {
+  	z-index: 2147483647 !important;
+
+}
+
+.selected-path {
+  /* go to game 2 html */
+} 
+
+
+
+.leaflet-tooltip.reveal-all-tooltip,
+.leaflet-tooltip.selected-tooltip.leaflet-zoom-animated{
+	/* this includes both selected and correct tooltip css*/
+
+	font-size: 11px !important; /* TOOLTIP FONT SIZE */
+  	line-height: 11px !important;  /* Reduce line height to fit text */
+
+    padding: 1px 2px !important; /* DONT CHANGE - MAY BREAK CODE */
+    min-height: auto !important; /* Prevent unnecessary height */
+	z-index: 2147483647 !important;
+}	
+
+.leaflet-tooltip-left{
+	left: -4.2px !important;
+}
+	
+.leaflet-tooltip-right{
+left: 4.2px !important;
+}
+.leaflet-tooltip-right:before {
+
+    content: "";
+    position: absolute;
+    top: 50%;
+
+    width: 0;
+    height: 0;
+    border: 6px solid transparent; /* DONT CHANGE - MAY BREAK CODE */
+    border-right-color: rgba(120, 120, 120,0.8); /* ← tooltip triangle */
+    	z-index: 1147483647 !important;
+}
+
+.leaflet-tooltip-left:before {
+
+    content: "";
+    position: absolute;
+    top: 50%;
+
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-left-color: rgba(120, 120, 120,0.8); /* ← tooltip triangle color */
+    	z-index: 1147483647 !important;
+}
 
 
 .reveal-list{ /* ☰ button that reveals the sidebar   */

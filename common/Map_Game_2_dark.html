@@ -770,29 +770,31 @@ if (resources) {
 
 
 
+
+
+
+
 <script>
 (function () {
   const movementMap = new WeakMap();
   let activeTooltip = null;
 
-  // Hook into pointerdown to detect last-activated tooltip
-  document.body.addEventListener('pointerdown', function (event) {
-    const path = event.target.closest('path');
-    if (!path) return;
+  function isMatchingTooltip(el) {
+    return el.className.startsWith("leaflet-tooltip reveal-all-tooltip leaflet-zoom-animated");
+  }
 
-    let tooltipId = null;
-    if (path.classList.contains('polygon_leaflet')) {
-      tooltipId = path.getAttribute('data-river-name');
-    } else if (path.hasAttribute('aria-describedby')) {
-      tooltipId = path.getAttribute('aria-describedby');
+  document.addEventListener('pointerdown', function (e) {
+    // Check if the clicked element or its ancestor matches the tooltip class
+    let el = e.target;
+    while (el && el !== document.body) {
+      if (isMatchingTooltip(el) && getComputedStyle(el).display !== 'none') {
+        activeTooltip = el;
+        return;
+      }
+      el = el.parentElement;
     }
-
-    if (!tooltipId) return;
-
-    const tooltip = document.getElementById(tooltipId);
-    if (!tooltip || getComputedStyle(tooltip).display !== 'block') return;
-
-    activeTooltip = tooltip;
+    // If click outside tooltip, clear active
+    activeTooltip = null;
   });
 
   function moveTooltip(tooltip, dx, dy) {
@@ -805,22 +807,30 @@ if (resources) {
     current.y += dy;
 
     const existingTransform = tooltip.style.transform || '';
-    const cleanedTransform = existingTransform.replace(/translate\(-?\d+px, ?-?\d+px\)/, '').trim();
-    tooltip.style.transform = `${cleanedTransform} translate(${current.x}px, ${current.y}px)`.trim();
+    const cleaned = existingTransform.replace(/translate\([^)]*\)/, '').trim();
+    tooltip.style.transform = `${cleaned} translate(${current.x}px, ${current.y}px)`.trim();
   }
 
   window.addEventListener('keydown', function (e) {
-    if (!activeTooltip || getComputedStyle(activeTooltip).display !== 'block') return;
+    if (!e.shiftKey || !activeTooltip) return;
 
-    switch (e.key) {
-      case 'i': return moveTooltip(activeTooltip, 0, -10); // up
-      case 'k': return moveTooltip(activeTooltip, 0, 10);  // down
-      case 'j': return moveTooltip(activeTooltip, -10, 0); // left
-      case 'l': return moveTooltip(activeTooltip, 10, 0);  // right
+    const key = e.key.toLowerCase();
+    if (!['w', 'a', 's', 'd'].includes(key)) return;
+
+    e.preventDefault();
+
+    switch (key) {
+      case 'w': return moveTooltip(activeTooltip, 0, -10);
+      case 's': return moveTooltip(activeTooltip, 0, 10);
+      case 'a': return moveTooltip(activeTooltip, -10, 0);
+      case 'd': return moveTooltip(activeTooltip, 10, 0);
     }
   });
 })();
 </script>
+
+
+
 
 
 

@@ -45,6 +45,7 @@ li.highlighted {
   background-size: 400% 400%;
   animation: iridescent 3s ease-in-out infinite;
   */
+   background-image: unset !important;
   z-index: 2147483647 !important;
 }
 

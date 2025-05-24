@@ -565,42 +565,7 @@ function showSidebarPopup(liElement, content) {
  
 }
 
-
-
-    function populateTooltips() {
-        tooltipsMap.clear();
-        document.querySelectorAll('.leaflet-tooltip').forEach(tooltip => {
-            const firstLine = getFirstTextNode(tooltip); // Extract only the first line/text node
-            tooltipsMap.set(firstLine, tooltip);
-        });
-    }
-
-    const observer = new MutationObserver(() => {
-        populateTooltips(); // Re-populate the map when new tooltips are added
-    });
-
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true,
-    });
-
-    window.addEventListener('load', () => {
-  const savedState = localStorage.getItem('sidebarVisible');
-  if (savedState === 'true') {
-    sidebar.style.display = 'flex';
-    if (!sidebarPopulated) {
-      populateSidebar();
-      sidebarPopulated = true;
-    }
-  } else {
-    sidebar.style.display = 'none';
-  }
-});
-    
-</script>
-    
-
-<script>(function () {
+(function () {
     const sidebar = document.querySelector('.sidebar');
     const list = sidebar?.querySelector('.map-data-list');
     if (!sidebar || !list) return;
@@ -645,6 +610,8 @@ function showSidebarPopup(liElement, content) {
         } else if (e.key === 'Enter' && currentIndex >= 0) {
             e.preventDefault();
             items[currentIndex].click();
+            showSidebarPopup( items[currentIndex],  items[currentIndex].dataset.info);
+           
         }
     });
 
@@ -679,7 +646,42 @@ function showSidebarPopup(liElement, content) {
     }
 })();
 
+
+
+
+    function populateTooltips() {
+        tooltipsMap.clear();
+        document.querySelectorAll('.leaflet-tooltip').forEach(tooltip => {
+            const firstLine = getFirstTextNode(tooltip); // Extract only the first line/text node
+            tooltipsMap.set(firstLine, tooltip);
+        });
+    }
+
+    const observer = new MutationObserver(() => {
+        populateTooltips(); // Re-populate the map when new tooltips are added
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+    });
+
+    window.addEventListener('load', () => {
+  const savedState = localStorage.getItem('sidebarVisible');
+  if (savedState === 'true') {
+    sidebar.style.display = 'flex';
+    if (!sidebarPopulated) {
+      populateSidebar();
+      sidebarPopulated = true;
+    }
+  } else {
+    sidebar.style.display = 'none';
+  }
+});
+    
 </script>
+    
+
 
 <div id="header" style="display:none !important;"></div>
 

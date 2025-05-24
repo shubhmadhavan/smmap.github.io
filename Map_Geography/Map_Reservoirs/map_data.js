@@ -61,7 +61,7 @@ const mapData = {
 "Patora Dam":"POINT (82.4557589 20.7162745)",
 "Hasdeo Reservoir":"POINT (82.6507276 22.6670588)",
 "Gangapur Bandh Sagar":"POINT (73.6638592 20.0303617)",
-"Nilwande Dam<span class='nl'>Upper Pravara Dam</span>":"POINT (73.9014 19.54617)", 
+"Nilwande Dam <br><span class='nl'>Upper Pravara Dam":"POINT (73.9014 19.54617)", 
 "Nath Sagar":"POINT (75.2681086 19.5028712)",
 "Khadakpurna Dam":"POINT (76.1156826 20.1145641)",
 "Yeldari Dam":"POINT (76.7163362 19.76659)",
@@ -120,7 +120,7 @@ const mapData = {
 "Sabarigiri/ Pamba Dam<br><span class='nl'>on Pamba River, KL</span>":"POINT (77.159800 9.390600)",
 "Mullaperiyar Dam":"POINT (77.1491414 9.525965)",
 "Shoyalar Res":"POINT (76.7686944 10.3116351)",
-"Kallada Dam":"POINT (77.0857212 8.9470509)"
+"Kallara Meenmutty WF (despite its name, its NOT on Kallada River – it is on Vamanapuram River)":"POINT (77.0857212 8.9470509)"
 	};
 
 

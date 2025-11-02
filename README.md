@@ -71,9 +71,8 @@ You can access it from this [Link](https://shubhmadhavan.github.io/smmap.github.
 
 ## Extra
 I have nothing to plug here. But here's a quote:
-> _"Continuous improvement is better than delayed perfection"._
-> ― Mark Twain 
+> _"Equanimity of mind in success & failure is the true Yoga"._
+> ― Bhagavad Gita, 2:48
 
-<img src="https://github.com/user-attachments/assets/d19c0b80-c5b3-4180-bdca-cb645edcd1ad" height="80" />
 
 

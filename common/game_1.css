@@ -11,6 +11,17 @@ body{
   outline: none;
 }
 
+#map {
+	top: 12px !important;
+	height: 96vh !important; /* Adjusted height for map */
+	background: #0b0b0b;
+}
+
+#map:hover {
+	cursor: default;        
+}
+
+
 
 path {
   	z-index: 2147483647 !important;
@@ -112,11 +123,11 @@ background-color: #e0e0e0;
 
 
 
- .toggle-map-4{left: 76vw !important;} /* night & districts */
+ .toggle-map-4{left: 62vw !important;} /* night & districts */
 
-.toggle-map-1{left: 80vw !important; z-index: 211111 !important;} /* baige */
+.toggle-map-1{left: 66vw !important; z-index: 211111 !important;} /* baige */
 
-.toggle-map-3{left: 84vw !important;} /* rivers */
+.toggle-map-3{left: 70vw !important;} /* rivers */
 
 
 .toggle-map-5{display: none;}
@@ -147,6 +158,10 @@ background-color: #e0e0e0;
         font-size: 14px !important;
 
 }
+
+
+
+
 
 .sidebar {
 
@@ -185,13 +200,10 @@ background-color: #e0e0e0;
 
 
 
-
-
 .top-wrapper {
   position: absolute !important;
   z-index: 2147483647 !important;
   top: 2px !important;
-
 }
 
 .point_leaflet.leaflet-interactive {
@@ -222,15 +234,10 @@ background-color: #e0e0e0;
 }
 
 
-			 
-#map {
-	top: 12px !important;
-	height: 92vh; /* Adjusted height for map */
-	background: #0b0b0b;
-}
-#map:hover {
-	cursor: default;        
-}
+
+
+
+
 
 
 
@@ -296,7 +303,7 @@ font-size: 14px;
 
 	top:0px !important;
 
-left: 50px !important;
+  left: 50px !important;
   z-index: 1999;
 
 
@@ -313,6 +320,7 @@ left: 50px !important;
   font-family: system-ui, sans-serif;
 
   width: fit-content;
+  font-size: 11px !important;
 
 }
 
@@ -321,7 +329,6 @@ left: 50px !important;
     top: 0px;
     right: 10px;      /* pinned to right edge */
     z-index: 999;
-   
  
   background-color: #f5f5f5;
   border: 1px solid #ccc;
@@ -329,10 +336,15 @@ left: 50px !important;
   border-radius: 6px;
   padding: 5px 4px;
   transition: all 0.2s ease-in-out;
-  width: 20px !important;
   z-index: 1147483647 !important;
  height:25px;
 }
+
+.toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5 {
+  width: 12px !important;
+  height: 16px !important;
+}
+
 
 .toggle-map > img, .toggle-map-1 > img, .toggle-map-2 > img, .toggle-map-3 > img, .toggle-map-4 > img, .toggle-map-5 > img  {
 	z-index:9999;
@@ -354,6 +366,15 @@ height:18px;
   transition: all 0.2s ease-in-out;
 
 }
+
+
+
+
+
+
+
+
+
 
 
 .info-br:hover {
@@ -393,10 +414,16 @@ left: 4.2px !important;
 }
 
 
-body{
-	zoom:90%;
-	overflow: hidden;
-}
+
+
+
+
+
+
+
+
+
+			 
 
 
 .slider-container{

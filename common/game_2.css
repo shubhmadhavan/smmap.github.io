@@ -7,6 +7,13 @@
   }
 }
 
+
+.toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5 {
+  width: 21px !important;
+  height: 28px !important;
+}
+
+
 .highlighted {
 
   background-image: linear-gradient(-90deg,

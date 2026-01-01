@@ -12,10 +12,16 @@ body{
 }
 
 #map {
-	top: 12px !important;
+	top: 35px !important;
 	height: 96vh !important; /* Adjusted height for map */
 	background: #0b0b0b;
 }
+
+#map { /* there is also a #map ih game_1.css */
+	margin-top: 12px !important;
+transform: translateY(-40px) !important;
+}
+
 
 #map:hover {
 	cursor: default;        
@@ -558,10 +564,10 @@ input[type="range"]#timeoutSlider {
     -moz-user-select: none; 
 
 	touch-action: pinch-zoom;
-	height: 57.6rem !important;
-	max-height:92vh !important;
+/*	height: 57.6rem !important;*/
+/*		max-height:92vh !important; */
 	will-change: transform !important;
-	
+
 	
 }	
 

@@ -183,6 +183,18 @@ function parseGeometry(geometry) {
 // Keep track of shown rivers
 let shownRivers = new Set();
 
+function setHeaderFromRiver(riverName) {
+    const header = document.getElementById('header');
+    if (!header) return;
+
+    const raw = String(riverName);
+
+    // Keep only text before first <br>
+    const clean = raw.split(/<br\s*\/?>/i)[0].trim();
+
+    header.textContent = clean;
+}
+
 function getRandomRiver() {
     const noRepeatChecked = document.getElementById('noRepeat').checked;
     let availableRivers = Object.keys(mapData).filter(river => !shownRivers.has(river));
@@ -241,7 +253,7 @@ function getRandomRiver() {
 }
 
 var currentRiver = getRandomRiver(); // Initially pick a random location
-document.getElementById('header').textContent = "" + currentRiver.split("(")[0].trim();
+setHeaderFromRiver(currentRiver);
 
 var selectedPath = null; // Track the selected path
 var correctPath = null; // Track the correct path
@@ -415,6 +427,6 @@ function nextRound() {
     const resultBox = document.getElementById('result');
     resultBox.style.display = 'none';
 
-    currentRiver = getRandomRiver(); // Get a new random river
-    document.getElementById('header').textContent = "" + currentRiver.split("(")[0].trim();
+    currentRiver = getRandomRiver();
+setHeaderFromRiver(currentRiver);
 }

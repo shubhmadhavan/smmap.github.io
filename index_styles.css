@@ -51,7 +51,7 @@ color: rgba(98, 98, 98, 0.6); /*SM Repository*/
   width: 100%;
   font-size: 0.9rem;
   
-  margin: 8px 0 -1px;
+  margin: 8px 0 2px;
   color: rgba(98, 98, 98, 0.6); /*Indian Geo, World Geo...*/
   text-align: center;
   display: flex;
@@ -78,7 +78,7 @@ transition: transform 0.16s ease; /* was 0.1s */
 }
 
 .zipper-label {
-margin-top: 12px;
+margin-top: 8px;
 font-size: 0.9rem;
 text-align: center;
 color: rgba(81, 81, 81, 0.8);
@@ -186,9 +186,17 @@ animation: faux-wobble 0.34s ease;
 @media (max-width: 768px) {
 
 .zipper {
-width: 140px;
-height: 140px;
+width: 108px;
+height: 108px;
+margin-top: 12px;
 }
 
+#zipper-wrapper {
+  	gap: 2px;
+}
+
+.zipper-row-header {
+    margin: 12px 0 0px;
+}
 
 }

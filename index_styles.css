@@ -4,8 +4,13 @@ body {
 	display: flex;
 	justify-content: center;
 	background: #f7eddb;
+  	background: #c31c19;
 	font-family: sans-serif;
   }
+
+  html, body {
+    touch-action: manipulation;
+}
 
 ::selection {
   background: rgba(255, 246, 218, 0.5);

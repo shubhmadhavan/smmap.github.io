@@ -6,6 +6,8 @@ if (/iPhone|iPad/.test(navigator.userAgent)) {
     }, { passive: false });
 }
 
+
+
 // Global skip functionality on the Advance button
 // Global skip functionality on the Advance button
 document.getElementById('Advance').addEventListener("click", function() {

@@ -93,11 +93,12 @@ left: 4.2px !important;
 
 
 
- .toggle-map-4{left: 62vw !important;} /* night & districts */
 
-.toggle-map-1{left: 66vw !important; z-index: 211111 !important;} /* baige */
+.toggle-map-1{right: 122px !important; z-index: 211111 !important;} /* baige */
 
-.toggle-map-3{left: 70vw !important;} /* rivers */
+.toggle-map-3{right: 92px !important;} /* rivers */
+
+.toggle-map-4{right: 62px !important;} /* night & districts */
 
 
 .toggle-map-5{display: none;}
@@ -773,15 +774,7 @@ and (min-device-width: 800px)
 .reveal-all { transform: translateX(76px) !important; }
 
 
- 
 }
-
-
-
-
-
-
-
 
 
 
@@ -790,11 +783,10 @@ and (min-device-width: 800px)
 /* General Mobile Fixes */
 @media (max-width: 768px) {
 
-.reveal-all { transform: translateX(-26px); }
-.toggle-map-1 { transform: translateX(-12px); } /* baige */
-.toggle-map-3 { transform: translateX(-59px); } /* river */
 
+.toggle-map-1{right: 72px !important; z-index: 211111 !important;} /* baige */
 
+.toggle-map-3{right: 42px !important;} /* rivers */
 
  .toggle-map-4{display: none !important;}
 
@@ -808,7 +800,6 @@ and (min-device-width: 800px)
   }
 
 }
-
 
 
 

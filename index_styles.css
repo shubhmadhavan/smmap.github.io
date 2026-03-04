@@ -37,8 +37,8 @@ body {
 .title-header {
 color: rgba(98, 98, 98, 0.6); /*SM Repository*/
   font-size: 1rem;
-  margin-top: -16px;
-  margin-bottom: -32px;
+  margin-top: -20px;
+  margin-bottom: -22px;
 }
 
 
@@ -51,7 +51,7 @@ color: rgba(98, 98, 98, 0.6); /*SM Repository*/
   width: 100%;
   font-size: 0.9rem;
   
-  margin: 8px 0 2px;
+  margin: 2px 0 2px;
   color: rgba(98, 98, 98, 0.6); /*Indian Geo, World Geo...*/
   text-align: center;
   display: flex;
@@ -67,8 +67,8 @@ color: rgba(98, 98, 98, 0.6); /*SM Repository*/
 
 
 .zipper {
-width: 114px;
-height: 114px;
+width: 108px;
+height: 108px;
 border-radius: 4%;
 position: relative;
 overflow: hidden;
@@ -96,9 +96,9 @@ color: rgba(81, 81, 81, 0.8);
 
 .zipper-row-subtitle {
   width: 100%;
-  font-size: 0.84rem;
+  font-size: 0.8rem;
   margin: -5px 0 2px;
-  color: rgba(136, 136, 136, 0.3);
+  color: rgba(136, 136, 136, 0.6);
   display: flex;
   align-items: center;          /* vertically center items */
   justify-content: center;      /* horizontally center content */
@@ -106,7 +106,7 @@ color: rgba(81, 81, 81, 0.8);
   font-weight: 500;
   position: relative;
   gap: 20px;
-  display: none;
+
 }
 
 
@@ -191,6 +191,10 @@ height: 62px;
 margin-top: 12px;
 }
 
+.zipper-block { 
+  width: 90px;
+}
+
 #zipper-wrapper {
   	gap: 2px;
 }
@@ -198,5 +202,6 @@ margin-top: 12px;
 .zipper-row-header {
     margin: 12px 0 0px;
 }
+
 
 }

@@ -783,7 +783,6 @@ and (min-device-width: 800px)
 /* General Mobile Fixes */
 @media (max-width: 768px) {
 
-
 .toggle-map-1{right: 72px !important; z-index: 211111 !important;} /* baige */
 
 .toggle-map-3{right: 42px !important;} /* rivers */

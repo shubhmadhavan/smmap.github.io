@@ -186,13 +186,13 @@ animation: faux-wobble 0.34s ease;
 @media (max-width: 768px) {
 
 .zipper {
-width: 92px;
-height: 92px;
+width: 88px;
+height: 88px;
 margin-top: 12px;
 }
 
 .zipper-block { 
-  width: 90px;
+  width: 100px;
 }
 
 #zipper-wrapper {

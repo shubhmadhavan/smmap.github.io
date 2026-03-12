@@ -3,7 +3,10 @@ body {
 	padding: 40px;
 	display: flex;
 	justify-content: center;
-	background: #f7eddb;
+	background:  linear-gradient(to bottom, rgba(249, 250, 250, 0.49) 10%, #7a7b7c80 90%);
+ 
+ background:  linear-gradient(to bottom, rgba(207, 207, 207, 0.59) 10%, #7ac0eb80 90%);
+  /*background:  #f7eddb; */
 	font-family: sans-serif;
   }
 
@@ -45,6 +48,8 @@ color: rgba(98, 98, 98, 0.6); /*SM Repository*/
 .title-header ::selection {
   background: unset;
 }
+
+
 
 
 .zipper-row-header {

@@ -28,10 +28,8 @@ body{
 	margin-top: 12px !important;
 transform: translateY(-40px) !important;
 
-
+position: sticky !important;
 }
-
-
 
 #map:hover {
 	cursor: default;        

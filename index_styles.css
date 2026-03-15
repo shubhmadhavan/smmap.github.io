@@ -8,7 +8,10 @@ body {
  background:  linear-gradient(to bottom, rgba(207, 207, 207, 0.59) 10%, #7ac0eb80 90%);
   /*background:  #f7eddb; */
 	font-family: sans-serif;
+
+
   }
+
 
 
 ::selection {

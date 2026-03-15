@@ -8,6 +8,9 @@ body{
     
 }
 
+  body {
+  filter: saturate(1.2);
+}
 
 #map:focus {
   outline: none;
@@ -17,12 +20,17 @@ body{
 	top: 35px !important;
 	height: 96vh !important; /* Adjusted height for map */
 	background: #0b0b0b;
+
+
 }
 
 #map { /* there is also a #map ih game_1.css */
 	margin-top: 12px !important;
 transform: translateY(-40px) !important;
+
+
 }
+
 
 
 #map:hover {

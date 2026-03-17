@@ -439,6 +439,18 @@ document.addEventListener('keydown', function (e) {
     const sidebar = document.querySelector('.sidebar');
     const mapDataList = sidebar.querySelector('.map-data-list');
 
+
+    document.addEventListener('keydown', function (event) {
+  // Check for F3 key
+  if (event.key === 'F3') {
+    event.preventDefault(); // Prevent browser's default find behavior
+
+    // Trigger the same logic as button click
+    revealButton.click();
+  }
+});
+
+
     const tooltipsMap = new Map();
     populateTooltips(); // Initial population of tooltips
 

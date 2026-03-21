@@ -798,7 +798,9 @@ and (min-device-width: 800px)
 
 
 
-
+.toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5 {
+left: 9px !important;
+}
 
   .sidebar {
     width: 140px;

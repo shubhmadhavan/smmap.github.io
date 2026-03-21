@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const toggleButtons = [
         { selector: '.toggle-map-1', image: '../Map_Images/India_OS_baige.jpg', 
-            theme: 'themebaige.css', toggleKey: 'isToggled1', key: '2' },
+            theme: 'themebaige.css', toggleKey: 'isToggled1', key: '3' },
         { selector: '.toggle-map-2', tile: '../Map_Images/map_tiles/{z}_{x}_{y}.png', 
             theme: 'theme4.css', toggleKey: 'isToggled2', key: '' },
         { selector: '.toggle-map-3', image: '../Map_Images/India_OS_Grey.jpg', 
             theme: 'theme3.css', toggleKey: 'isToggled3', key: '1' },
         { selector: '.toggle-map-4', image: '../Map_Images/India_OS_Green.jpg', 
-            theme: 'theme2.css', toggleKey: 'isToggled4', key: '3' },
+            theme: 'theme2.css', toggleKey: 'isToggled4', key: '2' },
         { selector: '.toggle-map-5', image: '../Map_Images/India_OS_Blue.jpg', 
             theme: 'theme3.css', toggleKey: 'isToggled5', key: '' }
     ];

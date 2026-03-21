@@ -796,14 +796,9 @@ and (min-device-width: 800px)
 /* General Mobile Fixes */
 @media (max-width: 768px) {
 
-  /* REMOVED OLD RHS LAYOUT FOR MAP TOGGLES
-.toggle-map-1{right: 72px !important; z-index: 211111 !important;} /* baige */
 
-.toggle-map-3{right: 42px !important;} /* rivers */
 
- .toggle-map-4{display: none !important;}
 
- */
 
   .sidebar {
     width: 140px;
@@ -821,7 +816,7 @@ and (min-device-width: 800px)
 {
   top: unset;
   left: 0.6vw;
-  bottom: 9vw; 
+  bottom: 10vw; 
 
 }
 

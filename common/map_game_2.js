@@ -287,6 +287,19 @@ for (const river in mapData) {
     index++;
 }
 
+function getSmartDirection(latlng) {
+    const point = map.latLngToContainerPoint(latlng);
+    const mapWidth = map.getSize().x;
+
+    // Near right edge → flip to left
+    if (point.x > mapWidth * 0.75) return 'left';
+
+    // Near left edge → force right
+    if (point.x < mapWidth * 0.25) return 'right';
+
+    // Default
+    return 'right';
+}
 
 function addGeometryToMap(geometry, river) {
     let layer;
@@ -295,6 +308,7 @@ function addGeometryToMap(geometry, river) {
 
 
     if (geometry.type === 'Point') {
+        
         layer = L.circleMarker(geometry.coordinates, {
             radius: 4,
             color: '#EDC1A0',
@@ -308,15 +322,27 @@ function addGeometryToMap(geometry, river) {
 
         // Display a tooltip with the river name when clicked, and close the previous tooltip
         layer.on('click', function (e) {
-            layer.bindTooltip(river, { permanent: true, className: 'selected-tooltip' }).openTooltip();
 
-            // Close any previously opened tooltip
-            if (!isShiftHeld && !isAltHeld) {
+    const direction = getSmartDirection(e.latlng);
+
+    const tooltip = layer.bindTooltip(river, {
+        permanent: true,
+        direction: direction,
+       offset: direction === 'right' ? [16, -7] : [-16, -7],
+        className: 'selected-tooltip'
+    }).openTooltip();
+
+    // 🔥 FIX: force reposition after DOM renders
+    setTimeout(() => {
+        layer.openTooltip(); // re-open = recalculates position
+    }, 0);
+
+    if (!isShiftHeld && !isAltHeld) {
         setTimeout(() => {
             layer.closeTooltip();
         }, 1600);
-    } // Adjust timeout for how long the tooltip stays visible
-        });
+    }
+});
 
 
 
@@ -332,16 +358,28 @@ function addGeometryToMap(geometry, river) {
     
 
         // Display a tooltip with the river name when clicked, and close the previous tooltip
-        layer.on('click', function (e) {
-            layer.bindTooltip(river, { permanent: true, className: 'selected-tooltip' }).openTooltip();
+       layer.on('click', function (e) {
 
-            // Close any previously opened tooltip
-            if (!isShiftHeld && !isAltHeld) {
-                setTimeout(() => {
-                    layer.closeTooltip();
-                }, 1600);
-            } // Adjust timeout for how long the tooltip stays visible
-        });
+    const direction = getSmartDirection(e.latlng);
+
+    const tooltip = layer.bindTooltip(river, {
+        permanent: true,
+        direction: direction,
+        offset: direction === 'right' ? [16, -7] : [-16, -7],
+        className: 'selected-tooltip'
+    }).openTooltip();
+
+    // 🔥 FIX: force reposition after DOM renders
+    setTimeout(() => {
+        layer.openTooltip(); // re-open = recalculates position
+    }, 0);
+
+    if (!isShiftHeld && !isAltHeld) {
+        setTimeout(() => {
+            layer.closeTooltip();
+        }, 1600);
+    }
+});
 
 
     } 

@@ -143,7 +143,10 @@ window.addEventListener('load', function () {
     const paths = Array.from(document.querySelectorAll('path'));
     
     paths.forEach(path => {
-      const rect = path.getBoundingClientRect();
+      const mapRect = map.getContainer().getBoundingClientRect();
+
+  const correctedY = rect.top - mapRect.top;
+
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
 
@@ -564,7 +567,7 @@ function showSidebarPopup(liElement, content) {
 
     const rect = liElement.getBoundingClientRect();
 
-    popup.style.left = `${rect.left - 222}px`;
+    popup.style.left = `${rect.left }px`;
     popup.style.top = `${rect.top}px`;
 
     document.body.appendChild(popup);

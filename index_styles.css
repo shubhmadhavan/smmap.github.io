@@ -9,7 +9,6 @@ body {
   /*background:  #f7eddb; */
 	font-family: sans-serif;
 
-
   }
 
 
@@ -28,15 +27,17 @@ body {
 	margin-top:-7px;
 }
 
+
 .zipper-block {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 150px;
+  width: 90px !important;
+  height: 161.8 !important; /* golden ratio 1.618 */
   margin: 0;
 
-  margin-left:-10px;
-  margin-right:-10px;
+  margin-left:-4px;
+  margin-right:-4px;
 }
 
 
@@ -75,8 +76,8 @@ color: rgba(98, 98, 98, 0.6); /*SM Repository*/
 
 
 .zipper {
-width: 108px;
-height: 108px;
+width: 103px;
+height: 104px; 
 border-radius: 4%;
 position: relative;
 overflow: hidden;
@@ -86,8 +87,8 @@ transition: transform 0.16s ease; /* was 0.1s */
 }
 
 .zipper-label {
-margin-top: 8px;
-font-size: 0.9rem;
+margin-top: 4px;
+font-size: 0.84rem;
 text-align: center;
 color: rgba(81, 81, 81, 0.8);
 }       

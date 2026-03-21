@@ -7,13 +7,6 @@
   }
 }
 
-#map { /* there is also a #map ih game_1.css */
-	margin-top: unset !important;
-transform: unset !important;
-  margin-top: -6px !important;
-}
-
-
 
 
 
@@ -139,10 +132,6 @@ background-color:  rgba(226, 226, 226, 0.5);
 * {
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
-}
-
-.reveal-all-tooltip-icon{
-	opacity: 0.2;
 }
 
 

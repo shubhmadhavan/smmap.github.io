@@ -528,7 +528,8 @@ input[type="range"]#timeoutSlider {
 /* this controls the white zoom in zoom out leaflet option on left*/
 {
   top: unset;
-  bottom: 20px; 
+  left: 0.6vw;
+  bottom: 1vw; 
 
 }
 
@@ -792,7 +793,6 @@ and (min-device-width: 800px)
 
 .reveal-all { transform: translateX(76px) !important; }
 
-
 }
 
 
@@ -818,6 +818,16 @@ and (min-device-width: 800px)
 
   .reveal-all {
   left:37vw !important; top: 1vw !important;
+
+  .leaflet-top  /* .leaflet-control-zoom.leaflet-bar.leaflet-control */
+/* this controls the white zoom in zoom out leaflet option on left*/
+{
+  top: unset;
+  left: 0.6vw;
+  bottom: 9vw; 
+
+}
+
 }
 }
 

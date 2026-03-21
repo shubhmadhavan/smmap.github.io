@@ -1,82 +1,26 @@
-/* DARK THEME */
+/* default theme */
 body {
-	background: #222222 !important;
+	background: #E7E4DF !important;
+	color: white;
 	}
+	
 
 .leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom, 
 .leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-touch-zoom {
-	background: #222222 !important;
+	background: #E7E4DF !important;
+	color: white;
+	
 	}
 
-#header, .score-bottom{
-color: white !important;
-} 
-
-
-.reveal-all, .reveal-list,  #header {
-	color:#ffffff; background-color:#3d3d3d !important; border: #303030;
-}
-
-.toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5 {
-     background-color: #3d3d3d !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-	  border: 1px solid #222222 !important;
-}
-
-.reveal-all-tooltip {
-    background-color: rgba(256,256,256,0.9);
-
-
+.home-link-button, 
+.leaflet-control-zoom-in, .leaflet-control-zoom-out,
+.title-span, #header, .switcher-text, .score-bottom, .info-br, .reveal-list{
+	background: #E7E4DF;
+	background-color: #E7E4DF !important;
 }
 
 
 
-.reveal-all:hover {
-  background-color: rgb(103, 103, 103) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
 
-.top-right-link-button, .switcher-button, .info-br {
-	background-color: #454545 !important;
-	border: 1px #6a6a6a  !important;
-}
-
-
-.top-right-link-button:hover, .switcher-button:hover, .info-br:hover {
-background-color: rgb(103, 103, 103) !important; !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-
-.sidebar {
-    background-color:rgba(75, 75, 75,0.5) !important;
-	color:  #ffffff !important;
-}
-.sidebar ul li:hover {
-    background-color: rgb(101, 101, 101) !important;
-}
-
-
-.title-span, #header, .switcher-text, .score-bottom, #slider-label{
-	color: #ffffff !important;
-}
-
-#auto_next_label,
-#do_not_repeat_label {
-	color:#ffffff !important;
-}
-
-
-
-#result2 {
-	background-color: #505050;
-	color: #ffffff;
-
-}
-
-
-#result2 > button {
-	background-color: #808080;
-
-} 
-
+/* default theme  ends */
+	

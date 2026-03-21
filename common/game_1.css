@@ -140,6 +140,9 @@ left: 4.2px !important;
 
 
 
+.map-data-list {
+  margin-top:25px;
+}
 
 
 .sidebar {
@@ -521,6 +524,14 @@ input[type="range"]#timeoutSlider {
 	opacity:0;
 }
 
+.leaflet-top  /* .leaflet-control-zoom.leaflet-bar.leaflet-control */
+/* this controls the white zoom in zoom out leaflet option on left*/
+{
+  top: unset;
+  bottom: 20px; 
+
+}
+
 .leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom
 {
 	user-select: none; 
@@ -635,13 +646,13 @@ display:none;
 
 
 .reveal-all { /* for Map 2 */
-  font-size: 16px;
+  font-size: 14px;
   color: #393939;
 
   z-index: 1999 !important;
   position: absolute !important;
   top: 8px !important;
-  left: 45vw !important;
+  left: 42.5vw !important;
   right: 0px;
   margin-left: auto;
   margin-right: auto;
@@ -787,7 +798,6 @@ and (min-device-width: 800px)
 
 
 
-
 /* General Mobile Fixes */
 @media (max-width: 768px) {
 
@@ -806,6 +816,9 @@ and (min-device-width: 800px)
   opacity: 0.8 !important;
   }
 
+  .reveal-all {
+  left:37vw !important; top: 1vw !important;
+}
 }
 
 

@@ -799,7 +799,7 @@ and (min-device-width: 800px)
 
 
 .toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5 {
-left: 9px !important;
+left: 8px !important;
 }
 
   .sidebar {
@@ -811,19 +811,19 @@ left: 9px !important;
   }
 
   .reveal-all {
-  left:37vw !important; top: 1vw !important;
+  left:37vw !important; top: 1vw !important; 
+}
 
-  .leaflet-top  /* .leaflet-control-zoom.leaflet-bar.leaflet-control */
-/* this controls the white zoom in zoom out leaflet option on left*/
+  .leaflet-top  /* .leaflet-control-zoom.leaflet-bar.leaflet-control | this controls the white zoom in zoom out leaflet option on left*/
 {
   top: unset;
   left: 0.6vw;
-  bottom: 10vw; 
+  bottom: 12vw !important; 
 
 }
 
 }
-}
+
 
 
 

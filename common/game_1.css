@@ -37,6 +37,8 @@ position: sticky !important;
 
 
 
+
+
 path {
   	z-index: 2147483647 !important;
 
@@ -85,7 +87,6 @@ left: 4.2px !important;
     content: "";
     position: absolute;
     top: 50%;
-
     width: 0;
     height: 0;
     border: 6px solid transparent;
@@ -95,18 +96,17 @@ left: 4.2px !important;
 
 
 
+.toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5 {
+  width: 20px !important;
+  height: 26px !important;
+}
 
 
+.toggle-map-1 { top: 30px !important; left: -1px !important; z-index: 211111 !important;} /* baige */
 
+.toggle-map-3{top: 63px !important; left: -1px !important; } /* rivers */
 
-
-
-
-.toggle-map-1{right: 122px !important; z-index: 211111 !important;} /* baige */
-
-.toggle-map-3{right: 92px !important;} /* rivers */
-
-.toggle-map-4{right: 62px !important;} /* night & districts */
+.toggle-map-4{top: 96px !important; left: -1px !important;} /* night & districts */
 
 
 .toggle-map-5{display: none;}
@@ -314,15 +314,10 @@ font-size: 14px;
  height:25px;
 }
 
-.toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5 {
-  width: 12px !important;
-  height: 16px !important;
-}
-
 
 .toggle-map > img, .toggle-map-1 > img, .toggle-map-2 > img, .toggle-map-3 > img, .toggle-map-4 > img, .toggle-map-5 > img  {
 	z-index:9999;
-height:18px;
+height:16px;
  z-index: 2147483647 !important;
  opacity: 0.5;
  transform: translateX(-2px) translateY(-2px);
@@ -801,12 +796,14 @@ and (min-device-width: 800px)
 /* General Mobile Fixes */
 @media (max-width: 768px) {
 
+  /* REMOVED OLD RHS LAYOUT FOR MAP TOGGLES
 .toggle-map-1{right: 72px !important; z-index: 211111 !important;} /* baige */
 
 .toggle-map-3{right: 42px !important;} /* rivers */
 
  .toggle-map-4{display: none !important;}
 
+ */
 
   .sidebar {
     width: 140px;

@@ -66,9 +66,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener('keydown', (event) => {
-        const key = event.key;
-        if (buttonMap[key]) {
-            handleToggle(buttonMap[key]);
-        }
-    });
+    const key = event.key;
+
+    // Trigger on Cmd (Mac) OR Alt
+    if ((event.metaKey || event.altKey || event.ctrlKey) && buttonMap[key]) {
+        event.preventDefault(); // prevents browser default actions (recommended)
+        handleToggle(buttonMap[key]);
+    }
+});
 });

@@ -937,13 +937,13 @@ background-color:  rgba(226, 226, 226, 0.5);
     	width: 240px !important;
 
     max-width: 240px !important;
-}
 
+}
 
 
 .sidebar-popup .safe-nl .nl {
 
-    display: block !important;
+    display: block;
     color: black;
     font-weight: normal;
     visibility: visible;
@@ -951,14 +951,6 @@ background-color:  rgba(226, 226, 226, 0.5);
     
 }
 
-
-
-
-
-
-
-
-	
 
 
 
@@ -1015,8 +1007,10 @@ and (min-device-width: 800px)
 
 @media (max-width: 1108px) {
 
-.sidebar-popup { 
+.sidebar-popup, 
+.sidebar-popup .safe-nl .nl { 
   display:none !important;
+  opacity: 0 !important;
 }
 
 }

@@ -9,7 +9,7 @@ body {
 .leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom, 
 .leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-touch-zoom {
 	background: #f4f5f7 !important;
-	color: white;
+	color: white !important;
 	
 	}
 
@@ -19,6 +19,13 @@ body {
 	color: #000000 !important;
 }
 
+
+.home-link-button, .switcher-button, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4,.toggle-map-5,
+.leaflet-control-zoom-in, .leaflet-control-zoom-out,
+.title-span, #header, .switcher-text, .score-bottom, .info-br, .reveal-list{
+	background: #f4f5f7 !important;
+	background-color: #f4f5f7 !important;
+}
 
 
 

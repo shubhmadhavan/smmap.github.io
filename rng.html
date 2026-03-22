@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Map</title>
+
+  <!-- Load your existing map -->
+  <script src="common/redirector.js"></script>
+
+  <script>
+    // Wait until script is loaded
+    window.onload = function () {
+
+      // Get all keys from resourcesMap
+      const keys = Object.keys(resourcesMap);
+
+      // Pick random key
+      const randomKey = keys[Math.floor(Math.random() * keys.length)];
+
+      // Redirect
+      window.location.href = "/common/Map_Game_2_dark.html?selection=" + randomKey;
+    };
+  </script>
+
+</head>
+<body>
+  <p>Picking a random map...</p>
+</body>
+</html>

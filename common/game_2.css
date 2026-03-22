@@ -99,31 +99,6 @@ li.highlighted {
 }
 
 
-.sidebar-popup {
-    position: fixed;
-	width: 180px;
-    max-width: 180px;
-     color: black;
-background-color:  rgba(226, 226, 226, 0.5);
-    padding: 5px 8px;
-    z-index: 9999;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
- 
-}
-
-
-
-.sidebar-popup .safe-nl .nl {
-
-    display: block !important;
-    color: black;
- 
-    font-weight: normal;
-    visibility: visible;
-   font-size: 13.4px !important;
-
-}
-
 
 .hidden {
     display: none !important;
@@ -145,5 +120,41 @@ path{
 
 
 
+.sidebar-popup { /* see Map_Game_2_dark.html */
+
+    position: fixed;
+
+
+     color: black;
+background-color:  rgba(226, 226, 226, 0.5);
+    padding: 5px 8px;
+    z-index: 9999;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+ 
+    min-width: 240px !important;
+    	width: 240px !important;
+
+    max-width: 240px !important;
+}
+
+
+
+.sidebar-popup .safe-nl .nl {
+
+    display: block !important;
+    color: black;
+    font-weight: normal;
+    visibility: visible;
+    font-size: 11px !important;
+    
+}
+
+@media (max-width: 1100px) {
+
+.sidebar-popup { 
+  display:none !important;
+}
+
+}
 
 

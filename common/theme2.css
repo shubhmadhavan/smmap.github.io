@@ -1,21 +1,23 @@
 /* default theme */
+/* 2026 one */
+
 body {
 	background: #E7E4DF !important;
-	color: white;
+	color: white !important;
 	}
 	
 
 .leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom, 
 .leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-touch-zoom {
 	background: #E7E4DF !important;
-	color: white;
+	color: white !important;
 	
 	}
 
-.home-link-button, 
+.home-link-button, .switcher-button, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4,.toggle-map-5,
 .leaflet-control-zoom-in, .leaflet-control-zoom-out,
 .title-span, #header, .switcher-text, .score-bottom, .info-br, .reveal-list{
-	background: #E7E4DF;
+	background: #E7E4DF  !important;
 	background-color: #E7E4DF !important;
 }
 

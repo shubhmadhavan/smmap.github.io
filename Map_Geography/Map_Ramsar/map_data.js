@@ -1,8 +1,7 @@
-const mapData = {
-"Wular Lake (JK)":"POINT (74.55804 34.36961)",
-"Hygam Wetland (JK)<span class='nl'>not to be conf. w. Hokersar (JK), Harike (PJ) or Hirakud (OD) </span>":"POINT (74.52786 34.23327)",
+const mapData = {"Wular Lake (JK)":"POINT (74.55804 34.36961)",
+"Hygam Wetland (JK)<br><span class='nl'>not to be conf. w. Hokersar (JK), Harike (PJ) or Hirakud (OD) </span>":"POINT (74.52786 34.23327)",
 "Shallabugh Wetland (JK)":"POINT (74.73626 34.16682)",
-"Hokersar Wetland (JK)<span class='nl'>not to be conf. w. Hygam (JK), Harike (PJ) or Hirakud (OD) </span>":"POINT (74.71179 34.10292)",
+"Hokersar Wetland (JK)<br><span class='nl'>not to be conf. w. Hygam (JK), Harike (PJ) or Hirakud (OD) </span>":"POINT (74.71179 34.10292)",
 "Surinsar-Mansar WLS (JK)":"POINT (75.0414 32.77031)",
 "Tso Kar (LK)":"POINT (78.02524 33.31032)",
 "Tso Moriri (LK)":"POINT (78.31594 32.91122)",
@@ -14,12 +13,15 @@ const mapData = {
 "Kanjli Wetland (PJ)":"POINT (75.3773 31.41422)",
 "Nangal WLS (PJ)":"POINT (76.38146 31.39588)",
 "Ropar (PJ)":"POINT (76.5 31.02)",
-"Harike Wetland (PJ)<span class='nl'>not to be conf. w. Hygam (PJ), Hokersar (JK) or Hirakud (OD) </span>":"POINT (75.01322 31.1418)",
+"Harike Wetland (PJ)<br><span class='nl'>not to be conf. w. Hygam (PJ), Hokersar (JK) or Hirakud (OD) </span>":"POINT (75.01322 31.1418)",
 "Asan Barrage (UK)":"POINT (77.66555 30.43583)",
 "Sultanpur (HR)":"POINT (76.89638 28.44751)",
 "Bhindawas WLS & BS (HR)":"POINT (76.55171 28.53242)",
 "Keoladeo NP/ Bharatpur BS (RS)":"POINT (77.52319 27.15926)",
 "Sambhar Lake (RS)":"POINT (75.04882 26.92928)",
+"Siliserh Lake (RS)":"POINT (76.53136 27.52182)",
+"Khichan Bird Sanctuary":"POINT (72.41804 27.13766)",
+"Menar (Udaipur)":"POINT (74.10637 24.59957)",
 "Haiderpur (UP)":"POINT (78.08215 28.88707)",
 "Upper Ganga (UP)":"POINT (78.17155 28.73116)",
 "Soor Sarovar BS/ Keetham Lake (UP)":"POINT (77.85262 27.236)",
@@ -29,10 +31,15 @@ const mapData = {
 "Shaheed Ch.Sh.Azad BS <br><span id='nl'>(Nawabganj, Unnao dis, UP)":"POINT (80.65312 26.61918)",
 "Samaspur BS (Rae Bareli, UP)":"POINT (81.39457 25.99409)",
 "Parvati Arga (Gonda, UP)":"POINT (82.17501 26.95253)",
-"Bakhira BS (Sant Kabir Nagar, UP) <span class='nl'>not to be confused w. Bakhra dam (HP)</span>":"POINT (83.13895 26.90637)",
+"Bakhira BS (Sant Kabir Nagar, UP) <br><span class='nl'>not to be confused w. Bakhra dam (HP)</span>":"POINT (83.13895 26.90637)",
+"Patna Bird Sanctuary (UP)":"POINT (78.31682 27.52764)",
 "Kanvar Lake BS (BR)":"POINT (86.1456 25.63013)",
 "Nagi BS (BR)":"POINT (86.37567 24.77445)",
 "Nakti BS (BR)":"POINT (86.43735 24.84143)",
+"Gokul Jalashay (BR)":"POINT (86.43735 24.84143)",
+"Udaipur Jheel (BR)":"POINT (84.25932 27.19534)",
+"Gogabil Lake/ Gogabeel Lake (BR)":"POINT (87.69282 25.3753)",
+"Udhwa BS (JH)":"POINT (87.83236 24.96914)",
 "Khecheopalri Lake (SK)":"POINT (88.18827 27.34922)",
 "Dipor Beel (AS)":"POINT (91.64935 26.11769)",
 "Rudrasagar Lake (TR)":"POINT (91.31679 23.50035)",
@@ -40,16 +47,18 @@ const mapData = {
 "Pala Lake (MZ)":"POINT (92.88889 22.20246)",
 "East Kolkata Wetlands (WB)":"POINT (88.45007 22.55284)",
 "Sundarbans":"POINT (88.98564 21.81066)",
+"Kopra Jalashaya (CG)":"POINT (82.1373 22.05164)",
 "Bhitarkanika Mangroves (OD)":"POINT (87.00079 20.74893)",
-"Hirakud Dam (OD) <span class='nl'>not to be conf. w. Hygam (PJ), Hokersar (JK) or Harike (PJ)</span>":"POINT (83.81281 21.597)",
+"Hirakud Dam (OD) <br><span class='nl'>not to be conf. w. Hygam (PJ), Hokersar (JK) or Harike (PJ)</span>":"POINT (83.81281 21.597)",
 "Satkosia Gorge (Tikarpada WLS, OD)":"POINT (84.83202 20.54454)",
-"Anshupa Lake (OD)":"POINT (85.60914 20.45617)",
+"Anshupa Lake/ Ansupa Lake (OD)":"POINT (85.60914 20.45617)",
 "Chilika Lake (OD)":"POINT (85.38679 19.77261)",
 "Tampara Lake (OD)":"POINT (85.00168 19.35243)",
 "Thol (GJ)":"POINT (72.40658 23.13728)",
 "Nalsarovar (GJ)":"POINT (72.04456 22.81987)",
 "Khijadia BS (GJ)":"POINT (70.15451 22.51422)",
 "Wadhvana BS (GJ)":"POINT (73.48615 22.17204)",
+"Chhari-Dhand (GJ)":"POINT (69.76443 23.62983)",
 "Sakhya Sagar (MP)":"POINT (77.71229 25.43541)",
 "Bhoj Tal (MP)":"POINT (77.34191 23.25241)",
 "Yashwant Sagar (MP)":"POINT (75.69564 22.81364)",
@@ -76,14 +85,14 @@ const mapData = {
 "Nanjarayan BS (TN)":"POINT (77.38918 11.13581)",
 "Vellode BS (TN)":"POINT (77.65717 11.25392)",
 "Karaivetti BS (TN)":"POINT (79.04473 10.98278)",
-"Vaduvoor BS (TN)":"POINT (79.3168 10.70178)",
+"Vaduvur BS (TN)":"POINT (79.3168 10.70178)",
 "Udayamarthandapuram (TN)":"POINT (79.56596 10.43131)",
 "Point Calimere (TN)":"POINT (79.86663 10.28828)",
-"Therthangal (TN)":"POINT (78.77193 9.45656)",
+"Therthangal BS (TN)":"POINT (78.77193 9.45656)",
 "Chitrangudi BS (TN)":"POINT (78.48877 9.31485)",
 "Kanjirankulam BS (TN)":"POINT (78.48131 9.35656)",
 "Gulf of Mannar (TN)":"POINT (79.19401 9.25976)",
-"Koonthakulam (TN)":"POINT (77.75093 8.4927)",
+"Koonthankulam (TN)":"POINT (77.75093 8.4927)",
 "Vembanur (TN)":"POINT (77.37629 8.18251)",
 "Suchindram Tharoor  (TN)":"POINT (77.46515 8.15474)",
 "Sakkarakottai (TN)":"POINT (78.8497 9.36145)"
@@ -93,6 +102,18 @@ const mapData = {
 
 
 /* 
+	
+<br><span class='nl'> </span>
+
+<br><span class='nl'> </span>
+
+<br><span class='nl'> </span>
+
+<br><span class='nl'> </span>
+
+<br><span class='nl'> </span>
+
+
 "":"",
 "":"",
 "":"",

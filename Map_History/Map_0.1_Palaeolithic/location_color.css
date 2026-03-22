@@ -2,15 +2,15 @@
 	cursor: crosshair;   
  
 	stroke: #ffffff !important; 
-	color: #3a638e !important; 	
-	fill:#3a638e  !important;	
+	color: #d9a692 !important; 	
+	fill:#d9a692  !important;	
 	stroke-width: 1px !important;
 }
 	
 
 .leaflet-interactive:hover{
 	stroke: #ffffff !important; 
-	color: #3a638e !important; 	
-	fill:#3a638e  !important;		
+	color: #d9a692 !important; 	
+	fill:#d9a692  !important;		
 	stroke-width: 2px !important;
 }

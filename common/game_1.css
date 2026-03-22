@@ -76,18 +76,19 @@ path {
 } 
 
 
-
 .leaflet-tooltip.reveal-all-tooltip,
 .leaflet-tooltip.selected-tooltip.leaflet-zoom-animated{
 	/* this includes both selected and correct tooltip css*/
 
-	font-size: 11px !important; /* TOOLTIP FONT SIZE */
+	font-size: px !important; /* TOOLTIP FONT SIZE */
   	line-height: 11px !important;  /* Reduce line height to fit text */
 
     padding: 1px 2px !important; /* DONT CHANGE - MAY BREAK CODE */
     min-height: auto !important; /* Prevent unnecessary height */
-	z-index: 2147483647 !important;
 }	
+
+
+
 
 
 .leaflet-tooltip-left{
@@ -111,7 +112,6 @@ left: 4.2px !important;
     height: 0;
     border: 6px solid transparent; /* DONT CHANGE - MAY BREAK CODE */
     border-right-color: rgba(120, 120, 120,0.8); /* ← tooltip triangle */
-    	z-index: 1147483647 !important;
 }
 
 .leaflet-tooltip-left:before {
@@ -123,7 +123,6 @@ left: 4.2px !important;
     height: 0;
     border: 6px solid transparent;
     border-left-color: rgba(120, 120, 120,0.8); /* ← tooltip triangle color */
-    	z-index: 1147483647 !important;
 }
 
 
@@ -244,10 +243,30 @@ left: 4.2px !important;
   -moz-user-select: text !important;
   -ms-user-select: text !important;
   pointer-events: auto !important;
-  z-index: 10000 !important;
+}
+
+.leaflet-pane,
+.leaflet-pane.leaflet-tooltip-pane {
+  perspective: 1000px !important;
 }
 
 
+
+div[id^="leaflet-tooltip-"]:focus,
+div[id^="leaflet-tooltip-"]:hover,
+div[role="tooltip"]:focus,
+div[role="tooltip"]:hover,
+.leaflet-tooltip.reveal-all-tooltip.leaflet-zoom-animated.leaflet-tooltip-right:focus,
+.leaflet-tooltip.reveal-all-tooltip.leaflet-zoom-animated.leaflet-tooltip-right:hover,
+.leaflet-tooltip.reveal-all-tooltip.leaflet-zoom-animated.leaflet-tooltip-left:focus,
+.leaflet-tooltip.reveal-all-tooltip.leaflet-zoom-animated.leaflet-tooltip-left:hover,
+.leaflet-tooltip.reveal-all-tooltip:hover,
+.leaflet-tooltip.reveal-all-tooltip:focus {
+z-index: 2147483647 !important;
+font-weight: 490;
+z-index: 2147483647 !important;
+padding-bottom: 2.4px !important;
+}
 
 .home-link-button, .switcher-button {
  /* HOME button and Switcher button */ 
@@ -275,13 +294,18 @@ left: 4.2px !important;
   z-index: 2147483647 !important;
 }
 
-
 .home-link-button:hover, .switcher-button:hover {
   background-color: #e0e0e0;
   color: #000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
+#font-switcher {
+  position: fixed;
+  margin-left: 5px;
+  margin-top: -0px !important;
+
+}
 
 
 .info-br {  /* ⓘ */

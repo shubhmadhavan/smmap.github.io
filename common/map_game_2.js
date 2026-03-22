@@ -28,6 +28,7 @@ var map = L.map('map', {
 
 map.on('tooltipopen', function (e) {
   const tooltipEl = e.tooltip.getElement();
+  
   tooltipEl.addEventListener('mouseenter', () => {
     map.dragging.disable();
   
@@ -38,6 +39,8 @@ map.on('tooltipopen', function (e) {
   
   });
 });
+
+
 
 // Define the bounds of the image (set these to match the geographical area of the image)
 var imageBounds = [[-2.0, 36.78], 
@@ -332,7 +335,6 @@ function addGeometryToMap(geometry, river) {
         className: 'selected-tooltip'
     }).openTooltip();
 
-    // 🔥 FIX: force reposition after DOM renders
     setTimeout(() => {
         layer.openTooltip(); // re-open = recalculates position
     }, 0);

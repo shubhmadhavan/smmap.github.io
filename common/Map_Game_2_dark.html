@@ -71,15 +71,79 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-
 <div class="top-wrapper">
   <div class="icons-container-left">
 
   <button class="home-link-button"> <a class="home-link" href="../index.html" >⌂</a>  </button>
   <button class="switcher-button">     <a class="switcher" href="Map_Game_dark.html"> <span class="switcher-text">⇌</span> </a>  </button>
+  
+  <button class="switcher-button" id="font-switcher"> <span class="switcher-text">a</span> </button>
+  
   <button class="reveal-all">Reveal</button> 
 
   </div>
+
+
+<script>
+  const button = document.getElementById("font-switcher");
+
+  let state = 0; // 0 = default, 1 = min, 2 = larger
+  let styleTag = null;
+
+  function applyStyle() {
+    // Remove existing style first
+    const existing = document.getElementById("font-toggle-style");
+    if (existing) existing.remove();
+
+    if (state === 1) {
+      // MIN
+      styleTag = document.createElement("style");
+      styleTag.id = "font-toggle-style";
+      styleTag.innerHTML = `
+        .leaflet-tooltip.reveal-all-tooltip,
+        .leaflet-tooltip.selected-tooltip.leaflet-zoom-animated {
+          font-size: 9px !important;
+          line-height: 8px !important;
+          padding: unset !important;
+          min-height: auto !important;
+        }
+      `;
+      document.head.appendChild(styleTag);
+
+    } else if (state === 2) {
+      // LARGER
+      styleTag = document.createElement("style");
+      styleTag.id = "font-toggle-style";
+      styleTag.innerHTML = `
+        .leaflet-tooltip.reveal-all-tooltip,
+        .leaflet-tooltip.selected-tooltip.leaflet-zoom-animated {
+          font-size: 10px !important;
+          padding: 0.4px 0.4px !important;
+        }
+      `;
+      document.head.appendChild(styleTag);
+    }
+    // state === 0 → default (no style injected)
+  }
+
+  function toggleFont() {
+    state = (state + 1) % 3; // rotate: 0 → 1 → 2 → 0
+    applyStyle();
+  }
+
+  // Button click
+  button.addEventListener("click", toggleFont);
+
+  // Keyboard shortcut
+  document.addEventListener("keydown", function (e) {
+    const isModifierPressed = e.metaKey || e.ctrlKey || e.altKey;
+
+    if (isModifierPressed && e.key === "7") {
+      e.preventDefault();
+      toggleFont();
+    }
+  });
+</script>
 
 
 

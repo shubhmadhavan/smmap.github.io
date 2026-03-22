@@ -120,14 +120,23 @@ const mapData = {
 "Sabarigiri/ Pamba Dam<br><span class='nl'>on Pamba River, KL</span>":"POINT (77.159800 9.390600)",
 "Mullaperiyar Dam":"POINT (77.1491414 9.525965)",
 "Shoyalar Res":"POINT (76.7686944 10.3116351)",
-"Kallara Meenmutty WF (despite its name, its NOT on Kallada River – it is on Vamanapuram River)":"POINT (77.0857212 8.9470509)"
+"Kallara Meenmutty WF<br><span class='nl'>despite its name, its NOT on Kallada River – it is on Vamanapuram River</span>":"POINT (77.0857212 8.9470509)"
 	};
 
 
 
 
 /* 
-"":"",
+<br><span class='nl'> </span>
+
+<br><span class='nl'> </span>
+
+<br><span class='nl'> </span>
+
+<br><span class='nl'> </span>
+
+<br><span class='nl'> </span>
+
 "":"",
 "":"",
 "":"",

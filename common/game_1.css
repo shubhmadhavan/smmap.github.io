@@ -479,16 +479,17 @@ left: 4.2px !important;
 #Advance {
 	position: sticky;
     bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
+
     margin-bottom: 10px; /* Optional: Adds some spacing from the edge */
     
-    width: 38rem !important;
-    height: 8rem !important;
-    opacity: 1;
+    width: 72rem !important;
+    height: 7rem !important;
+    transform: translateX(23rem);
+
+    opacity: 0.2;
     
 
-	background-color: rgba(141, 141, 141, 0.1);
+	background-color: rgba(148, 221, 237, 0.8);
 	border:1px solid rgb(82, 82, 82);
     text-align: center;
     line-height: 26px;
@@ -499,9 +500,13 @@ left: 4.2px !important;
 	border-radius: 12px;
 
 	filter: drop-shadow(0px 12px 12px rgba(0, 0, 0, 0.2));
+    
+transition: opacity 0.2s ease-in;
 }
 
-
+#Advance:hover {
+    opacity: 0.52;
+}
 
 #auto_next_label, .auto_next_label, #auto_next{
 	color:#000000;
@@ -647,11 +652,11 @@ input[type="range"]#timeoutSlider {
 
 
 
-
 	
 
 #header { /* for Map 1 Test map */
-  font-size: 16px;
+  font-size: 16.4px !important;
+  font-weight: 490 !important;
   color: #393939;
 
   z-index: 1999 !important;

@@ -126,6 +126,17 @@
 
 
         <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/wld_5_rivers.png" data-href="common/Map_Game_2_dark.html?selection=wld_5">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Rivers of the World</div>
+        </div>
+
+
+                <div class="zipper-block">
             <div class="zipper" data-image="Map_Images/index/wld_1_cntr.png" data-href="common/Map_Game_2_dark.html?selection=wld_1">
             <img class="background-image" alt="Revealed Content">
             <div class="zipper-left zipper-side"></div>
@@ -134,6 +145,28 @@
             </div>
             <div class="zipper-label">Countries</div>
         </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/wld_6_sea.png" data-href="common/Map_Game_2_dark.html?selection=wld_6">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Seas</div>
+        </div>
+
+        <div class="zipper-block">
+            <div class="zipper" data-image="Map_Images/index/wld_6_sea.png" data-href="common/Map_Game_2_dark.html?selection=wld_6">
+            <img class="background-image" alt="Revealed Content">
+            <div class="zipper-left zipper-side"></div>
+            <div class="zipper-right zipper-side"></div>
+            <div class="zipper-handle"></div>
+            </div>
+            <div class="zipper-label">Lakes 🔧</div>
+        </div>
+
+
 
 
         <div class="zipper-block">
@@ -168,25 +201,9 @@
         </div>
 
 
-        <div class="zipper-block">
-            <div class="zipper" data-image="Map_Images/index/wld_5_rivers.png" data-href="common/Map_Game_2_dark.html?selection=wld_5">
-            <img class="background-image" alt="Revealed Content">
-            <div class="zipper-left zipper-side"></div>
-            <div class="zipper-right zipper-side"></div>
-            <div class="zipper-handle"></div>
-            </div>
-            <div class="zipper-label">Rivers of the World</div>
-        </div>
 
-        <div class="zipper-block">
-            <div class="zipper" data-image="Map_Images/index/wld_6_sea.png" data-href="common/Map_Game_2_dark.html?selection=wld_6">
-            <img class="background-image" alt="Revealed Content">
-            <div class="zipper-left zipper-side"></div>
-            <div class="zipper-right zipper-side"></div>
-            <div class="zipper-handle"></div>
-            </div>
-            <div class="zipper-label">Seas</div>
-        </div>
+
+
         
         <!--
         <div class="zipper-block">
@@ -214,7 +231,7 @@
        
 <!-- wrench symbol  🔧 -->
 
-<div class="zipper-row-header">Economy</div>
+<div class="zipper-row-header">Resources & Infra</div>
 
 
         <div class="zipper-block">
@@ -332,7 +349,7 @@
 
 
 
-        <div class="zipper-row-header">Ancient & Medieval History</div>
+<div class="zipper-row-header">Ancient & Medieval History</div>
 
 
         <div class="zipper-block">
@@ -508,6 +525,33 @@
 
 
 <script>
+const EXPIRY_TIME = 60 * 60 * 1000; // 1 hour in ms
+
+function getVisited() {
+  return JSON.parse(localStorage.getItem('visitedLinks') || '{}');
+}
+
+
+  
+
+        document.querySelectorAll('.zipper-block').forEach(block => {
+    const zipper = block.querySelector('.zipper');
+    const label = block.querySelector('.zipper-label');
+
+    if (!zipper || !label) return;
+
+    const href = zipper.dataset.href;
+
+    label.style.cursor = "pointer";
+
+    label.addEventListener('click', () => {
+    
+  
+        window.location.href = href;
+    });
+    });
+
+
   document.querySelectorAll('.zipper').forEach((container) => {
     const image = container.querySelector('.background-image');
     const handle = container.querySelector('.zipper-handle');

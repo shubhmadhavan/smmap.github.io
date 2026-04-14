@@ -4,7 +4,7 @@
 <p align="left">
   <img
     src="https://github.com/user-attachments/assets/73793465-5a49-41b6-ac43-4bc35d7bbfb0"
-    width="820"
+    width="720"
     alt="smmap–Preview"
   />
 </p>
@@ -12,18 +12,37 @@
 ## Objectives
 Facing a dearth of comprehensive sources that present the mapping of various elements of Indian Geography in an interactive and engaging way, I was motivated to create a solution that addressed this gap.    
  
-You can access it from this [Link](https://shubhmadhavan.github.io/smmap.github.io/index.html) or clone the repository and run it locally ;)  
+You can access it from this [Link](https://shubhmadhavan.github.io/smmap.github.io/index.html) or clone the repository and run it locally. 
 
+## How to Use
+ - Simply Click on a Map element to reveal its name
+ - You can Press "Reveal" Button on top or 'R' key on keyboard to reveal all locations at once.
+
+## Shortcuts 
+ - Use **F4** to toggle sidebar 
+ - Use **F3** to switch focus to sidebar
+ - When in sidebar, Use **arrow keys** to navigate, **Enter** to highlight element on map
+
+ - **R** to Reveal all elements 
+ - **Z** to change font size
+
+ - **Ctrl + 1** to Switch to Theme 1
+ - **Ctrl + 2** to Switch to Theme 2
+ - **Ctrl + 3** to Switch to Theme 3
+
+## Game Mode
+ - There is a Game mode that you can access by clicking '⇌' button on top left
+ - In this mode, a random location is displayed and user has to click on corresponding element on map
 
 ## Themes
 <div style="overflow: hidden;">
-  <p>4 different themes to choose from</p> 
+  <p>4 Themes</p> 
 </div>
 
 <p align="left">
   <img
     src="https://github.com/user-attachments/assets/1136d1b7-c23d-4980-87d6-05b661edc12c"
-    width="480"
+    width="380"
     alt="smmap–Preview"
   />
 </p>

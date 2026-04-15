@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 
 
-<script>
+<script> /*font-switcher 'z' (z) keydown */
   const button = document.getElementById("font-switcher");
 
   // Load saved state (default = 0)
@@ -107,21 +107,21 @@ document.addEventListener('DOMContentLoaded', function () {
           line-height: 8px !important;
           padding: unset !important;
           min-height: auto !important; 
-width: 28px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-        }
+      width: 28px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+              }
 
-  .leaflet-tooltip.reveal-all-tooltip:hover,
-.leaflet-tooltip.selected-tooltip.leaflet-zoom-animated:hover {
-  font-size: 11px !important;
-  font-weight: 580;
-width: unset;
-  white-space: nowrap;
-  overflow: unset;
-  text-overflow: unset;
-        }
+        .leaflet-tooltip.reveal-all-tooltip:hover,
+      .leaflet-tooltip.selected-tooltip.leaflet-zoom-animated:hover {
+        font-size: 10px !important;
+        font-weight: 580;
+      width: unset;
+        white-space: nowrap;
+        overflow: unset;
+        text-overflow: unset;
+              }
 
 
       `; /* smallest font */
@@ -140,13 +140,26 @@ width: unset;
       `;
       document.head.appendChild(styleTag);
     }
+    else if (state === 3) {
+      // LARGER
+      styleTag = document.createElement("style");
+      styleTag.id = "font-toggle-style";
+      styleTag.innerHTML = `
+        .leaflet-tooltip.reveal-all-tooltip,
+        .leaflet-tooltip.selected-tooltip.leaflet-zoom-animated {
+          font-size: 11px !important;
+          padding: 0.4px 0.4px !important;
+        }
+      `;
+      document.head.appendChild(styleTag);
+    }
 
     // Save state
     localStorage.setItem("fontState", state);
   }
 
   function toggleFont() {
-    state = (state + 1) % 3; // 0 → 1 → 2 → 0
+    state = (state + 1) % 4; // 0 → 1 → 2 → 0
     applyStyle();
   }
 
@@ -544,11 +557,32 @@ document.addEventListener('keydown', function (e) {
 
     document.addEventListener('keydown', function (event) {
   // Check for F3 key
-  if (event.key === 'F3') {
+  if (event.key === 'F4' ) {
     event.preventDefault(); // Prevent browser's default find behavior
 
     // Trigger the same logic as button click
     revealButton.click();
+  }
+  
+});
+
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'F3' || 's') {
+    event.preventDefault(); 
+    event.preventDefault();
+
+    
+    // 👉 SHIFT + F3 → only focus if already open
+    if (event.shiftKey) {
+
+        sidebar.setAttribute('tabindex', '-1');
+        sidebar.focus();
+
+      return;
+    }
+
+    sidebar.setAttribute('tabindex', '-1');
+    sidebar.focus();
   }
 });
 
@@ -560,20 +594,33 @@ document.addEventListener('keydown', function (e) {
 
 
 
-    revealButton.addEventListener('click', function () {
-  if (sidebar.style.display === 'none' || sidebar.style.display === '') {
-    sidebar.style.display = 'flex';
-    localStorage.setItem('sidebarVisible', 'true');
 
-    if (!sidebarPopulated) {
-      populateSidebar();
-      sidebarPopulated = true;
-    }
-  } else {
-    sidebar.style.display = 'none';
-    localStorage.setItem('sidebarVisible', 'false');
+    revealButton.addEventListener('click', function () {
+      if (sidebar.style.display === 'none' || sidebar.style.display === '') {
+        sidebar.style.display = 'flex';
+        localStorage.setItem('sidebarVisible', 'true');
+
+        if (!sidebarPopulated) {
+          populateSidebar();
+          sidebarPopulated = true;
+        }
+      } else {
+        sidebar.style.display = 'none';
+        localStorage.setItem('sidebarVisible', 'false');
+        
+         clearPopup();
+        }
+      });
+
+
+      function clearPopup() {
+  if (currentPopup) {
+    currentPopup.remove();
+    currentPopup = null;
+    if (currentPopupLi) currentPopupLi._popup = null;
+    currentPopupLi = null;
   }
-});
+}
 
 
     function getFirstTextNode(element) {
@@ -605,6 +652,7 @@ document.addEventListener('keydown', function (e) {
                 const parentDiv = tooltip.closest('div');
                 const wasHighlighted = li.classList.contains('highlighted');
 
+     
                 li.classList.toggle('highlighted');
                 parentDiv.classList.toggle('highlighted');
 
@@ -644,39 +692,31 @@ let currentPopup = null;
 let currentPopupLi = null;
 
 function showSidebarPopup(liElement, content) {
-    if (!content) return;
-
-    // If popup exists on this element, toggle off
-    if (liElement._popup) {
-        liElement._popup.remove();
-        liElement._popup = null;
-        return;
-    }
-
-    // Remove any other popups on other elements
+    // 👉 ALWAYS remove existing popup first
     if (currentPopup) {
         currentPopup.remove();
         if (currentPopupLi) currentPopupLi._popup = null;
+        currentPopup = null;
+        currentPopupLi = null;
     }
+
+    // 👉 If no content, stop AFTER clearing
+    if (!content) return;
 
     const popup = document.createElement('div');
     popup.className = 'sidebar-popup';
     popup.innerHTML = `<div class="safe-nl">${content.replace(/;/g, '.<br>')}</div>`;
 
-
     const rect = liElement.getBoundingClientRect();
 
-    popup.style.left = `${rect.left - 270}px`;
-    popup.style.top = `${rect.top - 13}px`;
+    popup.style.left = `${rect.left}px`;
+    popup.style.top = `${rect.top}px`;
 
     document.body.appendChild(popup);
 
-    // Track current popup and its element
     currentPopup = popup;
     currentPopupLi = liElement;
     liElement._popup = popup;
-
- 
 }
 
 (function () {
@@ -685,10 +725,17 @@ function showSidebarPopup(liElement, content) {
     if (!sidebar || !list) return;
 
     let items = Array.from(list.querySelectorAll('li'));
+    
+    
     const highlightedItems = items.filter(li => li.classList.contains('highlighted'));
-    let currentIndex = highlightedItems.length
-        ? items.indexOf(highlightedItems[highlightedItems.length - 1])
-        : -1;
+
+const savedIndex = parseInt(localStorage.getItem('sidebarIndex'), 10);
+
+let currentIndex = (!isNaN(savedIndex) && savedIndex >= 0 && savedIndex < items.length)
+  ? savedIndex
+  : (highlightedItems.length
+      ? items.indexOf(highlightedItems[highlightedItems.length - 1])
+      : -1);
 
     sidebar.setAttribute('tabindex', '0');
 
@@ -701,14 +748,47 @@ function showSidebarPopup(liElement, content) {
     `;
     document.head.appendChild(style);
 
+
     function updateFocus() {
-        items.forEach((li, i) => {
-            li.classList.toggle('focused', i === currentIndex);
-        });
-        if (currentIndex >= 0) {
-            items[currentIndex].scrollIntoView({ block: 'nearest' });
-        }
+      items.forEach((li, i) => {
+        const isActive = i === currentIndex;
+
+        li.classList.toggle('focused', isActive); // or 'active'—pick one class name
+      });
+
+      const activeItem = items[currentIndex];
+
+      if (activeItem) {
+        // Ensure it's focusable
+        activeItem.setAttribute('tabindex', '-1');
+
+        // Move keyboard focus
+        activeItem.focus();
+
+        // Keep it visible
+        activeItem.scrollIntoView({ block: 'nearest' });
+
+        // Trigger same behavior as hover
+        showSidebarPopup(activeItem, activeItem.dataset.info);
+      }
+      localStorage.setItem('sidebarIndex', currentIndex);
     }
+
+    list.addEventListener('click', (e) => {
+  const li = e.target.closest('li');
+  if (!li) return;
+
+  // Let existing click handler (highlight logic) run first
+  requestAnimationFrame(() => {
+    items = Array.from(list.querySelectorAll('li')); // refresh in case DOM changed
+
+    const index = items.indexOf(li);
+    if (index === -1) return;
+
+    currentIndex = index;
+    updateFocus();
+  });
+});
 
     sidebar.addEventListener('keydown', (e) => {
         if (!items.length) return;
@@ -729,6 +809,8 @@ function showSidebarPopup(liElement, content) {
         }
     });
 
+  
+
     // Global key listener for 'Q' to toggle focus on sidebar
     document.addEventListener('keydown', (e) => {
         if (e.key.toLowerCase() === 'q') {
@@ -742,56 +824,70 @@ function showSidebarPopup(liElement, content) {
     });
 
     const observer = new MutationObserver(() => {
-        items = Array.from(list.querySelectorAll('li'));
-        const highlightedItems = items.filter(li => li.classList.contains('highlighted'));
-        if (highlightedItems.length) {
-            currentIndex = items.indexOf(highlightedItems[highlightedItems.length - 1]);
-        } else {
-            currentIndex = -1;
-        }
-        updateFocus();
-    });
+    items = Array.from(list.querySelectorAll('li'));
 
+    const highlightedItems = items.filter(li => li.classList.contains('highlighted'));
+
+    const savedIndex = parseInt(localStorage.getItem('sidebarIndex'), 10);
+
+    if (!isNaN(savedIndex) && savedIndex >= 0 && savedIndex < items.length) {
+        currentIndex = savedIndex;
+    } else if (highlightedItems.length) {
+        currentIndex = items.indexOf(highlightedItems[highlightedItems.length - 1]);
+    } else {
+        currentIndex = -1;
+    }
+
+    // 👉 ADD IT RIGHT HERE
+    if (currentIndex >= 0) {
+        updateFocus();
+    }
+});
+
+
+    
     observer.observe(list, { childList: true, subtree: false });
 
     if (getComputedStyle(sidebar).display !== 'none') {
         sidebar.focus();
         if (currentIndex >= 0) updateFocus();
     }
-})();
+  })();
 
 
 
 
     function populateTooltips() {
         tooltipsMap.clear();
-        document.querySelectorAll('.leaflet-tooltip').forEach(tooltip => {
-            const firstLine = getFirstTextNode(tooltip); // Extract only the first line/text node
-            tooltipsMap.set(firstLine, tooltip);
-        });
-    }
+          document.querySelectorAll('.leaflet-tooltip').forEach(tooltip => {
+              const firstLine = getFirstTextNode(tooltip); // Extract only the first line/text node
+              tooltipsMap.set(firstLine, tooltip);
+          });
+      }
 
     const observer = new MutationObserver(() => {
-        populateTooltips(); // Re-populate the map when new tooltips are added
-    });
+          populateTooltips(); // Re-populate the map when new tooltips are added
+      });
 
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true,
-    });
+      observer.observe(document.body, {
+          childList: true,
+          subtree: true,
+      });
 
     window.addEventListener('load', () => {
-  const savedState = localStorage.getItem('sidebarVisible');
-  if (savedState === 'true') {
-    sidebar.style.display = 'flex';
-    if (!sidebarPopulated) {
-      populateSidebar();
-      sidebarPopulated = true;
-    }
-  } else {
-    sidebar.style.display = 'none';
-  }
-});
+        const savedState = localStorage.getItem('sidebarVisible');
+        if (savedState === 'true') {
+          sidebar.style.display = 'flex';
+          if (!sidebarPopulated) {
+            populateSidebar();
+            sidebarPopulated = true;
+          }
+        } else {
+          sidebar.style.display = 'none';
+        }
+
+
+      });
     
 </script>
     

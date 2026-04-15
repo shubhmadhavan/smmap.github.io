@@ -949,10 +949,17 @@ path{
     pointer-events: all;
 }
 
+.leaflet-tooltip.reveal-all-tooltip {
+    user-select: all !important;
+}
 
+li {
+  user-select: all !important;
+}
 
 .sidebar-popup { /* see Map_Game_2_dark.html */
 
+    pointer-events: none;
     position: fixed;
 
 
@@ -962,22 +969,21 @@ background-color:  rgba(226, 226, 226, 0.5);
     z-index: 9999;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
  
-    min-width: 240px !important;
-    	width: 240px !important;
-
-    max-width: 240px !important;
+     min-width: 160px !important;
+    	width: 160px !important;
+    max-width: 160px !important;
+  
+   
+  left: calc(100vw - 475px) !important;
 
 }
 
-
 .sidebar-popup .safe-nl .nl {
-
     display: block;
     color: black;
     font-weight: normal;
     visibility: visible;
-    font-size: 11px !important;
-    
+    font-size: 12px !important;
 }
 
 
@@ -1034,7 +1040,7 @@ and (min-device-width: 800px)
 
 }
 
-@media (max-width: 1108px) {
+@media (max-width: 958px) {
 
 .sidebar-popup, 
 .sidebar-popup .safe-nl .nl { 

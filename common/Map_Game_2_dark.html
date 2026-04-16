@@ -417,9 +417,17 @@ window.addEventListener('load', function () {
     const tooltips = [];  // Renamed to avoid any conflicts
     let revealedLayers = [];  // Keep track of all added tooltip layers
 window.onload = function () {
+
+  
     if (tooltips.length === 0) {
         for (const river in mapData) {
-            const geometry = parseGeometry(mapData[river]);
+              if (!river || !river.trim()) continue;
+
+    const raw = mapData[river];
+    if (!raw || !raw.trim()) continue;
+
+    const geometry = parseGeometry(raw);
+    if (!geometry) continue;
 
             if (Array.isArray(geometry)) {
                 const centroid = getCollectionCentroid(geometry);
@@ -632,27 +640,33 @@ document.addEventListener('keydown', function (event) {
         return '';
     }
 
-    function populateSidebar() {
+   function populateSidebar() {
     mapDataList.innerHTML = '';
 
     Object.keys(mapData).forEach(function (key) {
-        const [beforeBR, afterBR = ''] = key.split('<br>'); // Store both parts
+        const value = mapData[key];
+
+        const [beforeBR, afterBR = ''] = key.split('<br>');
         const displayName = beforeBR.trim();
         const extraInfo = afterBR.trim();
 
         const li = document.createElement('li');
         li.textContent = displayName;
-        li.dataset.info = extraInfo; // Store the extra info
+        li.dataset.info = extraInfo;
+
+        // 👇 Apply smaller font if value is empty
+        if (!value || value.trim() === "") {
+            li.classList.add('empty-item');
+        }
+
         mapDataList.appendChild(li);
 
-        // Existing click event just for highlight toggle and parentDiv display
         li.addEventListener('click', function () {
             const tooltip = tooltipsMap.get(displayName);
             if (tooltip) {
                 const parentDiv = tooltip.closest('div');
                 const wasHighlighted = li.classList.contains('highlighted');
 
-     
                 li.classList.toggle('highlighted');
                 parentDiv.classList.toggle('highlighted');
 
@@ -664,26 +678,9 @@ document.addEventListener('keydown', function (event) {
                     }
                 }
             }
-            // Removed popup logic from here
         });
-
-        // Add hover event listeners for popup
-        li.addEventListener('mouseenter', function () {
-            showSidebarPopup(li, li.dataset.info);
-        });
-
-        li.addEventListener('mouseleave', function () {
-            if (li._popup) {
-                li._popup.remove();
-                li._popup = null;
-            }
-        });
-
-
-
-
     });
-    }
+}
 
 
 

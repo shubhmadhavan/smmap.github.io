@@ -41,6 +41,15 @@ const resourcesMap = {
     'Eng_1': { script: '../Map_History/Map_3.3_English/map_data.js', css: '../Map_History/Map_3.3_English/location_color.css' },
     'Dan_1': { script: '../Map_History/Map_3.3_Danish/map_data.js', css: '../Map_History/Map_3.3_Danish/location_color.css' },
     'Fra_1': { script: '../Map_History/Map_3.4_French/map_data.js', css: '../Map_History/Map_3.4_French/location_color.css' },
+
+    'Civil_Revolts': { script: '../Map_History/Map_1760_Civil/map_data.js', css: '../Map_History/Map_1760_Civil/location_color.css' },
+    'Peasant_Revolts': { script: '../Map_History/Map_1825_Peasants/map_data.js', css: '../Map_History/Map_1825_Peasants/location_color.css' },
+    'Tribal_Revolts': { script: '../Map_History/Map_1768_Tribals/map_data.js', css: '../Map_History/Map_1768_Tribals/location_color.css' },
+    'Tribal_Revolts–NER': { script: '../Map_History/Map_1833_Tribals–NER/map_data.js', css: '../Map_History/Map_1833_Tribals–NER/location_color.css' },
+    'Sepoys': { script: '../Map_History/Map_1764_Sepoys/map_data.js', css: '../Map_History/Map_1764_Sepoys/location_color.css' },
+    '1857': { script: '../Map_History/Map_1857/map_data.js', css: '../Map_History/Map_1857/location_color.css' },
+
+
     'min_1': { script: '../Map_Economy/Map_1.1_Iron_Ore/map_data.js', css: '../Map_Economy/Map_1.1_Iron_Ore/location_color.css' },
     'min_1_1': { script: '../Map_Economy/Map_1.11_Iron_Steel_Indus/map_data.js', css: '../Map_Economy/Map_1.11_Iron_Steel_Indus/location_color.css' },
     'min_2': { script: '../Map_Economy/Map_1.2_Manganese/map_data.js', css: '../Map_Economy/Map_1.2_Manganese/location_color.css' },

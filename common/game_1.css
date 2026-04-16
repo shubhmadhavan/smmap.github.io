@@ -115,7 +115,6 @@ left: 4.2px !important;
 }
 
 .leaflet-tooltip-left:before {
-
     content: "";
     position: absolute;
     top: 50%;
@@ -170,7 +169,7 @@ left: 4.2px !important;
     display: flex;
     flex-direction: column;
 
-    padding-top: 20px;
+    padding-top: 25px;
     padding-bottom: 20px;
 
     transition: transform 0.3s ease-in-out;
@@ -185,6 +184,18 @@ left: 4.2px !important;
 
 
 
+li.empty-item  {
+
+    padding: 4px !important;
+      font-size: 0.7em;
+    opacity: 0.6;
+
+    background: #dee3e2 !important;
+    color: #0b0b0b !important;
+    outline: none !important;
+}
+
+
 .map-data-list {
   margin-top:25px;
 }
@@ -197,7 +208,9 @@ left: 4.2px !important;
 }
 
 
-
+:focus-visible {
+  outline: solid 1px #6c6c6c;
+}
 
 .sidebar ul {
     list-style-type: none;
@@ -207,7 +220,7 @@ left: 4.2px !important;
 }
 
 .sidebar ul li {
-    padding: 10px;
+    padding: 5px;
     border-bottom: 1px solid #ddd;
 }
 
@@ -216,6 +229,10 @@ left: 4.2px !important;
 }
 
 
+.sidebar .focused {
+ padding: 2px !important;
+     padding-left: 5px !important;
+}
 
 
 
@@ -889,7 +906,7 @@ background-color: #e0e0e0;
     /* keep other properties as-is */
 }
 
-.highlighted {
+.highlighted { /* for the highlighted tooltip */
 
   background-image: linear-gradient(-90deg,
     rgba(229, 246, 255, 0.9),
@@ -897,6 +914,7 @@ background-color: #e0e0e0;
     rgba(234, 255, 251, 0.95),
     rgba(227, 252, 250, 0.85)
   );
+
   background-size: 300% 300%;
   animation: drift 2s ease infinite;
   z-index: 2147483647 !important;

@@ -1,29 +1,48 @@
-const mapData = {"Hemis NP (Ladakh)":"POINT (77.3689212 33.7644528)",
-"Kazinag National Park":"POINT (74.3499496 34.1990498)",
-"City Forest NP (J&K)":"POINT (74.86804 34.0907272)",
-"Dachigam NP-WLS (J&K)":"POINT (75.03775 34.1371836)",
-"Kishtwar NP (J&K)":"POINT (75.9932587 33.6187109)",
+const mapData = {
+	
+"LK":"",
+"Hemis NP (Ladakh)":"POINT (77.3689212 33.7644528)",
+
+"JK":"",
+"Kazinag NP (JK)<br><span class='nl'>Kazinag NP lies on Jhelum</span>":"POINT (74.3499496 34.1990498)",
+"City Forest 'Salim Ali'  NP (JK)<br><span class='nl'>City Forest NP lies on Jhelum River </span> ":"POINT (74.86804 34.0907272)",
+"Dachigam NP-WLS (JK)<br><span class='nl'> Dachigam has Dagwan River (trib of Jhelum) in it. It does not itself lie on Jhelum.</span>":"POINT (75.03775 34.1371836)",
+"Kishtwar NP (JK)<br><span class='nl'>Kishtwar NP in Kishtwar dis, JK. Bounded by Rinnay River in north and Marwah River. Marwah is tributary of and joins Chenab</span>":"POINT (75.9932587 33.6187109)",
+
+
+
+"HP":"",
 "Inderkilla NP (HP)":"POINT (77.4116547 32.2281966)",
 "Cold Desert BR":"POINT (77.0073363 32.0972586)",
 "Pin Valley NP (HP)":"POINT (77.8803842 32.0041623)",
 "Khirganga NP (HP)":"POINT (77.6655872 32.0054278)",
 "Great Himalayan NP (HP)":"POINT (77.1429015 31.8917917)",
 "Simbalbara NP (HP)":"POINT (77.5469116 30.4552308)",
+
+"UK":"",
 "Govind Pashu Vihar NP-WLS (UK)":"POINT (78.3387066 31.1424514)",
 "Gangotri NP (UK)":"POINT (79.1548533 30.9425671)",
 "Valley of Flowers NP (UK)":"POINT (79.605303 30.72804)",
 "Nanda Devi NP/BR (UK)":"POINT (79.8386542 30.6587637)",
-"Rajaji NP-TR":"POINT (78.1625014 29.9685754)",
-"Jim Corbett NP-TR":"POINT (78.7947916 29.56189)",
+"Rajaji NP-TR (UK)":"POINT (78.1625014 29.9685754)",
+"Jim Corbett NP-TR (UK)":"POINT (78.7947916 29.56189)",
+
+"HR":"",
 "Kalesar NP-WLS (HR)":"POINT (77.4743979 30.3829634)",
 "Sultanpur NP (HR)":"POINT (76.8903501 28.4612633)",
-"Pilibhit NP-TR":"POINT (80.0327807 28.7049226)",
-"Dudhwa NP":"POINT (80.6381028 28.4804689)",
+
+"UP":"",
+"Pilibhit NP-TR (UP)":"POINT (80.0327807 28.7049226)",
+"Dudhwa NP (UP)":"POINT (80.6381028 28.4804689)",
+
+"RS":"",
 "Sariska NP-TR":"POINT (76.4551996 27.424551)",
 "Keoladeo NP (RS)":"POINT (77.5231999 27.159269)",
 "Desert NP (RS)":"POINT (70.6006152 26.8775795)",
-"Ranthambore NP-TR":"POINT (76.5618971 26.0690151)",
-"Mukundra NP-TR":"POINT (75.6340141 25.0160789)",
+"Ranthambore NP-TR (RS)":"POINT (76.5618971 26.0690151)",
+"Mukundra NP-TR (RS)":"POINT (75.6340141 25.0160789)",
+
+"MP":"",
 "Van Vihar NP (MP)":"POINT (77.3640257 23.229009)",
 "Kuno NP (MP)":"POINT (77.1024902 25.7475449)",
 "Madhav NP (MP)":"POINT (77.7391076 25.431745)",
@@ -34,26 +53,40 @@ const mapData = {"Hemis NP (Ladakh)":"POINT (77.3689212 33.7644528)",
 "Pachmarhi BR":"POINT (78.4481884 22.4332881)",
 "Satpura NP":"POINT (78.3757984 22.4873921)",
 "Pench (Jawaharlal) NP (MP)":"POINT (79.2473903 21.7877426)",
+
+"JH":"",
 "Betla NP (JH)":"POINT (84.1923982 23.8856486)",
-"Singalila NP (WB)":"POINT (88.0762233 27.0371351)",
-"Neora Valley NP (WB)":"POINT (88.7006888 27.0824496)",
-"Gorumara NP (WB)":"POINT (88.7974793 26.7563574)",
-"Chapramari WLS (WB)":"POINT (88.855592 26.8740808)",
-"Jaldapara NP (WB)":"POINT (89.3100608 26.6739485)",
-"Khangchendzonga NP (Sikkim)":"POINT (88.3245556 27.6672446)",
-"Sundarbans NP-BR":"POINT (88.885869 21.8340655)",
-"Buxa NP":"POINT (89.5167843 26.6039177)",
+
+"SK":"",
 "Khangchendzonga BR":"POINT (88.3245556 27.6671401)",
-"Raimona NP (AS)":"POINT (89.8962639 26.6217604)",
-"Manas NP":"POINT (91.0533163 26.7208536)",
-"Manas BR":"POINT (91.0010641 26.6591774)",
+"Khangchendzonga NP (Sikkim)":"POINT (88.3245556 27.6672446)",
+
+
+"WB":"",
+"Singalila NP (WB)":"POINT (88.0762233 27.0371351)",
+"Neora Valley NP (WB)<br><span class='nl'>Neora Valley NP has Neora River, a tributary of Teesta River</span>":"POINT (88.7006888 27.0824496)",
+"Chapramari WLS (WB)":"POINT (88.855592 26.8740808)",
+"Gorumara NP (WB)<br><span class='nl'>Gorumara NP has Jaldhaka (imp), Murti, Raidak Rivers</span>":"POINT (88.7974793 26.7563574)",
+"Jaldapara NP (WB)<br><span class='nl'>Jaldapara NP has Torsa River passing through it.</span>":"POINT (89.3100608 26.6739485)",
+"Sundarbans NP-BR<br><span class='nl'> Sundarbans – 7 rivers that form tidal deltaic network (Jhila, Chandra, Raimangal, Haribhanga, Gosaba, Bidya, Matla). Not tributaries but distributaries or tidal channels of Hooghly River. </span> ":"POINT (88.885869 21.8340655)",
+"Buxa NP<br><span class='nl'>Buxa NP has Kaljani River and Jayanti River. Jayanti is known as the Queen of Buxa</span> ":"POINT (89.5167843 26.6039177)",
+
+
+"AS":"",
+"Raimona NP (AS)<br><span class='nl'>Raimona NP has Sankosh River flowing through it</span> ":"POINT (89.8962639 26.6217604)",
+"Manas NP (AS)<br><span class='nl'>Manas NP – Manas River & Baki river pass through</span> ":"POINT (90.6733163 26.7208536)",
+"Manas BR":"POINT (90.7710641 26.6591774)",
 "Orang NP-TR (AS)":"POINT (92.3320235 26.5537938)",
 "Nameri NP-TR (AS)":"POINT (92.8772163 26.9324008)",
 "Kaziranga NP-TR (AS)":"POINT (93.3453685 26.6388952)",
 "Dibru Saikhowa NP-BR (AS)":"POINT (95.3625409 27.6689859)",
 "Dehing Patkai NP (AS)":"POINT (95.5257896 27.3051589)",
+
+"MG":"",
 "Nokrek Ridge NP-BR (MG)":"POINT (90.321747 25.4619424)",
 "Balpakram NP (MG)":"POINT (90.8644002 25.2626037)",
+
+"AR":"",
 "Pakke TR (AR)":"POINT (92.8178291 27.0983555)",
 "Dehang-Dibang BR (AR)":"POINT (95.1682171 28.7890537)",
 "Mouling NP (AR)":"POINT (94.7484518 28.4738185)",
@@ -123,3 +156,6 @@ const mapData = {"Hemis NP (Ladakh)":"POINT (77.3689212 33.7644528)",
 
 
 /* certain biosphere reserves have also been included in map above*/
+
+
+/* Some WLS have been included based on PYQ or relevance to NP */

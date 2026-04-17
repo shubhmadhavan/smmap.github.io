@@ -1,13 +1,13 @@
 # <img src="https://github.com/user-attachments/assets/ee9684da-bd0e-4a96-a202-ebcfff8cfeab" style="float:left; vertical-align: middle; margin-right: 10px;  margin-top: -10px;  height:36px; display: inline-block;" />  SM-Map  
 
 
-<p align="left">
-  <img
-    src="https://github.com/user-attachments/assets/73793465-5a49-41b6-ac43-4bc35d7bbfb0"
-    width="720"
+<a href="https://shubhmadhavan.github.io/smmap.github.io/">
+  <img 
+    src="https://github.com/user-attachments/assets/3beca648-b4ea-461b-8897-cad41330724f"
+    width="1220"
     alt="smmap–Preview"
   />
-</p>
+</a>
 
 ## Objectives
 Facing a dearth of comprehensive sources that present the mapping of various elements of Indian Geography in an interactive and engaging way, I was motivated to create a solution that addressed this gap.    

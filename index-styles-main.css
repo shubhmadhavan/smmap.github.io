@@ -13,7 +13,7 @@
       text-align: center;
       cursor: pointer;
       user-select: none;
-    }
+          }
 
 .title-header {
   display: flex;
@@ -79,7 +79,7 @@
     .folder-label {
       color: rgba(208, 208, 208);
       margin-top:15px;
-margin-left: 4px;
+    margin-left: 4px;
       font-size: 12px;
       text-align: left !important;
     
@@ -101,3 +101,10 @@ position: relative;
   z-index: 0;
 }
 
+@media (max-width: 768px) { 
+
+.folder-icon{
+  max-height: 24vh;
+}
+
+}

@@ -98,6 +98,34 @@ background: rgba(244, 242, 224, 0.4);
 transition: transform 0.16s ease; /* was 0.1s */
 }
 
+.zipper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%; /* 👈 fully hidden off-screen */
+  width: 50%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.35) 50%,
+    rgba(255,255,255,0) 100%
+  );
+
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+
+.zipper:hover::before {
+  animation: zipperShine 1.1s ease forwards;
+}
+
+@keyframes zipperShine {
+  0%   { left: -120%; }
+  100% { left: 150%; }
+}
+
 .zipper-label {
 margin-top: 12px;
 font-size: 0.84rem;

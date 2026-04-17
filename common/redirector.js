@@ -22,6 +22,13 @@ const resourcesMap = {
     'wld_6': { script: '../Map_Geography/Map_World_Seas/map_data.js', css: '../Map_Geography/Map_World_Seas/location_color.css' },
     'wld_7': { script: '../Map_Geography/Map_World_Rivers/map_data.js', css: '../Map_Geography/Map_World_Rivers/location_color.css' },
     'wld_8': { script: '../Map_Geography/Map_World_Conflicts/map_data.js', css: '../Map_Geography/Map_World_Conflicts/location_color.css' },
+   
+
+    'wld_lakes': { script: '../Map_Geography/Map_Lakes/map_data.js', css: '../Map_Geography/Map_Lakes/location_color.css' },
+
+
+   
+   
     'dm_1': { script: '../Map_Geography/Map_Reservoirs/map_data.js', css: '../Map_Geography/Map_Reservoirs/location_color.css' },
     'rs_1': { script: '../Map_Geography/Map_Ramsar/map_data.js', css: '../Map_Geography/Map_Ramsar/location_color.css' },
     'np_1': { script: '../Map_Geography/Map_National_Park/map_data.js', css: '../Map_Geography/Map_National_Park/location_color.css' },

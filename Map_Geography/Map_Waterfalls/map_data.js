@@ -1,32 +1,67 @@
 const mapData = {
-"Kempty Waterfall":"POINT (78.0371964 30.4879258)",
-"Sahastradhara<br> <span class='nl'>NOT on Ganges;Ganges → Sooswa → Song → Baldi River (Sahasradhara Falls)<span>":"POINT (78.1293615 30.3883919)",
-"Chuliya Waterfall<br><span class='nl'>on ChambaL (chuLiya); NOT to be conf. w. Chachai on Bihad (trib of Tamsa) ":"POINT (75.5711968 24.9305361)",
-"Keoti Falls<br><span class='nl'> Rewa dis; on Mahana, trib of Tamsa":"POINT (81.4529612 24.8164113)",
-"Chachai Waterfall<br><span class='nl'> Rewa dis; on Bihad, a trib of Tamsa; east of the Chahai, the discovery of a prehistoric chert arrowhead at Nyagurhee village was made by Le Mesurier (RW engineer) in 1856":"POINT (81.30249 24.791860)",
-"Dhuandhar Waterfall<br><span class='nl'> Jabalpur dis ":"POINT (79.8075411 23.1262738)",
-"Kapildhara Waterfall<br><span class='nl'> on Narmada (CORRECT RIVER MAP)":"POINT (80.7055688 22.7008773)",
-"Rajrappa Waterfall<br><span class='nl'> Ramgarh dis, JH; at confluence of Damodar & Bhairavi":"POINT (85.7080133 23.6415377)",
-"Hundru Falls<br><span class='nl'>Ranchi dis; on Subarnarekha River":"POINT (85.6667986 23.4508392)",
-"Jonha Falls <br><span class='nl'>Ranchi dis; on Raru, a trib of Subarnarekha":"POINT (85.6102055 23.3423069)",
-"Barehipani Waterfall<br><span class='nl'> 2nd highest 'overall' – Barehpani in OD is tiered WF; recall that the tallest 'overall' WF is also tiered → Kunchikal on Varahi River, KN ":"POINT (86.3801873 21.9328896)",
-"Elephant Falls":"POINT (91.8225513 25.5375374)",
-"Nohkalikai WF etc<br><span class='nl'>Nohkalikai WF is 3rd highest 'overall' and 'highest plunge' WF; O. seasonal WFs loc. in vicinity of Nohkalikai WF are – Nohsngithiang WF (4th highest overall – tiered) and Kynrem WF; Nohsngithiang WF (4th highest WF) is aka Mawsmai WF ":"POINT (91.732537 25.2389306)",
-"Tirathgarh Waterfall":"POINT (81.8651088 18.9139499)",
-"Duduma Waterfalls":"POINT (82.4531033 18.519303)",
-"Vajrai Waterfall<br><span class='nl'> NOT on Koyna but on Urmodi River; there is also Urmodi Reservoir on the same":"POINT (73.80947 17.69711)",
-"Gokak Falls<br><span class='nl'> on Ghatprabha":"POINT (74.7775938 16.1878993)",
-"Dudhsagar Falls<br><span class='nl'> Goa; on Mandovi River – 5th highest waterfall – segmented WF":"POINT (74.3143073 15.3144375)",
-"Jog/ Gersoppa Falls":"POINT (74.8138496 14.2293266)",
-"Kunchikal Falls<br><span class='nl'>highest 'overall' waterfall of India – Kunchikal is a tiered cascade, NOT a single-drop (plunge) waterfall; Varahi River, which also has Mani Dam":"POINT (75.0191385 13.6937514)",
-"Barkana falls" :"POINT (75.0935483 13.4881474)",
-"Shivanasamudra Falls":"POINT (77.1680322 12.2944508)",
-"Hogenakkal Water Falls":"POINT (77.7787566 12.1178537)",
-"Soochipara Waterfalls":"POINT (76.1637859 11.5115356)",
-"Vazhachal Waterfalls <br><span class='nl'>lies on Chalakudy River":"POINT (76.5925893 10.3014146)",
-"Athirappilly Falls <br><span class='nl'>lies on Chalakudy River;largest waterfall of KL; 'Niagara of S Ind'":"POINT (76.5697643 10.2851072)",
-"Thalaiyar Falls ":"POINT (77.6287186 10.2141832)",
-"Kallar Meenmutty Waterfalls":"POINT (77.1452266 8.7122176)"
+
+"UK":"",
+	"Kempty Waterfall":"POINT (78.0371964 30.4879258)",
+	"Sahastradhara<br> <span class='nl'>NOT on Ganges. Sahastradhara is on Baldi River. Ganges → Sooswa → Song → Baldi River (Sahasradhara Falls)<span>":"POINT (78.1293615 30.3883919)",
+
+"RS":"",
+	"Chuliya Waterfall<br><span class='nl'>on ChambaL (chuLiya); NOT to be conf. w. Chachai on Bihad (trib of Tamsa) ":"POINT (75.5711968 24.9305361)",
+
+"MP":"",
+	"Keoti Falls<br><span class='nl'> Rewa dis; on Mahana, trib of Tamsa":"POINT (81.4529612 24.8164113)",
+	"Chachai Waterfall<br><span class='nl'> Rewa dis; on Bihad, a trib of Tamsa; east of the Chahai, the discovery of a prehistoric chert arrowhead at Nyagurhee village was made by Le Mesurier (RW engineer) in 1856":"POINT (81.30249 24.791860)",
+
+"MP":"",
+	"Dhuandhar Waterfall<br><span class='nl'> Jabalpur dis ":"POINT (79.8075411 23.1262738)",
+	"Kapildhara Waterfall<br><span class='nl'> on Narmada (CORRECT RIVER MAP)":"POINT (80.7055688 22.7008773)",
+
+"JH":"",
+	"Rajrappa Waterfall<br><span class='nl'> Ramgarh dis, JH; at confluence of Damodar & Bhairavi":"POINT (85.7080133 23.6415377)",
+	"Hundru Falls<br><span class='nl'>Ranchi dis; on Subarnarekha River":"POINT (85.6667986 23.4508392)",
+	"Jonha Falls <br><span class='nl'>Ranchi dis; on Raru, a trib of Subarnarekha":"POINT (85.6102055 23.3423069)",
+
+"OD":"",
+	"Barehipani Waterfall<br><span class='nl'> 2nd highest 'overall' – Barehpani in OD is tiered WF; recall that the tallest 'overall' WF is also tiered → Kunchikal on Varahi River, KN ":"POINT (86.3801873 21.9328896)",
+
+"MG":"",
+	"Elephant Falls":"POINT (91.8225513 25.5375374)",
+	"Nohkalikai WF etc<br><span class='nl'>Nohkalikai WF is 3rd highest 'overall' and 'highest plunge' WF; O. seasonal WFs loc. in vicinity of Nohkalikai WF are – Nohsngithiang WF (4th highest overall – tiered) and Kynrem WF; Nohsngithiang WF (4th highest WF) is aka Mawsmai WF ":"POINT (91.732537 25.2389306)",
+
+"CG":"",
+	"Tirathgarh Waterfall":"POINT (81.8651088 18.9139499)",
+
+"OD (Silleru River)":"",
+	"Duduma Waterfalls<br><span class='nl'>Dudma on Silleru River</span> ":"POINT (82.4531033 18.519303)",
+
+"MH":"",
+	"Vajrai Waterfall<br><span class='nl'> NOT on Koyna but on Urmodi River; there is also Urmodi Reservoir on the same":"POINT (73.80947 17.69711)",
+
+"KN":"",
+	"Gokak Falls<br><span class='nl'> on Ghatprabha":"POINT (74.7775938 16.1878993)",
+
+"GA":"",
+	"Dudhsagar Falls (GA)<br><span class='nl'> Goa; on Mandovi River – 5th highest waterfall – segmented WF":"POINT (74.3143073 15.3144375)",
+
+"KN":"",
+	"Jog/ Gersoppa Falls<br><span class='nl'>Jog Falls on Shravathi River</span> ":"POINT (74.8138496 14.2293266)",
+	
+	"Kunchikal Falls<br><span class='nl'>highest 'overall' waterfall of India – Kunchikal is a tiered cascade, NOT a single-drop (plunge) waterfall; Varahi River, which also has Mani Dam":"POINT (75.0191385 13.6937514)",
+
+	"Barkana falls" :"POINT (75.0935483 13.4881474)",
+
+	"Shivanasamudra Falls<br><span class='nl'>Shivanasamudra is on Kaveri River</span>":"POINT (77.1680322 12.2944508)",
+
+"TN":"",
+	"Hogenakkal Water Falls (TN)":"POINT (77.7787566 12.1178537)",
+	"Thalaiyar Falls ":"POINT (77.6287186 10.2141832)",
+
+
+"KL":"",
+	"Soochipara Waterfalls":"POINT (76.1637859 11.5115356)",
+
+	"Vazhachal Waterfalls <br><span class='nl'>lies on Chalakudy River":"POINT (76.5925893 10.3014146)",
+	"Athirappilly Falls <br><span class='nl'>lies on Chalakudy River;largest waterfall of KL; 'Niagara of S Ind'":"POINT (76.5697643 10.2851072)",
+	"Kallar (Meenmutty) Waterfalls (Thiruvanthapuram, KL)":"POINT (77.1452266 8.7122176)"
 	};
 
 

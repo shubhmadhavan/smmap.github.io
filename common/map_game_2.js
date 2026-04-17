@@ -52,7 +52,7 @@ L.imageOverlay('../Map_Images/India_OS_dark.jpg', imageBounds).addTo(map);
 
 // Check if 'selection' parameter is 'wld_1'
 if (getUrlParameter('selection').includes('wld')) {
-    map.setView([0, 0], 2); // Center at (0,0) with zoom level 2
+    map.setView([0, 0], 2);
     map.setMaxZoom(6.3);
 
     // Remove existing image layers
@@ -67,12 +67,18 @@ if (getUrlParameter('selection').includes('wld')) {
 
     themeStylesheet.setAttribute("href", "theme4.css");
 
-    // Set opacity to 0 with !important
+    // Existing opacity override
     const style = document.createElement("style");
-    style.innerHTML = ".leaflet-image-layer.leaflet-zoom-animated { opacity: 0 !important; }";
+    style.innerHTML = `
+        .leaflet-image-layer.leaflet-zoom-animated {
+            opacity: 0 !important;
+        }
+        #map {
+            filter: brightness(0.87) contrast(1.4) saturate(1.5);
+        }
+    `;
     document.head.appendChild(style);
 }
-
 
 
 

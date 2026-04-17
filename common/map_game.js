@@ -91,8 +91,8 @@ function getUrlParameter(name) {
 
 // Check if 'selection' parameter is 'wld'
 if (getUrlParameter('selection').includes('wld')) {
-    map.setView([0, 0], 2); // Center at (0,0) with zoom level 2
-    map.setMaxZoom(6.3); 
+    map.setView([0, 0], 2);
+    map.setMaxZoom(6.3);
 
     // Remove existing image layers
     document.querySelectorAll('.leaflet-image-layer.leaflet-zoom-animated, .leaflet-tile-container.leaflet-zoom-animated').forEach(layer => {
@@ -101,19 +101,21 @@ if (getUrlParameter('selection').includes('wld')) {
 
     // Add the tile layer
     tileLayer = L.tileLayer('../Map_Images/map_tiles/{z}_{x}_{y}.png', {
-        attribution: '&copy; CARTO',
-        minZoom: 1,
-        maxZoom: 8,       // Allow users to zoom up to level 7
-        maxNativeZoom: 6, // Tells Leaflet the highest real tile zoom is 6
-        tileSize: 256
+        attribution: '&copy; CARTO'
     }).addTo(map);
-    
 
     themeStylesheet.setAttribute("href", "theme4.css");
 
-    // Set opacity to 0 with !important
+    // Existing opacity override
     const style = document.createElement("style");
-    style.innerHTML = ".leaflet-image-layer.leaflet-zoom-animated { opacity: 0 !important; }";
+    style.innerHTML = `
+        .leaflet-image-layer.leaflet-zoom-animated {
+            opacity: 0 !important;
+        }
+        #map {
+            filter: brightness(0.87) contrast(1.4) saturate(1.5);
+        }
+    `;
     document.head.appendChild(style);
 }
 

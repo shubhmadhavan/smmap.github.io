@@ -15,13 +15,16 @@
       user-select: none;
     }
 
-    .title-header {
-      color: rgba(208, 208, 208);
-      opacity: 0.53;
-        font-size: 15px;
+.title-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(208, 208, 208);
+  opacity: 0.53;
+  font-size: 15px;
   margin-top: 20px;
-  text-align: center !important;
- 
+  text-align: center;
+  gap: 10px; /* optional spacing */
 }
     .title-header:hover {
       opacity: 1;
@@ -30,12 +33,10 @@
 .title-header::before,
 .title-header::after {
   content: "";
-  display: inline-block;
-  width: 40vw;
+  flex: 1;
   height: 2px;
   background: linear-gradient(to right, transparent, #c2aa48, transparent);
 }
-
 
 .folder-icon {
   width: 30vw;

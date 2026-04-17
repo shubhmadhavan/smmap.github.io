@@ -13,7 +13,6 @@ background: linear-gradient(135deg, #1e1e2f, #2c2c54);
   }
 
 
-
 ::selection {
   background: rgba(255, 246, 218, 0.5);
 }
@@ -198,6 +197,7 @@ animation: faux-wobble 0.34s ease;
   }
 
 
+   /* 
 
 @media (max-width: 768px) {
 
@@ -220,4 +220,6 @@ margin-top: 12px;
 }
 
 
-}
+} 
+
+*/

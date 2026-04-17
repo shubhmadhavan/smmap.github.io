@@ -1,4 +1,7 @@
 const mapData = {
+ 
+    
+    "Mica → Used as Insulator in Electrical equipment, Construction as it improves strength & adds heat resistance":"",
 "Ajmer":"POINT (74.6399163 26.4498954)",
 "Beawar":"POINT (74.3199038 26.104585)",
 "Gaya":"POINT (85.0002336 24.7913957)",

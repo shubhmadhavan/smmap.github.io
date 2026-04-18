@@ -3,42 +3,39 @@ const mapData = {
 "Neelam River (trib of Jhelum), JK":"",
 	"Kishanganga HE Project (JK)":"POINT (74.7519341 34.6486313)",
 
-"Jhelum River, JK":"",
+"Jhelum River":"",
 	"Uri Hydle Dam (JK)":"POINT (74.18118 34.14075)",
 	"Mangla Dam Lake (POJK)":"POINT (73.6509807 33.2113568)",
 
 
-"Chenab River, JK":"",
+"Chenab River":"",
 	"Salal Dam (JK)":"POINT (74.81118 33.14308)",
 	"Baglihar Dam (JK)":"POINT (75.3511229 33.1545699)",
 	"Ratle Dam (JK)":"POINT (75.785494 33.1756706)",
 	"Dulhasti Dam (JK)":"POINT (75.798862 33.3685412)",
 
 
-"Ravi River, PJ-JK border":"",	
-	"Ranjit Sagar Dam (PJ)":"POINT (75.7659211 32.4596104)",
-	"Shahpur Kandi Dam (PJ)":"POINT (75.6885592 32.3923972)",
+"Ravi River":"",	
+	"Ranjit Sagar Dam (PJ-JK border)":"POINT (75.7659211 32.4596104)",
+	"Shahpur Kandi Dam (PJ-JK border)":"POINT (75.6885592 32.3923972)",
 
 "Uhl River (trib of Beas), HP":"",	
 	"Shanan HE Project (HP)":"POINT (76.8612144 32.0024304)",
 
-"Ravi River, HP":"",	
-	"Maharana Pratap Sagar/<br> Pong Dam (HP)<span class='nl'>creates the man-made Ramsar site Pong Dam (HP)</span>":"POINT (76.0166561 31.9916099)",
+"Beas River":"",	
+	"Maharana Pratap Sagar (HP)/<br> Pong Dam (HP)<span class='nl'>creates the man-made Ramsar site Pong Dam (HP)</span>":"POINT (76.0166561 31.9916099)",
 
-"Satluj River, HP":"",	
+"Satluj River":"",	
 	"Gobind Sagar Reservoir (HP)<br><span class='nl'>created by Bhakra Dam (HP)</span>":"POINT (76.4858919 31.4133005)",
 	"Bhakra Dam (HP)":"POINT (76.451946 31.4164701)",
 
 "Tons River, HP-UK border":"",	
-	"Kishau Dam (proposed)":"POINT (77.70443333333334 30.749805555555557)",
-	"Ichari Dam":"POINT (77.791111 30.613611)",
+	"Kishau Dam (HP-UK border, proposed)":"POINT (77.70443333333334 30.749805555555557)",
+	"Ichari Dam (HP-UK border)":"POINT (77.791111 30.613611)",
 
 "Yamuna River, UK":"",	
 	"Lakhwar Dam":"POINT (77.948925 30.517983)",
 	"Hathni Kund":"POINT (77.583337 30.3145471)",
-
-"Ganga River, UP":"",	
-	"Narora Dam":"POINT (78.39193 28.19817)",
 
 
 "Chambal River, RS":"",
@@ -57,34 +54,38 @@ const mapData = {
 "RS":"",
 	"Khari Dam":"POINT (74.2753209 25.705335)",
 
-"MP":"",
+"Sindh (trib of Chambal)":"",
 	"Madhikeda Reservoir":"POINT (77.8739264 25.5123334)",
 
-"Betwa, UP":"",
+"Betwa":"",
 	"Sukma Dugma Reservoir (Jhansi, UP)":"POINT (78.5342696 25.1792106)",
 	"Mata Tila Dam Reservoir (Lalitpur, UP)":"POINT (78.3347613 25.0632176)",
 
-"Betwa, UP-MP":"",
-	"Rajghat Reservoir (Inter-State Dam, Lalitpur, UP & Ashoknagar, MP)":"POINT (78.263272 24.681173)",
+"Betwa":"",
+	"Rajghat Reservoir (UP-MP)<br><span class='nl'>Rajghat is an Inter-State Dam, Lalitpur, UP & Ashoknagar, MP</span> ":"POINT (78.263272 24.681173)",
 
-"Virma (trib of Betwa), UP":"",
-	"Swami Brahma Nand Dam":"POINT (79.6823402 25.5498202)",
+"Virma (trib of Betwa)":"",
+	"Swami Brahma Nand Dam (UP)":"POINT (79.6823402 25.5498202)",
 
-"Dhasan (trib of Betwa), MP":"",
-	"Sujara Band":"POINT (79.1003199 24.630049)",
-
-"Bhagirathi, UK":"",
-	"Tehri Dam":"POINT (78.4706599 30.4060548)",
+"Dhasan (trib of Betwa)":"",
+	"Sujara Band (MP)":"POINT (79.1003199 24.630049)",
 
 
-"Son, MP":"",
-	"Ban Sagar Lake":"POINT (81.1161596 24.1128556)",
 
-"Rihand (trib of Son), MP":"",
-	"Govind Ballabh Pant Sagar/ Rihand Dam":"POINT (82.8297062 24.10856)",
+"Bhagirathi":"",
+	"Tehri Dam (UK)":"POINT (78.4706599 30.4060548)",
 
-"Manjushree (trib of Hooghly), JH":"",
-	"Massanjore Dam":"POINT (87.284051 24.1557136)",
+"Ganga River":"",	
+	"Narora Dam (UP)":"POINT (78.39193 28.19817)",
+
+"Son":"",
+	"Ban Sagar Lake (MP)":"POINT (81.1161596 24.1128556)",
+
+"Rihand (trib of Son)":"",
+	"Govind Ballabh Pant Sagar/ Rihand Dam (MP)":"POINT (82.8297062 24.10856)",
+
+"Manjushree (trib of Hooghly)":"",
+	"Massanjore Dam (JH)":"POINT (87.284051 24.1557136)",
 
 "JH":"",
 	"Konar Reservoir":"POINT (85.7516353 23.9444647)",

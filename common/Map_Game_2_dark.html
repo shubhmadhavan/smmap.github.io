@@ -25,7 +25,6 @@
           
 </head>
 
-<script src="redirector.js"></script>
 
 <body>
 
@@ -168,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Keyboard shortcuts
   document.addEventListener("keydown", function (e) {
-    const isModifierPressed = e.metaKey || e.ctrlKey || e.altKey;
+    const isModifierPressed =  e.ctrlKey || e.altKey;
 
     // Ctrl/Cmd/Alt + 7
     if (isModifierPressed && e.key === "7") {
@@ -191,6 +190,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
+
   <div class="icons-container">
       <button class="toggle-map"><img src="..\Map_Images\india_icon_0.png"></button>
       <button class="toggle-map-1"><img src="..\Map_Images\india_icon_1.png"></button>
@@ -205,11 +206,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </div>
 
+<script src="redirector.js"></script>
+
 
 <script src="theme_selector.js" defer> </script>
 <script src="theme_map_toggler.js" defer> </script>
 
 
+
+<script>
+document.addEventListener('keydown', function(e) {
+  // Allow Ctrl/Cmd + C explicitly
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'c') {
+    e.stopImmediatePropagation(); // bypass other listeners
+    return true; // let browser handle copy
+  }
+}, true); // capture phase = runs before other scripts
+</script>
 
 
 <script>

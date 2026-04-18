@@ -12,7 +12,9 @@ body{
   filter: saturate(1.2);
 }
 
-
+* {
+  user-select: text;
+}
 
 .top-boundary {
   position: fixed;

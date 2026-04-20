@@ -25,7 +25,7 @@ const mapData = {
 
 "MG":"",
 "Elephant Falls":"POINT (91.8225513 25.5375374)",
-"Nohkalikai WF etc<br><span class='nl'>Nohkalikai WF is 3rd highest 'overall' and 'highest plunge' WF; O. seasonal WFs loc. in vicinity of Nohkalikai WF are – Nohsngithiang WF (4th highest overall – tiered) and Kynrem WF; Nohsngithiang WF (4th highest WF) is aka Mawsmai WF ":"POINT (91.732537 25.2389306)",
+"Nohkalikai WF etc<br><span class='nl'>Nohkalikai WF is 3rd highest 'overall' and 'highest plunge' WF; Other seasonal WFs loc in vicinity of Nohkalikai WF are – Nohsngithiang WF (4th highest overall – tiered) and Kynrem WF; Nohsngithiang WF (4th highest WF) is aka Mawsmai WF ":"POINT (91.732537 25.2389306)",
 
 "CG":"",
 "Tirathgarh Waterfall":"POINT (81.8651088 18.9139499)",

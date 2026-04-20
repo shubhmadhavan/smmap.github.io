@@ -6,6 +6,7 @@ body{
     width: 99vw !important;
     max-height: 98vh !important;
     
+    
 }
 
   body {
@@ -44,6 +45,8 @@ body{
 	top: 25px !important;
 	height: 96vh !important; /* Adjusted height for map */
 	background: #0b0b0b;
+  border-radius: 32px;
+
 
 }
 
@@ -151,11 +154,13 @@ left: 4.2px !important;
 
 .sidebar {
     position: fixed;
-    right: 0;
+    right: 0px;
     top: 2px;
 	z-index: 999 !important;
-    width: 280px;
-    height: 93vh;
+    width: 252px;
+max-height: 92vh !important;
+    
+    
 	color: #000000;
 
     background-color: #f1f1f1;
@@ -168,14 +173,20 @@ left: 4.2px !important;
 
     transition: transform 0.3s ease-in-out;
 
-	cursor: pointer;
+
     user-select: none; 
-        font-size: 13px !important;
+        font-size: 14.5px !important;
         
-        opacity: 0.92;
+        
+
+        border-radius: 12px;
+        z-index: 2225 !important;
 
 }
 
+.sidebar li {
+  cursor: pointer;
+}
 
 
 li.empty-item  {
@@ -927,7 +938,10 @@ background-color: #e0e0e0;
 
   background-size: 300% 300%;
   animation: drift 2s ease infinite;
+
+  /* dont need this anymore
   z-index: 2147483647 !important;
+  */
 
   /* Text and subtle enhancement */
   color: #333;
@@ -982,37 +996,67 @@ path{
 }
 
 li {
-  user-select: all !important;
+
 }
 
 .sidebar-popup { /* see Map_Game_2_dark.html */
 
-    pointer-events: none;
     position: fixed;
 
-
      color: black;
-background-color:  rgba(226, 226, 226, 0.5);
+background-color:  rgba(240, 240, 240, 0.8);
     padding: 5px 8px;
     z-index: 9999;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
  
-     min-width: 160px !important;
-    	width: 160px !important;
-    max-width: 160px !important;
-  
+
+  border: 22px !important;
+
+  border-radius: 12px;
+  position:fixed;
+
+
+      min-width: 190px !important;
+
+    max-width: 190px !important;
    
-  left: calc(100vw - 475px) !important;
+    
+  left: calc(100vw - 485px) !important;;
+
+  /* calc(100vw - 675px) !important; */
+
+
+  top: 3vh !important;
+  min-height: 100px;
+    bottom: auto;
+
+  
+      transition: opacity 1.3s ease-in;
 
 }
+
+.sidebar-popup .safe-nl {
+
+
+}
+
+.sidebar-popup .safe-nl li {
+  font-size: 14px !important;
+}
+
 
 .sidebar-popup .safe-nl .nl {
     display: block;
     color: black;
     font-weight: normal;
     visibility: visible;
-    font-size: 12px !important;
+  
+      font-size: 14px !important;
+    opacity: 1;
+    
 }
+
+
 
 
 
@@ -1074,6 +1118,7 @@ and (min-device-width: 800px)
 .sidebar-popup .safe-nl .nl { 
   display:none !important;
   opacity: 0 !important;
+
 }
 
 }
@@ -1091,7 +1136,7 @@ left: 8px !important;
     width: 140px;
     padding: 1px;
     font-size:10px !important ;
-     height: 89vh !important;
+
   opacity: 0.8 !important;
   }
 

@@ -1,7 +1,9 @@
 const mapData = {
 "JH" :"",
-"Gua Iron Ore Mines (Singhbum, JH)":"POINT (85.3562565 22.2185736)",
-"Noamundi Iron Mine (Singhbum, JH)" : "POINT (85.58511 22.1681)",
+"Gua Iron Ore Mines (W. Singhbum, JH)":"POINT (85.3562565 22.2185736)",
+"Noamundi Iron Mine (W. Singhbum, JH)" : "POINT (85.58511 22.1681)",
+"Barajamda Iron Mine (W. Singhbum, JH)" : "POINT (85.48511 22.1681)",
+
 
 "OD" :"",
 "Gorumahisani, Mayurbhanj (OD)":"POINT (86.4187308 22.0086978)",

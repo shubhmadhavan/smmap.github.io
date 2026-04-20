@@ -12,7 +12,7 @@ const mapData = {
 "Markha Valley":"POINT (77.2673627 33.9793423)",
 "Kang Yatse Hill":"POINT (77.5550222 33.7658768)",
 "Zanskar Range":"LINESTRING (76.1348681 34.6648641, 76.5991461 34.1881986, 77.7619511 33.3100852, 78.6099928 32.868324)",
-"Great Himalayas/ Himadri <br><span class='nl'>Great Himalayas are home to Machoi, Parkachik, Shafat, Pensi La, Drang Drung Glaciers. Also known as Himadri, Great Himalayas form major part of border of JK UT and Ladakh UT, HP, UK and AR border with Xizang Province (Tibet Autonomous Region) </span> ":"LINESTRING (74.2070808 35.3316334, 74.4762458 35.2060562, 74.4593587 35.0002901, 75.4109192 34.4175312, 77.0626022 32.8060528, 78.701097 31.7850393, 80.4154723 30.8837166, 81.189001 30.2244476, 86.57302 27.8866211, 87.7577005 27.6994216, 88.0159234 27.7029441, 89.2095199 27.5870173, 92.519197 27.734131, 95.0715844 29.1393279, 95.0487533 29.600534)",
+"Great Himalayas/ Himadri <br><span class='nl'>Great Himalayas are home to Machoi, Parkachik, Shafat, Pensi La, Drang Drung Glaciers. Also known as Himadri, Great Himalayas form major part of border of JK UT and Ladakh UT, HP, UK and AR border with Xizang Province (Tibet Autonomous Region).</span> ":"LINESTRING (74.2070808 35.3316334, 74.4762458 35.2060562, 74.4593587 35.0002901, 75.4109192 34.4175312, 77.0626022 32.8060528, 78.701097 31.7850393, 80.4154723 30.8837166, 81.189001 30.2244476, 86.57302 27.8866211, 87.7577005 27.6994216, 88.0159234 27.7029441, 89.2095199 27.5870173, 92.519197 27.734131, 95.0715844 29.1393279, 95.0487533 29.600534)",
 "Amarnath Peak":"POINT (75.5506557 34.2428585)",
 
 

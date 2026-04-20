@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let replaced = false;
 
   function toggleElements() {
-    const elements = document.querySelectorAll('.kl, .nl');
+    const elements = document.querySelectorAll('.kl, .sidebar-popup'); /* add  ,.nl to also show info in tooltip */
     if (elements.length === 0) return;
 
     if (!replaced) {
@@ -213,15 +213,29 @@ document.addEventListener('DOMContentLoaded', function () {
 <script src="theme_map_toggler.js" defer> </script>
 
 
-
 <script>
 document.addEventListener('keydown', function(e) {
-  // Allow Ctrl/Cmd + C explicitly
-  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'c') {
-    e.stopImmediatePropagation(); // bypass other listeners
-    return true; // let browser handle copy
+  const key = e.key.toLowerCase();
+
+  // Allow Ctrl/Cmd + C (copy)
+  if ((e.ctrlKey || e.metaKey) && key === 'c') {
+    e.stopImmediatePropagation();
+    return true;
   }
-}, true); // capture phase = runs before other scripts
+
+  // Allow Ctrl/Cmd + F (find)
+  if ((e.ctrlKey || e.metaKey) && key === 'f') {
+    e.stopImmediatePropagation();
+    return true;
+  }
+
+  // Trigger home button on Ctrl/Cmd + H
+  if ((e.ctrlKey || e.metaKey) && key === 'h') {
+  e.preventDefault();
+  window.location.href = '../index.html';
+}
+
+}, true); // capture phase
 </script>
 
 
@@ -356,7 +370,7 @@ window.addEventListener('load', function () {
   </script>
 
  
-  <script>
+<script>
     // Utility to get first meaningful text node from a tooltip
     function getFirstTextNode(element) {
       for (const node of element.childNodes) {
@@ -405,9 +419,9 @@ window.addEventListener('load', function () {
     
 
 
-<div class="sidebar" style="display: none;">
-    <br>
-    <ul class="map-data-list"></ul>
+<div class="sidebar" id="sidebar">
+  <span class="-header"></span>
+  <ul class="map-data-list"></ul>
 </div>
 
 
@@ -421,11 +435,18 @@ window.addEventListener('load', function () {
 
 
 
+<script> 
 
-<script> //REVEAL ALL BUTTON (and loading tooltips at startup) 
+//REVEAL ALL BUTTON (and loading tooltips at startup) 
 //WORKING 
+
+// SIDEBAR SCRIPT
+
+
     let allTooltipsVisible = true;  // Set the default state of the tooltips
     let allTooltipsRevealed = false;
+
+    let topZIndex = 1000;
 
     const tooltips = [];  // Renamed to avoid any conflicts
     let revealedLayers = [];  // Keep track of all added tooltip layers
@@ -675,23 +696,32 @@ document.addEventListener('keydown', function (event) {
         mapDataList.appendChild(li);
 
         li.addEventListener('click', function () {
-            const tooltip = tooltipsMap.get(displayName);
-            if (tooltip) {
-                const parentDiv = tooltip.closest('div');
-                const wasHighlighted = li.classList.contains('highlighted');
+    const tooltip = tooltipsMap.get(displayName);
+    if (tooltip) {
+        const parentDiv = tooltip.closest('div');
+        const wasHighlighted = li.classList.contains('highlighted');
 
-                li.classList.toggle('highlighted');
-                parentDiv.classList.toggle('highlighted');
-
-                if (!wasHighlighted) {
-                    parentDiv.style.display = 'block';
-                } else {
-                    if (!allTooltipsRevealed) {
-                        parentDiv.style.display = 'none';
-                    }
-                }
-            }
+        // 🔥 Z-INDEX CONTROL HERE
+        document.querySelectorAll('.leaflet-tooltip').forEach(el => {
+          el.style.zIndex = 1;
         });
+        parentDiv.style.zIndex = 9999;
+
+        li.classList.toggle('highlighted');
+        parentDiv.classList.toggle('highlighted');
+
+        if (!wasHighlighted) {
+            parentDiv.style.display = 'block';
+        } else {
+            if (!allTooltipsRevealed) {
+                parentDiv.style.display = 'none';
+            }
+        }
+    }
+});
+
+
+        
     });
 }
 
@@ -713,9 +743,26 @@ function showSidebarPopup(liElement, content) {
     // 👉 If no content, stop AFTER clearing
     if (!content) return;
 
+    // 👉 Remove dots before closing span (handles ".</span>" and ". </span>")
+    content = content.replace(/\.\s*<\/span>/g, '</span>');
+
+    // 👉 Also remove trailing dots just in case
+    content = content.replace(/(\.+\s*)$/, '');
+
     const popup = document.createElement('div');
     popup.className = 'sidebar-popup';
-    popup.innerHTML = `<div class="safe-nl">${content.replace(/;/g, '.<br>')}</div>`;
+
+    let items = content /* SPLIT into sentences */
+        .split(';')
+        .map(s => s.trim())
+        .filter(Boolean);
+
+    const listItems = items.map(item => {
+        const formatted = item.replace(/;/g, '<br>');
+        return `<li>${formatted}</li>`;
+    }).join('');
+
+    popup.innerHTML = `<ul class="safe-nl" style="margin-left:-20px;">${listItems}</ul>`;
 
     const rect = liElement.getBoundingClientRect();
 
@@ -728,6 +775,7 @@ function showSidebarPopup(liElement, content) {
     currentPopupLi = liElement;
     liElement._popup = popup;
 }
+
 
 (function () {
     const sidebar = document.querySelector('.sidebar');

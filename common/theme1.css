@@ -1,18 +1,88 @@
 /* default theme */
 body {
-	background: #f4f5f7 !important;
+	background: #f4f5f7 ;
+
+	background: linear-gradient(135deg, #1e1e2f, #2c2c54) !important;
+
 	color: white;
 	}
 	
 
 
-.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom, 
-.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-touch-zoom {
-	background: #f4f5f7 !important;
-	color: white !important;
-	
-	}
 
+
+	/* SIDEBAR */
+.sidebar {
+	background-color: #34344d !important;
+color: #ebebeb !important;
+}
+
+.sidebar li {
+	border: solid 0px #73739e !important;
+}
+
+.sidebar li.highlighted.focused {
+	border: solid 1px #20202e !important;
+}
+
+
+li.highlighted,
+.sidebar li.focused.highlighted
+{
+background-color: #7070a1 !important;
+	color: #ebebeb !important;
+}
+
+
+
+li.focused { /* indicates which li you currently are on using keyboard navigation */ 
+	background-color: #9696b3 !important;
+		color: #ffffff !important;
+}
+
+
+.sidebar li:hover {background-color: #7070a1 !important;;}
+
+
+.sidebar li.empty-item,
+.sidebar li.empty-item.focused {
+	background-color: #0a0a0b !important;
+	border: solid 1px #73739e !important; 
+	color: #ffffff !important;
+
+}
+
+/* SIDEBAR POPUP */
+.sidebar-popup {
+	background-color: rgb(62, 62, 116) !important;
+	color: #ffffff !important;
+	
+}
+
+.sidebar-popup  .safe-nl .nl {
+	color: #ffffff !important;
+}
+
+/* LEAFLET TOOLTIP */
+.leaflet-tooltip {
+	background-color: #7676aa;
+	color: #ffffff;
+	border-radius: 5px !important;
+	border: solid 0px;
+}
+
+
+
+
+.leaflet-tooltip-right.highlighted,
+.leaflet-tooltip.reveal-all-tooltip.highlighted,
+.leaflet-tooltip.reveal-all-tooltip.leaflet-zoom-animated.leaflet-tooltip-right.highlighted,
+.leaflet-tooltip.highlighted {
+	background: unset !important;
+	background-color: #575774 !important;
+	color: #ffffff;
+
+}
 
 
 .title-span, #header, .switcher-text, .score-bottom{
@@ -28,6 +98,33 @@ body {
 }
 
 
+
+.map-data-list {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #a89ebd #1e1b4b; /* thumb | track */
+}
+
+
+
+    .reveal-all, .reveal-list,  #header, .home-link, .switcher-text,
+    .toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5, 
+    .leaflet-control-zoom-in, .leaflet-control-zoom-out,
+ .home-link-button, .switcher-button, .info-br, 
+.title-span, #header, .switcher-text, .score-bottom, .info-br, .reveal-list
+{
+    background-color: rgb(85, 64, 84) !important;
+	border: solid 0px !important;
+	color: #ffffff !important;
+
+}
+
+.reveal-all:hover {
+	    background-color: rgb(56, 33, 54) !important;
+}
+
+.switcher-text {
+		opacity: 1 !important;
+}
 
 /* default theme  ends */
 	

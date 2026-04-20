@@ -75,3 +75,48 @@
 </body>
 <meta name="author-2" content="Shubh Madhavan">
 </html>
+
+
+
+<style>
+.folder:hover .folder-icon,
+.folder.hovered .folder-icon {
+  transform: scale(1.08);
+}
+</style>
+
+<script>
+let keyBuffer = '';
+let timer = null;
+
+document.addEventListener('keydown', function(e) {
+  if (!/^\d$/.test(e.key)) return;
+
+  keyBuffer += e.key;
+  clearTimeout(timer);
+
+  timer = setTimeout(() => {
+    const index = parseInt(keyBuffer, 10);
+    const folders = document.querySelectorAll('.folder');
+
+    if (index >= 1 && index <= folders.length) {
+      const target = folders[index - 1];
+
+      // trigger hover effect
+      target.classList.add('hovered');
+
+      // delay so animation is visible
+      setTimeout(() => {
+        target.click();
+      }, 410);
+
+      // cleanup (in case navigation is slow)
+      setTimeout(() => {
+        target.classList.remove('hovered');
+      }, 800);
+    }
+
+    keyBuffer = '';
+  }, 200);
+});
+</script>

@@ -97,25 +97,21 @@ const mapData = {
 
 
 
-
 "KN":"",
+"Kali NP-TR (Anshi NP) (KN)":"POINT (74.417262 15.0264295)",
 "Bhadra TR (KN)":"POINT (75.6234448 13.6687344)",
-"Kali NP-TR (Anshi NP)":"POINT (74.417262 15.0264295)",
-"Bandipur NP-TR":"POINT (76.461998 11.790289)",
+"Nagarhole NP-TR (KN)":"POINT (76.1510815 12.0734366)",
+"Biligiri Ranganatha Temple (BRT) WLS-TR (KN)":"POINT (77.0539865 11.9510929)",
+"Bandipur NP-TR (KN)":"POINT (76.461998 11.790289)",
 
 
 
-
-
-"Mudumalai NP-TR":"POINT (76.5199016 11.5871757)",
-"Nagarhole NP-TR":"POINT (76.1510815 12.0734366)",
-
-"Biligiri Ranganatha Temple (BRT) WLS-TR":"POINT (77.0539865 11.9510929)",
-
-
-
-
-
+"TN":"",
+"Mudumalai NP-TR (TN)":"POINT (76.5199016 11.5871757)",
+"Sathyamangalam TR (TN)":"POINT (77.2321621 11.641345)",
+"Anaimalai/ Indira Gandhi NP-TR (TN)":"POINT (77.1244534 10.4260237)",
+"Srivilliputhur-Megamalai TR (SMTR)":"POINT (77.4321073 9.5904449)",
+"Kalakkad Mundanthurai TR (TN)":"POINT (77.3094674 8.68834)",
 
 
 
@@ -123,13 +119,6 @@ const mapData = {
 "KL":"",
 "Parambikulam TR":"POINT (76.8135893 10.44384)",
 "Periyar NP-TR":"POINT (77.2247404 9.5027828)",
-
-
-"TN":"",
-"Sathyamangalam TR (TN)":"POINT (77.2321621 11.641345)",
-"Anaimalai/ Indira Gandhi NP-TR (TN)":"POINT (77.1244534 10.4260237)",
-"Srivilliputhur-Megamalai TR (SMTR)":"POINT (77.4321073 9.5904449)",
-"Kalakkad Mundanthurai TR (TN)":"POINT (77.3094674 8.68834)",
 
 	};
 

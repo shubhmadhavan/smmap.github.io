@@ -135,6 +135,10 @@ color: rgba(250, 250, 250, 0.8);
 
 
 
+.zipper:hover,
+.zipper.hovered {
+  transform: scale(1.08);
+}
 
 .zipper-row-subtitle {
   width: 100%;

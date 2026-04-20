@@ -701,7 +701,7 @@ document.addEventListener('keydown', function (event) {
         const parentDiv = tooltip.closest('div');
         const wasHighlighted = li.classList.contains('highlighted');
 
-        // 🔥 Z-INDEX CONTROL HERE
+
         document.querySelectorAll('.leaflet-tooltip').forEach(el => {
           el.style.zIndex = 1;
         });

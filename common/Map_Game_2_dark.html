@@ -83,109 +83,46 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 
 
-<script> /*font-switcher 'z' (z) keydown */
-  const button = document.getElementById("font-switcher");
+  <script>
+  const CONFIG = {
+    min: 9,
+    max: 18,
+    step: 1,
+    default: 10
+  };
 
-  // Load saved state (default = 0)
-  let state = parseInt(localStorage.getItem("fontState")) || 0;
-  let styleTag = null;
+  const STORAGE_KEY = "fontSize";
 
-  function applyStyle() {
-    // Remove existing style first
-    const existing = document.getElementById("font-toggle-style");
-    if (existing) existing.remove();
+  // Load saved or default
+  let fontSize = parseInt(localStorage.getItem(STORAGE_KEY)) || CONFIG.default;
 
-    if (state === 1) {
-      // MIN
-      styleTag = document.createElement("style");
-      styleTag.id = "font-toggle-style";
-      styleTag.innerHTML = `
-        .leaflet-tooltip.reveal-all-tooltip,
-        .leaflet-tooltip.selected-tooltip.leaflet-zoom-animated {
-          font-size: 9px !important;
-          line-height: 8px !important;
-          padding: unset !important;
-          min-height: auto !important; 
-      width: 28px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-              }
-
-        .leaflet-tooltip.reveal-all-tooltip:hover,
-      .leaflet-tooltip.selected-tooltip.leaflet-zoom-animated:hover {
-        font-size: 10px !important;
-        font-weight: 580;
-      width: unset;
-        white-space: nowrap;
-        overflow: unset;
-        text-overflow: unset;
-              }
-
-
-      `; /* smallest font */
-      document.head.appendChild(styleTag);
-
-    } else if (state === 2) {
-      // LARGER
-      styleTag = document.createElement("style");
-      styleTag.id = "font-toggle-style";
-      styleTag.innerHTML = `
-        .leaflet-tooltip.reveal-all-tooltip,
-        .leaflet-tooltip.selected-tooltip.leaflet-zoom-animated {
-          font-size: 10px !important;
-          padding: 0.4px 0.4px !important;
-        }
-      `;
-      document.head.appendChild(styleTag);
-    }
-    else if (state === 3) {
-      // LARGER
-      styleTag = document.createElement("style");
-      styleTag.id = "font-toggle-style";
-      styleTag.innerHTML = `
-        .leaflet-tooltip.reveal-all-tooltip,
-        .leaflet-tooltip.selected-tooltip.leaflet-zoom-animated {
-          font-size: 11px !important;
-          padding: 0.4px 0.4px !important;
-        }
-      `;
-      document.head.appendChild(styleTag);
-    }
-
-    // Save state
-    localStorage.setItem("fontState", state);
+  function applyFont(size) {
+    document.documentElement.style.setProperty("--tooltip-font-size", size + "px");
+    localStorage.setItem(STORAGE_KEY, size);
   }
 
-  function toggleFont() {
-    state = (state + 1) % 4; // 0 → 1 → 2 → 0
-    applyStyle();
+  function nextFontSize() {
+    let next = fontSize + CONFIG.step;
+    if (next > CONFIG.max) next = CONFIG.min;
+    fontSize = next;
+    applyFont(fontSize);
   }
 
-  // Button click
-  button.addEventListener("click", toggleFont);
-
-  // Keyboard shortcuts
-  document.addEventListener("keydown", function (e) {
-    const isModifierPressed =  e.ctrlKey || e.altKey;
-
-    // Ctrl/Cmd/Alt + 7
-    if (isModifierPressed && e.key === "7") {
-      e.preventDefault();
-      toggleFont();
-    }
-
-    // Press "a" (ignore if typing in inputs)
+  // Keyboard shortcut (z)
+  document.addEventListener("keydown", (e) => {
     if (
       e.key.toLowerCase() === "z" &&
       !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)
     ) {
-      toggleFont();
+      nextFontSize();
     }
   });
 
-  // Apply saved state on page load
-  applyStyle();
+  // Optional button
+  document.getElementById("font-switcher")?.addEventListener("click", nextFontSize);
+
+  // Init
+  applyFont(fontSize);
 </script>
 
 

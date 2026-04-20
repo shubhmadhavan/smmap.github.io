@@ -314,6 +314,38 @@ padding-bottom: 2.4px !important;
     min-height: auto !important;
 }
 
+/* FOR z key switch */ 
+
+:root {
+  --tooltip-font-size: 10px;
+}
+
+.leaflet-tooltip.reveal-all-tooltip,
+.leaflet-tooltip.selected-tooltip.leaflet-zoom-animated {
+  font-size: var(--tooltip-font-size) !important;
+  line-height: calc(var(--tooltip-font-size) - 1px) !important;
+  padding: 0.4px !important;
+}
+
+/* Optional: compact mode when very small */
+:root.leaflet-tooltip {
+  max-width: 25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.leaflet-tooltip:hover {
+ font-weight: 660 !important;
+  overflow: unset;
+}
+
+.leaflet-tooltip {
+  transition: font-size 0.15s ease;
+}
+
+/* ----- */ 
+
+
 
 .home-link-button, .switcher-button {
  /* HOME button and Switcher button */ 

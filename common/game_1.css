@@ -13,6 +13,9 @@ body{
   filter: saturate(1.2);
 }
 
+
+
+
 * {
   user-select: text;
 }
@@ -241,10 +244,16 @@ li.empty-item  {
 
 
 
+path {
+  pointer-events: all;
+	cursor: crosshair !important;
+  
+}
+
 .point_leaflet.leaflet-interactive {
   pointer-events: stroke !important;    /* allow interaction on stroke only */
     pointer-events: visibleFill !important; 
-  cursor: pointer !important;
+  cursor: crosshair !important;
 }
 
 
@@ -985,11 +994,6 @@ li.highlighted {
 }
 
 
-
-path{
-	cursor: pointer;
-    pointer-events: all;
-}
 
 .leaflet-tooltip.reveal-all-tooltip {
     user-select: all !important;

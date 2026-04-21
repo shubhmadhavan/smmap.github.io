@@ -125,6 +125,11 @@ color: #ffffff;
 
 }
 
+.info-br.active {
+    background-color: rgb(44, 33, 44) !important;
+
+}
+
 .reveal-all:hover {
 	    background-color: rgb(56, 33, 54) !important;
 }

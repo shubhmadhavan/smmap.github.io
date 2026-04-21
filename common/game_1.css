@@ -436,6 +436,12 @@ padding-bottom: 2.4px !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
+.switcher-button {
+  display: none;
+}
+
+
+
 #font-switcher {
   position: fixed;
   margin-left: 5px;
@@ -1093,7 +1099,8 @@ li {
 }
 
 .sidebar-popup { /* see Map_Game_2_dark.html */
-
+opacity: 1;
+ 
     position: fixed;
 
      color: black;
@@ -1118,14 +1125,17 @@ background-color:  rgba(240, 240, 240, 0.8);
 
   /* calc(100vw - 675px) !important; */
 
-
-  top: 3vh !important;
+    top: auto !important;
+  bottom: 5vh !important;
   min-height: 100px;
-    bottom: auto;
 
-  
-      transition: opacity 1.3s ease-in;
 
+
+}
+
+ .sidebar-popup:hover {
+  opacity: 1;
+      transition: opacity 0.3s ease-in;
 }
 
 .sidebar-popup .safe-nl {

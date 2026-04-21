@@ -575,21 +575,25 @@ document.addEventListener('keydown', function (event) {
 
 
     revealButton.addEventListener('click', function () {
-      if (sidebar.style.display === 'none' || sidebar.style.display === '') {
-        sidebar.style.display = 'flex';
-        localStorage.setItem('sidebarVisible', 'true');
+  const isHidden = sidebar.style.display === 'none' || sidebar.style.display === '';
 
-        if (!sidebarPopulated) {
-          populateSidebar();
-          sidebarPopulated = true;
-        }
-      } else {
-        sidebar.style.display = 'none';
-        localStorage.setItem('sidebarVisible', 'false');
-        
-         clearPopup();
-        }
-      });
+  if (isHidden) {
+    sidebar.style.display = 'flex';
+    localStorage.setItem('sidebarVisible', 'true');
+    revealButton.classList.add('active');
+
+    if (!sidebarPopulated) {
+      populateSidebar();
+      sidebarPopulated = true;
+    }
+  } else {
+    sidebar.style.display = 'none';
+    localStorage.setItem('sidebarVisible', 'false');
+    revealButton.classList.remove('active');
+
+    clearPopup();
+  }
+});
 
 
       function clearPopup() {
@@ -670,6 +674,12 @@ let currentPopup = null;
 let currentPopupLi = null;
 
 function showSidebarPopup(liElement, content) {
+    // 🚫 If info-br is active, do nothing (no popup)
+    const infoButton = document.querySelector('.info-br');
+    if (infoButton && infoButton.classList.contains('active')) {
+        return;
+    }
+
     // 👉 ALWAYS remove existing popup first
     if (currentPopup) {
         currentPopup.remove();
@@ -681,16 +691,14 @@ function showSidebarPopup(liElement, content) {
     // 👉 If no content, stop AFTER clearing
     if (!content) return;
 
-    // 👉 Remove dots before closing span (handles ".</span>" and ". </span>")
+    // 👉 Clean content
     content = content.replace(/\.\s*<\/span>/g, '</span>');
-
-    // 👉 Also remove trailing dots just in case
     content = content.replace(/(\.+\s*)$/, '');
 
     const popup = document.createElement('div');
     popup.className = 'sidebar-popup';
 
-    let items = content /* SPLIT into sentences */
+    let items = content
         .split(';')
         .map(s => s.trim())
         .filter(Boolean);

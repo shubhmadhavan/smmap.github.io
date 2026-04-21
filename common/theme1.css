@@ -71,8 +71,15 @@ li.focused { /* indicates which li you currently are on using keyboard navigatio
 	border: solid 0px;
 }
 
+.custom-control {
+	border: #554054 !important;
+}
 
-
+.arrow-btn {
+	background-color: #554054 !important;
+border: #2f2f68 !important;
+color: #ffffff;
+}
 
 .leaflet-tooltip-right.highlighted,
 .leaflet-tooltip.reveal-all-tooltip.highlighted,

@@ -664,6 +664,7 @@ document.addEventListener('keydown', function (event) {
 
 
 
+
     
 let currentPopup = null;
 let currentPopupLi = null;
@@ -769,6 +770,55 @@ let currentIndex = (!isNaN(savedIndex) && savedIndex >= 0 && savedIndex < items.
       localStorage.setItem('sidebarIndex', currentIndex);
     }
 
+      function ensureSidebarOpenAndReady() {
+      if (getComputedStyle(sidebar).display === 'none') {
+        sidebar.style.display = 'flex';
+        localStorage.setItem('sidebarVisible', 'true');
+
+        if (!sidebarPopulated) {
+          populateSidebar();
+          sidebarPopulated = true;
+        }
+      }
+
+      sidebar.setAttribute('tabindex', '-1');
+      sidebar.focus();
+
+      items = Array.from(list.querySelectorAll('li'));
+    }
+
+    function controlArrowDown() {
+      ensureSidebarOpenAndReady();
+      if (!items.length) return;
+
+      currentIndex = (currentIndex + 1) % items.length;
+      updateFocus();
+    }
+
+    function controlArrowUp() {
+      ensureSidebarOpenAndReady();
+      if (!items.length) return;
+
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      updateFocus();
+    }
+
+    function controlEnter() {
+      ensureSidebarOpenAndReady();
+      if (!items.length || currentIndex < 0) return;
+
+      items[currentIndex].click();
+      showSidebarPopup(items[currentIndex], items[currentIndex].dataset.info);
+    }
+
+    // Bind buttons (safe even if not present yet)
+    setTimeout(() => {
+      document.querySelector('.up')?.addEventListener('click', controlArrowUp);
+      document.querySelector('.down')?.addEventListener('click', controlArrowDown);
+      document.querySelector('.enter')?.addEventListener('click', controlEnter);
+    }, 0);
+
+
     list.addEventListener('click', (e) => {
   const li = e.target.closest('li');
   if (!li) return;
@@ -852,6 +902,7 @@ let currentIndex = (!isNaN(savedIndex) && savedIndex >= 0 && savedIndex < items.
 
 
 
+
     function populateTooltips() {
         tooltipsMap.clear();
           document.querySelectorAll('.leaflet-tooltip').forEach(tooltip => {
@@ -885,7 +936,8 @@ let currentIndex = (!isNaN(savedIndex) && savedIndex >= 0 && savedIndex < items.
       });
     
 </script>
-    
+  
+
 
 
 <div id="header" style="display:none !important;"></div>
@@ -898,7 +950,11 @@ let currentIndex = (!isNaN(savedIndex) && savedIndex >= 0 && savedIndex < items.
 <script src="leaflet.js"></script>
 
 
-
+<div class="custom-control">
+  <button class="arrow-btn up">⏶</button>
+  <button class="arrow-btn enter">•</button>
+  <button class="arrow-btn down">⏷</button>
+</div>
 
 
 

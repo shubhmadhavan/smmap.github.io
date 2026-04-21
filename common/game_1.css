@@ -15,10 +15,66 @@ body{
 
 
 
-
 * {
   user-select: text;
 }
+
+
+.custom-control {
+  z-index: 9999 !important;
+  position: fixed;
+  bottom: 59px;
+  left: 55px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+
+  box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+}
+
+.leaflet-top, 
+.arrow-btn {
+opacity: 0.7 !important;
+user-select: none;
+}
+
+.leaflet-top:hover, 
+.arrow-btn:hover {
+opacity: 1 !important;
+transition: opacity 0.25s ease-in;
+}
+
+
+.arrow-btn {
+
+  width: 32px;
+  height: 24px;
+  border: none;
+
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.arrow-btn.enter {
+    height: 14px;
+    }
+
+.arrow-btn:hover {
+  background: #f4f4f4;
+}
+
+.arrow-btn:active {
+  background: #e6e6e6;
+}
+
+.arrow-btn + .arrow-btn {
+  border-top: 1px solid #ccc;
+}
+
+
 
 .top-boundary {
   position: fixed;
@@ -1157,6 +1213,11 @@ and (min-device-width: 800px)
 
 }
 
+.arrow-btn {
+    display: block; 
+  
+  }
+
 }
 
 /* General MOBILE Fixes */
@@ -1187,6 +1248,7 @@ left: 8px !important;
   bottom: 42vw !important; 
   opacity: 0.35;
 }
+
 
 }
 

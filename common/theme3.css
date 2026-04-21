@@ -9,13 +9,6 @@ body {
 	
 
 
-.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom, 
-.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-touch-zoom {
-		background: linear-gradient(135deg, #1e1e2f, #2c2c54) !important;
-
-	color: white !important;
-	
-	}
 
 
 	/* SIDEBAR */
@@ -58,6 +51,7 @@ li.focused { /* indicates which li you currently are on using keyboard navigatio
 	color: #ffffff !important;
 
 }
+
 /* SIDEBAR POPUP */
 .sidebar-popup {
 	background-color: rgb(62, 62, 116) !important;
@@ -71,14 +65,21 @@ li.focused { /* indicates which li you currently are on using keyboard navigatio
 
 /* LEAFLET TOOLTIP */
 .leaflet-tooltip {
-	background-color: #7070a1;
+	background-color: #7676aa;
 	color: #ffffff;
 	border-radius: 5px !important;
 	border: solid 0px;
 }
 
+.custom-control {
+	border: #554054 !important;
+}
 
-
+.arrow-btn {
+	background-color: #554054 !important;
+border: #2f2f68 !important;
+color: #ffffff;
+}
 
 .leaflet-tooltip-right.highlighted,
 .leaflet-tooltip.reveal-all-tooltip.highlighted,

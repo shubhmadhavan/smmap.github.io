@@ -787,36 +787,28 @@ let currentIndex = (!isNaN(savedIndex) && savedIndex >= 0 && savedIndex < items.
       items = Array.from(list.querySelectorAll('li'));
     }
 
-    function controlArrowDown() {
-      ensureSidebarOpenAndReady();
-      if (!items.length) return;
+    
+    function handleSidebarAction(action) {
+  ensureSidebarOpenAndReady();
+  if (!items.length) return;
 
-      currentIndex = (currentIndex + 1) % items.length;
-      updateFocus();
-    }
+  if (action === 'down') {
+    currentIndex = (currentIndex + 1) % items.length;
+    updateFocus();
+  } else if (action === 'up') {
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    updateFocus();
+  } else if (action === 'enter' && currentIndex >= 0) {
+    items[currentIndex].click();
+    showSidebarPopup(items[currentIndex], items[currentIndex].dataset.info);
+  }
+}
 
-    function controlArrowUp() {
-      ensureSidebarOpenAndReady();
-      if (!items.length) return;
-
-      currentIndex = (currentIndex - 1 + items.length) % items.length;
-      updateFocus();
-    }
-
-    function controlEnter() {
-      ensureSidebarOpenAndReady();
-      if (!items.length || currentIndex < 0) return;
-
-      items[currentIndex].click();
-      showSidebarPopup(items[currentIndex], items[currentIndex].dataset.info);
-    }
-
-    // Bind buttons (safe even if not present yet)
-    setTimeout(() => {
-      document.querySelector('.up')?.addEventListener('click', controlArrowUp);
-      document.querySelector('.down')?.addEventListener('click', controlArrowDown);
-      document.querySelector('.enter')?.addEventListener('click', controlEnter);
-    }, 0);
+setTimeout(() => {
+  document.querySelector('.up')?.addEventListener('click', () => handleSidebarAction('up'));
+  document.querySelector('.down')?.addEventListener('click', () => handleSidebarAction('down'));
+  document.querySelector('.enter')?.addEventListener('click', () => handleSidebarAction('enter'));
+}, 0);
 
 
     list.addEventListener('click', (e) => {
@@ -883,7 +875,6 @@ let currentIndex = (!isNaN(savedIndex) && savedIndex >= 0 && savedIndex < items.
         currentIndex = -1;
     }
 
-    // 👉 ADD IT RIGHT HERE
     if (currentIndex >= 0) {
         updateFocus();
     }
@@ -955,7 +946,6 @@ let currentIndex = (!isNaN(savedIndex) && savedIndex >= 0 && savedIndex < items.
   <button class="arrow-btn enter">•</button>
   <button class="arrow-btn down">⏷</button>
 </div>
-
 
 
 

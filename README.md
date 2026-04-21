@@ -52,7 +52,10 @@ You can access it from this [Link](https://shubhmadhavan.github.io/smmap.github.
   />
 </p>
 
+ <!--
+ 
 ## Gallery
+
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/90f66f8a-44c3-4c37-88c8-034c4b0b5e29" alt="Image 1" width="160" height="180" />
@@ -97,6 +100,7 @@ You can access it from this [Link](https://shubhmadhavan.github.io/smmap.github.
 #### [Major & Minor Ports](https://shubhmadhavan.github.io/smmap.github.io/common/Map_Game_dark.html?selection=Ports_1)
 #### [Greenfield Airports under UDAN](https://shubhmadhavan.github.io/smmap.github.io/common/Map_Game_dark.html?selection=air_1)
 
+--> 
 
 
 ## Extra

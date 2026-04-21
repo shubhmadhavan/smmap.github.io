@@ -1,6 +1,9 @@
 # <img src="https://github.com/user-attachments/assets/ee9684da-bd0e-4a96-a202-ebcfff8cfeab" style="float:left; vertical-align: middle; margin-right: 10px;  margin-top: -10px;  height:36px; display: inline-block;" />  SM-Map  
 
 
+## [Link](https://shubhmadhavan.github.io/smmap.github.io/index.html)
+
+ <!--
 <a href="https://shubhmadhavan.github.io/smmap.github.io/">
   <img 
     src="https://github.com/user-attachments/assets/3beca648-b4ea-461b-8897-cad41330724f"
@@ -8,6 +11,8 @@
     alt="smmap–Preview"
   />
 </a>
+
+--> 
 
 ## Objectives
 Facing a dearth of comprehensive sources that present the mapping of various elements of Indian Geography in an interactive and engaging way, I was motivated to create a solution that addressed this gap.    
@@ -47,7 +52,10 @@ You can access it from this [Link](https://shubhmadhavan.github.io/smmap.github.
   />
 </p>
 
+ <!--
+ 
 ## Gallery
+
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/90f66f8a-44c3-4c37-88c8-034c4b0b5e29" alt="Image 1" width="160" height="180" />
@@ -92,6 +100,7 @@ You can access it from this [Link](https://shubhmadhavan.github.io/smmap.github.
 #### [Major & Minor Ports](https://shubhmadhavan.github.io/smmap.github.io/common/Map_Game_dark.html?selection=Ports_1)
 #### [Greenfield Airports under UDAN](https://shubhmadhavan.github.io/smmap.github.io/common/Map_Game_dark.html?selection=air_1)
 
+--> 
 
 
 ## Extra

@@ -26,7 +26,8 @@ var map = L.map('map', {
 
 
 
-map.on('tooltipopen', function (e) {
+
+map.on('tooltipopen',  function (e) {
   const tooltipEl = e.tooltip.getElement();
   
   tooltipEl.addEventListener('mouseenter', () => {
@@ -39,6 +40,7 @@ map.on('tooltipopen', function (e) {
   
   });
 });
+
 
 
 

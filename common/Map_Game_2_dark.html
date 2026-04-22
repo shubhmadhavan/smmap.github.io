@@ -32,6 +32,32 @@
 
 
 
+<style>
+.hide-ui .sidebar-popup {
+  display: none !important;
+}
+</style>
+
+<script>
+document.addEventListener('keydown', function(e) {
+  const key = e.key.toLowerCase();
+
+  // Alt (Option on Mac) + F
+  if ( key === 'i') { /* e.ctrlKey && key === 'i' || e.metaKey && key === 'i'  */  
+    e.preventDefault();
+
+    document.body.classList.toggle('hide-ui');
+
+    const btn = document.querySelector('.info-br');
+    if (btn) {
+      btn.classList.toggle('active');
+    }
+
+  }
+}, true);
+</script>
+
+
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const button = document.querySelector('.info-br');
@@ -85,8 +111,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   <script>
   const CONFIG = {
-    min: 9,
-    max: 18,
+    min: 11,
+    max: 17,
     step: 1,
     default: 10
   };
@@ -150,6 +176,8 @@ document.addEventListener('DOMContentLoaded', function () {
 <script src="theme_map_toggler.js" defer> </script>
 
 
+
+
 <script>
 document.addEventListener('keydown', function(e) {
   const key = e.key.toLowerCase();
@@ -174,6 +202,8 @@ document.addEventListener('keydown', function(e) {
 
 }, true); // capture phase
 </script>
+
+
 
 
 <script>
@@ -371,9 +401,7 @@ window.addEventListener('load', function () {
 
 
 
-
-<script> 
-
+<script>
 //REVEAL ALL BUTTON (and loading tooltips at startup) 
 //WORKING 
 
@@ -575,25 +603,21 @@ document.addEventListener('keydown', function (event) {
 
 
     revealButton.addEventListener('click', function () {
-  const isHidden = sidebar.style.display === 'none' || sidebar.style.display === '';
+      if (sidebar.style.display === 'none' || sidebar.style.display === '') {
+        sidebar.style.display = 'flex';
+        localStorage.setItem('sidebarVisible', 'true');
 
-  if (isHidden) {
-    sidebar.style.display = 'flex';
-    localStorage.setItem('sidebarVisible', 'true');
-    revealButton.classList.add('active');
-
-    if (!sidebarPopulated) {
-      populateSidebar();
-      sidebarPopulated = true;
-    }
-  } else {
-    sidebar.style.display = 'none';
-    localStorage.setItem('sidebarVisible', 'false');
-    revealButton.classList.remove('active');
-
-    clearPopup();
-  }
-});
+        if (!sidebarPopulated) {
+          populateSidebar();
+          sidebarPopulated = true;
+        }
+      } else {
+        sidebar.style.display = 'none';
+        localStorage.setItem('sidebarVisible', 'false');
+        
+         clearPopup();
+        }
+      });
 
 
       function clearPopup() {
@@ -674,12 +698,6 @@ let currentPopup = null;
 let currentPopupLi = null;
 
 function showSidebarPopup(liElement, content) {
-    // 🚫 If info-br is active, do nothing (no popup)
-    const infoButton = document.querySelector('.info-br');
-    if (infoButton && infoButton.classList.contains('active')) {
-        return;
-    }
-
     // 👉 ALWAYS remove existing popup first
     if (currentPopup) {
         currentPopup.remove();
@@ -691,14 +709,16 @@ function showSidebarPopup(liElement, content) {
     // 👉 If no content, stop AFTER clearing
     if (!content) return;
 
-    // 👉 Clean content
+    // 👉 Remove dots before closing span (handles ".</span>" and ". </span>")
     content = content.replace(/\.\s*<\/span>/g, '</span>');
+
+    // 👉 Also remove trailing dots just in case
     content = content.replace(/(\.+\s*)$/, '');
 
     const popup = document.createElement('div');
     popup.className = 'sidebar-popup';
 
-    let items = content
+    let items = content /* SPLIT into sentences */
         .split(';')
         .map(s => s.trim())
         .filter(Boolean);
@@ -795,28 +815,36 @@ let currentIndex = (!isNaN(savedIndex) && savedIndex >= 0 && savedIndex < items.
       items = Array.from(list.querySelectorAll('li'));
     }
 
-    
-    function handleSidebarAction(action) {
-  ensureSidebarOpenAndReady();
-  if (!items.length) return;
+    function controlArrowDown() {
+      ensureSidebarOpenAndReady();
+      if (!items.length) return;
 
-  if (action === 'down') {
-    currentIndex = (currentIndex + 1) % items.length;
-    updateFocus();
-  } else if (action === 'up') {
-    currentIndex = (currentIndex - 1 + items.length) % items.length;
-    updateFocus();
-  } else if (action === 'enter' && currentIndex >= 0) {
-    items[currentIndex].click();
-    showSidebarPopup(items[currentIndex], items[currentIndex].dataset.info);
-  }
-}
+      currentIndex = (currentIndex + 1) % items.length;
+      updateFocus();
+    }
 
-setTimeout(() => {
-  document.querySelector('.up')?.addEventListener('click', () => handleSidebarAction('up'));
-  document.querySelector('.down')?.addEventListener('click', () => handleSidebarAction('down'));
-  document.querySelector('.enter')?.addEventListener('click', () => handleSidebarAction('enter'));
-}, 0);
+    function controlArrowUp() {
+      ensureSidebarOpenAndReady();
+      if (!items.length) return;
+
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      updateFocus();
+    }
+
+    function controlEnter() {
+      ensureSidebarOpenAndReady();
+      if (!items.length || currentIndex < 0) return;
+
+      items[currentIndex].click();
+      showSidebarPopup(items[currentIndex], items[currentIndex].dataset.info);
+    }
+
+    // Bind buttons (safe even if not present yet)
+    setTimeout(() => {
+      document.querySelector('.up')?.addEventListener('click', controlArrowUp);
+      document.querySelector('.down')?.addEventListener('click', controlArrowDown);
+      document.querySelector('.enter')?.addEventListener('click', controlEnter);
+    }, 0);
 
 
     list.addEventListener('click', (e) => {
@@ -939,6 +967,7 @@ setTimeout(() => {
 
 
 
+
 <div id="header" style="display:none !important;"></div>
 
 
@@ -951,10 +980,82 @@ setTimeout(() => {
 
 <div class="custom-control">
   <button class="arrow-btn up">⏶</button>
-  <button class="arrow-btn enter">•</button>
+  <button class="arrow-btn left">⏴</button>
+  <button class="arrow-btn right">⏵</button>
   <button class="arrow-btn down">⏷</button>
 </div>
 
+<script>
+(function () {
+  const STEP = 200;
+  const FAST_STEP = STEP * 1.2;
+
+  const moves = {
+    up:    [0, -STEP],
+    down:  [0,  STEP],
+    left:  [-STEP, 0],
+    right: [ STEP, 0]
+  };
+
+  const fastMoves = {
+    left:  [-FAST_STEP, 0],
+    right: [ FAST_STEP, 0]
+  };
+
+  // Button clicks (unchanged)
+  Object.keys(moves).forEach(dir => {
+    const btn = document.querySelector('.arrow-btn.' + dir);
+    if (!btn) return;
+
+    btn.addEventListener('click', () => {
+      map.panBy(moves[dir], { animate: true });
+    });
+  });
+
+  const keyMap = {
+    w: 'up',
+    s: 'down',
+    a: 'left',
+    d: 'right'
+  };
+
+  document.addEventListener('keydown', (e) => {
+    const key = e.key.toLowerCase();
+    if (!keyMap[key]) return;
+
+    e.preventDefault();
+
+     
+if (e.shiftKey) { // SHIFT behavior
+
+     if (key === 'a' || key === 'd') {
+        map.panBy(fastMoves[keyMap[key]], { animate: true });
+        return;
+      }
+
+   /* } */
+
+/*    if (e.ctrlKey) { */
+
+      if (key === 'w') {
+        const zoomInBtn = document.querySelector('.leaflet-control-zoom-in');
+        if (zoomInBtn) zoomInBtn.click();
+        return;
+      }
+      if (key === 's') {
+        const zoomOutBtn = document.querySelector('.leaflet-control-zoom-out');
+        if (zoomOutBtn) zoomOutBtn.click();
+        return;
+      }
+     
+    } 
+
+
+    // Normal pan
+    map.panBy(moves[keyMap[key]], { animate: true });
+  });
+})();
+</script>
 
 
 <script>

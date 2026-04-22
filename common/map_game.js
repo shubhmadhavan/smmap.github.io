@@ -99,6 +99,7 @@ if (getUrlParameter('selection').includes('wld')) {
         layer.remove();
     });
 
+    
     // Add the tile layer
     tileLayer = L.tileLayer('../Map_Images/map_tiles/{z}_{x}_{y}.png', {
         attribution: '&copy; CARTO'

@@ -19,60 +19,90 @@ body{
   user-select: text;
 }
 
-
 .custom-control {
   z-index: 9999 !important;
   position: fixed;
   bottom: 59px;
   left: 55px;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  overflow: hidden;
 
-  box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+  display: grid;
+  grid-template-columns: 32px 32px 32px;
+  grid-template-rows: 32px 32px 32px;
+  gap: 2px;
+
+  padding: 4px;
+  border-radius: 8px;
+
 }
 
-.leaflet-top, 
-.arrow-btn {
+  .leaflet-top  /* .leaflet-control-zoom.leaflet-bar.leaflet-control | this controls the white zoom in zoom out leaflet option on left*/
+{
+  position: fixed !important;
+  top: unset;
+  padding: unset !important;
+  margin: unset !important;
+  left:10px;
+  bottom: 57px !important; 
+  opacity: 0.55 !important;
+}
 
-opacity: 0.7 !important;
-user-select: none;
+  div.custom-control  
+{
+  top: unset;
+  left: 62px !important;
+  bottom: 70px !important; 
+  opacity: 0.55 !important;
+}
+
+
+ 
+
+/* transparency behavior (keep yours) */
+.leaflet-top,
+div.custom-control {
+  user-select: none !important;
+
 }
 
 .leaflet-top:hover, 
-.arrow-btn:hover {
-opacity: 1 !important;
-transition: opacity 0.25s ease-in;
+div.custom-control:hover {
+  opacity: 1 !important;
+  transition: opacity 0.25s ease-in;
 }
 
-
+/* buttons */
 .arrow-btn {
-
   width: 32px;
-  height: 24px;
+  height: 32px;
   border: none;
-
   cursor: pointer;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1;
+
+  border-radius: 4px;
 }
 
-.arrow-btn.enter {
-    height: 14px;
-    }
+/* D-pad positioning */
+.arrow-btn.up    { grid-column: 2; grid-row: 1; }
+.arrow-btn.left  { grid-column: 1; grid-row: 2; }
+.arrow-btn.right { grid-column: 3; grid-row: 2; }
+.arrow-btn.down  { grid-column: 2; grid-row: 3; }
 
+/* center empty space */
+.custom-control::before {
+  content: "";
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* interactions */
 .arrow-btn:hover {
   background: #f4f4f4;
 }
 
 .arrow-btn:active {
   background: #e6e6e6;
-}
-
-.arrow-btn + .arrow-btn {
-  border-top: 1px solid #ccc;
+  transform: scale(0.95);
 }
 
 
@@ -192,23 +222,52 @@ left: 4.2px !important;
     
 }
 
+
 .toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5 {
  height: 31px !important;
  width: 24px !important;
 }
 
 
-.toggle-map-1 {top: 105px !important; left: 0px !important; z-index: 211111 !important;} /* baige */
+.toggle-map-1 {top: 105px !important; left: 4px !important; z-index: 211111 !important;} /* baige */
 
-.toggle-map-3{ top: 35px  !important; left: 0px !important; } /* rivers */
+.toggle-map-3{ top: 35px  !important; left: 4px !important; } /* rivers */
 
-.toggle-map-4{top: 70px !important; left: 0px !important;} /* night & districts */
+.toggle-map-4{top: 70px !important; left: 4px !important;} /* night & districts */
 
 
 .toggle-map-5{display: none;}
 
 .toggle-map-2 {display:none;} /* white & states */
 .toggle-map {display:none;} /* disable */
+
+
+
+.home-link-button,
+.toggle-map-1,
+.toggle-map-2,
+.toggle-map-3,
+.toggle-map-4,   
+.toggle-map-5,
+button.reveal-all,
+button.info-br,
+button.reveal-list {
+  opacity: 0.55 !important;
+  user-select: none;
+}
+
+.home-link-button:hover,
+.toggle-map-1:hover,
+.toggle-map-2:hover,
+.toggle-map-3:hover,
+.toggle-map-4:hover,   
+.toggle-map-5:hover,
+button.reveal-all:hover,
+button.info-br:hover,
+button.reveal-list:hover {
+  opacity: 1 !important;
+}
+
 
 
 
@@ -406,7 +465,7 @@ padding-bottom: 2.4px !important;
 
 .home-link-button, .switcher-button {
  /* HOME button and Switcher button */ 
- 
+
 
  height: 31px;
  width: 24px !important;
@@ -428,6 +487,8 @@ padding-bottom: 2.4px !important;
   align-items: center;           /* vertically center content */
   justify-content: center;
   z-index: 2147483647 !important;
+
+  margin-left: 4px !important;
 }
 
 .home-link-button:hover, .switcher-button:hover {
@@ -734,6 +795,13 @@ input[type="range"]#timeoutSlider {
 }
 	
 
+.leaflet-touch .leaflet-bar a {
+  padding-top: 8px !important;
+ padding-bottom: 8px !important;
+  font-size: 22px !important;
+
+}
+
 .leaflet-control-attribution.leaflet-control{
 	display:none;
 	opacity:0;
@@ -747,6 +815,7 @@ input[type="range"]#timeoutSlider {
   bottom: 40px;
   opacity: 1; 
 
+  
 }
 
 .leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom
@@ -1172,9 +1241,26 @@ background-color:  rgba(240, 240, 240, 0.8);
 
 
 
+@media screen and (min-width: 1000px) {
+  
 
 
 
+.home-link-button,
+.toggle-map-1,
+.toggle-map-2,
+.toggle-map-3,
+.toggle-map-4,   
+.toggle-map-5,
+button.reveal-all,
+button.info-br,
+button.reveal-list, 
+.leaflet-top,  div.custom-control  {
+  opacity: 0 !important;
+}
+
+
+}
 
 
 
@@ -1201,17 +1287,6 @@ and (min-device-width: 800px)
   /* Styles for landscape */
 
 
-/*
-.reveal-all { transform: translateX(76px) !important; }
-*/
-
-  .leaflet-top  /* .leaflet-control-zoom.leaflet-bar.leaflet-control | this controls the white zoom in zoom out leaflet option on left*/
-{
-  top: unset;
-  left: -2vw;
-  bottom: 42vw !important; 
-  opacity: 0.35;
-}
 
 }
 
@@ -1224,11 +1299,18 @@ and (min-device-width: 800px)
 
 }
 
-.arrow-btn {
-    display: block; 
-  
-  }
 
+  .leaflet-top  /* .leaflet-control-zoom.leaflet-bar.leaflet-control | this controls the white zoom in zoom out leaflet option on left*/
+{
+  top: unset;
+
+  bottom: 55px !important; 
+  opacity: 0.35;
+}
+
+  div.custom-control {
+     bottom: 55px !important;
+  }
 }
 
 /* General MOBILE Fixes */
@@ -1250,14 +1332,6 @@ left: 8px !important;
 
   .reveal-all {
   left:37vw !important; top: 1vw !important; 
-}
-
-  .leaflet-top  /* .leaflet-control-zoom.leaflet-bar.leaflet-control | this controls the white zoom in zoom out leaflet option on left*/
-{
-  top: unset;
-  left: -2vw;
-  bottom: 42vw !important; 
-  opacity: 0.35;
 }
 
 

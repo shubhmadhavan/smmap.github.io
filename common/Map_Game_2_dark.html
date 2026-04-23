@@ -1095,21 +1095,22 @@ if (e.shiftKey) { // SHIFT behavior
     tooltip.style.transform = `${cleaned} translate(${current.x}px, ${current.y}px)`.trim();
   }
 
-  window.addEventListener('keydown', function (e) {
-    if (!e.shiftKey || !activeTooltip) return;
+window.addEventListener('keydown', function (e) {
+  if (!activeTooltip) return;
 
-    const key = e.key.toLowerCase();
-    if (!['w', 'a', 's', 'd'].includes(key)) return;
+  const key = e.key.toLowerCase();
+  if (!['i', 'k', 'j', 'l'].includes(key)) return;
 
-    e.preventDefault();
+  e.preventDefault();
+  e.stopPropagation();
 
-    switch (key) {
-      case 'w': return moveTooltip(activeTooltip, 0, -10);
-      case 's': return moveTooltip(activeTooltip, 0, 10);
-      case 'a': return moveTooltip(activeTooltip, -10, 0);
-      case 'd': return moveTooltip(activeTooltip, 10, 0);
-    }
-  });
+  switch (key) {
+    case 'i': return moveTooltip(activeTooltip, 0, -10);
+    case 'k': return moveTooltip(activeTooltip, 0, 10);
+    case 'j': return moveTooltip(activeTooltip, -10, 0);
+    case 'l': return moveTooltip(activeTooltip, 10, 0);
+  }
+});
 })();
 </script>
 

@@ -1309,9 +1309,17 @@ and (min-device-width: 800px)
 }
 
   div.custom-control {
-     bottom: 55px !important;
+     bottom: -4px !important;
   }
+  
+.home-link-button {
+  margin-left: 0px !important
 }
+
+
+
+}
+
 
 /* General MOBILE Fixes */
 @media (max-width: 768px) {

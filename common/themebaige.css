@@ -7,6 +7,15 @@ body {
 
 .leaflet-tooltip {
 	color: #ffffff !important;
+     background-color: #b9ad92 !important;
+}
+
+.highlighted {
+  background-color: #8b7f64 !important;  
+   
+  background-size: 300% 300%;
+  animation: drift 6s ease infinite;
+  z-index: 2147483647 !important;
 }
 
 
@@ -15,14 +24,6 @@ body {
 }
 
 	
-.highlighted {
-    
-  background: rgba(203, 203, 193, 0.7) !important;
-   
-  background-size: 300% 300%;
-  animation: drift 6s ease infinite;
-  z-index: 2147483647 !important;
-}
 
 
 li.focused {

@@ -7,6 +7,29 @@ body {
 	}
 	
 
+	.leaflet-tooltip {
+	color: #ffffff !important;
+	background-color: #838383 !important;
+}
+
+
+li.highlighted {
+	background-color: #bfbfbf !important;
+}
+
+.leaflet-tooltip.highlighted {
+background-color: #323131 !important;
+
+
+}
+
+.sidebar-popup {
+    background-color: #E7E4DF !important;
+}
+
+
+
+
 .leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom, 
 .leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-touch-zoom {
 	background: #E7E4DF !important;
@@ -22,15 +45,6 @@ body {
 }
 
 
-
-.leaflet-tooltip {
-	color: #ffffff !important;
-}
-
-
-.sidebar-popup {
-    background-color: #E7E4DF !important;
-}
 
 
 

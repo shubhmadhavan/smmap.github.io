@@ -23,6 +23,16 @@ body {
 
 
 
+.leaflet-tooltip {
+	color: #ffffff !important;
+}
+
+
+.sidebar-popup {
+    background-color: #E7E4DF !important;
+}
+
+
 
 /* default theme  ends */
 	

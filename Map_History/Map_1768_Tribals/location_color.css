@@ -14,3 +14,7 @@
 	fill: rgb(237, 175, 81) !important;
 	stroke-width: 2px !important;
 }
+
+.leaflet-tooltip {
+	background-color: #754d4d !important;
+}

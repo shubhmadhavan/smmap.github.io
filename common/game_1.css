@@ -1102,12 +1102,7 @@ background-color: #e0e0e0;
 
 .highlighted { /* for the highlighted tooltip */
 
-  background-image: linear-gradient(-90deg,
-    rgba(229, 246, 255, 0.9),
-    rgba(225, 253, 251, 0.85),
-    rgba(234, 255, 251, 0.95),
-    rgba(227, 252, 250, 0.85)
-  );
+
 
   background-size: 300% 300%;
   animation: drift 2s ease infinite;

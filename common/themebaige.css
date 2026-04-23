@@ -1,8 +1,19 @@
 /* baige theme */
 body {
-	color: white;
+	color: white !important;
     background: #e9e1ce !important;
 	}
+
+
+.leaflet-tooltip {
+	color: #ffffff !important;
+}
+
+
+.sidebar-popup {
+    background-color: #e9e1ce !important;
+}
+
 	
 .highlighted {
     

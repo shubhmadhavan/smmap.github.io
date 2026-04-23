@@ -16,5 +16,13 @@
 }
 
 .leaflet-tooltip {
-	background-color: #754d4d !important;
+	background-color: #8f5d5d !important;
 }
+
+.leaflet-tooltip-right.highlighted,
+.leaflet-tooltip.reveal-all-tooltip.highlighted,
+.leaflet-tooltip.reveal-all-tooltip.leaflet-zoom-animated.leaflet-tooltip-right.highlighted,
+.leaflet-tooltip.highlighted 
+{
+background-color: #613c3c !important;
+	}

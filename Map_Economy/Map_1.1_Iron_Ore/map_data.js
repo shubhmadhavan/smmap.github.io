@@ -1,4 +1,10 @@
 const mapData = {
+"Iron – Steel production – primary component of Steel, ferromagnetic properties – used in electrical transformers":"",
+"Typically found in ancient sedimentary rocks (banded iron formations)":"", 
+"Australia is largest producer, followed by Brazil, China, India and Russia.":"", 
+"In India, Odisha is largest producer, followed by Chhattisgarh, Karnataka & Jharkhand":"",
+
+
 "JH" :"",
 "Gua Iron Ore Mines (W. Singhbum, JH)":"POINT (85.3562565 22.2185736)",
 "Noamundi Iron Mine (W. Singhbum, JH)" : "POINT (85.58511 22.1681)",

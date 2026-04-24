@@ -18,3 +18,18 @@
 
 
 
+
+
+.leaflet-tooltip {
+	background-color: #7a1878 !important;
+}
+
+
+
+.leaflet-tooltip-right.highlighted,
+.leaflet-tooltip.reveal-all-tooltip.highlighted,
+.leaflet-tooltip.reveal-all-tooltip.leaflet-zoom-animated.leaflet-tooltip-right.highlighted,
+.leaflet-tooltip.highlighted 
+{
+background-color: #50134F !important;
+	}

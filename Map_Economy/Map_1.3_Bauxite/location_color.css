@@ -18,3 +18,17 @@
 
 
 
+.leaflet-tooltip {
+	background-color: #aaaaaa !important;
+	border: solid 1px #868585 !important; 
+}
+
+
+
+.leaflet-tooltip-right.highlighted,
+.leaflet-tooltip.reveal-all-tooltip.highlighted,
+.leaflet-tooltip.reveal-all-tooltip.leaflet-zoom-animated.leaflet-tooltip-right.highlighted,
+.leaflet-tooltip.highlighted 
+{
+background-color: #7d7d7d !important;
+	}

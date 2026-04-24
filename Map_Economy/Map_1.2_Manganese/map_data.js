@@ -1,4 +1,6 @@
 const mapData = {
+"Manganese is used in steelmaking (improving strength), toughness, wear resistance, Li-ion battery (MnO₂ cathode), aluminium alloys":"",
+"Manganese largest producers – South Africa & China":"",
 "Balaghat (MP)":"POINT (80.1838293 21.812876)",
 "Nagpur (MH)":"POINT (79.0881546 21.1458004)",
 "Bandhara (MH)":"POINT (78.7828613 21.1754754)",

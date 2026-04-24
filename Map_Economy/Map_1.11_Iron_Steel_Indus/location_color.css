@@ -23,3 +23,16 @@
 	stroke-width: 2px !important;
 	fill: #5e5959 !important;
 }
+
+
+.leaflet-tooltip {
+	background-color: #968c8c !important;
+}
+
+.leaflet-tooltip-right.highlighted,
+.leaflet-tooltip.reveal-all-tooltip.highlighted,
+.leaflet-tooltip.reveal-all-tooltip.leaflet-zoom-animated.leaflet-tooltip-right.highlighted,
+.leaflet-tooltip.highlighted 
+{
+background-color: #535353 !important;
+	}

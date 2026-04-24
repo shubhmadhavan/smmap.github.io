@@ -2,7 +2,8 @@ const mapData = {
 "Bauxite Bauxite forms by lateritization (sp. kind of chemical weathering) – intense tropical leaching + removal of silica & bases + long stability + residual concentration of aluminium oxides":"",
 "Bauxite → extracting aluminium. Used in cement, chemicals & heat-resistance.":"",
 "Aluminium → electrical cables, transport (aircraft), packaging (foil, cans) due to light weight & corrosion-resistance. Aliminium also used in SMALL quantities in Steel as deoxidiser to improve steel quality.":"",    
-"":"",
+"China & India are largest Aluminium producers in the world":"",
+"Aluminium producing states – Odisha 50%, Chhatttisgarh, Maharahtra":"",
 
 "MP":"",
 "Katni (MP)":"POINT (80.3893814 23.8343441)",

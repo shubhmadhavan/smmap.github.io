@@ -24,7 +24,7 @@ const resourcesMap = {
     'wld_8': { script: '../Map_Geography/Map_World_Conflicts/map_data.js', css: '../Map_Geography/Map_World_Conflicts/location_color.css' },
    
 
-    'wld_lakes': { script: '../Map_Geography/Map_Lakes/map_data.js', css: '../Map_Geography/Map_Lakes/location_color.css' },
+    'wld_lakes': { script: '../Map_Geography/Map_World_Lakes/map_data.js', css: '../Map_Geography/Map_World_Lakes/location_color.css' },
 
 
    

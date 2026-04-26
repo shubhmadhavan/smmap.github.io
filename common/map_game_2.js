@@ -75,8 +75,8 @@ if (getUrlParameter('selection').includes('wld')) {
         .leaflet-image-layer.leaflet-zoom-animated {
             opacity: 0 !important;
         }
-        #map {
-            filter: brightness(0.87) contrast(1.4) saturate(1.5);
+        .leaflet-pane.leaflet-tile-pane {
+            filter: brightness(0.83) contrast(1.3) saturate(1.5) ;
         }
     `;
     document.head.appendChild(style);

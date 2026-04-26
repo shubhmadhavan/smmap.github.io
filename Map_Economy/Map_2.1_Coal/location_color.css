@@ -20,9 +20,9 @@
 
 
 .line_leaflet.leaflet-interactive{
-	stroke: #77665a !important;
+	stroke: #6a5c51 !important;
 	stroke-width: 2px !important;
-	fill: rgba(139, 97, 47, 0.3) !important;
+	fill: rgba(118, 83, 41, 0.3) !important;
 }
 
 
@@ -31,3 +31,19 @@
 	stroke-width: 1px !important;
 	fill: rgba(119, 102, 90,0.4) !important;
 }
+
+
+
+.leaflet-tooltip {
+	background-color: #4d4b4b !important;
+}
+
+
+
+.leaflet-tooltip-right.highlighted,
+.leaflet-tooltip.reveal-all-tooltip.highlighted,
+.leaflet-tooltip.reveal-all-tooltip.leaflet-zoom-animated.leaflet-tooltip-right.highlighted,
+.leaflet-tooltip.highlighted 
+{
+background-color: #040404 !important;
+	}

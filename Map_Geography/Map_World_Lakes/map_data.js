@@ -1,5 +1,5 @@
 const mapData = {
-"Lake Winnipeg, Lachman Singh":"POINT (-98.125139 53.0097973)",
+"Lake Winnipeg":"POINT (-98.125139 53.0097973)",
 "Lake Superior":"POINT (-88.0481856 47.9608975)",
 "Lake Michigan":"POINT (-86.9307818 44.6462167)",
 "Lake Huron":"POINT (-82.3439898 44.9113631)",

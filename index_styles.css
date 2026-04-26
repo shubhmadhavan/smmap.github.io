@@ -137,6 +137,7 @@ color: rgba(250, 250, 250, 0.8);
 .zipper:hover,
 .zipper.hovered {
   transform: scale(1.08);
+  
 }
 
 
@@ -144,10 +145,12 @@ color: rgba(250, 250, 250, 0.8);
     box-shadow: 0 0 15px rgba(255, 255, 0, 0.8);
     background-color: 0 0 15px rgba(255, 255, 0, 0.8) !important;
     transition: 0.3s;
+
 }
 
 .zipper {
   transition: box-shadow 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 

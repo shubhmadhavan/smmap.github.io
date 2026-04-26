@@ -43,7 +43,12 @@ background-color: #323131 !important;
 	background: #E7E4DF  !important;
 	background-color: #E7E4DF !important;
 }
-
+.custom-control * {
+	background: #dfdfdf !important;
+	color: rgb(10, 10, 10) !important;
+	border: solid  1px #ADADAD ;
+	
+}
 
 
 

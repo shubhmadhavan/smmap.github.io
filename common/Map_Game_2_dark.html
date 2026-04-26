@@ -32,94 +32,23 @@
     /* =========================
        1. Force desktop viewport
     ========================= */
-    function setViewport() {
-      let meta = document.querySelector('meta[name="viewport"]');
-      if (!meta) {
-        meta = document.createElement('meta');
-        meta.name = 'viewport';
-        document.head.appendChild(meta);
-      }
-      meta.setAttribute(
-        'content',
-        'width=1280, initial-scale=1.0, maximum-scale=1.0'
-      );
-    }
+ 
 
-    /* =========================
-       2. Force desktop-like CSS
-    ========================= */
-    function injectCSS() {
-      const style = document.createElement('style');
-      style.innerHTML = `
-        html, body {
-          min-width: 1280px !important;
-          max-width: none !important;
-          overflow-x: auto !important;
-        }
-        * {
-          max-width: none !important;
-        }
-        @media (max-width: 1024px) {
-          html, body {
-            min-width: 1280px !important;
-          }
-        }
-      `;
-      document.head.appendChild(style);
-    }
+function blockZoomGestures() {
+  document.addEventListener('gesturestart', e => e.preventDefault());
+  document.addEventListener('gesturechange', e => e.preventDefault());
+  document.addEventListener('gestureend', e => e.preventDefault());
 
-    /* =========================
-       3. Redirect mobile domains
-    ========================= */
-    function fixMobileURL() {
-      const host = location.hostname;
+  document.addEventListener('touchmove', function (e) {
+    if (e.scale !== 1) e.preventDefault();
+  }, { passive: false });
+}
 
-      if (host.startsWith('m.')) {
-        location.hostname = host.replace(/^m\./, 'www.');
-      }
 
-      if (/\/(mobile|m)\//i.test(location.pathname)) {
-        location.pathname = location.pathname.replace(/\/(mobile|m)\//i, '/');
-      }
-    }
+   function runAll() {
 
-    /* =========================
-       4. Override screen size
-    ========================= */
-    function spoofScreen() {
-      try {
-        Object.defineProperty(window.screen, 'width', { get: () => 1280 });
-        Object.defineProperty(window.screen, 'height', { get: () => 800 });
-        Object.defineProperty(window, 'innerWidth', { get: () => 1280 });
-        Object.defineProperty(window, 'innerHeight', { get: () => 800 });
-      } catch (e) {}
-    }
-
-    /* =========================
-       5. Attempt UA spoof (limited)
-    ========================= */
-    function spoofUserAgent() {
-      try {
-        Object.defineProperty(navigator, 'userAgent', {
-          get: function () {
-            return "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
-                   "(KHTML, like Gecko) Chrome/120 Safari/537.36";
-          }
-        });
-      } catch (e) {}
-    }
-
-    /* =========================
-       Run everything early
-    ========================= */
-    function runAll() {
-      setViewport();
-      injectCSS();
-      fixMobileURL();
-      spoofScreen();
-      spoofUserAgent();
-    }
-
+  blockZoomGestures();  // optional
+}
     // Run ASAP
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', runAll);

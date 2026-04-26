@@ -22,16 +22,16 @@ body{
 .custom-control {
   z-index: 9999 !important;
   position: fixed;
-  bottom: 59px;
-  left: 55px;
+  top: 85vh !important;
+  left: 45px !important;
 
   display: grid;
-  grid-template-columns: 32px 32px 32px;
-  grid-template-rows: 32px 32px 32px;
-  gap: 2px;
+  grid-template-columns: 28px 28px 28px;
+  grid-template-rows: 28px 28px 28px;
+  gap: 1px;
 
   padding: 4px;
-  border-radius: 8px;
+  border-radius: 12px;
 
 }
 
@@ -42,14 +42,23 @@ body{
   padding: unset !important;
   margin: unset !important;
   left:10px;
-  bottom: 57px !important; 
+  top: 84.5vh !important;
   opacity: 0.55 !important;
 }
+
+
+.leaflet-touch .leaflet-bar a {
+  padding-top: 2px !important;
+ padding-bottom: 2px !important;
+  font-size: 22px !important;
+
+}
+
 
   div.custom-control  
 {
   top: unset;
-  left: 62px !important;
+  left: 66px !important;
   bottom: 70px !important; 
   opacity: 0.55 !important;
 }
@@ -70,16 +79,17 @@ div.custom-control:hover {
   transition: opacity 0.25s ease-in;
 }
 
+
 /* buttons */
 .arrow-btn {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border: none;
   cursor: pointer;
   font-size: 16px;
   line-height: 1;
 
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 /* D-pad positioning */
@@ -134,7 +144,7 @@ div.custom-control:hover {
 #map {
 	top: 25px !important;
 	height: 96vh !important; /* Adjusted height for map */
-	background: #0b0b0b;
+	background: linear-gradient(135deg, #1e1e2f, #2c2c54);
   border-radius: 32px;
 
 
@@ -360,7 +370,7 @@ li.empty-item  {
 
 
 
-path {
+path, .point_leaflet.leaflet-interactive {
   pointer-events: all;
 	cursor: crosshair !important;
   
@@ -795,12 +805,6 @@ input[type="range"]#timeoutSlider {
 }
 	
 
-.leaflet-touch .leaflet-bar a {
-  padding-top: 8px !important;
- padding-bottom: 8px !important;
-  font-size: 22px !important;
-
-}
 
 .leaflet-control-attribution.leaflet-control{
 	display:none;
@@ -814,7 +818,6 @@ input[type="range"]#timeoutSlider {
   left: 0vw;
   bottom: 40px;
   opacity: 1; 
-
   
 }
 
@@ -1158,9 +1161,6 @@ li.highlighted {
     user-select: all !important;
 }
 
-li {
-
-}
 
 .sidebar-popup { /* see Map_Game_2_dark.html */
 opacity: 1;
@@ -1202,10 +1202,6 @@ background-color:  rgba(240, 240, 240, 0.8);
       transition: opacity 0.3s ease-in;
 }
 
-.sidebar-popup .safe-nl {
-
-
-}
 
 .sidebar-popup .safe-nl li {
   font-size: 14px !important;
@@ -1240,7 +1236,6 @@ background-color:  rgba(240, 240, 240, 0.8);
   
 
 
-
 .home-link-button,
 .toggle-map-1,
 .toggle-map-2,
@@ -1270,13 +1265,7 @@ button.reveal-list,
 }
 
 
-  .leaflet-top  /* .leaflet-control-zoom.leaflet-bar.leaflet-control | this controls the white zoom in zoom out leaflet option on left*/
-{
-  top: unset;
 
-  bottom: 55px !important; 
-  opacity: 0.35;
-}
 
   div.custom-control {
      bottom: -4px !important;
@@ -1291,16 +1280,50 @@ button.reveal-list,
 }
 
 
+
 /* General MOBILE Fixes */
 @media (max-width: 768px) {
+
+.sidebar {
+  max-width: 24vw !important;
+  margin-top: 28px !important;
+}
+
+    .leaflet-top, .custom-control {
+ top: 77vh !important;
+    } 
+
+.sidebar,
+      .reveal-all, .reveal-list,  #header, .home-link, .switcher-text,
+    .toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5, 
+
+ .home-link-button, .switcher-button, .info-br, 
+.title-span, #header, .switcher-text, .score-bottom, .info-br, .reveal-list
+{
+  zoom: 0.79 !important;
+}
 
 
 
 .toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5 {
 left: 8px !important;
+  top: unset !important;
+}
+.toggle-map-3 {
+top: 60px !important;
 }
 
-  .sidebar {
+.toggle-map-4 {
+top: 105px !important;
+}
+
+.toggle-map-1 {
+top: 150px !important;
+}
+
+
+
+.sidebar {
     width: 140px;
     padding: 1px;
     font-size:10px !important ;
@@ -1309,12 +1332,11 @@ left: 8px !important;
   }
 
   .reveal-all {
-  left:37vw !important; top: 1vw !important; 
+  left:41vw !important; top: 1vw !important; 
 }
 
 
 }
-
 
 
 

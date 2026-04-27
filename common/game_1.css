@@ -511,13 +511,12 @@ padding-bottom: 2.4px !important;
   display: none;
 }
 
-
-
 #font-switcher {
-  position: fixed;
-  margin-left: 5px;
-  margin-top: -0px !important;
+  display: block;
 
+  position: fixed;
+  top: 1px !important;
+left: 34px !important;
 }
 
 
@@ -1221,6 +1220,10 @@ background-color:  rgba(240, 240, 240, 0.8);
 
 
 
+#font-switcher:hover {
+  opacity: 1 !important;
+  transition: opacity 0.3s ease-in !important;
+} 
 
 
 
@@ -1232,8 +1235,9 @@ background-color:  rgba(240, 240, 240, 0.8);
 
 
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 100px) {
   
+
 
 
 .home-link-button,
@@ -1245,8 +1249,9 @@ background-color:  rgba(240, 240, 240, 0.8);
 button.reveal-all,
 button.info-br,
 button.reveal-list, 
-.leaflet-top,  div.custom-control  {
-  opacity: 0 !important;
+.leaflet-top,  div.custom-control, 
+#font-switcher   {
+  opacity: 0.2 !important;
 }
 
 
@@ -1255,34 +1260,23 @@ button.reveal-list,
 
 
 
-
-@media (max-width: 549px) {
-
-.sidebar-popup, 
-.sidebar-popup .safe-nl .nl { 
-  display:none !important;
-  opacity: 0 !important;
-}
-
-
-
-
-  div.custom-control {
-     bottom: -4px !important;
-  }
-  
-.home-link-button {
-  margin-left: 0px !important
-}
-
-
-
-}
 
 
 
 /* General MOBILE Fixes */
-@media (max-width: 768px) {
+@media (max-width: 868px) {
+
+.home-link-button {
+  position: absolute;
+  left: 3.4px !important;
+  top: 16px !important;
+}
+
+#font-switcher {
+  position: absolute;
+  left: 38px !important;
+  top: 16px !important;
+}
 
 .sidebar {
   max-width: 24vw !important;

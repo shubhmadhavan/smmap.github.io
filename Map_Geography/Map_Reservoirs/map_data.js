@@ -26,11 +26,11 @@ const mapData = {
 
 
 "Beas River":"",	
-"Maharana Pratap Sagar (HP)/<br> Pong Dam (HP)<span class='nl'>creates the man-made Ramsar site Pong Dam (HP)</span>":"POINT (76.0166561 31.9916099)",
+"Pong Dam aka Maharana Pratap Sagar (HP)<br><span class='nl'>associated with man-made Ramsar site Pong Dam (HP); Also known as Maharana Pratap Sagar Dam (different from Rana Pratap Sagar dam in RS)</span>":"POINT (76.0166561 31.9916099)",
 
 
 "Satluj River":"",	
-"Gobind Sagar Reservoir (HP)<br><span class='nl'>created by Bhakra Dam (HP)</span>":"POINT (76.4858919 31.4133005)",
+"Gobind Sagar Reservoir (HP)<br><span class='nl'>Gobind Sagar is created by Bhakra Dam (HP); Despite its name, it is in Himachal Pradesh, not Punjab.</span>":"POINT (76.4858919 31.4133005)",
 "Bhakra Dam (HP)":"POINT (76.451946 31.4164701)",
 
 
@@ -46,7 +46,7 @@ const mapData = {
 
 "Chambal River":"",
 "Jawahar Sagar Dam (RS)":"POINT (75.6789803 25.0410762)",
-"Rana-Pratap Sagar (RS)":"POINT (75.5490475 24.7900733)",
+"Rana-Pratap Sagar (RS)<br><span class='nl'>Named after Rana Pratap, Rajput ruler of Mewar (region east of Aravalis)</span> ":"POINT (75.5490475 24.7900733)",
 "Gandhi Sagar (MP)":"POINT (75.5143623 24.4536135)",
 
 
@@ -58,7 +58,7 @@ const mapData = {
 "RS":"",
 	"Khari Dam":"POINT (74.2753209 25.705335)",
 
-"Sindh (trib of Chambal)":"",
+"Sindh (trib of Yamuna)":"",
 	"Madhikeda Reservoir":"POINT (77.8739264 25.5123334)",
 
 "Betwa":"",
@@ -175,7 +175,7 @@ const mapData = {
 "Hidkal Dam (KN)":"POINT (74.642605 16.1462048)",
 
 
-"Bhadra (trib of Tungabhadra), MH":"",
+"Bhadra (trib of Tungabhadra)":"",
 "Bhadra Res":"POINT (75.6301533 13.6990153)",
 
 "Musi":"",
@@ -221,25 +221,25 @@ const mapData = {
 
 
 "WEST-FLOWING RIVERS":"",
-"Narmada, MP":"",
+"Narmada":"",
 	"Bargi Dam Reservoir":"POINT (79.9868265 22.8425525)",
 	"Dhuandhar Waterfall":"POINT (79.8075411 23.1262738)",
 	"Indira Sagar Dam/ Res":"POINT (76.6374354 22.2347231)",
 
-"Narmada, GJ":"",
+
 	"Sardar Sarovar Dam":"POINT (73.743 21.83472)",
 
 "Tawa (trib of Narmada)":"",
 	"Tawa Reservoir":"POINT (77.9394447 22.4518184)",
 
-"Tapi, GJ":"",
+"Tapi":"",
 	"Ukai Dam/<br>Vallabh Sagar Dam":"POINT (73.684033 21.2540737)",
 
 
-"Mandovi, GA":"",
+"Mandovi":"",
 	"Carambolim Lake":"POINT (73.9278993 15.4887842)",
 
-"Zuari, GA":"",
+"Zuari":"",
 	"Salaulim Dam":"POINT (74.1776131 15.197038)",
 
 "Kalindi":"",
@@ -251,6 +251,7 @@ const mapData = {
 	"Gersoppa Res (KN)":"POINT (74.700503 14.2615121)",
 	"Mahatma Gandhi HE Plant (KN)":"POINT (74.7976709 14.2280797)",
 	"Linganamakki Dam (KN)":"POINT (74.8456054 14.1764253)",
+
 
 "Bharatphuza":"",
 "Thoomurthy Dam (TN)":"POINT (77.1575358 10.4837169)",
@@ -270,17 +271,17 @@ const mapData = {
 "Chalakudy (trib of Periyar)":"",
 	"Shoyalar Res":"POINT (76.7686944 10.3116351)",
 
-"Pamba, KL":"",
+"Pamba":"",
 	"Sabarigiri/ Pamba Dam<br><span class='nl'>on Pamba River, KL</span>":"POINT (77.159800 9.390600)",
 
-"Kalladar, KL":"",
+"Kalladar":"",
 "Kallara Meenmutty WF<br><span class='nl'>despite its name, its NOT on Kallada River – it is on Vamanapuram River</span>":"POINT (77.0857212 8.9470509)",
 	
 
-"Teesta, SK":"",
+"Teesta":"",
 "Chungthang Dam":"POINT (88.6537239 27.5987441)",
 
-"Umiam, MG":"",
+"Umiam":"",
 "Umiam/ Barapani Lake<br><span class='nl'>locally k.a Dam Sait</span>":"POINT (91.8928297 25.6654174)"
 
 

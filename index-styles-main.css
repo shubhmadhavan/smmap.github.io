@@ -35,7 +35,7 @@
   content: "";
   flex: 1;
   height: 2px;
-  background: linear-gradient(to right, transparent, #c2aa48, transparent);
+  background: linear-gradient(to right, transparent, #4e4e4e, transparent);
 }
 
 .folder-icon {

@@ -1,19 +1,28 @@
-const mapData = {"Wular Lake (JK)":"POINT (74.55804 34.36961)",
+const mapData = {
+    
+"JK":"",    
+"Wular Lake (JK)":"POINT (74.55804 34.36961)",
 "Hygam Wetland (JK)<br><span class='nl'>not to be conf. w. Hokersar (JK), Harike (PJ) or Hirakud (OD) </span>":"POINT (74.52786 34.23327)",
 "Shallabugh Wetland (JK)":"POINT (74.73626 34.16682)",
 "Hokersar Wetland (JK)<br><span class='nl'>not to be conf. w. Hygam (JK), Harike (PJ) or Hirakud (OD) </span>":"POINT (74.71179 34.10292)",
 "Surinsar-Mansar WLS (JK)":"POINT (75.0414 32.77031)",
+
+"LK":"",    
 "Tso Kar (LK)":"POINT (78.02524 33.31032)",
 "Tso Moriri (LK)":"POINT (78.31594 32.91122)",
+
+"HP":"",    
 "Chandra Taal (HP)":"POINT (77.61516 32.48296)",
 "Pong Dam (HP)":"POINT (76.04839 31.97949)",
-"Renuka Lake (HP)":"POINT (77.45836 30.61016)",
+"Renuka Lake (HP)<br><span class='nl'>Renuka Lake, the largest natural, oval-shaped lake in Himachal Pradesh (Sirmaur district), was formed by the fluvial action of the Giri River; It is considered an abandoned, meandering channel or oxbow lake formed by the river</span>":"POINT (77.45836 30.61016)",
+
+"PJ":"",
 "Keshopur-Miani Community Reserve (PJ)":"POINT (75.40788 32.08743)",
 "Beas Conservation Reserve (PJ)":"POINT (75.1762 31.38626)",
 "Kanjli Wetland (PJ)":"POINT (75.3773 31.41422)",
-"Nangal WLS (PJ)":"POINT (76.38146 31.39588)",
+"Nangal WLS (PJ)":"POINT (76.38116 31.31988)",
 "Ropar (PJ)":"POINT (76.5 31.02)",
-"Harike Wetland (PJ)<br><span class='nl'>not to be conf. w. Hygam (PJ), Hokersar (JK) or Hirakud (OD) </span>":"POINT (75.01322 31.1418)",
+"Harike Wetland (PJ)<br><span class='nl'>Harike is NOT to be confused w. Hygam (PJ), Hokersar (JK) or Hirakud (OD); Harike is formed by confluence of Beas & Satluj Rivers</span>":"POINT (75.01322 31.1418)",
 "Asan Barrage (UK)":"POINT (77.66555 30.43583)",
 "Sultanpur (HR)":"POINT (76.89638 28.44751)",
 "Bhindawas WLS & BS (HR)":"POINT (76.55171 28.53242)",

@@ -1,5 +1,9 @@
 const mapData = {
-	
+"National Parks":"",
+"State Governments declare an area as National Park under Sec 35 of Wildlife Protection Act":"",
+"However, Like other sanctuaries, any subsequent change in boundaries of a National Park requires approval of National Board of Wildlife (established under Sec 5A)":"",	
+"Note: This map also includes relevant Biosphere Reserves":"",
+
 "LK":"",
 "Hemis NP (Ladakh)":"POINT (77.3689212 33.7644528)",
 
@@ -81,6 +85,7 @@ const mapData = {
 "Kaziranga NP-TR (AS)":"POINT (93.3453685 26.6388952)",
 "Dibru Saikhowa NP-BR (AS)":"POINT (95.3625409 27.6689859)",
 "Dehing Patkai NP (AS)":"POINT (95.5257896 27.3051589)",
+"Sikhna Jwhwlao NP":"POINT (90.29589 26.71695)",
 
 "MG":"",
 "Nokrek Ridge NP-BR (MG)":"POINT (90.321747 25.4619424)",
@@ -92,47 +97,76 @@ const mapData = {
 "Mouling NP (AR)":"POINT (94.7484518 28.4738185)",
 "Kamlang WLS-TR":"POINT (96.1878181 27.9172977)",
 "Namdapha NP-TR (AR)":"POINT (96.5358093 27.4454717)",
-"Ntanki NP (NL)":"POINT (93.5205641 25.5496528)",
+
+"NG":"",
+"Ntanki NP (NG)":"POINT (93.5205641 25.5496528)",
+
+"MN":"",
 "Shirui NP (MN)":"POINT (94.4188519 25.1299438)",
 "Keibul Lamjao NP (MN)":"POINT (93.8395226 24.478798)",
-"Murlen NP (Mizoram)":"POINT (93.2784825 23.6573654)",
-"Phawngpui NP (Mizoram)":"POINT (93.0275802 22.6510013)",
-"Clouded Leopard NP (Tripura)":"POINT (91.3104727 23.6677001)",
-"Rajbari (Bison ) NP (Tripura)":"POINT (91.3947024 23.2777226)",
+
+
+"MZ":"",
+"Murlen NP (MZ)":"POINT (93.2784825 23.6573654)",
+"Phawngpui NP (MZ)":"POINT (93.0275802 22.6510013)",
+
+"TR":"",
+"Clouded Leopard NP (TR)":"POINT (91.3104727 23.6677001)",
+"Rajbari (Bison ) NP (TR)":"POINT (91.3947024 23.2777226)",
+
+"GJ":"",
 "Rann of Kutchh BR":"POINT (70.1455805 24.0454286)",
 "Marine NP (GJ)":"POINT (69.2008886 22.401817)",
 "Gir NP (GJ)":"POINT (70.8241507 21.1243054)",
 "Velavadar Blackbuck (NP) (GJ)":"POINT (72.0336732 22.0540423)",
 "Vansda NP (GJ)":"POINT (73.3640381 20.7579323)",
+
+"MH":"",
 "Gugamal NP (MH)":"POINT (77.0212013 21.3531896)",
 "Navegaon-Nagzira NP (MH)":"POINT (80.1072564 20.9167077)",
 "Tadoba-Andhari NP (MH)":"POINT (79.360689 20.2483827)",
 "Borivali/ Sanjay Gandhi NP (MH)":"POINT (72.9181784 19.2288092)",
 "Chandoli NP (MH)":"POINT (73.8593072 17.1261096)",
+
+"CG":"",
 "Achanakmar Amarkantak Biosphere Reserve":"POINT (81.7852544 22.4820291)",
 "Kanger Valley (Kanger-Ghati) NP (CG)":"POINT (82.2365981 18.9539973)",
+
+"OD":"",
 "Simlipal NP-TR-BR (OD)":"POINT (86.2842403 21.61131)",
 "Bhitarkanika NP (OD)":"POINT (87.0007958 20.7489358)",
-"Mollem NP & Bhagwan Mahavir WLS (Goa)":"POINT (74.2691277 15.3365503)",
+
+"GA":"",
+"Mollem NP & Bhagwan Mahavir WLS (GA)":"POINT (74.2691277 15.3365503)",
+
+"KN":"",
 "Anashi/Anshi NP (KN)/ Kali NP-TR":"POINT (74.3587473 14.9980998)",
 "Kudremukha NP (KN)":"POINT (75.1761872 13.2377938)",
 "Bannerghatta NP (KN)":"POINT (77.5687417 12.8038849)",
 "Nagarahole (Rajiv Gandhi II) NP-TR (KN)":"POINT (76.1531401 12.0485329)",
 "Bandipur NP (KN)":"POINT (76.4591875 11.7814498)",
+
+"TG":"",
 "Mrugavani NP (TG)":"POINT (78.3351954 17.3540139)",
 "Kasu Brahmanandha Reddy NP (TG)":"POINT (78.4230546 17.4200063)",
 "Mahavir Harina Vanasthali NP (TG)":"POINT (78.5859566 17.3434982)",
-"Papikonda NP (AnP)":"POINT (81.5180763 17.6310123)",
+
+"AP":"",
+"Papikonda NP (AP)":"POINT (81.5180763 17.6310123)",
 "Coringa WLS":"POINT (82.2982966 16.8212486)",
-"Rajiv Gandhi (Rameswaram) NP (AnP)":"POINT (78.5501416 14.7317904)",
-"Sri Venkateswara NP (AnP)":"POINT (79.1082784 13.2018088)",
-"Seshachalam Hills":"POINT (79.4747882 13.8646236)",
+"Rajiv Gandhi (Rameswaram) NP (AP)":"POINT (78.5501416 14.7317904)",
+"Sri Venkateswara NP (AP)":"POINT (79.1082784 13.2018088)",
+"Seshachalam Hills (AP)":"POINT (79.4747882 13.8646236)",
+
+"KL":"",
 "Silent Valley NP (Kumthi Phuza River)":"POINT (76.4280024 11.0694222)",
 "Eravikulam NP (KL)":"POINT (77.0607796 10.1376802)",
 "Anamudi Shola NP (KL)":"POINT (77.1772737 10.1903111)",
 "Pampadum Shola NP (KL)":"POINT (77.2614319 10.1323719)",
 "Mathikettan Shola NP (KL)":"POINT (77.2462628 9.9846737)",
 "Periyar NP-TR (KL)":"POINT (77.2368474 9.462155)",
+
+"TN":"",
 "Guindy NP (TN)":"POINT (80.2378725 13.0049251)",
 "Mukurthi NP (TN)":"POINT (76.5596409 11.4287464)",
 "Gulf of Mannar Marine NP":"POINT (79.1810242 9.2569046)",
@@ -144,6 +178,8 @@ const mapData = {
 "Agasthyamalai BR":"POINT (77.2455669 8.6160148)",
 "Mudumalai NP-TR (TN)":"POINT (76.5202021 11.5595714)",
 "Anaimalai/ Indira Gandhi NP-TR (TN)":"POINT (77.1294933 10.4059862)",
+
+"AN":"",
 "Saddle Peak NP":"POINT (93.0063135 13.1579753)",
 "Middle Button NP":"POINT (93.0333333 12.2833333)",
 "South Button NP":"POINT (93.0203235 12.2242482)",

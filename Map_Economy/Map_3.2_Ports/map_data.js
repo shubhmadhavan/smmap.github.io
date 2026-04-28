@@ -38,7 +38,7 @@ const mapData = {
 "Krishnapatnam Port" : "POINT (80.14081 14.25266)",
 "Machilipatnam Port" : "POINT (81.22081 16.22704)",
 "Kakinada / Coringa Port" : "POINT (82.26104 16.94561)",
-"Vizag (Major) Port<br><span class='nl'>Top 20 ports in world; #1 in India; deepest 'land-locked' port in India" : "POINT (83.29273 17.68593)",
+"Vizag (Major) Port<br><span class='nl'>Top 20 ports in world; #1 in India; Deepest 'land-locked' port in India" : "POINT (83.29273 17.68593)",
 
 "OD":"",
 "Paradip (Major) Port" : "POINT (86.69841 20.29864)",

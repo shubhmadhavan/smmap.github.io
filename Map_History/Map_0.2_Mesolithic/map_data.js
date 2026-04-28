@@ -1,7 +1,7 @@
 const mapData = {
 "Loteshvar (GJ)":"POINT (71.8156244 23.589367)",
 "Ratanpura (Rupen River, GJ)":"POINT (71.8156244 23.4631135)",
-"Bagor (RS)":"POINT (74.3792737 25.3594495)",
+"Bagor (RS)<br><span class='nl'>not to be confused with bagHor which is in madHya pradesH</span> ":"POINT (74.3792737 25.3594495)",
 "Bhimbetka":"POINT (77.6124331 22.9395461)",
 "Adamgadh (MP)":"POINT (77.7316166 22.7318659)",
 "Damdama (UP)":"POINT (79.7203565 25.4931097)",

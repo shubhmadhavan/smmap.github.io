@@ -1,5 +1,5 @@
 const mapData = {
-"Chalcolithic Sites – 2500 BC to 700 BC"
+"Chalcolithic Sites – 2500 BC to 700 BC",
 "Mehrgarh":"POINT (67.6095967 29.3873272)",
 "Jodhpura (RS)":"POINT (76.1232976 27.5882171)",
 "Ganeshwar (Khetri Cu Belt, RS)":"POINT (75.8199843 27.6648195)",
@@ -14,9 +14,11 @@ const mapData = {
 "Prabhas Patan (GJ)":"POINT (70.4059983 20.8882111)",
 "Rangpur (GJ)":"POINT (72.7555249 23.4591987)",
 "Kaothe (MH)":"POINT (74.5308578 21.3842554)",
+
 "Daimabad (Pravara River, MH)":"POINT (74.7012035 19.5107011)",
 "Jorve (Pravara River, MH)":"POINT (74.2751517 19.5466871)",
 "Newasa (Pravara River, MH)":"POINT (74.9281063 19.5511772)",
+
 "Inamgaon (Ghod River or Kukadi River, MH)":"POINT (74.5390046 18.5895491)",
 "Golabai Sasam (OD)":"POINT (85.5830772 20.0629466)",
 "Maski (KN)":"POINT (76.6544601 15.95823)",

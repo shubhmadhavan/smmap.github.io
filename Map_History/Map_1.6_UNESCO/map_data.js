@@ -26,7 +26,7 @@ const mapData = {
 "Humayun’s Tomb":"POINT (77.2507492 28.5932848)",
 "Pink City of Jaipur":"POINT (75.8184343 26.9247365)",
 "Ramappa Kakatiya Ramalingeshwara (Rudreshwara) Temple":"POINT (79.9433064 18.2593333)",
-"Khajuraho Temple Complex":"POINT (79.9219494 24.8531752)",
+"Khajuraho<br><span class='nl'>Khajuraho Temple Complex was built by Chandelas of Jejakabuti; </span> ":"POINT (79.9219494 24.8531752)",
 "Mahabodhi Temple Complex":"POINT (84.9914193 24.6959222)",
 "Moidam Mound-Burial of Ahoms":"POINT (94.8759751 26.9413085)",
 "Mountain Railways of India":"POINT (88.3215627 26.8818035)",

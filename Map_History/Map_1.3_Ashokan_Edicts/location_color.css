@@ -21,3 +21,23 @@ path.leaflet-interactive[stroke-width="3"] {
 path.leaflet-interactive[stroke-width="2"] {
 	fill: rgb(227, 149, 149) !important;	 
 } /* targets points but not paths*/
+
+
+div.leaflet-marker-icon.reveal-all-tooltip-icon.leaflet-zoom-animated.leaflet-interactive
+ {
+	display: none !important;
+}
+
+.leaflet-tooltip 
+{
+	background-color: #983030 !important;
+}
+
+
+.leaflet-tooltip-right.highlighted,
+.leaflet-tooltip.reveal-all-tooltip.highlighted,
+.leaflet-tooltip.reveal-all-tooltip.leaflet-zoom-animated.leaflet-tooltip-right.highlighted,
+.leaflet-tooltip.highlighted 
+{
+background-color: #5e0909 !important;
+}

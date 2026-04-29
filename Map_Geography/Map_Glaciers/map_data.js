@@ -15,8 +15,13 @@ const mapData = {
 "Bara Shigri Glacier (HP)":"POINT (77.6876092 32.1647327)",
 "Bandarpunch Glacier":"POINT (78.5405304 31.0109081)",
 "Dokriani Glacier":"POINT (78.5406464 30.7386918)",
-"Gangotri Glacier (Gaumukh)":"POINT (79.0931168 30.9215444)",
-"Chorabari Glacier (Kedarnath)":"POINT (79.0673302 30.745172)",
+
+"Gangotri<br><span class='nl'>Gangotri or 'Gaumukh' (Uttarkashi dis, UK) – forms the origin of Bhagirathi River</span> ":"POINT (79.0931168 30.9215444)",
+
+"Chorabari Glacier <br><span class='nl'>Chorabari Glacier near Kedarnath (Rudraprayag dis, UK) forms origin of Mandakini River</span> ":"POINT (79.0673302 30.745172)",
+
+"Satopanth Glacier<br><span class='nl'>Alakhnanda originates in Satopanth Glacier & Bhagirathi Kharak Glacier near Chaukhamba peak, in Chamoli dis, UK":"POINT (79.34373 30.74561)",
+
 "Milam Glacier":"POINT (80.0674619 30.5301832)",
 "Pindari Glacier":"POINT (80.005979 30.3030579)",
 "Jongsong Glacier":"POINT (88.1352391 27.8815937)",

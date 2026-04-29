@@ -1,0 +1,36 @@
+.leaflet-interactive {
+	cursor: crosshair;   
+	stroke: #efefef !important; 
+	color: #684429 !important; 	
+			
+}
+
+.leaflet-interactive:hover{
+	stroke: #efefef !important; 
+	color: #684429 !important; 	
+}
+
+.point_leaflet {
+    fill:#684429 !important; 	
+	color: #684429 !important; 
+}
+
+.point_leaflet:hover {
+    fill:#684429 !important; 	
+	color: #684429 !important; 
+}
+
+
+.leaflet-tooltip 
+{
+	background-color: #936a6a !important;
+}
+
+
+.leaflet-tooltip-right.highlighted,
+.leaflet-tooltip.reveal-all-tooltip.highlighted,
+.leaflet-tooltip.reveal-all-tooltip.leaflet-zoom-animated.leaflet-tooltip-right.highlighted,
+.leaflet-tooltip.highlighted 
+{
+background-color: #644b4b !important;
+}

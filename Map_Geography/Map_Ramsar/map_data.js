@@ -1,20 +1,26 @@
 const mapData = {
     
+
+"Ramsar Sites – Ramsar Convention signed on Feb 2, 1971 in Ramsar, Iran":"",
+"Officially, Ramsar Convention on Wetlands of Intl Imp esp. as Waterfowl Habitat":"",
+"6  Intl Org Partners – Birdlife Intl, IUCN, IWMI, Wetlands Intl, WWF, Wildfowl & Wetlands Trust":"",
+"Wise Use Concept – Maintenance of Ecological Character, Sustainable Utilisation, Ecosystem Approach, Sustainable Development Context":"",
+
 "JK":"",    
-"Wular Lake (JK)":"POINT (74.55804 34.36961)",
-"Hygam Wetland (JK)<br><span class='nl'>not to be conf. w. Hokersar (JK), Harike (PJ) or Hirakud (OD) </span>":"POINT (74.52786 34.23327)",
+"Wular Lake (JK)<br><span class='nl'>Asia's 2nd largest freshwater lake, after Lake Baikal; Wular is fomred by tectonic activity and lies on Jhelum; Wular also has a small island called 'Zaina Lank' </span> ":"POINT (74.55804 34.36961)",
+"Hygam Wetland (JK)<br><span class='nl'>Hygam (Baramulla, JH) – not to be conf. w. Hokersar (Srinagar, JK), Harike (PJ) or Hirakud (OD); Hygam lies within Jhelum basin but not directly on Jhelum River.</span>":"POINT (74.52786 34.23327)",
 "Shallabugh Wetland (JK)":"POINT (74.73626 34.16682)",
-"Hokersar Wetland (JK)<br><span class='nl'>not to be conf. w. Hygam (JK), Harike (PJ) or Hirakud (OD) </span>":"POINT (74.71179 34.10292)",
+"Hokersar Wetland (JK)<br><span class='nl'>Hokersar (Srinagar, JK) – not to be conf. w. Hygam (Baramulla, JK), Harike (PJ) or Hirakud (OD); mnemonic: Hoker-Sri; Hokersar lies directly on Jhelum.</span>":"POINT (74.71179 34.10292)",
 "Surinsar-Mansar WLS (JK)":"POINT (75.0414 32.77031)",
 
 "LK":"",    
-"Tso Kar (LK)":"POINT (78.02524 33.31032)",
-"Tso Moriri (LK)":"POINT (78.31594 32.91122)",
+"Tso Kar (LK)<br><span class='nl'>Tso Kar is a 'fluctuating salt lake', lying in Rupshu Plateau of Ladakh</span> ":"POINT (78.02524 33.31032)",
+"Tso Moriri (LK)<br><span class='nl'>Tso Moriri is endorheic (no outlet) and brackish but with radiant blue colours and palatable waters; Its oligotrophic (nutrient-poor), alkaline ecosystem supports unique biodiversity; Tso Moriri is locked in the Changthang Plateau; It is the highest brackish and largest high-altitude lake in India":"POINT (78.31594 32.91122)",
 
 "HP":"",    
-"Chandra Taal (HP)":"POINT (77.61516 32.48296)",
-"Pong Dam (HP)":"POINT (76.04839 31.97949)",
-"Renuka Lake (HP)<br><span class='nl'>Renuka Lake, the largest natural, oval-shaped lake in Himachal Pradesh (Sirmaur district), was formed by the fluvial action of the Giri River; It is considered an abandoned, meandering channel or oxbow lake formed by the river</span>":"POINT (77.45836 30.61016)",
+"Chandra Taal (HP)<br><span class='nl'>Chandra Tal is the origin of Chenab River</span> ":"POINT (77.61516 32.48296)",
+"Pong Dam (HP)<br><span class='nl'>Pong Dam is also known as Rana Pratap Sagar Reservoir; Pong Dam is man-made reservoir, built by creating an earthfill dam.</span> ":"POINT (76.04839 31.97949)",
+"Renuka Lake (HP)<br><span class='nl'>Renuka Lake, the largest natural, oval-shaped lake in Himachal Pradesh (Sirmaur district); Renuka Lake was formed by the fluvial action of the Giri River; Renuka is considered an abandoned, meandering channel or oxbow lake formed by the river</span>":"POINT (77.45836 30.61016)",
 
 "PJ":"",
 "Keshopur-Miani Community Reserve (PJ)":"POINT (75.40788 32.08743)",
@@ -23,68 +29,110 @@ const mapData = {
 "Nangal WLS (PJ)":"POINT (76.38116 31.31988)",
 "Ropar (PJ)":"POINT (76.5 31.02)",
 "Harike Wetland (PJ)<br><span class='nl'>Harike is NOT to be confused w. Hygam (PJ), Hokersar (JK) or Hirakud (OD); Harike is formed by confluence of Beas & Satluj Rivers</span>":"POINT (75.01322 31.1418)",
+
+"UK":"",
 "Asan Barrage (UK)":"POINT (77.66555 30.43583)",
+
+"HR":"",
 "Sultanpur (HR)":"POINT (76.89638 28.44751)",
 "Bhindawas WLS & BS (HR)":"POINT (76.55171 28.53242)",
+
+
+"RS":"",
 "Keoladeo NP/ Bharatpur BS (RS)":"POINT (77.52319 27.15926)",
 "Sambhar Lake (RS)":"POINT (75.04882 26.92928)",
 "Siliserh Lake (RS)":"POINT (76.53136 27.52182)",
 "Khichan Bird Sanctuary":"POINT (72.41804 27.13766)",
-"Menar (Udaipur)":"POINT (74.10637 24.59957)",
+"Menar (Udaipur,RS)<br><span class='nl'>Menar Ramsar site, lies Udaipur city itself, lies in basin of Berach River.</span> ":"POINT (74.10637 24.59957)",
+
+
+"UP":"",
 "Haiderpur (UP)":"POINT (78.08215 28.88707)",
 "Upper Ganga (UP)":"POINT (78.17155 28.73116)",
 "Soor Sarovar BS/ Keetham Lake (UP)":"POINT (77.85262 27.236)",
 "Saman BS (Mainpuri, UP)":"POINT (79.17719 27.02456)",
+"Shekha BS (Aligarh, UP)":"POINT(78.21755 27.85479)",
 "Sarsai Nawar (Etawah, UP)":"POINT (79.14799 27.36598)",
 "Sandi (Hardoi, UP)":"POINT (79.91667 27.25)",
-"Shaheed Ch.Sh.Azad BS <br><span id='nl'>(Nawabganj, Unnao dis, UP)":"POINT (80.65312 26.61918)",
+"Sh. Chandrashekhar Azad BS (UP) <br><span id='nl'>(Nawabganj, Unnao dis, UP)":"POINT (80.65312 26.61918)",
 "Samaspur BS (Rae Bareli, UP)":"POINT (81.39457 25.99409)",
 "Parvati Arga (Gonda, UP)":"POINT (82.17501 26.95253)",
 "Bakhira BS (Sant Kabir Nagar, UP) <br><span class='nl'>not to be confused w. Bakhra dam (HP)</span>":"POINT (83.13895 26.90637)",
 "Patna Bird Sanctuary (UP)":"POINT (78.31682 27.52764)",
+
+"BR":"",
 "Kanvar Lake BS (BR)":"POINT (86.1456 25.63013)",
 "Nagi BS (BR)":"POINT (86.37567 24.77445)",
 "Nakti BS (BR)":"POINT (86.43735 24.84143)",
 "Gokul Jalashay (BR)":"POINT (86.43735 24.84143)",
 "Udaipur Jheel (BR)":"POINT (84.25932 27.19534)",
 "Gogabil Lake/ Gogabeel Lake (BR)":"POINT (87.69282 25.3753)",
+
+"JH":"",
 "Udhwa BS (JH)":"POINT (87.83236 24.96914)",
+
+
+"NER":"",
 "Khecheopalri Lake (SK)":"POINT (88.18827 27.34922)",
 "Dipor Beel (AS)":"POINT (91.64935 26.11769)",
 "Rudrasagar Lake (TR)":"POINT (91.31679 23.50035)",
 "Loktak Lake (MN)":"POINT (93.81465 24.55933)",
 "Pala Lake (MZ)":"POINT (92.88889 22.20246)",
+
+
+"WB":"",
 "East Kolkata Wetlands (WB)":"POINT (88.45007 22.55284)",
-"Sundarbans":"POINT (88.98564 21.81066)",
+"Sundarbans (WB)":"POINT (88.98564 21.81066)",
+
+"CG":"",
 "Kopra Jalashaya (CG)":"POINT (82.1373 22.05164)",
+
+
+"OD":"",
 "Bhitarkanika Mangroves (OD)":"POINT (87.00079 20.74893)",
 "Hirakud Dam (OD) <br><span class='nl'>not to be conf. w. Hygam (PJ), Hokersar (JK) or Harike (PJ)</span>":"POINT (83.81281 21.597)",
 "Satkosia Gorge (Tikarpada WLS, OD)":"POINT (84.83202 20.54454)",
 "Anshupa Lake/ Ansupa Lake (OD)":"POINT (85.60914 20.45617)",
 "Chilika Lake (OD)":"POINT (85.38679 19.77261)",
 "Tampara Lake (OD)":"POINT (85.00168 19.35243)",
+
+"GJ":"",
 "Thol (GJ)":"POINT (72.40658 23.13728)",
 "Nalsarovar (GJ)":"POINT (72.04456 22.81987)",
 "Khijadia BS (GJ)":"POINT (70.15451 22.51422)",
 "Wadhvana BS (GJ)":"POINT (73.48615 22.17204)",
 "Chhari-Dhand (GJ)":"POINT (69.76443 23.62983)",
+
+"MP":"",
 "Sakhya Sagar (MP)":"POINT (77.71229 25.43541)",
 "Bhoj Tal (MP)":"POINT (77.34191 23.25241)",
 "Yashwant Sagar (MP)":"POINT (75.69564 22.81364)",
 "Sirpur Lake (Indore, MP)":"POINT (75.81271 22.70116)",
 "Tawa Reservoir (MP)":"POINT (77.94034 22.45894)",
+
+"MH":"",
 "Lonar (Crater+Soda) Lake (MH)":"POINT (76.50691 19.97578)",
 "Nandur Madhyameshwar BS (MH)":"POINT (74.10394 20.00777)",
 "Thane Creek Flamingo BS (MH)":"POINT (72.98173 19.14777)",
+
+"GA":"",
 "Nanda Lake (GA)":"POINT (74.10541 15.24105)",
+
+"AP":"",
 "Kolleru Lake WLS (AP)":"POINT (81.21666 16.64999)",
+
+"KN":"",
 "Magadi-kere Bird Conservation Reserve (KN)":"POINT (75.51401 15.21926)",
 "Ankasamudra BS (KN)":"POINT (76.23258 15.1325)",
 "Aghanashini Estuary (KN)":"POINT (74.36937 14.52045)",
 "Ranganatittu BS (KN)":"POINT (76.65428 12.42553)",
+
+"KL":"",
 "Vembanad Lagoon Lake-Kol Wetland (KL)":"POINT (76.39845 9.59676)",
 "Sasthamcotta (KL)":"POINT (76.63321 9.03667)",
 "Ashtamudi Lagoon (KL)":"POINT (76.57772 8.95918)",
+
+"TN":"",
 "Pallikaranai (TN)":"POINT (80.21371 12.93489)",
 "Karikili BS (TN)":"POINT (79.8406 12.59985)",
 "Vedanthangal BS (TN)":"POINT (79.85606 12.54545)",

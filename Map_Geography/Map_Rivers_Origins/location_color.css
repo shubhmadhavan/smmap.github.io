@@ -1,0 +1,26 @@
+.leaflet-interactive {
+	cursor: crosshair;   
+ 
+	stroke: #517a96 !important; 
+	stroke-width: 2px !important;
+
+}
+
+
+
+.leaflet-interactive:hover{
+	stroke: #699dc0 !important; 
+	
+	stroke-width: 3px !important;
+}
+
+@media only screen and (max-width: 549px){
+
+.leaflet-interactive {
+
+	stroke-width: 4px !important;
+	stroke-opacity: 0.8 !important; 
+	
+}
+	
+}

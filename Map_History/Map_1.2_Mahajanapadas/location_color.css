@@ -14,3 +14,18 @@
 	fill:rgba(255, 102, 102,0.4) !important;		
 	stroke-width: 2px !important;
 }
+
+
+.leaflet-tooltip 
+{
+	background-color: #983030 !important;
+}
+
+
+.leaflet-tooltip-right.highlighted,
+.leaflet-tooltip.reveal-all-tooltip.highlighted,
+.leaflet-tooltip.reveal-all-tooltip.leaflet-zoom-animated.leaflet-tooltip-right.highlighted,
+.leaflet-tooltip.highlighted 
+{
+background-color: #5e0909 !important;
+}

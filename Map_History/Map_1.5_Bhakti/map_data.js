@@ -1,4 +1,6 @@
 const mapData = {
+"Bhakti & Sufi Saints":"",
+"Below list is in chronological order":"",
 "Nammalvar (900 CE)<br><span class='nl' >one of the 12th Alvar;incld in Naalayira Divya Prabandam, compiled by Nathamuni":"POINT (77.9894221 8.8711605)",
 "Manikkavacakar (900 CE)<br><span class='nl'>wrote Thiruvasagam & Thirukkovaiyar (Shaivism)":"POINT (78.3145181 9.956938)",
 "Ramanujacharya (1100 CE)<br><span class='nl'>founded Sri sect of Vaishnavism & the Vishishtadvaita school (non-dualistic but the monism is qualified/ vishesh);unlike his teacher Yadava Prakasa, who espoused the Advaita Vedant school":"POINT (78.633449 9.6849532)",

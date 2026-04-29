@@ -10,7 +10,11 @@ let cssPath = '';
 // Define a mapping of selections to script and CSS paths
 const resourcesMap = {
     'riv_1': { script: '../Map_Geography/Map_Rivers/map_data.js', css: '../Map_Geography/Map_Rivers/location_color.css' },
+    
     'mt_1': { script: '../Map_Geography/Map_Mountains/map_data.js', css: '../Map_Geography/Map_Mountains/location_color.css' },
+    'mt_2': { script: '../Map_Geography/Map_Passes/map_data.js', css: '../Map_Geography/Map_Passes/location_color.css' },
+
+    
     'gl_1':{ script: '../Map_Geography/Map_Glaciers/map_data.js', css: '../Map_Geography/Map_Glaciers/location_color.css' },
     'wf_1': { script: '../Map_Geography/Map_Waterfalls/map_data.js', css: '../Map_Geography/Map_Waterfalls/location_color.css' },
     'wld_1': { script: '../Map_Geography/Map_World/map_data.js', css: '../Map_Geography/Map_World/location_color.css' },

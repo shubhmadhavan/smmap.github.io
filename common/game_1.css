@@ -1162,7 +1162,7 @@ li.highlighted {
 
 
 .sidebar-popup { /* see Map_Game_2_dark.html */
-opacity: 1;
+opacity: 0.9;
  
     position: fixed;
 
@@ -1205,6 +1205,14 @@ background-color:  rgba(240, 240, 240, 0.8);
 .sidebar-popup .safe-nl li {
   font-size: 14px !important;
 }
+
+
+.sidebar-popup ul {
+    
+  margin-top: 3px;
+padding-left: 35px;
+}
+
 
 
 .sidebar-popup .safe-nl .nl {
@@ -1262,10 +1270,41 @@ button.reveal-list,
 
 
 
-
 /* General MOBILE Fixes */
-@media (max-width: 868px) {
+@media (max-width: 808px) {
 
+.sidebar-popup {
+
+  position: absolute;
+
+  left: unset !important;
+  right: 100px !important;
+
+  top: calc(100vh - 190px) !important;
+  bottom: unset !important;
+  min-height: 50px !important;
+  min-width: 120px !important;
+  max-width: 20px !important;
+  padding: unset !important;
+
+  opacity: 0.7;
+}
+
+.sidebar-popup ul {
+    
+padding-left: 35px;
+}
+
+
+.sidebar-popup *,
+.sidebar-popup ul *,
+.sidebar-popup ul.safe-nl *,
+.sidebar-popup .safe-nl .nl {
+  font-size: 7px !important;
+}
+
+
+  
 .home-link-button {
   position: absolute;
   left: 3.4px !important;
@@ -1283,8 +1322,13 @@ button.reveal-list,
   margin-top: 28px !important;
 }
 
-    .leaflet-top, .custom-control {
- top: 77vh !important;
+    .leaflet-top {
+top: calc(100vh - 170px) !important;
+    } 
+
+  .custom-control {
+top: calc(100vh - 200px) !important;
+
     } 
 
 .sidebar,

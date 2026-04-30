@@ -1,5 +1,8 @@
 const mapData = {
 "Ashoka has 14 Major, 7 Minor and 7 Pillar Edicts of Ashoka":"",
+"Kandahar inscriptions – in Greek & Aramaic":"", 
+"Shahbazgarhi & Mansehra inscriptions are in Kharosti script":"",
+"Rest – in Brahmi script":"",
 
 "Outside India":"",
 "Kandahar (Af)<br><span class='nl'>in Greek; ment.s Kalinga War</span>":"POLYGON ((65.44603759863341 31.6205076, 65.9856010013666 31.6205076, 65.7158193 32.01841116390096, 65.44603759863341 31.6205076))",

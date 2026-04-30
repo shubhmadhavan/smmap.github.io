@@ -1,5 +1,5 @@
 const mapData = {
-"Chalcolithic Sites – 2500 BC to 700 BC",
+"Chalcolithic Sites – 2500 BC to 700 BC":"",
 "Mehrgarh":"POINT (67.6095967 29.3873272)",
 "Jodhpura (RS)":"POINT (76.1232976 27.5882171)",
 "Ganeshwar (Khetri Cu Belt, RS)":"POINT (75.8199843 27.6648195)",

@@ -287,7 +287,8 @@ button.reveal-list:hover {
     top: 2px;
 	z-index: 999 !important;
     width: 252px;
-max-height: 92vh !important;
+  
+max-height: 91.2vh !important;
     
     
 	color: #000000;
@@ -1272,6 +1273,10 @@ button.reveal-list,
 
 /* General MOBILE Fixes */
 @media (max-width: 808px) {
+
+.sidebar {
+  max-height: 90vh !important;
+}
 
 .sidebar-popup {
 

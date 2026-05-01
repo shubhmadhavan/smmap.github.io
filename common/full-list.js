@@ -15,14 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
       margin-left: unset !important;
       zoom: unset !important;
       outline: solid 1px #6c6c6c !important;
-      z-index: 2147483643 !important;
+    z-index: 2147483243 !important;
+
     }
 
-     body.full-list-active div.icons-container-left,
-     body.full-list-active .info-br, body.full-list-active .reveal-list
-      {
-     display: none;
-     } 
+
 
     body.full-list-active .sidebar ul {
       padding-left: 12px !important;
@@ -32,8 +29,13 @@ document.addEventListener("DOMContentLoaded", function () {
       width: 98vw !important;
       max-width: 98vw !important;
       left: unset !important;
+       z-index: 2147483646 !important;
+       top: 83vw !important;
+       bottom: auto !important;
     }
 
+    body.full-list-active div.icons-container-left,
+    body.full-list-active .info-br, body.full-list-active .reveal-list,
     body.full-list-active #map,
     body.full-list-active .custom-control {
       display: none !important;

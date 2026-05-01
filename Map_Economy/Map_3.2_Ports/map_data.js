@@ -1,5 +1,7 @@
 const mapData = {
 "Ports":"",
+"Landlocked Ports are Vizag & Kolkata (SP M)":"",
+"Natural Ports are ...":"",
 "GJ":"",
 "Mundra Port <br><span class='nl'>largest pvt port" : "POINT (69.70435 22.73678)",
 "Kandla Port <br><span class='nl'>1st after indep; aka Deendayal port" : "POINT (70.21245 23.01724)",
@@ -27,11 +29,12 @@ const mapData = {
 "Cochin Port" : "POINT (76.26782 9.95463)",
 "Alappuzha Port" : "POINT (76.31867 9.49374)",
 
+
 "TN":"",
-"VOC/ Tuticorin (Major) Port" : "POINT (78.17907 8.75626)",
+"VOC/ Tuticorin (Major) Port<br><span class='nl'> </span> " : "POINT (78.17907 8.75626)",
 "Nagapattinam Intl Port" : "POINT (79.84914 10.76297)",
 "Chennai Major Port" : "POINT (80.29205 13.08153)",
-"Kamarajar/ Ennore <br><span class='nl'>first major port regis. as Co." : "POINT (80.3374 13.25925)",
+"Kamarajar/ Ennore <br><span class='nl'>Kamarajar Port is the first major port registered as a Company; Kamarajar is an artificial, all-weather, corporatized port; It was earlier known as Ennore Port." : "POINT (80.3374 13.25925)",
 "Adani Kattupalli Port" : "POINT (80.34045 13.31233)",
 
 "AP":"",

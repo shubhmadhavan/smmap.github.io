@@ -15,7 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
       margin-left: unset !important;
       zoom: unset !important;
       outline: solid 1px #6c6c6c !important;
+      z-index: 2147483643 !important;
     }
+
+     body.full-list-active div.icons-container-left,
+     body.full-list-active .info-br, body.full-list-active .reveal-list
+      {
+     display: none;
+     } 
 
     body.full-list-active .sidebar ul {
       padding-left: 12px !important;

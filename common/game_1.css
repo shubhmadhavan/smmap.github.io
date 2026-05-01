@@ -557,12 +557,14 @@ left: 34px !important;
 button.full-list {
   right: 70px !important;
   opacity: 0.3 !important;
+
 }
 
 button.full-list.active {
  
   opacity: 1 !important;
 }
+
 
 
 .info-br:hover {

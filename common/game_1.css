@@ -261,6 +261,7 @@ left: 4.2px !important;
 .toggle-map-5,
 button.reveal-all,
 button.info-br,
+button.full-list,
 button.reveal-list {
   opacity: 0.55 !important;
   user-select: none;
@@ -274,6 +275,7 @@ button.reveal-list {
 .toggle-map-5:hover,
 button.reveal-all:hover,
 button.info-br:hover,
+button.full-list:hover,
 button.reveal-list:hover {
   opacity: 1 !important;
 }
@@ -346,6 +348,8 @@ li.empty-item  {
 :focus-visible {
   outline: solid 1px #6c6c6c;
 }
+
+
 
 .sidebar ul {
     list-style-type: none;
@@ -520,7 +524,7 @@ padding-bottom: 2.4px !important;
 left: 34px !important;
 }
 
-
+.full-list,
 .info-br {  /* ⓘ */
 	position: absolute !important;
 
@@ -547,7 +551,17 @@ left: 34px !important;
 
    height: 31px !important;
  width: 24px !important;
+}
 
+
+button.full-list {
+  right: 70px !important;
+  opacity: 0.3 !important;
+}
+
+button.full-list.active {
+ 
+  opacity: 1 !important;
 }
 
 
@@ -1268,9 +1282,6 @@ button.reveal-list,
 
 
 
-
-
-
 /* General MOBILE Fixes */
 @media (max-width: 808px) {
 
@@ -1340,7 +1351,7 @@ top: calc(100vh - 200px) !important;
       .reveal-all, .reveal-list,  #header, .home-link, .switcher-text,
     .toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5, 
 
- .home-link-button, .switcher-button, .info-br, 
+ .home-link-button, .switcher-button, .info-br, .full-list
 .title-span, #header, .switcher-text, .score-bottom, .info-br, .reveal-list
 {
   zoom: 0.79 !important;

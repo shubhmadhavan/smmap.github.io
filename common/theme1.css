@@ -100,6 +100,7 @@ color: #ffffff;
 }
 
 
+.full-list,
 .home-link-button, .switcher-button, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4,.toggle-map-5,
 .leaflet-control-zoom-in, .leaflet-control-zoom-out,
 .title-span, #header, .switcher-text, .score-bottom, .info-br, .reveal-list{
@@ -119,14 +120,15 @@ color: #ffffff;
     .reveal-all, .reveal-list,  #header, .home-link, .switcher-text,
     .toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5, 
     .leaflet-control-zoom-in, .leaflet-control-zoom-out,
- .home-link-button, .switcher-button, .info-br, 
-.title-span, #header, .switcher-text, .score-bottom, .info-br, .reveal-list
+ .home-link-button, .switcher-button, .info-br, .full-list,
+.title-span, #header, .switcher-text, .score-bottom, .reveal-list
 {
     background-color: rgb(85, 64, 84) !important;
 	border: solid 0px !important;
 	color: #ffffff !important;
 
 }
+
 
 .info-br.active {
     background-color: rgb(44, 33, 44) !important;

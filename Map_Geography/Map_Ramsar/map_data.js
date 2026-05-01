@@ -93,7 +93,7 @@ const mapData = {
 "Hirakud Dam (OD) <br><span class='nl'>not to be conf. w. Hygam (PJ), Hokersar (JK) or Harike (PJ)</span>":"POINT (83.81281 21.597)",
 "Satkosia Gorge (Tikarpada WLS, OD)":"POINT (84.83202 20.54454)",
 "Anshupa Lake/ Ansupa Lake (OD)":"POINT (85.60914 20.45617)",
-"Chilika Lake (OD)":"POINT (85.38679 19.77261)",
+"Chilika Lake (OD)<br><span class='nl'>Chilika lake – first Ramsar site; Brackish estuarine lake; Migratory waterfowl (original Ramsar goal)</span> ":"POINT (85.38679 19.77261)",
 "Tampara Lake (OD)":"POINT (85.00168 19.35243)",
 
 "GJ":"",

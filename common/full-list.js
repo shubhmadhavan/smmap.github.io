@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
        z-index: 2147483646 !important;
        top: 83vw !important;
        bottom: auto !important;
+       display: none !important;
     }
 
     body.full-list-active div.icons-container-left,

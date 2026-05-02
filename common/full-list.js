@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
       padding-left: 12px !important;
     }
 
+    body.full-list-active .sidebar ul.map-data-list li {
+    padding-left: 30vw !important;}
+
     body.full-list-active .sidebar-popup {
       width: 98vw !important;
       max-width: 98vw !important;

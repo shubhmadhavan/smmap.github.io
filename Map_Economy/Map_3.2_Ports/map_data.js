@@ -1,10 +1,11 @@
 const mapData = {
 "Ports":"",
+"India's major ports handled 885 MMT of cargo in FY25":"",
 "Landlocked Ports are Vizag & Kolkata (SP M)":"",
 "Natural Ports are ...":"",
 "GJ":"",
-"Mundra Port <br><span class='nl'>largest pvt port" : "POINT (69.70435 22.73678)",
-"Kandla Port <br><span class='nl'>1st after indep; aka Deendayal port" : "POINT (70.21245 23.01724)",
+"Mundra (Deendayal) Port <br><span class='nl'>Mundra port or Deendayal Port is the largest Private port; It has 20MW solar + wind capacity" : "POINT (69.70435 22.73678)",
+"Kandla Port <br><span class='nl'>Kandla Port was the 1st port after indep; It is aka Deendayal port" : "POINT (70.21245 23.01724)",
 "Porbandar Port" : "POINT (69.58867 21.62143)",
 "Veraval Port" : "POINT (70.36905 20.90239)",
 "Pipavav Port" : "POINT (71.48981 20.9263)",
@@ -19,11 +20,11 @@ const mapData = {
 
 "GA":"",
 "Panaji (Major) Port (Goa)" : "POINT (73.82781 15.50141)",
-"Mormugao Port" : "POINT (73.80551 15.40408)",
+"Mormugao Port<br><span class='nl'>Mormugao is Inida's first port to introduce Green Ship Incentives via Environmental Ship Index</span> " : "POINT (73.80551 15.40408)",
 
 
 "KN":"",
-"Mangalore" : "POINT (74.83195 12.86275)",
+"Mangalore<br><span class='nl'>New Mangalore Port has achieved 100% solar power integration. </span> " : "POINT (74.83195 12.86275)",
 
 "KL":"",
 "Cochin Port" : "POINT (76.26782 9.95463)",
@@ -31,7 +32,7 @@ const mapData = {
 
 
 "TN":"",
-"VOC/ Tuticorin (Major) Port<br><span class='nl'> </span> " : "POINT (78.17907 8.75626)",
+"VOC/ Tuticorin (Major) Port<br><span class='nl'>VOC Port – “Zero Fatal Accident Zone”</span> " : "POINT (78.17907 8.75626)",
 "Nagapattinam Intl Port" : "POINT (79.84914 10.76297)",
 "Chennai Major Port" : "POINT (80.29205 13.08153)",
 "Kamarajar/ Ennore <br><span class='nl'>Kamarajar Port is the first major port registered as a Company; Kamarajar is an artificial, all-weather, corporatized port; It was earlier known as Ennore Port." : "POINT (80.3374 13.25925)",
@@ -44,7 +45,7 @@ const mapData = {
 "Vizag (Major) Port<br><span class='nl'>Top 20 ports in world; #1 in India; Deepest 'land-locked' port in India" : "POINT (83.29273 17.68593)",
 
 "OD":"",
-"Paradip (Major) Port" : "POINT (86.69841 20.29864)",
+"Paradip (Major) Port<br><span class='nl'>Paradip Port – extensive dust-suppression systems</span> " : "POINT (86.69841 20.29864)",
 
 "WB":"",
 "Haldia (Major) Port" : "POINT (88.08904 22.04463)",

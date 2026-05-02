@@ -1,15 +1,22 @@
 const mapData = {
-"Hispar Glacier":"POINT (75.2683702 36.0854816)",
+"Glaciers":"",
+"India holds 9000+ glaciers, storing 1300 km³ of ice":"",
+
 "Chogo Lungma Glacier":"POINT (75.1580556 35.9344444)",
-"Biafo Gyang Glacier":"POINT (75.7894716 35.8197415)",
-"Godwin Austen / K2 Glacier":"POINT (76.5137107 35.8187277)",
-"Baltoro Glacier":"POINT (76.3713008 35.7362002)",
+
+"Hispar Glacier<br><span class='nl'>Hispar is source of Shigar River</span>":"POINT (75.2683702 36.0854816)",
+"Biafo Gyang<br><span class='nl'>Biafo Gyang Glacier lies in the 'V' formed by Shigar & Braldu; It is bw Hispar & Baltoro glaciers</span> ":"POINT (75.7894716 35.8197415)",
+"Baltoro Glacier<br><span class='nl'>Baltoro Glacier is source of Braldu (trib of Shigar)</span>":"POINT (76.3713008 35.7362002)",
+
+
+"Godwin Austen<br><span class='nl'>Godwin Austen or K2 glacier</span> ":"POINT (76.5137107 35.8187277)",
+
 "Lolofond Glacier":"POINT (76.97655 35.415479)",
-"Siachen Glacier":"POINT (77.0439012 35.4639008)",
-"Rimo Glacier":"POINT (77.3876462 35.4434676)",
+"Siachen Glacier <br><span class='nl'>Siachen Glacier is primary source of Nubra (trib of Shyok)</span>":"POINT (77.0439012 35.4639008)",
+"Rimo Glacier<br><span class='nl'>Rimo Glacier is origin of Shyok River/</span> ":"POINT (77.3876462 35.4434676)",
 "Machoi Glacier":"POINT (75.5628695 34.2176458)",
 "Parkachik Glacier":"POINT (76.0057558 34.0910049)",
-"Pensi La/ Panzella Glacier":"POINT (76.3553882 33.8680816)",
+"Pensi La<br><span class='nl'>Pensi La or Panzella Glacier</span> ":"POINT (76.3553882 33.8680816)",
 "Drang Drung Glacier":"POINT (76.37767 33.84924)",
 "Shafat Glacier":"POINT (76.1406925 33.9496695)",
 "Bara Shigri Glacier (HP)":"POINT (77.6876092 32.1647327)",
@@ -33,8 +40,8 @@ const mapData = {
 
 
 
-
 /* 
+<br><span class='nl'> </span> 
 "":"",
 "":"",
 "":"",

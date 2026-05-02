@@ -14,6 +14,13 @@ body{
 }
 
 
+.visible-force {
+  display: block !important;
+}
+
+body.toggle-active .sidebar-popup {
+  display: none !important;
+}
 
 * {
   user-select: text;
@@ -425,7 +432,7 @@ div[role="tooltip"]:hover,
 .leaflet-tooltip.reveal-all-tooltip:hover,
 .leaflet-tooltip.reveal-all-tooltip:focus {
 z-index: 2147483647 !important;
-font-weight: 490;
+
 z-index: 2147483647 !important;
 padding-bottom: 2.4px !important;
 }
@@ -466,8 +473,14 @@ padding-bottom: 2.4px !important;
 }
 
 .leaflet-tooltip:hover {
- font-weight: 660 !important;
+color: white !important;
+
+box-shadow: 0 0 3px rgba(0, 150, 255, 0.7),
+              0 0 6px rgba(0, 150, 255, 0.4);
+
   overflow: unset;
+
+
 }
 
 .leaflet-tooltip {

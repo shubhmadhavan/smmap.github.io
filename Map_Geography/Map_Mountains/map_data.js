@@ -213,13 +213,16 @@ const mapData = {
 "Devar Malai":"POINT (77.2452778 9.19)",
 "Cardamom Hills":"POLYGON ((76.814159 9.783379, 76.8662494 9.2595274, 77.1703989 8.5530686, 77.2283308 8.5972666, 77.0695478 8.9810874, 76.9802875 9.3836833, 76.9595668 9.7686566, 76.814159 9.783379))",
 "Agasthyamalai":"POINT (77.2387523 8.6216529)",
-"Saddle Peak":"POINT (93.0063135 13.1579753)",
-"Mount Diavolo":"POINT (92.9166667 12.7)",
-"Barren Island":"POINT (93.8604402 12.2792303)",
-"Mount Kyobo":"POINT (92.744522 11.818965)",
-"Mount Harriet RV":"POINT (92.7314452 11.7131223)",
-"Mount Thullier":"POINT (93.826389 7.151111)",
-"Palghat Gap":"POINT (76.58333329999999 10.75)"
+"Palghat Gap":"POINT (76.58333329999999 10.75)",
+
+
+"Andaman & Nicobar Islands":"",
+"Saddle Peak<br><span class='nl'>Saddle Peak is in North Andaman; Saddle is the tallest peak in A&N Isls</span>":"POINT (93.0063135 13.1579753)",
+"Mt Diavolo<br><span class='nl'>Mt Diavolo is in Middle Andaman</span> ":"POINT (92.9166667 12.7)",
+"Barren Island<br><span class='nl'>Mt Koyob is in South Andaman</span>":"POINT (93.8604402 12.2792303)",
+"Mt Kyobo<br><span class='nl'> </span> ":"POINT (92.744522 11.818965)",
+"Mt Harriet RV<br><span class='nl'> </span> ":"POINT (92.7314452 11.7131223)",
+"Mt Thullier<br><span class='nl'>Mt Thuller is 2nd tallest after Saddle in A&I; Mt Thuller is located in Great Nicobar (Gr Nicobar is Southernmost & largest of A&I, 150 km north of Sumatra)</span> ":"POINT (93.826389 7.151111)",
 	};
 
 

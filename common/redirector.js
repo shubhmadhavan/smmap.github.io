@@ -14,6 +14,8 @@ const resourcesMap = {
     'mt_1': { script: '../Map_Geography/Map_Mountains/map_data.js', css: '../Map_Geography/Map_Mountains/location_color.css' },
     'mt_2': { script: '../Map_Geography/Map_Passes/map_data.js', css: '../Map_Geography/Map_Passes/location_color.css' },
 
+    'tribes': { script: '../Map_Geography/Map_Tribes/map_data.js', css: '../Map_Geography/Map_Tribes/location_color.css' },
+
     
     'gl_1':{ script: '../Map_Geography/Map_Glaciers/map_data.js', css: '../Map_Geography/Map_Glaciers/location_color.css' },
     'wf_1': { script: '../Map_Geography/Map_Waterfalls/map_data.js', css: '../Map_Geography/Map_Waterfalls/location_color.css' },
@@ -29,6 +31,7 @@ const resourcesMap = {
    
 
     'wld_lakes': { script: '../Map_Geography/Map_World_Lakes/map_data.js', css: '../Map_Geography/Map_World_Lakes/location_color.css' },
+    'wld_orgs': { script: '../Map_Geography/Map_World_Orgs/map_data.js', css: '../Map_Geography/Map_World_Orgs/location_color.css' },
 
 
    

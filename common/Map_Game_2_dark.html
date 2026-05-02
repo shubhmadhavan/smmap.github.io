@@ -76,60 +76,71 @@ function blockZoomGestures() {
 }
 </style>
 
-<script>
-document.addEventListener('keydown', function(e) {
-  const key = e.key.toLowerCase();
-
-  // Alt (Option on Mac) + F
-  if ( key === 'i') { /* e.ctrlKey && key === 'i' || e.metaKey && key === 'i'  */  
-    e.preventDefault();
-
-    document.body.classList.toggle('hide-ui');
-
-    const btn = document.querySelector('.info-br');
-    if (btn) {
-      btn.classList.toggle('active');
-    }
-
-  }
-}, true);
-</script>
-
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const button = document.querySelector('.info-br');
-  if (!button) return;
-
   let replaced = false;
 
-  function toggleElements() {
-    const elements = document.querySelectorAll('.kl, .sidebar-popup'); /* add  ,.nl to also show info in tooltip */
-    if (elements.length === 0) return;
+  const STORAGE_KEY = 'ui-active';
 
-    if (!replaced) {
+  function applyState(isActive) {
+    const elements = document.querySelectorAll('.kl, .nl');
+
+    // FIRST SCRIPT
+    document.body.classList.toggle('hide-ui', isActive);
+
+    // SECOND SCRIPT
+    if (elements.length && !replaced && isActive) {
       elements.forEach(el => {
         el.innerHTML = el.innerHTML.replace(/;/g, '.<br>');
       });
       replaced = true;
     }
 
-    const isHidden = getComputedStyle(elements[0]).display === 'none';
-
     elements.forEach(el => {
-      el.style.display = isHidden ? 'block' : 'none';
+      el.classList.toggle('visible-force', isActive);
     });
 
-    button.classList.toggle('active');
+    document.body.classList.toggle('toggle-active', isActive);
+
+    if (button) {
+      button.classList.toggle('active', isActive);
+    }
   }
 
-  button.addEventListener('click', toggleElements);
+  function toggleAll() {
+    const newState = !document.body.classList.contains('hide-ui');
+    applyState(newState);
+    localStorage.setItem(STORAGE_KEY, newState ? '1' : '0');
+  }
 
+  // Restore AFTER slight delay (ensures DOM/render complete)
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved === '1') {
+    setTimeout(() => {
+      applyState(true);
+    }, 50); // small delay fixes missing elements issue
+  }
+
+  // Button
+  if (button) {
+    button.addEventListener('click', toggleAll);
+  }
+
+  // Keyboard
   document.addEventListener('keydown', function (e) {
-    if (e.key.toLowerCase() === 't') {
-      toggleElements();
+    const key = e.key.toLowerCase();
+
+    if ((e.ctrlKey || e.metaKey) && key === 'i') {
+      e.preventDefault();
+      toggleAll();
     }
-  });
+
+    if (key === 't') {
+      toggleAll();
+    }
+  }, true);
 });
 </script>
 

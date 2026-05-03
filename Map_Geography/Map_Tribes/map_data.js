@@ -8,7 +8,8 @@ const mapData = {
 "Gujjars, Bakkarwal, Sippi":"POINT (74.7585229 33.6913511)",
 "Gaddi":"POINT (76.1537866 32.4716798)",
 "Kinnaura":"POINT (78.4751945 31.6509576)",
-"Bhotia":"POINT (79.9715759 30.5411054)",
+
+"Bhotia<br><span class='nl'>Bhotia tribe inhabit the buffer zones of both Valley of Flowers & Nanda Devi BR, esp Chamoli & Pithoragarh; Bhotias are nomadic groups who migrate to ‘Bugyals’ (the summer glasslands in higher reaches) during summer months and return to the valleys during winters</span> ":"POINT (79.9715759 30.5411054)",
 "Bhil":"POINT (75.1782036 21.6967202)",
 "Santhals":"POINT (85.385769 23.6088357)",
 "Khond":"POINT (83.9521009 19.8679023)",

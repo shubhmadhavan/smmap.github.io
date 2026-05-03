@@ -14,7 +14,6 @@ const mapData = {
 "Kishtwar NP (JK)<br><span class='nl'>Kishtwar NP in Kishtwar dis, JK. Bounded by Rinnay River in north and Marwah River. Marwah is tributary of and joins Chenab</span>":"POINT (75.9932587 33.6187109)",
 
 
-
 "HP":"",
 "Inderkilla NP (HP)":"POINT (77.4116547 32.2281966)",
 "Cold Desert BR":"POINT (77.0073363 32.0972586)",
@@ -24,10 +23,10 @@ const mapData = {
 "Simbalbara NP (HP)":"POINT (77.5469116 30.4552308)",
 
 "UK":"",
-"Govind Pashu Vihar NP-WLS (UK)":"POINT (78.3387066 31.1424514)",
-"Gangotri NP (UK)":"POINT (79.1548533 30.9425671)",
+"Govind Pashu Vihar NP-WLS (UK)<br><span class='nl'>Govind Pashu Vihar NP (UK) – Tons River flows through it</span> ":"POINT (78.3387066 31.1424514)",
+"Gangotri NP (UK)<br><span class='nl'>Gangotri National Park – Bhagirathi River originates from the Gangotri Glacier at Gaumukh within the Gangotri National Park in Uttarakhand</span> ":"POINT (79.1548533 30.9425671)",
 "Valley of Flowers NP (UK)":"POINT (79.605303 30.72804)",
-"Nanda Devi NP/BR (UK)":"POINT (79.8386542 30.6587637)",
+"Nanda Devi NP/BR (UK)<br><span class='nl'>Bhotia tribe inhabit the buffer zones of both Valley of Flowers and Nanda Devi; Bhotias are nomadic groups who migrate to ‘Bugyals’ (the summer glasslands in higher reaches) during summer months and return to the valleys during winters</span> ":"POINT (79.8386542 30.6587637)",
 "Rajaji NP-TR (UK)":"POINT (78.1625014 29.9685754)",
 "Jim Corbett NP-TR (UK)":"POINT (78.7947916 29.56189)",
 

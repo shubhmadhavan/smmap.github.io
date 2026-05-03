@@ -20,13 +20,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+.full-list-active .map-data-list li {
 
-    body.full-list-active .sidebar ul {
-      padding-left: 12px !important;
-    }
+  text-align: center !important;
+  justify-content: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
 
-    body.full-list-active .sidebar ul.map-data-list li {
-    padding-left: 30vw !important;}
 
     body.full-list-active .sidebar-popup {
       width: 98vw !important;

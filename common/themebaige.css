@@ -10,6 +10,15 @@ body {
      background-color: #b9ad92 !important;
 }
 
+
+
+.sidebar-popup {
+    background-color: #e9e1ce !important;
+}
+
+	
+
+
 .highlighted {
   background-color: #8b7f64 !important;  
    
@@ -18,12 +27,6 @@ body {
   z-index: 2147483647 !important;
 }
 
-
-.sidebar-popup {
-    background-color: #e9e1ce !important;
-}
-
-	
 
 
 li.focused {
@@ -34,11 +37,19 @@ li.focused {
 }
 
 
+
+
 li.highlighted {
     background-image: unset !important;
  background-color: rgb(229, 215, 185) !important;
  
   }
+
+
+  .sidebar ul li:hover {
+    background-color: #c9c1ae !important;
+}
+
 
 .leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom, 
 .leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-touch-zoom {
@@ -74,9 +85,7 @@ li.highlighted {
 .sidebar {
     background-color:#f8edd4 !important;
 }
-.sidebar ul li:hover {
-    background-color: #c9c1ae !important;
-}
+
 
 .leaflet-tooltip.leaflet-zoom-animated{
 	/* background-color: #94ab69 !important; */
@@ -123,6 +132,8 @@ li.highlighted {
 	background: #f8f5ed !important;
 	background-color: #E7E4DF !important;
 }
+
+
 
 
 .sidebar li.empty-item,

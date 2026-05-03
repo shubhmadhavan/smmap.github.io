@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const style = document.createElement("style");
   style.id = "full-list-style";
   style.textContent = `
+
     body.full-list-active #sidebar {
       position: fixed !important;
       min-width: 100vw !important;
@@ -19,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+body.full-list-active .info-br {
+z-index: 2147483245 !important;
+}
 
 .full-list-active .map-data-list li {
 
@@ -34,13 +38,14 @@ document.addEventListener("DOMContentLoaded", function () {
       max-width: 98vw !important;
       left: unset !important;
        z-index: 2147483646 !important;
-       top: 83vw !important;
+       top: 83vh !important;
        bottom: auto !important;
-       display: none !important;
+
+/*       display: none !important; */
     }
 
     body.full-list-active div.icons-container-left,
-    body.full-list-active .info-br, body.full-list-active .reveal-list,
+   body.full-list-active .reveal-list,
     body.full-list-active #map,
     body.full-list-active .custom-control {
       display: none !important;

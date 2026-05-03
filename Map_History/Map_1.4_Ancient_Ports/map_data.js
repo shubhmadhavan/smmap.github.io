@@ -5,8 +5,8 @@ const mapData = {
 
 
 "Outside India":"",
-"Debal <br><span class='nl'>Debal or Daybul port in Sindh":"POINT (67.4509061 24.1429453)",
 "Gombroon/ Bandar Abbas":"POINT (56.2883647 27.1962543)",
+"Debal <br><span class='nl'>Debal or Daybul port in Sindh":"POINT (67.4509061 24.1429453)",
 
 
 "GJ":"",
@@ -16,8 +16,10 @@ const mapData = {
 
 "Lothal <br><span class='nl'>(IVC":"POINT (72.2493601 22.5228574)<br>fl. 2000 BC)",
 
-"Bhrigukachchha <br><span class='nl'>Bhrigukachchha or Bharuch or Barygaza – fl. 1st CE & d. 7th CE)":"POINT (72.9958748 21.7051358)",
 "Sristambhapura<br><span class='nl'>Sristambhapura or Sristambhatirtha – fl. 9th-13th CE":"POINT (72.7139694 22.1907779)",
+
+
+"Bhrigukachchha <br><span class='nl'>Bhrigukachchha or Bharuch or Barygaza – fl. 1st CE & d. 7th CE)":"POINT (72.9958748 21.7051358)",
 
 "Surat <br><span class='nl'>(Syrastrene)":"POINT (72.8310607 21.1702401)",
 "Sanjan Port <br><span class='nl'>Sanjan Port of Rashtrakutas":"POINT (72.7733119 20.1876016)",

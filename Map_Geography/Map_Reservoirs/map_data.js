@@ -51,9 +51,8 @@ const mapData = {
 
 
 "Banas River, RS":"",
-	"Bisalpur Reservoir (Tonk, RS)":"POINT (75.3737003 25.856263)",
-	"Nandsamand Dam":"POINT (73.7747077 24.9274606)",
-
+	"Nandsamand Dam<br><span class='nl'>Nandsamand & Bisalpur Reservoir both lie on Banas River</span> ":"POINT (73.7747077 24.9274606)",
+	"Bisalpur Reservoir (Tonk, RS)<br><span class='nl'>Nandsamand & Bisalpur Reservoir both lie on Banas River</span> ":"POINT (75.3737003 25.856263)",
 
 "RS":"",
 	"Khari Dam":"POINT (74.2753209 25.705335)",
@@ -248,9 +247,9 @@ const mapData = {
 	"Tattihalla Dam (KN)":"POINT (74.7890131 15.1279931)",
 
 "Shravathi":"",
-	"Gersoppa Res (KN)":"POINT (74.700503 14.2615121)",
-	"Mahatma Gandhi HE Plant (KN)":"POINT (74.7976709 14.2280797)",
-	"Linganamakki Dam (KN)":"POINT (74.8456054 14.1764253)",
+	"Gersoppa Res (KN)<br><span class='nl'>Linganamakki Dam, MG HE Plant & Gersoppa Reservoir – all lie on Shravathi River</span>":"POINT (74.700503 14.2615121)",
+	"MG HE Plant (KN)<br><span class='nl'>Linganamakki Dam, MG HE Plant & Gersoppa Reservoir – all lie on Shravathi River</span>":"POINT (74.7976709 14.2280797)",
+	"Linganamakki Dam (KN)<br><span class='nl'>Linganamakki Dam, MG HE Plant & Gersoppa Reservoir – all lie on Shravathi River</span> ":"POINT (74.8456054 14.1764253)",
 
 
 "Bharatphuza":"",

@@ -1,8 +1,10 @@
 
+html {
+    background: linear-gradient(0deg, #19192d) !important;
+}
     body {
       margin: 0;
       height: 100vh;
-      background: linear-gradient(135deg, #1e1e2f, #2c2c54);
       font-family: sans-serif;
       overflow: hidden;
     }
@@ -42,13 +44,15 @@
   width: 30vw;
   height: 290px;
   margin: auto;
-  background: linear-gradient(145deg, #be963a, #785a02);
+  background: linear-gradient(145deg, #72581b, #463503);
   border-radius: 12px;
   position: relative;
   overflow: hidden; /* 👈 important */
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
   transition: transform 0.2s ease;
+
 }
+
 
 .folder-icon::before {
   content: '';
@@ -61,13 +65,14 @@
   background: linear-gradient(
     120deg,
     rgba(255,255,255,0) 0%,
-    rgba(255,255,255,0.35) 50%,
+    rgba(255,255,255,0.18) 50%,
     rgba(255,255,255,0) 100%
   );
 
   transform: skewX(-20deg);
   pointer-events: none;
 }
+
 
 .folder-icon:hover::before {
   animation: shineSwipe 1.2s ease forwards;

@@ -76,8 +76,9 @@ if (getUrlParameter('selection').includes('wld')) {
             opacity: 0 !important;
         }
         .leaflet-pane.leaflet-tile-pane {
-            filter: brightness(0.83) contrast(1.3) saturate(1.5) ;
+            filter: brightness(0.68) contrast(1.9);
         }
+            /*  saturate(2.5) */
     `;
     document.head.appendChild(style);
 }

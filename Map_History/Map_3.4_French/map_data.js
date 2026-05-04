@@ -1,4 +1,7 @@
 const mapData = {
+"French Settlements 🇫🇷":"",
+"French were the last to arrive (Surat – 1667) and last to leave India (Puducherry 1962)":"",
+
 "Surat (1667)" : "POINT (72.8310607 21.1702401)",
 "Machilipatnam (1669)" : "POINT (81.1302716 16.1808917)",
 "Chandranagore (1673)" : "POINT (88.3674381 22.867114)",

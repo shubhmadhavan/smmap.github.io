@@ -1293,14 +1293,57 @@ button.reveal-list,
 
 }
 
+/* DO NOT DELETE
+body.full-list-active  #sidebar {
+  opacity: 1;
+  min-height: 83vh !important;
+height: unset !important;
+max-height: 72vh !important;
+
+}
+
+
+body.full-list-active  .sidebar-popup {
+  opacity: 1;
+  min-height: unset !important;
+ height: 10vh !important; 
+max-height: 10vh !important;
+top: 87vh !important;
+
+}
+
+*/
+
+
 
 
 /* General MOBILE Fixes */
 @media (max-width: 808px) {
 
-.sidebar {
-  max-height: 90vh !important;
+.sidebar-popup *,
+.sidebar-popup ul *,
+.sidebar-popup ul.safe-nl *,
+.sidebar-popup .safe-nl .nl {
+  font-size: 7px !important;
 }
+
+
+body.full-list-active .map-data-list li:not(.empty-item) {
+font-size: 15px !important;
+}
+
+
+body.full-list-active  .sidebar-popup *, .sidebar-popup ul *, .sidebar-popup ul.safe-nl *, .sidebar-popup .safe-nl .nl
+ {
+ font-size: 12px !important;
+}
+
+
+
+.sidebar {
+  max-height: 88vh !important;
+}
+
 
 .sidebar-popup {
 
@@ -1319,18 +1362,23 @@ button.reveal-list,
   opacity: 0.7;
 }
 
+body.full-list-active  .sidebar-popup {
+  left: unset !important;
+  right: unset !important;
+ 
+}
+
+
+
+
+
+
+
 .sidebar-popup ul {
     
 padding-left: 35px;
 }
 
-
-.sidebar-popup *,
-.sidebar-popup ul *,
-.sidebar-popup ul.safe-nl *,
-.sidebar-popup .safe-nl .nl {
-  font-size: 7px !important;
-}
 
 
 

@@ -1,5 +1,12 @@
 
 const mapData = {
+"Portuguese Settlements 🇵🇹":"",
+"Prince Henry the Navigator's zeal for exploration set forth the Age of Discovery, beginning with discovery of Madeira Islands in 1418":"",
+"Bartholomew Dias rounded Cape of Good Hope in 1487":"",
+"Completion of Reconquista with Bt of Granada 1492 meant that the Spainish & Portuguese were free to indulge in world exploration":"",
+"Tr of Tordeissilas 1494 thus divided the world bw the two":"",
+"Vasco da Gama arrived at Calicut in 1498. Pedro Alvarez Cabral soon set up the first factory here in 1500":"",
+
 "Calicut/ Kozhikode (1500)" : "POINT (75.78041 11.2587531)",
 "Cannanore (1501/2)" : "POINT (75.3703662 11.8744775)",
 "Cochin/ Kochi (1502-1663)" : "POINT (76.2673041 9.9312328)",

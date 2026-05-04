@@ -1,4 +1,7 @@
 const mapData = {
+"Dutch Settlements (Netherlands/ Holland/ 🇳🇱)":"",
+"Cornelis de Houtman reached Sumatra & Bantam in 1596":"",
+"1602 saw creation of Dutch EIC, often seen as world's first formal joint stock Co":"",
 "Machilipatnam (1605)" : "POINT (81.1302716 16.1808917)",
 "Fort Geldria at Pulicat (1609)<br><span class='nl'>fort w.  permission of Vijayanagara king Venkatapati Raya's Queen Gobburi Oboyama</span>" : "POINT (80.3185252 13.4177382)",
 "Surat (1616)":"POINT (72.83106 21.17024)",

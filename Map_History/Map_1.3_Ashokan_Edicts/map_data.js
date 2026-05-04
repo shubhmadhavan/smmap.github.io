@@ -1,5 +1,7 @@
 const mapData = {
 "Ashoka has 14 Major, 7 Minor and 7 Pillar Edicts of Ashoka":"",
+"Most extensive inscriptions are those that mention all 14 Edicts – these are at Shahbazgari, Mansehra,Kalsi, Girnar, Sopara, Dhauli, Jaugada, Erragudi":"",
+
 "Kandahar inscriptions – in Greek & Aramaic":"", 
 "Shahbazgarhi & Mansehra inscriptions are in Kharosti script":"",
 "Rest – in Brahmi script":"",

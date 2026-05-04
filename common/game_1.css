@@ -1185,7 +1185,6 @@ li.highlighted {
 }
 
 
-
 .leaflet-tooltip.reveal-all-tooltip {
     user-select: all !important;
 }
@@ -1194,9 +1193,9 @@ li.highlighted {
 .sidebar-popup { /* see Map_Game_2_dark.html */
 opacity: 0.9;
  
-    position: fixed;
+position: fixed;
 
-     color: black;
+color: black;
 background-color:  rgba(240, 240, 240, 0.8);
     padding: 5px 8px;
     z-index: 9999;
@@ -1209,12 +1208,12 @@ background-color:  rgba(240, 240, 240, 0.8);
   position:fixed;
 
 
-      min-width: 190px !important;
+   min-width: 210px !important;
 
     max-width: 190px !important;
    
     
-  left: calc(100vw - 485px) !important;;
+  left: calc(100vw - 505px) !important;;
 
   /* calc(100vw - 675px) !important; */
 
@@ -1324,8 +1323,10 @@ top: 87vh !important;
 .sidebar-popup ul *,
 .sidebar-popup ul.safe-nl *,
 .sidebar-popup .safe-nl .nl {
-  font-size: 7px !important;
+  font-size: 10px !important;
 }
+
+
 
 
 body.full-list-active .map-data-list li:not(.empty-item) {
@@ -1333,7 +1334,7 @@ font-size: 15px !important;
 }
 
 
-body.full-list-active  .sidebar-popup *, .sidebar-popup ul *, .sidebar-popup ul.safe-nl *, .sidebar-popup .safe-nl .nl
+body.full-list-active  .sidebar-popup *, body.full-list-active  .sidebar-popup ul *, body.full-list-active  .sidebar-popup ul.safe-nl *, body.full-list-active  .sidebar-popup .safe-nl .nl
  {
  font-size: 12px !important;
 }
@@ -1347,20 +1348,26 @@ body.full-list-active  .sidebar-popup *, .sidebar-popup ul *, .sidebar-popup ul.
 
 .sidebar-popup {
 
-  position: absolute;
+  
+  position: fixed !important;
+
 
   left: unset !important;
-  right: 100px !important;
+  right: 110px !important;
 
-  top: calc(100vh - 190px) !important;
-  bottom: unset !important;
+
+ 
+  opacity: 0.7;
+  
   min-height: 50px !important;
   min-width: 120px !important;
   max-width: 20px !important;
-  padding: unset !important;
 
-  opacity: 0.7;
+  width: auto;
+
 }
+
+
 
 body.full-list-active  .sidebar-popup {
   left: unset !important;
@@ -1377,7 +1384,9 @@ body.full-list-active  .sidebar-popup {
 .sidebar-popup ul {
     
 padding-left: 35px;
+
 }
+
 
 
 

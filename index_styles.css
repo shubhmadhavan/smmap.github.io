@@ -93,8 +93,8 @@ color: rgba(98, 98, 98, 0.6); /*SM Repository*/
 }
 
 .zipper { /*EDIT THIS*/
-width: 252px;
-height: 244px; 
+width: 212px;
+height: 224px; 
 border-radius: 4%;
 position: relative;
 overflow: hidden;
@@ -249,13 +249,12 @@ animation: faux-wobble 0.34s ease;
   }
 
 
+
+
 @media (max-width: 1268px) {
 .zipper {
 width: 170px;
 height: 181px;
-
-
-
 }
 
 

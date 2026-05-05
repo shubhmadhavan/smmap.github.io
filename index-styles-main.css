@@ -44,7 +44,11 @@ html {
   width: 30vw;
   height: 290px;
   margin: auto;
+
+  /*
   background: linear-gradient(145deg, #72581b, #463503);
+  */
+  
   border-radius: 12px;
   position: relative;
   overflow: hidden; /* 👈 important */
@@ -101,7 +105,7 @@ html {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(255, 200, 80, 0.25);
+      background: rgba(255, 200, 80, 0.185);
       z-index: 2;
     }
 

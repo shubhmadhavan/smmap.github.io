@@ -92,8 +92,8 @@ position: relative;
 overflow: hidden;
 border: 2px solid rgba(89, 80, 80, 0.4);
 background: rgba(244, 242, 224, 0.4);
-background: linear-gradient(145deg, #72581b, #463503);
-
+/* background: linear-gradient(145deg, #d8c087, #c6b172);
+ */
 transition: transform 0.16s ease; /* was 0.1s */
 
 }

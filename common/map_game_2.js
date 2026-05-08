@@ -60,8 +60,16 @@ const overlay = L.imageOverlay(
 overlay.addTo(map);
 
 overlay.once('load', () => {
-    map.invalidateSize();
+
+    console.log("Overlay loaded");
+
+    forceMapRefresh();
+
+    setTimeout(forceMapRefresh, 500);
+
+    setTimeout(forceMapRefresh, 1500);
 });
+
 
 
 // Check if 'selection' parameter is 'wld_1'
@@ -412,6 +420,7 @@ function addGeometryToMap(geometry, river) {
 
 
 
+
 function forceMapRefresh() {
     if (!map) return;
 
@@ -432,24 +441,93 @@ function forceMapRefresh() {
     }, 50);
 }
 
-window.addEventListener('load', () => {
+
+// Detect if map visually failed
+function mapLooksBroken() {
+
+    const mapEl = document.getElementById('map');
+
+    if (!mapEl) return true;
+
+    // Container collapsed
+    if (mapEl.offsetHeight < 100 || mapEl.offsetWidth < 100) {
+        return true;
+    }
+
+    // No tiles/images rendered
+    const tiles = document.querySelectorAll(
+        '.leaflet-tile, .leaflet-image-layer'
+    );
+
+    if (tiles.length === 0) {
+        return true;
+    }
+
+    // Leaflet pane missing
+    const pane = document.querySelector('.leaflet-pane');
+
+    if (!pane) {
+        return true;
+    }
+
+    return false;
+}
+
+
+function aggressiveMapRecovery() {
 
     forceMapRefresh();
 
-    setTimeout(forceMapRefresh, 300);
+    // Extra delayed checks
+    let attempts = 0;
 
-    setTimeout(forceMapRefresh, 1000);
+    const interval = setInterval(() => {
 
-    setTimeout(forceMapRefresh, 2000);
+        attempts++;
+
+        if (mapLooksBroken()) {
+
+            console.log("Map recovery retry:", attempts);
+
+            forceMapRefresh();
+
+            // Extreme fallback:
+            map.setView(map.getCenter(), map.getZoom());
+
+        } else {
+
+            clearInterval(interval);
+
+            console.log("Map rendered correctly");
+        }
+
+        if (attempts >= 8) {
+            clearInterval(interval);
+        }
+
+    }, 700);
+}
+
+
+window.addEventListener('load', () => {
+
+    aggressiveMapRecovery();
+
+    setTimeout(aggressiveMapRecovery, 1200);
 });
+
 
 window.addEventListener('resize', () => {
     forceMapRefresh();
 });
 
+
 document.addEventListener('visibilitychange', () => {
+
     if (!document.hidden) {
-        setTimeout(forceMapRefresh, 200);
+
+        setTimeout(() => {
+            aggressiveMapRecovery();
+        }, 300);
     }
 });
-

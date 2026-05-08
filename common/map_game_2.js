@@ -412,13 +412,44 @@ function addGeometryToMap(geometry, river) {
 
 
 
-window.addEventListener('load', () => {
+function forceMapRefresh() {
+    if (!map) return;
+
+    map.invalidateSize(true);
+
+    map.eachLayer(layer => {
+        if (layer.redraw) {
+            layer.redraw();
+        }
+    });
+
+    const center = map.getCenter();
+
+    map.panBy([1, 0], { animate: false });
+
     setTimeout(() => {
-        map.invalidateSize(true);
-    }, 500);
+        map.panTo(center, { animate: false });
+    }, 50);
+}
+
+window.addEventListener('load', () => {
+
+    forceMapRefresh();
+
+    setTimeout(forceMapRefresh, 300);
+
+    setTimeout(forceMapRefresh, 1000);
+
+    setTimeout(forceMapRefresh, 2000);
 });
 
 window.addEventListener('resize', () => {
-    map.invalidateSize(true);
+    forceMapRefresh();
+});
+
+document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) {
+        setTimeout(forceMapRefresh, 200);
+    }
 });
 

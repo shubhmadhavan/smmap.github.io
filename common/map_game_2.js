@@ -20,8 +20,10 @@ var zoomLevel = isPhone ? 4 : 5;
 var map = L.map('map', {
     doubleClickZoom: false,
 
-    zoomSnap: 0.15,   // allows fractional zoom
-    zoomDelta: 0.3  // affects + / - button zoom smoothness
+    zoomSnap: 0.5,   // allows fractional zoom
+    zoomDelta: 0.5  // affects + / - button zoom smoothness
+
+
 }).setView(initialCoords, zoomLevel);
 
 // map initialised 

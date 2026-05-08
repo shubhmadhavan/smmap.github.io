@@ -18,12 +18,13 @@ var zoomLevel = isPhone ? 4 : 5;
 
 
 var map = L.map('map', {
-    doubleClickZoom: false
+    doubleClickZoom: false,
+
+    zoomSnap: 0.15,   // allows fractional zoom
+    zoomDelta: 0.3  // affects + / - button zoom smoothness
 }).setView(initialCoords, zoomLevel);
 
-
 // map initialised 
-
 
 
 
@@ -82,8 +83,6 @@ if (getUrlParameter('selection').includes('wld')) {
     `;
     document.head.appendChild(style);
 }
-
-
 
 
 
@@ -150,8 +149,6 @@ function getUrlParameter(name) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name);
 }
-
-
 
 
 
@@ -316,7 +313,6 @@ function getSmartDirection(latlng) {
 function addGeometryToMap(geometry, river) {
     let layer;
 
- 
 
 
     if (geometry.type === 'Point') {

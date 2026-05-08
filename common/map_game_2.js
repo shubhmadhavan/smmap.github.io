@@ -52,7 +52,16 @@ var imageBounds = [[-2.0, 36.78],
                   [41.33, 121.216]];  // Latitude/Longitude for the image corners
 
 // Add the local image as an overlay to the map
-L.imageOverlay('../Map_Images/India_OS_dark.jpg', imageBounds).addTo(map);
+const overlay = L.imageOverlay(
+    '../Map_Images/India_OS_dark.jpg',
+    imageBounds
+);
+
+overlay.addTo(map);
+
+overlay.once('load', () => {
+    map.invalidateSize();
+});
 
 
 // Check if 'selection' parameter is 'wld_1'
@@ -351,7 +360,7 @@ function addGeometryToMap(geometry, river) {
             layer.closeTooltip();
         }, 1600);
     }
-});
+    });
 
 
 
@@ -378,7 +387,6 @@ function addGeometryToMap(geometry, river) {
         className: 'selected-tooltip'
     }).openTooltip();
 
-    // 🔥 FIX: force reposition after DOM renders
     setTimeout(() => {
         layer.openTooltip(); // re-open = recalculates position
     }, 0);
@@ -388,7 +396,7 @@ function addGeometryToMap(geometry, river) {
             layer.closeTooltip();
         }, 1600);
     }
-});
+    });
 
 
     } 
@@ -404,6 +412,13 @@ function addGeometryToMap(geometry, river) {
 
 
 
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        map.invalidateSize(true);
+    }, 500);
+});
 
-
+window.addEventListener('resize', () => {
+    map.invalidateSize(true);
+});
 

@@ -1,11 +1,35 @@
 
+
+.leaflet-marker-icon.reveal-all-tooltip-icon.leaflet-zoom-animated.leaflet-interactive {
+	display: none !important;
+	opacity: 0 !important;
+}
+
+.leaflet-tooltip span.nl::before {
+    content: "";
+    display: block;
+    border-top: 1px solid #999;
+    margin: 3px 0;
+}
+
+.leaflet-tooltip 
+   span.nl {
+        font-size: 10.5px !important;
+        display:none;
+    }
+
+
+.nl.visible-force #text::before{
+  content: "•";
+}
+
+
 body{
 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
 
     width: 99vw !important;
     max-height: 98vh !important;
-    
     
 }
 
@@ -440,6 +464,7 @@ z-index: 2147483647 !important;
 padding-bottom: 2.4px !important;
 }
 
+
 .leaflet-tooltip.reveal-all-tooltip,
 .leaflet-tooltip.selected-tooltip.leaflet-zoom-animated {
 
@@ -449,7 +474,10 @@ padding-bottom: 2.4px !important;
     white-space: normal !important;
     overflow-wrap: break-word;
 
-    max-width: 100px !important;   /* increase this */
+    max-width: 140px !important;   /* increase this */
+   /* CHANGE THIS FOR INFO-BR POPUP SIZE */
+
+   
     width: max-content;            /* let content define width */
     
     min-height: auto !important;
@@ -1316,7 +1344,7 @@ top: 87vh !important;
 
 */
 
-
+ 
 
 
 /* General MOBILE Fixes */

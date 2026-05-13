@@ -12,14 +12,11 @@
 	stroke-width: 1px;	
 }
 
-
 .selected-path{
 	stroke-width: 1.5px;	
 	fill: rgba(87, 164, 220, 0.3) !important; 
 	transition: all 0.5s;
-
 }
-
 
 .selected-path:hover{
 	stroke-width: 2px !important;	

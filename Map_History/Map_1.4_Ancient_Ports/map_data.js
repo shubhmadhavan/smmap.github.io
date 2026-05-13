@@ -25,17 +25,6 @@ const mapData = {
 "Sanjan Port <br><span class='nl'>Sanjan Port of Rashtrakutas":"POINT (72.7733119 20.1876016)",
 
 
-"WB":"",
-"Tamralipta <br><span class='nl'>(on Rupnarayan River":"POINT (87.9258719 22.2941415)<br>3rd CE to 8th CE)",
-
-"Chandraketugarh <br><span class='nl'>(Port + Archaelogical site)":"POINT (88.6883504 22.6975788)",
-"Saptagram <br><span class='nl'>Satgaon or Saptagam was on Saraswati River)":"POINT (88.3137528 22.8614903)",
-"Betore":"POINT (88.3002371 22.5788909)",
-
-
-"BG":"",
-"Samandar/ Sudkawan Port <br><span class='nl'>(on Meghna":"POINT (91.0381875 22.4969531)<br>fl. 8th-14th CE)",
-
 
 "MH":"",
 "Sopara<br><span class='nl'>Surparaka</span> ":"POINT (72.8116591 19.4198627)",
@@ -46,11 +35,6 @@ const mapData = {
 
 "GA":"",
 "Gove<br><span class='nl'> Gove or Gopakapattana port of Kadambas":"POINT (73.8907204 15.4253793)<br>fl. 11th CE)",
-
-
-
-"AP":"",
-"Motupalli Port <br><span class='nl'>(renvt. by Kakatiyas":"POINT (80.3072781 15.714366)<br>fl. 12-14th CE)",
 
 
 
@@ -81,6 +65,23 @@ const mapData = {
 
 
 
+"AP":"",
+"Motupalli Port <br><span class='nl'>(renvt. by Kakatiyas":"POINT (80.3072781 15.714366)<br>fl. 12-14th CE)",
+
+
+
+
+
+"WB":"",
+"Tamralipta <br><span class='nl'>(on Rupnarayan River":"POINT (87.9258719 22.2941415)<br>3rd CE to 8th CE)",
+
+"Chandraketugarh <br><span class='nl'>(Port + Archaelogical site)":"POINT (88.6883504 22.6975788)",
+"Saptagram <br><span class='nl'>Satgaon or Saptagam was on Saraswati River)":"POINT (88.3137528 22.8614903)",
+"Betore":"POINT (88.3002371 22.5788909)",
+
+
+"BG":"",
+"Samandar/ Sudkawan Port <br><span class='nl'>(on Meghna":"POINT (91.0381875 22.4969531)<br>fl. 8th-14th CE)",
 
 
 }

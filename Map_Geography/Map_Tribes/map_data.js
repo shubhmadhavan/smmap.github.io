@@ -14,7 +14,7 @@ const mapData = {
 "Santhals":"POINT (85.385769 23.6088357)",
 "Khond":"POINT (83.9521009 19.8679023)",
 "Lepchas":"POINT (88.2701215 27.6759398)",
-"Mishmi":"POINT (96.0 28.25)",
+"Mishmi, Monpa, Nyishi":"POINT (96.0 28.25)",
 "Garo":"POINT (90.3876331 25.4887877)",
 "Khasi":"POINT (91.651063 25.5680903)",
 "Jaintia":"POINT (92.6666667 25.3333333)",

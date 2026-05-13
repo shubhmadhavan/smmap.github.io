@@ -47,6 +47,10 @@ const resourcesMap = {
    
     'AncHist_1': { script: '../Map_History/Map_1.1_Harappa/map_data.js', css: '../Map_History/Map_1.1_Harappa/location_color.css' },
     'AncHist_2': { script: '../Map_History/Map_1.2_Mahajanapadas/map_data.js', css: '../Map_History/Map_1.2_Mahajanapadas/location_color.css' },
+     'AncHist_2.1': { script: '../Map_History/Map_1.2_Ancient_Rivers/map_data.js', css: '../Map_History/Map_1.2_Ancient_Rivers/location_color.css' },
+
+    
+
     'AncHist_3': { script: '../Map_History/Map_1.3_Ashokan_Edicts/map_data.js', css: '../Map_History/Map_1.3_Ashokan_Edicts/location_color.css' },
     'AncHist_4': { script: '../Map_History/Map_1.4_Ancient_Ports/map_data.js', css: '../Map_History/Map_1.4_Ancient_Ports/location_color.css' },
     'AncHist_5': { script: '../Map_History/Map_1.5_Bhakti/map_data.js', css: '../Map_History/Map_1.5_Bhakti/location_color.css' },  

@@ -3,7 +3,9 @@ const mapData = {
 "Typically found in ancient sedimentary rocks (banded iron formations)":"", 
 "Australia is largest producer, followed by Brazil, China, India and Russia.":"", 
 "In India, Odisha is largest producer, followed by Chhattisgarh, Karnataka & Jharkhand":"",
-
+"Precambrian rocks of Peninsular India form Banded Iron Formations (BIF)":"",
+"Early oceans had a lot of dissolved iron. When cyanobacteria started producing O2, it reacted with this Iron and deposited in alternative layers of Iron-rich mainerals (haematite, magnetite) and silica (chert). This is what led to BIFs":"",
+"BIFs were originally sedimentary but due to extreme age (Pre-Cambrian), most have undergone at least some degree of metamorphism":"",
 
 "JH" :"",
 "Gua Iron Ore Mines (W. Singhbum, JH)":"POINT (85.3562565 22.2185736)",
@@ -23,11 +25,13 @@ const mapData = {
 
 "MH" :"",
 "Chandrapur (MH)":"POINT (79.2961468 19.9615398)",
+"Ratnagiri":"POINT (73.3120233 16.990215)",
+
+
 
 "AP" :"",
 "Visakhapatnam (AP)":"POLYGON ((83.2184815 17.8458159, 83.3244815 17.7398159, 83.2184815 17.6338159, 83.1124815 17.7398159, 83.2184815 17.8458159))",
 
-"Ratnagiri":"POINT (73.3120233 16.990215)",
 
 "GA" :"",
 "Mormugao (GA)":"POLYGON ((73.8165668 15.5479087, 73.9225668 15.4419087, 73.8165668 15.3359087, 73.7105668 15.4419087, 73.8165668 15.5479087))",

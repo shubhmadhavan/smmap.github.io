@@ -51,67 +51,67 @@ const mapData = {
 
 
 "Banas River, RS":"",
-	"Nandsamand Dam<br><span class='nl'>Nandsamand & Bisalpur Reservoir both lie on Banas River</span> ":"POINT (73.7747077 24.9274606)",
-	"Bisalpur Reservoir (Tonk, RS)<br><span class='nl'>Nandsamand & Bisalpur Reservoir both lie on Banas River</span> ":"POINT (75.3737003 25.856263)",
+	"Nandsamand Dam<br><span class='nl'>Banasmand & Banaspur (mnemonic); Nandsamand & Bisalpur Reservoir both lie on Banas River</span> ":"POINT (73.7747077 24.9274606)",
+	"Bisalpur Reservoir (Tonk, RS)<br><span class='nl'>Banasmand & Banaspur (mnemonic); Nandsamand & Bisalpur Reservoir both lie on Banas River</span> ":"POINT (75.3737003 25.856263)",
 
 "RS":"",
 	"Khari Dam":"POINT (74.2753209 25.705335)",
 
 "Sindh (trib of Yamuna)":"",
-	"Madhikeda Reservoir":"POINT (77.8739264 25.5123334)",
+	"Madhikeda Reservoir<br><span class='nl'>Madhikeda or Atal Sagar Dam – Shivpuri dis and on Sindh River in MP</span> ":"POINT (77.8739264 25.5123334)",
 
 "Betwa":"",
-"Sukma Dugma Reservoir (Jhansi, UP)":"POINT (78.5342696 25.1792106)",
-"Mata Tila Dam Reservoir (Lalitpur, UP)":"POINT (78.3347613 25.0632176)",
-"Rajghat Reservoir (UP-MP)<br><span class='nl'>Rajghat is an Inter-State Dam, Lalitpur, UP & Ashoknagar, MP</span> ":"POINT (78.263272 24.681173)",
+"Sukma Dugma Reservoir <br><span class='nl'>Sukma-Dugma (Jhansi, UP); Sukma-Dugma, Mata-Tila & Raj-Ghat are all on Bet-awa</span>":"POINT (78.5342696 25.1792106)",
+"Mata Tila Dam Reservoir <br><span class='nl'> Mata Tila Dam (Lalitpur, UP) ; Sukma-Dugma, Mata-Tila & Raj-Ghat are all on Bet-awa ":"POINT (78.3347613 25.0632176)",
+"Raj ghat Reservoir (UP-MP)<br><span class='nl'>; Raj ghat is an Inter-State Dam – it is shared bw Lalitpur, UP & Ashoknagar, MP; ; Sukma-Dugma, Mata-Tila & Raj-Ghat are all on Bet-awa</span> ":"POINT (78.263272 24.681173)",
 
 "Virma (trib of Betwa)":"",
-"Swami Brahma Nand Dam (UP)":"POINT (79.6823402 25.5498202)",
+"Swami Brahma Nand Dam (UP)<br><span class='nl'>Swami Brahma Nand Dam lies on Virma, a trib of Betwa River</span> ":"POINT (79.6823402 25.5498202)",
 
 "Dhasan (trib of Betwa)":"",
-"Sujara Band (MP)":"POINT (79.1003199 24.630049)",
+"Sujara Band (MP)<br><span class='nl'>Sujara Dam lies on Dhasan River, a trib of Betwa</span> ":"POINT (79.1003199 24.630049)",
 
 
 "Bhagirathi":"",
-"Tehri Dam (UK)":"POINT (78.4706599 30.4060548)",
+"Tehri Dam (UK)<br><span class='nl'>Tehri Dam is named after its district, Tehri Garhwal of UK</span> ":"POINT (78.4706599 30.4060548)",
 
 "Ganga River":"",	
-"Narora Dam (UP)":"POINT (78.39193 28.19817)",
+"Narora Dam (UP)<br><span class='nl'>Narora Dam as well as Narora Atomic Power Plant are in Bulandshahr, UP</span> ":"POINT (78.39193 28.19817)",
 
 "Son":"",
-"Ban Sagar Lake (MP)":"POINT (81.1161596 24.1128556)",
+"Ban Sagar Lake (MP)<br><span class='nl'>Ban Sagar dam lies on Son River in district of Shahdol in MP</span> ":"POINT (81.1161596 24.1128556)",
 
 "Rihand (trib of Son)":"",
-"Govind Ballabh Pant Sagar/ Rihand Dam (MP)":"POINT (82.8297062 24.10856)",
+"Govind Ballabh Pant Sagar/ Rihand Dam (UP)<br><span class='nl'>Govind Ballabh Pant Sagar is India's largest manmade lake; GBPS, aka Rihand Dam, is also the second largest water-reservoir in India, only behind MP's Indira Sagar</span> ":"POINT (82.8297062 24.10856)",
 
 "Mayurakshi (trib of Hooghly)":"",
 "Massanjore Dam (JH)":"POINT (87.284051 24.1557136)",
 
 
 "Damodar (trib of Hooghly), JH":"",
-"Tenughat Reservoir":"POINT (85.7973052 23.7297787)",
+"Tenughat Reservoir <br><span class='nl'>Tenughat reservoir is in Bokaro dis, JH & lies on Damodar River</span> ":"POINT (85.7973052 23.7297787)",
 
 "Barakar (trib of Damodar), JH":"",
-"Tilaiya Dam":"POINT (85.5215529 24.3243035)",
-"Maithon":"POINT (86.8152079 23.8584476)",
+"Tilaiya Dam<br><span class='nl'>Tilaiya and Maithon Dams - both lie in JH and on Barakar River, a trib of Damodar</span> ":"POINT (85.5215529 24.3243035)",
+"Maithon Dam<br><span class='nl'>Tilaiya and Maithon Dams - both lie in JH and on Barakar River, a trib of Damodar</span> ":"POINT (86.8152079 23.8584476)",
 
 
-"JH":"",
-"Konar Reservoir":"POINT (85.7516353 23.9444647)",
+"Konar River":"",
+"Konar Dam (JH)<br>Konar is a small tributary of Damodar River<span class='nl'> </span> ":"POINT (85.7516353 23.9444647)",
 
 "Swarnarekha River":"",
-	"Getalsud Dam (JH)<br><span class='nl'>Getalsud (Swarnarekha River) not to be conf. w. Gersoppa (Shravathi River, KN)</span>":"POINT (85.5346714 23.4554267)",
-	"Hundru Waterfall (JH)":"POINT (85.6667986 23.4508392)",
-	"Chandil Reservoir (JH)":"POINT (86.0150167 23.0316844)",
+	"Getalsud Dam (JH)<br><span class='nl'>Getalsud (Swarnarekha River) not to be conf. w. Gersoppa (Shravathi River, KN); Getalsud, Hundru & Chandil all lie on Swarnarekha River</span>":"POINT (85.5346714 23.4554267)",
+	"Hundru Waterfall (JH)<br><span class='nl'>Getalsud, Hundru & Chandil all lie on Swarnarekha River</span> ":"POINT (85.6667986 23.4508392)",
+	"Chandil Reservoir (JH)<br><span class='nl'>Getalsud, Hundru & Chandil all lie on Swarnarekha River</span> ":"POINT (86.0150167 23.0316844)",
 
 "Sankh River":"",
-"Mandira Dam (OD)":"POINT (84.6528506 22.2713869)",
+	"Mandira Dam (OD)":"POINT (84.6528506 22.2713869)",
 
 "Brahmani River":"",
 	"Rengali Reservoir (OD)":"POINT (84.9589402 21.3471019)",
 
 "Mahanadi, CG":"",
-"Dudhwana Dam (CG)":"POINT (81.7745703 20.3086306)",
+"Dudhwana Dam (CG)<br><span class='nl'>Dudhwana & Ganrel (both in JH) as well as Hirakud (OD) lie on Mahanadi River; Note that Ganrel (CG, Mahanadi) is not to be confused with Getalsud (Swarnarekha, JH), Gersoppa (Shravathi, KN)</span> ":"POINT (81.7745703 20.3086306)",
 "Ganrel Reservoir (CG)":"POINT (81.5384444 20.5918119)",
 
 
@@ -125,7 +125,7 @@ const mapData = {
 	"Balar Reservoir":"POINT (82.498539 21.5236469)",
 
 "Jonk River":"",
-	"Patora Dam (OD)":"POINT (82.4557589 20.7162745)",
+	"Patora Dam (OD)<br><span class='nl'>Patora Dam lies on Jonk River</span> ":"POINT (82.4557589 20.7162745)",
 
 "Hasdeo":"",
 "Hasdeo Reservoir (CG)":"POINT (82.6507276 22.6670588)",

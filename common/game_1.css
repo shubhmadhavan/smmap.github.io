@@ -328,12 +328,15 @@ max-height: 91.2vh !important;
 }
 
 
-li.empty-item  {
+li.empty-item , 
+li.empty-item.highlighted {
 
-    padding: 4px !important;
-      font-size: 11px;
-      font-style: italic;
-
+    padding: 1.5px !important;
+      font-size: 11.5px;
+  
+      /*
+          font-style: italic;
+*/
     background: #dee3e2 !important;
     color: #252525 !important;
     outline: none !important;

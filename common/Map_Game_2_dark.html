@@ -762,6 +762,8 @@ function showSidebarPopup(liElement, content) {
     // 👉 If no content, stop AFTER clearing
     if (!content) return;
 
+
+
     // 👉 Remove dots before closing span (handles ".</span>" and ". </span>")
     content = content.replace(/\.\s*<\/span>/g, '</span>');
 

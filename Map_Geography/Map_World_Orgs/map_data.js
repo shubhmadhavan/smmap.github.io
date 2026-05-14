@@ -1,4 +1,5 @@
 const mapData = {
+"Organisations":"",	
 "UN, UNICEF (NYC, USA)":"POINT (-73.9682091 40.7488983)",
 "WB, IMF (Washington DC)":"POINT (-77.042414 38.898971)",
 

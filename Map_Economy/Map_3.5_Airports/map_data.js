@@ -1,4 +1,7 @@
 const mapData = {
+
+
+"Airports":"",
 "Kushinagar Airport" : "POINT (83.89614 26.76934)",
 "Pakyong Airport" : "POINT (88.58769 27.22665)",
 "Donyi Polo / Itanagar Airport" : "POINT (93.6423 26.97184)",

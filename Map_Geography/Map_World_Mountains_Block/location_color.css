@@ -1,9 +1,14 @@
 
 
 .polygon_leaflet{
-	stroke: #1c1917 !important;
+	stroke: #676767 !important;
 	stroke-width: 1px !important; 
 	fill: rgba(51, 45, 39, 0.2) !important; 	
 }
 
 
+.leaflet-interactive:hover{
+	stroke: #6e6e6e !important; 
+	stroke-width: 2px !important; 
+	color: #827a73 !important; 	
+}

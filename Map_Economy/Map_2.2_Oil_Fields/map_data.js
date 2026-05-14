@@ -1,4 +1,6 @@
 const mapData = {
+
+"Oil Fields":"",
 "Mangla, Bhagyam, Aishwarya Oil-fields (Barmer Basin | RS)":"POINT (71.52123 25.95188)", 
 "Kalol (Gandhinagar | GJ)":"POINT (72.4929716 23.2418194)",
 "Ankleshwar (Bharuch | GJ)":"POINT (73.0151984 21.6264236)",

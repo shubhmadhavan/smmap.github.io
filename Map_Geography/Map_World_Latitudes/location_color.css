@@ -29,6 +29,22 @@
 
 
 
+.point_leaflet.leaflet-interactive
+	 {
+stroke-width: 0px !important;	
+width: 1px !important;
+height: 1px !important;
+	fill: rgba(87, 164, 220, 1) !important; 
+
+}
+
+	
+.point_leaflet.leaflet-interactive.selected-path {
+	fill: rgb(43, 100, 142) !important; 
+
+stroke-width: 0px !important;	
+}
+
 @media only screen and (max-width: 549px){
 
 .leaflet-interactive {

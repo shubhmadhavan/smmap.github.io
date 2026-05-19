@@ -64,7 +64,6 @@ const mapData = {
 "Khangchendzonga BR":"POINT (88.3245556 27.6671401)",
 "Khangchendzonga NP (Sikkim)":"POINT (88.3245556 27.6672446)",
 
-
 "WB":"",
 "Singalila NP (WB)":"POINT (88.0762233 27.0371351)",
 "Neora Valley NP (WB)<br><span class='nl'>Neora Valley NP has Neora River, a tributary of Teesta River</span>":"POINT (88.7006888 27.0824496)",
@@ -74,7 +73,6 @@ const mapData = {
 "Sundarbans NP-BR<br><span class='nl'> Sundarbans – 7 rivers that form tidal deltaic network (Jhila, Chandra, Raimangal, Haribhanga, Gosaba, Bidya, Matla). Not tributaries but distributaries or tidal channels of Hooghly River. </span> ":"POINT (88.885869 21.8340655)",
 "Buxa NP<br><span class='nl'>Buxa NP has Kaljani River and Jayanti River. Jayanti is known as the Queen of Buxa</span> ":"POINT (89.5167843 26.6039177)",
 
-
 "AS":"",
 "Raimona NP (AS)<br><span class='nl'>Raimona NP has Sankosh River flowing through it</span> ":"POINT (89.8962639 26.6217604)",
 "Manas NP (AS)<br><span class='nl'>Manas NP – Manas River & Baki river pass through</span> ":"POINT (90.6733163 26.7208536)",
@@ -82,7 +80,7 @@ const mapData = {
 "Orang NP-TR (AS)":"POINT (92.3320235 26.5537938)",
 "Nameri NP-TR (AS)":"POINT (92.8772163 26.9324008)",
 "Kaziranga NP-TR (AS)":"POINT (93.3453685 26.6388952)",
-"Dibru Saikhowa NP-BR (AS)":"POINT (95.3625409 27.6689859)",
+"Dibru Saikhowa NP-BR (AS)<br><span class='nl'>Wild (feral) horses in India are exclusively found in wetlands of Dibru-Saikhowa National Park, located in Tinsukia district of Assam; They are believed to be descendants of British cavalry war horses abandoned during World War II</span> ":"POINT (95.3625409 27.6689859)",
 "Dehing Patkai NP (AS)":"POINT (95.5257896 27.3051589)",
 "Sikhna Jwhwlao NP":"POINT (90.29589 26.71695)",
 

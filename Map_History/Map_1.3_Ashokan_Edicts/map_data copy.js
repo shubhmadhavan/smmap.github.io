@@ -1,41 +1,36 @@
 const mapData = {
-    
-"Ashoka has 14 Major, 7 Pillar and various Minor Edicts of Ashoka":"",
-"The 14 Major Edicts ▲ – Kandahar, Shahbazgarhi, Mansehra, Kalsi (UK), Girnar (GJ), Sopara (MH), Dhauli (OD), Jaugada (OD), Erragudi (AP), Sannati (KN)":"",
-"7 Pillar Edicts || – Kandahar, Delhi-Topra pillar, Delhi-Meerut pillar, Allahanad-Kosam, Lauriya-Araraj, Lauriya-Nandangarh, Rampurva":"", 
-"Minor Edicts – Bairat (RS), Bahapur (DL), Ahraura (UP), Sahasram (BR), Gujjara (MP), Rupnath (MP), Panguraria (MP), Maski (KN), Gavimath (KN), Palkigundu (KN), Nittur (KN), Udegolam (KN), Brahmagiri (KN), Siddapura (KN), Jatinga-Rameshwara (KN), Rajula-Mandagiri (AP), Erragudi (AP)":"",
-"Script":"",
-"Bilingual Greek & Aramaic – Kandahar (Shar-i-Kuna). Kharosti – Shahbazgarhi & Mansehra. Bilingual Prakrit & Aramaic – Lampaka & Kandahara. Vast Majority – in Brahmi script":"",
-"Edicts":"",
+"Ashoka has 14 Major, 7 Minor and 7 Pillar Edicts of Ashoka":"",
+"Most extensive inscriptions are those that mention all 14 Edicts – these are at Shahbazgari, Mansehra,Kalsi, Girnar, Sopara, Dhauli, Jaugada, Erragudi":"",
 
-"Af":"",
-"Kandahar ▲ || (Af)<br><span class='nl'>Kandahara inscription is in bilingual Greek-Araemic; ment.s Kalinga War</span>":"POLYGON ((65.44603759863341 31.6205076, 65.9856010013666 31.6205076, 65.7158193 32.01841116390096, 65.44603759863341 31.6205076))",
+"Kandahar inscriptions – in Greek & Aramaic":"", 
+"Shahbazgarhi & Mansehra inscriptions are in Kharosti script":"",
+"Rest – in Brahmi script":"",
 
-"Pak":"",
-"Shahbazgarhi ▲ (PK)<br><span class='nl'>Shahbazgarhi & Mansehra (both Gandhara region) are in Kharosti Script</span> ":"POLYGON ((71.87265294252812 34.226106, 72.42834465747187 34.226106, 72.1504988 34.62400956390096, 71.87265294252812 34.226106))",
-"Mansehra ▲ (PK)<br><span class='nl'>Shahbazgarhi & Mansehra (both Gandhara region) are in Kharosti Script</span>":"POLYGON ((72.91980725925983 34.3312587, 73.47619454074017 34.3312587, 73.1980009 34.72916226390096, 72.91980725925983 34.3312587))",
+"Outside India":"",
+"Kandahar (Af)<br><span class='nl'>in Greek; ment.s Kalinga War</span>":"POLYGON ((65.44603759863341 31.6205076, 65.9856010013666 31.6205076, 65.7158193 32.01841116390096, 65.44603759863341 31.6205076))",
 
-"Np":"",
+"Shahbazgarhi (PK)":"POLYGON ((71.87265294252812 34.226106, 72.42834465747187 34.226106, 72.1504988 34.62400956390096, 71.87265294252812 34.226106))",
+"Mansehra (PK)":"POLYGON ((72.91980725925983 34.3312587, 73.47619454074017 34.3312587, 73.1980009 34.72916226390096, 72.91980725925983 34.3312587))",
+
 "Nigali Sagar (NP)<br><span class='nl'>Nigali Sagar is in Kapilavasthu, Nepal</span> ":"POINT (83.0957966 27.5948869)",
 "Rummindei (NP)<br><span class='nl'>Rummindei is in Lumbini, Nepal</span>":"POINT (83.2787742 27.4996695)",
 
 
 "UK":"",
-"Kalsi ▲ (UK)<br><span class='nl'>ment.s Greek Kings</span>":"POLYGON ((77.57720341809696 30.5178942, 78.11054658190304 30.5178942, 77.843875 30.915797763900958, 77.57720341809696 30.5178942))",
+"Kalsi (UK)<br><span class='nl'>ment.s Greek Kings</span>":"POLYGON ((77.57720341809696 30.5178942, 78.11054658190304 30.5178942, 77.843875 30.915797763900958, 77.57720341809696 30.5178942))",
 
 "HR":"",
-"Topra || (HR)<br><span class='nl'>Topra & Meerut Pillar were shifted to Delhi by Sultan Feroz Shah Tughlaq in 1356</span> ":"POINT (77.1623852 30.1252841)",   
+"Topra (HR)":"POINT (77.1623852 30.1252841)",   
 
 "DL":"",
 "Bahapur (DL)<br><span class='nl'>Bahapur is located in South Delhi</span> ":"POLYGON ((77.16237153862792 28.46753480990991, 77.36750946137207 28.46753480990991, 77.36750946137207 28.64771499009009, 77.16237153862792 28.64771499009009, 77.16237153862792 28.46753480990991))",
 
 
 "UP":"",
-"Meerut ||<br><span class='nl'>Topra & Meerut Pillar were shifted to Delhi by Sultan Feroz Shah Tughlaq in 1356</span>":"POINT (77.7064137 28.9844618)",
-"Kaushambi || <br><span class='nl'>Allahabad-Kosam Pillar (originally Kaushambi Pillar) was shifted to Allahabad Fort (Prayagraj) by Mughal Emperor Jahangir 1605 CE</span> ":"POINT (81.4031707 25.361054)",
-
+"Meerut":"POINT (77.7064137 28.9844618)",
 "Sarnath<br><span class='nl'>Sarnath is in Varanasi, UP</span> ":"POINT (83.0252136 25.3715564)",
 "Ahraura":"POINT (83.0159192 25.0163028)",
+"Kaushambi":"POINT (81.4031707 25.361054)",
 
 
 "RS":"",
@@ -49,8 +44,8 @@ const mapData = {
 
 "BR":"",
 "Rampurwa <br><span class='nl'> Rampurwa is in West Champaran, BR</span>":"POINT (83.902951 27.3784845)",
-"Lauriya Nandangarh ||":"POINT (84.3942765 26.9880995)",
-"Lauriya Areraj ||":"POINT (84.6475966 26.5502468)",
+"Lauriya Nandangarh":"POINT (84.3942765 26.9880995)",
+"Lauriya Areraj":"POINT (84.6475966 26.5502468)",
 
 "Pataliputra":"POINT (85.1375645 25.5940947)",
 
@@ -58,26 +53,20 @@ const mapData = {
 
 
 "GJ":"",
-"Girnar ▲":"POLYGON ((70.30335086835927 21.5178869, 70.79723233164071 21.5178869, 70.5502916 21.915790463900958, 70.30335086835927 21.5178869))",
+"Girnar":"POLYGON ((70.30335086835927 21.5178869, 70.79723233164071 21.5178869, 70.5502916 21.915790463900958, 70.30335086835927 21.5178869))",
 
 
 "MH":"",
-"Sopara ▲":"POLYGON ((72.56807102373833 19.4198627, 73.05524717626167 19.4198627, 72.8116591 19.817766263900957, 72.56807102373833 19.4198627))",
+"Sopara":"POLYGON ((72.56807102373833 19.4198627, 73.05524717626167 19.4198627, 72.8116591 19.817766263900957, 72.56807102373833 19.4198627))",
 
 "OD":"",
-"Dhauli ▲ (OD)<br><span class='nl'>Dhauli or Sisupalgarh is a Rock-cut Stone Elephant</span>":"POLYGON ((85.60951014165023 20.2290452, 86.09917305834976 20.2290452, 85.8543416 20.62694876390096, 85.60951014165023 20.2290452))",
-"Jaugada ▲ (OD)":"POLYGON ((84.58717556389101 19.5226571, 85.07466083610899 19.5226571, 84.8309182 19.920560663900957, 84.58717556389101 19.5226571))",
+"Dhauli (OD)<br><span class='nl'>Dhauli or Sisupalgarh is a Rock-cut Stone Elephant</span>":"POLYGON ((85.60951014165023 20.2290452, 86.09917305834976 20.2290452, 85.8543416 20.62694876390096, 85.60951014165023 20.2290452))",
+"Jaugada (OD)":"POLYGON ((84.58717556389101 19.5226571, 85.07466083610899 19.5226571, 84.8309182 19.920560663900957, 84.58717556389101 19.5226571))",
 
-
-"AP":"",
-"Erragudi ▲ (AP)":"POLYGON ((77.59387 15.4195, 78.09387 15.4195, 77.84387 15.8195, 77.59387 15.4195))",
-
-"Amaravati (AP)":"POLYGON ((80.26645 16.31308, 80.76645 16.31308, 80.51645 16.71308, 80.26645 16.31308))",
-"Rajula Mandagiri (AP)<br><span class='nl'>Rajula Mandagiri is in Kurnool, AP</span> ":"POLYGON ((77.38058934839206 15.34669960990991, 77.56751285160793 15.34669960990991, 77.56751285160793 15.52687979009009, 77.38058934839206 15.52687979009009, 77.38058934839206 15.34669960990991))",
 
 
 "KN":"",
-"Sannati ▲ (KN)":"POLYGON ((76.66739567801622 16.8283415, 77.1474111219838 16.8283415, 76.9074034 17.226245063900958, 76.66739567801622 16.8283415))",
+"Sannati (KN)":"POLYGON ((76.66739567801622 16.8283415, 77.1474111219838 16.8283415, 76.9074034 17.226245063900958, 76.66739567801622 16.8283415))",
 "Maski (KN)<br><span class='nl'>Maski, in Raichur, KN; Maski – Asoka ment. alongside 'Piyadasi'</span>":"POLYGON ((76.56075899288099 15.86813990990991, 76.748161207119 15.86813990990991, 76.748161207119 16.04832009009009, 76.56075899288099 16.04832009009009, 76.56075899288099 15.86813990990991))",
 "Udegolam (KN)<br><span class='nl'>Udegolam is in Bellary, KN</span> ":"POLYGON ((76.7223661809098 15.44374470990991, 76.90937741909019 15.44374470990991, 76.90937741909019 15.62392489009009, 76.7223661809098 15.62392489009009, 76.7223661809098 15.44374470990991))",
 "Gavimath (KN)<br><span class='nl'>Gavimath & Palkigundu are in Koppal, KN</span> ":"POLYGON ((76.06722558134838 15.25015870990991, 76.25406241865163 15.25015870990991, 76.25406241865163 15.43033889009009, 76.06722558134838 15.43033889009009, 76.06722558134838 15.25015870990991))",
@@ -87,6 +76,12 @@ const mapData = {
 "Siddapur (KN)":"POLYGON ((76.67898147568417 14.67958990990991, 76.86531852431582 14.67958990990991, 76.86531852431582 14.85977009009009, 76.67898147568417 14.85977009009009, 76.67898147568417 14.67958990990991))",
 "Nittur (KN)<br><span class='nl'>Nittur is in Bellary, KN</span> ":"POLYGON ((76.70487057064491 15.32176290990991, 76.89177162935508 15.32176290990991, 76.89177162935508 15.50194309009009, 76.70487057064491 15.50194309009009, 76.70487057064491 15.32176290990991))",
 "Kanaganahalli (KN)<br><span class='nl'>Stupa & Portrait w. 'Ranyo Asoka'</span>":"POINT (76.58783 12.55845)",
+
+
+"AP":"",
+"Amaravati (AP)":"POLYGON ((80.26645 16.31308, 80.76645 16.31308, 80.51645 16.71308, 80.26645 16.31308))",
+"Yerragudi (AP)":"POLYGON ((77.59387 15.4195, 78.09387 15.4195, 77.84387 15.8195, 77.59387 15.4195))",
+"Rajula Mandagiri (AP)<br><span class='nl'>Rajula Mandagiri is in Kurnool, AP</span> ":"POLYGON ((77.38058934839206 15.34669960990991, 77.56751285160793 15.34669960990991, 77.56751285160793 15.52687979009009, 77.38058934839206 15.52687979009009, 77.38058934839206 15.34669960990991))",
 
 
 }

@@ -6,7 +6,7 @@ const mapData = {
 "Manganese nodules (with ~24% Mn) occur on Ocean floors.":"",
 
 "Chhindwara (MP)":"POINT (78.9382293 22.052876)",
-"Balaghat (MP)":"POINT (80.1838293 21.812876)",
+"Balaghat (MP)<br><span class='nl'>Note how Balaghat is in MP and just opposite to it is Bhandara in MH – both are Bhanganese sites</span>":"POINT (80.1838293 21.812876)",
 "Bandhara (MH)":"POINT (79.0881546 21.1458004)",
 "Nagpur (MH)":"POINT (78.7828613 21.1754754)",
 "Sundargarh (OD)":"POINT (84.037224 22.120021)",
@@ -14,7 +14,6 @@ const mapData = {
 "Belagavi":"POINT (74.4976741 15.8496953)",
 "Shivamogga":"POINT (75.568101 13.9299299)"
 };
-
 
 /* 
 "":"",

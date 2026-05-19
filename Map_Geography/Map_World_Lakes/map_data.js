@@ -13,11 +13,13 @@ const mapData = {
 "Note – ⚠ means the lake is at rick of ⚠":"",
 "NA":"",
 "Lake Winnipeg":"POINT (-98.125139 53.0097973)",
-"Lake Superior":"POINT (-88.0481856 47.9608975)",
-"Lake Michigan":"POINT (-86.9307818 44.6462167)",
+"Lake Superior <br><span class='nl'>Note that Superior is connected to Huron & not Michigan</span> ":"POINT (-88.0481856 47.9608975)",
 "Lake Huron":"POINT (-82.3439898 44.9113631)",
+"Lake Michigan":"POINT (-86.9307818 44.6462167)",
+
 "Lake Erie":"POINT (-81.1519732 42.2051575)",
-"Lake Ontario":"POINT (-77.9631915 43.6331254)",
+"Lake Ontario<br><span class='nl'>Lake Ontario is connected to St Lawrence River, which forms part of the St Lawrence Waterway</span> ":"POINT (-77.9631915 43.6331254)",
+
 "Lake Mead (USA) ⚠":"POINT (-114.4144415 36.1435231)",
 "Salton Sea (USA) ⚠":"POINT (-115.8434122 33.3286185)",
 "Tulare Lake (USA) ⚠":"POINT (-119.8315867 36.1795408)",

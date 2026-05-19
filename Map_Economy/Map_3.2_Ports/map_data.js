@@ -4,6 +4,7 @@ const mapData = {
 "Largest Container Port – JN Port":"",
 "Port known for Petroleum – Kandla (tidal)":"",
 "Port known for Iron Ore – Paradip (artifical)":"",
+"Every coastal State has at least one major port. TN has most (3), with MH soon to join it with development of Vadhavan Port":"",
 "":"",
 "       ":"",
 "Most natural ports are on West coast because it has a coastline of submergence":"",

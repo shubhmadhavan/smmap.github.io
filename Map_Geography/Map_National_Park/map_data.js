@@ -48,7 +48,7 @@ const mapData = {
 "MP":"",
 "Van Vihar NP (MP)":"POINT (77.3640257 23.229009)",
 "Kuno NP (MP)":"POINT (77.1024902 25.7475449)",
-"Madhav NP (MP)":"POINT (77.7391076 25.431745)",
+"Madhav NP (MP)<br><span class='nl'>Madhav NP lies in the Vindhya range; Sakhya Sagar is a man-made reservoir that lies completely inside it; It is part of Project Tiger</span> ":"POINT (77.7391076 25.431745)",
 "Panna NP-BR":"POINT (79.9416518 24.5904659)",
 "Ghughua Fossil NP (MP)":"POINT (80.6140615 23.1098356)",
 "Kanha NP-TR (MP)":"POINT (80.58642 22.29949)",

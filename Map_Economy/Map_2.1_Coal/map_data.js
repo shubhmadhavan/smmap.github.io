@@ -1,7 +1,9 @@
 const mapData = {
 "Coal":"",
+
+"Largest Coal Reserves: US (22%) > Russia > Australia > China > India":"",
+"Largest Coal Producers: China > India > USA > Indonesia > Russia" : "",
 "India produces 1000 MMT coal annually.":"",
-"Largest Coal producers: China > India > USA > Indonesia > Russia" : "",
 
 
 "JK":"",

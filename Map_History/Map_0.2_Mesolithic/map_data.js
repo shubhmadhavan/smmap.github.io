@@ -16,12 +16,12 @@ const mapData = {
 "MP":"",
 "Baghor (MP)":"POINT (82.3112724 24.5552304)",
 "Bhimbetka":"POINT (77.6124331 22.9395461)",
-"Adamgadh (MP)":"POINT (77.7316166 22.7318659)",
+"Adamgadh (MP)<br><span class='nl'>Adamgarh (Mesolithic site, MP) not to be confused with Azamgarh (District of UP)</span> ":"POINT (77.7316166 22.7318659)",
 
 
 
 "RS":"",
-"Bagor (RS)<br><span class='nl'>not to be confused with bagHor which is in madHya pradesH</span> ":"POINT (74.3792737 25.3594495)",
+"Bagor (RS)<br><span class='nl'>not to be confused with bagHor which is in madHya pradesH; Bagor (RS) is near Kothari river, trib of Banas River</span> ":"POINT (74.3792737 25.3594495)",
 
 
 "GJ":"",
@@ -33,7 +33,7 @@ const mapData = {
 "Birbhanpur (WB)":"POINT (87.3227328 22.6289209)",
 
 "KL":"",
-"Tenmalai/ Thenmalai (KL)":"POINT (76.6352612 8.9056814)",
+"Tenmalai (KL)":"POINT (76.6352612 8.9056814)",
 
 "TN":"",
 "Teri Sites (TN)":"POINT (78.4228271 9.2160578)"

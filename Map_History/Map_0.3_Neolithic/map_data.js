@@ -36,7 +36,7 @@ const mapData = {
 "Sanganakallu (KN)":"POINT (76.9657463 15.1727036)",
 "Tekkalakoda (KN)":"POINT (76.8793025 15.534788)",
 "Brahmagiri (KN)":"POINT (77.6715159 13.3557172)",
-"T. Narsipur / Tirumakudal-narsipur (KN)":"POINT (76.9011878 12.212351)",
+"T. Narsipur (KN)<br><span class='nl'>Tirumakudal-narsipur</span> ":"POINT (76.9011878 12.212351)",
 "Hemmige (KN)":"POINT (76.0798167 12.3627933)",
 
 "TN":"",

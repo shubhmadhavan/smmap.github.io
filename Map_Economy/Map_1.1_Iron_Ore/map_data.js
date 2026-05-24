@@ -7,43 +7,40 @@ const mapData = {
 "Early oceans had a lot of dissolved iron. When cyanobacteria started producing O2, it reacted with this Iron and deposited in alternative layers of Iron-rich mainerals (haematite, magnetite) and silica (chert). This is what led to BIFs":"",
 "BIFs were originally sedimentary but due to extreme age (Pre-Cambrian), most have undergone at least some degree of metamorphism":"",
 
-"JH" :"",
-"Gua Iron Ore Mines (W. Singhbum, JH)":"POINT (85.3562565 22.2185736)",
-"Noamundi Iron Mine (W. Singhbum, JH)" : "POINT (85.58511 22.1681)",
-"Barajamda Iron Mine (W. Singhbum, JH)" : "POINT (85.48511 22.1681)",
+"JH<br><span class='nl'>Jharkhand Iron Ore mines:; Gua, Noamundi, Barajamda</span>; " :"",
+"Gua (JH) <br><span class='nl'>Gua, Noamundi, Barajamda Iron ore mines are in West Singhbum, JH</span> ":"POINT (85.3562565 22.2185736)",
+"Noamundi (JH)<br><span class='nl'>Gua, Noamundi, Barajamda Iron ore mines are in West Singhbum, JH</span>" : "POINT (85.58511 22.1681)",
+"Barajamda (JH)<br><span class='nl'>Gua, Noamundi, Barajamda Iron ore mines are in West Singhbum, JH</span>" : "POINT (85.48511 22.1681)",
 
 
-"OD" :"",
+"OD<br><span class='nl'>Odisha Iron Ore mines:; Gorumahisani, Mayurbhanj, Keonjhar, Paradeep</span> " :"",
 "Gorumahisani, Mayurbhanj (OD)":"POINT (86.4187308 22.0086978)",
 "Keonjhar (OD)":"POINT (85.605525 21.6393113)",
 "Paradeep (OD)":"POLYGON ((86.6113628 20.4755523, 86.7173628 20.3695523, 86.6113628 20.2635523, 86.5053628 20.3695523, 86.6113628 20.4755523))",
 
-
-"CG" :"",
+"CG<br><span class='nl'>Chhatisgarh Iron Ore Mines:;Maikal & Bailadila</span> " :"",
 "Maikal Hills (CG)":"POINT (81.5 22.5)",
 "Bailadila (CG)":"POINT (81.2333333 18.7166667)",
 
-"MH" :"",
+"MH<br><span class='nl'>Maharashtra Iron Ore Mines:;Chandrapur & Ratnagiri</span> " :"",
 "Chandrapur (MH)":"POINT (79.2961468 19.9615398)",
 "Ratnagiri":"POINT (73.3120233 16.990215)",
-
 
 
 "AP" :"",
 "Visakhapatnam (AP)":"POLYGON ((83.2184815 17.8458159, 83.3244815 17.7398159, 83.2184815 17.6338159, 83.1124815 17.7398159, 83.2184815 17.8458159))",
 
 
-"GA" :"",
+"GA<br><span class='nl'>Goa Iron Ore mines:;Mormugao, Codli, Sonshi, Bicholim, Surla </span> " :"",
 "Mormugao (GA)":"POLYGON ((73.8165668 15.5479087, 73.9225668 15.4419087, 73.8165668 15.3359087, 73.7105668 15.4419087, 73.8165668 15.5479087))",
 "Codli, Sonshi, Bicholim, Surla (GA)":"POINT (74.1237667 15.3414649)",
 
-"KN" :"",
+"KN<br><span class='nl'>Karnataka Iron Ore mines:; Ballari, Chitradurga, Chikkamagaluru, Kudremukh, Mangaluru</span> " :"",
 "Ballari (KN)":"POINT (76.9214428 15.1393932)",
 "Chitradurga (KN)":"POINT (76.3980464 14.2250932)",
 "Chikkamagaluru (KN)":"POINT (75.7720439 13.3161441)",
 "Kudremukh (KN)":"POINT (75.2508229 13.2226055)",
 "Mangaluru (KN)":"POLYGON ((74.8559568 13.0731417, 74.9619568 12.9671417, 74.8559568 12.8611417, 74.7499568 12.9671417, 74.8559568 13.0731417))"
-
 
 };
 

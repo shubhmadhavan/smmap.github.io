@@ -10,11 +10,14 @@ if (/iPhone|iPad/.test(navigator.userAgent)) {
 
 
 // Initialize the map
-var isPhone = window.innerWidth <= 768;
-
+const isPhone =
+    window.matchMedia("(max-width: 768px)").matches ||
+    /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    
 // Set coordinates and zoom based on device
 var initialCoords = isPhone ? [20.0760, 80.9629] : [20.5937, 80.9629]; // Mumbai for phone, India center for desktop
 var zoomLevel = isPhone ? 4 : 5;
+
 
 
 var map = L.map('map', {
@@ -25,9 +28,31 @@ var map = L.map('map', {
 
 
 }).setView(initialCoords, zoomLevel);
-
 // map initialised 
 
+window.addEventListener('load', () => {
+    map.invalidateSize();
+});
+
+window.addEventListener('orientationchange', () => {
+    setTimeout(() => map.invalidateSize(), 300);
+});
+
+function refreshMapSize() {
+    setTimeout(() => map.invalidateSize(), 50);
+    setTimeout(() => map.invalidateSize(), 300);
+    setTimeout(() => map.invalidateSize(), 1000);
+}
+
+window.addEventListener('load', refreshMapSize);
+window.addEventListener('resize', refreshMapSize);
+window.addEventListener('orientationchange', refreshMapSize);
+
+document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) {
+        refreshMapSize();
+    }
+});
 
 
 map.on('tooltipopen',  function (e) {

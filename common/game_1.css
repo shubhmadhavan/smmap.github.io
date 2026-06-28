@@ -37,6 +37,19 @@ body{
   filter: saturate(1.2);
 }
 
+body::before,
+#map::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("../img/0.png") repeat;
+    opacity: 0.05; /* Adjust as needed */
+    pointer-events: none;
+    z-index: -1;
+
+}
+
+
 
 .visible-force {
   display: block !important;

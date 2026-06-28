@@ -9,6 +9,18 @@ html {
       overflow: hidden;
     }
 
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("img/0.png") repeat;
+    opacity: 0.03; /* Adjust as needed */
+    pointer-events: none;
+    z-index: -1;
+
+}
+
+
     .folder {
       position: absolute;
       width: 90px;
@@ -95,10 +107,8 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.6;
   z-index: 1;
   pointer-events: none;
-
 }
     /* Subtle tint for better blending */
     .folder-icon::after {
@@ -136,7 +146,12 @@ html {
 .folder-icon {
 position: relative;
   z-index: 0;
+  }
+
+  .folder-icon img {
+  filter: brightness(0.692); 
 }
+
 
 @media (max-width: 768px) { 
 

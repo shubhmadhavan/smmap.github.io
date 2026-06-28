@@ -4,8 +4,16 @@ html {
     background: linear-gradient(0deg, #151526) !important;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("img/0.png") repeat;
+    opacity: 0.04; /* Adjust as needed */
+    pointer-events: none;
+    z-index: -1;
 
-
+}
 
 
 ::selection {

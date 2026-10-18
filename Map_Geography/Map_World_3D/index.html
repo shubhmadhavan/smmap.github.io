@@ -1,0 +1,387 @@
+<!-- Resources -->
+<script src="./3d/index.js"></script>
+<script src="./3d/map.js"></script>
+<script src="./3d/worldLow.js"></script>
+<script src="./3d/Animated.js"></script>
+<script src="./3d/Responsive.js"></script>
+<script src="./themes/Adaptive.js"></script>
+<link rel="stylesheet" href="./3d/3dstyles.css">
+
+
+
+<!-- Chart code -->
+<script>
+am5.ready(function() {
+
+var root = am5.Root.new("chartdiv", {
+  renderer: am5.SVGRenderer
+});
+
+root.setThemes([
+  am5themes_Animated.new(root),
+  am5themes_Adaptive.new(root, { baseColor: 0x4150a0, baseColor2: 0xf0825a, count: 11, mapShade: true, keepContrast: true }),
+  am5themes_Responsive.new(root)
+]);
+
+var colors = am5.ColorSet.new(root, {});
+
+var chart = root.container.children.push(am5map.MapChart.new(root, {
+  autoHome: true,
+  panX: "rotateX",
+  panY: "rotateY",
+  boxZoom: "shift",
+  minZoomLevel: 0.5,
+  projection: am5map.geoOrthographic(),
+  rotationX: 20,
+  rotationY: -35,
+  homeRotationX: -65,
+  homeRotationY: -20,
+  paddingBottom: 20,
+  paddingTop: 20,
+  paddingLeft: 20,
+  paddingRight: 20,
+  background: am5.Rectangle.new(root, {
+    fill: am5.color(0x101318),
+    fillOpacity: 0
+  })
+}));
+
+var zoomControl = chart.set("zoomControl", am5map.ZoomControl.new(root, {}));
+zoomControl.homeButton.set("visible", true);
+
+var backgroundSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {}));
+backgroundSeries.mapPolygons.template.setAll({
+  fill: am5.color(0x2a7fd4), // fill: root.interfaceColors.get("alternativeBackground"),
+  fillOpacity: 0.05,
+  strokeOpacity: 0
+});
+backgroundSeries.data.push({
+  geometry: am5map.getGeoRectangle(90, 180, -90, -180)
+});
+
+var satelliteSeries = chart.series.push(am5map.MapRasterSeries.new(root, {
+  visible: false,
+  affectsBounds: false
+}));
+
+var graticuleSeries = chart.series.push(am5map.GraticuleSeries.new(root, {
+  step: 10
+}));
+graticuleSeries.mapLines.template.setAll({
+  stroke: root.interfaceColors.get("alternativeBackground"),
+  strokeOpacity: 0.08
+});
+
+var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
+  geoJSON: am5geodata_worldLow
+}));
+polygonSeries.mapPolygons.template.setAll({
+  tooltipText: "{name}",
+  toggleKey: "active",
+  interactive: true,
+  strokeWidth: 0.5
+});
+polygonSeries.mapPolygons.template.states.create("hover", {
+  fill: root.interfaceColors.get("primaryButtonHover"),
+  fillOpacity: 1
+});
+polygonSeries.mapPolygons.template.states.create("active", {
+  fill: root.interfaceColors.get("primaryButtonActive"),
+  fillOpacity: 1
+});
+
+var previousPolygon;
+polygonSeries.mapPolygons.template.on("active", function(active, target) {
+  if (previousPolygon && previousPolygon != target) {
+    previousPolygon.set("active", false);
+  }
+  if (target.get("active")) {
+    selectCountry(target.dataItem.get("id"));
+  }
+  previousPolygon = target;
+});
+
+function selectCountry(id) {
+  var dataItem = polygonSeries.getDataItemById(id);
+  var target = dataItem.get("mapPolygon");
+  if (target) {
+    var centroid = target.geoCentroid();
+    if (centroid) {
+      chart.animate({ key: "rotationX", to: -centroid.longitude, duration: 1500, easing: am5.ease.inOut(am5.ease.cubic) });
+      chart.animate({ key: "rotationY", to: -centroid.latitude, duration: 1500, easing: am5.ease.inOut(am5.ease.cubic) });
+    }
+  }
+}
+
+var credit = chart.children.push(am5.Label.new(root, {
+  text: "Imagery: NASA Earth Observatory",
+  fontSize: 12,
+  fill: am5.color(0xffffff),
+  fillOpacity: 0.6,
+  x: am5.p100,
+  centerX: am5.p100,
+  dx: -10,
+  y: 10,
+  visible: false
+}));
+
+var landTemplate = polygonSeries.mapPolygons.template;
+var landLook = {
+  fillOpacity: landTemplate.get("fillOpacity", 1),
+  stroke: landTemplate.get("stroke", root.interfaceColors.get("background")),
+  strokeOpacity: landTemplate.get("strokeOpacity", 1)
+};
+var hoverState = landTemplate.states.lookup("hover");
+var activeState = landTemplate.states.lookup("active");
+var markedLook = { fillOpacity: 1, strokeOpacity: landLook.strokeOpacity, strokeWidth: landTemplate.get("strokeWidth", 1) };
+var outlineLook = { fillOpacity: 0, strokeOpacity: 1, strokeWidth: 2 };
+
+satelliteSeries.on("visible", function(visible) {
+  if (visible) {
+    satelliteSeries.set("src", "./themes/earthDay2048.jpg");
+  }
+  credit.set("visible", visible);
+  chart.get("background").set("fillOpacity", visible ? 1 : 0);
+  var look = visible ? { fillOpacity: 0, stroke: am5.color(0xffffff), strokeOpacity: 0.6 } : landLook;
+  landTemplate.setAll(look);
+  hoverState.setAll(visible ? outlineLook : markedLook);
+  activeState.setAll(visible ? outlineLook : markedLook);
+  polygonSeries.mapPolygons.each(function (polygon) {
+    var defaultState = polygon.states.lookup("default");
+    if (defaultState) {
+      defaultState.setAll(look);
+    }
+    polygon.setAll(polygon.get("active") ? (visible ? outlineLook : markedLook) : look);
+  });
+  var markColor = visible ? am5.color(0xffffff) : root.interfaceColors.get("alternativeBackground");
+  graticuleSeries.mapLines.template.set("stroke", markColor);
+});
+
+chart.appear(1000, 100);
+
+
+// =====================================================
+// Settings panel (theme, colors, dark, satellite, etc.)
+// =====================================================
+var $ = function (id) { return document.getElementById(id); };
+var hex = function (c) { return parseInt(c.slice(1), 16); };
+
+var THEMES = [
+  { name: "Adaptive",   file: "Adaptive",   dark: "Adaptive",       bg: "#ffffff", darkBg: "#121212", pick: 2, colors: ["#4150a0","#8a52a3","#c35a83","#e3764f"] },
+  { name: "Monochrome", file: "Monochrome", dark: "Monochrome",     bg: "#ffffff", darkBg: "#121212", pick: 1, colors: ["#7c90e6","#384594","#6a7dd1","#293380"] },
+  { name: "Classic",    file: "",           dark: "Dark",           bg: "#ffffff", darkBg: "#121212", pick: 0, colors: ["#67b7dc","#6794dc","#6771dc","#8067dc"] },
+  { name: "Material",   file: "Material",   dark: "MaterialDark",   bg: "#ffffff", darkBg: "#121212", pick: 0, colors: ["#f44336","#9c27b0","#3f51b5","#03a9f4"] },
+  { name: "Kelly",      file: "Kelly",      dark: "KellyDark",      bg: "#ffffff", darkBg: "#121212", pick: 0, colors: ["#f3c300","#875692","#f38400","#a1caf1"] },
+  { name: "Colorblind", file: "Colorblind", dark: "ColorblindDark", bg: "#ffffff", darkBg: "#121212", pick: 0, colors: ["#e69f00","#56b4e9","#009e73","#0072b2"] },
+  { name: "Dataviz",    file: "Dataviz",    dark: "DatavizDark",    bg: "#ffffff", darkBg: "#121212", pick: 0, colors: ["#283250","#902c2d","#d5433d","#f05440"] },
+  { name: "Pastel",     file: "Pastel",     dark: "PastelDark",     bg: "#f7f4ee", darkBg: "#24222b", pick: 0, colors: ["#e39aa6","#b7d38f","#c0a3dc","#e6c079"] },
+  { name: "Nord",       file: "Nord",       dark: "NordDark",       bg: "#eceff4", darkBg: "#2e3440", pick: 0, colors: ["#5e81ac","#ebcb8b","#bf616a","#88c0d0"] },
+  { name: "Patterns",   file: "Patterns",   dark: "PatternsDark",   bg: "#ffffff", darkBg: "#121212", pick: 0, colors: ["#4a4a4a","#818181","#606060","#939393"] }
+];
+
+var cur = 0, selColor = null;
+var demo = $("demo"), wrap = $("chartwrap"), darkBox = $("demo-dark");
+var themeBtn = $("demo-theme"), list = $("demo-themes");
+var colorsRow = $("demo-theme-colors"), mainIn = $("demo-main"), accentIn = $("demo-accent");
+
+function strip(colors) {
+  var s = document.createElement("span");
+  s.className = "theme-strip";
+  colors.forEach(function (c) {
+    var i = document.createElement("i");
+    i.style.background = c;
+    s.appendChild(i);
+  });
+  return s;
+}
+
+function loadTheme(file) {
+  return new Promise(function (resolve) {
+    if (!file || window["am5themes_" + file]) { resolve(true); return; }
+    var urls = ["./themes/" + file + ".js"];
+    (function next() {
+      if (!urls.length) { resolve(false); return; }
+      var s = document.createElement("script");
+      s.src = urls.shift();
+      s.onload = function () { resolve(true); };
+      s.onerror = function () { s.remove(); next(); };
+      document.head.appendChild(s);
+    })();
+  });
+}
+
+function applySelected() {
+  if (!selColor) return;
+  var c = am5.color(hex(selColor));
+  activeState.set("fill", c);
+  polygonSeries.mapPolygons.each(function (p) {
+    var s = p.states.lookup("active");
+    if (s) s.set("fill", c);
+  });
+}
+
+// Re-read the theme's interface colors for things that were set once at creation
+function refreshInterfaceColors() {
+  
+ // var alt = root.interfaceColors.get("alternativeBackground");
+ // backgroundSeries.mapPolygons.template.set("fill", alt);
+ // backgroundSeries.mapPolygons.each(function (p) { p.set("fill", alt); });
+  
+var alt = root.interfaceColors.get("alternativeBackground");
+
+  if (!satelliteSeries.get("visible")) {
+    graticuleSeries.mapLines.template.set("stroke", alt);
+    graticuleSeries.mapLines.each(function (l) { l.set("stroke", alt); });
+  }
+  hoverState.set("fill", root.interfaceColors.get("primaryButtonHover"));
+  if (!selColor) activeState.set("fill", root.interfaceColors.get("primaryButtonActive"));
+  applySelected();
+}
+
+function applyTheme() {
+  var t = THEMES[cur], isDark = darkBox.checked, f = isDark ? t.dark : t.file;
+
+  demo.classList.toggle("dark", isDark);
+  wrap.style.background = isDark ? t.darkBg : t.bg;
+  $("demo-strip").replaceChildren(strip(t.colors));
+  $("demo-theme-name").textContent = t.name;
+  colorsRow.hidden = t.pick === 0;
+  accentIn.hidden = t.pick < 2;
+  Array.prototype.forEach.call(list.children, function (b, i) {
+    b.setAttribute("aria-pressed", i === cur ? "true" : "false");
+  });
+
+  loadTheme(f).then(function () {
+    var themes = [am5themes_Animated.new(root)];
+    var Theme = f && window["am5themes_" + f];
+    if (Theme) {
+      var opts = {};
+      if (t.name === "Adaptive") opts = { baseColor: hex(mainIn.value), baseColor2: hex(accentIn.value), count: 11, mapShade: true, keepContrast: true };
+      if (t.name === "Monochrome") opts = { baseColor: hex(mainIn.value) };
+      themes.push(Theme.new(root, opts));
+    }
+    themes.push(am5themes_Responsive.new(root));
+    root.setThemes(themes);
+    setTimeout(refreshInterfaceColors, 60);
+  });
+}
+
+// Theme list
+THEMES.forEach(function (t, i) {
+  var b = document.createElement("button");
+  b.type = "button";
+  b.className = "theme-opt";
+  b.appendChild(strip(t.colors));
+  var n = document.createElement("span");
+  n.textContent = t.name;
+  b.appendChild(n);
+  b.addEventListener("click", function () {
+    cur = i;
+    list.hidden = true;
+    themeBtn.setAttribute("aria-expanded", "false");
+    applyTheme();
+  });
+  list.appendChild(b);
+});
+themeBtn.addEventListener("click", function () {
+  list.hidden = !list.hidden;
+  themeBtn.setAttribute("aria-expanded", String(!list.hidden));
+});
+$("theme-prev").addEventListener("click", function () { cur = (cur + THEMES.length - 1) % THEMES.length; applyTheme(); });
+$("theme-next").addEventListener("click", function () { cur = (cur + 1) % THEMES.length; applyTheme(); });
+mainIn.addEventListener("input", applyTheme);
+accentIn.addEventListener("input", applyTheme);
+darkBox.addEventListener("change", applyTheme);
+
+// Satellite view
+$("ctl-sat").addEventListener("change", function (e) {
+  satelliteSeries.set("visible", e.target.checked);
+});
+
+// Selected country color
+$("ctl-sel").addEventListener("input", function (e) {
+  selColor = e.target.value;
+  applySelected();
+});
+
+// Ocean opacity
+$("ctl-ocean").addEventListener("input", function (e) {
+  var v = parseFloat(e.target.value);
+  $("out-ocean").textContent = Math.round(v * 100) + "%";
+  backgroundSeries.mapPolygons.template.set("fillOpacity", v);
+  backgroundSeries.mapPolygons.each(function (p) { p.set("fillOpacity", v); });
+});
+
+$("ctl-ocean-color").addEventListener("input", function (e) {
+  var c = am5.color(hex(e.target.value));
+  backgroundSeries.mapPolygons.template.set("fill", c);
+  backgroundSeries.mapPolygons.each(function (p) { p.set("fill", c); });
+});
+
+// Grid opacity
+$("ctl-grid").addEventListener("input", function (e) {
+  var v = parseFloat(e.target.value);
+  $("out-grid").textContent = Math.round(v * 100) + "%";
+  graticuleSeries.mapLines.template.set("strokeOpacity", v);
+  graticuleSeries.mapLines.each(function (l) { l.set("strokeOpacity", v); });
+});
+
+applyTheme();
+
+}); // end am5.ready()
+</script>
+
+<!-- HTML -->
+<div id="demo">
+  <div id="chartwrap"><div id="chartdiv"></div></div>
+
+  <aside class="rail-body">
+    <div class="rail-panel">
+      <div class="rail-group">
+        <div class="ctl">
+          <span class="ctl-label">Theme</span>
+          <div class="theme-pick">
+            <button type="button" class="theme-btn" id="demo-theme" aria-expanded="false">
+              <span id="demo-strip"></span><span id="demo-theme-name">Adaptive</span><span>&#9662;</span>
+            </button>
+            <button type="button" class="theme-step" id="theme-prev" aria-label="Previous theme">&#8249;</button>
+            <button type="button" class="theme-step" id="theme-next" aria-label="Next theme">&#8250;</button>
+          </div>
+        </div>
+        <div class="theme-list" id="demo-themes" hidden></div>
+        <div class="ctl" id="demo-theme-colors">
+          <span class="ctl-label">Colors</span>
+          <span>
+            <input type="color" id="demo-main" value="#4150a0" title="Main color">
+            <input type="color" id="demo-accent" value="#f0825a" title="Accent color">
+          </span>
+        </div>
+        <div class="ctl">
+          <label for="demo-dark">Dark</label>
+          <span class="switch"><input id="demo-dark" type="checkbox" ><i></i></span>
+        </div>
+      </div>
+
+      <div class="rail-group">
+        <div class="ctl">
+          <label for="ctl-sat">Satellite view</label>
+          <span class="switch"><input id="ctl-sat" type="checkbox"><i></i></span>
+        </div>
+        <div class="ctl">
+          <label for="ctl-sel">Selected color</label>
+          <input id="ctl-sel" type="color" value="#4150a0">
+        </div>
+        <div class="ctl">
+          <label for="ctl-ocean">Ocean opacity</label>
+<output id="out-ocean">10%</output>
+<input id="ctl-ocean" type="range" min="0" max="0.3" step="0.01" value="0.1">
+</div>
+        <div class="ctl">
+          <label for="ctl-grid">Grid opacity</label>
+          <output id="out-grid">8%</output>
+          <input id="ctl-grid" type="range" min="0" max="0.4" step="0.01" value="0.08">
+        </div>
+      </div>
+    </div>
+  </aside>
+</div>

@@ -1,0 +1,44 @@
+
+div.am5-focus-container {
+    display: none !important;
+}
+
+div#chartwrap,
+#chartdiv {
+  width: 100%;
+  height: 97vh !important;
+  font-size: 0.875rem;
+}
+
+
+
+  #demo{--bg: rgb(233, 233, 233);--fg:#222;--line:#d8d8d8;--accent:#4150a0;display:flex;gap:16px;align-items:flex-start;color:var(--fg);font:13px system-ui,sans-serif}
+  #demo.dark{--bg:#1b1d22;--fg:#e8e8e8;--line:#3a3d45;--accent:#f0825a}
+
+  #chartwrap{flex:1;min-width:0;height:560px;border-radius:8px;background: rgb(233, 233, 233);}
+  #chartdiv{width:100%;height:100%}
+
+  .rail-body{width:260px;flex:none}
+  .rail-panel{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px}
+  .rail-group+.rail-group{border-top:1px solid var(--line);margin-top:10px;padding-top:10px}
+  .ctl{display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;margin:8px 0}
+  .ctl>label,.ctl-label{flex:1}
+  .ctl input[type=range]{width:100%;accent-color:var(--accent)}
+  .ctl input[type=color]{width:34px;height:24px;padding:0;border:1px solid var(--line);background:none;cursor:pointer}
+  .switch{position:relative;width:36px;height:20px;flex:none}
+  .switch input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer;z-index:1}
+  .switch i{position:absolute;inset:0;background:#bbb;border-radius:10px;transition:.2s}
+  .switch i::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:.2s}
+  .switch input:checked+i{background:var(--accent)}
+  .switch input:checked+i::after{left:18px}
+
+
+  .theme-pick{display:flex;gap:4px}
+  .theme-btn,.theme-step,.theme-opt{display:flex;align-items:center;gap:8px;padding:4px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);cursor:pointer;font:inherit}
+  .theme-opt{width:100%}
+  .theme-opt[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+  .theme-list{display:grid;gap:4px;margin:6px 0}
+  .theme-strip{display:inline-flex;width:40px;height:14px;border-radius:3px;overflow:hidden}
+  .theme-strip i{flex:1}
+  [hidden]{display:none !important}
+  @media (max-width:700px){#demo{flex-direction:column}.rail-body{width:100%}#chartwrap{width:100%;height:420px}}

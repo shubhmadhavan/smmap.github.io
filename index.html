@@ -1,139 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">      
-<meta name="description" content="Shubh Madhavan's Map Repository">
-      <meta name="robots" content="index,follow">
-      <meta name="author" content="Shubh Madhavan">
-      <title>Shubh Madhavan's Map Repository</title>
-        <link rel="stylesheet" href="index-styles-main.css">
-     
-      <link rel="manifest" href="/site.webmanifest">  
-      <script src="jquery-3.6.0.min.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Shubh Madhavan's Map Repository">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Shubh Madhavan">
+  <meta name="theme-color" content="#19192d">
+  <title>Shubh Madhavan's Map Repository</title>
 
-      
-    <link href="data:image/x-icon;base64,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" rel="icon" type="image/x-icon" />
-    <link rel="manifest" href="/favicon/site.webmanifest" />
-    
+  <link rel="stylesheet" href="index-styles-main.css">
+      <link href="data:image/x-icon;base64,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" rel="icon" type="image/x-icon" />
+ 
+  <link rel="manifest" href="/site.webmanifest">
+  <!-- Keep your existing base64 favicon here -->
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,...YOUR_EXISTING_DATA...">
 
-<link rel="preload" as="image" href="Map_Images/India_OS_dark.jpg">
-
-
-<link rel="preload" as="image" href="Map_Images/map_tiles/0_0_0.png">
-
-<link rel="preload" as="image" href="Map_Images/map_tiles/1_0_0.png">
-<link rel="preload" as="image" href="Map_Images/map_tiles/1_0_1.png">
-<link rel="preload" as="image" href="Map_Images/map_tiles/1_1_0.png">
-<link rel="preload" as="image" href="Map_Images/map_tiles/1_1_1.png">
-
-<link rel="preload" href="common/game_1.css" as="style">
-
-<link rel="preload" href="common/map_game_2.js" as="script">
-
-
-
+  <!-- Low-priority fetch for the next pages -->
+  <link rel="prefetch" as="image" href="Map_Images/India_OS_dark.jpg">
+  <link rel="prefetch" as="image" href="Map_Images/map_tiles/0_0_0.png">
+  <link rel="prefetch" as="image" href="Map_Images/map_tiles/1_0_0.png">
+  <link rel="prefetch" as="image" href="Map_Images/map_tiles/1_0_1.png">
+  <link rel="prefetch" as="image" href="Map_Images/map_tiles/1_1_0.png">
+  <link rel="prefetch" as="image" href="Map_Images/map_tiles/1_1_1.png">
+  <link rel="prefetch" as="style" href="common/game_1.css">
+  <link rel="prefetch" as="script" href="common/map_game_2.js">
 </head>
 <body>
+  <header class="title-header">
+    <h1>[ Shubh Madhavan's Map Repository ]</h1>
+  </header>
 
-<div class="title-header">[ Shubh Madhavan's Map Repository ]</div>
+  <main class="folders">
+    <a class="folder" href="index-1.html">
+      <span class="folder-icon">
+        <img src="img/1.png" alt="" loading="lazy" onerror="this.remove()">
+      </span>
+      <span class="folder-label">Indian Geography</span>
+    </a>
 
-  <!-- Folder 1 -->
-  <div class="folder" style="top: 70px; left: 2.5vw;" onclick="openLink('index-1.html')">
-    <div class="folder-icon">
-      <img src="img/1.png" class="folder-overlay" onerror="this.style.display='none'">
-    </div>
-    <div class="folder-label">Indian Geography</div>
-  </div>
+    <a class="folder" href="index-2.html">
+      <span class="folder-icon">
+        <img src="img/2.png" alt="" loading="lazy" onerror="this.remove()">
+      </span>
+      <span class="folder-label">World Geography</span>
+    </a>
 
-  <!-- Folder 2 -->
-  <div class="folder" style="top: 70px; left: 35vw;" onclick="openLink('index-2.html')">
-    <div class="folder-icon">
-      <img src="img/2.png" class="folder-overlay" onerror="this.style.display='none'">
-    </div>
-    <div class="folder-label">World Geography</div>
-  </div>
+    <a class="folder" href="index-3.html">
+      <span class="folder-icon">
+        <img src="img/3.png" alt="" loading="lazy" onerror="this.remove()">
+      </span>
+      <span class="folder-label">Resources &amp; Infra</span>
+    </a>
 
-  <!-- Folder 3 -->
-  <div class="folder" style="top: 70px; left: 67.5vw;" onclick="openLink('index-3.html')">
-    <div class="folder-icon">
-      <img src="img/3.png" class="folder-overlay" onerror="this.style.display='none'">
-    </div>
-    <div class="folder-label">Resources & Infra</div>
-  </div>
+    <a class="folder" href="index-4.html">
+      <span class="folder-icon">
+        <img src="img/4.png" alt="" loading="lazy" onerror="this.remove()">
+      </span>
+      <span class="folder-label">Ancient &amp; Medieval History</span>
+    </a>
 
-
-
-  <!-- Folder 4 -->
-  <div class="folder" style="top: 420px; left: 13.333vw;" onclick="openLink('index-4.html')">
-    <div class="folder-icon">
-      <img src="img/4.png" class="folder-overlay" onerror="this.style.display='none'">
-    </div>
-    <div class="folder-label">Ancient & Medieval History</div>
-  </div>
-
-    <!-- Folder 5 -->
-  <div class="folder" style="top: 420px; left: 56.666vw;" onclick="openLink('index-5.html')">
-    <div class="folder-icon">
-      <img src="img/5.png" class="folder-overlay" onerror="this.style.display='none'">
-    </div>
-    <div class="folder-label">Modern History</div>
-  </div>
-
+    <a class="folder" href="index-5.html">
+      <span class="folder-icon">
+        <img src="img/5.png" alt="" loading="lazy" onerror="this.remove()">
+      </span>
+      <span class="folder-label">Modern History</span>
+    </a>
+  </main>
 
   <script>
-    function openLink(url) {
-      window.location.href = url;
-    }
+    // Number-key shortcuts: type 1-5 to open a folder
+    (() => {
+      const folders = [...document.querySelectorAll('.folder')];
+      let buffer = '';
+      let timer;
+
+      document.addEventListener('keydown', (e) => {
+        if (e.ctrlKey || e.metaKey || e.altKey || !/^\d$/.test(e.key)) return;
+
+        buffer += e.key;
+        clearTimeout(timer);
+
+        timer = setTimeout(() => {
+          const target = folders[parseInt(buffer, 10) - 1];
+          buffer = '';
+          if (!target) return;
+
+          target.classList.add('is-active');
+          setTimeout(() => { window.location.href = target.href; }, 410);
+          setTimeout(() => target.classList.remove('is-active'), 800);
+        }, 200);
+      });
+    })();
   </script>
-
-
-
 </body>
-<meta name="author-2" content="Shubh Madhavan">
 </html>
-
-
-
-<style>
-.folder:hover .folder-icon,
-.folder.hovered .folder-icon {
-  transform: scale(1.08);
-}
-</style>
-
-<script>
-let keyBuffer = '';
-let timer = null;
-
-document.addEventListener('keydown', function(e) {
-  if (!/^\d$/.test(e.key)) return;
-
-  keyBuffer += e.key;
-  clearTimeout(timer);
-
-  timer = setTimeout(() => {
-    const index = parseInt(keyBuffer, 10);
-    const folders = document.querySelectorAll('.folder');
-
-    if (index >= 1 && index <= folders.length) {
-      const target = folders[index - 1];
-
-      // trigger hover effect
-      target.classList.add('hovered');
-
-      // delay so animation is visible
-      setTimeout(() => {
-        target.click();
-      }, 410);
-
-      // cleanup (in case navigation is slow)
-      setTimeout(() => {
-        target.classList.remove('hovered');
-      }, 800);
-    }
-
-    keyBuffer = '';
-  }, 200);
-});
-</script>

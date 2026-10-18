@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
         /*,
 
         { selector: '.toggle-map-2', tile: '../Map_Images/map_tiles/{z}_{x}_{y}.png', theme: 'theme4.css', toggleKey: 'isToggled2', key: '4' },
-
         { selector: '.toggle-map-5', image: '../Map_Images/India_OS_Blue.jpg', theme: 'theme3.css', toggleKey: 'isToggled5', key: '5' }
    */
    
@@ -103,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-    // 🔥 FORCE RESTORE AFTER EVERYTHING (fixes your issue)
+    //  FORCE RESTORE AFTER EVERYTHING (fixes your issue)
     window.addEventListener('load', () => {
         const savedToggle = localStorage.getItem(STORAGE_KEY);
 
@@ -122,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
 
-    // 🧠 DEFENSE: Re-apply if some other script overrides theme
+    //  DEFENSE: Re-apply if some other script overrides theme
     const observer = new MutationObserver(() => {
         const savedToggle = localStorage.getItem(STORAGE_KEY);
 

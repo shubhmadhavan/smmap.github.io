@@ -129,18 +129,25 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Keyboard
+  // Keyboard
   document.addEventListener('keydown', function (e) {
     const key = e.key.toLowerCase();
 
     if ((e.ctrlKey || e.metaKey) && key === 'i') {
       e.preventDefault();
       toggleAll();
+      return;
     }
 
-    if (key === 't') {
+    if (
+      (key === 't' || key === 'i') &&
+      !e.ctrlKey && !e.metaKey && !e.altKey &&
+      !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)
+    ) {
       toggleAll();
     }
   }, true);
+  
 });
 </script>
 
@@ -610,16 +617,17 @@ document.addEventListener('keydown', function (e) {
     const sidebar = document.querySelector('.sidebar');
     const mapDataList = sidebar.querySelector('.map-data-list');
 
-
-    document.addEventListener('keydown', function (event) {
-  // Check for F3 key
-  if (event.key === 'F4' ) {
-    event.preventDefault(); // Prevent browser's default find behavior
+document.addEventListener('keydown', function (event) {
+  // Check for F4 or Shift + 4
+  if (
+    event.key === 'F4' ||
+    (event.shiftKey && event.key === '$')
+  ) {
+    event.preventDefault();
 
     // Trigger the same logic as button click
     revealButton.click();
   }
-  
 });
 
 document.addEventListener('keydown', function (event) {
@@ -1035,6 +1043,7 @@ let currentIndex = (!isNaN(savedIndex) && savedIndex >= 0 && savedIndex < items.
   <button class="arrow-btn right">⏵</button>
   <button class="arrow-btn down">⏷</button>
 </div>
+
 
 <script>
 (function () {

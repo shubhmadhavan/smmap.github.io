@@ -7,8 +7,6 @@ if (/iPhone|iPad/.test(navigator.userAgent)) {
     }, { passive: false });
 }
 
-
-
 // Initialize the map
 const isPhone =
     window.matchMedia("(max-width: 768px)").matches ||
@@ -17,7 +15,6 @@ const isPhone =
 // Set coordinates and zoom based on device
 var initialCoords = isPhone ? [20.0760, 80.9629] : [20.5937, 80.9629]; // Mumbai for phone, India center for desktop
 var zoomLevel = isPhone ? 4 : 5;
-
 
 
 var map = L.map('map', {

@@ -1,152 +1,67 @@
-/* baige theme */
-body {
-	color: white !important;
-    background: #e9e1ce !important;
-	}
+/* Beige theme (Ctrl+3) */
 
+body {
+  color: white !important;
+  background: #e9e1ce !important;
+}
 
 .leaflet-tooltip {
-	color: #ffffff !important;
-     background-color: #b9ad92 !important;
+  color: #ffffff !important;
+  background-color: #b9ad92 !important;
 }
 
+.leaflet-tooltip.leaflet-zoom-animated { border-color: rgba(75, 75, 75, 0.6) !important; }
 
-
-.sidebar-popup {
-    background-color: #e9e1ce !important;
-}
-
-	
-
+.sidebar-popup { background-color: #e9e1ce !important; }
 
 .highlighted {
-  background-color: #8b7f64 !important;  
-   
-  background-size: 300% 300%;
-  animation: drift 6s ease infinite;
+  background-color: #8b7f64 !important;
   z-index: 2147483647 !important;
 }
 
+li.focused { background-color: #f9f4e9 !important; }
+li.highlighted { background-color: rgb(229, 215, 185) !important; }
+.sidebar ul li:hover { background-color: #c9c1ae !important; }
+.sidebar { background-color: #f8edd4 !important; }
 
-
-li.focused {
-
-  background-image: unset !important;
- background-color: #f9f4e9 !important;
-
-}
-
-
-
-
-li.highlighted {
-    background-image: unset !important;
- background-color: rgb(229, 215, 185) !important;
- 
-  }
-
-
-  .sidebar ul li:hover {
-    background-color: #c9c1ae !important;
-}
-
-
-.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom, 
+.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom,
 .leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-touch-zoom {
-	background: #e9e1ce !important;
-	color: white;
-	
-	}
+  background: #e9e1ce !important;
+  color: white;
+}
 
+.reveal-all, .reveal-list, #header {
+  font-size: 16px;
+  color: #656565;
+  background-color: #ebe2cc !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
 
-
-
-    .reveal-all, .reveal-list,  #header { /*button*/
-        font-size:16px; color:#656565; 
-        background-color:#ebe2cc !important;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-
-
-    .reveal-all:hover {
+.reveal-all:hover {
   background-color: rgb(218, 205, 177) !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-
 .home-link-button:hover, .switcher-button:hover, .info-br:hover {
-	 background-color: rgb(203, 183, 140) !important;
+  background-color: rgb(203, 183, 140) !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-
-
-.sidebar {
-    background-color:#f8edd4 !important;
-}
-
-
-.leaflet-tooltip.leaflet-zoom-animated{
-	/* background-color: #94ab69 !important; */
-
-	border-color: rgba(75, 75, 75,0.6) !important;
-	
-}
-
-
-
-.leaflet-tooltip-right:before {
-
-    content: "";
-    position: absolute;
-    top: 50%;
-
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-right-color: rgba(120, 120, 120,0.8); /* ← tooltip triangle */
-}
-
-.leaflet-tooltip-left:before {
-
-    content: "";
-    position: absolute;
-    top: 50%;
-
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-left-color: rgba(120, 120, 120,0.8); /* ← tooltip triangle color */
-}
-
-
 .leaflet-control-zoom-in, .leaflet-control-zoom-out,
- .home-link-button, .switcher-button, .info-br, 
-.title-span, #header, .switcher-text, .score-bottom, .info-br, .reveal-list{
-	background: #e9e1ce;
-	background-color: #E7E4DF !important;
+.home-link-button, .switcher-button, .info-br,
+#header, .switcher-text, .score-bottom, .reveal-list {
+  background: #e9e1ce;
+  background-color: #E7E4DF !important;
 }
 
-.toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5 {
-	background: #f8f5ed !important;
-	background-color: #E7E4DF !important;
+.toggle-map-1, .toggle-map-3, .toggle-map-4 {
+  background: #f8f5ed !important;
+  background-color: #E7E4DF !important;
 }
-
-
-
 
 .sidebar li.empty-item,
 .sidebar li.empty-item.focused {
-	background-color: #f8f5ed !important;
-	border: solid 1px #bbb7ab !important; 
-	color: #0a0a0a !important;
-
+  background-color: #f8f5ed !important;
+  border: solid 1px #bbb7ab !important;
+  color: #0a0a0a !important;
 }
-
-
-
-/* default theme  ends */
-	
-
-

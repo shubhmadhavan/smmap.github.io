@@ -2,28 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Random Map</title>
-
-  <!-- Load your existing map -->
-  <script src="common/redirector.js"></script>
-
+  <meta name="robots" content="noindex">
+  <title>Random map · SM-Map</title>
+  <script>window.SM_NO_LOAD = true;</script>
+  <script src="common/maps.js"></script>
   <script>
-    // Wait until script is loaded
-    window.onload = function () {
-
-      // Get all keys from resourcesMap
-      const keys = Object.keys(resourcesMap);
-
-      // Pick random key
-      const randomKey = keys[Math.floor(Math.random() * keys.length)];
-
-      // Redirect
-      window.location.href = "/common/Map_Game_2_dark.html?selection=" + randomKey;
-    };
+    // Open a random live map (drafts are skipped)
+    (function () {
+      var keys = Object.keys(SM_MAPS).filter(function (k) { return SM_MAPS[k][2] !== 'draft'; });
+      var key = keys[Math.floor(Math.random() * keys.length)];
+      location.replace('common/Map_Game_2_dark.html?selection=' + encodeURIComponent(key));
+    })();
   </script>
-
 </head>
 <body>
-  <p>Picking a random map...</p>
+  <p>Picking a random map…</p>
 </body>
 </html>

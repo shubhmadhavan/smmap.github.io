@@ -312,7 +312,8 @@ $("ctl-ocean").addEventListener("input", function (e) {
   backgroundSeries.mapPolygons.each(function (p) { p.set("fillOpacity", v); });
 });
 
-$("ctl-ocean-color").addEventListener("input", function (e) {
+// Ocean colour (only if the picker is present in the panel)
+if ($("ctl-ocean-color")) $("ctl-ocean-color").addEventListener("input", function (e) {
   var c = am5.color(hex(e.target.value));
   backgroundSeries.mapPolygons.template.set("fill", c);
   backgroundSeries.mapPolygons.each(function (p) { p.set("fill", c); });

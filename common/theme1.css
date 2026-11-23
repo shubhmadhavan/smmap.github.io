@@ -1,144 +1,96 @@
-/* default theme */
+/* Theme 1 — default (dark map). Also used with the Grey map (Ctrl+1). */
+
 body {
-	background: #f4f5f7 ;
+  background: linear-gradient(135deg, #1e1e2f, #2c2c54) !important;
+  color: white;
+}
 
-	background: linear-gradient(135deg, #1e1e2f, #2c2c54) !important;
-
-	color: white;
-	}
-	
-
-/* SIDEBAR */
+/* Sidebar */
 .sidebar {
-	background-color: #34344d !important;
-color: #ebebeb !important;
+  background-color: #34344d !important;
+  color: #ebebeb !important;
 }
 
-.sidebar li {
-	border: solid 0px #73739e !important;
-}
-
-.sidebar li.highlighted.focused {
-	border: solid 1px #20202e !important;
-}
-
+.sidebar li { border: solid 0px #73739e !important; }
+.sidebar li.highlighted.focused { border: solid 1px #20202e !important; }
 
 li.highlighted,
-.sidebar li.focused.highlighted
-{
-background-color: #7070a1 !important;
-	color: #ebebeb !important;
+.sidebar li.focused.highlighted {
+  background-color: #7070a1 !important;
+  color: #ebebeb !important;
 }
 
-
-
-li.focused { /* indicates which li you currently are on using keyboard navigation */ 
-	background-color: #9696b3 !important;
-		color: #ffffff !important;
+li.focused { /* current item when navigating with the keyboard */
+  background-color: #9696b3 !important;
+  color: #ffffff !important;
 }
 
-
-.sidebar li:hover {background-color: #7070a1 !important;;}
-
+.sidebar li:hover { background-color: #7070a1 !important; }
 
 .sidebar li.empty-item,
 .sidebar li.empty-item.focused {
-	background-color: #0a0a0b !important;
-	border: solid 1px #73739e !important; 
-	color: #ffffff !important;
-
+  background-color: #0a0a0b !important;
+  border: solid 1px #73739e !important;
+  color: #ffffff !important;
 }
 
+.map-data-list {
+  scrollbar-width: thin;
+  scrollbar-color: #a89ebd #1e1b4b; /* thumb | track */
+}
 
-
-
-/* SIDEBAR POPUP */
+/* Notes popup */
 .sidebar-popup {
-	background-color: rgb(62, 62, 116) !important;
-	color: #ffffff !important;
-	
+  background-color: rgb(62, 62, 116) !important;
+  color: #ffffff !important;
 }
 
-.sidebar-popup  .safe-nl .nl {
-	color: #ffffff !important;
-}
+.sidebar-popup .safe-nl .nl { color: #ffffff !important; }
 
-/* LEAFLET TOOLTIP */
+/* Labels */
 .leaflet-tooltip {
-	background-color: #7676aa;
-	color: #ffffff;
-	border-radius: 5px !important;
-	border: solid 0px;
-}
-
-.custom-control {
-	border: #554054 !important;
-}
-
-.arrow-btn {
-	background-color: #554054 !important;
-border: #2f2f68 !important;
-color: #ffffff;
+  background-color: #7676aa;
+  color: #ffffff;
+  border-radius: 5px !important;
+  border: solid 0px;
 }
 
 .leaflet-tooltip-right.highlighted,
 .leaflet-tooltip.reveal-all-tooltip.highlighted,
 .leaflet-tooltip.reveal-all-tooltip.leaflet-zoom-animated.leaflet-tooltip-right.highlighted,
 .leaflet-tooltip.highlighted {
-	background: unset !important;
-	background-color: #575774 !important;
-	color: #ffffff;
-
+  background: unset !important;
+  background-color: #575774 !important;
+  color: #ffffff;
 }
 
+/* Buttons */
+.custom-control { border: #554054 !important; }
 
-.title-span, #header, .switcher-text, .score-bottom{
-	color: #000000 !important;
+.arrow-btn {
+  background-color: #554054 !important;
+  border: #2f2f68 !important;
+  color: #ffffff;
 }
 
+#header, .switcher-text, .score-bottom { color: #000000 !important; }
 
-.full-list,
-.home-link-button, .switcher-button, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4,.toggle-map-5,
+.full-list, .home-link-button, .switcher-button,
+.toggle-map-1, .toggle-map-3, .toggle-map-4,
 .leaflet-control-zoom-in, .leaflet-control-zoom-out,
-.title-span, #header, .switcher-text, .score-bottom, .info-br, .reveal-list{
-	background: #f4f5f7 !important;
-	background-color: #f4f5f7 !important;
+#header, .switcher-text, .score-bottom, .info-br, .reveal-list {
+  background: #f4f5f7 !important;
 }
 
-
-
-.map-data-list {
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: #a89ebd #1e1b4b; /* thumb | track */
+.reveal-all, .reveal-list, #header, .home-link, .switcher-text,
+.toggle-map-1, .toggle-map-3, .toggle-map-4,
+.leaflet-control-zoom-in, .leaflet-control-zoom-out,
+.home-link-button, .switcher-button, .info-br, .full-list, .score-bottom {
+  background-color: rgb(85, 64, 84) !important;
+  border: solid 0px !important;
+  color: #ffffff !important;
 }
 
-
-
-    .reveal-all, .reveal-list,  #header, .home-link, .switcher-text,
-    .toggle-map, .toggle-map-1, .toggle-map-2, .toggle-map-3, .toggle-map-4, .toggle-map-5, 
-    .leaflet-control-zoom-in, .leaflet-control-zoom-out,
- .home-link-button, .switcher-button, .info-br, .full-list,
-.title-span, #header, .switcher-text, .score-bottom, .reveal-list
-{
-    background-color: rgb(85, 64, 84) !important;
-	border: solid 0px !important;
-	color: #ffffff !important;
-
-}
-
-
-.info-br.active {
-    background-color: rgb(44, 33, 44) !important;
-
-}
-
-.reveal-all:hover {
-	    background-color: rgb(56, 33, 54) !important;
-}
-
-.switcher-text {
-		opacity: 1 !important;
-}
-
-/* default theme  ends */
-	
+.info-br.active { background-color: rgb(44, 33, 44) !important; }
+.reveal-all:hover { background-color: rgb(56, 33, 54) !important; }
+.switcher-text { opacity: 1 !important; }

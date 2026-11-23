@@ -20,24 +20,40 @@ Facing a dearth of comprehensive sources that present the mapping of various ele
 You can access it from this [Link](https://shubhmadhavan.github.io/smmap.github.io/index.html) or clone the repository and run it locally. 
 
 ## How to Use
- - Simply Click on a Map element to reveal its name
- - You can Press "Reveal" Button on top or 'R' key on keyboard to reveal all locations at once.
+ - Click a map element to reveal its name (click again to hide it)
+ - Press the "Reveal" button on top, or **R**, to reveal all names at once
+ - Press **?** on any map for the full list of keyboard shortcuts
 
-## Shortcuts 
- - Use **F4** to toggle sidebar 
- - Use **F3** to switch focus to sidebar
- - When in sidebar, Use **arrow keys** to navigate, **Enter** to highlight element on map
+## Shortcuts
+ - **F4** toggle the list (sidebar), **/** filter it
+ - **↑ / ↓** move through the list, **Enter** highlight the item on the map
+ - **R** reveal all names, **T** (or **Ctrl + I**) show the notes inside the labels
+ - **W A S D** pan, **F / G** zoom in / out, **Z** change label size
+ - **Ctrl + 1 / 2 / 3** Grey / Green / Beige map, **Ctrl + 4** back to the default
+ - **Ctrl + H** home
 
- - **R** to Reveal all elements 
- - **Z** to change font size
+## Quiz Mode
+ - Click **⇌** (top left) to switch between Learn and Quiz for the same map
+ - A name is shown at the top; click the matching element on the map
+ - **Space** skips the round (or moves on after you answer)
 
- - **Ctrl + 1** to Switch to Theme 1
- - **Ctrl + 2** to Switch to Theme 2
- - **Ctrl + 3** to Switch to Theme 3
+## Adding a map
+1. Create a folder (e.g. `Map_Geography/Map_Lakes`) with `map_data.js` and `location_color.css`.
+   `map_data.js` is `const mapData = { "Name<br><span class='nl'>note; note</span>": "POINT (lon lat)", ... };`
+   (WKT copied from Google My Maps / QGIS: POINT, LINESTRING, POLYGON or GEOMETRYCOLLECTION; a key with `""` is a heading in the list).
+2. Add one line to `common/maps.js`: `"lakes": ["Map_Geography/Map_Lakes", "Lakes"],`
+3. Add a card linking to `common/Map_Game_2_dark.html?selection=lakes` on one of the `index-N.html` pages.
 
-## Game Mode
- - There is a Game mode that you can access by clicking '⇌' button on top left
- - In this mode, a random location is displayed and user has to click on corresponding element on map
+## Project layout
+| Path | What it is |
+| --- | --- |
+| `index.html`, `index-1…5.html` | Hub pages (`index.js` = zipper cards + type-to-find) |
+| `common/Map_Game_2_dark.html` + `learn.js` | Learn mode |
+| `common/Map_Game_dark.html` + `quiz.js` | Quiz mode |
+| `common/maps.js` | List of every map (selection key → folder, title) |
+| `common/core.js` | Shared: Leaflet map, base image, WKT parsing, themes, shortcuts |
+| `common/app.css`, `theme1/2/baige.css` | Layout and themes; each map's colours live in its `location_color.css` |
+| `tools/optimize_images.py` | Optional: shrinks the base-map JPEGs (same dimensions, so plotting is unchanged) |
 
 ## Themes
 <div style="overflow: hidden;">

@@ -153,7 +153,7 @@ body::before {
   transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-/* Hover, keyboard focus, and the .hovered class (used by index-navigator.js) */
+/* Hover, keyboard focus, and the .hovered class (used by index.js) */
 .zipper:is(:hover, .hovered),
 .zipper-block:focus-visible .zipper {
   transform: scale(1.08);

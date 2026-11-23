@@ -140,7 +140,7 @@
   var map = null, overlay = null;
 
   function createMap() {
-    map = L.map('map', { doubleClickZoom: false, zoomSnap: 0.5, zoomDelta: 0.5, zoomControl: false })
+    map = L.map('map', { doubleClickZoom: false, zoomSnap: 0.5, zoomDelta: 0.5, zoomControl: false, scrollWheelZoom: false })
       .setView(isPhone ? [20.0760, 80.9629] : [20.5937, 80.9629], isPhone ? 4 : 5);
     window.map = map; // handy from the console
 
@@ -183,8 +183,64 @@
       if (!(to && to.closest && to.closest('.leaflet-tooltip'))) map.dragging.enable();
     });
 
+    smoothWheelZoom(map);
     initThemes();
     return map;
+  }
+
+  /* ---- Smooth wheel / trackpad zoom --------------------------------------
+     Leaflet's built-in wheel zoom jumps half a level per notch with a short
+     animation, which stutters when events arrive quickly (trackpads, fast
+     wheels). Instead, glide towards the target zoom on every animation frame,
+     keeping the point under the cursor still. Layers are only scaled while
+     gliding and re-drawn once at the end, like Leaflet's own zoom animation.
+     ----------------------------------------------------------------------- */
+  function smoothWheelZoom(map) {
+    var PX_PER_LEVEL = 150;  // one mouse-wheel notch (~100px) is about two-thirds of a level
+    var PINCH_BOOST = 4;     // trackpad pinch (ctrl + wheel) sends small deltas
+    var EASE = 0.78;         // share of the distance left after each 60 Hz frame
+    var target = null, anchorPt = null, anchorLL = null, raf = 0, last = 0;
+
+    function finish() {
+      if (raf) cancelAnimationFrame(raf);
+      raf = 0;
+      if (target !== null) { target = null; map._moveEnd(true); }
+    }
+
+    function step(now) {
+      if (map._animatingZoom) { finish(); return; }
+      var dt = Math.min(64, now - last);
+      last = now;
+      var z = map.getZoom();
+      var next = z + (target - z) * (1 - Math.pow(EASE, dt / 16.7));
+      var done = Math.abs(target - next) < 0.002;
+      if (done) next = target;
+      // keep the point under the cursor fixed
+      var centerPx = map.project(anchorLL, next).subtract(anchorPt).add(map.getSize().divideBy(2));
+      map._move(map.unproject(centerPx, next), next);
+      if (done) { raf = 0; finish(); }
+      else raf = requestAnimationFrame(step);
+    }
+
+    map.getContainer().addEventListener('wheel', function (e) {
+      e.preventDefault();
+      // scroll distance in pixels, the same on every OS (lines / pages converted)
+      var d = -e.deltaY * (e.deltaMode === 1 ? 33 : e.deltaMode === 2 ? 100 : 1);
+      if (!d) return;
+      if (e.ctrlKey) d *= PINCH_BOOST;
+      d = Math.max(-PX_PER_LEVEL, Math.min(PX_PER_LEVEL, d));  // at most 1 level per event
+      if (target === null) {
+        map._stop();
+        target = map.getZoom();
+        map._moveStart(true, false);
+      }
+      target = Math.max(map.getMinZoom(), Math.min(map.getMaxZoom(), target + d / PX_PER_LEVEL));
+      anchorPt = map.mouseEventToContainerPoint(e);
+      anchorLL = map.containerPointToLatLng(anchorPt);
+      if (!raf) { last = performance.now(); raf = requestAnimationFrame(step); }
+    }, { passive: false });
+
+    map.on('dragstart', finish);  // grabbing the map stops the glide
   }
 
   /* ---- Map styles ------------------------------------------------------- */

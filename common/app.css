@@ -164,6 +164,11 @@ kbd {
 
 #map:focus { outline: none; }
 
+/* Normal cursor on the map (Leaflet's default is the grab hand) */
+
+#map.leaflet-grab { cursor: default; }
+.leaflet-dragging #map.leaflet-grab { cursor: grabbing; }
+
 .leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
   user-select: none;
   -webkit-user-select: none;
@@ -798,10 +803,6 @@ body.full-list-active .rail-bottom { display: none; }
 /* World maps use tiles: the India map styles don't apply there */
 .world-map .styles,
 .world-map .dpad-sep { display: none; }
-
-
-#map.leaflet-grab { cursor: default; }
-.leaflet-dragging #map.leaflet-grab { cursor: grabbing; }
 
 @media (max-width: 1100px) {
   .question { max-width: calc(100vw - 2 * var(--gap) - 40px); top: calc(var(--gap) + 62px); }

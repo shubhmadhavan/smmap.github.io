@@ -1,5 +1,22 @@
 # SM-Map refactor notes (Nov 2026)
 
+## Redesign (second pass)
+
+The map pages were restyled as a night-time field atlas, matching the home page's indigo and contour texture:
+- A title plate (top left) with the map name in an old-style serif and a Learn / Quiz switch
+- Reveal as a pill at the top centre; tools in a quiet icon rail at the top right (label size, notes, full-screen list, list, help)
+- The list is now an "Index" in serif type, with headings as italic notes, a place count, a filter box and a close button
+- The notes card sits beside the list and is titled with the place
+- Zoom, the pan pad and the map styles sit bottom left; the styles use your India silhouettes (`india_icon_1–4.png`)
+- Quiz: a central "Find …" card, a toast for correct / not quite, and a bottom bar with score, places left, Skip / Next and the options (these used to sit below the fold)
+- Green and beige maps switch the interface to light paper colours; themes are now colour variables in `app.css` (no flash, no extra file)
+- Section pages got a small nav (All maps + the five sections); the cards are unchanged, as is the home page
+
+Plotting was re-verified after the redesign: Leaflet's geographic coordinates for every point, line, polygon and label anchor, and the base image's corner coordinates, are identical to the original site on all 54 maps in both modes.
+
+Delete the old theme files too: `git rm common/theme1.css common/theme2.css common/themebaige.css`
+
+
 ## Is the plotting unchanged?
 
 Yes. Both versions were run side by side in headless Chrome for **all 54 maps in Learn and Quiz mode**.

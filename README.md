@@ -33,7 +33,7 @@ You can access it from this [Link](https://shubhmadhavan.github.io/smmap.github.
  - **Ctrl + H** home
 
 ## Quiz Mode
- - Click **⇌** (top left) to switch between Learn and Quiz for the same map
+ - Use the **Learn / Quiz** switch under the map title (top left) to change mode for the same map
  - A name is shown at the top; click the matching element on the map
  - **Space** skips the round (or moves on after you answer)
 
@@ -52,7 +52,7 @@ You can access it from this [Link](https://shubhmadhavan.github.io/smmap.github.
 | `common/Map_Game_dark.html` + `quiz.js` | Quiz mode |
 | `common/maps.js` | List of every map (selection key → folder, title) |
 | `common/core.js` | Shared: Leaflet map, base image, WKT parsing, themes, shortcuts |
-| `common/app.css`, `theme1/2/baige.css` | Layout and themes; each map's colours live in its `location_color.css` |
+| `common/app.css` | Layout and the three interface colour sets (standard, green, beige); each map's own colours live in its `location_color.css` |
 | `tools/optimize_images.py` | Optional: shrinks the base-map JPEGs (same dimensions, so plotting is unchanged) |
 
 ## Themes

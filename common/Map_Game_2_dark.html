@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="theme-color" content="#1e1e2f">
+  <meta name="theme-color" content="#14152a">
   <title>SM-Map</title>
 
   <link rel="icon" type="image/png" sizes="48x48" href="../favicon/favicon-48x48.png">
   <link rel="apple-touch-icon" href="../favicon/apple-touch-icon.png">
   <link rel="manifest" href="../favicon/site.webmanifest">
 
+  <link rel="preload" href="fonts/geologica-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="leaflet.css">
   <link rel="stylesheet" href="app.css">
-  <link id="themeStylesheet" rel="stylesheet" href="theme1.css">
 
   <!-- maps.js picks the map from ?selection= and starts loading its data + colours -->
   <script src="maps.js"></script>
@@ -21,56 +21,95 @@
   <script src="learn.js" defer></script>
 </head>
 <body class="learn">
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11.2 12 4.8l8 6.4V19a1 1 0 0 1-1 1h-4.4v-5.4H9.4V20H5a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.6 12S6.1 5.6 12 5.6 21.4 12 21.4 12 17.9 18.4 12 18.4 2.6 12 2.6 12z"/><circle cx="12" cy="12" r="2.9"/></symbol>
+    <symbol id="i-notes" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M12 11v5.6"/><circle cx="12" cy="7.7" r=".6" fill="currentColor"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 7h11M9 12h11M9 17h11"/><circle cx="4.8" cy="7" r=".9" fill="currentColor"/><circle cx="4.8" cy="12" r=".9" fill="currentColor"/><circle cx="4.8" cy="17" r=".9" fill="currentColor"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M4.5 9V4.5H9M19.5 9V4.5H15M4.5 15v4.5H9M19.5 15v4.5H15"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M9.7 9.4a2.4 2.4 0 1 1 3.5 2.2c-.8.4-1.2.9-1.2 1.8v.4"/><circle cx="12" cy="16.6" r=".6" fill="currentColor"/></symbol>
+    <symbol id="i-text" viewBox="0 0 24 24"><path d="M3.5 18 8.6 6l5.1 12M5.4 14h6.4M15.3 18l2.6-6.3 2.6 6.3M16.2 16h3.4"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5.5v13M5.5 12h13"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5.5 12h13"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M7 14.5l5-5 5 5"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="5.6"/><path d="M15 15l4.5 4.5"/></symbol>
+  </svg>
 
-  <div class="top-wrapper">
-    <div class="icons-container-left">
-      <button class="home-link-button" title="Home (Ctrl+H)"><a class="home-link" href="../index.html">⌂</a></button>
-      <button class="switcher-button mode-switch" title="Switch to quiz"><a class="switcher" href="Map_Game_dark.html"><span class="switcher-text">⇌</span></a></button>
-      <button class="switcher-button" id="font-switcher" title="Label size (Z)"><span class="switcher-text">z</span></button>
-      <button class="reveal-all" title="Reveal all (R)" aria-pressed="false">Reveal</button>
+  <header class="plate">
+    <a class="btn plate-home" href="../index.html" title="All maps (Ctrl+H)" aria-label="All maps"><svg class="icon"><use href="#i-home"/></svg></a>
+    <div class="plate-text">
+      <h1 class="map-title">SM-Map</h1>
+      <nav class="mode-switch" aria-label="Mode">
+        <a data-page="Map_Game_2_dark.html" aria-current="page">Learn</a>
+        <a data-page="Map_Game_dark.html">Quiz</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="icons-container">
-      <button class="toggle-map-1" title="Beige map (Ctrl+3)"><img src="../Map_Images/india_icon_1.png" alt="Beige map"></button>
-      <button class="toggle-map-3" title="Grey map (Ctrl+1)"><img src="../Map_Images/india_icon_3.png" alt="Grey map"></button>
-      <button class="toggle-map-4" title="Green map (Ctrl+2)"><img src="../Map_Images/india_icon_4.png" alt="Green map"></button>
-      <button class="reveal-list" title="List (F4)">☰</button>
-      <button class="full-list" title="Full-screen list">⛶</button>
-      <button class="info-br" title="Show notes (T)">ⓘ</button>
-    </div>
+  <button class="pill reveal-all" title="Show or hide every name (R)" aria-pressed="false">
+    <svg class="icon"><use href="#i-eye"/></svg><span>Reveal names</span><kbd>R</kbd>
+  </button>
+
+  <div class="rail rail-top">
+    <button class="btn" id="font-switcher" title="Label size (Z)" aria-label="Label size"><svg class="icon"><use href="#i-text"/></svg></button>
+    <button class="btn info-br" title="Show notes inside the labels (T)" aria-label="Show notes"><svg class="icon"><use href="#i-notes"/></svg></button>
+    <button class="btn full-list" title="Full-screen list" aria-label="Full-screen list"><svg class="icon"><use href="#i-expand"/></svg></button>
+    <button class="btn reveal-list" title="List (F4)" aria-label="List"><svg class="icon"><use href="#i-list"/></svg></button>
+    <button class="btn help-btn" title="Keyboard shortcuts (?)" aria-label="Keyboard shortcuts"><svg class="icon"><use href="#i-help"/></svg></button>
   </div>
 
-  <div class="sidebar" id="sidebar" style="display:none">
-    <input class="sidebar-search" type="search" placeholder="Filter…  ( / )" aria-label="Filter the list" autocomplete="off">
+  <aside class="sidebar" id="sidebar" style="display:none" aria-label="List">
+    <div class="sidebar-head">
+      <h2 class="sidebar-title">Index</h2>
+      <span class="sidebar-count"></span>
+      <button class="btn sidebar-close" title="Close (F4)" aria-label="Close list"><svg class="icon"><use href="#i-close"/></svg></button>
+    </div>
+    <label class="search">
+      <svg class="icon"><use href="#i-search"/></svg>
+      <input class="sidebar-search" type="search" placeholder="Filter  ( / )" aria-label="Filter the list" autocomplete="off" spellcheck="false">
+    </label>
     <ul class="map-data-list"></ul>
-  </div>
+  </aside>
 
   <div id="map"></div>
 
-  <div class="custom-control">
-    <button class="arrow-btn up" aria-label="Pan up">⏶</button>
-    <button class="arrow-btn left" aria-label="Pan left">⏴</button>
-    <button class="arrow-btn right" aria-label="Pan right">⏵</button>
-    <button class="arrow-btn down" aria-label="Pan down">⏷</button>
+  <div class="rail rail-bottom">
+    <button class="btn zoom-in" title="Zoom in (F)" aria-label="Zoom in"><svg class="icon"><use href="#i-plus"/></svg></button>
+    <button class="btn zoom-out" title="Zoom out (G)" aria-label="Zoom out"><svg class="icon"><use href="#i-minus"/></svg></button>
+    <span class="rail-sep" aria-hidden="true"></span>
+    <div class="dpad" aria-label="Pan">
+      <button class="arrow-btn up" title="Pan (W)" aria-label="Pan up"><svg class="icon"><use href="#i-up"/></svg></button>
+      <button class="arrow-btn left" title="Pan (A)" aria-label="Pan left"><svg class="icon"><use href="#i-up"/></svg></button>
+      <button class="arrow-btn right" title="Pan (D)" aria-label="Pan right"><svg class="icon"><use href="#i-up"/></svg></button>
+      <button class="arrow-btn down" title="Pan (S)" aria-label="Pan down"><svg class="icon"><use href="#i-up"/></svg></button>
+    </div>
+    <span class="rail-sep dpad-sep" aria-hidden="true"></span>
+    <div class="styles" role="group" aria-label="Base map">
+      <button class="swatch" data-theme-id="default" title="Standard map (Ctrl+4)"><img src="../Map_Images/india_icon_2.png" alt="Standard map"></button>
+      <button class="swatch" data-theme-id="isToggled3" title="Grey map with rivers (Ctrl+1)"><img src="../Map_Images/india_icon_3.png" alt="Grey map"></button>
+      <button class="swatch" data-theme-id="isToggled4" title="Green map (Ctrl+2)"><img src="../Map_Images/india_icon_4.png" alt="Green map"></button>
+      <button class="swatch" data-theme-id="isToggled1" title="Beige map (Ctrl+3)"><img src="../Map_Images/india_icon_1.png" alt="Beige map"></button>
+    </div>
   </div>
 
   <div id="help" class="help-overlay" hidden>
     <div class="help-card" role="dialog" aria-label="Keyboard shortcuts">
       <h2>Keyboard shortcuts</h2>
       <table>
-        <tr><td>Click a feature</td><td>Show / hide its name (<kbd>Alt</kbd>+click keeps it painted)</td></tr>
-        <tr><td><kbd>R</kbd></td><td>Reveal / hide every name</td></tr>
-        <tr><td><kbd>T</kbd> <kbd>Ctrl</kbd>+<kbd>I</kbd></td><td>Show notes inside the labels</td></tr>
-        <tr><td><kbd>F4</kbd></td><td>Open / close the list</td></tr>
+        <tr><td>Click a place</td><td>Show or hide its name. <kbd>Alt</kbd> + click keeps it painted.</td></tr>
+        <tr><td><kbd>R</kbd></td><td>Reveal or hide every name</td></tr>
+        <tr><td><kbd>T</kbd> <kbd>Ctrl</kbd> <kbd>I</kbd></td><td>Show the notes inside the labels</td></tr>
+        <tr><td><kbd>F4</kbd></td><td>Open or close the list</td></tr>
         <tr><td><kbd>/</kbd></td><td>Filter the list</td></tr>
-        <tr><td><kbd>↑</kbd> <kbd>↓</kbd> <kbd>Enter</kbd></td><td>Move through the list, highlight on the map</td></tr>
-        <tr><td><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></td><td>Pan (<kbd>Shift</kbd>+<kbd>A</kbd>/<kbd>D</kbd> faster)</td></tr>
-        <tr><td><kbd>F</kbd> <kbd>G</kbd></td><td>Zoom in / out (also <kbd>Shift</kbd>+<kbd>W</kbd>/<kbd>S</kbd>)</td></tr>
+        <tr><td><kbd>↑</kbd> <kbd>↓</kbd> <kbd>Enter</kbd></td><td>Move through the list and highlight on the map</td></tr>
+        <tr><td><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd></td><td>Pan (<kbd>Shift</kbd> + <kbd>A</kbd> / <kbd>D</kbd> is faster)</td></tr>
+        <tr><td><kbd>F</kbd> <kbd>G</kbd></td><td>Zoom in / out (also <kbd>Shift</kbd> + <kbd>W</kbd> / <kbd>S</kbd>)</td></tr>
         <tr><td><kbd>Z</kbd></td><td>Change label size</td></tr>
-        <tr><td><kbd>I</kbd><kbd>J</kbd><kbd>K</kbd><kbd>L</kbd></td><td>Nudge the label you last clicked</td></tr>
-        <tr><td><kbd>Ctrl</kbd>+<kbd>1</kbd>–<kbd>4</kbd></td><td>Grey / Green / Beige / default map</td></tr>
-        <tr><td><kbd>Ctrl</kbd>+<kbd>H</kbd></td><td>Home</td></tr>
-        <tr><td><kbd>Esc</kbd></td><td>Close this / leave the full-screen list</td></tr>
+        <tr><td><kbd>I</kbd> <kbd>J</kbd> <kbd>K</kbd> <kbd>L</kbd></td><td>Nudge the label you last clicked</td></tr>
+        <tr><td><kbd>Ctrl</kbd> <kbd>1</kbd>–<kbd>4</kbd></td><td>Grey, green, beige or standard map</td></tr>
+        <tr><td><kbd>Ctrl</kbd> <kbd>H</kbd></td><td>All maps</td></tr>
+        <tr><td><kbd>Esc</kbd></td><td>Close this, or leave the full-screen list</td></tr>
       </table>
     </div>
   </div>

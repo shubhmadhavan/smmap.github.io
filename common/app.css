@@ -317,7 +317,6 @@ path,
 
 .plate,
 .rail,
-.reveal-all,
 .sidebar,
 .sidebar-popup,
 .question,
@@ -387,12 +386,12 @@ button { font: inherit; color: inherit; }
   display: flex;
   align-items: center;
   gap: 10px;
-  max-width: min(420px, calc(100vw - 2 * var(--gap) - 230px));
+  max-width: min(420px, calc(100vw - 2 * var(--gap) - 260px));
   padding: 6px 14px 6px 6px;
   border-radius: 10px;
 }
 
-.plate-home { background: var(--hover); }
+.plate-home { flex: none; background: var(--hover); }
 
 .plate-text { min-width: 0; }
 
@@ -421,14 +420,6 @@ button { font: inherit; color: inherit; }
 
 .mode-switch a:hover { color: var(--text); background: var(--hover); }
 .mode-switch a[aria-current="page"] { color: var(--accent); background: var(--selected); }
-
-/* ---------- Reveal (top centre) ---------- */
-
-.reveal-all {
-  top: calc(var(--gap) + 4px);
-  left: 50%;
-  transform: translateX(-50%);
-}
 
 /* ---------- Icon rail (top right) and map rail (bottom left) ---------- */
 
@@ -675,7 +666,6 @@ body.full-list-active .sidebar-popup {
   z-index: 1001;
 }
 
-body.full-list-active .reveal-all,
 body.full-list-active .rail-bottom { display: none; }
 
 /* ---------- Shortcut help (?) ---------- */
@@ -809,6 +799,10 @@ body.full-list-active .rail-bottom { display: none; }
 .world-map .styles,
 .world-map .dpad-sep { display: none; }
 
+
+#map.leaflet-grab { cursor: default; }
+.leaflet-dragging #map.leaflet-grab { cursor: grabbing; }
+
 @media (max-width: 1100px) {
   .question { max-width: calc(100vw - 2 * var(--gap) - 40px); top: calc(var(--gap) + 62px); }
   #result { top: calc(var(--gap) + 124px); }
@@ -821,22 +815,12 @@ body.full-list-active .rail-bottom { display: none; }
 
   #map { inset: 6px; border-radius: 10px; }
 
-  .plate { padding: 4px 10px 4px 4px; max-width: calc(100vw - 12px - 196px); }
+  .plate { padding: 4px 10px 4px 4px; max-width: calc(100vw - 12px - 230px); }
   .map-title { font-size: 16px; }
   .mode-switch { margin-top: 2px; font-size: 11px; }
 
   .btn { width: 32px; height: 32px; }
   .rail-top { gap: 0; padding: 3px; }
-
-  .reveal-all {
-    top: auto;
-    left: auto;
-    right: calc(var(--gap) + 4px);
-    bottom: calc(var(--gap) + 4px);
-    transform: none;
-  }
-  .reveal-all span { display: none; }
-  .reveal-all kbd { display: none; }
 
   .sidebar {
     top: 58px;

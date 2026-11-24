@@ -33,6 +33,7 @@
     <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5.5 12h13"/></symbol>
     <symbol id="i-up" viewBox="0 0 24 24"><path d="M7 14.5l5-5 5 5"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
+    <symbol id="i-tiles" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.4"/><rect x="13" y="4" width="7" height="7" rx="1.4"/><rect x="4" y="13" width="7" height="7" rx="1.4"/><rect x="13" y="13" width="7" height="7" rx="1.4"/></symbol>
     <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="5.6"/><path d="M15 15l4.5 4.5"/></symbol>
   </svg>
 
@@ -67,6 +68,11 @@
       <button class="arrow-btn down" title="Pan (S)" aria-label="Pan down"><svg class="icon"><use href="#i-up"/></svg></button>
     </div>
     <span class="rail-sep dpad-sep" aria-hidden="true"></span>
+    <button class="btn base-toggle" title="Tile map instead of the India image (B)" aria-label="Tile map" aria-pressed="false"><svg class="icon"><use href="#i-tiles"/></svg></button>
+    <div class="tile-theme">
+      <button class="btn tile-theme-btn" title="Map theme" aria-label="Map theme" aria-haspopup="menu" aria-expanded="false"><i class="tile-swatch"></i></button>
+      <div class="theme-pop" role="menu" aria-label="Map theme" hidden></div>
+    </div>
     <div class="styles" role="group" aria-label="Base map">
       <button class="swatch" data-theme-id="default" title="Standard map (Ctrl+4)"><img src="../Map_Images/india_icon_2.png" alt="Standard map"></button>
       <button class="swatch" data-theme-id="isToggled3" title="Grey map with rivers (Ctrl+1)"><img src="../Map_Images/india_icon_3.png" alt="Grey map"></button>

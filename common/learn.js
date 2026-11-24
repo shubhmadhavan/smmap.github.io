@@ -34,14 +34,44 @@
        Labels
        --------------------------------------------------------------------- */
 
-    function isShown(f) { return f.tip.style.display === 'block'; }
+    // A shown name is drawn as a label (default) or, in card mode, as a card
+    var cards = SM.createCards(map, { anchors: anchorsInView, obstacles: cardObstacles });
+    var cardsOn = SM.store.get('cards') === '1';
 
-    function setShown(f, show) {
+    function isShown(f) { return !!f.shown; }
+
+    function render(f) {
+      if (cardsOn) {
+        f.tip.style.display = 'none';
+        cards.show(f, !!f.shown);
+        if (f.shown) cards.highlight(f, f.tip.classList.contains('highlighted'));
+        return;
+      }
+      cards.show(f, false);
       var was = f.tip.style.display === 'block';
-      f.tip.style.display = show ? 'block' : 'none';
+      f.tip.style.display = f.shown ? 'block' : 'none';
       // Labels are measured by Leaflet while hidden (width 0), so left-hand
       // labels would overlap their point until the next zoom. Re-place on show.
-      if (show && !was) f.layer.getTooltip()._updatePosition();
+      if (f.shown && !was) f.layer.getTooltip()._updatePosition();
+    }
+
+    function setShown(f, show) {
+      f.shown = show;
+      render(f);
+    }
+
+    function anchorsInView() {
+      var size = map.getSize(), out = [];
+      features.forEach(function (f) {
+        if (!f || !f.layer) return;
+        var p = map.latLngToContainerPoint(f.anchor());
+        if (p.x > -20 && p.y > -20 && p.x < size.x + 20 && p.y < size.y + 20) out.push(p);
+      });
+      return out;
+    }
+
+    function cardObstacles() {
+      return Array.prototype.slice.call(document.querySelectorAll('.plate, .rail-top, .rail-bottom, #sidebar, .sidebar-popup'));
     }
 
     // Click on a feature: toggle its name and its "selected-path" style
@@ -58,7 +88,7 @@
         layer.on('click', function (e) {
           L.DomEvent.stopPropagation(e);
           // Alt + click keeps a feature painted (used by Paint India)
-          if (e.originalEvent.altKey) layer.getElement().classList.toggle('persistent-hover');
+          if (e.originalEvent && e.originalEvent.altKey) layer.getElement().classList.toggle('persistent-hover');
           toggleFeature(f);
         });
       });
@@ -109,6 +139,7 @@
       notes.forEach(function (el) { el.classList.toggle('visible-force', on); });
       if (infoBtn) infoBtn.classList.toggle('active', on);
       SM.store.set('ui-active', on ? '1' : '0');
+      if (cardsOn) requestAnimationFrame(cards.refresh);
     }
     function toggleInfo() { setInfo(!document.body.classList.contains('hide-ui')); }
     if (infoBtn) infoBtn.addEventListener('click', toggleInfo);
@@ -156,6 +187,7 @@
       f.tip.classList.toggle('highlighted', on);
       if (on) setShown(f, true);
       else if (!state.revealed) setShown(f, false);
+      if (cardsOn) cards.highlight(f, on);
     }
 
     function setCurrent(i) {
@@ -279,12 +311,102 @@
       state.activeTip = tip && tip.style.display !== 'none' ? tip : null;
     });
 
+    function moveTip(tip, x, y) {
+      offsets.set(tip, { x: x, y: y });
+      tip.style.translate = x + 'px ' + y + 'px'; // survives Leaflet repositioning
+    }
+
     function nudge(tip, dx, dy) {
       var o = offsets.get(tip) || { x: 0, y: 0 };
-      o.x += dx; o.y += dy;
-      offsets.set(tip, o);
-      tip.style.translate = o.x + 'px ' + o.y + 'px'; // survives Leaflet repositioning
+      moveTip(tip, o.x + dx, o.y + dy);
     }
+
+    // Drag a label to move it. A plain press no longer starts a text selection;
+    // double-click still selects the label's text for copying.
+    var tipPane = map.getPane('tooltipPane');
+    var tipDrag = null;
+    tipPane.addEventListener('mousedown', function (e) {
+      if (e.detail === 1 && e.target.closest('.reveal-all-tooltip')) e.preventDefault();
+    });
+    tipPane.addEventListener('pointerdown', function (e) {
+      var tip = e.target.closest('.reveal-all-tooltip');
+      if (!tip || e.button !== 0) return;
+      e.stopPropagation();
+      state.activeTip = tip;
+      var o = offsets.get(tip) || { x: 0, y: 0 };
+      tipDrag = { tip: tip, x: e.clientX, y: e.clientY, ox: o.x, oy: o.y, moved: false, id: e.pointerId };
+    });
+    tipPane.addEventListener('pointermove', function (e) {
+      if (!tipDrag) return;
+      var mx = e.clientX - tipDrag.x, my = e.clientY - tipDrag.y;
+      if (!tipDrag.moved) {
+        if (Math.hypot(mx, my) < 4) return;
+        tipDrag.moved = true;
+        try { tipDrag.tip.setPointerCapture(tipDrag.id); } catch (err) { /* ignore */ }
+        tipDrag.tip.classList.add('is-dragging');
+        map.dragging.disable();
+      }
+      moveTip(tipDrag.tip, tipDrag.ox + mx, tipDrag.oy + my);
+    });
+    function endTipDrag() {
+      if (!tipDrag) return;
+      if (tipDrag.moved) map.dragging.enable();
+      tipDrag.tip.classList.remove('is-dragging');
+      tipDrag = null;
+    }
+    tipPane.addEventListener('pointerup', endTipDrag);
+    tipPane.addEventListener('pointercancel', endTipDrag);
+
+    // Double-click a label or card: select its text (ready for Ctrl/Cmd+C)
+    map.getContainer().addEventListener('dblclick', function (e) {
+      var el = e.target.closest('.reveal-all-tooltip, .sm-card');
+      if (!el) return;
+      e.preventDefault();
+      var range = document.createRange();
+      range.selectNodeContents(el.querySelector('.sm-card-title') || el);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    });
+
+    /* ---------------------------------------------------------------------
+       Cards mode (C), card lines (Shift+C), re-arrange
+       --------------------------------------------------------------------- */
+
+    var cardsBtn = document.querySelector('.cards-btn');
+    var lineBtns = document.querySelectorAll('[data-line]');
+    var rearrangeBtn = document.querySelector('.rearrange-btn');
+
+    function syncCardUi() {
+      document.body.classList.toggle('cards-mode', cardsOn);
+      if (cardsBtn) cardsBtn.setAttribute('aria-pressed', cardsOn);
+      lineBtns.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-line') === cards.line()); });
+    }
+
+    // Leader lines and the card edge take the colour of this map's labels
+    function cardAccent() {
+      var tip = document.querySelector('.reveal-all-tooltip');
+      var bg = tip ? getComputedStyle(tip).backgroundColor : '';
+      if (!bg || /rgba\(.*,\s*0\)|transparent/.test(bg)) document.documentElement.style.removeProperty('--card-accent');
+      else document.documentElement.style.setProperty('--card-accent', bg);
+    }
+    new MutationObserver(cardAccent).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    cardAccent();
+
+    function setCards(on) {
+      cardsOn = on;
+      SM.store.set('cards', on ? '1' : '0');
+      syncCardUi();
+      features.forEach(function (f) { if (f && f.tip) render(f); });
+    }
+
+    if (cardsBtn) cardsBtn.addEventListener('click', function () { setCards(!cardsOn); });
+    lineBtns.forEach(function (b) {
+      b.addEventListener('click', function () { cards.setLine(b.getAttribute('data-line')); syncCardUi(); });
+    });
+    if (rearrangeBtn) rearrangeBtn.addEventListener('click', function () { cards.rearrange(); });
+    document.addEventListener('sm:fontsize', function () { if (cardsOn) requestAnimationFrame(cards.refresh); });
+    syncCardUi();
 
     /* ---------------------------------------------------------------------
        Shortcut help (?)
@@ -345,6 +467,10 @@
       }
       switch (key) {
         case 'r': toggleReveal(); return true;
+        case 'c':
+          if (e.shiftKey) { if (!cardsOn) setCards(true); cards.nextLine(); syncCardUi(); }
+          else setCards(!cardsOn);
+          return true;
         case 't':
         case 'i': toggleInfo(); return true;
         case '?': toggleHelp(); return true;
@@ -379,6 +505,7 @@
         var parts = g.map(function (part) { return L.polyline(part.coordinates, OUTLINE_STYLE).addTo(map); });
         features[i] = {
           kind: 'area',
+          key: en.key, label: en.label, info: en.info,
           clickable: parts,
           paths: function () { return parts.map(function (p) { return p.getElement(); }); }
         };
@@ -402,10 +529,10 @@
         }
       } else if (g.type === 'Point') {
         layer = L.circleMarker(g.coordinates, POINT_STYLE);
-        f = features[i] = { kind: 'point', clickable: [layer, under[i]] };
+        f = features[i] = { kind: 'point', key: en.key, label: en.label, info: en.info, clickable: [layer, under[i]] };
       } else if (g.type === 'LineString') {
         layer = L.polyline(g.coordinates, LINE_STYLE);
-        f = features[i] = { kind: 'line', clickable: [layer, under[i]] };
+        f = features[i] = { kind: 'line', key: en.key, label: en.label, info: en.info, clickable: [layer, under[i]] };
       }
       if (!layer) return;
 
@@ -414,6 +541,8 @@
       f.tip = layer.getTooltip().getElement();
       f.tip.style.display = 'none';
       if (!f.paths) f.paths = function () { return [layer.getElement()]; };
+      // Where a card's leader starts: the point, a river's midpoint, or an area's centre
+      f.anchor = function () { return f._anchor || (f._anchor = layer.getLatLng ? layer.getLatLng() : layer.getCenter()); };
     });
 
     return features;

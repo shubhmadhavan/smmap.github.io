@@ -18,6 +18,7 @@
   <script src="maps.js"></script>
   <script src="leaflet.js" defer></script>
   <script src="core.js" defer></script>
+  <script src="cards.js" defer></script>
   <script src="learn.js" defer></script>
 </head>
 <body class="learn">
@@ -33,6 +34,12 @@
     <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5.5 12h13"/></symbol>
     <symbol id="i-up" viewBox="0 0 24 24"><path d="M7 14.5l5-5 5 5"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
+    <symbol id="i-cards" viewBox="0 0 24 24"><rect x="8.5" y="3.5" width="12.5" height="9" rx="1.8"/><path d="M11.5 6.8h6.5M11.5 9.4h4" stroke-width="1.4"/><path d="M8.5 11.5 5.6 16.6"/><circle cx="4.9" cy="18.3" r="1.7" fill="currentColor"/></symbol>
+    <symbol id="i-line-straight" viewBox="0 0 24 24"><circle cx="5" cy="18.5" r="1.7" fill="currentColor"/><path d="M6.2 17.3 14.5 9"/><rect x="14" y="4" width="6.5" height="5" rx="1.2"/></symbol>
+    <symbol id="i-line-elbow" viewBox="0 0 24 24"><circle cx="5" cy="18.5" r="1.7" fill="currentColor"/><path d="M5.8 17.2 10 6.5h4"/><rect x="14" y="4" width="6.5" height="5" rx="1.2"/></symbol>
+    <symbol id="i-line-curve" viewBox="0 0 24 24"><circle cx="5" cy="18.5" r="1.7" fill="currentColor"/><path d="M5.6 16.9C6.5 10 9 6.6 14 6.5"/><rect x="14" y="4" width="6.5" height="5" rx="1.2"/></symbol>
+    <symbol id="i-rearrange" viewBox="0 0 24 24"><path d="M5 12a7 7 0 0 1 12-4.9M19 12a7 7 0 0 1-12 4.9"/><path d="M17.5 3.5v4h-4M6.5 20.5v-4h4"/></symbol>
+    <symbol id="i-tiles" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.4"/><rect x="13" y="4" width="7" height="7" rx="1.4"/><rect x="4" y="13" width="7" height="7" rx="1.4"/><rect x="13" y="13" width="7" height="7" rx="1.4"/></symbol>
     <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="5.6"/><path d="M15 15l4.5 4.5"/></symbol>
   </svg>
 
@@ -49,6 +56,7 @@
 
   <div class="rail rail-top">
     <button class="btn reveal-all" title="Reveal every name (R)" aria-label="Reveal every name" aria-pressed="false"><svg class="icon"><use href="#i-eye"/></svg></button>
+    <button class="btn cards-btn" title="Cards instead of labels (C)" aria-label="Cards instead of labels" aria-pressed="false"><svg class="icon"><use href="#i-cards"/></svg></button>
     <button class="btn" id="font-switcher" title="Label size (Z)" aria-label="Label size"><svg class="icon"><use href="#i-text"/></svg></button>
     <button class="btn info-br" title="Show notes inside the labels (T)" aria-label="Show notes"><svg class="icon"><use href="#i-notes"/></svg></button>
     <button class="btn full-list" title="Full-screen list" aria-label="Full-screen list"><svg class="icon"><use href="#i-expand"/></svg></button>
@@ -81,7 +89,19 @@
       <button class="arrow-btn right" title="Pan (D)" aria-label="Pan right"><svg class="icon"><use href="#i-up"/></svg></button>
       <button class="arrow-btn down" title="Pan (S)" aria-label="Pan down"><svg class="icon"><use href="#i-up"/></svg></button>
     </div>
+    <span class="rail-sep card-tools-sep" aria-hidden="true"></span>
+    <div class="card-tools" role="group" aria-label="Card lines">
+      <button class="btn" data-line="straight" title="Straight lines (Shift+C)" aria-label="Straight lines"><svg class="icon"><use href="#i-line-straight"/></svg></button>
+      <button class="btn" data-line="elbow" title="Elbow lines (Shift+C)" aria-label="Elbow lines"><svg class="icon"><use href="#i-line-elbow"/></svg></button>
+      <button class="btn" data-line="curve" title="Curved lines (Shift+C)" aria-label="Curved lines"><svg class="icon"><use href="#i-line-curve"/></svg></button>
+      <button class="btn rearrange-btn" title="Re-arrange cards (forgets cards you moved)" aria-label="Re-arrange cards"><svg class="icon"><use href="#i-rearrange"/></svg></button>
+    </div>
     <span class="rail-sep dpad-sep" aria-hidden="true"></span>
+    <button class="btn base-toggle" title="Tile map instead of the India image (B)" aria-label="Tile map" aria-pressed="false"><svg class="icon"><use href="#i-tiles"/></svg></button>
+    <div class="tile-theme">
+      <button class="btn tile-theme-btn" title="Map theme" aria-label="Map theme" aria-haspopup="menu" aria-expanded="false"><i class="tile-swatch"></i></button>
+      <div class="theme-pop" role="menu" aria-label="Map theme" hidden></div>
+    </div>
     <div class="styles" role="group" aria-label="Base map">
       <button class="swatch" data-theme-id="default" title="Standard map (Ctrl+4)"><img src="../Map_Images/india_icon_2.png" alt="Standard map"></button>
       <button class="swatch" data-theme-id="isToggled3" title="Grey map with rivers (Ctrl+1)"><img src="../Map_Images/india_icon_3.png" alt="Grey map"></button>
@@ -96,6 +116,9 @@
       <table>
         <tr><td>Click a place</td><td>Show or hide its name. <kbd>Alt</kbd> + click keeps it painted.</td></tr>
         <tr><td><kbd>R</kbd></td><td>Reveal or hide every name</td></tr>
+        <tr><td><kbd>C</kbd></td><td>Show names as cards with leader lines, or as labels</td></tr>
+        <tr><td><kbd>Shift</kbd> <kbd>C</kbd></td><td>Switch card lines: straight, elbow, curve</td></tr>
+        <tr><td>Drag a label or card</td><td>Move it (cards remember where you put them). Double-click to select its text.</td></tr>
         <tr><td><kbd>T</kbd> <kbd>Ctrl</kbd> <kbd>I</kbd></td><td>Show the notes inside the labels</td></tr>
         <tr><td><kbd>F4</kbd></td><td>Open or close the list</td></tr>
         <tr><td><kbd>/</kbd></td><td>Filter the list</td></tr>
@@ -105,6 +128,7 @@
         <tr><td><kbd>Z</kbd></td><td>Change label size</td></tr>
         <tr><td><kbd>I</kbd> <kbd>J</kbd> <kbd>K</kbd> <kbd>L</kbd></td><td>Nudge the label you last clicked</td></tr>
         <tr><td><kbd>Ctrl</kbd> <kbd>1</kbd>–<kbd>4</kbd></td><td>Grey, green, beige or standard map</td></tr>
+        <tr><td><kbd>B</kbd></td><td>Switch between the India image and the tile map (with themes)</td></tr>
         <tr><td><kbd>Ctrl</kbd> <kbd>H</kbd></td><td>All maps</td></tr>
         <tr><td><kbd>Esc</kbd></td><td>Close this, or leave the full-screen list</td></tr>
       </table>

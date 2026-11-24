@@ -91,7 +91,8 @@ var SM_BOOT = (function () {
   // Apply the saved map style before first paint (no flash of the default)
   try {
     var ui = { isToggled4: 'green', isToggled1: 'beige' }[localStorage.getItem('activeTheme')];
-    if (ui) document.documentElement.setAttribute('data-theme', ui);
+    var tilesBase = localStorage.getItem('baseMap') === 'tiles' || key.indexOf('wld') !== -1;
+    if (ui && !tilesBase) document.documentElement.setAttribute('data-theme', ui);
   } catch (e) { /* storage blocked: keep default */ }
 
   if (!entry) {

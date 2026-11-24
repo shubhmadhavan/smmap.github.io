@@ -186,7 +186,8 @@ kbd {
 
 /* Tile base map, "Classic" theme = the world maps' original look.
    Other tile themes recolour the tiles with an SVG filter (set from core.js). */
-.learn.tiles-classic .leaflet-pane.leaflet-tile-pane { filter: brightness(0.68) contrast(1.9); }
+.learn.tiles-classic .leaflet-pane.leaflet-tile-pane,
+.guessr.tiles-classic .leaflet-pane.leaflet-tile-pane { filter: brightness(0.68) contrast(1.9); }
 .quiz.tiles-classic #map { filter: brightness(0.87) contrast(1.4) saturate(1.5) saturate(1.2); }
 
 /* Unknown map key / data failed to load */
@@ -934,6 +935,158 @@ body.full-list-active .rail-bottom { display: none; }
 .quiz-options .speed input { width: 84px; }
 #timeoutValue { min-width: 3.2em; color: var(--text); }
 
+/* ---------- Guessr ---------- */
+
+#verdict {
+  position: fixed;
+  z-index: 1000;
+  top: calc(var(--gap) + 70px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  min-width: 220px;
+  max-width: min(560px, calc(100vw - 24px));
+  padding: 10px 22px 12px;
+  text-align: center;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+#verdict.show { display: block; animation: verdict-pop 0.42s cubic-bezier(0.2, 1.4, 0.4, 1); }
+
+@keyframes verdict-pop {
+  0%   { opacity: 0; transform: translateX(-50%) translateY(-6px) scale(0.86); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}
+
+.verdict-title {
+  font: 650 30px/1.1 var(--ui);
+  letter-spacing: -0.02em;
+  color: var(--v, var(--text));
+}
+
+.verdict-sub { margin-top: 4px; font-size: 13.5px; color: var(--muted); }
+
+.verdict-badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--v, var(--accent));
+  border: 1px solid currentColor;
+  border-radius: 999px;
+}
+
+/* Verdict colours, best to worst */
+.t-elite   { --v: #f2c14e; }
+.t-great   { --v: #5fd09a; }
+.t-good    { --v: #6cc0e5; }
+.t-alright { --v: #d8c79a; }
+.t-meh     { --v: #e0a96d; }
+.t-bad     { --v: #e07a5f; }
+.t-worse   { --v: #d65c50; }
+.t-worst   { --v: #c4473f; }
+
+[data-theme] .t-elite   { --v: #a67a12; }
+[data-theme] .t-great   { --v: #1f8a57; }
+[data-theme] .t-good    { --v: #1f7aa6; }
+[data-theme] .t-alright { --v: #7d6c3c; }
+
+#verdict.t-elite { border-color: rgba(242, 193, 78, 0.6); }
+
+/* Rainbolt: three Elites in a row */
+.t-rainbolt { border-color: rgba(255, 255, 255, 0.35) !important; }
+.t-rainbolt .verdict-title {
+  background: linear-gradient(90deg, #ff5f6d, #ffc371, #f9f871, #6ee7b7, #60a5fa, #a78bfa, #ff5f6d);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow 2.4s linear infinite;
+}
+.t-rainbolt .verdict-badge { color: #f9f871; }
+
+@keyframes rainbow { to { background-position: 200% 0; } }
+
+/* Irredeemable: three huge misses in a row */
+.t-irredeemable { --v: #ff5b4f; border-color: rgba(255, 91, 79, 0.55) !important; }
+#verdict.t-irredeemable.show { animation: verdict-pop 0.42s ease, verdict-shake 0.5s 0.4s ease; }
+
+@keyframes verdict-shake {
+  20%, 60% { transform: translateX(calc(-50% - 7px)); }
+  40%, 80% { transform: translateX(calc(-50% + 7px)); }
+}
+
+/* Your pin, the real place, the line between */
+.guess-pin span {
+  position: absolute;
+  left: -10px;
+  top: -27px;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border: 3px solid #14152a;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45);
+}
+
+.guessr-pulse span {
+  position: absolute;
+  left: -16px;
+  top: -16px;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #f2c14e;
+  border-radius: 50%;
+  animation: guessr-pulse 1.6s ease-out infinite;
+}
+
+@keyframes guessr-pulse {
+  from { transform: scale(0.4); opacity: 1; }
+  to   { transform: scale(1.6); opacity: 0; }
+}
+
+.leaflet-marker-icon.guess-pin,
+.leaflet-marker-icon.guessr-pulse,
+.leaflet-marker-icon.guessr-anchor { opacity: 1 !important; display: block !important; }
+
+.leaflet-tooltip.guessr-name { font-weight: 500; }
+
+/* Bottom bar */
+.guessr-bar .round-count { font: 500 17px/1 var(--ui); font-variant-numeric: tabular-nums; }
+.guessr-bar .round-label { margin: 0 6px 0 0; }
+.guessr-bar .total-score { font: 500 21px/1 var(--ui); font-variant-numeric: tabular-nums; }
+.guessr-bar .streak { font-size: 12.5px; font-weight: 500; color: #f2c14e; }
+.guessr-bar .streak:empty,
+.guess-hint[hidden] { display: none; }
+.guess-hint { font-size: 12.5px; color: var(--muted); }
+.guessr-bar #Advance:disabled { opacity: 0.45; cursor: default; filter: none; }
+
+/* Game summary */
+.done-card .done-score { margin: 0 0 14px; color: var(--muted); }
+.done-card .done-score b { font: 500 26px/1 var(--ui); color: var(--text); }
+.done-stats {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 6px 16px;
+  margin: 0 0 18px;
+  font-size: 13px;
+  text-align: left;
+}
+.done-stats dt { color: var(--muted); }
+.done-stats dd { margin: 0; text-align: right; }
+.done-stats .s-best span { display: block; }
+.done-stats .s-best small { color: var(--muted); font-size: 12px; }
+.question-find[hidden] { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  #verdict.show, .t-rainbolt .verdict-title, .guessr-pulse span { animation: none !important; }
+}
+
 /* ---------- Narrow windows and phones ---------- */
 
 /* Tile base map: the India image styles give way to the tile theme picker */
@@ -943,6 +1096,7 @@ body.full-list-active .rail-bottom { display: none; }
 @media (max-width: 1100px) {
   .question { max-width: calc(100vw - 2 * var(--gap) - 40px); top: calc(var(--gap) + 62px); }
   #result { top: calc(var(--gap) + 124px); }
+  #verdict { top: calc(var(--gap) + 124px); }
   .quiz-options .speed { display: none; }
   .quiz-bar { left: auto; right: calc(var(--gap) + 4px); transform: none; }
 }
@@ -953,8 +1107,11 @@ body.full-list-active .rail-bottom { display: none; }
   #map { inset: 6px; border-radius: 10px; }
 
   .plate { padding: 4px 8px 4px 4px; gap: 8px; max-width: calc(100vw - 12px - 236px); }
+  .quiz .plate, .guessr .plate { max-width: calc(100vw - 24px); }
+  .guessr .question-find { display: none; }
   .plate-text { overflow: hidden; }
-  .mode-switch a { padding: 1px 6px; }
+  .mode-switch a { padding: 1px 5px; }
+  .mode-switch { gap: 0; font-size: 10.5px; }
   .map-title { font-size: 16px; }
   .mode-switch { margin-top: 2px; font-size: 11px; }
 
@@ -980,6 +1137,11 @@ body.full-list-active .rail-bottom { display: none; }
   .question { top: 58px; padding: 7px 14px 8px; min-width: 0; max-width: calc(100vw - 24px); }
   #header { font-size: 19px; }
   #result { top: 112px; }
+  #verdict { top: 112px; padding: 8px 16px 10px; }
+  .verdict-title { font-size: 24px; }
+  .guessr-bar .round-label,
+  .guessr-bar .score-label,
+  .guess-hint { display: none; }
 
   .quiz-bar {
     left: calc(var(--gap) + 4px);
